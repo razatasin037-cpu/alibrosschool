@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ali Tutorials</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="totureal.css" />
+  </head>
+  <body>
+    <section class="hero-section">
+      <!-- NAVBAR -->
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom-nav">
+          <!-- LOGO -->
+
+          <a class="navbar-brand logo" href="#">
+            <span class="logo-circle">Ali</span>
+
+            Learning
+          </a>
+
+          <!-- HAMBURGER -->
+
+          <button
+            class="navbar-toggler bg-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- MENU -->
+
+          <div class="collapse navbar-collapse" id="navMenu">
+            <!-- CENTER LINKS -->
+
+            <ul class="navbar-nav nav-center mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="aillearing.html"> Home </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" href="totureal.html"> Tutorials </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="get.html"> Get Certified </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="refrence.html"> Reference </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html"> Contact Us </a>
+              </li>
+            </ul>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="nav-right">
+              <span class="lang">
+                <i class="fa-solid fa-globe"></i>
+
+                EN
+              </span>
+
+              <button class="nav-btn">
+                <a href="logiandsingup.html">Login</a>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <section class="premium-search-section">
+        <!-- BLUR EFFECT -->
+
+        <div class="blur-circle blur-one"></div>
+        <div class="blur-circle blur-two"></div>
+
+        <div class="container">
+          <!-- TOP -->
+
+          <div class="premium-top text-center">
+            <span class="mini-badge"> 🚀 Learn Modern Development </span>
+
+            <h1>
+              Explore
+              <span>1200+ Free Tutorials</span>
+            </h1>
+
+            <p>
+              Learn programming, web development, AI, data science, and modern
+              technologies with beginner to advanced roadmaps.
+            </p>
+          </div>
+
+          <!-- STATS -->
+
+          <div class="premium-stats">
+            <div class="premium-stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+
+              <div>
+                <h2>1,200+</h2>
+
+                <span>Tutorials</span>
+              </div>
+            </div>
+
+            <div class="premium-stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+
+              <div>
+                <h2>28</h2>
+
+                <span>Categories</span>
+              </div>
+            </div>
+
+            <div class="premium-stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+
+              <div>
+                <h2>100%</h2>
+
+                <span>Free Access</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEARCH BOX -->
+
+          <div class="advanced-search-box">
+            <div class="search-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <input
+              type="text"
+              placeholder="Search tutorials, e.g. HTML, React, AI, Python, Machine Learning..."
+            />
+
+            <button class="search-btn">
+              Explore
+
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- TAGS -->
+
+          <div class="popular-tags">
+            <span>Popular:</span>
+
+            <a href="#">HTML</a>
+
+            <a href="#">CSS</a>
+
+            <a href="#">JavaScript</a>
+
+            <a href="#">React</a>
+
+            <a href="#">PHP</a>
+
+            <a href="#">Python</a>
+
+            <a href="#">AI</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRENDING TUTORIALS -->
+
+      <section class="trending-section">
+        <div class="container-fluid">
+          <!-- TITLE -->
+
+          <div class="trending-header">
+            <h2>Trending Tutorials</h2>
+
+            <span class="popular-badge"> POPULAR </span>
+
+            <div class="header-line"></div>
+          </div>
+
+          <!-- CARDS -->
+
+          <div class="row g-4">
+            <!-- CARD 1 -->
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <div class="trend-card active-card" onclick="openSidebar()">
+                <span class="card-number">#1</span>
+
+                <div class="card-content">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"
+                  />
+
+                  <div>
+                    <h3>C++</h3>
+
+                    <p>Programming</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <div class="trend-card">
+                <span class="card-number">#2</span>
+
+                <div class="card-content">
+                   <img
+                    src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+                  />
+
+                  <div>
+                    <h3>Javascript</h3>
+
+                    <p>Programming</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <div class="trend-card">
+                <span class="card-number">#5</span>
+
+                <div class="card-content">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png"
+                  />
+
+                  <div>
+                    <h3>SQL</h3>
+
+                    <p>Databases</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 6 -->
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <div class="trend-card">
+                <span class="card-number">#6</span>
+
+                <div class="card-content">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png"
+                  />
+
+                  <div>
+                    <h3>ReactJS</h3>
+
+                    <p>Web Dev</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 7 -->
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <div class="trend-card">
+                <span class="card-number">#7</span>
+
+                <div class="card-content">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/919/919842.png"
+                  />
+
+                  <div>
+                    <h3>Spring Boot</h3>
+
+                    <p>Java</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 8 -->
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <div class="trend-card">
+                <span class="card-number">#8</span>
+
+                <div class="card-content">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
+                  />
+
+                  <div>
+                    <h3>HTML</h3>
+
+                    <p>Web Dev</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 9 -->
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <div class="trend-card">
+                <span class="card-number">#9</span>
+
+                <div class="card-content">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
+                  />
+
+                  <div>
+                    <h3>CSS</h3>
+
+                    <p>Web Dev</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEARNING PATHS -->
+
+      <section class="learning-path-section">
+        <div class="container-fluid">
+          <!-- HEADER -->
+
+          <div class="path-header">
+            <h2>Learning Paths</h2>
+
+            <span class="guided-badge"> GUIDED </span>
+
+            <div class="path-line"></div>
+          </div>
+
+          <!-- ROW -->
+
+          <div class="row g-4">
+            <!-- CARD 1 -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="path-card green-border">
+                <div class="path-top">
+                  <h3>Full-Stack Web Developer</h3>
+
+                  <span class="level beginner"> Beginner </span>
+                </div>
+
+                <p>Build complete web apps from front-end to back-end.</p>
+
+                <div class="path-tags">
+                  <span>1 HTML</span>
+                  <span>2 CSS</span>
+                  <span>3 JavaScript</span>
+                  <span>4 React</span>
+                  <span>5 Node.js</span>
+                  <span>6 MongoDB</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="path-card orange-border">
+                <div class="path-top">
+                  <h3>Data Science & ML</h3>
+
+                  <span class="level intermediate"> Intermediate </span>
+                </div>
+
+                <p>Master data analysis, visualization and machine learning.</p>
+
+                <div class="path-tags">
+                  <span>1 Python</span>
+                  <span>2 NumPy</span>
+                  <span>3 Pandas</span>
+                  <span>4 Matplotlib</span>
+                  <span>5 Scikit</span>
+                  <span>6 TensorFlow</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="path-card blue-border">
+                <div class="path-top">
+                  <h3>DevOps Engineer</h3>
+
+                  <span class="level intermediate"> Intermediate </span>
+                </div>
+
+                <p>Learn CI/CD, containers, orchestration and cloud.</p>
+
+                <div class="path-tags">
+                  <span>1 Linux</span>
+                  <span>2 Git</span>
+                  <span>3 Docker</span>
+                  <span>4 K8s</span>
+                  <span>5 Jenkins</span>
+                  <span>6 AWS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="path-card yellow-border">
+                <div class="path-top">
+                  <h3>Mobile App Developer</h3>
+
+                  <span class="level beginner"> Beginner </span>
+                </div>
+
+                <p>Build cross-platform mobile apps with Flutter & more.</p>
+
+                <div class="path-tags">
+                  <span>1 Dart</span>
+                  <span>2 Flutter</span>
+                  <span>3 Android</span>
+                  <span>4 Kotlin</span>
+                  <span>5 Firebase</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 5 -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="path-card pink-border">
+                <div class="path-top">
+                  <h3>AI & Generative AI</h3>
+
+                  <span class="level advanced"> Advanced </span>
+                </div>
+
+                <p>Explore deep learning, LLMs and generative AI tools.</p>
+
+                <div class="path-tags">
+                  <span>1 Python</span>
+                  <span>2 ML</span>
+                  <span>3 PyTorch</span>
+                  <span>4 Gen AI</span>
+                  <span>5 Prompts</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 6 -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="path-card red-border">
+                <div class="path-top">
+                  <h3>Cybersecurity Analyst</h3>
+
+                  <span class="level intermediate"> Intermediate </span>
+                </div>
+
+                <p>Security fundamentals, ethical hacking & pen testing.</p>
+
+                <div class="path-tags">
+                  <span>1 Security</span>
+                  <span>2 Network</span>
+                  <span>3 Hacking</span>
+                  <span>4 Kali</span>
+                  <span>5 Pen Test</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 7 -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="path-card cyan-border">
+                <div class="path-top">
+                  <h3>Cloud & AWS Engineer</h3>
+
+                  <span class="level intermediate"> Intermediate </span>
+                </div>
+
+                <p>Cloud architecture, serverless and AWS services.</p>
+
+                <div class="path-tags">
+                  <span>1 Cloud</span>
+                  <span>2 AWS</span>
+                  <span>3 Lambda</span>
+                  <span>4 Docker</span>
+                  <span>5 Azure</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 8 -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="path-card brown-border">
+                <div class="path-top">
+                  <h3>Java Backend Developer</h3>
+
+                  <span class="level beginner"> Beginner </span>
+                </div>
+
+                <p>Enterprise Java with Spring, Hibernate and microservices.</p>
+
+                <div class="path-tags">
+                  <span>1 Java</span>
+                  <span>2 JDBC</span>
+                  <span>3 Hibernate</span>
+                  <span>4 Spring</span>
+                  <span>5 Boot</span>
+                  <span>6 Maven</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOCIAL MEDIA -->
+
+      <div class="social-bar">
+        <a href="#" class="social-item">
+          <i class="fa-brands fa-facebook-f"></i>
+          <span> Facebook</span>
+        </a>
+
+        <a href="#" class="social-item">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+
+        <a href="#" class="social-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <a href="#" class="social-item">
+          <i class="fa-brands fa-youtube"></i>
+          <span>YouTube</span>
+        </a>
+
+        <a href="#" class="social-item">
+          <i class="fa-brands fa-linkedin-in"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </section>
+    <!-- FOOTER -->
+
+    <footer class="glass-footer">
+      <div class="container">
+        <div class="row gy-5">
+          <!-- LEFT -->
+
+          <div class="col-lg-4">
+            <div class="footer-box">
+              <h1 class="footer-logo">Alibros Learning Institute</h1>
+
+              <p class="footer-text">
+                Empowering the next generation of developers with practical,
+                project-based learning since 2025.
+              </p>
+
+              <!-- SOCIAL -->
+
+              <div class="social-icons">
+                <a href="#">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-solid fa-layer-group"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+
+          <div class="col-lg-2">
+            <div class="footer-box">
+              <h2 class="footer-title">QUICK LINKS</h2>
+
+              <ul class="footer-links">
+                <li><a class="activ" href="aillearing.html">Home</a></li>
+
+                <li><a href="totureal.html">Tutorial</a></li>
+
+                <li><a href="#">Courses</a></li>
+
+                <li><a href="#">Get Certified</a></li>
+
+                <li><a href="#">Reference</a></li>
+
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- COURSES -->
+
+          <div class="col-lg-3">
+            <div class="footer-box">
+              <h2 class="footer-title">COURSES</h2>
+
+              <ul class="footer-links">
+                <li><a href="#">C Programming</a></li>
+
+                <li><a href="#">C++ Programming</a></li>
+
+                <li><a href="#">PHP Programming</a></li>
+
+                <li><a href="#">Laravel Framework</a></li>
+
+                <li><a href="#">CodeIgniter</a></li>
+
+                <li><a href="#">MySQL Database</a></li>
+
+                <li><a href="#">Backend Developer</a></li>
+
+                <li><a href="#">Full Stack Developer</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CONTACT -->
+
+          <div class="col-lg-3">
+            <div class="footer-box">
+              <h2 class="footer-title">CONTACT</h2>
+
+              <div class="contact-info">
+                <p>
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  Banke Bihari Market, Ormanjhi Ranchi, Jharkhand
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-phone"></i>
+
+                  +91 8340265398
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-envelope"></i>
+
+                  support@alilearning.org
+                </p>
+
+                <p>
+                  <i class="fa-regular fa-clock"></i>
+
+                  Mon - Sat : 10AM - 6PM
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function toggleMenu() {
+        let menu = document.getElementById("courseMenu");
+
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "block";
+        }
+      }
+    </script>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          navLinks.forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          this.classList.add("active");
+        });
+      });
+    </script>
+
+    <script>
+      function openSidebar() {
+        document.getElementById("pythonSidebar").classList.add("active");
+      }
+
+      function closeSidebar() {
+        document.getElementById("pythonSidebar").classList.remove("active");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Learning Dashboard</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #02081f;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* NAVBAR */
+
+      .navbar-custom {
+        background: #091126;
+        border: 1px solid #2754ff;
+        border-radius: 50px;
+        padding: 15px 30px;
+        margin: 20px;
+      }
+
+      .logo {
+        font-size: 40px;
+        width: 60px;
+        height: 60px;
+        background: white;
+        color: #4a6bff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+      }
+
+      .login-btn {
+        background: white;
+        color: #3158ff;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 40px;
+        font-weight: bold;
+      }
+
+      /* SIDEBAR */
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+
+        width: 280px;
+        height: 100%;
+
+        background: #0b1734;
+
+        padding: 30px;
+
+        transition: 0.4s;
+
+        z-index: 999;
+      }
+
+      .sidebar.active {
+        left: 0;
+      }
+
+      .sidebar h2 {
+        margin-bottom: 20px;
+      }
+
+      .sidebar a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      .sidebar a:hover {
+        background: #264dff;
+      }
+
+      .close-btn {
+        font-size: 30px;
+        cursor: pointer;
+        float: right;
+      }
+
+      /* CARDS */
+
+      .heading {
+        font-size: 70px;
+        font-weight: bold;
+        margin: 60px 40px;
+      }
+
+      .card-box {
+        background: #101b38;
+
+        border-radius: 25px;
+
+        padding: 25px;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+
+        height: 180px;
+      }
+
+      .card-box:hover {
+        transform: translateY(-8px);
+
+        border: 2px solid #3d5dff;
+      }
+
+      .card-title {
+        font-size: 35px;
+        font-weight: bold;
+      }
+
+      .card-sub {
+        color: #cfcfcf;
+      }
+
+      .icon {
+        font-size: 60px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+
+    <div class="sidebar" id="sidebar">
+      <span class="close-btn" onclick="closeSidebar()"> × </span>
+
+      <h2>Python Menu</h2>
+
+      <a href="#">Python Notes</a>
+
+      <a href="#">Tutorial</a>
+
+      <a href="#">Projects</a>
+
+      <a href="#">Questions</a>
+
+      <a href="#">Certificates</a>
+    </div>
+
+    <!-- NAVBAR -->
+
+    <nav
+      class="navbar-custom d-flex justify-content-between align-items-center"
+    >
+      <div class="d-flex align-items-center">
+        <div class="logo">Ali</div>
+
+        <h1 class="ms-3">Learning</h1>
+      </div>
+
+      <div class="nav-links d-none d-lg-block">
+        <a href="#">Home</a>
+
+        <a href="#">Tutorial</a>
+
+        <a href="#">Reference</a>
+
+        <a href="#">Contact</a>
+      </div>
+
+      <button class="login-btn">Login</button>
+    </nav>
+
+    <h1 class="heading">Trending Tutorials</h1>
+
+    <div class="container">
+      <div class="row g-4">
+        <!-- PYTHON -->
+
+        <div class="col-lg-4">
+          <div class="card-box" onclick="openSidebar()">
+            <div class="icon">🐍</div>
+
+            <div class="card-title">Python</div>
+
+            <div class="card-sub">Programming</div>
+          </div>
+        </div>
+
+        <!-- JAVA -->
+
+        <div class="col-lg-4">
+          <div class="card-box">
+            <div class="icon">☕</div>
+
+            <div class="card-title">Java</div>
+
+            <div class="card-sub">Programming</div>
+          </div>
+        </div>
+
+        <!-- JS -->
+
+        <div class="col-lg-4">
+          <div class="card-box">
+            <div class="icon">🟨</div>
+
+            <div class="card-title">JavaScript</div>
+
+            <div class="card-sub">Web Dev</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openSidebar() {
+        document.getElementById("sidebar").classList.add("active");
+      }
+
+      function closeSidebar() {
+        document.getElementById("sidebar").classList.remove("active");
+      }
+    </script>
+  </body>
+</html>
