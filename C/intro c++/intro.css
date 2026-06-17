@@ -6,22 +6,32 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+
   background: #020617;
+
   position: relative;
+
   overflow-x: hidden;
+
+  /* REMOVE */
+
   padding-top: 110px;
 }
-
 .hero-section {
-  min-height: 100vh;
-  background: #020617;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 100px;
-  padding-top: 20px;
-}
+  min-height: auto;
 
+  background: #020617;
+
+  color: white;
+
+  position: relative;
+
+  overflow: visible;
+
+  padding-bottom: 0;
+
+  padding-top: 0;
+}
 /* NAVBAR */
 
 .custom-nav {
@@ -333,32 +343,45 @@ a {
   background: #3d5dff;
 }
 
-/* CONTENT */
+/* RIGHT CONTENT */
 
 .tutorial-content {
-  margin-left: 360px;
+  margin-left: 320px;
 
-  padding: 20px 60px 60px;
+  width: calc(100% - 320px);
 
-  width: calc(100% - 360px);
+  padding: 110px 50px 50px;
 
   color: white;
 
-  position: absolute;
+  min-height: 100vh;
+}
+/* TITLE */
 
-  top: 110px;
+.top-row {
+  display: flex;
 
-  left: 0;
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 50px;
 }
 
-.tutorial-content h1 {
-  font-size: 65px;
+.top-row h1 {
+  font-size: 60px;
 
-  margin-top: 100px;
+  font-weight: 300;
 
-  margin-bottom: 40px;
+  color: white;
+}
 
-  margin-top: 0;
+.save-btn {
+  font-size: 34px;
+
+  color: #3a4ac5;
+
+  cursor: pointer;
 }
 
 /* BUTTON */
@@ -368,253 +391,116 @@ a {
 
   justify-content: space-between;
 
-  margin-bottom: 50px;
-}
-
-.back-btn {
-  padding: 18px 40px;
-
-  border: none;
-
-  border-radius: 18px;
-
-  font-size: 20px;
-}
-
-.next-btn {
-  padding: 18px 40px;
-
-  background: #3538de;
-
-  border: none;
-
-  color: white;
-
-  border-radius: 18px;
-
-  font-size: 20px;
-}
-
-/* CARD */
-
-.content-card {
-  background: linear-gradient(90deg, #111827, #25304b);
-
-  padding: 40px;
-
-  border-radius: 35px;
-
-  border: 1px solid #3158ff;
-}
-
-.content-card h2 {
-  font-size: 40px;
-
-  margin-bottom: 30px;
-}
-
-.content-card p {
-  font-size: 28px;
-
-  color: #cbd5e1;
-
-  margin-bottom: 30px;
-}
-
-/* MOBILE */
-
-@media (max-width: 900px) {
-  .tutorial-sidebar {
-    position: relative;
-
-    top: 0;
-
-    width: 100%;
-
-    height: auto;
-  }
-
-  .tutorial-content {
-    margin-left: 0;
-
-    padding: 30px;
-  }
-
-  .tutorial-content h1 {
-    font-size: 55px;
-  }
-
-  .content-card h2 {
-    font-size: 40px;
-  }
-}
-
-/* example card */
-
-/* EXAMPLE */
-
-.example-card {
-  padding: 50px;
-
-  border-radius: 35px;
-
-  background: linear-gradient(90deg, #111827, #24304b);
-
-  border: 1px solid #3158ff;
-
   margin-bottom: 60px;
 }
 
-.example-card h2 {
-  font-size: 60px;
+.back-btn {
+  padding: 18px 35px;
 
-  margin-bottom: 25px;
-}
-
-.example-card p {
-  font-size: 24px;
-
-  color: #d5def0;
-}
-
-/* CODE */
-
-.code-box {
-  background: #071225;
-
-  padding: 35px;
-
-  border-left: 7px solid #58b567;
-
-  border-radius: 15px;
-
-  margin-top: 30px;
-
-  margin-bottom: 30px;
-}
-
-.code-box pre {
-  color: white;
-
-  font-size: 24px;
-
-  line-height: 2;
-}
-
-.try-btn {
-  padding: 18px 40px;
-
-  background: #58b567;
-
-  color: white;
+  background: white;
 
   border: none;
 
-  border-radius: 15px;
+  border-radius: 18px;
 
   font-size: 22px;
 }
 
-.note-card {
-  padding: 50px;
+.next-btn {
+  padding: 18px 35px;
 
-  border-radius: 30px;
+  background: #2e4cd1;
 
-  background: #2b3418;
+  color: white;
+
+  
+
+  border: none;
+
+  border-radius: 18px;
+
+  font-size: 22px;
 }
 
-.note-card p {
-  font-size: 24px;
+/* LINE */
 
-  color: #f1f1d0;
+.intro-page hr {
+  border: 3px solid #1a419c;
+
+  margin: 50px 0;
 }
 
-/* MOBILE */
+/* BODY */
+
+.intro-body h2 {
+  font-size: 60px;
+
+  font-weight: 400;
+
+  margin-bottom: 40px;
+
+  color: white;
+}
+
+.intro-body p {
+  font-size: 18px;
+
+  line-height: 2;
+
+  color: #d2dced;
+
+  margin-bottom: 30px;
+}
+
+.intro-body a {
+  color: #6f8fff;
+}
+
+/* BUTTON HOVER */
+
+.back-btn:hover {
+  transform: translateY(-3px);
+}
+
+.next-btn:hover {
+  background: #1242ab;
+  background: linear-gradient(90deg, #2e4cd1, #031a4c);
+  transform: translateY(-3px);
+  transition: 0.3s;
+}
+
+/* MOBILE*/
+ 
 
 @media (max-width: 900px) {
-  .tutorial-sidebar {
-    position: relative;
-
-    top: 0;
-
-    width: 100%;
-
-    height: auto;
-  }
-
-  .tutorial-content {
-    margin-left: 0;
-
-    width: 100%;
-
-    padding: 20px;
-  }
-
-  .tutorial-content h1 {
-    font-size: 52px;
-  }
-
-  .content-card h2 {
-    font-size: 42px;
-  }
-}
-/* MOBILE */
-
-@media (max-width: 900px) {
-  /* SIDEBAR HIDE */
-
   .tutorial-sidebar {
     display: none;
   }
 
-  /* CONTENT */
-
   .tutorial-content {
     margin-left: 0;
 
     width: 100%;
 
-    padding: 20px;
+    padding: 25px;
   }
 
-  /* TITLE */
-
-  .tutorial-content h1 {
+  .top-row h1 {
     font-size: 50px;
   }
 
-  /* CARD */
-
-  .content-card {
-    padding: 30px;
+  .intro-body h2 {
+    font-size: 38px;
   }
 
-  .content-card h2 {
-    font-size: 40px;
-  }
-
-  .content-card p {
-    font-size: 20px;
-  }
-
-  /* BUTTON */
-
-  .btn-row {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 15px;
+  .intro-body p {
+    font-size: 18px;
   }
 
   .back-btn,
   .next-btn {
-    width: auto;
-
-    padding: 12px 25px;
+    padding: 12px 24px;
 
     font-size: 18px;
-
-    border-radius: 12px;
   }
 }
