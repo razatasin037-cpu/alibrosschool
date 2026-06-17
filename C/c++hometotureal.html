@@ -1,172 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>c++ Tutorials</title>
+    <title>C++ Tutorials</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="c++hometotereal.css" />
-  </head>
-  <body>
-    <section class="hero-section">
-      <!-- NAVBAR -->
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom-nav">
-          <!-- LOGO -->
-
-          <a class="navbar-brand logo" href="#">
-            <span class="logo-circle">Ali</span>
-
-            Learning
-          </a>
-
-          <!-- HAMBURGER -->
-
-          <button
-            class="navbar-toggler bg-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navMenu"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- MENU -->
-
-          <div class="collapse navbar-collapse" id="navMenu">
-            <!-- CENTER LINKS -->
-
-            <ul class="navbar-nav nav-center mx-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="./c++hometotureal.html"> Home </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link active" href="/totureal/totureal.html"> Tutorials </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/getCertified/get.html"> Get Certified </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/totureal/totureal.html"> Reference </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/contact/contact.html"> Contact Us </a>
-              </li>
-            </ul>
-
-            <!-- RIGHT SIDE -->
-
-            <div class="nav-right">
-              <span class="lang">
-                <i class="fa-solid fa-globe"></i>
-
-                EN
-              </span>
-
-              <button class="nav-btn">
-                <a href="logiandsingup.html">Login</a>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </section>
-
-    <!-- totureal -->
-    <div class="tutorial-layout">
-      <!-- SIDEBAR -->
-
-      <div class="tutorial-sidebar">
-        <h5>C++ TUTORIAL</h5>
-
-        <a class="active-side" href="#">C++ HOME</a>
-
-        <a href="#">C++ Intro</a>
-
-        <a href="#">C++ Get Started</a>
-
-        <a href="#">C++ Syntax</a>
-
-        <a href="#">C++ Output</a>
-
-        <a href="#">C++ Comments</a>
-
-        <a href="#">C++ Variables</a>
-
-        <a href="#">C++ User Input</a>
-
-        <a href="#">C++ Data Types</a>
-
-        <a href="#">C++ Operators</a>
-      </div>
-
-      <!-- CONTENT -->
-
-      <div class="tutorial-content">
-        <h1>C++ Tutorial</h1>
-
-        <div class="btn-row">
-          <button class="back-btn">❮ Home</button>
-
-          <button class="next-btn">Next ❯</button>
-        </div>
-
-        <div class="content-card">
-          <h2>Learn C++</h2>
-
-          <p>C++ is a popular programming language.</p>
-
-          <p>Used for software and games.</p>
-        </div>
-      </div>
-    </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-
-    <script>
-      function toggleMenu() {
-        let menu = document.getElementById("courseMenu");
-
-        if (menu.style.display === "block") {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "block";
-        }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/insert.js"></script>
+    <style>
+      /* Custom styles for components that require pseudo-classes or fine tuning */
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
       }
-    </script>
+      /* Custom Scrollbar for Sidebar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden">
 
-    <script>
-      const navLinks = document.querySelectorAll(".nav-link");
+  <nav id="navbar"> </nav>
 
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function () {
-          navLinks.forEach((item) => {
-            item.classList.remove("active");
-          });
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      
+      <aside class="hidden md:block fixed top-[110px] left-0 w-[320px] h-[calc(100vh-110px)] overflow-y-auto custom-scrollbar bg-[#020b24] p-5 border-r border-[#264dff] z-[50]">
+        <h5 class="text-[#7f8db4] tracking-[5px] text-[20px] font-bold mb-5 uppercase">C++ Tutorial</h5>
+        
+        <nav class="flex flex-col gap-3">
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] bg-[#3d5dff] transition duration-300" href="#">C++ HOME</a>
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300" href="#">C++ Intro</a>
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300" href="#">C++ Get Started</a>
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300" href="#">C++ Syntax</a>
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300" href="#">C++ Output</a>
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300" href="#">C++ Comments</a>
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300" href="#">C++ Variables</a>
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300" href="#">C++ User Input</a>
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300" href="#">C++ Data Types</a>
+          <a class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300" href="#">C++ Operators</a>
+        </nav>
+      </aside>
 
-          this.classList.add("active");
-        });
-      });
-    </script>
+      <section class="w-full md:w-[calc(100%-320px)] md:ml-[320px] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300">
+        
+        <h1 class="text-[50px] sm:text-[52px] md:text-[65px] font-bold text-white mb-10 mt-0">C++ Tutorial</h1>
+
+        <div class="flex justify-between items-center gap-[15px] mb-[50px]">
+          <button class="py-3 px-6 md:py-[18px] md:px-[40px] border-none rounded-[12px] md:rounded-[18px] bg-white text-black text-[18px] md:text-[20px] font-bold shadow-md cursor-pointer active:scale-95 transition">❮ Home</button>
+          <button class="py-3 px-6 md:py-[18px] md:px-[40px] border-none rounded-[12px] md:rounded-[18px] bg-[#3538de] text-white text-[18px] md:text-[20px] font-bold shadow-md cursor-pointer active:scale-95 transition">Next ❯</button>
+        </div>
+
+        <div class="bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl">
+          <h2 class="text-[40px] font-bold mb-[30px]">Learn C++</h2>
+          <p class="text-[20px] md:text-[28px] text-[#cbd5e1] mb-[30px] leading-relaxed">C++ is a popular programming language.</p>
+          <p class="text-[20px] md:text-[28px] text-[#cbd5e1] mb-0 leading-relaxed">Used for software and games.</p>
+        </div>
+
+      </section>
+    </main>
+
+  <!--Footer-->
+  <footer id="footer"></footer>
   </body>
 </html>
