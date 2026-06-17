@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali Learning Navbar</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="/js/insert.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-950 overflow-x-hidden pt-28">
+
+  <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-[calc(100%-30px)] max-w-[1400px] z-[9999] bg-[rgba(5,8,22,0.9)] backdrop-blur-lg border border-[#2f4cff] rounded-[60px] px-6 py-4 mt-2 shadow-[0_0_15px_rgba(29,78,216,0.5)]">
+    
+    <div class="flex items-center justify-between w-full relative">
+
+      <a href="#" class="flex items-center text-white text-3xl font-extrabold hover:text-[#4d6fff] transition shrink-0">
+        <span class="w-11 h-11 bg-white text-[#4d6fff] rounded-full flex items-center justify-center mr-2 text-lg font-bold">
+          Ali
+        </span>
+        Learning
+      </a>
+
+      <div class="hidden lg:flex items-center  gap-10">
+        <ul class="flex items-center mr-[200px] gap-8 bg-white/5 px-5 py-3 rounded-full">
+          <li><a href="/aillearing.html" class="text-white hover:text-[#4d6fff] transition text-md">Home</a></li>
+          <li><a href="/totureal/totureal.html" class="text-[#4d6fff] border-b-2 border-[#4d6fff] pb-1 text-md font-medium">Tutorials</a></li>
+          <li><a href="/getCertified/get.html" class="text-white hover:text-[#4d6fff] transition text-md">Get Certified</a></li>
+          <li><a href="/refrence/refrence.html" class="text-white hover:text-[#4d6fff] transition text-md">Reference</a></li>
+          <li><a href="/contact/contact.html" class="text-white hover:text-[#4d6fff] transition text-md">Contact Us</a></li>
+        </ul>
+        
+        <div class="hidden lg:flex items-center gap-5">
+          <span class="text-white flex items-center gap-2 text-sm font-medium cursor-pointer hover:text-[#4d6fff] transition">
+            <i class="fa-solid fa-globe"></i> EN
+          </span>
+          <a href="logiandsingup.html" class="bg-white text-black px-6 py-2.5 rounded-full font-bold text-sm hover:-translate-y-0.5 hover:scale-105 transition duration-300">
+            Login
+          </a>
+        </div>
+      </div>
+
+      <button id="menuBtn" class="lg:hidden bg-white w-11 h-11 rounded-full flex items-center justify-center transition active:scale-90 shadow-md">
+        <i id="menuIcon" class="fa-solid fa-bars text-black text-lg"></i>
+      </button>
+
+    </div>
+
+    <div id="mobileMenu" class="hidden lg:hidden mt-4 origin-top transition-all duration-300">
+      <div class="bg-[rgba(10,15,40,0.95)] border border-white/10 rounded-3xl p-5 space-y-4 text-center backdrop-blur-xl shadow-2xl">
+        
+        <a href="/aillearing.html" class="block text-white hover:text-[#4d6fff] py-2 text-lg transition border-b border-white/5">Home</a>
+        <a href="/totureal/totureal.html" class="block text-[#4d6fff] font-bold py-2 text-lg border-b border-white/5">Tutorials</a>
+        <a href="/getCertified/get.html" class="block text-white hover:text-[#4d6fff] py-2 text-lg transition border-b border-white/5">Get Certified</a>
+        <a href="/refrence/refrence.html" class="block text-white hover:text-[#4d6fff] py-2 text-lg transition border-b border-white/5">Reference</a>
+        <a href="/contact/contact.html" class="block text-white hover:text-[#4d6fff] py-2 text-lg transition">Contact Us</a>
+
+        <div class="pt-4 border-t border-white/10 flex flex-col items-center gap-4">
+          <span class="text-white flex justify-center items-center gap-2 text-md">
+            <i class="fa-solid fa-globe"></i> EN
+          </span>
+          <a href="logiandsingup.html" class="w-full max-w-[250px] bg-white text-black py-3 rounded-full font-bold shadow-lg block text-center active:scale-95 transition">
+            Login
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </nav>
+ 
+
+</body>
+</html>
