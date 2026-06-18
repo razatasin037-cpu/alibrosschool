@@ -45,15 +45,27 @@ function setupMobileMenu() {
     });
   }
 }
-
-// Active Links Setup
 function setupActiveLinks() {
   const navLinks = document.querySelectorAll(".nav-link");
+  
+  // Active hone par jo Tailwind classes lagani hain
+  const activeClasses = ["border-b-2", "border-[#4d6fff]", "text-white"]; 
+
   if (navLinks.length > 0) {
     navLinks.forEach(link => {
-      link.addEventListener("click", function() {
-        navLinks.forEach(item => item.classList.remove("active"));
+      link.addEventListener("click", function(e) {
+        // Default anchor behavior ko rokne ke liye (agar same page par hain)
+        // e.preventDefault(); 
+
+        // Pehle sabhi links se active classes hatao
+        navLinks.forEach(item => {
+          item.classList.remove("active");
+          item.classList.remove(...activeClasses);
+        });
+
+        // Current link par active classes add karo
         this.classList.add("active");
+        this.classList.add(...activeClasses);
       });
     });
   }
