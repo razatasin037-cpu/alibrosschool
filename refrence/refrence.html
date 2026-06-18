@@ -1,409 +1,115 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ali Reference</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="refrence.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Skills & References</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="../js/insert.js"></script>
   </head>
-  <body>
-    <section class="hero-section">
-      <!-- NAVBAR -->
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom-nav">
-          <!-- LOGO -->
+  <body class="bg-[#060b13] text-white font-sans antialiased">
+    <nav id="navbar"></nav>
 
-          <a class="navbar-brand logo" href="#">
-            <span class="logo-circle">Ali</span>
+    <hr class="border-blue-950/40 max-w-7xl mx-auto my-4" />
 
-            Learning
-          </a>
+    <div
+      class="min-h-screen flex flex-col items-center justify-center p-6 md:p-12"
+    >
+      <div class="text-center max-w-2xl mb-16 space-y-4">
+        <h2
+          class="text-5xl md:text-7xl font-extrabold tracking-wide text-[#5b7bfb] drop-shadow-[0_0_25px_rgba(91,123,251,0.6)]"
+        >
+          References
+        </h2>
+        <p class="text-gray-400 text-lg md:text-xl font-normal leading-relaxed">
+          All the resources, links, and guides you need for learning and
+          development.
+        </p>
+      </div>
 
-          <!-- HAMBURGER -->
-
-          <button
-            class="navbar-toggler bg-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navMenu"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- MENU -->
-
-          <div class="collapse navbar-collapse" id="navMenu">
-            <!-- CENTER LINKS -->
-
-            <ul class="navbar-nav nav-center mx-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/aillearing.html"> Home </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/totureal/totureal.html"> Tutorials </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/getCertified//get.html"> Get Certified </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link active" href="/refrence/refrence.html"> Reference </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/contact/contact.html"> Contact Us </a>
-              </li>
-            </ul>
-
-            <!-- RIGHT SIDE -->
-
-            <div class="nav-right">
-              <span class="lang">
-                <i class="fa-solid fa-globe"></i>
-
-                EN
-              </span>
-
-              <button class="nav-btn"><a href="/login/logiandsingup.html">Login</a></button>
-            </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl"
+      >
+        <div
+          class="bg-[#0b1021] border border-blue-950/40 rounded-3xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:border-blue-800/60 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+        >
+          <div class="space-y-4">
+            <h3 class="text-xl font-semibold text-[#4f46e5]">HTML Reference</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Complete guide to HTML tags, attributes, and best practices.
+            </p>
           </div>
-        </nav>
-      </div>
-    </section>
-<!-- REFERENCE PAGE -->
-<section class="reference-section">
+          <div class="pt-6">
+            <button
+              class="bg-[#4f46e5] hover:bg-[#4338ca] text-white font-medium px-6 py-2.5 rounded-full text-sm transition-all duration-200 cursor-pointer"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
 
-  <div class="container ">
+        <div
+          class="bg-[#0b1021] border border-blue-950/40 rounded-3xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:border-blue-800/60 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+        >
+          <div class="space-y-4">
+            <h3 class="text-xl font-semibold text-[#4f46e5]">CSS Reference</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              CSS properties, selectors, and tips to style your webpages
+              efficiently.
+            </p>
+          </div>
+          <div class="pt-6">
+            <button
+              class="bg-[#4f46e5] hover:bg-[#4338ca] text-white font-medium px-6 py-2.5 rounded-full text-sm transition-all duration-200 cursor-pointer"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
 
-    <!-- HEADER -->
-    <div class="reference-header text-center">
-      <h1>References</h1>
-      <p>All the resources, links, and guides you need for learning and development.</p>
-    </div>
+        <div
+          class="bg-[#0b1021] border border-blue-950/40 rounded-3xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:border-blue-800/60 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+        >
+          <div class="space-y-4">
+            <h3 class="text-xl font-semibold text-[#4f46e5]">
+              JavaScript Reference
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              All JavaScript functions, DOM manipulation, events, and ES6
+              features.
+            </p>
+          </div>
+          <div class="pt-6">
+            <button
+              class="bg-[#4f46e5] hover:bg-[#4338ca] text-white font-medium px-6 py-2.5 rounded-full text-sm transition-all duration-200 cursor-pointer"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
 
-    <!-- REFERENCE LIST -->
-    <div class="reference-list">
-
-      <div class="reference-card">
-        <h2>HTML Reference</h2>
-        <p>Complete guide to HTML tags, attributes, and best practices.</p>
-        <a href="#">Learn More</a>
-      </div>
-
-      <div class="reference-card">
-        <h2>CSS Reference</h2>
-        <p>CSS properties, selectors, and tips to style your webpages efficiently.</p>
-        <a href="#">Learn More</a>
-      </div>
-
-      <div class="reference-card">
-        <h2>JavaScript Reference</h2>
-        <p>All JavaScript functions, DOM manipulation, events, and ES6 features.</p>
-        <a href="#">Learn More</a>
-      </div>
-
-      <div class="reference-card">
-        <h2>Python Reference</h2>
-        <p>Python syntax, functions, libraries, and best practices.</p>
-        <a href="#">Learn More</a>
-      </div>
-
-      <div class="reference-card">
-        <h2>SQL Reference</h2>
-        <p>All SQL queries, commands, and database operations explained clearly.</p>
-        <a href="#">Learn More</a>
-      </div>
-
-      <div class="reference-card">
-        <h2>React Reference</h2>
-        <p>React components, hooks, props, state management, and lifecycle methods.</p>
-        <a href="#">Learn More</a>
-      </div>
-
-       <div class="reference-card">
-        <h2>XML Reference</h2>
-        <p>XML syntax, elements, attributes, and parsing techniques.</p>
-        <a href="#">Learn More</a>
-      </div>
-       <div class="reference-card">
-        <h2>MS/Excel Reference</h2>
-        <p>MS/Excel functions, formulas, data analysis, and visualization techniques.</p>
-        <a href="#">Learn More</a>
+        <div
+          class="bg-[#0b1021] border border-blue-950/40 rounded-3xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:border-blue-800/60 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+        >
+          <div class="space-y-4">
+            <h3 class="text-xl font-semibold text-[#4f46e5]">
+              Python Reference
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Python syntax, functions, libraries, and best practices.
+            </p>
+          </div>
+          <div class="pt-6">
+            <button
+              class="bg-[#4f46e5] hover:bg-[#4338ca] text-white font-medium px-6 py-2.5 rounded-full text-sm transition-all duration-200 cursor-pointer"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-
-  </div>
-
-</section>
-    <!-- SOCIAL MEDIA -->
-
-  <div class="social-bar">
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-facebook-f"></i>
-      <span> Facebook</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-instagram"></i>
-      <span>Instagram</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-whatsapp"></i>
-      <span>WhatsApp</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-youtube"></i>
-      <span>YouTube</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-linkedin-in"></i>
-      <span>LinkedIn</span>
-    </a>
-
-  </div>
-
-</section>
-<!-- FOOTER -->
-
-<footer class="glass-footer">
-
-  <div class="container">
-
-    <div class="row gy-5">
-
-      <!-- LEFT -->
-
-      <div class="col-lg-4">
-
-        <div class="footer-box">
-
-          <h1 class="footer-logo">
-            Alibros Learning Institute
-          </h1>
-
-          <p class="footer-text">
-            Empowering the next generation of developers
-            with practical, project-based learning since 2025.
-          </p>
-
-          <!-- SOCIAL -->
-
-          <div class="social-icons">
-
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-solid fa-layer-group"></i>
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- QUICK LINKS -->
-
-      <div class="col-lg-2">
-
-        <div class="footer-box">
-
-          <h2 class="footer-title">
-            QUICK LINKS
-          </h2>
-
-          <ul class="footer-links">
-
-            <li><a class="activ" href="aillearing.html">Home</a></li>
-
-            <li><a href="totureal.html">Tutorial</a></li>
-
-            <li><a href="#">Courses</a></li>
-
-            <li><a href="#">Get Certified</a></li>
-
-            <li><a href="#">Reference</a></li>
-
-            <li><a href="#">Contact Us</a></li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-      <!-- COURSES -->
-
-      <div class="col-lg-3">
-
-        <div class="footer-box">
-
-          <h2 class="footer-title">
-            COURSES
-          </h2>
-
-          <ul class="footer-links">
-
-            <li><a href="#">C Programming</a></li>
-
-            <li><a  href="#">C++ Programming</a></li>
-
-            <li><a href="#">PHP Programming</a></li>
-
-            <li><a href="#">Laravel Framework</a></li>
-
-            <li><a href="#">CodeIgniter</a></li>
-
-            <li><a href="#">MySQL Database</a></li>
-
-            <li><a href="#">Backend Developer</a></li>
-
-            <li><a href="#">Full Stack Developer</a></li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-      <!-- CONTACT -->
-
-      <div class="col-lg-3">
-
-        <div class="footer-box">
-
-          <h2 class="footer-title">
-            CONTACT
-          </h2>
-
-          <div class="contact-info">
-
-            <p>
-              <i class="fa-solid fa-location-dot"></i>
-
-              Banke Bihari Market,
-              Ormanjhi Ranchi,
-              Jharkhand
-            </p>
-
-            <p>
-              <i class="fa-solid fa-phone"></i>
-
-              +91 8340265398
-            </p>
-
-            <p>
-              <i class="fa-solid fa-envelope"></i>
-
-              support@alilearning.org
-            </p>
-
-            <p>
-              <i class="fa-regular fa-clock"></i>
-
-              Mon - Sat :
-              10AM - 6PM
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-
-    <script>
-
-
-function toggleMenu(){
-
-    let menu =
-    document.getElementById("courseMenu");
-
-    if(menu.style.display === "block"){
-
-        menu.style.display = "none";
-
-    }
-
-    else{
-
-        menu.style.display = "block";
-
-    }
-
-}
-
-</script>
-
-      <script>
-
-const navLinks =
-document.querySelectorAll(".nav-link");
-
-navLinks.forEach(link => {
-
-  link.addEventListener("click", function(){
-
-    navLinks.forEach(item => {
-      item.classList.remove("active");
-    });
-
-    this.classList.add("active");
-
-  });
-
-});
-</script>
-  </body>
-</html>
-
+    <footer id="footer"></footer>
   </body>
 </html>

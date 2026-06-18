@@ -4,226 +4,234 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ali Learning</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="alileraing.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="/js/insert.js"></script>
   </head>
-  <body>
-    <section class="hero-section">
-   <!-- NAVBAR -->
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom-nav">
-          <!-- LOGO -->
+  <body class="bg-[#020617] text-white font-sans overflow-x-hidden relative">
+    <nav id="navbar"></nav>
 
-          <a class="navbar-brand logo" href="#">
-            <span class="logo-circle">Ali</span>
+    <!--Hero Section-->
+    <section
+      class="relative min-h-screen mt-20 lg:mt-20 bg-[#020617] text-white flex items-center pl-10 overflow-hidden"
+    >
+      <div
+        class="absolute w-[400px] h-[400px] bg-[#4d6fff] blur-[120px] opacity-50 -bottom-[150px] -left-[100px] pointer-events-none"
+      ></div>
+      <div
+        class="absolute w-[400px] h-[400px] bg-[#4d6fff] blur-[120px] opacity-50 -bottom-[150px] -right-[100px] pointer-events-none"
+      ></div>
 
-            Learning
-          </a>
-
-          <!-- HAMBURGER -->
-
-          <button
-            class="navbar-toggler bg-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navMenu"
+      <div class="container mx-auto relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
+          <div
+            class="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start"
           >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- MENU -->
-
-          <div class="collapse navbar-collapse" id="navMenu">
-            <!-- CENTER LINKS -->
-
-            <ul class="navbar-nav nav-center mx-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="aillearing.html"> Home </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/totureal/totureal.html"> Tutorials </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/getCertified//get.html"> Get Certified </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/refrence/refrence.html"> Reference </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/contact/contact.html"> Contact Us </a>
-              </li>
-            </ul>
-
-            
-
-            <!-- RIGHT SIDE -->
-             
-
-            <div class="nav-right">
-              <span class="lang">
-                <i class="fa-solid fa-globe"></i>
-
-                EN
-              </span>
-
-              <button class="nav-btn"><a href="/login/logiandsingup.html">Login</a></button>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <!-- HERO -->
-      <div class="container hero-content">
-        <div class="row align-items-center">
-          <!-- LEFT -->
-          <div class="col-lg-6">
-            <h1>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-[70px] font-extrabold leading-[1.1] tracking-tight"
+            >
               Learning <br />
-              <span>Full Stack Development</span> <br />
+              <span class="text-[#4d6fff]">Full Stack Development</span> <br />
               Every Day
             </h1>
 
-            <p>
+            <p
+              class="mt-6 text-[15px] sm:text-lg text-[#bcbcbc] leading-[1.7] max-w-[520px]"
+            >
               Master HTML, CSS, JavaScript, Bootstrap, React, PHP, MySQL and
               backend development with real-world projects and practical
               learning.
             </p>
 
-            <button class="hero-btn">
-             <a href="/totureal/totureal.html">Learn For Ali Learning</a>
-
-              <span>
-               <a href="/totureal/totureal.html"><i class="fa-solid fa-arrow-right" style="color: white;"></i></a>
+            <a
+              href="/totureal/totureal.html"
+              class="mt-[35px] inline-flex items-center gap-[15px] bg-white text-black font-bold text-[15px] sm:text-lg py-3.5 px-7 rounded-full transition duration-300 hover:scale-105 group"
+            >
+              <span>Learn For Ali Learning</span>
+              <span
+                class="w-10 h-10 rounded-full bg-[#1740bd] flex justify-center items-center text-white transition duration-300"
+              >
+                <i class="fa-solid fa-arrow-right text-white"></i>
               </span>
-            </button>
+            </a>
           </div>
 
-          <!-- RIGHT -->
-          <div class="col-lg-6 text-center">
-            <div class="globe-box">
-              <div class="globe"></div>
-
-              <div class="line"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="html-hero-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- LEFT -->
-
-          <div class="col-lg-6 text-center">
-            <h1 class="html-main-heading">HTML</h1>
-
-            <h3 class="html-sub-heading">
-              The language for building web pages
-            </h3>
-
-            <div class="html-btn-group">
-              <button class="html-main-btn html-green-btn">Learn HTML</button>
-
-              <button class="html-main-btn html-yellow-btn">
-                Video Tutorial
-              </button>
-
-              <button class="html-main-btn html-dark-btn">
-                HTML Reference
-              </button>
-
-              <button class="html-main-btn html-pink-btn">Get Certified</button>
-            </div>
-          </div>
-
-          <!-- RIGHT -->
-
-          <div  class="col-lg-6  ">
-            <div class="html-code-card">
-              <h2 class="html-card-title">HTML Example:</h2>
-
-              <div class="html-code-box">
-                <pre class="html-code-text">
-&lt;!DOCTYPE html&gt;
-
-&lt;body &gt;
-
-&lt;head&gt;
-
-&lt;title&gt;HTML Tutorial&lt;/title&gt;
-
-&lt;/head&gt;
-
-&lt;body&gt;
-
-&lt;h1&gt;This is a heading&lt;/h1&gt;
-
-&lt;p&gt;This is a paragraph.&lt;/p&gt;
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-</pre
-                >
+          <div class="w-full lg:w-1/2 flex justify-center items-center">
+            <div
+              class="relative w-[250px] h-[250px] sm:w-[320px] sm:h-[320px] lg:w-[420px] lg:h-[420px] transition-all duration-300"
+            >
+              <div
+                class="w-full h-full rounded-full border-[12px] border-[#111827] shadow-[0_0_50px_#1d4ed8] relative overflow-hidden"
+                style="
+                  background: radial-gradient(
+                    circle at center,
+                    #0b1220 30%,
+                    black 70%
+                  );
+                "
+              >
+                <div
+                  class="absolute inset-0 opacity-80"
+                  style="
+                    background-image: radial-gradient(
+                      #ffffff 1px,
+                      transparent 1px
+                    );
+                    background-size: 12px 12px;
+                    clip-path: polygon(20% 20%, 80% 10%, 90% 70%, 40% 90%);
+                  "
+                ></div>
               </div>
 
-              <button class="html-try-btn">Try it Yourself</button>
+              <div
+                class="absolute h-[3px] bg-[#5ee7ff] top-1/2 left-[-50px] rotate-[45deg] shadow-[0_0_20px_#5ee7ff] w-[320px] sm:w-[400px] lg:w-[520px] transition-all duration-300"
+              ></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-
-
-    <section class="css-hero-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- LEFT -->
-
-          <div class="col-lg-6 text-center">
-            <h1 class="css-main-heading">CSS</h1>
-
-            <h3 class="css-sub-heading">
-              The language for styling web pages
+    <!--HTML-->
+    <section
+      class="min-h-screen bg-gradient-to-b from-[#020617] via-[#040b22] to-[#020617] py-20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div
+            class="text-center lg:text-left flex flex-col items-center lg:items-start"
+          >
+            <h1
+              class="text-3xl font-bold sm:text-5xl lg:text-6xl tracking-wide text-white"
+            >
+              HTML
+            </h1>
+            <h3 class="mt-5 text-xl sm:text-2xl lg:text-3xl text-slate-300">
+              The language for building web pages
             </h3>
-
-            <div class="css-btn-group">
-              <button class="css-main-btn css-green-btn">Learn CSS</button>
-
-              <button class="css-main-btn css-yellow-btn">
+            <div
+              class="mt-12 flex flex-col items-center gap-6 w-full max-w-xs sm:max-w-md"
+            >
+              <button
+                class="w-full bg-[#4863d2] text-white py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(72,99,210,0.4)]"
+              >
+                Learn HTML
+              </button>
+              <button
+                class="w-full bg-[#1a91e6] text-black py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(26,145,230,0.4)]"
+              >
                 Video Tutorial
               </button>
-
-              <button class="css-main-btn css-dark-btn">
-                CSS Reference
+              <button
+                class="w-full bg-[#252536] text-white py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(37,37,54,0.4)]"
+              >
+                HTML Reference
               </button>
-
-              <button class="css-main-btn css-pink-btn">Get Certified</button>
+              <button
+                class="w-full bg-[#09bee7] text-black py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(9,190,231,0.4)]"
+              >
+                Get Certified
+              </button>
             </div>
           </div>
-
-          <!-- RIGHT -->
-
-          <div class="col-lg-6">
-            <div class="css-code-card">
-              <h2 class="css-card-title">CSS Example:</h2>
-
-              <div class="css-code-box">
-                <pre class="css-code-text">
+          <div class="w-full max-w-xl mx-auto lg:mx-0">
+            <div
+              class="bg-gradient-to-b from-[#12288d] via-[#040b22] to-[#095cba] p-6 sm:p-8 rounded-2xl shadow-2xl"
+            >
+              <h2 class="text-white text-3xl sm:text-4xl font-normal mb-6">
+                HTML Example:
+              </h2>
+              <div
+                class="bg-slate-900 border-l-6 border-[#313cdb] p-5 h-[350px] sm:h-[450px] overflow-auto rounded-r-lg"
+              >
+                <pre
+                  class="text-[#f7f8fa] text-sm sm:text-base font-mono leading-relaxed"
+                >
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;HTML Tutorial&lt;/title&gt;
+&lt;/head&gt;
 &lt;body&gt;
 
+  &lt;h1&gt;This is a heading&lt;/h1&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p>
+
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+              </div>
+              <button
+                class="mt-6 w-full sm:w-auto bg-[#135f96] hover:bg-[#3770e0] text-white py-4 px-8 rounded-full text-xl font-bold transition duration-300 hover:-translate-y-1"
+              >
+                Try it Yourself
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="min-h-screen bg-gradient-to-b from-[#020617] via-[#040b22] to-[#020617] py-20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div
+            class="text-center lg:text-left flex flex-col items-center lg:items-start"
+          >
+            <h1
+              class="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-wide text-white"
+            >
+              CSS
+            </h1>
+            <h3 class="mt-5 text-xl sm:text-2xl lg:text-3xl text-slate-300">
+              The language for styling web pages
+            </h3>
+            <div
+              class="mt-12 flex flex-col items-center gap-6 w-full max-w-xs sm:max-w-md"
+            >
+              <button
+                class="w-full bg-[#4863d2] text-white py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(72,99,210,0.4)]"
+              >
+                Learn CSS
+              </button>
+              <button
+                class="w-full bg-[#1a91e6] text-black py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(26,145,230,0.4)]"
+              >
+                Video Tutorial
+              </button>
+              <button
+                class="w-full bg-[#252536] text-white py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(37,37,54,0.4)]"
+              >
+                CSS Reference
+              </button>
+              <button
+                class="w-full bg-[#09bee7] text-black py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(9,190,231,0.4)]"
+              >
+                Get Certified
+              </button>
+            </div>
+          </div>
+          <div class="w-full max-w-xl mx-auto lg:mx-0">
+            <div
+              class="bg-gradient-to-b from-[#12288d] via-[#040b22] to-[#095cba] p-6 sm:p-8 rounded-2xl shadow-2xl"
+            >
+              <h2 class="text-white text-3xl sm:text-4xl font-normal mb-6">
+                CSS Example:
+              </h2>
+              <div
+                class="bg-slate-900 border-l-6 border-[#313cdb] p-5 h-[350px] sm:h-[450px] overflow-auto rounded-r-lg"
+              >
+                <pre
+                  class="text-[#f9fbfc] text-sm sm:text-base font-mono leading-relaxed"
+                >
 body {
   background-color: lightblue;
 }
@@ -236,868 +244,575 @@ h1 {
 p {
   font-family: verdana;
 }
-
-&lt;/body&gt;
-                >
+                </pre>
               </div>
-
-              <button class="css-try-btn">Try it Yourself</button>
+              <button
+                class="mt-6 w-full sm:w-auto bg-[#135f96] hover:bg-[#3770e0] text-white py-4 px-8 rounded-full text-xl font-bold transition duration-300 hover:-translate-y-1"
+              >
+                Try it Yourself
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-
-    <section class="js-hero-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- LEFT -->
-
-          <div class="col-lg-6 text-center">
-            <h1 class="js-main-heading">JavaScript</h1>
-
-            <h3 class="js-sub-heading">
+    <section
+      class="min-h-screen bg-gradient-to-b from-[#020617] via-[#040b22] to-[#020617] py-20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div
+            class="text-center lg:text-left flex flex-col items-center lg:items-start"
+          >
+            <h1
+              class="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-wide text-white"
+            >
+              JavaScript
+            </h1>
+            <h3 class="mt-5 text-xl sm:text-2xl lg:text-3xl text-slate-300">
               The language for programming web pages
             </h3>
-
-            <div class="js-btn-group">
-              <button class="js-main-btn js-green-btn">Learn JavaScript</button>
-
-              <button class="js-main-btn js-yellow-btn">
+            <div
+              class="mt-12 flex flex-col items-center gap-6 w-full max-w-xs sm:max-w-md"
+            >
+              <button
+                class="w-full bg-[#4863d2] text-white py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(72,99,210,0.4)]"
+              >
+                Learn JavaScript
+              </button>
+              <button
+                class="w-full bg-[#1a91e6] text-black py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(26,145,230,0.4)]"
+              >
                 Video Tutorial
               </button>
-
-              <button class="js-main-btn js-dark-btn">
+              <button
+                class="w-full bg-[#252536] text-white py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(37,37,54,0.4)]"
+              >
                 Js Reference
               </button>
-
-              <button class="js-main-btn js-pink-btn">Get Certified</button>
+              <button
+                class="w-full bg-[#09bee7] text-black py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(9,190,231,0.4)]"
+              >
+                Get Certified
+              </button>
             </div>
           </div>
-
-          <!-- RIGHT -->
-
-          <div class="col-lg-6">
-            <div class="js-code-card">
-              <h2 class="js-card-title">JavaScript Example:</h2>
-
-              <div class="js-code-box">
-                <pre class="js-code-text">
-
+          <div class="w-full max-w-xl mx-auto lg:mx-0">
+            <div
+              class="bg-gradient-to-b from-[#12288d] via-[#040b22] to-[#095cba] p-6 sm:p-8 rounded-2xl shadow-2xl"
+            >
+              <h2 class="text-white text-3xl sm:text-4xl font-normal mb-6">
+                JavaScript Example:
+              </h2>
+              <div
+                class="bg-slate-900 border-l-6 border-[#313cdb] p-5 h-[350px] sm:h-[450px] overflow-auto rounded-r-lg"
+              >
+                <pre
+                  class="text-white text-sm sm:text-base font-mono leading-relaxed"
+                >
 &lt;button onclick="myFunction()"&gt;
 Click Me!
-&lt;/button&gt;
+&lt;/button>
 
 &lt;script&gt;
-
 function myFunction() {
-
   let x = document.getElementById("demo");
-
   x.style.fontSize = "25px";
-
   x.style.color = "red";
-
 }
-
 &lt;/script&gt;
-                >
+                </pre>
               </div>
-
-              <button class="js-try-btn">Try it Yourself</button>
+              <button
+                class="mt-6 w-full sm:w-auto bg-[#135f96] hover:bg-[#3770e0] text-white py-4 px-8 rounded-full text-xl font-bold transition duration-300 hover:-translate-y-1"
+              >
+                Try it Yourself
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-hero-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- LEFT -->
-
-          <div class="col-lg-6 text-center">
-            <h1 class="py-main-heading">Python</h1>
-
-            <h3 class="py-sub-heading">
+    <section
+      class="min-h-screen bg-gradient-to-b from-[#020617] via-[#040b22] to-[#020617] py-20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div
+            class="text-center lg:text-left flex flex-col items-center lg:items-start"
+          >
+            <h1
+              class="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-wide text-white"
+            >
+              Python
+            </h1>
+            <h3 class="mt-5 text-xl sm:text-2xl lg:text-3xl text-slate-300">
               The language for programming web pages
             </h3>
-
-            <div class="py-btn-group">
-              <button class="py-main-btn py-green-btn">Learn Python</button>
-
-              <button class="py-main-btn py-yellow-btn">
+            <div
+              class="mt-12 flex flex-col items-center gap-6 w-full max-w-xs sm:max-w-md"
+            >
+              <button
+                class="w-full bg-[#4863d2] text-white py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(72,99,210,0.4)]"
+              >
+                Learn Python
+              </button>
+              <button
+                class="w-full bg-[#1a91e6] text-black py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(26,145,230,0.4)]"
+              >
                 Video Tutorial
               </button>
-
-              <button class="py-main-btn py-dark-btn">
+              <button
+                class="w-full bg-[#252536] text-white py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(37,37,54,0.4)]"
+              >
                 Py Reference
               </button>
-
-              <button class="py-main-btn py-pink-btn">Get Certified</button>
+              <button
+                class="w-full bg-[#09bee7] text-black py-4 rounded-full text-xl sm:text-2xl font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(9,190,231,0.4)]"
+              >
+                Get Certified
+              </button>
             </div>
           </div>
-
-          <!-- RIGHT -->
-
-          <div class="col-lg-6">
-            <div class="py-code-card">
-              <h2 class="py-card-title">Python Example:</h2>
-
-              <div class="py-code-box">
-                <pre class="py-code-text">
-
-&lt;if 5 > 2:&gt;
-
-&lt;print("Five is greater than two!")&gt;
-
+          <div class="w-full max-w-xl mx-auto lg:mx-0">
+            <div
+              class="bg-gradient-to-b from-[#12288d] via-[#040b22] to-[#095cba] p-6 sm:p-8 rounded-2xl shadow-2xl"
+            >
+              <h2 class="text-white text-3xl sm:text-4xl font-normal mb-6">
+                Python Example:
+              </h2>
+              <div
+                class="bg-slate-900 border-l-6 border-[#313cdb] p-5 h-[200px] sm:h-[250px] overflow-auto rounded-r-lg"
+              >
+                <pre
+                  class="text-white text-sm sm:text-base font-mono leading-relaxed"
+                >
+if 5 > 2:
+    print("Five is greater than two!")
+                </pre>
               </div>
-
-              <button class="py-try-btn">Try it Yourself</button>
+              <button
+                class="mt-6 w-full sm:w-auto bg-[#135f96] hover:bg-[#3770e0] text-white py-4 px-8 rounded-full text-xl font-bold transition duration-300 hover:-translate-y-1"
+              >
+                Try it Yourself
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="login-dashboard-section">
-
-  <div class="container">
-
-    <!-- TITLE -->
-
-    <div class="text-center dashboard-top">
-
-      <h1 class="dashboard-heading">
-        Welcome Back, focus on your learning journey!
-      </h1>
-
-      <p class="dashboard-subtitle">
-        Create an account to track your progress,
-        get your own website, and get access to
-        more learning features.
-      </p>
-
-    </div>
-
-    <!-- TOP CARDS -->
-
-    <div class="row g-4 mt-4">
-
-      <!-- CARD 1 -->
-
-      <div class="col-lg-3">
-
-        <div class="dashboard-card animal-card">
-
-          <div class="muscle-icon">
-            <i class="fa-solid fa-dumbbell"></i>
-          </div>
-
-          <img
-          src="https://cdn-icons-png.flaticon.com/512/616/616430.png"
-          class="animal-img">
-
-        </div>
-
-      </div>
-
-      <!-- CARD 2 -->
-
-      <div class="col-lg-5">
-
-        <div class="dashboard-card streak-card">
-
-          <div class="streak-top">
-
-            <div class="fire-icon">
-              <i class="fa-solid fa-fire"></i>
-            </div>
-
-            <div>
-
-              <h4 style="color: #f1f3f6;">
-                Current Streak
-              </h4>
-
-              <h2 style="color: #f1f3f6;">
-                7 <span>days</span>
-              </h2>
-
-            </div>
-
-          </div>
-
-          <hr style="border-color: rgba(241, 243, 246, 0.2);">
-
-          <div class="days-row">
-
-            <div class="day active">
-              <i class="fa-solid fa-fire"></i>
-              <span>M</span>
-            </div>
-
-            <div class="day active">
-              <i class="fa-solid fa-fire"></i>
-              <span>T</span>
-            </div>
-
-            <div class="day active">
-              <i class="fa-solid fa-fire"></i>
-              <span>W</span>
-            </div>
-
-            <div class="day">
-              <i class="fa-solid fa-fire"></i>
-              <span>T</span>
-            </div>
-
-            <div class="day">
-              <i class="fa-solid fa-fire"></i>
-              <span>F</span>
-            </div>
-
-            <div class="day">
-              <i class="fa-solid fa-fire"></i>
-              <span>S</span>
-            </div>
-
-            <div class="day">
-              <i class="fa-solid fa-fire"></i>
-              <span>S</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 3 -->
-
-      <div class="col-lg-4">
-
-        <div class="dashboard-card league-card">
-
-          <div class="league-top">
-
-            <div class="league-badge">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-
-            <div>
-
-              <h3 style="color: #f1f3f6;">
-                Silver League
-              </h3>
-
-            </div>
-
-          </div>
-
-          <h4 class="rank-text" style="color: #f1f3f6;">
-            You're ranked
-            <span>#12</span>
-          </h4>
-
-          <p class="xp-text" style="color: #f6f7f9;">
-            Earn 200 XP to advance to #11
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- BIG CARD -->
-
-    <div class="dashboard-card big-dashboard-card mt-4">
-
-      <div class="row g-4">
-
-        <!-- LEFT -->
-
-        <div class="col-lg-4">
-
-          <div class="js-box">
-
-    <div class="js-logo" style="color: #f6f7f9;">
-        JS
-    </div>
-
-    <p>
-        Advanced level
-    </p>
-
-    <h2>
-        JavaScript
-    </h2>
-
-    <!-- BUTTON -->
-
-    <button class="change-btn"style="color: #f6f7f9; background-color: #4d6fff; padding: 10px 20px; border: none; border-radius: 5px;" onclick="toggleMenu()">
-        Change
-        <i class="fa-solid fa-angle-down"></i>
-    </button>
-
-    <!-- HIDDEN OPTIONS -->
-
-    <div class="course-options" id="courseMenu">
-
-        <a href="#">HTML</a>
-
-        <a href="#">CSS</a>
-
-        <a href="#">Bootstrap</a>
-
-        <a href="#">JavaScript</a>
-
-        <a href="#">React JS</a>
-
-    </div>
-
-</div>
-
-        </div>
-
-        <!-- RIGHT -->
-
-        <div class="col-lg-8">
-
-          <!-- TOP -->
-
-          <div class="tutorial-box">
-
-            <div class="tutorial-left">
-
-              <div class="tutorial-icon">
-                <i class="fa-solid fa-lightbulb"></i>
-              </div>
-
-              <div>
-
-                <h4>
-                  JavaScript Tutorial
-                </h4>
-
-                <p>
-                  Next up: Introduction
-                </p>
-
-              </div>
-
-            </div>
-
-            <div class="tutorial-right">
-
-              <div class="progress-circle">
-                44%
-              </div>
-
-              <button class="continue-btn">
-                Continue
-              </button>
-
-            </div>
-
-          </div>
-
-          <!-- SMALL BOXES -->
-
-          <div class="row g-3 mt-2">
-
-            <div class="col-md-6">
-
-              <div class="small-box">
-
-                <span>
-                  <i class="fa-solid fa-puzzle-piece"></i>
-                  Exercises
-                </span>
-
-                <div class="small-progress">
-                  22%
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-              <div class="small-box">
-
-                <span>
-                  <i class="fa-solid fa-trophy"></i>
-                  Challenges
-                </span>
-
-                <div class="small-progress">
-                  12%
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-              <div class="small-box">
-
-                <span>
-                  <i class="fa-solid fa-graduation-cap"></i>
-                  Course
-                </span>
-
-              </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-              <div class="small-box">
-
-                <span>
-                  <i class="fa-solid fa-file-circle-check"></i>
-                  Test & Exam
-                </span>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="path-section">
-
-  <div class="container">
-
-    <!-- TITLE -->
-
-    <div class="text-center section-top">
-
-      <h1 class="main-heading">
-        Structured Learning Paths
-      </h1>
-
-      <p class="sub-heading">
-        Follow our guided paths to become a professional developer
-      </p>
-
-    </div>
-
-    <!-- CARDS -->
-
-    <div class="row g-4 mt-5">
-
-      <!-- CARD 1 -->
-
-      <div class="col-lg-4">
-
-        <div class="path-card">
-
-          <h2>
-            Backend Developer
-          </h2>
-
-          <ul>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              C Fundamentals
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              Advanced C++ Concepts
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              PHP & MySQL Integration
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              Laravel Framework Mastery
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              RESTful API Development
-            </li>
-
-          </ul>
-
-          <button class="path-btn" style="background-color: #4d6fff; color: white; border: none; padding: 10px 20px; border-radius: 5px;">
-            View Path
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 2 -->
-
-      <div class="col-lg-4">
-
-        <div class="path-card">
-
-          <h2>
-            Full Stack Developer
-          </h2>
-
-          <ul>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              HTML5 & CSS3
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              JavaScript Essentials
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              PHP Backend Development
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              Laravel/CodeIgniter Frameworks
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              MySQL Database Design
-            </li>
-
-          </ul>
-
-          <button class="path-btn" style="background-color: #4d6fff; color: white; border: none; padding: 10px 20px; border-radius: 5px;">
-            View Path
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 3 -->
-
-      <div class="col-lg-4">
-
-        <div class="path-card">
-
-          <h2>
-            System Programmer
-          </h2>
-
-          <ul>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              C Deep Dive
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              C++ Data Structures
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              Algorithm Design
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              Memory Management
-            </li>
-
-            <li>
-              <i class="fa-solid fa-circle-check" style="color: #4d6fff;"></i>
-              System Architecture
-            </li>
-
-          </ul>
-
-          <button class="path-btn" style="background-color: #4d6fff; color: white; border: none; padding: 10px 20px; border-radius: 5px;">
-            View Path
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- SOCIAL MEDIA -->
-
-  <div class="social-bar">
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-facebook-f"></i>
-      <span> Facebook</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-instagram"></i>
-      <span>Instagram</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-whatsapp"></i>
-      <span>WhatsApp</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-youtube"></i>
-      <span>YouTube</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-linkedin-in"></i>
-      <span>LinkedIn</span>
-    </a>
-
-  </div>
-
-</section>
-<!-- FOOTER -->
-
-<footer class="glass-footer">
-
-  <div class="container">
-
-    <div class="row gy-5">
-
-      <!-- LEFT -->
-
-      <div class="col-lg-4">
-
-        <div class="footer-box">
-
-          <h1 class="footer-logo">
-            Alibros Learning Institute
+    <section class="bg-[#020617] py-16 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            Welcome Back, focus on your learning journey!
           </h1>
-
-          <p class="footer-text">
-            Empowering the next generation of developers
-            with practical, project-based learning since 2025.
+          <p class="mt-4 text-base sm:text-lg text-slate-400">
+            Create an account to track your progress, get your own website, and
+            get access to more learning features.
           </p>
+        </div>
 
-          <!-- SOCIAL -->
-
-          <div class="social-icons">
-
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-solid fa-layer-group"></i>
-            </a>
-
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 mt-12"
+        >
+          <div class="lg:col-span-3">
+            <div
+              class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative flex flex-col items-center justify-center min-h-[220px]"
+            >
+              <div class="absolute top-4 left-4 text-2xl text-[#4d6fff]">
+                <i class="fa-solid fa-dumbbell"></i>
+              </div>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/616/616430.png"
+                class="w-32 h-32 object-contain"
+                alt="animal"
+              />
+            </div>
           </div>
 
-        </div>
-
-      </div>
-
-      <!-- QUICK LINKS -->
-
-      <div class="col-lg-2">
-
-        <div class="footer-box">
-
-          <h2 class="footer-title">
-            QUICK LINKS
-          </h2>
-
-          <ul class="footer-links">
-
-            <li><a class="activ" href="aillearing.html">Home</a></li>
-
-            <li><a href="totureal.html">Tutorial</a></li>
-
-            <li><a href="#">Courses</a></li>
-
-            <li><a href="#">Get Certified</a></li>
-
-            <li><a href="#">Reference</a></li>
-
-            <li><a href="#">Contact Us</a></li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-      <!-- COURSES -->
-
-      <div class="col-lg-3">
-
-        <div class="footer-box">
-
-          <h2 class="footer-title">
-            COURSES
-          </h2>
-
-          <ul class="footer-links">
-
-            <li><a href="#">C Programming</a></li>
-
-            <li><a  href="#">C++ Programming</a></li>
-
-            <li><a href="#">PHP Programming</a></li>
-
-            <li><a href="#">Laravel Framework</a></li>
-
-            <li><a href="#">CodeIgniter</a></li>
-
-            <li><a href="#">MySQL Database</a></li>
-
-            <li><a href="#">Backend Developer</a></li>
-
-            <li><a href="#">Full Stack Developer</a></li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-      <!-- CONTACT -->
-
-      <div class="col-lg-3">
-
-        <div class="footer-box">
-
-          <h2 class="footer-title">
-            CONTACT
-          </h2>
-
-          <div class="contact-info">
-
-            <p>
-              <i class="fa-solid fa-location-dot"></i>
-
-              Banke Bihari Market,
-              Ormanjhi Ranchi,
-              Jharkhand
-            </p>
-
-            <p>
-              <i class="fa-solid fa-phone"></i>
-
-              +91 8340265398
-            </p>
-
-            <p>
-              <i class="fa-solid fa-envelope"></i>
-
-              support@alilearning.org
-            </p>
-
-            <p>
-              <i class="fa-regular fa-clock"></i>
-
-              Mon - Sat :
-              10AM - 6PM
-            </p>
-
+          <div class="lg:col-span-5">
+            <div
+              class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between min-h-[220px]"
+            >
+              <div class="flex items-center gap-4">
+                <div class="text-3xl text-orange-500 animate-pulse">
+                  <i class="fa-solid fa-fire"></i>
+                </div>
+                <div>
+                  <h4 class="text-slate-400 text-sm font-medium">
+                    Current Streak
+                  </h4>
+                  <h2 class="text-3xl font-bold text-[#f1f3f6]">
+                    7
+                    <span class="text-sm font-normal text-slate-400">days</span>
+                  </h2>
+                </div>
+              </div>
+              <hr class="border-t border-white/10 my-4" />
+              <div class="flex justify-between items-center gap-1">
+                <div
+                  class="flex flex-col items-center gap-1 text-orange-500 font-bold"
+                >
+                  <i class="fa-solid fa-fire text-lg"></i
+                  ><span class="text-xs text-slate-400">M</span>
+                </div>
+                <div
+                  class="flex flex-col items-center gap-1 text-orange-500 font-bold"
+                >
+                  <i class="fa-solid fa-fire text-lg"></i
+                  ><span class="text-xs text-slate-400">T</span>
+                </div>
+                <div
+                  class="flex flex-col items-center gap-1 text-orange-500 font-bold"
+                >
+                  <i class="fa-solid fa-fire text-lg"></i
+                  ><span class="text-xs text-slate-400">W</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 text-slate-600">
+                  <i class="fa-solid fa-fire text-lg"></i
+                  ><span class="text-xs text-slate-400">T</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 text-slate-600">
+                  <i class="fa-solid fa-fire text-lg"></i
+                  ><span class="text-xs text-slate-400">F</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 text-slate-600">
+                  <i class="fa-solid fa-fire text-lg"></i
+                  ><span class="text-xs text-slate-400">S</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 text-slate-600">
+                  <i class="fa-solid fa-fire text-lg"></i
+                  ><span class="text-xs text-slate-400">S</span>
+                </div>
+              </div>
+            </div>
           </div>
 
+          <div class="lg:col-span-4">
+            <div
+              class="bg-slate-900 border border-slate-800 p-6 rounded-2xl min-h-[220px] flex flex-col justify-center"
+            >
+              <div class="flex items-center gap-4">
+                <div class="text-3xl text-slate-300">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-[#f1f3f6]">
+                  Silver League
+                </h3>
+              </div>
+              <h4 class="text-lg text-slate-300 mt-4">
+                You're ranked <span class="text-[#4d6fff] font-bold">#12</span>
+              </h4>
+              <p class="text-sm text-slate-400 mt-1">
+                Earn 200 XP to advance to #11
+              </p>
+            </div>
+          </div>
         </div>
 
+        <div
+          class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl mt-6"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div
+              class="lg:col-span-4 bg-slate-950 p-6 rounded-xl border border-slate-800 relative"
+            >
+              <div
+                class="text-3xl font-extrabold text-amber-400 tracking-wider"
+              >
+                JS
+              </div>
+              <p class="text-xs uppercase text-slate-500 mt-2 tracking-widest">
+                Advanced level
+              </p>
+              <h2 class="text-3xl font-bold mt-1 text-white">JavaScript</h2>
+              <button
+                class="mt-6 flex items-center gap-2 text-[#f6f7f9] bg-[#4d6fff] hover:bg-blue-700 py-2 px-5 font-semibold rounded-md transition"
+                onclick="toggleMenu()"
+              >
+                Change <i class="fa-solid fa-angle-down"></i>
+              </button>
+              <div
+                class="hidden absolute left-6 right-6 mt-2 bg-slate-800 border border-slate-700 rounded-lg shadow-xl z-20 overflow-hidden"
+                id="courseMenu"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2.5 text-sm hover:bg-slate-700 transition"
+                  >HTML</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2.5 text-sm hover:bg-slate-700 transition"
+                  >CSS</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2.5 text-sm hover:bg-slate-700 transition"
+                  >Bootstrap</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2.5 text-sm hover:bg-slate-700 transition"
+                  >JavaScript</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2.5 text-sm hover:bg-slate-700 transition"
+                  >React JS</a
+                >
+              </div>
+            </div>
+
+            <div class="lg:col-span-8 flex flex-col justify-between">
+              <div
+                class="bg-slate-950 p-5 rounded-xl border border-slate-800 flex justify-between items-center flex-wrap gap-4"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="text-2xl text-yellow-400 bg-yellow-500/10 w-12 h-12 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-lightbulb"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-white text-lg">
+                      JavaScript Tutorial
+                    </h4>
+                    <p class="text-sm text-slate-400">Next up: Introduction</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-5">
+                  <div
+                    class="w-14 h-14 rounded-full border-4 border-blue-500 flex items-center justify-center font-bold text-sm text-white"
+                  >
+                    44%
+                  </div>
+                  <button
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-6 rounded-full transition shadow-lg shadow-blue-600/20"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div
+                  class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex justify-between items-center hover:border-slate-700 transition cursor-pointer"
+                >
+                  <span class="flex items-center text-slate-300 font-medium"
+                    ><i class="fa-solid fa-puzzle-piece text-blue-500 mr-3"></i
+                    >Exercises</span
+                  >
+                  <div
+                    class="bg-blue-500/10 text-blue-400 text-xs px-2.5 py-1 rounded-full font-bold"
+                  >
+                    22%
+                  </div>
+                </div>
+                <div
+                  class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex justify-between items-center hover:border-slate-700 transition cursor-pointer"
+                >
+                  <span class="flex items-center text-slate-300 font-medium"
+                    ><i class="fa-solid fa-trophy text-amber-500 mr-3"></i
+                    >Challenges</span
+                  >
+                  <div
+                    class="bg-amber-500/10 text-amber-400 text-xs px-2.5 py-1 rounded-full font-bold"
+                  >
+                    12%
+                  </div>
+                </div>
+                <div
+                  class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex items-center hover:border-slate-700 transition cursor-pointer text-slate-300 font-medium"
+                >
+                  <i
+                    class="fa-solid fa-graduation-cap text-emerald-500 mr-3"
+                  ></i
+                  >Course
+                </div>
+                <div
+                  class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex items-center hover:border-slate-700 transition cursor-pointer text-slate-300 font-medium"
+                >
+                  <i
+                    class="fa-solid fa-file-circle-check text-purple-500 mr-3"
+                  ></i
+                  >Test & Exam
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <section class="py-20 relative bg-[#020617]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+            Structured Learning Paths
+          </h1>
+          <p class="mt-4 text-slate-400 text-lg">
+            Follow our guided paths to become a professional developer
+          </p>
+        </div>
+        <!--Box-->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+          <!--Backend developer card-->
+          <div
+            class="bg-slate-900 border border-slate-800 p-8 rounded-2xl flex flex-col justify-between shadow-[0_0_15px_#1d4ed8] hover:scale-[1.02] transition duration-300"
+          >
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-6">
+                Backend Developer
+              </h2>
+              <ul class="space-y-4 text-slate-300">
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> C
+                  Fundamentals
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i>
+                  Advanced C++ Concepts
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> PHP &
+                  MySQL Integration
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> Laravel
+                  Framework Mastery
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> RESTful
+                  API Development
+                </li>
+              </ul>
+            </div>
+            <button
+              class="mt-8 bg-[#4d6fff] hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition w-full"
+            >
+              View Path
+            </button>
+          </div>
+          <!-- Full Stack Card -->
+          <div
+            class="bg-slate-900 border shadow-[0_0_15px_#1d4ed8] border-slate-800 p-8 rounded-2xl flex flex-col justify-between hover:scale-[1.02] transition duration-300"
+          >
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-6">
+                Full Stack Developer
+              </h2>
+              <ul class="space-y-4 text-slate-300">
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> HTML5 &
+                  CSS3
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i>
+                  JavaScript Essentials
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> PHP
+                  Backend Development
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i>
+                  Laravel/CodeIgniter Frameworks
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> MySQL
+                  Database Design
+                </li>
+              </ul>
+            </div>
+            <button
+              class="mt-8 bg-[#4d6fff] hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition w-full"
+            >
+              View Path
+            </button>
+          </div>
+          <!--System Programmer card-->
+          <div
+            class="bg-slate-900 border shadow-[0_0_15px_#1d4ed8] border-slate-800 p-8 rounded-2xl flex flex-col justify-between hover:scale-[1.02] transition duration-300"
+          >
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-6">
+                System Programmer
+              </h2>
+              <ul class="space-y-4 text-slate-300">
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> C Deep
+                  Dive
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> C++
+                  Data Structures
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i>
+                  Algorithm Design
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> Memory
+                  Management
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-blue-500"></i> System
+                  Architecture
+                </li>
+              </ul>
+            </div>
+            <button
+              class="mt-8 bg-[#4d6fff] hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition w-full"
+            >
+              View Path
+            </button>
+          </div>
+        </div>
 
-  </div>
+        <div class="mt-16 flex flex-wrap justify-center gap-6 px-4">
+          <a
+            href="#"
+            class="bg-slate-900 hover:bg-blue-600 border border-slate-800 px-5 py-2.5 rounded-full flex items-center gap-3 text-sm font-medium transition duration-300"
+            ><i
+              class="fa-brands fa-facebook-f text-blue-500 group-hover:text-white"
+            ></i
+            ><span>Facebook</span></a
+          >
+          <a
+            href="#"
+            class="bg-slate-900 hover:bg-pink-600 border border-slate-800 px-5 py-2.5 rounded-full flex items-center gap-3 text-sm font-medium transition duration-300"
+            ><i class="fa-brands fa-instagram text-pink-500"></i
+            ><span>Instagram</span></a
+          >
+          <a
+            href="#"
+            class="bg-slate-900 hover:bg-emerald-600 border border-slate-800 px-5 py-2.5 rounded-full flex items-center gap-3 text-sm font-medium transition duration-300"
+            ><i class="fa-brands fa-whatsapp text-emerald-500"></i
+            ><span>WhatsApp</span></a
+          >
+          <a
+            href="#"
+            class="bg-slate-900 hover:bg-red-600 border border-slate-800 px-5 py-2.5 rounded-full flex items-center gap-3 text-sm font-medium transition duration-300"
+            ><i class="fa-brands fa-youtube text-red-500"></i
+            ><span>YouTube</span></a
+          >
+          <a
+            href="#"
+            class="bg-slate-900 hover:bg-sky-600 border border-slate-800 px-5 py-2.5 rounded-full flex items-center gap-3 text-sm font-medium transition duration-300"
+            ><i class="fa-brands fa-linkedin-in text-sky-400"></i
+            ><span>LinkedIn</span></a
+          >
+        </div>
+      </div>
+    </section>
 
-</footer>
+    <!--Footer-->
 
-
-
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-
-    <script>
-
-
-function toggleMenu(){
-
-    let menu =
-    document.getElementById("courseMenu");
-
-    if(menu.style.display === "block"){
-
-        menu.style.display = "none";
-
-    }
-
-    else{
-
-        menu.style.display = "block";
-
-    }
-
-}
-
-</script>
-
-      <script>
-
-const navLinks =
-document.querySelectorAll(".nav-link");
-
-navLinks.forEach(link => {
-
-  link.addEventListener("click", function(){
-
-    navLinks.forEach(item => {
-      item.classList.remove("active");
-    });
-
-    this.classList.add("active");
-
-  });
-
-});
-</script>
+    <footer id="footer"></footer>
   </body>
 </html>
