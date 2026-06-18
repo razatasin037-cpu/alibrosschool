@@ -1,1034 +1,409 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ali Get Certified</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Learning Platform</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="get.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <script src="../js/insert.js"></script>
   </head>
-  <body>
-   <section class="hero-section">
-      <!-- NAVBAR -->
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom-nav">
-          <!-- LOGO -->
+  <body
+    class="min-h-screen bg-[#020617] text-white font-sans overflow-x-hidden selection:bg-blue-500/30"
+  >
 
-          <a class="navbar-brand logo" href="#">
-            <span class="logo-circle">Ali</span>
+  <nav id="navbar"></nav>
+    <main>
+      <section
+        class="relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-gradient-to-b from-[#020617] via-[#09152e] to-[#020617]"
+      >
+        <div
+          class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full filter blur-[150px] pointer-events-none"
+        ></div>
+        <div
+          class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-indigo-600/10 rounded-full filter blur-[150px] pointer-events-none"
+        ></div>
 
-            Learning
-          </a>
-
-          <!-- HAMBURGER -->
-
-          <button
-            class="navbar-toggler bg-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navMenu"
+        <div
+          class="relative z-10 max-w-6xl w-full text-center flex flex-col items-center"
+        >
+          <span
+            class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] text-blue-400 text-sm font-semibold mb-8 backdrop-blur-md"
           >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            💼 Industry-Grade Professional Training
+          </span>
 
-          <!-- MENU -->
+          <h1
+            class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6 max-w-5xl"
+          >
+            Build Job Ready
+            <span
+              class="text-blue-500 drop-shadow-[0_0_35px_rgba(59,130,246,0.45)]"
+              >Enterprise</span
+            >
+            <br />
+            Capabilities & Tech Skills
+          </h1>
 
-          <div class="collapse navbar-collapse" id="navMenu">
-            <!-- CENTER LINKS -->
+          <p
+            class="text-gray-400 text-lg sm:text-xl font-normal max-w-3xl mb-12 leading-relaxed"
+          >
+            Accelerate your organizational and professional growth through
+            hands-on development programs curated by industry tech leads.
+          </p>
 
-            <ul class="navbar-nav nav-center mx-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/aillearing.html"> Home </a>
-              </li>
+          <div
+            class="w-full max-w-3xl bg-white/[0.03] border border-white/[0.08] rounded-2xl md:rounded-full p-2.5 flex flex-col md:flex-row items-center gap-3 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-blue-500/50"
+          >
+            <div class="flex items-center w-full px-4 gap-3">
+              <i class="fa-solid fa-magnifying-glass text-blue-400 text-lg"></i>
+              <input
+                type="text"
+                placeholder="Search certifications, corporate paths, engineering tracks..."
+                class="w-full bg-transparent border-none outline-none text-white placeholder-gray-500 py-2"
+              />
+            </div>
+            <button
+              class="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-xl md:rounded-full flex items-center justify-center gap-2 transition-all"
+            >
+              Find 
+            </button>
+          </div>
+        </div>
+      </section>
 
-              <li class="nav-item">
-                <a class="nav-link " href="/totureal/totureal.html"> Tutorials </a>
-              </li>
+      <section
+        class="py-12 px-4 max-w-7xl mx-auto border-y border-white/[0.05] bg-slate-950/20"
+      >
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center sm:text-left p-4">
+            <h3 class="text-4xl font-black text-blue-500">45+</h3>
+            <p class="text-gray-400 text-sm mt-1">Enterprise Partners</p>
+          </div>
+          <div class="text-center sm:text-left p-4">
+            <h3 class="text-4xl font-black text-blue-500">92%</h3>
+            <p class="text-gray-400 text-sm mt-1">Career Transition Rate</p>
+          </div>
+          <div class="text-center sm:text-left p-4">
+            <h3 class="text-4xl font-black text-blue-500">300+</h3>
+            <p class="text-gray-400 text-sm mt-1">Expert Mentors</p>
+          </div>
+          <div class="text-center sm:text-left p-4">
+            <h3 class="text-4xl font-black text-blue-500">24/7</h3>
+            <p class="text-gray-400 text-sm mt-1">Live Sandbox Lab Access</p>
+          </div>
+        </div>
+      </section>
 
-              <li class="nav-item">
-                <a class="nav-link active" href="/getCertified/get.html"> Get Certified </a>
-              </li>
+      <section class="py-24 px-4 max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-16"
+        >
+          <div>
+            <span
+              class="text-blue-500 text-sm font-bold uppercase tracking-wider block mb-2"
+              >Verified Programs</span
+            >
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
+              Professional Certifications
+            </h2>
+          </div>
+          <p class="text-gray-400 max-w-md">
+            Structured structured curricula explicitly built to address direct
+            tech roles and architecture engineering demands.
+          </p>
+        </div>
 
-              <li class="nav-item">
-                <a class="nav-link" href="/refrence/refrence.html"> Reference </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/contact/contact.html"> Contact Us </a>
-              </li>
-            </ul>
-
-            <!-- RIGHT SIDE -->
-
-            <div class="nav-right">
-              <span class="lang">
-                <i class="fa-solid fa-globe"></i>
-
-                EN
-              </span>
-
-              <button class="nav-btn"><a href="/login/logiandsingup.html">Login</a></button>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white/[0.02] border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-between hover:border-blue-500 transition-all duration-300"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-600/10 flex items-center justify-center text-blue-400 text-xl mb-6"
+              >
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">
+                Enterprise Security Architecture
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Advance into corporate infrastructure assessment, vulnerability
+                shielding, and compliance frameworks management.
+              </p>
+            </div>
+            <div
+              class="mt-8 pt-4 border-t border-white/[0.05] flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-500">12 Weeks Track</span>
+              <span
+                class="text-blue-400 font-semibold text-sm cursor-pointer hover:underline"
+                >View Path →</span
+              >
             </div>
           </div>
-        </nav>
-      </div>
 
-      <!-- GOOGLE CERTIFICATE SECTION -->
+          <div
+            class="bg-gradient-to-b from-blue-950/40 to-slate-900/60 border-2 border-blue-600 rounded-2xl p-8 flex flex-col justify-between relative shadow-xl"
+          >
+            <span
+              class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-widest"
+              >In-Demand</span
+            >
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white text-xl mb-6"
+              >
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">Cloud Systems Engineering</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Master microservices orchestrations, distributed computation
+                infrastructure, continuous server provisioning patterns.
+              </p>
+            </div>
+            <div
+              class="mt-8 pt-4 border-t border-white/[0.05] flex items-center justify-between"
+            >
+              <span class="text-xs text-blue-300">16 Weeks Track</span>
+              <span
+                class="text-white font-bold text-sm cursor-pointer hover:underline"
+                >View Path →</span
+              >
+            </div>
+          </div>
 
-<section class="google-career-section">
-
-  <!-- SHAPES -->
-
-  <div class="shape shape-left"></div>
-
-  <div class="shape shape-right"></div>
-
-  <div class="container">
-
-    <!-- TITLE -->
-
-    <div class="row">
-
-      <div class="col-12 text-center">
-
-        <h1 class="career-title">
-            Get Certified with Ali Learning career certificates
-        </h1>
-
-      </div>
-
-    </div>
-
-    <!-- CONTENT -->
-
-    <div class="row align-items-center career-row">
-
-      <!-- LEFT -->
-
-      <div class="col-lg-5">
-
-        <div class="career-content">
-
-          <h2>
-
-            Job-ready skills you can put to work
-
-          </h2>
-
-          <p>
-
-        Full-stack developer career certificates are designed to equip you with the skills and knowledge needed to excel in the field of web development. These comprehensive programs cover a wide range of topics, including front-end and back-end development, databases, and more. By completing a full-stack developer career certificate, you can gain the expertise required to build dynamic and responsive web applications, making you a valuable asset in the tech industry.
-
-          </p>
-
-          <button class="subscribe-btn">
-
-            Explore Certificates
-
-          </button>
-
+          <div
+            class="bg-white/[0.02] border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-between hover:border-blue-500 transition-all duration-300"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-600/10 flex items-center justify-center text-blue-400 text-xl mb-6"
+              >
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">
+                Data Strategy & Governance
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Build core capabilities managing system analytics matrices
+                pipelines, data ingestion modeling and system reporting
+                pipelines.
+              </p>
+            </div>
+            <div
+              class="mt-8 pt-4 border-t border-white/[0.05] flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-500">10 Weeks Track</span>
+              <span
+                class="text-blue-400 font-semibold text-sm cursor-pointer hover:underline"
+                >View Path →</span
+              >
+            </div>
+          </div>
         </div>
+      </section>
 
-      </div>
+      <section
+        class="py-20 px-4 bg-slate-950/40 border-t border-white/[0.05] max-w-7xl mx-auto rounded-3xl my-12"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-8 sm:p-12"
+        >
+          <div>
+            <span
+              class="text-xs font-bold text-blue-400 uppercase tracking-widest block mb-3"
+              >Corporate Alliance</span
+            >
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight mb-6">
+              Equip your workforce with verified capabilities
+            </h2>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Our structured programs allow modern organizations to track
+              development indices metrics, evaluate technical velocity
+              benchmarks, and align development resources natively.
+            </p>
+            <ul class="space-y-3 text-sm text-gray-300">
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-emerald-400"></i> Customizable
+                team management portals
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-emerald-400"></i> Direct
+                sandboxed task assessment modules
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-emerald-400"></i> Verified
+                competency tracking logs
+              </li>
+            </ul>
+          </div>
+          <div
+            class="relative bg-slate-900 rounded-2xl p-8 border border-white/[0.08] shadow-2xl"
+          >
+            <h3 class="text-xl font-bold mb-4">Request Corporate Access</h3>
+            <div class="space-y-4">
+              <input
+                type="text"
+                placeholder="Organization Email"
+                class="w-full bg-[#020617] border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500"
+              />
+              <select
+                class="w-full bg-[#020617] border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500 text-gray-400"
+              >
+                <option>Expected Team Size (10-50)</option>
+                <option>Expected Team Size (50-200)</option>
+                <option>Expected Team Size (200+)</option>
+              </select>
+              <button
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl text-sm transition-all"
+              >
+                Submit Inquiry
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <!-- RIGHT -->
-
-      <div class="col-lg-7">
-
-        <div class="career-image-box">
-
+      <section class="py-24 px-4 max-w-5xl mx-auto text-center">
+        <div
+          class="w-20 h-20 rounded-full overflow-hidden mx-auto border-2 border-blue-500 mb-6"
+        >
           <img
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
-          alt="student">
+            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80"
+            alt="Executive Director"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <p
+          class="text-xl sm:text-2xl font-medium italic text-gray-300 max-w-3xl mx-auto mb-6"
+        >
+          "Transitioning our deployment pipelines tracking through these
+          structured transformation paths optimized internal alignment
+          benchmarks smoothly within quarters."
+        </p>
+        <h4 class="font-bold text-white text-lg">Marcus Vance</h4>
+        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">
+          VP of Technology Systems
+        </p>
 
-          <!-- CARD -->
+        <div
+          class="min-h-screen bg-[#060b13] flex items-center justify-center p-6 text-white font-sans"
+        >
+          <div
+            class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+          >
+            <div class="relative flex justify-center items-center">
+              <div
+                class="absolute w-[80%] h-[105%] bg-[#3b49df] rounded-3xl -rotate-6 transform translate-x-[-20px] opacity-40"
+              ></div>
 
-          <div class="graduate-card">
+              <div
+                class="relative w-[85%] bg-gradient-to-br from-teal-500/20 to-blue-600/20 rounded-3xl p-1 backdrop-blur-sm shadow-2xl overflow-hidden z-10"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
+                  alt="Professional Woman Smiling"
+                  class="w-full h-auto rounded-[22px] object-cover block"
+                />
 
-            <h4>ALI LEARNING</h4>
+                <div
+                  class="absolute bottom-6 right-6 w-14 h-14 bg-gradient-to-br from-white/20 to-white/5 border border-white/20 rounded-full flex items-center justify-center shadow-lg backdrop-blur-md"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#6366f1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-wand-2"
+                  >
+                    <path
+                      d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.34 18.65a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.21 1.21 0 0 0 1.72 0L21.64 5.36a1.21 1.21 0 0 0 0-1.72Z"
+                    />
+                    <path d="m14 7 3 3" />
+                    <path d="M5 6v4" />
+                    <path d="M19 14v4" />
+                    <path d="M10 2v2" />
+                    <path d="M7 8H3" />
+                    <path d="M21 16h-4" />
+                    <path d="M11 3H9" />
+                  </svg>
+                </div>
+              </div>
+            </div>
 
-            <p>
+            <div class="space-y-6 z-10">
+              <div
+                class="inline-flex items-center gap-2 bg-[#131931] border border-blue-900/50 px-4 py-1.5 rounded-full text-sm text-[#4f46e5] font-semibold"
+              >
+                <span>🤖</span>
+                <span>AI Learning</span>
+              </div>
 
-              ALI LEARNING FULL-STACK DEVELOPER
+              <h1
+                class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight"
+              >
+                Learn <span class="text-[#4f46e5]">AI skills</span> <br />
+                for your career
+              </h1>
 
-            </p>
+              <p class="text-gray-400 text-lg max-w-xl leading-relaxed">
+                AI offers new ways to solve problems and become more productive.
+                Our courses give you the practical skills you need to make AI
+                work for you.
+              </p>
 
+              <div class="pt-2">
+                <button
+                  class="inline-flex items-center gap-2 bg-[#4f46e5] hover:bg-[#4338ca] text-white font-medium px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-[1.02] shadow-lg shadow-indigo-600/30"
+                >
+                  Explore Catalog
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-arrow-right"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
-
         </div>
+      </section>
+    </main>
 
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- GOOGLE CERTIFICATES -->
-
-<section class="google-path-section">
-
-  <!-- BLUR -->
-
-  <div class="path-blur blur-left"></div>
-
-  <div class="path-blur blur-right"></div>
-
-  <div class="container">
-
-    <!-- TOP -->
-
-    <div class="google-path-top text-center">
-
-      <span class="small-badge">
-
-        🚀 Premium Career Paths
-
-      </span>
-
-      <h1>
-
-        Earn a credential that prepares you
-        for jobs in high-paying fields
-
-      </h1>
-
-      <p>
-
-        Discover our most popular Google Career Certificates
-        and gain essential AI skills, validated by employers
-        and trusted by over one million graduates.
-
-      </p>
-
-    </div>
-
-    <!-- CARDS -->
-
-    <div class="row g-4 mt-5">
-
-      <!-- CARD 1 -->
-
-      <div class="col-lg-4 col-md-6">
-
-        <div class="google-path-card">
-
-          <div class="card-badge">
-
-            <i class="fa-solid fa-certificate"></i>
-
-            Path
-
-          </div>
-
-          <h2>
-
-            Google Cybersecurity Certificate
-
-          </h2>
-
-          <p>
-
-            Prepare for a career as a cybersecurity analyst
-            with a professional cybersecurity certificate
-            from Google.
-
-          </p>
-
-          <div class="card-bottom">
-
-            <span>
-
-              Managed by Google Career Certificates
-
-            </span>
-
-            <button>
-
-              <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 2 -->
-
-      <div class="col-lg-4 col-md-6">
-
-        <div class="google-path-card">
-
-          <div class="card-badge">
-
-            <i class="fa-solid fa-chart-simple"></i>
-
-            Path
-
-          </div>
-
-          <h2>
-
-            Google Data Analytics Certificate
-
-          </h2>
-
-          <p>
-
-            Learn data analysis, visualization
-            and job-ready analytics skills with
-            hands-on projects.
-
-          </p>
-
-          <div class="card-bottom">
-
-            <span>
-
-              Managed by Google Career Certificates
-
-            </span>
-
-            <button>
-
-              <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 3 -->
-
-      <div class="col-lg-4 col-md-6">
-
-        <div class="google-path-card">
-
-          <div class="card-badge">
-
-            <i class="fa-solid fa-briefcase"></i>
-
-            Path
-
-          </div>
-
-          <h2>
-
-            Ali Learning Project Management Certificate
-
-          </h2>
-
-          <p>
-
-         Get Staryed in project Ali Learning management with a professional certificate from professinol developers.
-
-          </p>
-
-          <div class="card-bottom">
-
-            <span>
-
-                Managed By Ali Learning Career Certificates
-
-            </span>
-
-            <button>
-
-              <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- GOOGLE STATS SECTION -->
-
-<section class="google-stats-section">
-
-  <!-- BLUR EFFECT -->
-
-  <div class="stats-blur blur-left"></div>
-
-  <div class="stats-blur blur-right"></div>
-
-  <div class="container">
-
-    <!-- TOP -->
-
-    <div class="stats-top text-center">
-
-      <span class="stats-badge">
-
-        🚀 Career Growth
-
-      </span>
-
-      <h1>
-
-        Get professional job training
-        from <span>Ali Learning</span>
-
-      </h1>
-
-      <p>
-
-        Develop in-demand skills and grow your
-        career on your own schedule.
-
-      </p>
-
-    </div>
-
-    <!-- STATS -->
-
-    <div class="row g-4 stats-row">
-
-      <!-- CARD 1 -->
-
-      <div class="col-lg-4 col-md-6">
-
-        <div class="stats-card">
-
-          <h2>
-
-            1.6M+
-
-          </h2>
-
-          <h3>
-
-            open jobs across certificate fields
-
-          </h3>
-
-          <span>
-
-            Lightcast™ US Job Postings
-            (Jan. 1, 2024–Dec. 31, 2024)
-
-          </span>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 2 -->
-
-      <div class="col-lg-4 col-md-6">
-
-        <div class="stats-card">
-
-          <h2>
-
-            70%+
-
-          </h2>
-
-          <h3>
-
-            certificate graduates report a positive
-            career outcome like a new job,
-            promotion, or raise
-
-          </h3>
-
-          <span>
-
-            Based on program graduate survey,
-            United States 2024
-
-          </span>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 3 -->
-
-      <div class="col-lg-4 col-md-6">
-
-        <div class="stats-card">
-
-          <h2>
-
-            $96,00+
-
-          </h2>
-
-          <h3>
-
-            median salary across certificate fields
-
-          </h3>
-
-          <span>
-
-            Lightcast™ US Job Postings
-            (Jan. 1, 2024–Dec. 31, 2024)
-
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- AI CAREER SECTION -->
-
-<section class="ai-career-section">
-
-  <!-- BLUR -->
-
-  <div class="ai-blur blur-left"></div>
-
-  <div class="ai-blur blur-right"></div>
-
-  <div class="container">
-
-    <div class="row align-items-center g-5">
-
-      <!-- IMAGE -->
-
-      <div class="col-lg-6">
-
-        <div class="ai-image-box">
-
-          <!-- BLUE GLOW -->
-
-          <div class="image-glow"></div>
-
-          <!-- IMAGE -->
-
-          <img
-          src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1200&auto=format&fit=crop"
-          alt="AI Learning">
-
-          <!-- FLOAT ICON -->
-
-          <div class="floating-icon">
-
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-          </div>
-
-          <!-- DECOR -->
-
-          <span class="small-shape one"></span>
-
-          <span class="small-shape two"></span>
-
-        </div>
-
-      </div>
-
-      <!-- CONTENT -->
-
-      <div class="col-lg-6">
-
-        <div class="ai-content">
-
-          <span class="ai-badge">
-
-            🤖 AI Learning
-
-          </span>
-
-          <h1>
-
-            Learn <span>AI skills</span>
-            for your career
-
-          </h1>
-
-          <p>
-
-            AI offers new ways to solve problems
-            and become more productive.
-            Our courses give you the practical
-            skills you need to make AI work for you.
-
-          </p>
-
-          <button class="explore-btn">
-
-            Explore Catalog
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- REAL PEOPLE SECTION -->
-
-<section class="real-people-section">
-
-  <!-- BLUR -->
-
-  <div class="people-blur blur-left"></div>
-
-  <div class="people-blur blur-right"></div>
-
-  <div class="container">
-
-    <!-- TOP -->
-
-    <div class="people-top text-center">
-
-      <span class="people-badge">
-
-        ⭐ Success Stories
-
-      </span>
-
-      <h1>
-
-        Real people,
-        <span>real results</span>
-
-      </h1>
-
-      <p>
-
-        See the difference a Ali Learning Career
-        Certificate can make.
-
-      </p>
-
-    </div>
-
-    <!-- CONTENT -->
-
-    <div class="row align-items-center g-5 mt-5">
-
-      <!-- IMAGE -->
-
-      <div class="col-lg-5">
-
-        <div class="people-image-box">
-
-          <div class="image-glow"></div>
-
-          <img
-          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
-          alt="student">
-
-        </div>
-
-      </div>
-
-      <!-- RIGHT CONTENT -->
-
-      <div class="col-lg-7">
-
-        <div class="story-box active-story">
-
-          <h2>
-
-           web developer Gabe shares how Ali Learning Career Certificates
-           helped him launch his career in tech
-
-          </h2>
-
-          <p>
-
-            “For the price of the Ali Learning Career
-            Certificate, that’s a really approachable
-            price. For what you’re getting it’s a great
-            return on investment.”
-
-          </p>
-
-          <a href="#">
-
-            Hear Gabe's story
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-          </a>
-
-        </div>
-
-        <!-- LIST -->
-
-        <div class="story-list">
-
-          <div class="story-item">
-
-            Christopher,
-            Ali Cybersecurity Graduate
-
-          </div>
-
-          <div class="story-item">
-
-            Emily,
-            Ali Data Analytics Certificate Graduate
-
-          </div>
-
-          <div class="story-item">
-
-            Amie,
-            Ali IT Support Certificate Graduate
-
-          </div>
-
-          <div class="story-item">
-
-            Brittany,
-            Ali Project Management Certificate Graduate
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FINAL CTA SECTION -->
-
-<section class="final-cta-section">
-
-  <!-- BLUR -->
-
-  <div class="cta-blur blur-left"></div>
-
-  <div class="cta-blur blur-right"></div>
-
-  <!-- FLOAT SHAPE -->
-
-  <div class="top-shape">
-
-    <i class="fa-solid fa-play"></i>
-
-  </div>
-
-  <div class="container">
-
-    <!-- CONTENT -->
-
-    <div class="cta-content text-center">
-
-      <span class="cta-badge">
-
-        🚀 Start Your Journey
-
-      </span>
-
-      <h1>
-
-        Join one million
-        <span>Google Career</span>
-        Certificate graduates
-
-      </h1>
-
-      <p>
-
-        Get the skills you need for the job you want.
-        Whether you're looking to start, switch,
-        or advance your career.
-
-      </p>
-
-      <!-- BUTTON -->
-
-      <button class="cta-btn">
-
-        LEARN NOW
-
-        <i class="fa-solid fa-arrow-right"></i>
-
-      </button>
-
-    </div>
-
-    
- <!-- SOCIAL MEDIA -->
-
-  <div class="social-bar">
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-facebook-f"></i>
-      <span> Facebook</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-instagram"></i>
-      <span>Instagram</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-whatsapp"></i>
-      <span>WhatsApp</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-youtube"></i>
-      <span>YouTube</span>
-    </a>
-
-    <a href="#" class="social-item">
-      <i class="fa-brands fa-linkedin-in"></i>
-      <span>LinkedIn</span>
-    </a>
-
-  </div>
-
-</section>
-<!-- FOOTER -->
-
-<footer class="glass-footer">
-
-  <div class="container-footer">
-
-    <div class="row gy-5">
-
-      <!-- LEFT -->
-
-      <div class="col-lg-4">
-
-        <div class="footer-box">
-
-          <h1 class="footer-logo">
-            Alibros Learning Institute
-          </h1>
-
-          <p class="footer-text">
-            Empowering the next generation of developers
-            with practical, project-based learning since 2025.
-          </p>
-
-          <!-- SOCIAL -->
-
-          <div class="social-icons">
-
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-
-            <a href="#">
-              <i class="fa-solid fa-layer-group"></i>
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- QUICK LINKS -->
-
-      <div class="col-lg-2">
-
-        <div class="footer-box">
-
-          <h2 class="footer-title">
-            QUICK LINKS
-          </h2>
-
-          <ul class="footer-links">
-
-            <li><a class="activ" href="aillearing.html">Home</a></li>
-
-            <li><a href="totureal.html">Tutorial</a></li>
-
-            <li><a href="#">Courses</a></li>
-
-            <li><a href="#">Get Certified</a></li>
-
-            <li><a href="#">Reference</a></li>
-
-            <li><a href="#">Contact Us</a></li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-      <!-- COURSES -->
-
-      <div class="col-lg-3">
-
-        <div class="footer-box">
-
-          <h2 class="footer-title">
-            COURSES
-          </h2>
-
-          <ul class="footer-links">
-
-            <li><a href="#">C Programming</a></li>
-
-            <li><a  href="#">C++ Programming</a></li>
-
-            <li><a href="#">PHP Programming</a></li>
-
-            <li><a href="#">Laravel Framework</a></li>
-
-            <li><a href="#">CodeIgniter</a></li>
-
-            <li><a href="#">MySQL Database</a></li>
-
-            <li><a href="#">Backend Developer</a></li>
-
-            <li><a href="#">Full Stack Developer</a></li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-      <!-- CONTACT -->
-
-      <div class="col-lg-3">
-
-        <div class="footer-box">
-
-          <h2 class="footer-title">
-            CONTACT
-          </h2>
-
-          <div class="contact-info">
-
-            <p>
-              <i class="fa-solid fa-location-dot"></i>
-
-              Banke Bihari Market,
-              Ormanjhi Ranchi,
-              Jharkhand
-            </p>
-
-            <p>
-              <i class="fa-solid fa-phone"></i>
-
-              +91 8340265398
-            </p>
-
-            <p>
-              <i class="fa-solid fa-envelope"></i>
-
-              support@alilearning.org
-            </p>
-
-            <p>
-              <i class="fa-regular fa-clock"></i>
-
-              Mon - Sat :
-              10AM - 6PM
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-
-    <script>
-   function toggleMenu(){
-
-    let menu =
-    document.getElementById("courseMenu");
-
-    if(menu.style.display === "block"){
-
-        menu.style.display = "none";
-
-    }
-
-    else{
-
-        menu.style.display = "block";
-
-    }
-
-}
-    </script>
-
-    <script>
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function () {
-          navLinks.forEach((item) => {
-            item.classList.remove("active");
-          });
-
-          this.classList.add("active");
-        });
-      });
-    </script>
+    <footer id="footer"></footer>
   </body>
 </html>

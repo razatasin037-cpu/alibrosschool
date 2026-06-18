@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Tutorials</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/insert.js"></script>
+    <style>
+      /* Custom styles for components that require pseudo-classes or fine tuning */
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+      /* Custom Scrollbar for Sidebar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <aside
+        class="hidden md:block sticky top-[110px] left-0 w-[340px] h-[calc(100vh-110px)] overflow-y-auto custom-scrollbar bg-[#020b24] p-5 border-r border-[#264dff] z-[50]"
+      >
+        <h5
+          class="text-[#7f8db4] tracking-[5px] text-[20px] font-bold mb-5 uppercase"
+        >
+          C++ Tutorial
+        </h5>
+
+        <nav class="flex flex-col gap-3">
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ HOME</a
+          >
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ Intro</a
+          >
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ Get Started</a
+          >
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ Syntax</a
+          >
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ Output</a
+          >
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ Comments</a
+          >
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ Variables</a
+          >
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ User Input</a
+          >
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ Data Types</a
+          >
+          <a
+            class="block py-[18px] px-[35px] text-white text-[18px] font-medium rounded-[18px] hover:bg-[#3d5dff] transition duration-300"
+            href="#"
+            >C++ Operators</a
+          >
+        </nav>
+      </aside>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)]  p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[50px] sm:text-[52px] md:text-[65px] font-bold text-white mb-10 mt-0"
+        >
+          C++ Tutorial
+        </h1>
+
+        <div class="flex justify-between items-center gap-[15px] mb-[50px]">
+          <button
+            class="py-3 px-6 md:py-[18px] md:px-[40px] border-none rounded-[12px] md:rounded-[18px] bg-white text-black text-[18px] md:text-[20px] font-bold shadow-md cursor-pointer active:scale-95 transition"
+          >
+            ❮ Home
+          </button>
+          <button
+            class="py-3 px-6 md:py-[18px] md:px-[40px] border-none rounded-[12px] md:rounded-[18px] bg-[#3538de] text-white text-[18px] md:text-[20px] font-bold shadow-md cursor-pointer active:scale-95 transition"
+          >
+            Next ❯
+          </button>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[40px] font-bold mb-[30px]">Learn C++</h2>
+          <p
+            class="text-[20px] md:text-[28px] text-[#cbd5e1] mb-[30px] leading-relaxed"
+          >
+            C++ is a popular programming language.
+          </p>
+          <p
+            class="text-[20px] md:text-[28px] text-[#cbd5e1] mb-0 leading-relaxed"
+          >
+            Used for software and games.
+          </p>
+        </div>
+
+        <section>
+          <h1 class="text-5xl font-bold mb-10 pt-10">
+            Examples in Each Chapter
+          </h1>
+
+          <p class="text-gray-300 text-xl mb-10 leading-10">
+            Our "Try it Yourself" editor makes it easy to learn C++. You can
+            edit C++ code and view the result in your browser.
+          </p>
+
+          <!-- Example Box -->
+
+          <div
+            class="bg-gradient-to-r from-[#121826] to-[#1b2440] rounded-[30px] border border-indigo-500 overflow-hidden"
+          >
+            <!-- Header -->
+
+            <div class="p-8">
+              <h2 class="text-4xl font-bold">Example</h2>
+            </div>
+
+            <!-- Code -->
+
+            <div class="px-4">
+              <div
+                class="bg-[#0b1120] border-l-[6px] border-blue-500 rounded-xl p-8 overflow-auto"
+              >
+                <pre class="text-[22px] leading-[20px]">
+
+<span class="text-pink-400">#include</span>
+&lt;iostream&gt;
+
+using namespace std;
+
+<span class="text-blue-400">int</span> main(){
+
+cout << <span class="text-blue-400">
+"Hello World!"
+</span>;
+
+<span class="text-blue-400">
+return
+</span> 0;
+
+}
+
+</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Note -->
+
+          <div class="mt-10 bg-[#2d3521] text-[#e9f1c7] rounded-3xl p-10">
+            <p class="text-xl leading-10 mb-8">
+              We recommend reading this tutorial, in the sequence listed in the
+              left menu.
+            </p>
+
+            <p class="text-xl leading-10">
+              C++ is an object oriented language and some concepts may be new.
+              Take breaks when needed, and go over the examples as many times as
+              needed.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <footer id="footer"></footer>
+  </body>
+</html>
