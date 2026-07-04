@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Tutorials</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../js/insert.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <style>
+      /* Custom styles for components that require pseudo-classes or fine tuning */
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+      /* Custom Scrollbar for Sidebar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar">
+        <script src="./js/sidebar.js"></script>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const menus = [
+              { name: "C++ HOME", link: "#" },
+              { name: "C++ Intro", link: "#" },
+              { name: "C++ Get Started", link: "#" },
+              { name: "C++ Syntax", link: "#" },
+              { name: "C++ Output", link: "#" },
+              { name: "C++ Comments", link: "#" },
+              { name: "C++ Variables", link: "#" },
+              { name: "C++ User Input", link: "#" },
+              { name: "C++ Data Types", link: "#" },
+              { name: "C++ Operators", link: "#" },
+            ];
+
+            document.getElementById("sidebar").innerHTML = createSidebar(
+              "C++ Tutorial",
+              menus,
+              0,
+            );
+          });
+        </script>
+      </div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[50px] sm:text-[52px] md:text-[65px] font-bold text-white mb-10 mt-0"
+        >
+          C++ Tutorial
+        </h1>
+
+        <div class="flex justify-between items-center gap-[15px] mb-[50px]">
+          <button
+            class="py-3 px-6 md:py-[18px] md:px-[40px] border-none rounded-[12px] md:rounded-[18px] bg-white text-black text-[18px] md:text-[20px] font-bold shadow-md cursor-pointer active:scale-95 transition"
+          >
+            ❮ Home
+          </button>
+          <button
+            class="py-3 px-6 md:py-[18px] md:px-[40px] border-none rounded-[12px] md:rounded-[18px] bg-[#3538de] text-white text-[18px] md:text-[20px] font-bold shadow-md cursor-pointer active:scale-95 transition"
+          >
+            Next ❯
+          </button>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[40px] font-bold mb-[30px]">Learn C++</h2>
+          <p
+            class="text-[20px] md:text-[28px] text-[#cbd5e1] mb-[30px] leading-relaxed"
+          >
+            C++ is a popular programming language.
+          </p>
+          <p
+            class="text-[20px] md:text-[28px] text-[#cbd5e1] mb-0 leading-relaxed"
+          >
+            Used for software and games.
+          </p>
+        </div>
+
+        <section>
+          <h1 class="text-5xl font-bold mb-10 pt-10">
+            Examples in Each Chapter
+          </h1>
+
+          <p class="text-gray-300 text-xl mb-10 leading-10">
+            C++ syntax is the set of rules that define how a C++ program is
+            written and interpreted. C++ is a case-sensitive language, which
+            means that uppercase and lowercase letters are treated as different
+            characters. The syntax of C programming is similar to that of other
+            programming languages, but it has its own unique features and
+            conventions.
+          </p>
+
+          <!-- Example Box -->
+          <div id="codeCards" class="space-y-8"></div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const codeCards = document.getElementById("codeCards");
+
+              const exampleCode = `#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    cout << "Hello World!";
+
+    return 0;
+
+}`;
+
+              codeCards.innerHTML += createCodeCard(
+                "Hello World Example",
+                exampleCode,
+              );
+            });
+          </script>
+
+          <!-- Note -->
+
+          <div class="mt-10 bg-[#2d3521] text-[#e9f1c7] rounded-3xl p-10">
+            <p class="text-xl leading-10 mb-8">
+              We recommend reading this tutorial, in the sequence listed in the
+              left menu.
+            </p>
+
+            <p class="text-xl leading-10">
+              C++ is an object oriented language and some concepts may be new.
+              Take breaks when needed, and go over the examples as many times as
+              needed.
+            </p>
+          </div>
+
+          <!-- algorithms btn -->
+
+          <div class="max-w-5xl w-full px-6">
+            <h1 class="text-4xl font-bold text-white mb-4 pt-10">
+              C++ Reference
+            </h1>
+            <p class="text-lg text-gray-200 mb-8">
+              You will also find references for different libraries, keywords
+              and functions:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                Reference Overview
+              </button>
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                C++ Keywords
+              </button>
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                C++ &lt;iostream&gt; Objects
+              </button>
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                C++ &lt;fstream&gt; Classes
+              </button>
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                C++ &lt;cmath&gt; Functions
+              </button>
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                C++ &lt;string&gt; Functions
+              </button>
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                C++ &lt;cstring&gt; Functions
+              </button>
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                C++ &lt;ctime&gt; Functions
+              </button>
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                C++ &lt;vector&gt; Functions
+              </button>
+              <button
+                class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg shadow-sm transition"
+              >
+                C++ &lt;algorithm&gt; Functions
+              </button>
+            </div>
+          </div>
+
+          <!-- certificate -->
+        </section>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <footer id="footer"></footer>
+  </body>
+</html>
