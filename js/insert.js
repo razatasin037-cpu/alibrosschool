@@ -8,6 +8,7 @@ fetch("/navbar.html")
     // JAISE HI NAVBAR INJECT HO JAYE, USKE TURANT BAAD LOGIC INITIALIZE KARO
     setupMobileMenu();
     setupActiveLinks();
+    initLanguage(); 
   })
   .catch(err => console.error("Navbar load karne me dikkat aayi:", err));
 
@@ -47,26 +48,64 @@ function setupMobileMenu() {
 }
 function setupActiveLinks() {
   const navLinks = document.querySelectorAll(".nav-link");
-  
-  // Active hone par jo Tailwind classes lagani hain
-  const activeClasses = ["border-b-2", "border-[#4d6fff]", "text-white"]; 
 
-  if (navLinks.length > 0) {
-    navLinks.forEach(link => {
-      link.addEventListener("click", function(e) {
-        // Default anchor behavior ko rokne ke liye (agar same page par hain)
-        // e.preventDefault(); 
+  const activeClasses = ["border-b-2", "border-[#4d6fff]", "text-[#4d6fff]"];
 
-        // Pehle sabhi links se active classes hatao
-        navLinks.forEach(item => {
-          item.classList.remove("active");
-          item.classList.remove(...activeClasses);
-        });
+  // 👉 Step 1: Page load par active set karo
+  const currentPath = window.location.pathname;
 
-        // Current link par active classes add karo
-        this.classList.add("active");
-        this.classList.add(...activeClasses);
-      });
+  navLinks.forEach(link => {
+    // clean old active classes
+    link.classList.remove(...activeClasses);
+
+    // agar href current page se match kare
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add(...activeClasses);
+    }
+
+    // 👉 Step 2: click handler
+    link.addEventListener("click", function () {
+      navLinks.forEach(item => item.classList.remove(...activeClasses));
+      this.classList.add(...activeClasses);
     });
-  }
+  });
+}
+
+
+
+//  LANGUAGE TOGGLE LOGIC 
+
+// ================= LANGUAGE DROPDOWN =================
+function initLanguage() {
+  const langBtn = document.getElementById("langBtn");
+  const langMenu = document.getElementById("langMenu");
+  const currentLang = document.getElementById("currentLang");
+
+  const englishBtn = document.getElementById("englishBtn");
+  const hinglishBtn = document.getElementById("hinglishBtn");
+
+  if (!langBtn || !langMenu) return;
+
+  // Dropdown Open/Close
+  langBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    langMenu.classList.toggle("hidden");
+  });
+
+  // English Select
+  englishBtn.addEventListener("click", () => {
+    currentLang.textContent = "English";
+    langMenu.classList.add("hidden");
+  });
+
+  // Hinglish Select
+  hinglishBtn.addEventListener("click", () => {
+    currentLang.textContent = "Hinglish";
+    langMenu.classList.add("hidden");
+  });
+
+  // Outside Click
+  document.addEventListener("click", () => {
+    langMenu.classList.add("hidden");
+  });
 }

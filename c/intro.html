@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Tutorials</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../js/insert.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <style>
+      /* Custom styles for components that require pseudo-classes or fine tuning */
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+      /* Custom Scrollbar for Sidebar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body  class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden">
+  <!-- Navigation Bar -->
+    <nav id="navbar">
+  </nav>
+
+  <!--Sidebar-->
+ <div id="sidebar"></div>
+
+
+ <!--Sidebar-->
+    <script>
+document.getElementById("sidebar").innerHTML = createSidebar(1);
+</script>
+  </body>
+  </html>

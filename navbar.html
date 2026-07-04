@@ -7,7 +7,9 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+       
     <script src="/js/insert.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -38,7 +40,7 @@
             <li>
               <a
                 href="/aillearing.html"
-                class="nav-link hover:text-[#4d6fff] text-[#4d6fff]  pb-4 border-b-2 border-[#4d6fff] transition text-"
+                class="nav-link hover:text-[#4d6fff]  pb-4 border-b-2 border-[#4d6fff] transition text-"
                 >Home</a
               >
             </li>
@@ -59,7 +61,7 @@
             <li>
               <a
                 href="/refrence/refrence.html"
-                class="nav-link text-white hover:text-[#4d6fff] transition text-md"
+                class="nav-link  hover:text-[#4d6fff] transition text-md"
                 >Reference</a
               >
             </li>
@@ -73,11 +75,39 @@
           </ul>
 
           <div class="hidden lg:flex items-center gap-5">
-            <span
-              class="text-white flex items-center gap-2 text-sm font-medium cursor-pointer hover:text-[#4d6fff] transition"
-            >
-              <i class="fa-solid fa-globe"></i> EN
-            </span>
+           <div class="relative inline-block">
+  <!-- Button -->
+  <div class="relative inline-block">
+  <!-- Button -->
+  <button
+    id="langBtn"
+    class="text-white flex items-center gap-2 bg-[#1e293b] px-4 py-2 rounded-lg hover:bg-[#3158ff] transition"
+  >
+   <i class="fa-solid fa-globe"></i>
+    <span id="currentLang">English</span>
+    <i class="fa-solid fa-chevron-down text-sm"></i>
+  </button>
+
+  <!-- Dropdown -->
+  <div
+    id="langMenu"
+    class="hidden absolute right-0 mt-2 w-48 bg-[#111827] border border-[#3158ff] rounded-xl shadow-xl overflow-hidden z-50"
+  >
+    <button
+      id="englishBtn"
+      class="w-full text-left px-4 py-3 text-white hover:bg-[#3158ff] transition"
+    >
+      🇬🇧 English
+    </button>
+
+    <button
+      id="hinglishBtn"
+      class="w-full text-left px-4 py-3 text-white hover:bg-[#3158ff] transition"
+    >
+      🇮🇳 Hinglish
+    </button>
+  </div>
+</div>
             <a
               href="logiandsingup.html"
               class="bg-white font-bold text-[#4d6fff] px-7 py-3 rounded-full text-sm hover:-translate-y-0.5 hover:scale-105 transition duration-300"
@@ -94,7 +124,7 @@
           <i id="menuIcon" class="fa-solid fa-bars text-black text-lg"></i>
         </button>
       </div>
-
+<!--Moblie menu-->
       <div
         id="mobileMenu"
         class="hidden lg:hidden mt-4 origin-top transition-all duration-300"
@@ -104,27 +134,27 @@
         >
           <a
             href="/aillearing.html"
-            class="block text-white hover:text-[#4d6fff] py-2 text-lg transition border-b border-white/5"
+            class="block nav-link text-white hover:text-[#4d6fff] py-2 text-lg transition"
             >Home</a
           >
           <a
             href="/totureal/totureal.html"
-            class="block text-[#4d6fff] font-bold py-2 text-lg border-b border-white/5"
+            class="block nav-link text-white hover:text-[#4d6fff] py-2 text-lg transition"
             >Tutorials</a
           >
           <a
             href="/getCertified/get.html"
-            class="block text-white hover:text-[#4d6fff] py-2 text-lg transition border-b border-white/5"
+            class="block nav-link text-white hover:text-[#4d6fff] py-2 text-lg transition"
             >Get Certified</a
           >
           <a
             href="/refrence/refrence.html"
-            class="block text-white hover:text-[#4d6fff] py-2 text-lg transition border-b border-white/5"
+            class="block nav-link text-white hover:text-[#4d6fff] py-2 text-lg transition "
             >Reference</a
           >
           <a
             href="/contact/contact.html"
-            class="block text-white hover:text-[#4d6fff] py-2 text-lg transition"
+            class="block nav-link text-white hover:text-[#4d6fff] py-2 text-lg transition"
             >Contact Us</a
           >
 
@@ -134,7 +164,7 @@
             <span
               class="text-white flex justify-center items-center gap-2 text-md"
             >
-              <i class="fa-solid fa-globe"></i> EN
+              <i class="fa-solid fa-globe"></i> EN 
             </span>
             <a
               href="logiandsingup.html"
@@ -147,6 +177,6 @@
       </div>
     </nav>
 
-    
+   
   </body>
 </html>

@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Tutorials</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../js/insert.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <style>
+      /* Custom styles for components that require pseudo-classes or fine tuning */
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+      /* Custom Scrollbar for Sidebar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden"
+  >
+  <!-- Navigation Bar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      
+<!-- c Tutorial -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[50px] sm:text-[52px] md:text-[65px] font-bold text-white mb-10 mt-0"
+        >
+          C Tutorial
+        </h1>
+
+        <div class="flex justify-between items-center gap-[15px] mb-[50px]">
+          <a href="/aillearing.html"
+            class="py-3 px-6 md:py-[18px] md:px-[40px] border-none rounded-[12px] md:rounded-[18px] bg-white text-black text-[18px] md:text-[20px] font-bold shadow-md cursor-pointer active:scale-95 transition"
+          >
+            ❮ Home
+          </a>
+          <a href="intro.html"
+            class="py-3 px-6 md:py-[18px] md:px-[40px] border-none rounded-[12px] md:rounded-[18px] bg-[#3538de] text-white text-[18px] md:text-[20px] font-bold shadow-md cursor-pointer active:scale-95 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+<!--Learn c English-->
+        <div
+          class="bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+         <h1 class="text-[30px] text-center text-blue-400 md:text-[40px] font-bold mb-[20px]">
+          English
+         </h1>
+       
+          <h2 class="text-[40px] font-bold mb-[30px]">Learn C</h2>
+          <p
+            class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-[30px] leading-relaxed"
+          >
+            C is a general-purpose programming language that has been widely used for over 50 years.
+          </p>
+          <p
+            class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-0 leading-relaxed"
+          >
+          C is very powerful; it has been used to develop operating systems, databases, applications, etc.
+          </p>
+        </div>
+<!--Learn c Hinglish-->
+<div
+  class="bg-gradient-to-r mt-7 from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+>
+  <h1 class="text-[30px] text-center text-green-400 md:text-[40px] font-bold mb-[20px]">
+    Hinglish
+  </h1>
+
+  <h2 class="text-[40px] font-bold mb-[30px]">
+    C Programming Sikho
+  </h2>
+
+  <p
+    class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-[30px] leading-relaxed"
+  >
+    C ek general-purpose programming language hai jo pichhle 50+ saalon se
+    bahut zyada use ki ja rahi hai. Yeh fast, reliable aur powerful language
+    mani jati hai.
+  </p>
+
+  <p
+    class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-0 leading-relaxed"
+  >
+    C ka use operating systems, databases, software applications, games aur
+    embedded systems banane ke liye kiya jata hai. Agar aap programming ki
+    strong foundation banana chahte hain, to C seekhna ek bahut achha choice
+    hai.
+  </p>
+</div>
+
+<!--Examples in Each Chapter English-->
+    <!-- ====================== ENGLISH SECTION ====================== -->
+   
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl">
+    <h1 class="text-[30px] text-center text-blue-400 md:text-[40px] font-bold mb-[20px]">
+    English
+  </h1>
+  <h1 class="text-5xl font-bold mb-10 pt-10">
+    Learn C Programming with Examples
+  </h1>
+
+  <p class="text-gray-300 text-xl mb-10 leading-10">
+    C is one of the oldest and most powerful programming languages. It is fast,
+    efficient, and widely used to develop operating systems, software
+    applications, embedded systems, compilers, and databases. In this tutorial,
+    you will learn C Programming from basic to advanced with simple
+    explanations, practical examples, and hands-on coding exercises.
+  </p>
+
+  <!-- Example Box -->
+  <div id="codeCards" class="space-y-8"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const codeCards = document.getElementById("codeCards");
+
+      const exampleCode = `#include <stdio.h>
+
+int main() {
+    printf("Hello, World!");
+    return 0;
+}`;
+
+      codeCards.innerHTML += createCodeCard(
+        "Hello World Example",
+        exampleCode
+      );
+    });
+  </script>
+
+  <!-- Note -->
+  <div class="mt-10 bg-[#2d3521] text-[#e9f1c7] rounded-3xl p-10">
+    <h2 class="text-3xl font-bold mb-6">📘 Note</h2>
+
+    <p class="text-xl leading-10 mb-8">
+      We recommend following this tutorial in the order shown in the left menu.
+      Each chapter builds on the previous one, making learning easier.
+    </p>
+
+    <p class="text-xl leading-10">
+      Practice every example by typing the code yourself. The more you practice,
+      the better you will understand C Programming.
+    </p>
+  </div>
+
+  <!-- Reference -->
+  <div class="max-w-6xl w-full pt-10">
+    <h1 class="text-4xl font-bold text-white mb-4">
+      C Reference
+    </h1>
+
+    <p class="text-lg text-gray-300 mb-8">
+      Explore important C libraries, keywords, and standard functions.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        Reference Overview
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        C Keywords
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        stdio.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        stdlib.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        string.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        math.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        ctype.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        time.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        File Handling
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== HINGLISH SECTION ====================== -->
+
+<section class="mt-24 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl">
+     <button class="text-[30px] text-center text-green-400 md:text-[40px] font-bold mb-[20px]">
+    Hinglish
+     </button>
+   
+  <h1 class="text-5xl font-bold mb-10 pt-10">
+    Examples Ke Sath C Programming Sikho
+  </h1>
+
+  <p class="text-gray-300 text-xl mb-10 leading-10">
+    C ek bahut hi popular aur powerful programming language hai. Yeh fast,
+    efficient aur beginners ke liye programming ki strong foundation banane me
+    madad karti hai. C ka use operating systems, software applications,
+    embedded systems, compilers aur databases banane ke liye kiya jata hai.
+    Is tutorial me aap C Programming ko basic se advanced level tak simple
+    explanations, practical examples aur coding practice ke saath seekhenge.
+  </p>
+
+  <!-- Note -->
+  <div class="mt-10 bg-[#2d3521] text-[#e9f1c7] rounded-3xl p-10">
+    <h2 class="text-3xl font-bold mb-6">📝 Note</h2>
+
+    <p class="text-xl leading-10 mb-8">
+      Hum recommend karte hain ki tutorial ko left menu ke sequence ke hisaab
+      se padhein. Har chapter pichhle chapter par based hai, isliye sequence
+      follow karna best rahega.
+    </p>
+
+    <p class="text-xl leading-10">
+      Har example ko khud type karke run karein. Jitni zyada practice karenge,
+      utni hi achhi tarah C Programming samajh aayegi.
+    </p>
+  </div>
+
+  <!-- Reference -->
+  <div class="max-w-6xl w-full pt-10">
+    <h1 class="text-4xl font-bold text-white mb-4">
+      C Reference
+    </h1>
+
+    <p class="text-lg text-gray-300 mb-8">
+      Yahan aap C ki important libraries, keywords aur standard functions ke
+      baare me bhi seekh sakte hain.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        Reference Overview
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        C Keywords
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        stdio.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        stdlib.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        string.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        math.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        ctype.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        time.h Functions
+      </button>
+
+      <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 rounded-lg transition">
+        File Handling
+      </button>
+    </div>
+  </div>
+</section>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <footer id="footer"></footer>
+
+
+<!--Sidebar-->
+    <script>
+document.getElementById("sidebar").innerHTML = createSidebar(0);
+</script>
+  </body>
+</html>
