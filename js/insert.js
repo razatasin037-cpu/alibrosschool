@@ -77,35 +77,57 @@ function setupActiveLinks() {
 
 // ================= LANGUAGE DROPDOWN =================
 function initLanguage() {
-  const langBtn = document.getElementById("langBtn");
-  const langMenu = document.getElementById("langMenu");
-  const currentLang = document.getElementById("currentLang");
 
-  const englishBtn = document.getElementById("englishBtn");
-  const hinglishBtn = document.getElementById("hinglishBtn");
+  function setupDropdown(btnId, menuId, currentId, englishId, hinglishId) {
 
-  if (!langBtn || !langMenu) return;
+    const btn = document.getElementById(btnId);
+    const menu = document.getElementById(menuId);
+    const current = document.getElementById(currentId);
+    const english = document.getElementById(englishId);
+    const hinglish = document.getElementById(hinglishId);
 
-  // Dropdown Open/Close
-  langBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    langMenu.classList.toggle("hidden");
-  });
+    if (!btn || !menu) return;
 
-  // English Select
-  englishBtn.addEventListener("click", () => {
-    currentLang.textContent = "English";
-    langMenu.classList.add("hidden");
-  });
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menu.classList.toggle("hidden");
+    });
 
-  // Hinglish Select
-  hinglishBtn.addEventListener("click", () => {
-    currentLang.textContent = "Hinglish";
-    langMenu.classList.add("hidden");
-  });
+    english.addEventListener("click", () => {
+      current.textContent = "English";
+      menu.classList.add("hidden");
+    });
 
-  // Outside Click
-  document.addEventListener("click", () => {
-    langMenu.classList.add("hidden");
-  });
+    hinglish.addEventListener("click", () => {
+      current.textContent = "Hinglish";
+      menu.classList.add("hidden");
+    });
+
+    document.addEventListener("click", () => {
+      menu.classList.add("hidden");
+    });
+
+    menu.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+
+  }
+
+  // Desktop
+  setupDropdown(
+    "langBtn",
+    "langMenu",
+    "currentLang",
+    "englishBtn",
+    "hinglishBtn"
+  );
+
+  // Mobile
+  setupDropdown(
+    "mobileLangBtn",
+    "mobileLangMenu",
+    "mobileCurrentLang",
+    "mobileEnglishBtn",
+    "mobileHinglishBtn"
+  );
 }
