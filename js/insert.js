@@ -1,92 +1,92 @@
-// 1. NAVBAR FETCH & LOGIC
+// ============================
+// NAVBAR
+// ============================
+
 fetch("/navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    // Pehle HTML ko page par insert karo
+  .then((res) => res.text())
+  .then((data) => {
     document.getElementById("navbar").innerHTML = data;
 
-    // JAISE HI NAVBAR INJECT HO JAYE, USKE TURANT BAAD LOGIC INITIALIZE KARO
     setupMobileMenu();
     setupActiveLinks();
-    initLanguage(); 
+    initLanguage();
   })
-  .catch(err => console.error("Navbar load karne me dikkat aayi:", err));
+  .catch((err) => console.error(err));
 
-// 2. FOOTER FETCH
+// ============================
+// FOOTER
+// ============================
+
 fetch("/footer.html")
-  .then(res => res.text())
-  .then(data => {
+  .then((res) => res.text())
+  .then((data) => {
     document.getElementById("footer").innerHTML = data;
-  })
-  .catch(err => console.error("Footer load karne me dikkat aayi:", err));
+  });
 
+// ============================
+// MOBILE MENU
+// ============================
 
-// --- INJECTION KE BAAD CHALNE WALE FUNCTIONS ---
-
-// Mobile Hamburger Menu Setup
 function setupMobileMenu() {
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuIcon = document.getElementById('menuIcon');
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuIcon = document.getElementById("menuIcon");
 
-  // Pehle check karenge ki element sach me HTML me aa chuke hain ya nahi
-  if (menuBtn && mobileMenu && menuIcon) {
-    menuBtn.addEventListener('click', () => {
-      // Open/Close toggle
-      mobileMenu.classList.toggle('hidden');
-      
-      // Icon transformation logic
-      if (mobileMenu.classList.contains('hidden')) {
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-      } else {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-xmark');
-      }
-    });
-  }
-}
-function setupActiveLinks() {
-  const navLinks = document.querySelectorAll(".nav-link");
+  if (!menuBtn) return;
 
-  const activeClasses = ["border-b-2", "border-[#4d6fff]", "text-[#4d6fff]"];
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
 
-  // 👉 Step 1: Page load par active set karo
-  const currentPath = window.location.pathname;
-
-  navLinks.forEach(link => {
-    // clean old active classes
-    link.classList.remove(...activeClasses);
-
-    // agar href current page se match kare
-    if (link.getAttribute("href") === currentPath) {
-      link.classList.add(...activeClasses);
+    if (mobileMenu.classList.contains("hidden")) {
+      menuIcon.classList.replace("fa-xmark", "fa-bars");
+    } else {
+      menuIcon.classList.replace("fa-bars", "fa-xmark");
     }
-
-    // 👉 Step 2: click handler
-    link.addEventListener("click", function () {
-      navLinks.forEach(item => item.classList.remove(...activeClasses));
-      this.classList.add(...activeClasses);
-    });
   });
 }
 
+// ============================
+// ACTIVE LINK
+// ============================
 
+function setupActiveLinks() {
+  const links = document.querySelectorAll(".nav-link");
 
-//  LANGUAGE TOGGLE LOGIC 
+  const current = window.location.pathname;
 
-// ================= LANGUAGE DROPDOWN =================
+  links.forEach((link) => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add(
+        "text-[#4d6fff]",
+        "border-b-2",
+        "border-[#4d6fff]"
+      );
+    }
+  });
+}
+
+// ============================
+// LANGUAGE
+// ============================
+
 function initLanguage() {
 
-  function setupDropdown(btnId, menuId, currentId, englishId, hinglishId) {
+  function setupDropdown(
+    btnId,
+    menuId,
+    currentId,
+    englishId,
+    hinglishId
+  ) {
 
     const btn = document.getElementById(btnId);
     const menu = document.getElementById(menuId);
     const current = document.getElementById(currentId);
+
     const english = document.getElementById(englishId);
     const hinglish = document.getElementById(hinglishId);
 
-    if (!btn || !menu) return;
+    if (!btn) return;
 
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -95,25 +95,29 @@ function initLanguage() {
 
     english.addEventListener("click", () => {
       current.textContent = "English";
+
       menu.classList.add("hidden");
+
+      setLanguage("en");
     });
 
     hinglish.addEventListener("click", () => {
       current.textContent = "Hinglish";
-      menu.classList.add("hidden");
-    });
 
-    document.addEventListener("click", () => {
       menu.classList.add("hidden");
+
+      setLanguage("hi");
     });
 
     menu.addEventListener("click", (e) => {
       e.stopPropagation();
     });
 
+    document.addEventListener("click", () => {
+      menu.classList.add("hidden");
+    });
   }
 
-  // Desktop
   setupDropdown(
     "langBtn",
     "langMenu",
@@ -122,7 +126,6 @@ function initLanguage() {
     "hinglishBtn"
   );
 
-  // Mobile
   setupDropdown(
     "mobileLangBtn",
     "mobileLangMenu",
@@ -130,4 +133,42 @@ function initLanguage() {
     "mobileEnglishBtn",
     "mobileHinglishBtn"
   );
+
+  const saved = localStorage.getItem("language") || "en";
+
+  setLanguage(saved);
+}
+
+// ============================
+// CHANGE LANGUAGE
+// ============================
+
+function setLanguage(lang) {
+
+  const english = document.querySelectorAll(".lang-en");
+  const hinglish = document.querySelectorAll(".lang-hi");
+
+  if (lang === "en") {
+
+    english.forEach((item) => item.classList.remove("hidden"));
+
+    hinglish.forEach((item) => item.classList.add("hidden"));
+
+  } else {
+
+    english.forEach((item) => item.classList.add("hidden"));
+
+    hinglish.forEach((item) => item.classList.remove("hidden"));
+  }
+
+  const desktop = document.getElementById("currentLang");
+  const mobile = document.getElementById("mobileCurrentLang");
+
+  if (desktop)
+    desktop.textContent = lang === "en" ? "English" : "Hinglish";
+
+  if (mobile)
+    mobile.textContent = lang === "en" ? "English" : "Hinglish";
+
+  localStorage.setItem("language", lang);
 }

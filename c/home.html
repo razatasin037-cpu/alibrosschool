@@ -9,9 +9,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/cardData.js"></script>
     <script src="./js/card.js"></script>
     <script src="../js/insert.js"></script>
     <script src="./js/sidebar.js"></script>
+
     <style>
       /* Custom styles for components that require pseudo-classes or fine tuning */
       .nav-link-active::after {
@@ -38,12 +40,12 @@
     </style>
   </head>
   <body
-    class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden"
+    class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden"
   >
   <!-- Navigation Bar -->
     <nav id="navbar"></nav>
 
-    <main class="w-full flex flex-col md:flex-row min-h-screen">
+    <main class="mt-20 w-full flex  flex-col md:flex-row min-h-screen">
       <div id="sidebar"></div>
 
       
@@ -70,28 +72,28 @@
           </a>
         </div>
 <!--Learn c English-->
-        <div
-          class="bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
-        >
-         <h1 class="text-[30px] text-center text-blue-400 md:text-[40px] font-bold mb-[20px]">
-          English
-         </h1>
-       
-          <h2 class="text-[40px] font-bold mb-[30px]">Learn C</h2>
-          <p
-            class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-[30px] leading-relaxed"
-          >
-            C is a general-purpose programming language that has been widely used for over 50 years.
-          </p>
-          <p
-            class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-0 leading-relaxed"
-          >
-          C is very powerful; it has been used to develop operating systems, databases, applications, etc.
-          </p>
-        </div>
+  <div
+  class="lang-en  bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+>
+  <h1 class="text-[30px] text-center text-blue-400 md:text-[40px] font-bold mb-[20px]">
+    English
+  </h1>
+
+  <h2 class="text-[40px] font-bold mb-[30px]">
+    Learn C
+  </h2>
+
+  <p class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-[30px] leading-relaxed">
+    C is a general-purpose programming language that has been widely used for over 50 years.
+  </p>
+
+  <p class="text-[20px] md:text-[23px] text-[#cbd5e1] leading-relaxed">
+    C is very powerful; it has been used to develop operating systems, databases, applications, etc.
+  </p>
+</div>
 <!--Learn c Hinglish-->
 <div
-  class="bg-gradient-to-r mt-7 from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+  class="lang-hi hidden mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
 >
   <h1 class="text-[30px] text-center text-green-400 md:text-[40px] font-bold mb-[20px]">
     Hinglish
@@ -101,28 +103,20 @@
     C Programming Sikho
   </h2>
 
-  <p
-    class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-[30px] leading-relaxed"
-  >
-    C ek general-purpose programming language hai jo pichhle 50+ saalon se
-    bahut zyada use ki ja rahi hai. Yeh fast, reliable aur powerful language
-    mani jati hai.
+  <p class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-[30px] leading-relaxed">
+    C ek general-purpose programming language hai jo pichhle 50+ saalon se use ho rahi hai.
   </p>
 
-  <p
-    class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-0 leading-relaxed"
-  >
-    C ka use operating systems, databases, software applications, games aur
-    embedded systems banane ke liye kiya jata hai. Agar aap programming ki
-    strong foundation banana chahte hain, to C seekhna ek bahut achha choice
-    hai.
+  <p class="text-[20px] md:text-[23px] text-[#cbd5e1] leading-relaxed">
+    C ka use operating systems, software, databases aur applications banane ke liye hota hai.
   </p>
 </div>
+
 
 <!--Examples in Each Chapter English-->
     <!-- ====================== ENGLISH SECTION ====================== -->
    
-<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl">
+<section class="lang-en mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl">
     <h1 class="text-[30px] text-center text-blue-400 md:text-[40px] font-bold mb-[20px]">
     English
   </h1>
@@ -138,26 +132,10 @@
     explanations, practical examples, and hands-on coding exercises.
   </p>
 
-  <!-- Example Box -->
-  <div id="codeCards" class="space-y-8"></div>
+  <!-- Example Box problem -->
+<div id="codeCards-en" class="my-8"></div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const codeCards = document.getElementById("codeCards");
 
-      const exampleCode = `#include <stdio.h>
-
-int main() {
-    printf("Hello, World!");
-    return 0;
-}`;
-
-      codeCards.innerHTML += createCodeCard(
-        "Hello World Example",
-        exampleCode
-      );
-    });
-  </script>
 
   <!-- Note -->
   <div class="mt-10 bg-[#2d3521] text-[#e9f1c7] rounded-3xl p-10">
@@ -226,10 +204,10 @@ int main() {
 
 <!-- ====================== HINGLISH SECTION ====================== -->
 
-<section class="mt-24 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl">
-     <button class="text-[30px] text-center text-green-400 md:text-[40px] font-bold mb-[20px]">
+<section class="lang-hi hidden mt-24 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl">
+     <h1 class="text-[30px] text-center text-green-400 md:text-[40px] font-bold mb-[20px]">
     Hinglish
-     </button>
+  </h1>
    
   <h1 class="text-5xl font-bold mb-10 pt-10">
     Examples Ke Sath C Programming Sikho
@@ -243,6 +221,9 @@ int main() {
     Is tutorial me aap C Programming ko basic se advanced level tak simple
     explanations, practical examples aur coding practice ke saath seekhenge.
   </p>
+
+   <!-- Example Box problem -->
+<div id="codeCards-hi" class="my-8"></div>
 
   <!-- Note -->
   <div class="mt-10 bg-[#2d3521] text-[#e9f1c7] rounded-3xl p-10">
@@ -319,7 +300,20 @@ int main() {
 
 <!--Sidebar-->
     <script>
+       // Sidebar load ho gaya
 document.getElementById("sidebar").innerHTML = createSidebar(0);
+
+      // DOM elements ready hone ke baad card render honge
+      window.addEventListener("DOMContentLoaded", () => {
+        // Render English Card
+        if(typeof cardDataEnglish !== 'undefined') {
+          createCodeCard(cardDataEnglish);
+        }
+        // Render Hinglish Card
+        if(typeof cardDataHinglish !== 'undefined') {
+          createCodeCard(cardDataHinglish);
+        }
+      });
 </script>
   </body>
 </html>
