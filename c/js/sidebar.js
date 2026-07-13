@@ -23,88 +23,121 @@ function createSidebar(activeIndex = 0) {
   }
 
   const menus = [
-    { name: "C HOME", link: "home.html" },
-    { name: "C Intro", link: "intro.html" },
-    { name: "C Get Started", link: "getstarted.html" },
+  { name: "C HOME", link: "home.html" },
+  { name: "C Intro", link: "intro.html" },
+  { name: "C Get Started", link: "getstarted.html" },
 
-    {
-      name: "C Syntax",
-      submenu: [
-        { name: "Syntax", link: "syntax.html" },
-        { name: "Statements", link: "statements.html" },
-        { name: "Syntax Code Challenge", link: "syntax-challenge.html" }
-      ]
-    },
+  {
+    name: "C Syntax",
+    link: "syntax.html",
+    submenu: [
+      { name: "Syntax", link: "syntax.html" },
+      { name: "Statements", link: "statements.html" },
+      { name: "Syntax Code Challenge", link: "syntaxCodeChallenge.html" }
+    ]
+  },
 
-    { name: "C Output", link: "output.html" },
-    { name: "C Comments", link: "comments.html" },
-    { name: "C Variables", link: "variables.html" },
-    { name: "C User Input", link: "user-input.html" },
-    { name: "C Data Types", link: "data-types.html" },
-    { name: "C Operators", link: "operators.html" }
-  ];
+  {
+    name: "C Output",
+    link: "printText.html",
+    submenu: [
+      { name: "Print Text", link: "printText.html" },
+      { name: "New Lines", link: "newLines.html" }
+    ]
+  },
+
+  { name: "C Comments", link: "comments.html"},
+  { name: "C Variables",
+   link: "variables.html",
+     submenu: [
+      { name: "Create Variables", link: "createVariables.html" },
+      { name: "Format Specifiers", link: "formatspecifiers.html" },
+      { name: "Format Specifiers", link: "formatspecifiers.html" }
+    ]
+   },
+  { name: "C User Input", link: "user-input.html" },
+  { name: "C Data Types", link: "data-types.html" },
+  { name: "C Operators", link: "operators.html" }
+];
 
   const currentPage = window.location.pathname.toLowerCase();
 
   let menuHTML = "";
 
   menus.forEach((menu, index) => {
-
+ 
+     // submenu k liye
     if (menu.submenu) {
 
-      const isOpen = menu.submenu.some(item =>
-        currentPage.includes(item.link.toLowerCase())
-      );
+  const isOpen =
+    currentPage.includes(menu.link.toLowerCase()) ||
+    menu.submenu.some(item =>
+      currentPage.includes(item.link.toLowerCase())
+    );
 
-      menuHTML += `
-      <div>
+  menuHTML += `
+    <div>
 
-        <button
-          class="submenu-btn w-full flex justify-between items-center
-          py-[18px] px-[35px]
-          text-white text-[18px] font-bold rounded-[18px]
-          ${!isOpen ? "hover:bg-[#3d5dff]" : ""}
-          transition"
-        >
+    <div
+  class="group flex items-center rounded-[18px] overflow-hidden
+  ${
+    isOpen
+      ? "bg-[#3d5dff]" //c syntax
+      : "hover:bg-[#3d5dff]"
+  } transition duration-200">
 
-          <span>${menu.name}</span>
+  <a
+    href="${menu.link}"
+    class="flex-1 py-[18px] px-[35px] text-white text-[18px] font-bold">
 
-          <i class="fa-solid ${
-            isOpen ? "fa-caret-down" : "fa-caret-right"
-          } text-xl text-gray-400"></i>
+    ${menu.name}
 
-        </button>
+  </a>
 
-        <div class="submenu ${isOpen ? "" : "hidden"} ml-8 mt-2 flex flex-col gap-2">
-      `;
+  <button
+    class="submenu-btn px-5 py-[18px] text-white">
 
-      menu.submenu.forEach(item => {
+    <i class="fa-solid ${
+      isOpen ? "fa-caret-down" : "fa-caret-right"
+    }"></i>
 
-        const active = currentPage.includes(item.link.toLowerCase());
+  </button>
 
-        menuHTML += `
-        <a
-          href="${item.link}"
-          class="block px-4 py-2 rounded-lg font-bold transition
-          ${
-            active
+</div>
+
+
+      <div class="submenu ${
+        isOpen ? "" : "hidden"
+      } ml-8 mt-2 flex flex-col gap-2">
+  `;
+// submenu k liye
+  menu.submenu.forEach(item => {
+
+    const active = currentPage.includes(item.link.toLowerCase());
+
+    menuHTML += `
+      <a
+        href="${item.link}"
+        class="block px-4 py-2 rounded-lg font-bold transition
+        ${
+          active
             ? "bg-[#3d5dff] text-white"
             : "text-gray-300 hover:bg-[#3158ff] hover:text-white"
-          }"
-        >
-          ${item.name}
-        </a>
-        `;
-      });
+        }">
 
-      menuHTML += `
-        </div>
+        ${item.name}
 
+      </a>
+    `;
+  });
+
+  menuHTML += `
       </div>
-      `;
 
-    }
-
+    </div>
+  `;
+}
+// sab k liye
     else {
 
       menuHTML += `
@@ -149,20 +182,19 @@ function createSidebar(activeIndex = 0) {
 
 
 // Dropdown
-document.addEventListener("click", function(e){
+document.addEventListener("click", function (e) {
 
-    const btn=e.target.closest(".submenu-btn");
+  const btn = e.target.closest(".submenu-btn");
 
-    if(!btn) return;
+  if (!btn) return;
 
-    const submenu=btn.nextElementSibling;
+  const submenu = btn.parentElement.nextElementSibling;
 
-    const icon=btn.querySelector("i");
+  const icon = btn.querySelector("i");
 
-    submenu.classList.toggle("hidden");
+  submenu.classList.toggle("hidden");
 
-    icon.classList.toggle("fa-caret-right");
-
-    icon.classList.toggle("fa-caret-down");
+  icon.classList.toggle("fa-caret-right");
+  icon.classList.toggle("fa-caret-down");
 
 });

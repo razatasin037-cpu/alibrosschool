@@ -9,9 +9,8 @@ fetch("/navbar.html")
 
     setupMobileMenu();
     setupActiveLinks();
-    initLanguage();
   })
-  .catch((err) => console.error(err));
+  // .catch((err) => console.error(err));
 
 // ============================
 // FOOTER

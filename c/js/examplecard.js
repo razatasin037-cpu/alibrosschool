@@ -1,4 +1,3 @@
-console.log("card.js loaded");
 
 function createCodeCard({
   containerId,

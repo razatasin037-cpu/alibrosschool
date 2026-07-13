@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Comments</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="/js/insert.js"></script>
+  <script src="js/sidebar.js"></script>
+
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+<div id="sidebar"></div>
+
+<section class="flex-1 p-6 md:px-16 md:py-8">
+
+<!-- Heading -->
+
+<h1 class="text-4xl md:text-6xl font-bold mb-10">
+C Comments
+</h1>
+
+<!-- Navigation -->
+
+<div class="flex justify-between items-center mb-12">
+
+<a href="newLines.html"
+class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+❮ Previous
+</a>
+
+<a href="variables.html"
+class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+Next ❯
+</a>
+
+</div>
+
+<!-- Introduction -->
+
+<!-- Introduction -->
+<section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+  <h2 class="text-4xl font-bold mb-8">
+    C Comments
+  </h2>
+
+  <p class="text-xl text-gray-300 leading-10 mb-6">
+    Comments ka use C program me code ko explain karne ke liye kiya jata hai. Ye sirf programmer ke liye hote hain aur compiler inhe ignore kar deta hai. Isliye comments program ke output ko affect nahi karte.
+  </p>
+
+  <p class="text-xl text-gray-300 leading-10">
+    Jab project bada ho ya team me kaam karna ho, tab comments code ko samajhna aur maintain karna bahut aasan bana dete hain.
+  </p>
+
+</section>
+
+<!-- Why Comments -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Comments Ka Use Kyu Karte Hai?
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Sochiye aapne aaj ek bada project banaya aur 6 mahine baad us project ko dubara open kiya. Agar aapne comments nahi likhe honge to code ko samajhne me kaafi time lagega. Lekin agar important jagah comments likhe honge to turant samajh aa jayega ki code kis kaam ke liye likha gaya tha.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Team me kaam karte waqt comments aur bhi important ho jate hain. Har programmer ka coding style alag hota hai. Comments dusre developers ko code samajhne me help karte hain aur project ko maintain karna bahut easy bana dete hain.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10">
+
+Isi liye har professional developer important logic ke upar comments zarur likhta hai. Lekin unnecessary comments likhne se bachna chahiye.
+
+</p>
+
+</section>
+
+<!-- Single Line Comment -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Single Line Comment
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Agar hume sirf ek line ke liye comment likhna ho to hum <strong class="text-red-400">//</strong> ka use karte hain. Compiler <strong class="text-red-400">//</strong> ke baad us line me likhe hue pure text ko ignore kar deta hai.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Single Line Comments ka use chhoti information dene ke liye kiya jata hai. Jaise kisi variable ka purpose batana, kisi function ko explain karna ya kisi important line ke baare me short note likhna.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-8">
+
+Ye beginners ke liye bhi bahut useful hote hain kyunki jab aap programming seekh rahe hote hain tab comments likhne se concepts ko yaad rakhna aasaan ho jata hai.
+
+</p>
+
+<div class="bg-black rounded-2xl p-6 overflow-x-auto">
+
+<pre><code class="text-green-400">
+#include <stdio.h>
+
+int main()
+{
+
+   // Print Hello World
+
+   printf("Hello World!");
+
+   return 0;
+
+}
+</code></pre>
+
+</div>
+
+<div class="mt-8">
+
+<p class="text-xl text-gray-300 leading-10">
+
+Is example me <strong class="text-red-400">// Print Hello World</strong> ek Single Line Comment hai. Compiler is line ko ignore karega aur sirf <strong>printf()</strong> statement execute karega. Isliye output sirf <strong>Hello World!</strong> hi print hoga.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Multi Line Comment -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Multi Line Comment
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Kabhi-kabhi hume ek line se zyada explanation likhne ki zarurat hoti hai. Aise situation me hum <strong>Multi Line Comment</strong> ka use karte hain. Multi Line Comment <strong class="text-red-400">/*</strong> se start hota hai aur <strong class="text-red-400">*/</strong> par khatam hota hai. In dono symbols ke beech me jitna bhi text likha hota hai, compiler usse ignore kar deta hai.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Multi Line Comments ka use tab kiya jata hai jab hume kisi function, algorithm ya code ke kisi bade part ke baare me detail me information deni ho. Professional projects me developers documentation likhne ke liye bhi Multi Line Comments ka use karte hain.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-8">
+
+Agar aap kisi code ko temporary disable karna chahte hain to us code ko bhi Multi Line Comment ke andar rakh sakte hain.
+
+</p>
+
+<div class="bg-black rounded-2xl p-6 overflow-x-auto">
+
+<pre><code class="text-green-400">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+
+   /*
+      This is
+      a Multi Line
+      Comment
+   */
+
+   printf("Hello World!");
+
+   return 0;
+
+}
+</code></pre>
+
+</div>
+
+<p class="text-xl text-gray-300 leading-10 mt-8">
+
+Is program me compiler <strong class="text-red-400">/* */</strong> ke andar likhe hue text ko ignore karega aur sirf <strong>printf()</strong> function execute karega.
+
+</p>
+
+</section>
+
+<!-- Difference -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Single Line aur Multi Line Comment me Difference
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Single Line Comment sirf ek line ke liye use hota hai aur iske liye <strong class="text-red-400">//</strong> ka use kiya jata hai. Ye chhoti information ya kisi ek statement ko explain karne ke liye best hota hai.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Multi Line Comment ek se zyada lines ke liye use hota hai aur iske liye <strong class="text-red-400">/* */</strong> ka use kiya jata hai. Jab explanation lambi ho ya kisi function ke baare me detail likhni ho tab Multi Line Comment use karna better hota hai.
+
+</p>
+
+</section>
+
+<!-- Best Practice -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Best Practices
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Comments hamesha simple aur meaningful hone chahiye. Aisa comment likho jise padhkar turant samajh aa jaye ki code kya kar raha hai.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Har line ke liye comment likhna achhi practice nahi hai. Sirf wahi jagah comment likho jahan explanation ki zarurat ho.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Agar code change ho jaye to comments ko bhi update karna chahiye. Purane aur galat comments dusre programmers ko confuse kar sakte hain.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10">
+
+Code jitna clean aur readable hoga, utne hi kam comments ki zarurat padegi.
+
+</p>
+
+</section>
+
+<!-- Common Mistakes -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Common Mistakes
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Bahut se beginners har line ke baad comment likh dete hain. Isse code bada aur confusing lagne lagta hai.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Kuch programmers code update kar dete hain lekin comments update nahi karte. Is wajah se comments aur code alag-alag information dene lagte hain.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10">
+
+Hamesha sirf useful comments likho aur unnecessary comments se bachne ki koshish karo.
+
+</p>
+
+</section>
+
+<!-- Real Life -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Real Life Example
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Sochiye aapne ek School Management System banaya hai jisme 10,000 se bhi zyada lines ka code hai. Agar comments nahi honge to kuch mahino baad apna hi code samajhna mushkil ho jayega.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10">
+
+Isi liye professional developers important functions, login system, database queries aur complex logic ke upar comments zarur likhte hain.
+
+</p>
+
+</section>
+
+<!-- Note -->
+
+<section class="mt-16">
+
+<div class="bg-[#2d3521] rounded-[30px] p-10">
+
+<h2 class="text-3xl font-bold mb-6">
+📝 Note
+</h2>
+
+<p class="text-xl text-[#e9f1c7] leading-10">
+
+Comments program ko readable banate hain, lekin bahut zyada comments likhne se code aur bhi confusing ho sakta hai. Hamesha sirf wahi comments likho jo dusre programmer ya future me khud tumhare liye useful hon.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Summary -->
+
+<section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Summary
+</h2>
+
+<p class="text-xl leading-10 text-gray-100 mb-6">
+
+C Programming me Comments ka use code ko explain karne ke liye kiya jata hai. Compiler comments ko execute nahi karta aur unhe completely ignore kar deta hai.
+
+</p>
+
+<p class="text-xl leading-10 text-gray-100 mb-6">
+
+Single Line Comment ke liye <strong class="text-red-400">//</strong> aur Multi Line Comment ke liye <strong class="text-red-400">/* */</strong> ka use hota hai. Dono ka purpose code ko readable aur easy to understand banana hai.
+
+</p>
+
+<p class="text-xl leading-10 text-gray-100">
+
+Hamesha meaningful comments likho aur unnecessary comments se bacho. Clean code aur achhe comments milkar kisi bhi project ko professional banate hain.
+
+</p>
+
+</section>
+
+<!-- Footer Buttons -->
+
+<div class="flex justify-between mt-12 mb-8">
+
+<a href="newLines.html"
+class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+❮ Previous
+</a>
+
+<a href="variables.html"
+class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+Next ❯
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+document.getElementById("sidebar").innerHTML = createSidebar(5);
+</script>
+
+</body>
+</html>
