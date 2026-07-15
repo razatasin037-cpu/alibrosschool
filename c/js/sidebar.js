@@ -47,10 +47,11 @@ function createSidebar(activeIndex = 0) {
   },
 
   { name: "C Comments", link: "comments.html"},
+
   { name: "C Variables",
-   link: "variables.html",
+   link: "createvariables.html",
      submenu: [
-      { name: "Create Variables", link: "createVariables.html" },
+      { name: "Create Variables", link: "createvariables.html" },
       { name: "Format Specifiers", link: "formatspecifiers.html" },
       { name: "Format Specifiers", link: "formatspecifiers.html" }
     ]
@@ -82,7 +83,7 @@ function createSidebar(activeIndex = 0) {
   class="group flex items-center rounded-[18px] overflow-hidden
   ${
     isOpen
-      ? "bg-[#3d5dff]" //c syntax
+      ? "bg-white/10" //c syntax
       : "hover:bg-[#3d5dff]"
   } transition duration-200">
 
@@ -184,6 +185,7 @@ function createSidebar(activeIndex = 0) {
 // Dropdown
 document.addEventListener("click", function (e) {
 
+
   const btn = e.target.closest(".submenu-btn");
 
   if (!btn) return;
@@ -198,3 +200,4 @@ document.addEventListener("click", function (e) {
   icon.classList.toggle("fa-caret-down");
 
 });
+
