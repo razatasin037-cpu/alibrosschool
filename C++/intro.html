@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Tutorials</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../js/insert.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <style>
+      /* Custom styles for components that require pseudo-classes or fine tuning */
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+      /* Custom Scrollbar for Sidebar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden"
+  >
+    <!-- Navigation Bar -->
+    <nav id="navbar"></nav>
+
+        <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!--Sidebar-->
+      <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+    > 
+
+    <!-- Heading -->
+<h1 class="text-[60px] font-bold text-white mb-10 mt-10">
+   C++ ka Introduction
+</h1>
+
+<!-- Previous & Next -->
+<div class="flex justify-between items-center mb-10">
+
+    <a href="/C++/c++tutoreal.html" style="text-decoration: none">
+        <button class="bg-white text-black border border-gray-300 rounded-xl px-8 py-4 text-2xl font-semibold hover:bg-gray-100 transition">
+            <i class="fa-solid fa-chevron-left mr-2"></i>
+            Previous
+        </button>
+    </a>
+
+    <a href="/C++/start.html" style="text-decoration: none">
+        <button class="bg-[#3d59d9] text-white rounded-xl px-8 py-4 text-2xl font-semibold">
+            Next
+            <i class="fa-solid fa-chevron-right ml-2"></i>
+        </button>
+    </a>
+
+</div>
+
+<hr class="border-gray-700 mb-12">
+
+<!-- What is C++ -->
+<h2 class="text-[52px] font-bold text-white mb-8">
+    C++ kya hai?
+</h2>
+
+<p class="text-[24px] leading-[50px] text-gray-300 mb-8">
+    C++ ek cross-platform language hai jo high-performance applications create karne ke liye use kiya ja sakta hai.
+</p>
+
+<p class="text-[24px] leading-[50px] text-gray-300 mb-8">
+C++ ko develop kiya gaya tha..
+    <span class="text-white font-semibold">Bjarne Stroustrup C++ ke creator hain.</span>,
+    C++ ko Bjarne Stroustrup ne C language ka extension banakar develop kiya tha.
+    <span class="underline text-white">C language.</span>
+</p>
+
+<p class="text-[24px] leading-[50px] text-gray-300 mb-8">
+    C++ programmers ko system resources aur memory par high level ka control deti hai.
+</p>
+
+<p class="text-[24px] leading-[50px] text-gray-300">
+  C++ language ko 5 baar major updates mile hain—2011, 2014, 2017, 2020 aur 2023 me. In updates ke baad iske versions ka naam C++11, C++14, C++17, C++20 aur C++23 rakha gaya.
+</p>
+
+<hr class="border-gray-700 my-16">
+
+<!-- Why Use C++ -->
+<div class="mt-16">
+
+    <h2 class="text-5xl font-bold text-white mb-10">
+        C++ kyu use karein?
+    </h2>
+
+    <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+
+        <p>
+           C++ duniya ki sabse popular programming languages me se ek hai.
+        </p>
+
+        <p>
+        Aaj ke samay me C++ ka use operating systems, Graphical User Interfaces (GUI), games, web browsers aur embedded systems me kiya jata hai.
+        </p>
+
+        <p>
+        C++ ek Object-Oriented Programming (OOP) language hai, jo programs ko ek clear structure deti hai aur code ko dobara use (code reuse) karne ki suvidha deti hai. Isse development ka time aur cost dono kam ho jate hain.
+        </p>
+
+        <p>
+          C++ ek portable language hai, jiska matlab hai ki isse aise applications develop kiye ja sakte hain jo multiple platforms par chal sakte hain.
+        </p>
+
+        <p>
+           C++ ek fast, powerful aur seekhne me aasan programming language hai.
+        </p>
+
+        <p>
+            C++ ka C language se kaafi close relation hai... <span class="underline text-white">C</span>,
+            <span class="underline text-white">C#</span> and
+            <span class="underline text-white">Java</span>,
+            ...isliye programmers aasani se in dono languages ke beech switch kar sakte hain
+        </p>
+
+    </div>
+
+</div>
+
+<!-- Divider -->
+<hr class="border-gray-700 my-16">
+
+<!-- Difference -->
+<div>
+
+    <h2 class="text-5xl font-bold  text-white mb-10">
+           Difference between C and C++
+    </h2>
+
+    <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+
+        <p>
+           C++ ko C language ke extension ke roop me develop kiya gaya tha.
+            <span class="underline text-white">C</span>,
+            Aur in dono languages ki syntax kaafi had tak same hai.
+        </p>
+
+        <p>
+            The main difference is that C++ supports
+            <span class="font-semibold text-white">classes</span> and
+            <span class="font-semibold text-white">objects</span>,
+            while C does not.
+        </p>
+
+    </div>
+
+</div>
+<hr class="border-gray-700 my-16">
+
+<!-- Get Started Section -->
+<div class="mt-16">
+
+    <h2 class="text-5xl font-bold text-white mb-10">
+        Get Started
+    </h2>
+
+    <p class="text-2xl text-gray-300 leading-[50px] mb-8">
+       Jab aap is tutorial ko complete kar lenge, tab aap C++ programs likh paayenge aur real-life applications banana bhi seekh jaayenge.
+    </p>
+
+    <p class="text-2xl text-gray-300 leading-[50px] mb-10">
+       Is tutorial ko shuru karne ke liye pehle se programming ka koi experience hona zaroori nahi hai.
+    </p>
+
+    <a href="/C++/start.html" style="text-decoration: none">
+        <button
+            class="bg-[#3538de] hover:bg-[#4d6fff] text-white text-2xl font-semibold px-10 py-5 rounded-2xl shadow-lg transition duration-300">
+            Get Started »
+        </button>
+    </a>
+    <hr class="border-gray-700 my-16">
+</div>
+
+    <!-- Bottom Navigation -->
+<div class="flex items-center justify-between mt-16 mb-10">
+
+    <!-- Previous -->
+    <a href="/C++/intro.html" style="text-decoration: none">
+        <button
+            class="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black text-2xl font-semibold px-10 py-5 rounded-xl transition">
+            <i class="fa-solid fa-chevron-left mr-2"></i>
+            Previous
+        </button>
+    </a>
+
+    <!-- Sign In -->
+    <button
+        class="hidden lg:block bg-white border-2 border-gray-300 hover:bg-gray-100 text-gray-800 text-2xl px-14 py-5 rounded-xl transition">
+        Sign in to track progress
+    </button>
+
+    <!-- Next -->
+    <a href="/C++/start.html" style="text-decoration: none">
+        <button
+            class="bg-[#293fbf]  text-white text-2xl font-semibold px-10 py-5 rounded-xl transition">
+            Next
+            <i class="fa-solid fa-chevron-right ml-2"></i>
+        </button>
+    </a>
+</div>
+</div>
+  
+ </section>
+      </section>
+    </main>
+
+  </body>
+  <footer id="footer"></footer>
+  <!--Sidebar-->
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(1);
+  </script>
+</html>
