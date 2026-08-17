@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Get Started</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+   <!-- Js File -->
+  <script src="/js/insert.js"></script>
+  <script src="./js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <!-- Main Layout -->
+  <main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Content -->
+    <section class="flex-1 p-6 md:p-10">
+
+      <!-- Page Heading -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-10">
+        C Get Started
+      </h1>
+
+      <!-- Navigation Buttons -->
+      <div class="flex justify-between items-center mb-12">
+        <a
+          href="intro.html"
+          class="bg-white text-black md:px-8 md:py-4 px-2 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="syntax.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+      </div>
+
+      <!-- Banner -->
+      <section class="bg-gradient-to-r from-blue-600 to-purple-700 rounded-3xl p-8 shadow-lg">
+        <h2 class="text-5xl font-bold mb-4">
+          C Get Started
+        </h2>
+
+        <p class="text-lg text-gray-200 leading-8">
+          Is tutorial mein hum seekhenge ki C Programming Language ko apne
+          computer par kaise install karein aur apna pehla C program kaise
+          likhein.
+        </p>
+      </section>
+
+      <!-- Step 1 -->
+      <section class="mt-12 bg-[#0f172a] border border-blue-500 rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+          Step 1: Install a C Compiler
+        </h2>
+
+        <p class="text-gray-300 leading-8">
+          C program ko run karne ke liye ek compiler ki zarurat hoti hai.
+        </p>
+
+        <ul class="list-disc ml-8 mt-5 text-gray-300 space-y-3">
+          <li>Windows - MinGW ya Code::Blocks install karein.</li>
+          <li>Linux - GCC Compiler pehle se available hota hai.</li>
+          <li>Mac - Xcode Command Line Tools install karein.</li>
+        </ul>
+
+      </section>
+
+      <!-- Step 2 -->
+      <section class="mt-10 bg-[#0f172a] border border-blue-500 rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+          Step 2: Choose an IDE
+        </h2>
+
+        <p class="text-gray-300 leading-8">
+          IDE (Integrated Development Environment) ek software hota hai jisme
+          aap code likhte hain, save karte hain aur run karte hain.
+        </p>
+
+        <ul class="list-disc ml-8 mt-5 text-gray-300 space-y-3">
+          <li>Visual Studio Code</li>
+          <li>Code::Blocks</li>
+          <li>Dev-C</li>
+          <li>Visual Studio</li>
+        </ul>
+
+      </section>
+
+      <!-- Step 3 -->
+      <section class="mt-10 bg-[#0f172a] border border-blue-500 rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+          Step 3: Write Your First C Program
+        </h2>
+
+        <!-- Example -->
+      <section class="mt-16">
+        <div id="codeCards"></div>
+      </section>
+
+        <p class="mt-6 text-gray-300 leading-8">
+          Is program ko <strong>hello.c</strong> naam se save karein aur
+          compiler ki madad se compile aur run karein.
+        </p>
+
+      </section>
+
+      <!-- Output -->
+      <section class="mt-10 bg-[#0f172a] border border-blue-500 rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+          Output
+        </h2>
+
+        <div class="bg-black rounded-xl p-5">
+
+<pre><code class="text-yellow-400">
+Hello, World!
+</code></pre>
+
+        </div>
+
+      </section>
+
+      <!-- Summary -->
+      <section class="mt-10 bg-gradient-to-r from-green-700 to-blue-700 rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+          Summary
+        </h2>
+
+        <ul class="list-disc ml-8 text-gray-100 leading-9">
+          <li>C program chalane ke liye Compiler install karein.</li>
+          <li>Code likhne ke liye IDE ka use karein.</li>
+          <li>Program ko <code>.c</code> extension ke saath save karein.</li>
+          <li>Compiler se compile karke program run karein.</li>
+          <li>Sabse pehla program <strong>Hello, World!</strong> hota hai.</li>
+        </ul>
+
+      </section>
+  <!-- footer Buttons -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+        <a
+          href="intro.html"
+          class="bg-white text-black md:px-8 md:py-4 px-2 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="syntax.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+      </div>
+    </section>
+
+    
+  </main>
+
+  
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // Agar C ke liye sidebar id alag hai to uske hisab se value change kar lena.
+    document.getElementById("sidebar").innerHTML = createSidebar(2);
+  </script>
+
+  <script src="js/examplecard.js"></script>
+
+</body>
+</html>

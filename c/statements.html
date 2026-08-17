@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Statements</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="/js/insert.js"></script>
+  <script src="js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <!-- Main -->
+  <main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Content -->
+    <section class="flex-1 p-6 md:p-10">
+
+      <!-- Heading -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-10">
+        C Statements
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between items-center mb-12">
+        <a href="syntax.html"
+          class="bg-white text-black md:px-8 md:py-4 px-3 py-3 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="syntaxCodeChallenge.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+      </div>
+
+      <!-- Introduction -->
+      <section class="bg-gradient-to-r from-[#111827] to-[#25304b] rounded-3xl p-8 border border-[#3158ff]">
+
+        <h2 class="text-4xl font-bold mb-6">
+          C Statements
+        </h2>
+
+        <p class="text-gray-300 text-xl leading-10">
+          Statements C program ke instructions hote hain jo compiler execute karta hai.
+          Har statement generally semicolon (<code>;</code>) se end hoti hai.
+        </p>
+
+      </section>
+
+      <!-- Syntax -->
+      <section class="mt-10 bg-[#0f172a] border border-[#3158ff] rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+          Example
+        </h2>
+
+        <div id="codeCards"></div>
+
+        <p class="mt-6 text-gray-300 text-lg leading-8">
+          Upar diye gaye program me har line ek statement hai jo compiler execute karta hai.
+        </p>
+
+      </section>
+
+      <!-- Types -->
+      <section class="mt-10 bg-[#0f172a] border border-[#3158ff] rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+          Types of Statements
+        </h2>
+
+        <ul class="list-disc ml-8 text-gray-300 text-lg leading-10">
+          <li>Declaration Statement</li>
+          <li>Assignment Statement</li>
+          <li>Function Call Statement</li>
+          <li>Conditional Statement</li>
+          <li>Loop Statement</li>
+          <li>Return Statement</li>
+        </ul>
+
+      </section>
+
+      <!-- Explanation -->
+      <section class="mt-10 bg-[#0f172a] border border-[#3158ff] rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+          Explanation
+        </h2>
+
+        <div class="space-y-5 text-gray-300 text-lg leading-9">
+
+          <p><strong>Declaration:</strong> Variable banane ke liye use hota hai.</p>
+
+          <p><strong>Assignment:</strong> Variable me value store karta hai.</p>
+
+          <p><strong>Function Call:</strong> Kisi function ko execute karta hai.</p>
+
+          <p><strong>Conditional:</strong> if, else, switch jaise statements decision lene ke liye use hote hain.</p>
+
+          <p><strong>Loop:</strong> for, while, do-while statements repeat karne ke liye use hote hain.</p>
+
+          <p><strong>Return:</strong> Function se value return karta hai.</p>
+
+        </div>
+
+      </section>
+
+      <!-- Note -->
+      <section class="mt-10 bg-[#2d3521] text-[#e9f1c7] rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+          📝 Note
+        </h2>
+
+        <p class="text-xl leading-9">
+          C me almost har statement semicolon (<code>;</code>) se end hoti hai.
+          Agar semicolon miss ho jaye to compiler error dega.
+        </p>
+
+      </section>
+
+      <!-- Summary -->
+      <section class="mt-10 bg-gradient-to-r from-green-700 to-blue-700 rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+          Summary
+        </h2>
+
+        <ul class="list-disc ml-8 text-lg leading-9">
+          <li>Statement compiler ko instruction deta hai.</li>
+          <li>Har statement usually semicolon se end hoti hai.</li>
+          <li>C me different types ke statements hote hain.</li>
+          <li>Statements milkar ek complete program banate hain.</li>
+        </ul>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-12">
+
+        <a href="syntax.html"
+          class="bg-white text-black md:px-8 md:py-4 px-3 py-3 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="syntaxCodeChallenge.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script src="js/examplecard.js"></script>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(3);
+  </script>
+
+</body>
+</html>

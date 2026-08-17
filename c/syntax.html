@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Syntax</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/insert.js"></script>
+  <script src="js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <!-- Main Layout -->
+  <main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Content -->
+    <section class="flex-1 p-6 md:px-16 md:py-8">
+
+      <!-- Heading -->
+      <h1 class="text-4xl md:text-6xl font-bold mb-10">
+        C Syntax
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between items-center mb-12">
+
+        <a href="getstarted.html"
+          class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="statements.html"
+          class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          C Syntax
+        </h2>
+
+        <p class="text-xl text-gray-300 leading-10 mb-6">
+          Syntax ka matlab hota hai kisi programming language ke rules aur structure.
+        </p>
+
+        <p class="text-xl text-gray-300 leading-10">
+          Agar syntax sahi hoga tabhi program compile aur execute hoga.
+        </p>
+
+      </section>
+
+      <!-- Program Structure -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Basic C Program
+        </h2>
+
+        <div id="codeCards" class="my-8">
+        </div>
+
+      </section>
+
+      <!-- Explanation -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Program Explanation
+        </h2>
+
+        <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-4">
+
+          <li>
+            <strong class="bg-white/10 rounded-md px-1 py-1 text-red-500">#include &lt;stdio.h&gt;</strong> - Standard Input Output header file include karta hai.
+          </li>
+
+          <li>
+            <strong class="bg-white/10 rounded-md px-1 py-1 text-red-500">int main()</strong> - Program yahin se start hota hai.
+          </li>
+
+          <li>
+            <strong class="bg-white/10 rounded-md px-1 py-1 text-red-500">printf()</strong> - Screen par output print karta hai.
+          </li>
+
+          <li>
+            <strong class="bg-white/10 rounded-md px-1 py-1 text-red-500">return 0;</strong> - Program successfully complete hone ko batata hai.
+          </li>
+
+          <li>
+            <strong class="bg-white/10 rounded-md px-1 py-1 text-red-500">{ }</strong> - Curly braces function ka starting aur ending block batate hain.
+          </li>
+
+          <li>
+            <strong class="bg-white/10 rounded-md px-1 py-1 text-red-500">;</strong> - Har statement ke end me semicolon lagana zaruri hota hai.
+          </li>
+
+        </ul>
+
+      </section>
+
+      <!-- Rules -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Important Syntax Rules
+        </h2>
+
+        <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-3">
+
+          <li>Har statement ke end me semicolon <span class="bg-white/10 rounded-md px-1 py-1 text-red-500">(;)</span>lagta hai.</li>
+
+          <li><span class="bg-white/10 rounded-md px-1 py-1 text-red-500">Main</span> function har C program ka starting point hota hai.</li>
+
+          <li>Code ko curly braces <span class="bg-white/10 rounded-md px-1 py-1 text-red-500">{ }</span> ke andar likha jata hai.</li>
+
+          <li>Keywords ka spelling change nahi kar sakte.</li>
+
+          <li><span class="bg-white/10 rounded-md px-1 py-1 text-red-500">C</span>Language case-sensitive hai.</li>
+
+        </ul>
+
+      </section>
+
+      <!-- Output -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Output
+        </h2>
+
+        <div class="bg-black rounded-2xl p-6">
+
+<pre><code class="text-yellow-400">
+Hello, World!
+</code></pre>
+
+        </div>
+
+      </section>
+
+      <!-- Note -->
+      <section class="mt-16">
+
+        <div class="bg-[#2d3521] rounded-[30px] p-10">
+
+          <h2 class="text-3xl font-bold mb-6">
+            📝 Note
+          </h2>
+
+          <p class="text-xl text-[#e9f1c7] leading-10">
+            Syntax me chhoti si galti jaise semicolon ya bracket miss hone par bhi program compile nahi hoga. Isliye hamesha syntax ko dhyan se likhein.
+          </p>
+
+        </div>
+
+      </section>
+
+      <!-- Footer Buttons -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a href="getstarted.html"
+          class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="statements.html"
+          class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+   <script src="js/examplecard.js"></script>
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(3);
+  </script>
+
+</body>
+</html>
