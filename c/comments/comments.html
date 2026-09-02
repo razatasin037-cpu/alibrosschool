@@ -10,8 +10,8 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <script src="/js/insert.js"></script>
-  <script src="js/sidebar.js"></script>
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
 
 </head>
 
@@ -37,12 +37,12 @@ C Comments
 
 <div class="flex justify-between items-center mb-12">
 
-<a href="newLines.html"
+<a href="../output/newLines.html"
 class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
 ❮ Previous
 </a>
 
-<a href="variables.html"
+<a href="../variables/createVariables.html"
 class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
 Next ❯
 </a>
@@ -122,24 +122,7 @@ Ye beginners ke liye bhi bahut useful hote hain kyunki jab aap programming seekh
 
 </p>
 
-<div class="bg-black rounded-2xl p-6 overflow-x-auto">
-
-<pre><code class="text-green-400">
-#include <stdio.h>
-
-int main()
-{
-
-   // Print Hello World
-
-   printf("Hello World!");
-
-   return 0;
-
-}
-</code></pre>
-
-</div>
+<div id="singleLineComments"></div>
 
 <div class="mt-8">
 
@@ -368,12 +351,12 @@ Hamesha meaningful comments likho aur unnecessary comments se bacho. Clean code 
 
 <div class="flex justify-between mt-12 mb-8">
 
-<a href="newLines.html"
+<a href="../output/newLines.html"
 class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
 ❮ Previous
 </a>
 
-<a href="variables.html"
+<a href="../variables/createVariables.html"
 class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
 Next ❯
 </a>
@@ -385,7 +368,7 @@ Next ❯
 </main>
 
 <footer id="footer"></footer>
-
+<script src="../js/examplecard.js"></script>
 <script>
 document.getElementById("sidebar").innerHTML = createSidebar(5);
 </script>

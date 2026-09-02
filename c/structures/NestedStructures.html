@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Nested Structures</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Nested Structures
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Structures.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="StructuresStrings.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Section 1: Concept -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">Nested Structure Kya Hota Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab ek <strong>Structure ke andar dusra Structure</strong> element/member ke roop me declare kiya jata hai, toh use <strong>Nested Structure</strong> kehte hain. 
+      </p>
+
+      <div class="bg-black/50 border border-gray-700 p-6 rounded-2xl">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-3">Real-Life Example:</h3>
+        <p class="text-gray-300 text-lg leading-8">
+          Maan lijiye aapko ek Employee ka data store karna hai. Employee ke pass <code class="text-cyan-400">id</code>, <code class="text-cyan-400">name</code> aur uska <code class="text-cyan-400">address</code> hai. Address me multiple fields hoti hain jaise <code class="text-yellow-300">city</code>, <code class="text-yellow-300">state</code>, aur <code class="text-yellow-300">pinCode</code>. Toh hum Address ka alag se structure banakar use Employee structure me nest kar sakte hain.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Code Example -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">Code Example (Separate Structures)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Nested Structure ke members ko access karne ke liye <strong>Double Dot (<code class="text-yellow-300 font-bold">.</code>)</strong> operator ka upyog kiya jata hai (jaise: <code class="text-cyan-400">emp1.addr.city</code>):
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+<span class="text-gray-400">#include &lt;string.h&gt;</span>
+
+<span class="text-gray-500">// 1. Outer Structure (Address)</span>
+<span class="text-purple-400">struct</span> <span class="text-yellow-300">Address</span> {
+    <span class="text-green-500">char</span> city[<span class="text-cyan-400">20</span>];
+    <span class="text-green-500">int</span> pinCode;
+};
+
+<span class="text-gray-500">// 2. Main Structure (Employee)</span>
+<span class="text-purple-400">struct</span> <span class="text-yellow-300">Employee</span> {
+    <span class="text-green-500">int</span> id;
+    <span class="text-green-500">char</span> name[<span class="text-cyan-400">30</span>];
+    <span class="text-purple-400">struct</span> <span class="text-yellow-300">Address</span> addr; <span class="text-gray-500">// Nested Structure Member</span>
+};
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-purple-400">struct</span> <span class="text-yellow-300">Employee</span> emp1;
+
+    emp1.id = <span class="text-cyan-400">101</span>;
+    <span class="text-cyan-400">strcpy</span>(emp1.name, <span class="text-yellow-300">"Aman"</span>);
+    <span class="text-cyan-400">strcpy</span>(emp1.addr.city, <span class="text-yellow-300">"Delhi"</span>);
+    emp1.addr.pinCode = <span class="text-cyan-400">110001</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"ID: %d\n"</span>, emp1.id);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Name: %s\n"</span>, emp1.name);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"City: %s\n"</span>, emp1.addr.city);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Pin Code: %d\n"</span>, emp1.addr.pinCode);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">ID: 101</p>
+        <p class="text-green-400">Name: Aman</p>
+        <p class="text-green-400">City: Delhi</p>
+        <p class="text-green-400">Pin Code: 110001</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Embedded Structure Syntax -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-cyan-400">Embedded Structure (Inline)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Aap chahein toh ek Structure ke andar hi dusre structure ko directly define kar sakte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-purple-400">struct</span> <span class="text-yellow-300">Student</span> {
+    <span class="text-green-500">int</span> rollNo;
+    <span class="text-green-500">char</span> name[<span class="text-cyan-400">30</span>];
+
+    <span class="text-gray-500">// Inner Structure</span>
+    <span class="text-purple-400">struct</span> <span class="text-yellow-300">DOB</span> {
+        <span class="text-green-500">int</span> day;
+        <span class="text-green-500">int</span> month;
+        <span class="text-green-500">int</span> year;
+    } date; <span class="text-gray-500">// Inner Variable</span>
+};</code></pre>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Structures.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="StructuresStrings.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

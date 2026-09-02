@@ -13,8 +13,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- JS Files -->
-  <script src="/js/insert.js"></script>
-  <script src="js/sidebar.js"></script>
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
 
 </head>
 
@@ -45,7 +45,7 @@
           ❮ Previous
         </a>
 
-        <a href="comments.html"
+        <a href="../comments/comments.html"
           class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
           Next ❯
         </a>
@@ -73,24 +73,7 @@
       <!-- Example -->
       <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
 
-        <h2 class="text-4xl font-bold mb-8">
-          Example
-        </h2>
-
-<div class="bg-black rounded-2xl p-6 overflow-x-auto">
-
-<pre><code class="text-green-400">
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    printf("Hello\n");
-    printf("Welcome");
-    return 0;
-}
-</code></pre>
-
-</div>
+        <div id="newLineOutput"></div>
 
       </section>
 
@@ -136,27 +119,7 @@ Welcome
       <!-- Multiple New Lines -->
       <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
 
-        <h2 class="text-4xl font-bold mb-8">
-          Multiple New Lines Example
-        </h2>
-
-<div class="bg-black rounded-2xl p-6 overflow-x-auto">
-
-<pre><code class="text-green-400">
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    printf("HTML\n");
-    printf("CSS\n");
-    printf("JavaScript\n");
-    printf("C Programming");
-
-    return 0;
-}
-</code></pre>
-
-</div>
+       <div id="multipleNewLineOutput"></div>
 
       </section>
 
@@ -343,7 +306,7 @@ Banana
           ❮ Previous
         </a>
 
-        <a href="comments.html"
+        <a href="../comments/comments.html"
           class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
           Next ❯
         </a>
@@ -356,7 +319,7 @@ Banana
 
   <!-- Footer -->
   <footer id="footer"></footer>
-
+<script src="../js/examplecard.js"></script>
   <script>
     document.getElementById("sidebar").innerHTML = createSidebar(4);
   </script>

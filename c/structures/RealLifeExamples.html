@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Structures - Real Life Examples</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<nav id="navbar"></nav>
+
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <div id="sidebar"></div>
+
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Structures - Real Life Examples
+    </h1>
+
+    <div class="flex justify-between items-center mb-12">
+      <a href="StructuresStrings.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../home/home.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Home ❯
+      </a>
+    </div>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6">Real-World Projects Me Structure Ka Use</h2>
+      <p class="text-xl text-gray-300 leading-10">
+        Real-world software development me structures ka upayog multi-data entity (jaise Student, Bank Account, Car, E-commerce Product) ke data ko manageable tarike se program me handle karne ke liye hota hai. Niche practical examples diye gaye hain.
+      </p>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Example 1: Bank Account System</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Bank me customer ka Account Number, Name aur Balance ek sath manage karne ke liye <code class="text-yellow-300">struct</code> ka upayog kaise karte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+<span class="text-gray-400">#include &lt;string.h&gt;</span>
+
+<span class="text-purple-400">struct</span> <span class="text-yellow-300">BankAccount</span> {
+    <span class="text-green-500">int</span> accountNumber;
+    <span class="text-green-500">char</span> holderName[<span class="text-cyan-400">50</span>];
+    <span class="text-green-500">float</span> balance;
+};
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// Creating account details</span>
+    <span class="text-purple-400">struct</span> <span class="text-yellow-300">BankAccount</span> acc1;
+    
+    acc1.accountNumber = <span class="text-cyan-400">987654321</span>;
+    <span class="text-cyan-400">strcpy</span>(acc1.holderName, <span class="text-yellow-300">"Vikram Singh"</span>);
+    acc1.balance = <span class="text-cyan-400">12500.75</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"--- Bank Statement ---\n"</span>);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Acc No: %d\n"</span>, acc1.accountNumber);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Holder: %s\n"</span>, acc1.holderName);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Balance: ₹%.2f\n"</span>, acc1.balance);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">--- Bank Statement ---</p>
+        <p class="text-green-400">Acc No: 987654321</p>
+        <p class="text-green-400">Holder: Vikram Singh</p>
+        <p class="text-green-400">Balance: ₹12500.75</p>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">Example 2: Array of Structures (Multiple Students Record)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab ek se zyada records store karne hote hain, toh hum <strong>Array of Structures</strong> ka upayog karte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-purple-400">struct</span> <span class="text-yellow-300">Student</span> {
+    <span class="text-green-500">int</span> rollNo;
+    <span class="text-green-500">char</span> name[<span class="text-cyan-400">30</span>];
+    <span class="text-green-500">float</span> percentage;
+};
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// Array of 3 Students</span>
+    <span class="text-purple-400">struct</span> <span class="text-yellow-300">Student</span> class1[<span class="text-cyan-400">3</span>] = {
+        {<span class="text-cyan-400">1</span>, <span class="text-yellow-300">"Aarav"</span>, <span class="text-cyan-400">92.4</span>},
+        {<span class="text-cyan-400">2</span>, <span class="text-yellow-300">"Neha"</span>, <span class="text-cyan-400">88.5</span>},
+        {<span class="text-cyan-400">3</span>, <span class="text-yellow-300">"Karan"</span>, <span class="text-cyan-400">79.0</span>}
+    };
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"--- Student Report Card ---\n"</span>);
+    <span class="text-purple-400">for</span>(<span class="text-green-500">int</span> i = <span class="text-green-400">0</span>; i &lt; <span class="text-green-400">3</span>; i++) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Roll No: %d | Name: %s | Marks: %.1f%%\n"</span>, 
+               class1[i].rollNo, class1[i].name, class1[i].percentage);
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">--- Student Report Card ---</p>
+        <p class="text-green-400">Roll No: 1 | Name: Aarav | Marks: 92.4%</p>
+        <p class="text-green-400">Roll No: 2 | Name: Neha | Marks: 88.5%</p>
+        <p class="text-green-400">Roll No: 3 | Name: Karan | Marks: 79.0%</p>
+      </div>
+    </section>
+
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="StructuresStrings.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../home/home.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Home ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

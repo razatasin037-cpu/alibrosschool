@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Recursion</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Recursion
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="FunctionDeclaration.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../structures/Structures.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Section 1: Intro to Recursion -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">Recursion Kya Hota Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <strong>Recursion</strong> ek aisi technique hai jisme koi function <strong>khud ko hi call karta hai</strong>. Aise function ko <em>Recursive Function</em> kehte hain. Complex problems ko chhote sub-problems me divide karke solve karne me iska upyog hota hai.
+      </p>
+
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+        <p class="text-2xl font-bold mb-3 text-yellow-300">Recursion Ke Do Main Parts:</p>
+        <ul class="list-disc ml-6 text-lg text-gray-300 leading-8 space-y-2">
+          <li><strong class="text-cyan-400">Base Condition:</strong> Yeh woh condition hai jo recursion ko rokti hai (Infinite loop se bachati hai).</li>
+          <li><strong class="text-green-400">Recursive Step:</strong> Yeh woh jagah hai jahan function khud ko dubara call karta hai.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Real-World Example (Factorial) -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Code Example: Factorial Calculate Karna</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Factorial (jaise <code class="text-yellow-300">5! = 5 * 4 * 3 * 2 * 1 = 120</code>) calculate karne ke liye Recursion sabse accha udaharan hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-gray-500">// Recursive function for Factorial</span>
+<span class="text-green-500">int</span> factorial(<span class="text-purple-400">int</span> n) {
+    <span class="text-gray-500">// Base Condition</span>
+    <span class="text-purple-400">if</span> (n &lt;= 1) {
+        <span class="text-purple-400">return</span> <span class="text-green-400">1</span>;
+    }
+    <span class="text-gray-500">// Recursive Step</span>
+    <span class="text-purple-400">return</span> n * factorial(n - <span class="text-green-400">1</span>);
+}
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-purple-400">int</span> num = <span class="text-green-400">5</span>;
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Factorial of %d = %d\n"</span>, num, factorial(num));
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Factorial of 5 = 120</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Execution Step-by-Step -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-cyan-400">Factorial Code Kaise Run Hota Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab <code class="text-yellow-300">factorial(5)</code> call hota hai, toh memory me stack is tarah banta hai:
+      </p>
+
+      <div class="bg-black/50 border border-gray-700 p-6 rounded-2xl font-mono text-gray-300 space-y-3">
+        <p class="text-yellow-300">factorial(5) -> 5 * factorial(4)</p>
+        <p class="text-yellow-300 pl-4">factorial(4) -> 4 * factorial(3)</p>
+        <p class="text-yellow-300 pl-8">factorial(3) -> 3 * factorial(2)</p>
+        <p class="text-yellow-300 pl-12">factorial(2) -> 2 * factorial(1)</p>
+        <p class="text-green-400 pl-16">factorial(1) -> 1 (Base condition hit hui! Target achieve!)</p>
+        <hr class="border-gray-700 my-2" />
+        <p class="text-cyan-400 font-bold">Wapas Return value calculate hoti hai: 5 * 4 * 3 * 2 * 1 = 120</p>
+      </div>
+    </section>
+
+    <!-- Section 4: Sum of Natural Numbers Example -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">Dusra Example: Sum of Numbers</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        1 se lekar `n` tak ki sankhyaon ka jod (Sum) recursion se nikalne ka tareeka:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> sum(<span class="text-purple-400">int</span> k) {
+    <span class="text-purple-400">if</span> (k &gt; <span class="text-green-400">0</span>) {
+        <span class="text-purple-400">return</span> k + sum(k - <span class="text-green-400">1</span>);
+    } <span class="text-purple-400">else</span> {
+        <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+    }
+}
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-purple-400">int</span> result = sum(<span class="text-green-400">10</span>);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Sum of first 10 numbers = %d\n"</span>, result);
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Sum of first 10 numbers = 55</p>
+      </div>
+    </section>
+
+    <!-- Section 5: Warning / Infinite Recursion -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-red-400">⚠️ Stack Overflow Se Bachne Ke Rules</h2>
+      <div class="space-y-4 text-lg text-gray-300">
+        <div class="flex items-start gap-4 bg-black/40 p-4 rounded-2xl border border-gray-800">
+          <i class="fa-solid fa-triangle-exclamation text-yellow-400 text-2xl mt-1"></i>
+          <p>Hamesha **Base Condition** lagana zaroori hai, nahi toh program crash ho jayega (Stack Overflow Error).</p>
+        </div>
+        <div class="flex items-start gap-4 bg-black/40 p-4 rounded-2xl border border-gray-800">
+          <i class="fa-solid fa-triangle-exclamation text-yellow-400 text-2xl mt-1"></i>
+          <p>Recursion memory zyada consume karta hai simple loops ki tulna me, isliye iska upyog zaroorat padne par hi karein.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="FunctionDeclaration.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../structures/Structures.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

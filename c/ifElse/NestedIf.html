@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Nested if Statement</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Nested if Statement
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="ShortHandIf.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Real-Life-Examples.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Nested if Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <code class="font-bold text-yellow-300">Nested if</code> ka matlab hota hai ek <code class="text-yellow-300">if</code> statement ke andar dusra <code class="text-yellow-300">if</code> statement hona. Jab hame kisi condition ke sahi hone par hi uske andar ki doosri condition check karni ho, tab hum iska use karte hain.
+      </p>
+      
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl mt-6">
+        <p class="text-2xl font-bold mb-3">Key Points:</p>
+        <ul class="list-disc list-inside text-lg text-gray-300 space-y-3 leading-8">
+          <li>Andar wala <code class="text-yellow-300">if</code> tabhi check hoga jab bahar wala <code class="text-yellow-300">if</code> True hoga.</li>
+          <li>Aap kitni bhi levels tak nesting kar sakte hain (lekin zyada nesting se code readable nahi rehta).</li>
+          <li>Yeh multiple dependent conditions ko check karne ke liye kaam aata hai.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Syntax Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Syntax</h2>
+      
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 border border-gray-800 font-mono text-gray-300">
+<pre><code><span class="text-purple-400">if</span> (outer_condition) {
+    <span class="text-gray-500">// Executed if outer_condition is true</span>
+    
+    <span class="text-purple-400">if</span> (inner_condition) {
+        <span class="text-gray-500">// Executed if both outer and inner conditions are true</span>
+        <span class="text-cyan-400">code_to_be_executed</span>;
+    }
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Voting Eligibility with License Check</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> age = <span class="text-green-400">20</span>;
+    <span class="text-green-500">int</span> hasID = <span class="text-green-400">1</span>; <span class="text-gray-500">// 1 means True, 0 means False</span>
+
+    <span class="text-purple-400">if</span> (age &gt;= <span class="text-green-400">18</span>) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"You are an adult.\n"</span>);
+
+        <span class="text-gray-500">// Nested if check</span>
+        <span class="text-purple-400">if</span> (hasID == <span class="text-green-400">1</span>) {
+            <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"You have ID. You can enter.\n"</span>);
+        } <span class="text-purple-400">else</span> {
+            <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"ID required to enter.\n"</span>);
+        }
+    } <span class="text-purple-400">else</span> {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"You are underage.\n"</span>);
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-1">Output:</p>
+        <p>You are an adult.</p>
+        <p>You have ID. You can enter.</p>
+      </div>
+    </section>
+
+    <!-- Important Rules Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Important Rules to Remember</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl font-bold mb-2">1. Proper Indentation</p>
+          <p class="text-gray-300">Nested code ko hamesha sahi indent (spaces) karke likhein taaki pata chal sake kaun sa block kiska part hai.</p>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl font-bold mb-2">2. Avoid Deep Nesting</p>
+          <p class="text-gray-300">3-4 level se zyada nesting se bachein. Zyada conditions ke liye Logical Operators (<code class="text-yellow-300">&amp;&amp;, ||</code>) use karein.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        <code class="font-bold text-yellow-300">Nested if</code> ek condition ke andar doosri sub-condition test karne ka tarika hai, jo decision-making ko zyada precise banata hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="ShortHandIf.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Real-Life-Examples.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(17);
+  }
+</script>
+
+</body>
+</html>

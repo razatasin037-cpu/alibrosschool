@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Function Parameters</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Function Parameters
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Functions.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="FunctionDeclaration.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Section 1: Intro to Parameters & Arguments -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">Parameters Aur Arguments Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Function me data paas karne ke liye hum <strong>Parameters</strong> ka upyog karte hain. Parameters variables ki tarah act karte hain jo function ke andar local variable ki tarah kaam karte hain.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-black/50 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-cyan-400 mb-3">Parameter</h3>
+          <p class="text-gray-300 text-lg leading-8">
+            Jab function ki definition me variables declare kiye jaate hain, unhe <strong class="text-white">Parameters</strong> kehte hain.
+          </p>
+        </div>
+
+        <div class="bg-black/50 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-green-400 mb-3">Argument</h3>
+          <p class="text-gray-300 text-lg leading-8">
+            Jab function call karte vakt actual values pass karte hain, unhe <strong class="text-white">Arguments</strong> kehte hain.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Single Parameter Example -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Single Parameter Ka Example</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Niche diye gaye example me humne ek name parameter (<code class="text-yellow-300">char name[]</code>) pass kiya hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-gray-500">// 'name' parameter hai</span>
+<span class="text-green-500">void</span> greetUser(<span class="text-purple-400">char</span> name[]) {
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Hello %s, welcome to C programming!\n"</span>, name);
+}
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// Actual names pass kar rahe hain (Arguments)</span>
+    greetUser(<span class="text-yellow-300">"Rahul"</span>);
+    greetUser(<span class="text-yellow-300">"Amit"</span>);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Hello Rahul, welcome to C programming!</p>
+        <p class="text-green-400">Hello Amit, welcome to C programming!</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Multiple Parameters -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-cyan-400">Multiple Parameters</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Aap function me ek se zyada parameters comma (<code class="text-yellow-300">,</code>) se separate karke pass kar sakte hain.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-gray-500">// Multple parameters (String aur Int)</span>
+<span class="text-green-500">void</span> printInfo(<span class="text-purple-400">char</span> name[], <span class="text-purple-400">int</span> age) {
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%s ki age %d saal hai.\n"</span>, name, age);
+}
+
+<span class="text-green-500">int</span> main() {
+    printInfo(<span class="text-yellow-300">"Rohan"</span>, <span class="text-green-400">21</span>);
+    printInfo(<span class="text-yellow-300">"Priya"</span>, <span class="text-green-400">19</span>);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Rohan ki age 21 saal hai.</p>
+        <p class="text-green-400">Priya ki age 19 saal hai.</p>
+      </div>
+    </section>
+
+    <!-- Section 4: Return Values -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">Return Values (Function Se Value Return Karna)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab hume function se output me koi calculation ka result wapas chahiye hota hai, toh hum <code class="text-yellow-300">void</code> ki jagah data type (jaise <code class="text-yellow-300">int</code>, <code class="text-yellow-300">float</code>) likhte hain aur <code class="text-purple-400">return</code> keyword ka upyog karte hain.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-gray-500">// Int return type wala function</span>
+<span class="text-green-500">int</span> addNumbers(<span class="text-purple-400">int</span> a, <span class="text-purple-400">int</span> b) {
+    <span class="text-purple-400">return</span> a + b;
+}
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-purple-400">int</span> result = addNumbers(<span class="text-green-400">10</span>, <span class="text-green-400">20</span>);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Sum = %d\n"</span>, result);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Sum = 30</p>
+      </div>
+    </section>
+
+    <!-- Section 5: Pass by Value vs Pass by Reference -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-orange-400">Pass By Value Vs Pass By Reference</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/40 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-yellow-300 mb-3">1. Pass by Value</h3>
+          <p class="text-gray-300 text-lg leading-8 mb-3">
+            Function ko original value ki copy milti hai. Function ke andar change karne par main variable change nahi hota.
+          </p>
+        </div>
+
+        <div class="bg-black/40 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-cyan-400 mb-3">2. Pass by Reference</h3>
+          <p class="text-gray-300 text-lg leading-8 mb-3">
+            Pointers ki madad se memory address pass kiya jata hai. Function ke andar change karne se original value me bhi badlaav hota hai.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Functions.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="FunctionDeclaration.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

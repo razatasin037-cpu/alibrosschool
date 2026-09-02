@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Pointer Arithmetic</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<nav id="navbar"></nav>
+
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <div id="sidebar"></div>
+
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Pointer Arithmetic
+    </h1>
+
+    <div class="flex justify-between items-center mb-12">
+      <a href="PointersandArrays.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="PointertoPointer.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">Pointer Arithmetic Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Pointer arithmetic C language ka ek powerful feature hai jo hume memory address ke saath mathematical operations karne ki anumati deta hai. 
+      </p>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab aap kisi pointer mein 1 add ya subtract karte hain, toh wo actual memory mein 1 byte aage ya peeche nahi badhta, balki us data type ke size (jaise int ke liye 4 bytes) ke anusar jump karta hai.
+      </p>
+
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+        <p class="text-2xl font-bold mb-3 text-yellow-300">Allowed Operations in Pointer Arithmetic:</p>
+        <ul class="list-disc ml-6 text-lg text-gray-300 leading-8 space-y-2">
+          <li>Increment Operator (<code class="text-yellow-300 font-bold">ptr++</code>) - Agle memory location par jane ke liye</li>
+          <li>Decrement Operator (<code class="text-yellow-300 font-bold">ptr--</code>) - Pichhle memory location par aane ke liye</li>
+          <li>Integer Addition (<code class="text-yellow-300 font-bold">ptr + n</code>) - Multiple steps aage badhne ke liye</li>
+          <li>Integer Subtraction (<code class="text-yellow-300 font-bold">ptr - n</code>) - Multiple steps pichhe aane ke liye</li>
+          <li>Pointer Comparison (<code class="text-yellow-300 font-bold">ptr1 == ptr2</code>) - Do addresses ko compare karne ke liye</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">1. Incrementing & Decrementing Pointers</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <code class="text-yellow-300 font-bold">ptr++</code> ka upyog karke hum pointer ko agle element ki memory location par shift karte hain.
+      </p>
+
+      <h3 class="text-2xl font-bold mb-4 text-white">Code Example: Incrementing Pointer</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> arr[<span class="text-green-400">3</span>] = {<span class="text-green-400">100</span>, <span class="text-green-400">200</span>, <span class="text-green-400">300</span>};
+    <span class="text-green-500">int</span> *ptr = arr; <span class="text-gray-500">// Points to arr[0]</span>
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value at ptr: %d\n"</span>, *ptr);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Address at ptr: %p\n\n"</span>, ptr);
+
+    ptr++; <span class="text-gray-500">// Moves to arr[1] (jumps 4 bytes ahead)</span>
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value after ptr++: %d\n"</span>, *ptr);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Address after ptr++: %p\n"</span>, ptr);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Value at ptr: 100</p>
+        <p class="text-green-400">Address at ptr: 0x7ffe5367e040</p>
+        <br>
+        <p class="text-green-400">Value after ptr++: 200</p>
+        <p class="text-green-400">Address after ptr++: 0x7ffe5367e044</p>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">2. Pointer Addition & Subtraction</h2>
+      
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Aap kisi pointer mein integer n ko add ya subtract kar ke directly target index location tak pahunch sakte hain.
+      </p>
+
+      <h3 class="text-2xl font-bold mb-4 text-white">Code Example: Addition and Subtraction</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> numbers[] = {<span class="text-green-400">10</span>, <span class="text-green-400">20</span>, <span class="text-green-400">30</span>, <span class="text-green-400">40</span>, <span class="text-green-400">50</span>};
+    <span class="text-green-500">int</span> *ptr = numbers;
+
+    <span class="text-gray-500">// Move 3 elements ahead (Index 3)</span>
+    ptr = ptr + <span class="text-green-400">3</span>;
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value at (ptr + 3): %d\n"</span>, *ptr);
+
+    <span class="text-gray-500">// Move 1 element back (Index 2)</span>
+    ptr = ptr - <span class="text-green-400">1</span>;
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value at (ptr - 1): %d\n"</span>, *ptr);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Value at (ptr + 3): 40</p>
+        <p class="text-green-400">Value at (ptr - 1): 30</p>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">3. Pointer Comparison</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Hum Relational Operators (jaise <code class="text-yellow-300 font-bold">&lt;</code>, <code class="text-yellow-300 font-bold">&gt;</code>, <code class="text-yellow-300 font-bold">==</code>) ka use karke do pointers ke memory addresses ko compare kar sakte hain. Iska sabse aam upyog array traversal ki boundaries set karne mein hota hai.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> arr[<span class="text-green-400">4</span>] = {<span class="text-green-400">5</span>, <span class="text-green-400">10</span>, <span class="text-green-400">15</span>, <span class="text-green-400">20</span>};
+    <span class="text-green-500">int</span> *start = arr;
+    <span class="text-green-500">int</span> *end = &amp;arr[<span class="text-green-400">3</span>];
+
+    <span class="text-purple-400">while</span> (start &lt;= end) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value: %d | Address: %p\n"</span>, *start, start);
+        start++;
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p>Value: 5 | Address: 0x7ffe5367e040</p>
+        <p>Value: 10 | Address: 0x7ffe5367e044</p>
+        <p>Value: 15 | Address: 0x7ffe5367e048</p>
+        <p>Value: 20 | Address: 0x7ffe5367e04c</p>
+      </div>
+    </section>
+
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="PointersandArrays.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="PointertoPointer.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

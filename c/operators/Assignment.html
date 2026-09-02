@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Assignment Operators</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Assignment Operators 
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Arithmetic.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Comparison.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Assignment Operators Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        **Assignment Operators** ka use kisi variable me value assign (store) karne ke liye kiya jata hai. Right-hand side (RHS) ki value ya expression calculate hokar Left-hand side (LHS) ke variable me store ho jati hai.
+      </p>
+      <div class="bg-black/60 border border-gray-700 p-4 rounded-xl font-mono text-xl text-yellow-300">
+        variable = expression / value;
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Assignment Operators List</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Operator</th>
+              <th class="py-4 px-6">Name</th>
+              <th class="py-4 px-6">Equivalent Expression</th>
+              <th class="py-4 px-6 text-yellow-300">Example (Initial x = 10)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">=</td>
+              <td class="py-4 px-6 text-white font-bold">Simple Assignment</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">x = 5</td>
+              <td class="py-4 px-6 text-gray-300">x becomes 5</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">+=</td>
+              <td class="py-4 px-6 text-white font-bold">Add AND Assign</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">x = x + 5</td>
+              <td class="py-4 px-6 text-gray-300">x becomes 15</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">-=</td>
+              <td class="py-4 px-6 text-white font-bold">Subtract AND Assign</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">x = x - 3</td>
+              <td class="py-4 px-6 text-gray-300">x becomes 7</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">* =</td>
+              <td class="py-4 px-6 text-white font-bold">Multiply AND Assign</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">x = x * 2</td>
+              <td class="py-4 px-6 text-gray-300">x becomes 20</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">/=</td>
+              <td class="py-4 px-6 text-white font-bold">Divide AND Assign</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">x = x / 2</td>
+              <td class="py-4 px-6 text-gray-300">x becomes 5</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">%=</td>
+              <td class="py-4 px-6 text-white font-bold">Modulus AND Assign</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">x = x % 3</td>
+              <td class="py-4 px-6 text-gray-300">x becomes 1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Compound Assignment Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Compound (Shorthand) Assignment</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab hum kisi variable me usi ki calculation perform karke dubara value store karte hain, tab **Compound Operators** (<code class="text-green-400 font-bold">+=</code>, <code class="text-green-400 font-bold">-=</code>, etc.) ka use code ko concise aur fast banane ke liye kiya jata hai.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-lg text-red-400 font-bold mb-2">Long Syntax (Standard)</p>
+          <p class="text-2xl font-mono text-gray-300">total = total + bonus;</p>
+        </div>
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-lg text-green-400 font-bold mb-2">Shorthand Syntax (Recommended)</p>
+          <p class="text-2xl font-mono text-yellow-300">total += bonus;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Assignment Operators</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> num = <span class="text-green-400">10</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Initial Value: %d\n"</span>, num);
+
+    num += <span class="text-green-400">5</span>;  <span class="text-gray-500">// Equivalent to num = num + 5</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"After += 5: %d\n"</span>, num);
+
+    num *= <span class="text-green-400">2</span>;  <span class="text-gray-500">// Equivalent to num = num * 2</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"After *= 2: %d\n"</span>, num);
+
+    num %= <span class="text-green-400">4</span>;  <span class="text-gray-500">// Equivalent to num = num % 4</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"After %%= 4: %d\n"</span>, num);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Initial Value: 10</p>
+        <p class="text-gray-300 font-mono">After += 5: 15</p>
+        <p class="text-gray-300 font-mono">After *= 2: 30</p>
+        <p class="text-gray-300 font-mono">After %= 4: 2</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Assignment operator (<code class="text-yellow-300 font-bold">=</code>) aur Relational Equality operator (<code class="text-yellow-300 font-bold">==</code>) ke beech confuse na hon. Single equal value assign karta hai, jabki double equal values compare karta hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Arithmetic.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Comparison.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(12);
+  }
+</script>
+
+</body>
+</html>

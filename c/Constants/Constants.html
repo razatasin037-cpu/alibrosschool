@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Constants - const Keyword & #define Preprocessor</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Constants 
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="../typeConversion/TypeConversion.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../booleans/Booleans.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Constants Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        **Constants** un values ko kehte hain jo program ke execution ke dauran change (modify) nahi ho sakti. Inkis fixed values hoti hain.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        Agar aap kisi constant variable ki value change karne ki koshish karenge, toh compiler **Compilation Error** throw karega.
+      </p>
+    </section>
+
+    <!-- Two Ways to Define Constants -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">C me Constants Banane Ke 2 Tareeqe</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">1. const Keyword</h3>
+          <p class="text-lg text-gray-300 leading-8">
+            Variable declaration ke aage <code class="text-green-400 font-bold">const</code> keyword lagaya jata hai. Isse variable **read-only** ban jata hai.
+          </p>
+          <div class="bg-black p-3 rounded-lg mt-4 text-cyan-400 font-mono text-base">
+            const data_type var_name = value;
+          </div>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">2. #define Preprocessor</h3>
+          <p class="text-lg text-gray-300 leading-8">
+            Code ke top par `#define` directive use karke symbolic constants create kiye jate hain. Isme memory assign nahi hoti.
+          </p>
+          <div class="bg-black p-3 rounded-lg mt-4 text-cyan-400 font-mono text-base">
+            #define CONST_NAME value
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">const vs #define Comparison</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Feature</th>
+              <th class="py-4 px-6 text-yellow-300">const Keyword</th>
+              <th class="py-4 px-6 text-cyan-400">#define Macro</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold text-white">Data Type</td>
+              <td class="py-4 px-6 text-green-400">Has a specific type (e.g., int, float)</td>
+              <td class="py-4 px-6 text-red-400">No type safety (Text replacement)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-white">Memory Allocation</td>
+              <td class="py-4 px-6">Takes memory (RAM)</td>
+              <td class="py-4 px-6">Does NOT take memory</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-white">Scope</td>
+              <td class="py-4 px-6">Obeys block scope ({ })</td>
+              <td class="py-4 px-6">Global scope (after definition)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-white">Semicolon Required</td>
+              <td class="py-4 px-6">Yes (<b>;</b>)</td>
+              <td class="py-4 px-6">No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Using Constants in C</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-gray-500">// 1. Using #define directive</span>
+<span class="text-purple-400">#define</span> PI <span class="text-green-400">3.14159</span>
+<span class="text-purple-400">#define</span> MAX_USERS <span class="text-green-400">100</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// 2. Using const keyword</span>
+    <span class="text-purple-400">const</span> <span class="text-green-500">int</span> BIRTH_YEAR = <span class="text-green-400">2002</span>;
+    <span class="text-purple-400">const</span> <span class="text-green-500">float</span> GRAVITY = <span class="text-green-400">9.8f</span>;
+
+    <span class="text-gray-500">// BIRTH_YEAR = 2005; // ❌ ERROR: Cannot modify a const variable!</span>
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"PI Value: %.5f\n"</span>, PI);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Max Users: %d\n"</span>, MAX_USERS);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Birth Year: %d\n"</span>, BIRTH_YEAR);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Gravity: %.1f m/s^2\n"</span>, GRAVITY);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">PI Value: 3.14159</p>
+        <p class="text-gray-300 font-mono">Max Users: 100</p>
+        <p class="text-gray-300 font-mono">Birth Year: 2002</p>
+        <p class="text-gray-300 font-mono">Gravity: 9.8 m/s^2</p>
+      </div>
+    </section>
+
+ 
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary & Best Practice</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Best practice ke mutabiq, modern C programs me <code class="text-yellow-300 font-bold">const</code> keyword ko favor kiya jata hai kyunki yeh **Type Safety** provide karta hai aur debugging easy banata hai. Constant names ko hamesha **UPPERCASE** me likhne ki convention follow karein (e.g., <code class="text-yellow-300">MAX_LIMIT</code>).
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="../typeConversion/TypeConversion.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../booleans/Booleans.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(10);
+  }
+</script>
+
+</body>
+</html>

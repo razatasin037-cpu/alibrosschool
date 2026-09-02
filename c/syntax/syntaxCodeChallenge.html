@@ -10,8 +10,8 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <script src="/js/insert.js"></script>
-  <script src="js/sidebar.js"></script>
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
 </head>
 
 <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
@@ -40,7 +40,7 @@
           ❮ Previous
         </a>
 
-        <a href="printText.html"
+        <a href="../output/printText.html"
           class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
           Next ❯
         </a>
@@ -49,26 +49,7 @@
       <!-- Introduction -->
       <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-3xl p-8">
 
-        <h2 class="text-4xl font-bold mb-6">
-          Challenge 1: Complete the Program
-        </h2>
-
-        <p class="text-xl text-gray-300 leading-9 mb-6">
-          Neeche diye gaye code me missing keyword fill karke program complete karo.
-        </p>
-
-        <div class="bg-black rounded-2xl p-6 overflow-x-auto">
-<pre><code class="text-green-400 text-lg">
-#include &lt;stdio.h&gt;
-
-_____ main() {
-
-    printf("Hello World!");
-
-    return 0;
-}
-</code></pre>
-        </div>
+      <div id="ChallengeSyntax1"></div>
 
         <div class="mt-6 bg-[#1f2937] rounded-xl p-5">
           <p class="text-lg">
@@ -81,21 +62,7 @@ _____ main() {
       <!-- Challenge 2 -->
       <section class="mt-10 bg-[#0f172a] border border-[#3158ff] rounded-3xl p-8">
 
-        <h2 class="text-3xl font-bold mb-6">
-          Challenge 2: Find the Error
-        </h2>
-
-        <div class="bg-black rounded-2xl p-6 overflow-x-auto">
-<pre><code class="text-red-400 text-lg">
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    printf("Welcome")
-    return 0;
-}
-</code></pre>
-        </div>
+        <div id="Challenge2"> </div>
 
         <p class="mt-6 text-lg text-gray-300">
           Program me syntax error dhoondo aur usse correct karo.
@@ -106,21 +73,7 @@ int main()
       <!-- Challenge 3 -->
       <section class="mt-10 bg-[#0f172a] border border-[#3158ff] rounded-3xl p-8">
 
-        <h2 class="text-3xl font-bold mb-6">
-          Challenge 3: Predict the Output
-        </h2>
-
-        <div class="bg-black rounded-2xl p-6 overflow-x-auto">
-<pre><code class="text-green-400 text-lg">
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    printf("Learning C");
-    return 0;
-}
-</code></pre>
-        </div>
+       <div id="challenge3"></div>
 
         <p class="mt-6 text-lg text-gray-300">
           Is program ka output kya hoga?
@@ -165,7 +118,7 @@ int main()
           ❮ Previous
         </a>
 
-        <a href="printText.html"
+        <a href="../output/printText.html"
           class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
           Next ❯
         </a>
@@ -178,6 +131,7 @@ int main()
   <!-- Footer -->
   <footer id="footer"></footer>
 
+<script src="../js/examplecard.js"></script>
   <script>
     document.getElementById("sidebar").innerHTML = createSidebar(3);
   </script>

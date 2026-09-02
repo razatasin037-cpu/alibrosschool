@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C if Statement</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C if Statement
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="../operators/Precedence.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Else.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">if Statement Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <code class="text-yellow-300 font-bold">if</code> statement C language ka sabse basic <span class="font-bold">Decision Making Statement</span> hai. Yeh check karta hai ki koi condition <span class="font-bold">True</span> hai ya <span class="font-bold">False</span>.
+      </p>
+      
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl mt-6">
+        <p class="text-2xl text-green-400 font-bold mb-3">Key Points:</p>
+        <ul class="list-disc list-inside text-lg text-gray-300 space-y-3 leading-8">
+          <li>Agar condition <strong class="text-green-400">True (1)</strong> hoti hai, toh <code class="text-yellow-300">if</code> block ke andar ka code execute hota hai.</li>
+          <li>Agar condition <strong class="text-red-400">False (0)</strong> hoti hai, toh C compiler us code block ko skip kar deta hai.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Syntax Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Syntax</h2>
+      
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 border border-gray-800">
+<pre><code><span class="text-purple-400">if</span> (condition) {
+    <span class="text-gray-500">// Executed only if condition is true</span>
+    <span class="text-cyan-400">code_to_be_executed</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Age Verification</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> age = <span class="text-green-400">20</span>;
+
+    <span class="text-gray-500">// Checking condition using if</span>
+    <span class="text-purple-400">if</span> (age &gt;= <span class="text-green-400">18</span>) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"You are eligible to vote!\n"</span>);
+    }
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Program finished successfully."</span>);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">You are eligible to vote!</p>
+        <p class="text-gray-300 font-mono">Program finished successfully.</p>
+      </div>
+    </section>
+
+    <!-- Flowchart / Working Explanation -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Important Rules to Remember</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-green-500/50 p-6 rounded-2xl">
+          <p class="text-xl text-green-400 font-bold mb-2">1. Non-Zero is True</p>
+          <p class="text-gray-300">C me koi bhi non-zero value (jaise <code class="text-yellow-300">1, 5, -10</code>) <span class="font-bold">True</span> mani jati hai, aur <code class="text-yellow-300">0</code> ko <span class="font-bold">False</span> mana jata hai.</p>
+        </div>
+
+        <div class="bg-black/60 border border-yellow-500/50 p-6 rounded-2xl">
+          <p class="text-xl text-yellow-400 font-bold mb-2">2. Single Statement Bracket</p>
+          <p class="text-gray-300">Agar <code class="text-yellow-300">if</code> ke andar sirf ek hi line ka code hai, toh <code class="text-yellow-300">{}</code> brackets optional hote hain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        <code class="text-yellow-300 font-bold">if</code> statement program execution ke flow ko control karta hai. Condition sahi hone par block run hota hai, aur galat hone par skip ho jata hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="../operators/Precedence.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Else.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(13);
+  }
+</script>
+
+</body>
+</html>

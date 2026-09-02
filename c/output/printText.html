@@ -13,8 +13,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- JS Files -->
-  <script src="/js/insert.js"></script>
-  <script src="js/sidebar.js"></script>
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
 
 </head>
 
@@ -40,7 +40,7 @@
       <!-- Navigation -->
       <div class="flex justify-between items-center mb-12">
 
-        <a href="syntaxCodeChallenge.html"
+        <a href="../syntax/syntaxCodeChallenge.html"
           class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
           ❮ Previous
         </a>
@@ -70,24 +70,8 @@
       <!-- Example -->
       <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
 
-        <h2 class="text-4xl font-bold mb-8">
-          Example
-        </h2>
-
-<div class="bg-black rounded-2xl p-6 overflow-x-auto">
-
-<pre><code class="text-green-400">
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    printf("Hello World!");
-
-    return 0;
-}
-</code></pre>
-
-</div>
+       
+ <div id="codeCards"></div>
 
       </section>
 
@@ -132,26 +116,7 @@ Hello World!
       <!-- More Examples -->
       <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
 
-        <h2 class="text-4xl font-bold mb-8">
-          Print Multiple Text
-        </h2>
-
-<div class="bg-black rounded-2xl p-6 overflow-x-auto">
-
-<pre><code class="text-green-400">
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    printf("Welcome");
-    printf(" to");
-    printf(" C Programming");
-
-    return 0;
-}
-</code></pre>
-
-</div>
+       <div id="multiple"></div>
 
       </section>
 
@@ -218,7 +183,7 @@ My Name is Parwez
       <!-- Footer Navigation -->
       <div class="flex justify-between mt-12 mb-8">
 
-        <a href="syntaxCodeChallenge.html"
+        <a href="../syntax/syntaxCodeChallenge.html"
           class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
           ❮ Previous
         </a>
@@ -236,7 +201,7 @@ My Name is Parwez
 
   <!-- Footer -->
   <footer id="footer"></footer>
-
+<script src="../js/examplecard.js"></script>
   <script>
     document.getElementById("sidebar").innerHTML = createSidebar(4);
   </script>

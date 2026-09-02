@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Pointer to Pointer (Double Pointer)</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Pointer to Pointer
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="PointerArithmetic.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../functions/Functions.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Section 1: Overview Intro -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">Pointer to Pointer (Double Pointer) Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C language mein, Pointer to Pointer (jise Double Pointer bhi kaha jata hai) ek aisa variable hota hai jo kisi **doosre pointer ka memory address** hold karke rakhta hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jaise normal pointer kisi variable ka address rakhta hai, waise hi double pointer kisi pointer ka address rakhta hai. Isse declare karne ke liye double asterisk symbol (<code class="text-yellow-300 font-bold">**</code>) ka use hota hai.
+      </p>
+
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+        <p class="text-2xl font-bold mb-3 text-yellow-300">Key Points:</p>
+        <ul class="list-disc ml-6 text-lg text-gray-300 leading-8 space-y-2">
+          <li>Normal Variable: Data Value Store karta hai.</li>
+          <li>Single Pointer (<code class="text-yellow-300 font-bold">*ptr</code>): Variable ka Address store karta hai.</li>
+          <li>Double Pointer (<code class="text-yellow-300 font-bold">**pptr</code>): Single Pointer ka Address store karta hai.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Code Example for Pointer to Pointer -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Double Pointer Declaration & Dereferencing</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Niche diye gaye example mein dekhein ki kaise hum double asterisk ka upyog karke value aur address access karte hain.
+      </p>
+
+      <h3 class="text-2xl font-bold mb-4 text-white">Code Example</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> var = <span class="text-green-400">3000</span>;
+    <span class="text-green-500">int</span> *ptr;
+    <span class="text-green-500">int</span> **pptr;
+
+    <span class="text-gray-500">// Storing address of var in ptr</span>
+    ptr = &amp;var;
+
+    <span class="text-gray-500">// Storing address of ptr in pptr using &amp;</span>
+    pptr = &amp;ptr;
+
+    <span class="text-gray-500">// Accessing value of var</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value of var = %d\n"</span>, var);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value using single pointer (*ptr) = %d\n"</span>, *ptr);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300 font-bold">"Value using double pointer (**pptr) = %d\n\n"</span>, **pptr);
+
+    <span class="text-gray-500">// Accessing Memory Addresses</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Address of var = %p\n"</span>, &amp;var);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Address stored in ptr = %p\n"</span>, ptr);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Address of ptr = %p\n"</span>, &amp;ptr);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Address stored in pptr = %p\n"</span>, pptr);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Value of var = 3000</p>
+        <p class="text-green-400">Value using single pointer (*ptr) = 3000</p>
+        <p class="text-green-400">Value using double pointer (**pptr) = 3000</p>
+        <br>
+        <p>Address of var = 0x7ffe5367e044</p>
+        <p>Address stored in ptr = 0x7ffe5367e044</p>
+        <p>Address of ptr = 0x7ffe5367e048</p>
+        <p>Address stored in pptr = 0x7ffe5367e048</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Modifying Value via Double Pointer -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">Double Pointer Se Value Modify Karna</h2>
+      
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jaise single pointer se hum actual variable ki value change kar sakte hain, waise hi double pointer <code class="text-yellow-300 font-bold">**pptr</code> ke through bhi hum direct original variable ki value update kar sakte hain.
+      </p>
+
+      <h3 class="text-2xl font-bold mb-4 text-white">Code Example: Modifying Value</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> num = <span class="text-green-400">10</span>;
+    <span class="text-green-500">int</span> *p = &amp;num;
+    <span class="text-green-500">int</span> **pp = &amp;p;
+
+    <span class="text-gray-500">// Changing value using double pointer</span>
+    **pp = <span class="text-green-400">50</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"New value of num: %d\n"</span>, num);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">New value of num: 50</p>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="PointerArithmetic.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../functions/Functions.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

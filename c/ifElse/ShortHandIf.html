@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Short Hand If (Ternary Operator)</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Short Hand If (Ternary Operator)
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="ElseIf.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="NestedIf.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Short Hand If Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <code class="font-bold text-yellow-300">Short Hand If</code> ko C language me <span class="font-bold">Ternary Operator (`? :`)</span> bhi kaha jata hai. Yeh standard <code class="text-yellow-300">if-else</code> statement ko ek single line me likhne ka short tarika hai.
+      </p>
+      
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl mt-6">
+        <p class="text-2xl font-bold mb-3">Key Points:</p>
+        <ul class="list-disc list-inside text-lg text-gray-300 space-y-3 leading-8">
+          <li>Code readable aur compact banta hai jab chote decision-making logic ho.</li>
+          <li>Isme 3 operands hote hain: <strong>Condition</strong>, <strong>Expression 1 (True)</strong>, aur <strong>Expression 2 (False)</strong>.</li>
+          <li>Aap ise kisi variable me value direct store karne ke liye use kar sakte hain.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Syntax Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Syntax</h2>
+      
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 border border-gray-800 font-mono text-gray-300">
+<pre><code>variable = (condition) ? <span class="text-cyan-400">expression_if_true</span> : <span class="text-cyan-400">expression_if_false</span>;</code></pre>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Standard vs Short Hand</h2>
+
+      <!-- Standard Comparison Code -->
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> time = <span class="text-green-400">20</span>;
+
+    <span class="text-gray-500">// Using Short Hand If (Ternary Operator)</span>
+    (time &lt; <span class="text-green-400">18</span>) ? <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Good day.\n"</span>) : <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Good evening.\n"</span>);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-1">Output:</p>
+        <p>Good evening.</p>
+      </div>
+    </section>
+
+    <!-- Important Rules Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Important Rules to Remember</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl font-bold mb-2">1. When to Use</p>
+          <p class="text-gray-300">Iska use sirf simple, single-line conditions ke liye karein. Complex conditions me regular <code class="text-yellow-300">if-else</code> hi behtar hota hai.</p>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl font-bold mb-2">2. Direct Assignment</p>
+          <p class="text-gray-300">Aap is se directly value return karke variable me assign kar sakte hain: <code class="text-yellow-300">int max = (a &gt; b) ? a : b;</code></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        <code class="font-bold text-yellow-300">Ternary operator (`? :`)</code> ek quick aur clean rasta hai conditional logic ko ek hi line me perform karne ka.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="ElseIf.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="NestedIf.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(16);
+  }
+</script>
+
+</body>
+</html>
