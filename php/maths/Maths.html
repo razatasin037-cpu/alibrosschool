@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Math - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Math
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../casting/Casting.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../constants/Constants.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            PHP Math Functions Kya Hain?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me numbers par mathematical tasks perform karne ke liye built-in math functions ki ek wide range milti hai, jaise pi value nikalna, min/max dhoondna, square root ya rounding off karna.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            In functions ka upyog karke aap complex mathematical calculations easily kar sakte hain.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. pi(), min() & max() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              1. pi(), min() aur max() Functions
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">pi()</code> function PI ki value return karta hai. Jabki <code class="text-green-400">min()</code> aur <code class="text-green-400">max()</code> values ki list me se sabse choti aur sabse badi value find karne ke liye use hote hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// PI value</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">pi</span>(); <span class="text-[#94a3b8]">// Output: 3.1415926535898</span>
+
+  <span class="text-[#94a3b8]">// Min & Max Value</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">min</span>(<span class="text-white">0, 150, 30, -20, -200</span>); <span class="text-[#94a3b8]">// Output: -200</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">max</span>(<span class="text-white">0, 150, 30, -20, -200</span>); <span class="text-[#94a3b8]">// Output: 150</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. abs() & sqrt() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              2. abs() aur sqrt() Functions
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">abs()</code> function kisi bhi negative number ki positive (absolute) value return karta hai, jabki <code class="text-green-400">sqrt()</code> square root calculate karta hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Absolute Value</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">abs</span>(<span class="text-white">-6.7</span>); <span class="text-[#94a3b8]">// Output: 6.7</span>
+
+  <span class="text-[#94a3b8]">// Square Root</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">sqrt</span>(<span class="text-white">64</span>); <span class="text-[#94a3b8]">// Output: 8</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. round() & rand() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              3. round() aur rand() Functions
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">round()</code> floating point number ko nearest integer me round off kar deta hai. Aur <code class="text-green-400">rand()</code> random number generate karne ke liye use hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Rounding off</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">round</span>(<span class="text-white">0.60</span>); <span class="text-[#94a3b8]">// Output: 1</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">round</span>(<span class="text-white">0.49</span>); <span class="text-[#94a3b8]">// Output: 0</span>
+
+  <span class="text-[#94a3b8]">// Random Numbers (between 10 and 100)</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">rand</span>(<span class="text-white">10, 100</span>); <span class="text-[#94a3b8]">// Generates random number between 10 and 100</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Reference Table -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-list-check text-green-400"></i> Popular PHP Math Functions Reference
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Function</th>
+                    <th class="py-3 px-4">Example</th>
+                    <th class="py-3 px-4">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">pi()</td>
+                    <td class="py-3 px-4 font-mono">pi()</td>
+                    <td class="py-3 px-4">PI Value (3.14159...) return karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">min(), max()</td>
+                    <td class="py-3 px-4 font-mono">min(2, 4, 8)</td>
+                    <td class="py-3 px-4">Minimum ya Maximum value return karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">abs()</td>
+                    <td class="py-3 px-4 font-mono">abs(-5)</td>
+                    <td class="py-3 px-4">Positive (Absolute) value return karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">sqrt()</td>
+                    <td class="py-3 px-4 font-mono">sqrt(16)</td>
+                    <td class="py-3 px-4">Number ka Square Root return karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">round()</td>
+                    <td class="py-3 px-4 font-mono">round(4.6)</td>
+                    <td class="py-3 px-4">Number ko nearest integer tak round karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">rand()</td>
+                    <td class="py-3 px-4 font-mono">rand(1, 100)</td>
+                    <td class="py-3 px-4">Optional Range ke andar Random number generate karta hai.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Highlight Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-green-400/30">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-green-400">
+              <span>💡</span> Pro-Tip: ceil() vs floor()
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              Agar aapko decimal value ko specific direction me round off karna ho:
+            </p>
+            <ul class="list-disc ml-6 mt-2 space-y-2 text-gray-300">
+              <li><code class="text-green-400">ceil(0.60)</code> : Hamesha nearest <strong>UPPER</strong> integer par round karta hai (Output: 1).</li>
+              <li><code class="text-green-400">floor(0.60)</code> : Hamesha nearest <strong>LOWER</strong> integer par round karta hai (Output: 0).</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../casting/Casting.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../constants/Constants.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(11);
+    </script>
+  </body>
+</html>

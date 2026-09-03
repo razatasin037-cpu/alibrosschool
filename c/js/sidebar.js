@@ -41,17 +41,17 @@ function createSidebar(activeIndex = 0) {
       name: "C Syntax",
       link: "/c/syntax/syntax.html",
       submenu: [
-        { name: "Syntax", link: "syntax.html" },
-        { name: "Statements", link: "statements.html" },
-        { name: "Syntax Code Challenge", link: "syntaxCodeChallenge.html" }
+        { name: "Syntax", link: "/c/syntax/syntax.html" },
+        { name: "Statements", link: "/c/syntax/statements.html" },
+        { name: "Syntax Code Challenge", link: "/c/syntax/syntaxCodeChallenge.html" }
       ]
     },
     {
       name: "C Output",
       link: "/c/output/printText.html",
       submenu: [
-        { name: "Print Text", link: "printText.html" },
-        { name: "New Lines", link: "newLines.html" }
+        { name: "Print Text", link: "/c/output/printText.html" },
+        { name: "New Lines", link: "/c/output/newLines.html" }
       ]
     },
     { name: "C Comments", link: "/c/comments/comments.html" },
@@ -59,12 +59,12 @@ function createSidebar(activeIndex = 0) {
       name: "C Variables",
       link: "/c/Variables/createVariables.html",
       submenu: [
-        { name: "Create Variables", link: "createVariables.html" },
-        { name: "Format Specifiers", link: "formatSpecifiers.html" },
-        { name: "Change Variable", link: "ChangeVariable.html" },
-        { name: "Multiple Variable", link: "MultipleVariable.html" },
-        { name: "Variable Names", link: "variableNames.html" },
-        { name: "Real-Life Examples", link: "Real-Life-Examples.html" }
+        { name: "Create Variables", link: "/c/Variables/createVariables.html" },
+        { name: "Format Specifiers", link: "/c/Variables/formatSpecifiers.html" },
+        { name: "Change Variable", link: "/c/Variables/ChangeVariable.html" },
+        { name: "Multiple Variable", link: "/c/Variables/MultipleVariable.html" },
+        { name: "Variable Names", link: "/c/Variables/variableNames.html" },
+        { name: "Real-Life Examples", link: "/c/Variables/Real-Life-Examples.html" }
       ]
     },
     { name: "C User Input", link: "/c/input/UserInput.html" },
@@ -72,13 +72,13 @@ function createSidebar(activeIndex = 0) {
       name: "C Data Types",
       link: "/c/datatypes/data-types.html",
       submenu: [
-        { name: "Data Types", link: "data-types.html" },
-        { name: "Characters", link: "Characterdatatype.html" },
-        { name: "Numbers ", link: "NumericDataType.html" },
-        { name: "Decimal Precision", link: "DecimalDataType.html" },
-        { name: "Memory Size", link: "MemoryOfSize.html" },
-        { name: "Real-Life Examples", link: "Real-LifeDataTypesExamples.html" },
-        { name: "Extended Types", link: "ExtendedTypes.html" }
+        { name: "Data Types", link: "/c/datatypes/data-types.html" },
+        { name: "Characters", link: "/c/datatypes/Characterdatatype.html" },
+        { name: "Numbers ", link: "/c/datatypes/NumericDataType.html" },
+        { name: "Decimal Precision", link: "/c/datatypes/DecimalDataType.html" },
+        { name: "Memory Size", link: "/c/datatypes/MemoryOfSize.html" },
+        { name: "Real-Life Examples", link: "/c/datatypes/Real-LifeDataTypesExamples.html" },
+        { name: "Extended Types", link: "/c/datatypes/ExtendedTypes.html" }
       ]
     },
     { name: "C Type Conversion", link: "/c/typeConversion/TypeConversion.html" },
@@ -88,40 +88,34 @@ function createSidebar(activeIndex = 0) {
       name: "C Operators",
       link: "/c/operators/operators.html",
       submenu: [
-        { name: "Operators", link: "operators.html" },
-        { name: "Arithmetic ", link: "Arithmetic.html" },
-        { name: "Assignment ", link: "Assignment.html" },
-        { name: "Comparison  ", link: "Comparison.html" },
-        { name: "Logical ", link: "Logical.html" },
-        { name: "Precedence", link: "Precedence.html" }
+        { name: "Operators", link: "/c/operators/operators.html" },
+        { name: "Arithmetic ", link: "/c/operators/Arithmetic.html" },
+        { name: "Assignment ", link: "/c/operators/Assignment.html" },
+        { name: "Comparison  ", link: "/c/operators/Comparison.html" },
+        { name: "Logical ", link: "/c/operators/Logical.html" },
+        { name: "Precedence", link: "/c/operators/Precedence.html" }
       ]
     },
     {
       name: "C If...Else",
       link: "/c/ifElse/If.html",
       submenu: [
-        { name: "If", link: "If.html" },
-        { name: "Else ", link: "Else.html" },
-        { name: "Else If ", link: "ElseIf.html" },
-        { name: "Short Hand If  ", link: "ShortHandIf.html" },
-        { name: "Nested If ", link: "NestedIf.html" },
-        { name: "Real-Life Examples", link: "Real-Life-Examples.html" }
+        { name: "If", link: "/c/ifElse/If.html" },
+        { name: "Else ", link: "/c/ifElse/Else.html" },
+        { name: "Else If ", link: "/c/ifElse/ElseIf.html" },
+        { name: "Short Hand If  ", link: "/c/ifElse/ShortHandIf.html" },
+        { name: "Nested If ", link: "/c/ifElse/NestedIf.html" },
+        { name: "Real-Life Examples", link: "/c/ifElse/Real-Life-Examples.html" }
       ]
     },
-    {
-      name: "C Switch",
-      link: "/c/switch/Switch.html",
-      submenu: [
-        { name: "Switch", link: "Switch.html" }
-      ]
-    },
+    { name: "C Switch", link: "/c/switch/Switch.html"},
     {
       name: "C Loop",
       link: "/c/loop/WhileLoop.html",
       submenu: [
-        { name: "While Loop", link: "WhileLoop.html" },
-        { name: "Do-While Loop", link: "DoWhileLoop.html" },
-        { name: "For Loop", link: "ForLoop.html" }
+        { name: "While Loop", link: "/c/loop/WhileLoop.html" },
+        { name: "Do-While Loop", link: "/c/loop/DoWhileLoop.html" },
+        { name: "For Loop", link: "/c/loop/ForLoop.html" }
       ]
     },
      {
@@ -131,18 +125,18 @@ function createSidebar(activeIndex = 0) {
       name: "C Arrays",
       link: "/c/arrays/Arrays.html",
       submenu: [
-        { name: "Arrays ", link: "Arrays.html" },
-        { name: "Arrays Size", link: "ArraysSizes.html" },
-        { name: "Arrays Loops", link: "ArraysLoops.html" }
+        { name: "Arrays ", link: "/c/arrays/Arrays.html" },
+        { name: "Arrays Size", link: "/c/arrays/ArraysSizes.html" },
+        { name: "Arrays Loops", link: "/c/arrays/ArraysLoops.html" }
       ]
     },
     {
       name: "C Strings",
       link: "/c/strings/Strings.html",
       submenu: [
-        { name: "Strings ", link: "Strings.html" },
-        { name: "Special Characters", link: "SpecialCharacters.html" },
-        { name: "String Functions ", link: "StringFunctions.html" }
+        { name: "Strings ", link: "/c/strings/Strings.html" },
+        { name: "Special Characters", link: "/c/strings/SpecialCharacters.html" },
+        { name: "String Functions ", link: "/c/strings/StringFunctions.html" }
       ]
     },
 
@@ -150,30 +144,30 @@ function createSidebar(activeIndex = 0) {
       name: "C Pointers",
       link: "/c/pointers/Pointers.html",
       submenu: [
-        { name: "Pointers ", link: "Pointers.html" },
-        { name: "Pointers & Arrays", link: "PointersandArrays.html" },
-        { name: "Pointer Arithmetic ", link: "PointerArithmetic.html" },
-        {name: "Pointer to Pointer", link: "PointertoPointer.html"}
+        { name: "Pointers ", link: "/c/pointers/Pointers.html" },
+        { name: "Pointers & Arrays", link: "/c/pointers/PointersandArrays.html" },
+        { name: "Pointer Arithmetic ", link: "/c/pointers/PointerArithmetic.html" },
+        {name: "Pointer to Pointer", link: "/c/pointers/PointertoPointer.html"}
       ]
     },
     {
       name: "C Functions",
       link: "/c/functions/Functions.html",
       submenu: [
-        { name: "Functions", link: "Functions.html" },
-        { name: "Function Parameters", link: "FunctionParameters.html" },
-        { name: "Function Declaration", link: "FunctionDeclaration.html" },
-        { name: "Recursion", link: "Recursion.html" }
+        { name: "Functions", link: "/c/functions/Functions.html" },
+        { name: "Function Parameters", link: "/c/functions/FunctionParameters.html" },
+        { name: "Function Declaration", link: "/c/functions/FunctionDeclaration.html" },
+        { name: "Recursion", link: "/c/functions/Recursion.html" }
       ]
     },
     {
       name: "C Structures",
       link: "/c/structures/Structures.html",
       submenu: [
-        { name: "Structures", link: "Structures.html" },
-        { name: "Nested Structures", link: "NestedStructures.html" },
-        { name: "Structures & Strings", link: "StructuresStrings.html" },
-        { name: "Real-Life Examples", link: "RealLifeExamples.html" }
+        { name: "Structures", link: "/c/structures/Structures.html" },
+        { name: "Nested Structures", link: "/c/structures/NestedStructures.html" },
+        { name: "Structures & Strings", link: "/c/structures/StructuresStrings.html" },
+        { name: "Real-Life Examples", link: "/c/structures/RealLifeExamples.html" }
       ]
     }
     

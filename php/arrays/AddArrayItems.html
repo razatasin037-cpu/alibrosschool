@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add Array Items - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          Add Array Items
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./UpdateArrayItems.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./RemoveArrayItems.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Array Me Naye Items Kaise Add Karein?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me kisi array ke andar naye elements add karne ke kai tarike hain. Aap array ke start, end ya specific key par values insert kar sakte hain.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Aap Square Bracket syntax <code class="text-green-400">[]</code>, built-in functions jaise <code class="text-green-400">array_push()</code>, <code class="text-green-400">array_unshift()</code>, ya Spread Operator ka use kar sakte hain.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. Adding to the End using Square Brackets -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Add to End (Square Bracket Syntax)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Array ke aakhir (end) me ek item add karne ka sabse simple aur fast tarika:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$fruits</span> = [<span class="text-white">"Apple"</span>, <span class="text-white">"Banana"</span>];
+
+  <span class="text-[#94a3b8]">// End me item add karein</span>
+  <span class="text-green-400">$fruits</span>[] = <span class="text-white">"Mango"</span>;
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$fruits</span>);
+  <span class="text-[#94a3b8]">// Output: Array ( [0] =&gt; Apple [1] =&gt; Banana [2] =&gt; Mango )</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Adding using array_push() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Add Multiple Items to End (<code class="text-green-400">array_push</code>)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Agar aapko ek saath multiple items array ke aakhir me add karne hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$colors</span> = [<span class="text-white">"Red"</span>, <span class="text-white">"Green"</span>];
+
+  <span class="text-[#94a3b8]">// Ek sath multiple items add karein</span>
+  <span class="text-green-400">array_push</span>(<span class="text-green-400">$colors</span>, <span class="text-white">"Blue"</span>, <span class="text-white">"Yellow"</span>);
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$colors</span>);
+  <span class="text-[#94a3b8]">// Output: Array ( [0] =&gt; Red [1] =&gt; Green [2] =&gt; Blue [3] =&gt; Yellow )</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Adding to the Beginning (array_unshift) -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Add to Beginning (<code class="text-green-400">array_unshift</code>)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Array ke shuruat (start) me items insert karne ke liye <code class="text-green-400">array_unshift()</code> ka use karein:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$cars</span> = [<span class="text-white">"BMW"</span>, <span class="text-white">"Toyota"</span>];
+
+  <span class="text-[#94a3b8]">// Start me add karein</span>
+  <span class="text-green-400">array_unshift</span>(<span class="text-green-400">$cars</span>, <span class="text-white">"Volvo"</span>);
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$cars</span>);
+  <span class="text-[#94a3b8]">// Output: Array ( [0] =&gt; Volvo [1] =&gt; BMW [2] =&gt; Toyota )</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 4. Adding Key-Value Pair in Associative Array -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4. Add Items to Associative Array
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Associative array me nayi key ke sath element add karne ke liye key name specify karein:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$user</span> = [
+      <span class="text-white">"name"</span> =&gt; <span class="text-white">"Aman"</span>,
+      <span class="text-white">"age"</span> =&gt; <span class="text-white">22</span>
+  ];
+
+  <span class="text-[#94a3b8]">// Nayi key-value pair add karein</span>
+  <span class="text-green-400">$user</span>[<span class="text-white">"email"</span>] = <span class="text-white">"aman@example.com"</span>;
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$user</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Quick Pro Tip Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-blue-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-blue-400">
+              <span>💡</span> Performance Tip
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Agar aapko sirf <strong>ek item</strong> array ke end me add karna hai, toh <code class="text-green-400">$array[] = $val;</code> ka use karein. Yeh <code class="text-green-400">array_push()</code> se fast hota hai kyunki isme koi function call overhead nahi hota.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./UpdateArrayItems.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./RemoveArrayItems.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(18);
+    </script>
+  </body>
+</html>
