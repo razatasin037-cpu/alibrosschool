@@ -1,8 +1,0 @@
-<?php $pageTitle='Categories'; require_once __DIR__.'/../includes/header.php';
-if($_SERVER['REQUEST_METHOD']==='POST'){check_csrf();$name=trim($_POST['name']);$desc=trim($_POST['description']);if($name){try{$st=$pdo->prepare("INSERT INTO categories(name,description) VALUES(?,?)");$st->execute([$name,$desc]);flash('success','Category added.');}catch(Throwable $e){flash('error','Category already exists.');}}redirect('index.php');}
-$rows=$pdo->query("SELECT c.*,COUNT(p.id) products FROM categories c LEFT JOIN products p ON p.category_id=c.id GROUP BY c.id ORDER BY c.name")->fetchAll();
-?>
-<div class="toolbar"><div><h1 class="page-title">Categories</h1><div class="muted">Organize your product catalog.</div></div></div>
-<div class="grid grid-2"><div class="card"><h3>Add Category</h3><form method="post"><input type="hidden" name="csrf" value="<?=e(csrf_token())?>"><div class="form-group"><label>Name</label><input class="input" name="name" required></div><div class="form-group" style="margin-top:12px"><label>Description</label><textarea class="textarea" name="description"></textarea></div><button class="btn" style="margin-top:12px">Add Category</button></form></div>
-<div class="card table-wrap"><table class="table"><thead><tr><th>Name</th><th>Products</th><th>Status</th></tr></thead><tbody><?php foreach($rows as $r):?><tr><td><?=e($r['name'])?></td><td><?=$r['products']?></td><td><span class="badge <?=$r['status']?'badge-success':'badge-danger'?>"><?=$r['status']?'Active':'Inactive'?></span></td></tr><?php endforeach;?></tbody></table></div></div>
-<?php require_once __DIR__.'/../includes/footer.php';?>

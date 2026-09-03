@@ -1,9 +1,0 @@
-<?php
-require_once __DIR__.'/config/database.php';require_once __DIR__.'/config/auth.php';require_once __DIR__.'/config/helpers.php';require_role(['admin']);
-$pageTitle='Settings';require_once __DIR__.'/includes/header.php';
-$row=$pdo->query("SELECT * FROM settings LIMIT 1")->fetch();
-if($_SERVER['REQUEST_METHOD']==='POST'){check_csrf();$st=$pdo->prepare("UPDATE settings SET company_name=?,phone=?,email=?,address=?,gstin=?,currency=? WHERE id=?");$st->execute([trim($_POST['company_name']),trim($_POST['phone']),trim($_POST['email']),trim($_POST['address']),trim($_POST['gstin']),trim($_POST['currency']),$row['id']]);flash('success','Settings updated.');redirect('settings.php');}
-?>
-<div class="toolbar"><div><h1 class="page-title">Company Settings</h1><div class="muted">Configure business identity and currency.</div></div></div>
-<div class="card"><form method="post"><input type="hidden" name="csrf" value="<?=e(csrf_token())?>"><div class="form-grid"><div class="form-group"><label>Company Name</label><input class="input" name="company_name" value="<?=e($row['company_name'])?>" required></div><div class="form-group"><label>Phone</label><input class="input" name="phone" value="<?=e($row['phone'])?>"></div><div class="form-group"><label>Email</label><input class="input" type="email" name="email" value="<?=e($row['email'])?>"></div><div class="form-group"><label>GSTIN</label><input class="input" name="gstin" value="<?=e($row['gstin'])?>"></div><div class="form-group"><label>Currency</label><input class="input" name="currency" value="<?=e($row['currency'])?>"></div><div class="form-group full"><label>Address</label><textarea class="textarea" name="address"><?=e($row['address'])?></textarea></div></div><button class="btn" style="margin-top:14px">Save Settings</button></form></div>
-<?php require_once __DIR__.'/includes/footer.php';?>
