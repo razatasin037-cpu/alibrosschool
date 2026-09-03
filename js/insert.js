@@ -2,25 +2,26 @@
 // NAVBAR
 // ============================
 
-fetch("./navbar.html")
+const jsPath = document.currentScript.src;
+const projectPath = new URL("../", jsPath);
+
+fetch(new URL("navbar.html", projectPath))
   .then((res) => {
     if (!res.ok) {
-      throw new Error("navbar.html load nahi hua");
+      throw new Error("Navbar load nahi hua");
     }
-
     return res.text();
   })
   .then((data) => {
     const navbar = document.getElementById("navbar");
 
-    if (!navbar) {
-      throw new Error("Navbar container #navbar nahi mila");
+    if (navbar) {
+      navbar.innerHTML = data;
+
+      // Navbar load hone ke BAAD
+      setupMobileMenu();
+      setupActiveLinks();
     }
-
-    navbar.innerHTML = data;
-
-    setupMobileMenu();
-    setupActiveLinks();
   })
   .catch((err) => {
     console.error("Navbar Error:", err);
@@ -30,26 +31,47 @@ fetch("./navbar.html")
 // FOOTER
 // ============================
 
-fetch("./footer.html")
+fetch(new URL("footer.html", projectPath))
   .then((res) => {
     if (!res.ok) {
-      throw new Error("footer.html load nahi hua");
+      throw new Error("Footer load nahi hua");
     }
-
     return res.text();
   })
   .then((data) => {
     const footer = document.getElementById("footer");
 
-    if (!footer) {
-      throw new Error("Footer container #footer nahi mila");
+    if (footer) {
+      footer.innerHTML = data;
     }
-
-    footer.innerHTML = data;
   })
   .catch((err) => {
     console.error("Footer Error:", err);
   });
+
+// ============================
+// ACTIVE NAV LINK
+// ============================
+// ============================
+// ACTIVE NAV LINK
+// ============================
+function setupActiveLinks() {
+  const currentPath = window.location.pathname;
+
+  document.querySelectorAll("#navbar .nav-link").forEach((link) => {
+    const href = link.getAttribute("href");
+
+    if (!href || href === "#") return;
+
+    const linkPath = new URL(href, window.location.origin).pathname;
+
+    if (currentPath === linkPath || currentPath.endsWith(linkPath)) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
 
 // ============================
 // MOBILE MENU
@@ -58,40 +80,21 @@ fetch("./footer.html")
 function setupMobileMenu() {
   const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-  const menuIcon = document.getElementById("menuIcon");
 
-  if (!menuBtn || !mobileMenu || !menuIcon) {
+  if (!menuBtn || !mobileMenu) {
     return;
   }
 
   menuBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
-
-    if (mobileMenu.classList.contains("hidden")) {
-      menuIcon.classList.remove("fa-xmark");
-      menuIcon.classList.add("fa-bars");
-    } else {
-      menuIcon.classList.remove("fa-bars");
-      menuIcon.classList.add("fa-xmark");
-    }
   });
 }
+fetch(new URL("navbar.html", projectPath))
+  .then((res) => res.text())
+  .then((data) => {
+    document.getElementById("navbar").innerHTML = data;
 
-// ============================
-// ACTIVE LINK
-// ============================
-
-function setupActiveLinks() {
-  const links = document.querySelectorAll(".nav-link");
-
-  const currentPath = window.location.pathname;
-
-  links.forEach((link) => {
-    const linkPath = new URL(link.getAttribute("href"), window.location.href)
-      .pathname;
-
-    if (linkPath === currentPath) {
-      link.classList.add("text-[#4d6fff]", "border-b-2", "border-[#4d6fff]");
-    }
+    // IMPORTANT
+    setupMobileMenu();
+    setupActiveLinks();
   });
-}
