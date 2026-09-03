@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Strings - Ali Learning</title>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Custom Scripts -->
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+<style>
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] font-sans antialiased text-white pt-[80px] md:pt-[110px] overflow-x-hidden min-h-screen">
+<!-- Navigation Bar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar -->
+<aside class="w-full md:w-[300px] shrink-0" id="sidebar"></aside>
+<!-- Content -->
+<section class="flex-1 w-full p-5 md:pt-5 md:pb-[60px] md:px-[40px] transition-all duration-300">
+<!-- Heading -->
+<h1 class="text-4xl md:text-6xl font-bold text-white my-6 md:my-10">
+          C++ Strings
+        </h1>
+<!-- Top Navigation -->
+<div class="flex justify-between items-center mb-10 gap-4">
+<a class="no-underline" href="../opretor/precedence.html">
+<button class="bg-white text-black border border-gray-300 rounded-xl px-5 py-3 md:px-8 md:py-4 text-lg md:text-2xl font-semibold hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+<i aria-hidden="true" class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a class="no-underline" href="string-concatenation.html">
+<button class="bg-[#3d59d9] hover:bg-[#4d6fff] text-white rounded-xl px-5 py-3 md:px-8 md:py-4 text-lg md:text-2xl font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Next
+              <i aria-hidden="true" class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="border-gray-800 mb-12"/>
+<!-- C++ Strings Overview -->
+<article>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+            C++ Strings kya hain?
+          </h2>
+<div class="space-y-6 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[45px]">
+<p>
+              C++ mein
+              <span class="text-white font-semibold">Strings</span>
+              ka use text ya characters ko store karne ke liye kiya jata hai.
+            </p>
+<p>
+              Example ke liye
+              <span class="text-[#4d6fff] font-semibold"> "Hello World" </span>
+              ek string hai.
+            </p>
+<p>
+              String ke andar ek ya ek se zyada characters, words aur spaces
+              store kiye ja sakte hain.
+            </p>
+<p>
+              C++ mein string value ko
+              <span class="text-white font-semibold"> double quotes </span>
+              ke andar likha jata hai.
+            </p>
+</div>
+</article>
+<hr class="border-gray-800 my-12"/>
+<!-- Simple String -->
+<article>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+            Simple String
+          </h2>
+<div class="space-y-6 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[45px]">
+<p>
+              Ek simple string variable banane ke liye
+              <span class="text-white font-semibold">string</span>
+              keyword ka use kiya jata hai.
+            </p>
+<p>
+              Example mein hum
+              <span class="text-white font-semibold">greeting</span>
+              naam ka variable banakar usme
+              <span class="text-[#4d6fff] font-semibold"> "Hello" </span>
+              store kar rahe hain.
+            </p>
+</div>
+<!-- Static Code Card: Simple String -->
+<div class="mt-8 bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">String Variable Declaration</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string greeting = "Hello";</code></pre>
+  </div>
+</div>
+</div>
+</article>
+<hr class="border-gray-800 my-12"/>
+<!-- String Library -->
+<article>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+            String Library
+          </h2>
+<div class="space-y-6 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[45px]">
+<p>
+              C++ mein
+              <span class="text-white font-semibold"> string </span>
+              ko properly use karne ke liye
+              <span class="text-white font-semibold"> &lt;string&gt; </span>
+              header file include ki ja sakti hai.
+            </p>
+<p>
+              Iske baad hum
+              <span class="text-white font-semibold"> string </span>
+              data type ka use kar sakte hain.
+            </p>
+</div>
+<!-- Static Code Card: String Library -->
+<div class="mt-8 bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Header File Inclusion</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;string&gt;</code></pre>
+  </div>
+</div>
+</div>
+</article>
+<hr class="border-gray-800 my-12"/>
+<!-- Complete String Example -->
+<article>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+            C++ String Example
+          </h2>
+<div class="space-y-6 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[45px]">
+<p>
+              Ab ek complete example dekhte hain jisme ek string variable
+              banakar usko screen par print kiya gaya hai.
+            </p>
+</div>
+<!-- Static Code Card: Complete Example -->
+<div class="mt-8 bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Complete String Program</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+    string greeting = "Hello World";
+    cout &lt;&lt; greeting &lt;&lt; endl;
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</article>
+<hr class="border-gray-800 my-12"/>
+<!-- Print String -->
+<article>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+            String ko Print Karna
+          </h2>
+<div class="space-y-6 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[45px]">
+<p>
+              String ko output screen par dikhane ke liye
+              <span class="text-white font-semibold"> cout </span>
+              ka use kiya ja sakta hai.
+            </p>
+</div>
+<!-- Static Code Card: Print String -->
+<div class="mt-8 bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Printing a String</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string myText = "Learning C++";
+cout &lt;&lt; myText;</code></pre>
+  </div>
+</div>
+</div>
+</article>
+<hr class="border-gray-800 my-12"/>
+<!-- Multiple Words -->
+<article>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+            Multiple Words
+          </h2>
+<div class="space-y-6 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[45px]">
+<p>String ke andar multiple words bhi store kiye ja sakte hain.</p>
+<p>
+              Words ke beech
+              <span class="text-white font-semibold"> spaces </span>
+              bhi rakhe ja sakte hain.
+            </p>
+<p>
+              String mein punctuation marks jaise
+              <span class="text-white font-semibold"> ! </span>
+              bhi use kiye ja sakte hain.
+            </p>
+</div>
+<!-- Static Code Card: Multiple Words -->
+<div class="mt-8 bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Storing Sentences</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string sentence = "C++ is an awesome language!";</code></pre>
+  </div>
+</div>
+</div>
+</article>
+<hr class="border-gray-800 my-12"/>
+<!-- Spaces and Punctuation -->
+<article>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+            Spaces aur Punctuation
+          </h2>
+<div class="space-y-6 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[45px]">
+<p>
+              String mein words ke beech spaces aur punctuation dono store kiye
+              ja sakte hain.
+            </p>
+</div>
+<!-- Static Code Card: Spaces and Punctuation -->
+<div class="mt-8 bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Punctuation &amp; Spaces</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "Hello, World! How are you?";</code></pre>
+  </div>
+</div>
+</div>
+</article>
+<hr class="border-gray-800 my-12"/>
+<!-- Important Notes -->
+<aside class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 md:p-8">
+<h2 class="text-2xl md:text-4xl font-bold text-white mb-6">
+            Important
+          </h2>
+<ul class="list-disc pl-6 space-y-4 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[40px]">
+<li>String ka use text store karne ke liye hota hai.</li>
+<li>
+              String value ko
+              <span class="text-white font-semibold"> double quotes </span>
+              ke andar likha jata hai.
+            </li>
+<li>String ke andar multiple words store kiye ja sakte hain.</li>
+<li>String mein spaces bhi store kiye ja sakte hain.</li>
+<li>String mein punctuation marks bhi use kiye ja sakte hain.</li>
+<li>
+              String ko print karne ke liye
+              <span class="text-white font-semibold"> cout </span>
+              ka use kar sakte hain.
+            </li>
+</ul>
+</aside>
+<hr class="border-gray-800 my-12"/>
+<!-- Bottom Navigation -->
+<div class="flex items-center justify-between mt-12 mb-10 gap-4">
+<a class="no-underline" href="../opretor/precedence.html">
+<button class="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black text-lg md:text-2xl font-semibold px-6 py-4 md:px-10 md:py-5 rounded-xl transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+<i aria-hidden="true" class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a class="no-underline" href="string-concatenation.html">
+<button class="bg-[#293fbf] hover:bg-[#4d6fff] text-white text-lg md:text-2xl font-semibold px-6 py-4 md:px-10 md:py-5 rounded-xl transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Next
+              <i aria-hidden="true" class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- Sidebar Mounting Script -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarElem = document.getElementById("sidebar");
+        if (sidebarElem && typeof createSidebar === "function") {
+          sidebarElem.innerHTML = createSidebar("C++ Strings");
+        }
+      });
+    </script>
+</body>
+</html>

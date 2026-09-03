@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Comparison Operators - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar Container -->
+<aside class="w-full md:w-[320px] shrink-0" id="sidebar"></aside>
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Comparison Operators
+        </h1>
+<!-- Top Navigation -->
+<div class="flex justify-between items-center">
+<a href="assignmentoperators.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="logicaloperators.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Comparison Operators
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein comparison operators ka use do values ko compare karne ke
+            liye kiya jata hai.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            Comparison ka result
+            <span class="text-[#4d6fff] font-bold">true</span>
+            ya
+            <span class="text-[#4d6fff] font-bold">false</span>
+            hota hai.
+          </p>
+<div class="bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden">
+<div class="grid grid-cols-3 bg-[#111827] border-b border-white/10 px-5 py-5 text-lg sm:text-xl font-bold">
+<div>Operator</div>
+<div>Name</div>
+<div>Example</div>
+</div>
+<div class="grid grid-cols-3 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">==</div>
+<div>Equal to</div>
+<div>5 == 5</div>
+</div>
+<div class="grid grid-cols-3 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">!=</div>
+<div>Not equal</div>
+<div>5 != 3</div>
+</div>
+<div class="grid grid-cols-3 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">&gt;</div>
+<div>Greater than</div>
+<div>5 &gt; 3</div>
+</div>
+<div class="grid grid-cols-3 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">&lt;</div>
+<div>Less than</div>
+<div>3 &lt; 5</div>
+</div>
+<div class="grid grid-cols-3 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">&gt;=</div>
+<div>Greater or equal</div>
+<div>5 &gt;= 5</div>
+</div>
+<div class="grid grid-cols-3 px-5 py-5 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">&lt;=</div>
+<div>Less or equal</div>
+<div>3 &lt;= 5</div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Equal To (==)
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">==</span>
+            check karta hai ki dono values equal hain ya nahi.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Equal To (==)</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int x = 10;
+int y = 10;
+cout &lt;&lt; (x == y);</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Not Equal (!=)
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">!=</span>
+            check karta hai ki dono values different hain ya nahi.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Not Equal (!=)</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int x = 10;
+int y = 5;
+cout &lt;&lt; (x != y);</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Greater Than (&gt;)
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">&gt;</span>
+            check karta hai ki left value right value se badi hai ya nahi.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Greater Than (&gt;)</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int x = 10;
+int y = 5;
+cout &lt;&lt; (x &gt; y);</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Less Than (&lt;)
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">&lt;</span>
+            check karta hai ki left value right value se chhoti hai ya nahi.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Less Than (&lt;)</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int x = 5;
+int y = 10;
+cout &lt;&lt; (x &lt; y);</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Greater Than or Equal To (&gt;=)
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">&gt;=</span>
+            check karta hai ki value greater hai ya equal hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Greater Than or Equal To (&gt;=)</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int age = 18;
+cout &lt;&lt; (age &gt;= 18);</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Less Than or Equal To (&lt;=)
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">&lt;=</span>
+            check karta hai ki value smaller hai ya equal hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Less Than or Equal To (&lt;=)</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int age = 16;
+cout &lt;&lt; (age &lt;= 18);</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Comparison With Variables
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Comparison operators ko variables ke saath bhi use kar sakte hain.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Comparison With Variables</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int marks = 80;
+int passMarks = 40;
+cout &lt;&lt; (marks &gt;= passMarks);</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Comparison in if Statement
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Comparison operators ka use
+            <span class="text-[#4d6fff] font-bold">if</span>
+            statement mein conditions check karne ke liye bahut common hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Comparison in if Statement</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int age = 20;
+if (age &gt;= 18) {
+    cout &lt;&lt; &quot;Adult&quot;;
+}</code></pre>
+    </div>
+  </div>
+</div>
+<!-- Important Summary Box -->
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>
+<span class="text-[#4d6fff] font-bold">==</span>
+                equal values check karta hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">!=</span>
+                different values check karta hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">&gt;</span>
+                greater than check karta hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">&lt;</span>
+                less than check karta hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">&gt;=</span>
+                greater ya equal check karta hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">&lt;=</span>
+                less ya equal check karta hai.
+              </li>
+<li>
+                Comparison ka result
+                <span class="text-[#4d6fff] font-bold">true</span>
+                ya
+                <span class="text-[#4d6fff] font-bold">false</span>
+                hota hai.
+              </li>
+</ul>
+</div>
+<!-- Bottom Navigation -->
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="assignmentoperators.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="logicaloperators.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<!-- Scripts Implementation -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(12);
+  }
+});
+</script>
+</body>
+</html>

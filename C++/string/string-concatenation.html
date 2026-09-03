@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ String Concatenation - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<!-- Fixed Flex Layout -->
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar container without inline layout restrictions -->
+<div class="flex-shrink-0" id="sidebar"></div>
+<!-- Main content section with auto-flex -->
+<section class="flex-1 w-full px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ String Concatenation
+        </h1>
+<div class="flex justify-between items-center">
+<a href="string.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="numbers-strings.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            String Concatenation
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein do ya usse zyada strings ko ek saath jodne ko
+            <span class="text-[#4d6fff] font-bold"> String Concatenation </span>
+            kaha jata hai.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Strings ko join karne ke liye hum
+            <span class="text-[#4d6fff] font-bold">+</span>
+            operator ka use kar sakte hain.
+          </p>
+<!-- Card 1: Basic Concatenation -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Basic Concatenation</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string firstName = "Ali";
+string lastName = "Learning";
+
+string fullName = firstName + lastName;
+
+cout &lt;&lt; fullName;</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Do Strings ko Join Karna
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Maan lo hamare paas first name aur last name alag-alag strings mein
+            hain. Hum dono ko
+            <span class="text-[#4d6fff] font-bold">+</span>
+            operator se join kar sakte hain.
+          </p>
+<!-- Card 2: Joining Two Strings -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Joining Two Strings</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string firstName = "Tasin";
+string lastName = "Raza";
+
+cout &lt;&lt; firstName + lastName;</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Strings ke Beech Space
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Agar do strings ko join karte waqt unke beech space chahiye, to hum
+            ek separate space string add kar sakte hain.
+          </p>
+<!-- Card 3: Concatenation with Space -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Concatenation with Space</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string firstName = "Tasin";
+string lastName = "Raza";
+
+string fullName = firstName + " " + lastName;
+
+cout &lt;&lt; fullName;</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Multiple Strings ko Join Karna
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Hum ek se zyada strings ko bhi ek saath concatenate kar sakte hain.
+          </p>
+<!-- Card 4: Multiple Strings -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Multiple Strings</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string firstName = "Ali";
+string lastName = "Learning";
+string country = "India";
+
+string result = firstName + " " + lastName + " " + country;
+
+cout &lt;&lt; result;</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            String Variable mein Result Store Karna
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Concatenation ka result ek naye string variable mein bhi store kiya
+            ja sakta hai.
+          </p>
+<!-- Card 5: Store the Result -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Store the Result</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string first = "Hello";
+string second = "World";
+
+string message = first + " " + second;
+
+cout &lt;&lt; message;</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            String ko += se Join Karna
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Existing string mein doosri string add karne ke liye
+            <span class="text-[#4d6fff] font-bold">+=</span>
+            operator ka use bhi kar sakte hain.
+          </p>
+<!-- Card 6: Using += -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Using +=</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "Hello";
+
+text += " World";
+
+cout &lt;&lt; text;</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Complete Example
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Neeche ek complete example hai jisme multiple strings ko combine
+            kiya gaya hai.
+          </p>
+<!-- Card 7: Complete Example -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Complete Example</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+    string firstName = "Ali";
+    string lastName = "Learning";
+
+    string fullName = firstName + " " + lastName;
+
+    cout &lt;&lt; "Name: " &lt;&lt; fullName;
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>String concatenation ka matlab strings ko join karna hai.</li>
+<li>
+                Strings ko join karne ke liye
+                <span class="text-[#4d6fff] font-bold">+</span>
+                operator use kar sakte hain.
+              </li>
+<li>
+                Multiple strings ko ek saath concatenate kiya ja sakta hai.
+              </li>
+<li>
+                Space ke liye
+                <span class="text-white font-semibold">" "</span>
+                add karna hota hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">+=</span>
+                se existing string mein doosri string add kar sakte hain.
+              </li>
+</ul>
+</div>
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="string.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="numbers-strings.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Inject Sidebar cleanly
+        const sidebarElem = document.getElementById("sidebar");
+        if (sidebarElem && typeof createSidebar === "function") {
+          sidebarElem.innerHTML = createSidebar("C++ Tutorial");
+        }
+      });
+    </script>
+</body>
+</html>

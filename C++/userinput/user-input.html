@@ -1,0 +1,396 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ User Input - Ali Learning</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- JavaScript -->
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+      <!-- Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- Title -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ User Input
+        </h1>
+        <!-- Top Buttons -->
+        <div class="flex justify-between items-center">
+          <a href="../varibale/real-life-example.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+
+              Previous
+            </button>
+          </a>
+          <a href="../datatype/datatypes.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+        <hr class="mt-12 border-white/10" />
+        <!-- Main Content -->
+        <section class="max-w-6xl mx-auto py-10">
+          <!-- Introduction -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ User Input
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Abhi tak humne
+            <span class="text-[#4d6fff] font-bold"> cout </span>
+            ka use karke output screen par dikhaya hai.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab hum seekhenge ki user se keyboard ke through input kaise liya
+            jata hai.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            C++ mein user input lene ke liye
+            <span class="text-[#4d6fff] font-bold"> cin </span>
+            ka use kiya jata hai.
+          </p>
+          <!-- User Input Card -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                C++ User Input
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>#include &lt;iostream&gt;
+using namespace std;
+
+int age;
+cout &lt;&lt; &quot;Enter your age: &quot;;
+cin &gt;&gt; age;
+cout &lt;&lt; &quot;Your age is: &quot; &lt;&lt; age;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- cin -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            cin Kya Hai?
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-[#4d6fff] font-bold"> cin </span>
+            C++ ka predefined input object hai jo keyboard se user ka data read
+            karta hai.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Input lene ke liye
+            <span class="text-[#4d6fff] font-bold"> &gt;&gt; </span>
+            extraction operator ka use kiya jata hai.
+          </p>
+          <!-- cin Card -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                cin Kya Hai?
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int age;
+cin &gt;&gt; age;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- cout vs cin -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            cout aur cin
+          </h2>
+          <div
+            class="bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden"
+          >
+            <div
+              class="grid grid-cols-2 bg-[#111827] border-b border-white/10 px-5 py-5 text-lg sm:text-xl font-bold"
+            >
+              <div>Object</div>
+              <div>Use</div>
+            </div>
+            <div
+              class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl"
+            >
+              <div class="text-[#4d6fff] font-mono">cout</div>
+              <div class="text-gray-300">Output ke liye</div>
+            </div>
+            <div class="grid grid-cols-2 px-5 py-5 text-lg sm:text-xl">
+              <div class="text-[#4d6fff] font-mono">cin</div>
+              <div class="text-gray-300">User input ke liye</div>
+            </div>
+          </div>
+          <!-- Multiple Inputs -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Multiple Inputs Lena
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Hum ek program mein user se ek se zyada values bhi input le sakte
+            hain.
+          </p>
+          <!-- Multiple Input Card -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Multiple Inputs Lena
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>string name;
+int age;
+
+cin &gt;&gt; name &gt;&gt; age;
+cout &lt;&lt; name &lt;&lt; &quot; &quot; &lt;&lt; age;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Simple Calculator -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Simple Calculator Banana
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab hum user se do numbers lenge aur unka sum calculate karenge.
+          </p>
+          <!-- Calculator Card -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Simple Calculator Banana
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int a, b;
+cin &gt;&gt; a &gt;&gt; b;
+
+int sum = a + b;
+cout &lt;&lt; &quot;Sum: &quot; &lt;&lt; sum;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Explanation -->
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">
+              Program Kaise Kaam Karta Hai?
+            </h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>Pehle variable create kiya jata hai.</li>
+              <li>
+                <span class="text-[#4d6fff] font-bold"> cin </span>
+                user se value leta hai.
+              </li>
+              <li>
+                <span class="text-[#4d6fff] font-bold"> &gt;&gt; </span>
+                operator input ko variable mein store karta hai.
+              </li>
+              <li>Input values par calculation perform ki ja sakti hai.</li>
+              <li>
+                Result ko
+                <span class="text-[#4d6fff] font-bold"> cout </span>
+                se screen par show kar sakte hain.
+              </li>
+            </ul>
+          </div>
+          <!-- iostream -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            &lt;iostream&gt; Library
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-[#4d6fff] font-bold"> cin </span>
+            aur
+            <span class="text-[#4d6fff] font-bold"> cout </span>
+            dono
+            <span class="text-white font-semibold"> &lt;iostream&gt; </span>
+            library ka part hain.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+          >
+            Isliye user input aur output ke liye program ke starting mein
+            <span class="text-[#4d6fff] font-bold">
+              #include &lt;iostream&gt;
+            </span>
+            likhna hota hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                iostream Library
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; &quot;Hello&quot;;
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Important -->
+          <div
+            class="mt-12 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                User input lene ke liye
+                <span class="text-[#4d6fff] font-bold"> cin </span>
+                use hota hai.
+              </li>
+              <li>
+                Input operator
+                <span class="text-[#4d6fff] font-bold"> &gt;&gt; </span>
+                hota hai.
+              </li>
+              <li>
+                Output ke liye
+                <span class="text-[#4d6fff] font-bold"> cout </span>
+                aur
+                <span class="text-[#4d6fff] font-bold"> &lt;&lt; </span>
+                use hota hai.
+              </li>
+              <li>
+                <span class="text-white font-semibold"> cin </span>
+                aur
+                <span class="text-white font-semibold"> cout </span>
+                ke liye
+                <span class="text-white font-semibold"> &lt;iostream&gt; </span>
+                library use hoti hai.
+              </li>
+            </ul>
+          </div>
+          <!-- Bottom Buttons -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../varibale/real-life-example.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+
+                Previous
+              </button>
+            </a>
+            <a href="../datatype/datatypes.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(7);
+        }
+      });
+    </script>
+  </body>
+</html>

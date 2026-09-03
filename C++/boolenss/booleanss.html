@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Booleans</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer="" src="../../js/insert.js"></script>
+<script defer="" src="../js/sidebar.js"></script>
+<style>
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden">
+<!-- Navigation Bar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar -->
+<div id="sidebar"></div>
+<!-- Content Section -->
+<section class="w-full md:w-[calc(100%-300px)] p-5 md:pt-5 md:pb-[60px] md:px-[40px] transition-all duration-300">
+<!-- Heading -->
+<h1 class="text-[60px] font-bold text-white mb-10 mt-10">
+          C++ Booleans
+        </h1>
+<!-- Previous & Next -->
+<div class="flex justify-between items-center mb-10">
+<!-- Previous -->
+<a href="../math/maths.html" style="text-decoration: none">
+<button class="bg-white text-black border border-gray-300 rounded-xl px-8 py-4 text-2xl font-semibold hover:bg-gray-100 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a href="../if/conditions.html" style="text-decoration: none">
+<button class="bg-[#3d59d9] hover:bg-[#4d6fff] text-white rounded-xl px-8 py-4 text-2xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="border-gray-700 mb-12"/>
+<!-- Introduction -->
+<div>
+<h2 class="text-[52px] font-bold text-white mb-8">
+            Boolean Values Kya Hoti Hain?
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              C++ mein booleans ek aisi data type hai jisme sirf do values ho
+              sakti hain:
+              <span class="text-[#4d6fff] font-semibold"> true (sahi) </span> ya
+              <span class="text-[#4d6fff] font-semibold"> false (galat) </span>.
+            </p>
+<p>
+              Boolean variables ko declare karne ke liye
+              <span class="text-white font-semibold"> bool </span>
+              keyword ka use kiya jata hai.
+            </p>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Boolean Variables -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            Boolean Values Declare Karna
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Aap `bool` data type ka use karke `true` ya `false` values set kar
+              sakte hain.
+            </p>
+<p>
+              Jab aap boolean values ko print karte hain, to output mein
+              <span class="text-white font-semibold"> true ki jagah 1 </span>
+              aur
+              <span class="text-white font-semibold"> false ki jagah 0 </span>
+              print hota hai.
+            </p>
+</div>
+<!-- HTML Code Card 1 -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Boolean Values Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    bool isCodingFun = true;
+    bool isFishTasty = false;
+
+    cout &lt;&lt; isCodingFun &lt;&lt; endl; // Output: 1
+    cout &lt;&lt; isFishTasty &lt;&lt; endl; // Output: 0
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Boolean Expression -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            Boolean Expressions
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Boolean expression ek aisa expression hota hai jo compare hone ke
+              baad
+              <span class="text-[#4d6fff] font-semibold">
+                boolean value (1 ya 0)
+              </span>
+              return karta hai.
+            </p>
+<p>
+              Iske liye comparison operators jaise
+              <span class="text-white font-semibold"> &gt; </span> (greater
+              than), <span class="text-white font-semibold"> &lt; </span> (less
+              than), aur
+              <span class="text-white font-semibold"> == </span> (equal to) ka
+              use hota hai.
+            </p>
+</div>
+<!-- HTML Code Card 2 -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Boolean Expressions Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x = 10;
+    int y = 9;
+
+    cout &lt;&lt; (x &gt; y) &lt;&lt; endl;  // Output: 1 (True kyunki 10, 9 se bada hai)
+    cout &lt;&lt; (x == 10) &lt;&lt; endl; // Output: 1 (True)
+    cout &lt;&lt; (10 == 15) &lt;&lt; endl; // Output: 0 (False)
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Real Life Example -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            Real Life Example: Age Check
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Real life programming mein hum Booleans ka use conditions check
+              karne ke liye karte hain. Jaise ki check karna ki koi person
+              voting ke liye eligible hai ya nahi:
+            </p>
+</div>
+<!-- HTML Code Card 3 -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Real Life Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int myAge = 25;
+    int votingAge = 18;
+
+    cout &lt;&lt; (myAge &gt;= votingAge); // Output: 1 (True, vote de sakta hai)
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Important -->
+<div class="mt-16 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-8">
+<h2 class="text-4xl font-bold text-white mb-8">Important</h2>
+<ul class="list-disc pl-8 space-y-5 text-2xl text-gray-300 leading-[45px]">
+<li>
+              Boolean type variable declare karne ke liye `bool` keyword ka use
+              hota hai.
+            </li>
+<li>
+              Boolean ki do values ho sakti hain: `true` (1) aur `false` (0).
+            </li>
+<li>
+              C++ cout me `true` ko `1` aur `false` ko `0` ke roop me dikhata
+              hai.
+            </li>
+<li>
+              Booleans ka sabse bada use `if...else` logic aur conditional
+              statements mein hota hai.
+            </li>
+</ul>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Bottom Navigation -->
+<div class="flex items-center justify-between mt-16 mb-10">
+<!-- Previous -->
+<a href="../math/maths.html" style="text-decoration: none">
+<button class="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black text-2xl font-semibold px-10 py-5 rounded-xl transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a href="../if/conditions.html" style="text-decoration: none">
+<button class="bg-[#293fbf] hover:bg-[#4d6fff] text-white text-2xl font-semibold px-10 py-5 rounded-xl transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- Sidebar Script Injection -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar();
+        }
+      });
+    </script>
+</body>
+</html>

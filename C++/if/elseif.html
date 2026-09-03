@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ Else If - Ali Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Else If
+        </h1>
+
+        <div class="flex justify-between items-center">
+          <a href="else.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+            </button></a
+          >
+          <a href="short-if-else.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+          ></a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <section class="max-w-6xl mx-auto py-10">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            The else if Statement
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            C++ mein <span class="text-[#4d6fff] font-bold">else if</span> ka
+            use tab kiya jata hai jab humein ek se zyada conditions check karni
+            hoti hain.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Agar pehli
+            <span class="text-[#4d6fff] font-bold">if</span> condition false ho,
+            to program next
+            <span class="text-[#4d6fff] font-bold">else if</span> condition ko
+            check karta hai.
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Syntax</h2>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">else if Syntax</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">if (condition1) {
+    // code
+}
+else if (condition2) {
+    // code
+}
+else {
+    // code
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">Example</h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Neeche example mein time ke according different messages display
+            kiye ja rahe hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Main Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">int time = 14;
+
+if (time &lt; 12) {
+    cout &lt;&lt; "Good morning.";
+}
+else if (time &lt; 18) {
+    cout &lt;&lt; "Good afternoon.";
+}
+else {
+    cout &lt;&lt; "Good evening.";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            How Does else if Work?
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Program conditions ko upar se neeche ki taraf check karta hai. Jaise
+            hi koi condition true hoti hai, us block ka code execute hota hai
+            aur baaki conditions skip ho jati hain.
+          </p>
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Sabse pehle
+                <span class="text-[#4d6fff] font-bold">if</span> condition check
+                hoti hai.
+              </li>
+              <li>
+                Agar false ho, to
+                <span class="text-[#4d6fff] font-bold">else if</span> check hota
+                hai.
+              </li>
+              <li>
+                Multiple
+                <span class="text-[#4d6fff] font-bold">else if</span> conditions
+                use ki ja sakti hain.
+              </li>
+              <li>
+                Agar koi condition true na ho, to optional
+                <span class="text-[#4d6fff] font-bold">else</span> execute hota
+                hai.
+              </li>
+            </ul>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Condition Flow Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">int number = 10;
+
+if (number &gt; 10) {
+    cout &lt;&lt; "Greater than 10";
+}
+else if (number == 10) {
+    cout &lt;&lt; "Equal to 10";
+}
+else {
+    cout &lt;&lt; "Less than 10";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Grade Example
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Marks ke basis par grade determine karne ke liye
+            <span class="text-[#4d6fff] font-bold">else if</span> ka use kiya ja
+            sakta hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Grade Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">int marks = 85;
+
+if (marks &gt;= 90) {
+    cout &lt;&lt; "Grade A+";
+}
+else if (marks &gt;= 80) {
+    cout &lt;&lt; "Grade A";
+}
+else if (marks &gt;= 70) {
+    cout &lt;&lt; "Grade B";
+}
+else if (marks &gt;= 60) {
+    cout &lt;&lt; "Grade C";
+}
+else {
+    cout &lt;&lt; "Need improvement";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Multiple else if Statements
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Aap ek hi program mein multiple
+            <span class="text-[#4d6fff] font-bold">else if</span> statements use
+            kar sakte hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Multiple else if Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">int age = 20;
+
+if (age &lt; 13) {
+    cout &lt;&lt; "Child";
+}
+else if (age &lt; 18) {
+    cout &lt;&lt; "Teenager";
+}
+else if (age &lt; 60) {
+    cout &lt;&lt; "Adult";
+}
+else {
+    cout &lt;&lt; "Senior citizen";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                <span class="text-[#4d6fff] font-bold">else if</span> multiple
+                conditions check karne ke liye use hota hai.
+              </li>
+              <li>Conditions order mein check hoti hain.</li>
+              <li>Pehli true condition ka block execute hota hai.</li>
+              <li>
+                Zarurat ke according multiple
+                <span class="text-[#4d6fff] font-bold">else if</span> use kar
+                sakte hain.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="else.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button></a
+            >
+            <a href="short-if-else.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+            ></a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(5);
+        }
+      });
+    </script>
+  </body>
+</html>

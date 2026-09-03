@@ -1,0 +1,37 @@
+:root{
+--pink:#d81b72;--pink2:#f04a9b;--deep:#7b123f;--soft:#fff2f8;--line:#f1d8e5;
+--text:#321b28;--muted:#8b7180;--green:#15803d;--red:#dc2626;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#fff8fc;color:var(--text);font-family:"DM Sans",sans-serif}
+.loader{position:fixed;inset:0;background:linear-gradient(135deg,#fff4f9,#ffd8eb);z-index:5000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.5s}
+.loader.hide{opacity:0;visibility:hidden}
+.loader-flower{width:76px;height:76px;border-radius:25px;background:linear-gradient(135deg,var(--deep),var(--pink2));color:#fff;display:grid;place-items:center;font-family:"Playfair Display";font-size:38px;font-weight:700;box-shadow:0 20px 60px #d81b7240;animation:pulse 1.2s infinite}
+.loader-text{margin-top:15px;font-weight:800;color:var(--deep)}
+@keyframes pulse{50%{transform:scale(1.08) rotate(3deg)}}
+.topbar{height:76px;position:fixed;top:0;left:0;right:0;z-index:1000;background:linear-gradient(110deg,#8d164b,#d81b72,#f04a9b);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 25px;box-shadow:0 10px 35px #7b123f22}
+.brand{display:flex;align-items:center;gap:11px}.brand strong{display:block;font-size:18px}.brand small{display:block;opacity:.72;font-size:10px}
+.brand-logo{width:43px;height:43px;border-radius:15px;background:#fff;color:var(--pink);display:grid;place-items:center;font-family:"Playfair Display";font-size:25px;font-weight:700}
+.mobile-menu{display:none;border:0;background:#ffffff22;color:#fff;border-radius:12px;font-size:26px}
+.sidebar{position:fixed;left:0;top:76px;bottom:0;width:250px;background:#fff;border-right:1px solid var(--line);padding:24px 15px;z-index:900}
+.sidebar a{display:flex;align-items:center;gap:13px;padding:13px 15px;margin:5px 0;border-radius:14px;text-decoration:none;color:#674455;font-weight:700;transition:.2s}
+.sidebar a:hover,.sidebar a.active{background:var(--soft);color:var(--pink);transform:translateX(3px)}
+.sidebar .pink-action{background:linear-gradient(110deg,var(--deep),var(--pink2));color:#fff;box-shadow:0 10px 25px #d81b7225}
+.side-title{font-size:10px;font-weight:800;color:#b69aa9;letter-spacing:1.4px;padding:8px 15px}
+.main-content{margin-left:250px;padding:105px 30px 35px;min-height:100vh}
+.hero{position:relative;overflow:hidden;padding:32px;border-radius:28px;background:linear-gradient(120deg,#75113c,#d81b72,#f04a9b);color:#fff;box-shadow:0 22px 55px #d81b7220}
+.hero:after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-60px;top:-100px;background:#fff2;filter:blur(1px)}
+.hero h1{font-family:"Playfair Display";font-size:36px}
+.cardx{background:#fff;border:1px solid var(--line);border-radius:23px;box-shadow:0 12px 35px #7b123f0c}
+.stat-value{font-size:28px;font-weight:800}.muted{color:var(--muted)}.iconbox{width:50px;height:50px;border-radius:16px;background:var(--soft);color:var(--pink);display:grid;place-items:center;font-size:22px}
+.amount-green{color:var(--green)}.amount-red{color:var(--red)}
+.btn-pink{background:linear-gradient(110deg,var(--deep),var(--pink2));border:0;color:#fff;border-radius:12px;font-weight:800}.btn-pink:hover{color:#fff;filter:brightness(.96)}
+.form-control,.form-select{border-color:#ead6e1;border-radius:12px;padding:11px}.form-control:focus,.form-select:focus{border-color:var(--pink);box-shadow:0 0 0 .2rem #d81b7220}
+.table-wrap{overflow:auto}.table thead th{background:var(--soft);color:var(--deep);white-space:nowrap}.table td{vertical-align:middle}
+.badge-active{background:#dcfce7;color:#166534}.badge-completed{background:#ede9fe;color:#5b21b6}.badge-due{background:#fee2e2;color:#991b1b}
+.pay-box{width:19px;height:19px;accent-color:var(--pink)}
+.summary-number{font-size:30px;font-weight:800}.progress{height:9px;background:#f7e5ee}.progress-bar{background:linear-gradient(90deg,var(--deep),var(--pink2))}
+@media(max-width:900px){
+.mobile-menu{display:block}.sidebar{transform:translateX(-105%);transition:.25s}.sidebar.open{transform:translateX(0)}
+.main-content{margin-left:0;padding:100px 15px 25px}.hero h1{font-size:29px}
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Math Functions</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer="" src="../../js/insert.js"></script>
+<script defer="" src="../js/sidebar.js"></script>
+<style>
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden">
+<!-- Navigation Bar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar -->
+<div id="sidebar"></div>
+<!-- Content Section -->
+<section class="w-full md:w-[calc(100%-300px)] p-5 md:pt-5 md:pb-[60px] md:px-[40px] transition-all duration-300">
+<!-- Heading -->
+<h1 class="text-[60px] font-bold text-white mb-10 mt-10">
+          C++ Math
+        </h1>
+<!-- Previous & Next Buttons -->
+<div class="flex justify-between items-center mb-10">
+<!-- Previous -->
+<a href="../string/cstyle.html" style="text-decoration: none">
+<button class="bg-white text-black border border-gray-300 rounded-xl px-8 py-4 text-2xl font-semibold hover:bg-gray-100 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a href="../boolenss/booleanss.html" style="text-decoration: none">
+<button class="bg-[#3d59d9] hover:bg-[#4d6fff] text-white rounded-xl px-8 py-4 text-2xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="border-gray-700 mb-12"/>
+<!-- Introduction -->
+<div>
+<h2 class="text-[52px] font-bold text-white mb-8">
+            C++ Math Functions
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              C++ mein mathematical operations perform karne ke liye built-in functions aur 
+              <span class="text-[#4d6fff] font-semibold"> &lt;cmath&gt; </span> library ka use kiya jata hai.
+            </p>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Max and Min Section -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            Max aur Min Functions
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Do numbers me se maximum (sabse bada) value nikalne ke liye
+              <span class="text-white font-semibold"> max(x, y) </span>
+              aur minimum (sabse chota) value nikalne ke liye
+              <span class="text-white font-semibold"> min(x, y) </span>
+              function ka use hota hai.
+            </p>
+</div>
+<!-- HTML Code Card 1 -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Max and Min Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; max(5, 10); // Output: 10
+    cout &lt;&lt; min(5, 10); // Output: 5
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- cmath Library Section -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            C++ &lt;cmath&gt; Header File
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Advance mathematical calculations jaise ki square root, power, logarithm, aur round off ke liye hume
+              <span class="text-[#4d6fff] font-semibold"> #include &lt;cmath&gt; </span>
+              header file add karni hoti hai.
+            </p>
+</div>
+<!-- HTML Code Card 2 -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              cmath Functions Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; sqrt(64) &lt;&lt; endl; // Output: 8 (Square Root)
+    cout &lt;&lt; round(2.6) &lt;&lt; endl; // Output: 3 (Round off)
+    cout &lt;&lt; log(2) &lt;&lt; endl; // Output: 0.693147 (Logarithm)
+    cout &lt;&lt; pow(2, 3) &lt;&lt; endl; // Output: 8 (2 raised to power 3)
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Other Math Functions -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            Anya Math Functions List
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Neeche diye gaye table mein kuch popular
+              <span class="text-[#4d6fff] font-semibold">&lt;cmath&gt;</span>
+              functions listed hain:
+            </p>
+</div>
+<div class="mt-8 overflow-x-auto">
+<table class="w-full text-left border-collapse border border-gray-800 text-2xl">
+<thead>
+<tr class="bg-[#1e293b] text-white">
+<th class="p-4 border border-gray-800">Function</th>
+<th class="p-4 border border-gray-800">Description</th>
+</tr>
+</thead>
+<tbody class="text-gray-300">
+<tr class="border border-gray-800">
+<td class="p-4 border border-gray-800 font-mono text-[#4d6fff]">abs(x)</td>
+<td class="p-4 border border-gray-800">Absolute value (positive value) deta hai</td>
+</tr>
+<tr class="border border-gray-800 bg-[#0f172a]">
+<td class="p-4 border border-gray-800 font-mono text-[#4d6fff]">ceil(x)</td>
+<td class="p-4 border border-gray-800">Number ko nearest highest integer par round karta hai</td>
+</tr>
+<tr class="border border-gray-800">
+<td class="p-4 border border-gray-800 font-mono text-[#4d6fff]">floor(x)</td>
+<td class="p-4 border border-gray-800">Number ko nearest lowest integer par round karta hai</td>
+</tr>
+<tr class="border border-gray-800 bg-[#0f172a]">
+<td class="p-4 border border-gray-800 font-mono text-[#4d6fff]">pow(x, y)</td>
+<td class="p-4 border border-gray-800">x ka power y (x<sup>y</sup>) calculate karta hai</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Important Notes -->
+<div class="mt-16 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-8">
+<h2 class="text-4xl font-bold text-white mb-8">Important</h2>
+<ul class="list-disc pl-8 space-y-5 text-2xl text-gray-300 leading-[45px]">
+<li>`max()` aur `min()` bina extra header file ke bhi standard library me mil jate hain.</li>
+<li>`sqrt()`, `pow()`, aur `round()` ke liye `<cmath>` include karna zaroori hai.</cmath></li>
+<li>Trigonometric functions jaise `sin()`, `cos()`, `tan()` bhi `<cmath>` me hote hain.</cmath></li>
+</ul>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Bottom Navigation -->
+<div class="flex items-center justify-between mt-16 mb-10">
+<!-- Previous -->
+<a href="../string/cstyle.html" style="text-decoration: none">
+<button class="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black text-2xl font-semibold px-10 py-5 rounded-xl transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a href="../boolenss/booleanss.html" style="text-decoration: none">
+<button class="bg-[#293fbf] hover:bg-[#4d6fff] text-white text-2xl font-semibold px-10 py-5 rounded-xl transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- Sidebar Script Injection -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar();
+        }
+      });
+    </script>
+</body>
+</html>

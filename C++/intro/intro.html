@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Introduction</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+<style>
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden">
+<!-- Navigation Bar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar Container -->
+<div id="sidebar"></div>
+<section class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300">
+<!-- Heading -->
+<h1 class="text-[50px] sm:text-[52px] md:text-[60px] font-bold text-white mb-10 mt-6">
+          C++ ka Introduction
+        </h1>
+<!-- Top Previous & Next Buttons -->
+<div class="flex justify-between items-center mb-10">
+<a href="../home/c++tutoreal.html" style="text-decoration: none">
+<button class="bg-white text-black border border-gray-300 rounded-xl px-6 py-3 md:px-8 md:py-4 text-xl md:text-2xl font-semibold hover:bg-gray-100 active:scale-95 transition cursor-pointer">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="../getstart/start.html" style="text-decoration: none">
+<button class="bg-[#3d59d9] hover:bg-[#3538de] text-white rounded-xl px-6 py-3 md:px-8 md:py-4 text-xl md:text-2xl font-semibold active:scale-95 transition cursor-pointer">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="border-gray-700 mb-12"/>
+<!-- What is C++ -->
+<h2 class="text-3xl sm:text-4xl md:text-[52px] font-bold text-white mb-8">
+          C++ kya hai?
+        </h2>
+<p class="text-lg md:text-[24px] leading-relaxed md:leading-[50px] text-gray-300 mb-8">
+          C++ ek cross-platform language hai jo high-performance applications
+          create karne ke liye use kiya ja sakta hai.
+        </p>
+<p class="text-lg md:text-[24px] leading-relaxed md:leading-[50px] text-gray-300 mb-8">
+          C++ ko Bjarne Stroustrup ne C language ka extension banakar develop
+          kiya tha.
+          <span class="text-white font-semibold">Bjarne Stroustrup C++ ke creator hain.</span>
+</p>
+<p class="text-lg md:text-[24px] leading-relaxed md:leading-[50px] text-gray-300 mb-8">
+          C++ programmers ko system resources aur memory par high level ka
+          control deti hai.
+        </p>
+<p class="text-lg md:text-[24px] leading-relaxed md:leading-[50px] text-gray-300">
+          C++ language ko 5 baar major updates mile hain—2011, 2014, 2017, 2020
+          aur 2023 me. In updates ke baad iske versions ka naam C++11, C++14,
+          C++17, C++20 aur C++23 rakha gaya.
+        </p>
+<!-- Dynamic Code Example Card -->
+<div class="my-12">
+<h3 class="text-3xl font-bold text-white mb-6">
+            C++ First Program Example:
+          </h3>
+<div class="space-y-8" id="codeCards"></div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Why Use C++ -->
+<div class="mt-16">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-10">
+            C++ kyu use karein?
+          </h2>
+<div class="space-y-8 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[50px]">
+<p>
+              C++ duniya ki sabse popular programming languages me se ek hai.
+            </p>
+<p>
+              Aaj ke samay me C++ ka use operating systems, Graphical User
+              Interfaces (GUI), games, web browsers aur embedded systems me kiya
+              jata hai.
+            </p>
+<p>
+              C++ ek Object-Oriented Programming (OOP) language hai, jo programs
+              ko ek clear structure deti hai aur code ko dobara use (code reuse)
+              karne ki suvidha deti hai. Isse development ka time aur cost dono
+              kam ho jate hain.
+            </p>
+<p>
+              C++ ek portable language hai, jiska matlab hai ki isse aise
+              applications develop kiye ja sakte hain jo multiple platforms par
+              chal sakte hain.
+            </p>
+<p>
+              C++ ek fast, powerful aur seekhne me aasan programming language
+              hai.
+            </p>
+<p>
+              C++ ka C, C#, aur Java se kaafi close relation hai, isliye
+              programmers aasani se in languages ke beech switch kar sakte hain.
+            </p>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Difference Section -->
+<div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-10">
+            Difference between C and C++
+          </h2>
+<div class="space-y-8 text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[50px]">
+<p>
+              C++ ko C language ke extension ke roop me develop kiya gaya tha,
+              aur in dono languages ki syntax kaafi had tak same hai.
+            </p>
+<p>
+              The main difference is that C++ supports
+              <span class="font-semibold text-white">classes</span> and
+              <span class="font-semibold text-white">objects</span>, while C
+              does not.
+            </p>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Quick Reference Buttons Section -->
+<div class="my-16">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            Quick Try &amp; Examples
+          </h2>
+<p class="text-lg md:text-xl text-gray-300 mb-8">
+            Niche diye gaye buttons se aap alag-alag basic topics par jump karke
+            practice kar sakte hain:
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+<button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-4 px-6 rounded-xl shadow-md transition active:scale-95 cursor-pointer text-lg">
+              Basic Syntax Example
+            </button>
+<button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-4 px-6 rounded-xl shadow-md transition active:scale-95 cursor-pointer text-lg">
+              C++ Output (cout)
+            </button>
+<button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-4 px-6 rounded-xl shadow-md transition active:scale-95 cursor-pointer text-lg">
+              C++ Comments
+            </button>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Get Started Section -->
+<div class="mt-16">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-10">
+            Get Started
+          </h2>
+<p class="text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[50px] mb-8">
+            Jab aap is tutorial ko complete kar lenge, tab aap C++ programs likh
+            paayenge aur real-life applications banana bhi seekh jaayenge.
+          </p>
+<p class="text-lg md:text-2xl text-gray-300 leading-relaxed md:leading-[50px] mb-10">
+            Is tutorial ko shuru karne ke liye pehle se programming ka koi
+            experience hona zaroori nahi hai.
+          </p>
+<a href="/C++/getstart/start.html" style="text-decoration: none">
+<button class="bg-[#3538de] hover:bg-[#4d6fff] text-white text-xl md:text-2xl font-semibold px-8 py-4 md:px-10 md:py-5 rounded-2xl shadow-lg active:scale-95 transition duration-300 cursor-pointer">
+              Get Started »
+            </button>
+</a>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Bottom Navigation -->
+<div class="flex flex-wrap items-center justify-between gap-4 mt-16 mb-10">
+<a href="../home/c++tutoreal.html" style="text-decoration: none">
+<button class="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black text-xl md:text-2xl font-semibold px-8 py-4 md:px-10 md:py-5 rounded-xl active:scale-95 transition cursor-pointer">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="../getstart/start.html" style="text-decoration: none">
+<button class="bg-[#293fbf] hover:bg-[#3538de] text-white text-xl md:text-2xl font-semibold px-8 py-4 md:px-10 md:py-5 rounded-xl active:scale-95 transition cursor-pointer">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- Scripts Execution -->
+<script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Render Sidebar safely
+        if (typeof createSidebar === "function") {
+          const sidebarElem = document.getElementById("sidebar");
+          if (sidebarElem) sidebarElem.innerHTML = createSidebar(1);
+        }
+
+        // 2. Render Code Card
+        const codeCards = document.getElementById("codeCards");
+        if (codeCards) {
+          const exampleCode = `#include <iostream>\n\nusing namespace std;\n\nint main() {\n    cout << "Welcome to C++ Tutorial!";\n    return 0;\n}`;
+
+          // Fallback renderer if createCodeCard function in card.js fails to load
+          const renderCard =
+            typeof createCodeCard === "function"
+              ? createCodeCard
+              : (title, code) => `
+                <div class="bg-[#0f172a] p-6 rounded-2xl border border-[#3158ff] shadow-xl">
+                  <h3 class="text-2xl font-bold text-white mb-4">${title}</h3>
+                  <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">${code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>
+  </div>
+</div>
+                </div>
+              `;
+
+          codeCards.innerHTML = renderCard(
+            "C++ Basic Syntax Example",
+            exampleCode,
+          );
+        }
+      });
+    </script>
+</body>
+</html>

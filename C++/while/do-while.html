@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <title>C++ Do/While Loop - Ali Learning</title>
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JavaScript -->
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- Title -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Do/While Loop
+        </h1>
+
+        <!-- Top Buttons -->
+        <div class="flex justify-between items-center">
+          <a href="while-loop.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+          </a>
+
+          <a href="#">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <!-- Main Content -->
+        <section class="max-w-6xl mx-auto py-10">
+          <!-- Introduction -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            The Do/While Loop
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-[#4d6fff] font-bold">do/while</span>
+            loop, <span class="text-[#4d6fff] font-bold">while</span> loop ka ek
+            variant hai. Is loop mein code block condition check hone se pehle
+            <span class="text-[#4d6fff] font-bold">ek baar zaroor execute</span>
+            hota hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Uske baad condition check hoti hai. Agar condition
+            <span class="text-[#4d6fff] font-bold">true</span> hai, to loop
+            dobara execute hota hai.
+          </p>
+
+          <!-- Syntax -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Syntax</h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Do/While Loop Syntax</h3>
+
+              <span class="text-sm text-gray-400"> Syntax </span>
+            </div>
+
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">do {
+    // code block to be executed
+}
+while (condition);</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-4">Important</h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              <span class="text-[#4d6fff] font-bold">while</span>
+              condition ke baad
+              <span class="text-[#4d6fff] font-bold"> semicolon (;)</span>
+              lagana required hai.
+            </p>
+          </div>
+
+          <!-- Basic Example -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Do/While Example</h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is example mein loop
+            <span class="text-[#4d6fff] font-bold">0</span>
+            se start hota hai aur
+            <span class="text-[#4d6fff] font-bold">i &lt; 5</span>
+            tak repeat hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Basic Do/While Example</h3>
+
+              <span class="text-sm text-gray-400"> Example </span>
+            </div>
+
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int i = 0;
+
+    do {
+        cout &lt;&lt; i &lt;&lt; "\n";
+        i++;
+    }
+    while (i &lt; 5);
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- How It Works -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            How It Works
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Do/while loop mein pehle
+            <span class="text-[#4d6fff] font-bold">do</span>
+            block execute hota hai. Uske baad
+            <span class="text-[#4d6fff] font-bold">while</span>
+            condition check hoti hai.
+          </p>
+
+          <ul
+            class="list-disc pl-6 space-y-4 text-lg sm:text-xl md:text-2xl text-gray-300 mb-10"
+          >
+            <li>
+              Sabse pehle <span class="text-[#4d6fff] font-bold"> do</span> ke
+              andar ka code execute hota hai.
+            </li>
+
+            <li>Uske baad condition check hoti hai.</li>
+
+            <li>Condition true hone par loop repeat hota hai.</li>
+
+            <li>Condition false hone par loop stop ho jata hai.</li>
+          </ul>
+
+          <!-- Flow Example -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Do/While Flow</h3>
+
+              <span class="text-sm text-gray-400"> Example </span>
+            </div>
+
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">do {
+    // Step 1: Execute code
+}
+while (condition);
+
+// Step 2: Check condition
+// true  → repeat
+// false → stop</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- False Condition -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Condition is False from the Start
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Regular while loop ke unlike, do/while loop condition false hone par
+            bhi code ko
+            <span class="text-[#4d6fff] font-bold"> kam se kam ek baar</span>
+            execute karta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is example mein
+            <span class="text-[#4d6fff] font-bold">i = 10</span>
+            hai aur condition
+            <span class="text-[#4d6fff] font-bold">i &lt; 5</span>
+            false hai. Phir bhi code ek baar execute hoga.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">False Condition Example</h3>
+
+              <span class="text-sm text-gray-400"> Example </span>
+            </div>
+
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int i = 10;
+
+    do {
+        cout &lt;&lt; "i is " &lt;&lt; i &lt;&lt; "\n";
+        i++;
+    }
+    while (i &lt; 5);
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Difference -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            While vs Do/While
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Dono loops similar hain, lekin inmein ek important difference hai:
+            <span class="text-[#4d6fff] font-bold">while</span> condition ko
+            pehle check karta hai, jabki
+            <span class="text-[#4d6fff] font-bold">do/while</span> pehle code
+            execute karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">While Loop</h3>
+
+              <span class="text-sm text-gray-400"> Comparison </span>
+            </div>
+
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">int i = 10;
+
+while (i &lt; 5) {
+    cout &lt;&lt; i;
+    i++;
+}
+
+// Runs 0 times</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Do/While Loop</h3>
+
+              <span class="text-sm text-gray-400"> Comparison </span>
+            </div>
+
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">int i = 10;
+
+do {
+    cout &lt;&lt; i;
+    i++;
+}
+while (i &lt; 5);
+
+// Runs 1 time</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Input -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Do/While with User Input
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Do/while loop user input ke liye useful hai kyunki user se input kam
+            se kam ek baar lena guaranteed hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">User Input Example</h3>
+
+              <span class="text-sm text-gray-400"> Practical Example </span>
+            </div>
+
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int number;
+
+    do {
+        cout &lt;&lt; "Enter a number: ";
+        cin &gt;&gt; number;
+    }
+    while (number != 0);
+
+    cout &lt;&lt; "You entered 0.";
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Menu Example -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Menu Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Do/while ka practical use menu-based programs mein bhi hota hai,
+            jahan user ko option choose karne ke liye kam se kam ek baar menu
+            dikhana hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Simple Menu</h3>
+
+              <span class="text-sm text-gray-400"> Example </span>
+            </div>
+
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int choice;
+
+    do {
+        cout &lt;&lt; "\n1. Start";
+        cout &lt;&lt; "\n2. Settings";
+        cout &lt;&lt; "\n0. Exit";
+        cout &lt;&lt; "\nEnter choice: ";
+        cin &gt;&gt; choice;
+
+        if (choice == 1) {
+            cout &lt;&lt; "Starting...\n";
+        }
+        else if (choice == 2) {
+            cout &lt;&lt; "Opening settings...\n";
+        }
+    }
+    while (choice != 0);
+
+    cout &lt;&lt; "Program ended.";
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Infinite Loop -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Infinite Do/While Loop
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar do/while ki condition hamesha true rahe, to infinite loop
+            create ho sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Infinite Loop Example</h3>
+
+              <span class="text-sm text-gray-400"> Example </span>
+            </div>
+
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">do {
+    cout &lt;&lt; "This keeps running.\n";
+}
+while (true);</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Notes -->
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Do/while loop code ko kam se kam ek baar execute karta hai.
+              </li>
+
+              <li>Condition code execute hone ke baad check hoti hai.</li>
+
+              <li>
+                <span class="text-[#4d6fff] font-bold">while</span>
+                ke baad semicolon
+                <span class="text-[#4d6fff] font-bold"> ;</span> lagana zaroori
+                hai.
+              </li>
+
+              <li>Counter ko update karna important hai.</li>
+
+              <li>
+                Condition hamesha true hone par infinite loop ho sakta hai.
+              </li>
+
+              <li>
+                Do/while loops menus aur user-input based programs mein
+                particularly useful hote hain.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">Summary</h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                <span class="text-[#4d6fff] font-bold">do/while</span>
+                loop ek block ko repeatedly execute karta hai.
+              </li>
+
+              <li>
+                Code block condition check hone se pehle execute hota hai.
+              </li>
+
+              <li>Isliye do/while loop minimum ek baar zaroor run hota hai.</li>
+
+              <li>Condition true hone par loop repeat hota hai.</li>
+
+              <li>Condition false hone par loop stop ho jata hai.</li>
+
+              <li>
+                <span class="text-[#4d6fff] font-bold">while</span>
+                condition ke baad semicolon required hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Bottom Buttons -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="while-loop.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="#">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(7);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>C++ Booleans - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Booleans
+        </h1>
+
+        <div class="flex justify-between items-center">
+          <a href="numerictypes.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+
+              Previous
+            </button>
+          </a>
+
+          <a href="characters.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <section class="max-w-6xl mx-auto py-10">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ Boolean Data Types
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            C++ mein
+            <span class="text-[#4d6fff] font-bold">bool</span>
+            data type ka use sirf do values store karne ke liye kiya jata hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Ye do values hain
+            <span class="text-white font-bold">true</span>
+            aur
+            <span class="text-white font-bold">false</span>.
+          </p>
+
+          <div id="booleanBasicCard"></div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            bool Variable Banana
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Boolean variable banane ke liye
+            <span class="text-[#4d6fff] font-bold">bool</span>
+            keyword ka use karte hain.
+          </p>
+
+          <div id="boolVariableCard"></div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            true aur false
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Boolean variable mein hum
+            <span class="text-[#4d6fff] font-bold">true</span>
+            ya
+            <span class="text-[#4d6fff] font-bold">false</span>
+            assign kar sakte hain.
+          </p>
+
+          <div id="trueFalseCard"></div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Boolean Output
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Jab hum boolean value ko normally
+            <span class="text-[#4d6fff] font-bold">cout</span>
+            se print karte hain, to
+            <span class="text-white font-semibold">true</span>
+            ki value
+            <span class="text-white font-semibold">1</span>
+            aur
+            <span class="text-white font-semibold">false</span>
+            ki value
+            <span class="text-white font-semibold">0</span>
+            ke form mein output ho sakti hai.
+          </p>
+
+          <div id="booleanOutputCard"></div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Boolean Expressions
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Boolean expressions ka result bhi
+            <span class="text-[#4d6fff] font-bold">true</span>
+            ya
+            <span class="text-[#4d6fff] font-bold">false</span>
+            hota hai.
+          </p>
+
+          <div id="booleanExpressionCard"></div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Comparison Operators ke Saath Boolean
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Boolean values ka use comparison ke saath bahut common hai. Jaise
+            hum check kar sakte hain ki koi number doosre number se bada hai ya
+            nahi.
+          </p>
+
+          <div id="comparisonCard"></div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Real-Life Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Boolean ka use real programs mein kisi condition ko check karne ke
+            liye kiya ja sakta hai.
+          </p>
+
+          <div id="realLifeCard"></div>
+
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Boolean ke liye
+                <span class="text-[#4d6fff] font-bold">bool</span>
+                keyword use hota hai.
+              </li>
+
+              <li>
+                Boolean ki value
+                <span class="text-[#4d6fff] font-bold">true</span>
+                ya
+                <span class="text-[#4d6fff] font-bold">false</span>
+                hoti hai.
+              </li>
+
+              <li>Boolean expressions ka result bhi true ya false hota hai.</li>
+
+              <li>
+                Boolean ka use conditions aur comparisons mein bahut useful hota
+                hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="numerictypes.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+
+                Previous
+              </button>
+            </a>
+
+            <a href="characters.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        cout << (10 < 5);
+
+cout << (10 == 10);`,
+          );
+
+        document.getElementById("sidebar").innerHTML = createSidebar(8);
+      });
+    </script>
+  </body>
+</html>

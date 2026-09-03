@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>C++ If Statement - Ali Learning</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JavaScript -->
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- Title -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ If Statement
+        </h1>
+
+        <!-- Top Buttons -->
+        <div class="flex justify-between items-center">
+          <a href="booleans.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+          </a>
+
+          <a href="else.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <!-- Main Content -->
+        <section class="max-w-6xl mx-auto py-10">
+          <!-- Introduction -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            The if Statement
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            C++ mein
+            <span class="text-[#4d6fff] font-bold">if</span>
+            statement ka use kisi specific code block ko tabhi execute karne ke
+            liye kiya jata hai jab di gayi condition
+            <span class="text-emerald-400 font-bold">true</span> ho.
+          </p>
+
+          <!-- Syntax -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Syntax</h2>
+
+          <div id="ifSyntaxCard"></div>
+
+          <!-- Basic Example -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">Example</h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is example mein hum check karte hain ki kya `20` bada hai `18` se.
+            Agar condition true hai, to message print hoga.
+          </p>
+
+          <div id="ifExampleCard"></div>
+
+          <!-- Variables Comparison Example -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Comparing Variables
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Aap direct values ki jagah variables ko bhi compare kar sakte hain:
+          </p>
+
+          <div id="ifVariablesCard"></div>
+
+          <!-- Important Note -->
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Note Important</h3>
+
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Dhyan rakhein ki
+                <span class="text-[#4d6fff] font-bold">if</span> hamesha
+                lowercase (chote aksharon) mein likha jata hai.
+                <span class="text-red-400 font-semibold">IF</span> ya
+                <span class="text-red-400 font-semibold">If</span> likhne par
+                syntax error aayega.
+              </li>
+              <li>
+                Condition hamesha parentheses
+                <span class="text-white font-mono font-bold">( )</span> ke andar
+                honi chahiye.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Bottom Buttons -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="booleans.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="else.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Card Calls -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createCodeCard === "function") {
+          /* Syntax Card */
+          /* Main Example Card */
+          /* Variables Example Card */
+          }
+
+        /* Sidebar Injection */
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(3);
+        }
+      });
+    </script>
+  </body>
+</html>

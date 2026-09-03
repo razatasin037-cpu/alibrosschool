@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="hi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>C++ Special Characters | Tutorial</title>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Common Scripts -->
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+<style>
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden custom-scrollbar">
+<!-- Navigation Bar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar -->
+<aside class="w-full md:w-[300px]" id="sidebar"></aside>
+<!-- Content Section -->
+<section class="w-full md:w-[calc(100%-300px)] p-5 md:pt-5 md:pb-[60px] md:px-[40px] transition-all duration-300">
+<!-- Heading -->
+<h1 class="text-4xl md:text-[60px] font-bold text-white mb-10 mt-6 md:mt-10 leading-tight">
+          C++ Special Characters
+        </h1>
+<!-- Top Navigation -->
+<div class="flex justify-between items-center mb-10 gap-4">
+<!-- Previous -->
+<a class="no-underline" href="access-strings.html">
+<button class="bg-white text-black border border-gray-300 rounded-xl px-6 py-3 md:px-8 md:py-4 text-lg md:text-2xl font-semibold hover:bg-gray-100 transition duration-200 flex items-center" type="button">
+<i aria-hidden="true" class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a class="no-underline" href="user-input-strings.html">
+<button class="bg-[#3d59d9] hover:bg-[#4d6fff] text-white rounded-xl px-6 py-3 md:px-8 md:py-4 text-lg md:text-2xl font-semibold transition duration-200 flex items-center" type="button">
+              Next
+              <i aria-hidden="true" class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="border-gray-700 mb-12"/>
+<!-- ====================================================== -->
+<!-- INTRODUCTION -->
+<!-- ====================================================== -->
+<div>
+<h2 class="text-3xl md:text-[52px] font-bold text-white mb-8 leading-tight">
+            Special Characters kya hain?
+          </h2>
+<div class="space-y-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+<p>
+              C++ strings ke andar kuch characters ka special meaning hota hai.
+            </p>
+<p>
+              Aise characters ko directly use karne ke liye hum
+              <span class="text-white font-semibold"> escape sequences </span>
+              ka use kar sakte hain.
+            </p>
+<p>
+              Escape sequence hamesha
+              <span class="text-[#4d6fff] font-semibold"> backslash (\) </span>
+              se start hota hai.
+            </p>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- ====================================================== -->
+<!-- DOUBLE QUOTES -->
+<!-- ====================================================== -->
+<div>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+            Double Quotes
+          </h2>
+<div class="space-y-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+<p>
+              Agar string ke andar double quotes
+              <span class="text-white font-semibold"> " " </span>
+              print karne hain, to
+              <span class="text-white font-semibold"> \" </span>
+              ka use karte hain.
+            </p>
+</div>
+<!-- SAME ACCESS STRING CARD -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Example: Double Quotes
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "He said \"Hello\"";
+
+cout &lt;&lt; text;</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- ====================================================== -->
+<!-- NEW LINE -->
+<!-- ====================================================== -->
+<div>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+            New Line
+          </h2>
+<div class="space-y-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+<p>
+              Text ko new line par le jane ke liye
+              <span class="text-white font-semibold"> \n </span>
+              escape sequence ka use karte hain.
+            </p>
+<p>
+              Isse
+              <span class="text-white font-semibold"> cout </span>
+              ke output mein text next line se start hota hai.
+            </p>
+</div>
+<!-- SAME ACCESS STRING CARD -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Example: New Line
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">cout &lt;&lt; "Hello\nWorld";</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- ====================================================== -->
+<!-- TAB -->
+<!-- ====================================================== -->
+<div>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+            Tab Character
+          </h2>
+<div class="space-y-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+<p>
+              Text ke beech tab space dene ke liye
+              <span class="text-white font-semibold"> \t </span>
+              ka use kiya jata hai.
+            </p>
+</div>
+<!-- SAME ACCESS STRING CARD -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Example: Tab
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">cout &lt;&lt; "Hello\tWorld";</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- ====================================================== -->
+<!-- BACKSLASH -->
+<!-- ====================================================== -->
+<div>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+            Backslash
+          </h2>
+<div class="space-y-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+<p>
+              Agar string ke andar actual backslash
+              <span class="text-white font-semibold"> \ </span>
+              print karna ho, to
+              <span class="text-white font-semibold"> \\ </span>
+              ka use karte hain.
+            </p>
+</div>
+<!-- SAME ACCESS STRING CARD -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Example: Backslash
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">cout &lt;&lt; "C:\\Users\\Tasin";</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- ====================================================== -->
+<!-- SINGLE QUOTE -->
+<!-- ====================================================== -->
+<div>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+            Single Quote
+          </h2>
+<div class="space-y-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+<p>
+              Single quote ko string ke andar likhne ke liye normally directly
+              use kiya ja sakta hai.
+            </p>
+<p>
+              Lekin escape sequence
+              <span class="text-white font-semibold"> \' </span>
+              ka use bhi kiya ja sakta hai.
+            </p>
+</div>
+<!-- SAME ACCESS STRING CARD -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Example: Single Quote
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "It's C++";
+
+cout &lt;&lt; text;</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- ====================================================== -->
+<!-- COMMON ESCAPE SEQUENCES -->
+<!-- ====================================================== -->
+<div>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+            Common Escape Sequences
+          </h2>
+<div class="space-y-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+<p>
+              C++ mein kuch commonly used escape sequences neeche diye gaye
+              hain.
+            </p>
+</div>
+<!-- SAME ACCESS STRING CARD -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Quick Reference
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">\n   New Line
+\t   Tab
+\"   Double Quote
+\\   Backslash
+\'   Single Quote</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- ====================================================== -->
+<!-- COMPLETE EXAMPLE -->
+<!-- ====================================================== -->
+<div>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+            Complete Example
+          </h2>
+<div class="space-y-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+<p>
+              Ab ek complete example dekhte hain jisme multiple escape sequences
+              ka use kiya gaya hai.
+            </p>
+</div>
+<!-- SAME ACCESS STRING CARD -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Main Program
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main()
+{
+    cout &lt;&lt; "Hello\n";
+    cout &lt;&lt; "Welcome to C++\n";
+    cout &lt;&lt; "Name:\tTasin\n";
+    cout &lt;&lt; "Message: \"Hello World\"";
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- ====================================================== -->
+<!-- IMPORTANT NOTES -->
+<!-- ====================================================== -->
+<div class="mt-16 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 md:p-8">
+<h2 class="text-2xl md:text-4xl font-bold text-white mb-6">
+            Important
+          </h2>
+<ul class="list-disc pl-6 md:pl-8 space-y-4 text-lg md:text-2xl text-gray-300 leading-relaxed">
+<li>
+              Escape sequence backslash
+              <span class="text-white font-semibold"> \ </span>
+              se start hota hai.
+            </li>
+<li>
+              New line ke liye
+              <span class="text-white font-semibold"> \n </span>
+              use hota hai.
+            </li>
+<li>
+              Tab ke liye
+              <span class="text-white font-semibold"> \t </span>
+              use hota hai.
+            </li>
+<li>
+              Double quote ke liye
+              <span class="text-white font-semibold"> \" </span>
+              use hota hai.
+            </li>
+<li>
+              Backslash print karne ke liye
+              <span class="text-white font-semibold"> \\ </span>
+              use hota hai.
+            </li>
+</ul>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- ====================================================== -->
+<!-- BOTTOM NAVIGATION -->
+<!-- ====================================================== -->
+<div class="flex items-center justify-between mt-16 mb-10 gap-4">
+<!-- Previous -->
+<a class="no-underline" href="access-strings.html">
+<button class="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black text-lg md:text-2xl font-semibold px-6 py-3 md:px-10 md:py-5 rounded-xl transition duration-200 flex items-center" type="button">
+<i aria-hidden="true" class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a class="no-underline" href="user-input-strings.html">
+<button class="bg-[#3d59d9] hover:bg-[#4d6fff] text-white text-lg md:text-2xl font-semibold px-6 py-3 md:px-10 md:py-5 rounded-xl transition duration-200 flex items-center" type="button">
+              Next
+              <i aria-hidden="true" class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- Sidebar Script -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar();
+        }
+      });
+    </script>
+</body>
+</html>

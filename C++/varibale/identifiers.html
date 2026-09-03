@@ -1,0 +1,274 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ Identifiers - Ali Learning</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- JavaScript -->
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+      <!-- Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- Title -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Identifiers
+        </h1>
+        <!-- Top Buttons -->
+        <div class="flex justify-between items-center">
+          <a href="multiplevariables.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+          </a>
+          <a href="constants.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+        <hr class="mt-12 border-white/10" />
+        <!-- Main Content -->
+        <section class="max-w-6xl mx-auto py-10">
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                C++ Identifiers
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                C++ mein har variable ka ek unique naam hota hai. In unique
+                names ko identifiers kaha jata hai. Identifier short ya
+                descriptive ho sakta hai.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int x = 10;
+int age = 20;
+int totalVolume = 100;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Identifier Naming Rules
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                C++ mein variable ya identifier ka naam rakhte waqt kuch rules
+                follow karne padte hain. Letters, numbers aur underscore use kar
+                sakte hain, lekin naam number se start nahi ho sakta.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int myName = 10;
+int _score = 90;
+int player2 = 5;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Valid Identifier Names
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Neeche diye gaye variable names valid identifiers hain.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int age = 20;
+int totalMarks = 500;
+int _value = 10;
+int number2 = 2;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Invalid Identifier Names
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Kuch names C++ ke rules ko follow nahi karte. Isliye unhe
+                identifier ke roop mein use nahi kar sakte.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int 2number = 10;   // Invalid
+int my-name = 20;   // Invalid
+int my name = 30;   // Invalid</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Identifiers Case-Sensitive Hote Hain
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                C++ mein uppercase aur lowercase letters ko alag maana jata hai.
+                Isliye myVar aur myvar do alag identifiers hain.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int myVar = 10;
+int myvar = 20;
+
+cout &lt;&lt; myVar;
+cout &lt;&lt; myvar;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Descriptive Names Use Karein
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Variable ka naam aisa rakhna better hota hai jisse dekhte hi
+                pata chale ki variable kis cheez ko store kar raha hai.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int studentAge = 18;
+double productPrice = 99.99;
+string studentName = &quot;Ali&quot;;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Important -->
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>Identifier unique hona chahiye.</li>
+              <li>Identifier number se start nahi ho sakta.</li>
+              <li>Spaces aur special characters allowed nahi hain.</li>
+              <li>
+                C++ keywords ko identifier ke roop mein use nahi kar sakte.
+              </li>
+              <li>Meaningful aur descriptive names use karna better hai.</li>
+            </ul>
+          </div>
+          <!-- Bottom Buttons -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="multiplevariables.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+            <a href="constants.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(12);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Numbers and Strings - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<div class="flex-shrink-0" id="sidebar"></div>
+<section class="flex-1 w-full px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Numbers and Strings
+        </h1>
+<div class="flex justify-between items-center">
+<a href="string-concatenation.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="string-length.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Numbers and Strings
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein numbers aur strings alag-alag data types hote hain. Number
+            ke saath hum mathematical calculations kar sakte hain, jabki string
+            text ko store karti hai.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Agar number ko quotes ke andar likh diya jaye, to C++ usse number ki
+            jagah ek string samajhta hai.
+          </p>
+<!-- Standard Static HTML Card 1 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Numbers vs Strings</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">int x = 10;       // Number (Integer)
+string y = "10";   // String (Text)</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Number aur String mein Difference
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Example ke liye
+            <span class="text-[#4d6fff] font-bold">25</span>
+            ek number hai, lekin
+            <span class="text-[#4d6fff] font-bold">"25"</span>
+            ek string hai.
+          </p>
+<!-- Standard Static HTML Card 2 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Difference Example</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">int myNum = 25;       // Numeric operations possible
+string myText = "25"; // String concatenation possible</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Numbers ke Saath Calculation
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Jab value integer ya kisi numeric type mein hoti hai, to hum uske
+            saath mathematical operations perform kar sakte hain.
+          </p>
+<!-- Standard Static HTML Card 3 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Numeric Calculation</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">int x = 10;
+int y = 20;
+int z = x + y;   // Output: 30</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            String ke Saath Calculation
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            String ke saath normal mathematical calculation nahi hoti. String ko
+            <span class="text-[#4d6fff] font-bold">+</span>
+            operator ke saath concatenate kiya ja sakta hai.
+          </p>
+<!-- Standard Static HTML Card 4 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">String Concatenation</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string x = "10";
+string y = "20";
+string z = x + y; // Output: 1020</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Number ko String ki Tarah Use Karna
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Agar number ko double quotes ke andar likhte hain, to wo string ban
+            jata hai.
+          </p>
+<!-- Standard Static HTML Card 5 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Number in Quotes</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string strNum = "100"; // Treat as string text</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            String ke Saath Number
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Number ko string ke saath output mein combine karna bhi possible
+            hai.
+          </p>
+<!-- Standard Static HTML Card 6 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Output Combination</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "Result is: ";
+int number = 50;
+
+cout &lt;&lt; text &lt;&lt; number; // Output: Result is: 50</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">Example</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Neeche number aur string ko ek program mein use kiya gaya hai.
+          </p>
+<!-- Standard Static HTML Card 7 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Complete Program</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+    int num1 = 10;
+    int num2 = 20;
+    cout &lt;&lt; "Sum of numbers: " &lt;&lt; num1 + num2 &lt;&lt; endl;
+
+    string str1 = "10";
+    string str2 = "20";
+    cout &lt;&lt; "Concatenation of strings: " &lt;&lt; str1 + str2 &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>
+<span class="text-[#4d6fff] font-bold">25</span>
+                ek number hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">"25"</span>
+                ek string hai.
+              </li>
+<li>
+                Numbers ke saath mathematical operations kiye ja sakte hain.
+              </li>
+<li>
+                Strings ko
+                <span class="text-[#4d6fff] font-bold">+</span>
+                operator se join kiya ja sakta hai.
+              </li>
+<li>
+                Quotes ke andar likha hua number string ke roop mein treat hota
+                hai.
+              </li>
+</ul>
+</div>
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="string-concatenation.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="string-length.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarElem = document.getElementById("sidebar");
+        if (sidebarElem && typeof createSidebar === "function") {
+          sidebarElem.innerHTML = createSidebar("C++ Tutorial");
+        }
+      });
+    </script>
+</body>
+</html>

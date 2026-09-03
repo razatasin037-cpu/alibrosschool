@@ -2,25 +2,76 @@
 // NAVBAR
 // ============================
 
-fetch("/navbar.html")
-  .then((res) => res.text())
-  .then((data) => {
-    document.getElementById("navbar").innerHTML = data;
+const jsPath = document.currentScript.src;
+const projectPath = new URL("../", jsPath);
 
-    setupMobileMenu();
-    setupActiveLinks();
+fetch(new URL("navbar.html", projectPath))
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error("Navbar load nahi hua");
+    }
+    return res.text();
   })
-  // .catch((err) => console.error(err));
+  .then((data) => {
+    const navbar = document.getElementById("navbar");
+
+    if (navbar) {
+      navbar.innerHTML = data;
+
+      // Navbar load hone ke BAAD
+      setupMobileMenu();
+      setupActiveLinks();
+    }
+  })
+  .catch((err) => {
+    console.error("Navbar Error:", err);
+  });
 
 // ============================
 // FOOTER
 // ============================
 
-fetch("/footer.html")
-  .then((res) => res.text())
+fetch(new URL("footer.html", projectPath))
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error("Footer load nahi hua");
+    }
+    return res.text();
+  })
   .then((data) => {
-    document.getElementById("footer").innerHTML = data;
+    const footer = document.getElementById("footer");
+
+    if (footer) {
+      footer.innerHTML = data;
+    }
+  })
+  .catch((err) => {
+    console.error("Footer Error:", err);
   });
+
+// ============================
+// ACTIVE NAV LINK
+// ============================
+// ============================
+// ACTIVE NAV LINK
+// ============================
+function setupActiveLinks() {
+  const currentPath = window.location.pathname;
+
+  document.querySelectorAll("#navbar .nav-link").forEach((link) => {
+    const href = link.getAttribute("href");
+
+    if (!href || href === "#") return;
+
+    const linkPath = new URL(href, window.location.origin).pathname;
+
+    if (currentPath === linkPath || currentPath.endsWith(linkPath)) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
 
 // ============================
 // MOBILE MENU
@@ -29,37 +80,21 @@ fetch("/footer.html")
 function setupMobileMenu() {
   const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-  const menuIcon = document.getElementById("menuIcon");
 
-  if (!menuBtn) return;
+  if (!menuBtn || !mobileMenu) {
+    return;
+  }
 
   menuBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
-
-    if (mobileMenu.classList.contains("hidden")) {
-      menuIcon.classList.replace("fa-xmark", "fa-bars");
-    } else {
-      menuIcon.classList.replace("fa-bars", "fa-xmark");
-    }
   });
 }
+fetch(new URL("navbar.html", projectPath))
+  .then((res) => res.text())
+  .then((data) => {
+    document.getElementById("navbar").innerHTML = data;
 
-// ============================
-// ACTIVE LINK
-// ============================
-
-function setupActiveLinks() {
-  const links = document.querySelectorAll(".nav-link");
-
-  const current = window.location.pathname;
-
-  links.forEach((link) => {
-    if (link.getAttribute("href") === current) {
-      link.classList.add(
-        "text-[#4d6fff]",
-        "border-b-2",
-        "border-[#4d6fff]"
-      );
-    }
+    // IMPORTANT
+    setupMobileMenu();
+    setupActiveLinks();
   });
-}

@@ -1,0 +1,39 @@
+CREATE DATABASE IF NOT EXISTS bank_management CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE bank_management;
+SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE IF EXISTS transactions;
+DROP TABLE IF EXISTS accounts;
+DROP TABLE IF EXISTS customers;
+SET FOREIGN_KEY_CHECKS=1;
+
+CREATE TABLE customers (
+ id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ name VARCHAR(120) NOT NULL,
+ phone VARCHAR(20) NOT NULL,
+ email VARCHAR(150),
+ address VARCHAR(255),
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE accounts (
+ id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ account_no VARCHAR(30) NOT NULL UNIQUE,
+ customer_id INT UNSIGNED NOT NULL,
+ account_type ENUM('Savings','Current') NOT NULL DEFAULT 'Savings',
+ balance DECIMAL(15,2) NOT NULL DEFAULT 0.00,
+ status ENUM('Active','Inactive') NOT NULL DEFAULT 'Active',
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ FOREIGN KEY(customer_id) REFERENCES customers(id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE transactions (
+ id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ account_id INT UNSIGNED NOT NULL,
+ type ENUM('Deposit','Withdraw') NOT NULL,
+ amount DECIMAL(15,2) NOT NULL,
+ note VARCHAR(255),
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ FOREIGN KEY(account_id) REFERENCES accounts(id) ON DELETE CASCADE ON UPDATE CASCADE,
+ INDEX idx_transaction_account(account_id),
+ INDEX idx_transaction_date(created_at)
+) ENGINE=InnoDB;

@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ Constants - Ali Learning</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- JavaScript -->
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+      <!-- Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- Title -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Constants
+        </h1>
+        <!-- Top Buttons -->
+        <div class="flex justify-between items-center">
+          <a href="identifiers.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+          </a>
+          <a href="real-life-example.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+        <hr class="mt-12 border-white/10" />
+        <!-- Main Content -->
+        <section class="max-w-6xl mx-auto py-10">
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Constants
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Kabhi-kabhi humein kisi variable ki value ko change nahi hone
+                dena hota hai. Aise case mein hum const keyword ka use karte
+                hain. const variable ko read-only bana deta hai.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>const int minutesPerHour = 60;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Constants Ka Use Kyun Karein?
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Agar koi value program ke andar change nahi honi chahiye, to us
+                variable ko constant banana better hota hai. Isse accidentally
+                value change hone ka risk kam hota hai.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>const int maxScore = 100;
+cout &lt;&lt; maxScore;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Constant Ki Value Change Nahi Kar Sakte
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Agar aap constant variable ko baad mein koi nayi value dene ki
+                koshish karenge, to compiler error dega.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>const int x = 10;
+x = 20; // Error</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Constant Ko Value Dena Zaroori Hai
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Jab aap const variable declare karte hain, to usi time usko
+                value assign karni hoti hai.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>const int number = 10;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Real-Life Constants
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Kuch values generally change nahi hoti hain, jaise ek hour mein
+                minutes ki fixed value.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>const int minutesPerHour = 60;
+cout &lt;&lt; minutesPerHour;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Important -->
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Constant banane ke liye
+                <span class="text-[#4d6fff] font-bold">const</span>
+                keyword use hota hai.
+              </li>
+              <li>Constant ki value change nahi ki ja sakti.</li>
+              <li>
+                Constant declare karte waqt value assign karna zaroori hai.
+              </li>
+              <li>
+                Jo values normally change nahi hoti hain, unke liye constants
+                useful hote hain.
+              </li>
+            </ul>
+          </div>
+          <!-- Bottom Buttons -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="identifiers.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+            <a href="real-life-example.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(13);
+        }
+      });
+    </script>
+  </body>
+</html>

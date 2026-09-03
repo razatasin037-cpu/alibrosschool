@@ -1,0 +1,318 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ Real-Life Examples - Ali Learning</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- JavaScript -->
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+      <!-- Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- Title -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Real-Life Examples
+        </h1>
+        <!-- Top Buttons -->
+        <div class="flex justify-between items-center">
+          <a href="constants.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+          </a>
+          <a href="../userinput/user-input.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+        <hr class="mt-12 border-white/10" />
+        <!-- Main Content -->
+        <section class="max-w-6xl mx-auto py-10">
+          <!-- Introduction -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Practical Examples
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab tak humne C++ ke variables aur data types ke basic concepts
+            samjhe hain.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Ab dekhte hain ki real-life programs mein in concepts ka use kaise
+            kiya ja sakta hai.
+          </p>
+          <!-- Student Example -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">
+            Student Ki Information Store Karna
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Hum ek student ki different information ko different variables mein
+            store kar sakte hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Student Ki Information Store Karna
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>string name = &quot;Ali&quot;;
+int age = 18;
+char grade = &#x27;A&#x27;;
+
+cout &lt;&lt; &quot;Name: &quot; &lt;&lt; name &lt;&lt; endl;
+cout &lt;&lt; &quot;Age: &quot; &lt;&lt; age &lt;&lt; endl;
+cout &lt;&lt; &quot;Grade: &quot; &lt;&lt; grade;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Rectangle Example -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Rectangle Ka Area Calculate Karna
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Real programs mein variables ka use calculation ke liye bhi kiya
+            jata hai.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Jaise rectangle ka area nikalne ke liye length aur width ko
+            variables mein store kar sakte hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Rectangle Ka Area Calculate Karna
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int length = 10;
+int width = 5;
+int area = length * width;
+
+cout &lt;&lt; &quot;Area: &quot; &lt;&lt; area;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Shopping Example -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Shopping Bill Calculate Karna
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Variables ka use shopping ya billing system mein items, price aur
+            total amount store karne ke liye kiya ja sakta hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Shopping Bill Calculate Karna
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>double price = 250.50;
+int quantity = 3;
+double total = price * quantity;
+
+cout &lt;&lt; &quot;Total Bill: &quot; &lt;&lt; total;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- String Example -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Welcome Message Banana
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            String variables ka use user ka naam store karke ek simple welcome
+            message banane ke liye kar sakte hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Welcome Message Banana
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>string name = &quot;Ali&quot;;
+
+cout &lt;&lt; &quot;Welcome, &quot; &lt;&lt; name &lt;&lt; &quot;!&quot;;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Boolean Example -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Voting Age Check Karna
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Boolean aur comparison operators ka use karke hum check kar sakte
+            hain ki koi person vote karne ke liye eligible hai ya nahi.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Voting Age Check Karna
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int age = 20;
+bool eligible = age &gt;= 18;
+
+cout &lt;&lt; &quot;Eligible to vote: &quot; &lt;&lt; eligible;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Important -->
+          <div
+            class="mt-14 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Isse Kya Seekha?</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Variables real-world data ko store karne ke kaam aate hain.
+              </li>
+              <li>
+                Different data types ko ek hi program mein use kiya ja sakta
+                hai.
+              </li>
+              <li>
+                Variables ki madad se calculations perform kar sakte hain.
+              </li>
+              <li>
+                Stored values ko
+                <span class="text-[#4d6fff] font-semibold"> cout </span>
+                se display kar sakte hain.
+              </li>
+              <li>
+                C++ ke basic concepts ko combine karke practical programs banaye
+                ja sakte hain.
+              </li>
+            </ul>
+          </div>
+          <!-- Bottom Buttons -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="constants.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+            <a href="../userinput/user-input.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(14);
+        }
+      });
+    </script>
+  </body>
+</html>

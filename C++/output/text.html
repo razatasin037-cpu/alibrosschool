@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Output - Ali Learning</title>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- JavaScript -->
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+<style>
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<!-- Navbar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar -->
+<div id="sidebar"></div>
+<!-- Content -->
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<!-- Title -->
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Output
+        </h1>
+<!-- Top Buttons -->
+<div class="flex justify-between items-center">
+<a href="../syntax/statment.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="new.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<!-- Introduction -->
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ Output
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein screen par text ya koi value print karne ke liye hum
+            <span class="text-[#4d6fff] font-bold">cout</span>
+            ka use karte hain.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+<span class="text-white font-semibold">cout</span>
+            ke saath
+            <span class="text-[#4d6fff] font-semibold">&lt;&lt;</span>
+            operator use kiya jata hai. Text ko hamesha double quotes ke andar
+            likha jata hai.
+          </p>
+<!-- First Card -->
+<div id="outputCard"></div>
+<!-- Explanation -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            cout Ko Samjhein
+          </h2>
+<div class="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 sm:p-8 mb-8">
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">
+<span class="text-[#4d6fff] font-bold">cout</span>
+              ka use output ko screen par dikhane ke liye hota hai. Ye C++ ki
+              standard output stream hai.
+            </p>
+</div>
+<!-- Double Quotes -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Double Quotes ka Use
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Jab hum koi text print karna chahte hain, to us text ko double
+            quotes
+            <span class="text-[#4d6fff] font-bold">"</span>
+            ke andar likhna hota hai.
+          </p>
+<div class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Example:
+              <span class="text-white font-mono">
+                cout &lt;&lt; "Hello World!";
+              </span>
+</p>
+</div>
+<!-- Multiple cout -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Multiple cout Statements
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Aap ek hi program mein jitne chahein
+            <span class="text-[#4d6fff] font-bold">cout</span>
+            statements use kar sakte hain.
+          </p>
+<div id="multipleOutputCard"></div>
+<!-- Important -->
+<div class="mt-10 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>
+<span class="text-[#4d6fff] font-bold">cout</span>
+                output print karne ke liye use hota hai.
+              </li>
+<li>Text ko double quotes ke andar likhein.</li>
+<li>
+<span class="text-[#4d6fff] font-bold">&lt;&lt;</span>
+                operator ka use output ko
+                <span class="text-white font-semibold">cout</span>
+                mein bhejne ke liye hota hai.
+              </li>
+<li>
+                Multiple
+                <span class="text-[#4d6fff] font-bold">cout</span>
+                statements use kiye ja sakte hain.
+              </li>
+</ul>
+</div>
+<!-- New Lines -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">New Line</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Dhyan rakhein ki
+            <span class="text-[#4d6fff] font-bold">cout</span>
+            apne aap output ke baad new line nahi lagata. Isliye agar aap next
+            line mein output dikhana chahte hain, to uske liye alag method use
+            karna padega.
+          </p>
+<!-- New Line Card -->
+<div id="newLineCard"></div>
+<!-- Summary -->
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Short Summary</h3>
+<p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              C++ mein output print karne ke liye
+              <span class="text-[#4d6fff] font-bold">cout</span>
+              aur
+              <span class="text-[#4d6fff] font-bold">&lt;&lt;</span>
+              operator ka use hota hai. Text ko double quotes ke andar likhna
+              hota hai.
+            </p>
+</div>
+<!-- Bottom Buttons -->
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="../syntax/statment.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="new.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- Card Calls -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createCodeCard === "function") {
+          }
+
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(6);
+        }
+      });
+    </script>
+</body>
+</html>
