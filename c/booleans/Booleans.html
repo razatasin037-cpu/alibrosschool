@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Booleans</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Booleans 
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="../Constants/Constants.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../operators/Operators.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">C Language Me Booleans Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Programming me **Boolean** data type ka use conditional values ko store karne ke liye hota hai, jiske paas sirf do possible values hoti hain: <code class="text-green-400 font-bold">true</code> ya <code class="text-red-400 font-bold">false</code>.
+      </p>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C99 standard se pehle C language me built-in boolean type nahi tha. C internal working me boolean ko integers se represent karti hai:
+      </p>
+      <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-2">
+        <li><strong class="text-green-400">1 (True):</strong> Kisi bhi non-zero value ko C <code class="text-green-400 font-bold">true</code> maanti hai.</li>
+        <li><strong class="text-red-400">0 (False):</strong> Zero value ko <code class="text-red-400 font-bold">false</code> maana jata hai.</li>
+      </ul>
+    </section>
+
+    <!-- Header Include Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">&lt;stdbool.h&gt; Header File</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C99 standard me <code class="text-yellow-300 font-mono font-bold">&lt;stdbool.h&gt;</code> header introduce kiya gaya. Is header ko include karne ke baad aap <code class="text-cyan-400 font-mono font-bold">bool</code> keyword aur <code class="text-green-400 font-mono font-bold">true</code> / <code class="text-red-400 font-mono font-bold">false</code> keywords ka direct istemaal kar sakte hain.
+      </p>
+
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+        <p class="text-lg text-gray-300 mb-3"><strong class="text-yellow-300">Syntax:</strong></p>
+        <div class="bg-black p-4 rounded-xl text-green-400 font-mono text-lg">
+          #include &lt;stdbool.h&gt;<br><br>
+          bool isProgrammingFun = true;<br>
+          bool isFishTasty = false;
+        </div>
+      </div>
+    </section>
+
+    <!-- Printing Booleans -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Booleans Ko Print Kaise Karein?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C me boolean value ko print karne ke liye <code class="text-yellow-300 font-mono font-bold">%d</code> format specifier ka use hota hai kyunki output integer (<code class="text-green-400">1</code> ya <code class="text-red-400">0</code>) ke roop me hi show hota hai.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+<span class="text-gray-400">#include &lt;stdbool.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-cyan-400">bool</span> isCodingAwesome = <span class="text-green-400">true</span>;
+    <span class="text-cyan-400">bool</span> isSkyGreen = <span class="text-red-400">false</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%d\n"</span>, isCodingAwesome); <span class="text-gray-500">// Returns 1</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%d\n"</span>, isSkyGreen);       <span class="text-gray-500">// Returns 0</span>
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">1</p>
+        <p class="text-gray-300 font-mono">0</p>
+      </div>
+    </section>
+
+    <!-- Real-World Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Real-World Code Example</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Boolean variables ka mostly use decision making (if-else statements) aur age verification jaise real-world tasks me hota hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+<span class="text-gray-400">#include &lt;stdbool.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myAge = <span class="text-green-400">20</span>;
+    <span class="text-green-500">int</span> votingAge = <span class="text-green-400">18</span>;
+
+    <span class="text-gray-500">// Comparison evaluates to boolean true (1) or false (0)</span>
+    <span class="text-cyan-400">bool</span> isOldEnough = myAge &gt;= votingAge;
+
+    <span class="text-purple-400">if</span> (isOldEnough) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Aap Vote dene ke liye eligible hain! 🗳️\n"</span>);
+    } <span class="text-purple-400">else</span> {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Aap abhi Vote nahi de sakte.\n"</span>);
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Aap Vote dene ke liye eligible hain! 🗳️</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <ul class="list-disc ml-8 text-xl leading-10 text-gray-100 space-y-2">
+        <li>C me booleans ke liye <code class="text-yellow-300 font-bold">&lt;stdbool.h&gt;</code> Include karein.</li>
+        <li><code class="text-yellow-300 font-bold">bool</code> keyword declaration ke liye aur <code class="text-yellow-300 font-bold">true/false</code> values store karne ke liye use hota hai.</li>
+        <li>Print karte time <code class="text-yellow-300 font-bold">%d</code> format specifier ka use karein (<code class="text-green-300">true = 1</code>, <code class="text-red-300">false = 0</code>).</li>
+      </ul>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="../Constants/Constants.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../operators/Operators.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(11);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Create Variables</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+<div id="sidebar"></div>
+
+<section class="flex-1 p-6 md:px-16 md:py-8">
+
+<!-- Heading -->
+
+<h1 class="text-4xl md:text-6xl font-bold mb-10">
+C Variables
+</h1>
+
+<!-- Navigation -->
+
+<div class="flex justify-between items-center mb-12">
+
+<a href="../comments/comments.html"
+class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+❮ Previous
+</a>
+
+<a href="formatSpecifiers.html"
+class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+Next ❯
+</a>
+
+</div>
+
+<!-- Introduction -->
+
+<section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+  <h2 class="text-4xl font-bold mb-8">
+    C Variables
+  </h2>
+
+  <p class="text-xl text-gray-300 leading-10 mb-6">
+    Variable ek container hota hai jisme hum data ko store karte hain. Har Variable ka ek Name aur Data Type hota hai jo batata hai ki Variable kis type ka data store karega.
+  </p>
+
+  <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-4">
+
+    <li>
+      <strong class="text-green-400">int</strong> - Whole numbers store karta hai, jaise
+      <span class="text-yellow-300">123</span> ya
+      <span class="text-yellow-300">-123</span>.
+    </li>
+
+    <li>
+      <strong class="text-green-400">float</strong> - Decimal numbers store karta hai, jaise
+      <span class="text-yellow-300">19.99</span> ya
+      <span class="text-yellow-300">-19.99</span>.
+    </li>
+
+    <li>
+      <strong class="text-green-400">char</strong> - Sirf ek single character store karta hai, jaise
+      <span class="text-yellow-300">'A'</span> ya
+      <span class="text-yellow-300">'b'</span>. Character hamesha single quotes
+      <span class="text-yellow-300">(' ')</span> ke andar likha jata hai.
+    </li>
+
+  </ul>
+
+</section>
+
+<!-- Why Variables -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Variables Ka Use Kyu Karte Hai?
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Agar Variables na hote to har value ko direct code me likhna padta. Isse program ko update karna bahut difficult ho jata. Variables ki madad se hum values ko easily store aur modify kar sakte hain.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10">
+
+Professional software me hazaro Variables use hote hain jisse user information, marks, salary, price aur bahut saara data store kiya jata hai.
+
+</p>
+
+</section>
+ <!-- syntax -->
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+  <h2 class="text-4xl font-bold mb-8">
+    Syntax
+  </h2>
+
+  <p class="text-xl text-gray-300 leading-10 mb-8">
+    C Language me Variable banane ke liye pehle <strong>Data Type</strong>, phir <strong>Variable Name</strong> aur uske baad value likhi jati hai.
+  </p>
+
+  <div class="bg-black rounded-2xl p-6 overflow-x-auto">
+
+<pre><code>
+<span class="text-green-500 text-xl">type</span> <span>variableName</span> <span class="text-white">=</span> <span class="text-green-400">value</span><span class="text-white">;</span>
+</code></pre>
+
+  </div>
+
+  <ul class="list-disc ml-8 mt-8 text-2xl text-gray-300 leading-10 space-y-3">
+
+    <li><span class="text-green-400 font-bold">type</span> - Variable ka Data Type hota hai, jaise <strong>int</strong>, <strong>float</strong> ya <strong>char</strong>.</li>
+
+    <li><span class="font-bold">variableName</span> - Variable ka naam hota hai.</li>
+
+    <li><span class="text-green-400 font-bold">value</span> - Variable me store ki jane wali value hoti hai.</li>
+
+    <li><span class="text-white font-bold">;</span> - Har statement ke end me semicolon lagana zaruri hota hai.</li>
+
+  </ul>
+
+</section>
+
+<!-- Declaration -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Variable Declaration
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Variable declare karne ke liye sabse pehle Data Type likha jata hai aur uske baad Variable ka Name likhte hain.
+
+</p>
+
+<div class="bg-black rounded-2xl p-6 overflow-x-auto">
+
+<pre><code>
+<span class="text-green-500">int</span> <span>age</span>;
+
+<span class="text-green-500">float</span> <span>salary</span>;
+
+<span class="text-green-400">char</span> <span>grade</span>;
+</code></pre>
+
+</div>
+
+<p class="text-xl text-gray-300 leading-10 mt-8">
+
+Yaha <strong>age</strong> Integer Variable hai, <strong>salary</strong> Float Variable hai aur <strong>grade</strong> Character Variable hai.
+
+</p>
+
+</section>
+
+<!-- Initialization -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Variable Initialization
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Variable ko declare karte hi usme value store karna Initialization kehlata hai.
+
+</p>
+
+<div class="bg-black rounded-2xl p-6 overflow-x-auto">
+
+<pre><code>
+<span class="text-green-500">int</span> <span>age</span> <span class="text-white">=</span> <span class="text-green-400">20</span><span class="text-white">;</span>
+
+<span class="text-green-500">float</span> <span>salary</span> <span class="text-white">=</span> <span class="text-green-400">25000.50</span><span class="text-white">;</span>
+
+<span class="text-green-500">char</span> <span>grade</span> <span class="text-white">=</span> <span class="text-green-400">'A'</span><span class="text-white">;</span>
+</code></pre>
+
+</div>
+<p class="text-xl text-gray-300 leading-10 mt-8">
+
+Initialization se Variable ke andar starting value store ho jati hai aur baad me zarurat ke hisab se value change bhi ki ja sakti hai.
+
+</p>
+
+</section>
+
+<!-- Example -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Example Program
+</h2>
+
+<div class="bg-black rounded-2xl p-6 overflow-x-auto">
+
+<div class="bg-black rounded-2xl p-6 overflow-x-auto">
+
+<pre><code>
+<span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> <span >main</span><span class="text-white">()</span>
+<span class="text-white">{</span>
+    <span class="text-green-500">int</span> <span >age</span> <span class="text-white">=</span> <span class="text-green-400">20</span><span class="text-white">;</span>
+
+    <span class="text-cyan-400">printf</span><span class="text-white">(</span><span >"Age = %d"</span><span class="text-white">,</span> <span>age</span><span class="text-white">);</span>
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span><span class="text-white">;</span>
+<span class="text-white">}</span>
+</code></pre>
+
+</div>
+
+</section>
+
+
+<!-- Output -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Output
+</h2>
+
+<div class="bg-black rounded-2xl p-6 overflow-x-auto">
+
+<pre><code class="text-yellow-400">
+Age = 20
+</code></pre>
+
+</div>
+
+<p class="text-xl text-gray-300 leading-10 mt-8">
+
+Is program me <strong>age</strong> variable ki value <strong>20</strong> hai. Jab <strong>printf()</strong> function execute hota hai tab screen par wahi value print hoti hai.
+
+</p>
+
+</section>
+
+<!-- Variable Naming Rules -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Variable Naming Rules
+</h2>
+
+<ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-3">
+
+<li>Variable ka naam letter ya underscore (_) se start hona chahiye.</li>
+
+<li>Number se variable start nahi ho sakta.</li>
+
+<li>Special characters jaise <strong>@ # $ %</strong> allowed nahi hote.</li>
+
+<li>Keywords (int, float, if, while) ko Variable Name nahi bana sakte.</li>
+
+<li>Meaningful naam use karna best practice hai, jaise <strong>studentAge</strong> ya <strong>totalMarks</strong>.</li>
+
+</ul>
+
+</section>
+
+<!-- Best Practices -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Best Practices
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Hamesha Variable ka naam aisa rakho jisse uska purpose samajh aaye. Chhote aur meaningful names code ko readable banate hain.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Jab bhi possible ho Variable ko declare karte hi initialize karo. Isse garbage values ki problem kam ho jati hai.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10">
+
+Ek hi Variable me alag-alag purpose ka data store karne se bachna chahiye.
+
+</p>
+
+</section>
+
+<!-- Common Mistakes -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Common Mistakes
+</h2>
+
+<ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-3">
+
+<li>Variable declare karna bhool jana.</li>
+
+<li>Wrong Data Type use karna.</li>
+
+<li>Keyword ko Variable Name bana dena.</li>
+
+<li>Variable initialize na karna.</li>
+
+<li>Ek hi naam ke multiple Variables banana.</li>
+
+</ul>
+
+</section>
+
+<!-- Real Life Example -->
+
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Real Life Example
+</h2>
+
+<p class="text-xl text-gray-300 leading-10 mb-6">
+
+Sochiye aap School Management System bana rahe hain. Har Student ka Name, Age, Roll Number aur Marks alag-alag Variables me store kiya jata hai. Jab user data update karta hai tab sirf Variable ki value change hoti hai.
+
+</p>
+
+<p class="text-xl text-gray-300 leading-10">
+
+Isi tarah Banking, Hospital, Shopping aur Social Media Applications me bhi lakho Variables use hote hain.
+
+</p>
+
+</section>
+
+<!-- Note -->
+
+<section class="mt-16">
+
+<div class="bg-[#2d3521] rounded-[30px] p-10">
+
+<h2 class="text-3xl font-bold mb-6">
+📝 Note
+</h2>
+
+<p class="text-xl text-[#e9f1c7] leading-10">
+
+Variable kisi bhi C Program ka important part hai. Agar Variable ka Data Type ya Name galat hoga to program compile hone me error aa sakta hai.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Summary -->
+
+<section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+
+<h2 class="text-4xl font-bold mb-8">
+Summary
+</h2>
+
+<p class="text-xl leading-10 text-gray-100 mb-6">
+
+Variable ek container hota hai jo data ko store karta hai. Har Variable ka Name aur Data Type hota hai.
+
+</p>
+
+<p class="text-xl leading-10 text-gray-100 mb-6">
+
+Variable ko pehle declare kiya jata hai aur uske baad usme value store ki jati hai. Meaningful Variable Names code ko samajhna aur maintain karna easy bana dete hain.
+
+</p>
+
+<p class="text-xl leading-10 text-gray-100">
+
+Har programmer ko Variable Declaration, Initialization aur Naming Rules achhi tarah samajhne chahiye kyunki ye C Programming ki basic foundation hai.
+
+</p>
+
+</section>
+
+<!-- Footer Buttons -->
+
+<div class="flex justify-between mt-12 mb-8">
+
+<a href="../comments/comments.html"
+class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+❮ Previous
+</a>
+
+<a href="formatSpecifiers.html"
+class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+Next ❯
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+document.getElementById("sidebar").innerHTML = createSidebar(6);
+</script>
+
+</body>
+</html>

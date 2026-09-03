@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Comments - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Path Checks: Ensure all scripts exist in correct folder path -->
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<!-- Fixed layout: shrink-0 added for sidebar -->
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar container with defined width -->
+<aside class="w-full md:w-[320px] shrink-0 min-h-full" id="sidebar"></aside>
+<!-- Main Content -->
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Comments
+        </h1>
+<!-- Top Navigation -->
+<div class="flex justify-between items-center">
+<a href="../output/print.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="../varibale/declarevariables.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+<!-- Introduction -->
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ Comments
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Comments ka use C++ code ko explain karne ke liye kiya jata hai.
+            Comments ko compiler ignore karta hai, isliye ye program ke output
+            ko affect nahi karte.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            Comments code ko samajhne aur future mein code ko easily maintain
+            karne mein help karte hain.
+          </p>
+<div id="basicCommentCard"></div>
+<!-- Single Line Comments -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Single-line Comments
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein single-line comment banane ke liye
+            <span class="text-[#4d6fff] font-bold">//</span>
+            ka use kiya jata hai.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">//</span>
+            ke baad likha hua poora text comment ban jata hai.
+          </p>
+<div id="singleCommentCard"></div>
+<!-- Comment Before Code -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Code ke Upar Comment
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Hum kisi code ke upar comment likh kar bata sakte hain ki neeche
+            diya gaya code kya kaam kar raha hai.
+          </p>
+<div id="commentBeforeCodeCard"></div>
+<!-- Comment After Code -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Code ke Baad Comment
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Comment ko code ke same line mein bhi likha ja sakta hai.
+          </p>
+<div id="commentAfterCodeCard"></div>
+<!-- Multi-line Comments -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Multi-line Comments
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Agar humein multiple lines ko comment karna ho, to
+            <span class="text-[#4d6fff] font-bold">/*</span>
+            se comment start aur
+            <span class="text-[#4d6fff] font-bold">*/</span>
+            se comment end karte hain.
+          </p>
+<div id="multiCommentCard"></div>
+<!-- Multi-line Example -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Multi-line Comment Example
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Ek multi-line comment mein hum ek se zyada lines ka explanation likh
+            sakte hain.
+          </p>
+<div id="multiCommentExampleCard"></div>
+<!-- Commented Code -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Code ko Temporarily Disable Karna
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Comments ka use kisi code ko temporarily disable karne ke liye bhi
+            kiya ja sakta hai.
+          </p>
+<div id="disableCodeCard"></div>
+<!-- Important -->
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>
+                Single-line comment ke liye
+                <span class="text-[#4d6fff] font-bold">//</span>
+                use hota hai.
+              </li>
+<li>
+                Multi-line comment ke liye
+                <span class="text-[#4d6fff] font-bold">/* */</span>
+                use hota hai.
+              </li>
+<li>Comments ko compiler ignore karta hai.</li>
+<li>Comments code ko samajhne mein help karte hain.</li>
+<li>
+                Comments ka use code ko temporarily disable karne ke liye bhi
+                kiya ja sakta hai.
+              </li>
+</ul>
+</div>
+<!-- Bottom Navigation -->
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="../output/print.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="../varibale/declarevariables.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<!-- Code Cards -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* Sidebar Injection check */
+        const sidebarEl = document.getElementById("sidebar");
+        if (sidebarEl && typeof createSidebar === "function") {
+          sidebarEl.innerHTML = createSidebar(4);
+        } else {
+          console.error(
+            "Sidebar container target mismatch or createSidebar function missing in ../js/sidebar.js",
+          );
+        }
+
+        /* Basic Comment */
+        if (document.getElementById("basicCommentCard")) {
+          }
+
+        /* Single-line Comment */
+        if (document.getElementById("singleCommentCard")) {
+          }
+
+        /* Comment Before Code */
+        if (document.getElementById("commentBeforeCodeCard")) {
+          }
+
+        /* Comment After Code */
+        if (document.getElementById("commentAfterCodeCard")) {
+          }
+
+        /* Multi-line Comment */
+        if (document.getElementById("multiCommentCard")) {
+          }
+
+        /* Multi-line Example */
+        if (document.getElementById("multiCommentExampleCard")) {
+          }
+
+        /* Disable Code */
+        if (document.getElementById("disableCodeCard")) {
+          }
+      });
+    </script>
+</body>
+</html>

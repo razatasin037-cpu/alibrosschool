@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Access Strings</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer="" src="../../js/insert.js"></script>
+<script defer="" src="../js/sidebar.js"></script>
+<style>
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden">
+<!-- Navigation Bar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar -->
+<div id="sidebar"></div>
+<!-- Content Section -->
+<section class="w-full md:w-[calc(100%-300px)] p-5 md:pt-5 md:pb-[60px] md:px-[40px] transition-all duration-300">
+<!-- Heading -->
+<h1 class="text-[60px] font-bold text-white mb-10 mt-10">
+          C++ Access Strings
+        </h1>
+<!-- Previous & Next -->
+<div class="flex justify-between items-center mb-10">
+<!-- Previous -->
+<a href="string-length.html" style="text-decoration: none">
+<button class="bg-white text-black border border-gray-300 rounded-xl px-8 py-4 text-2xl font-semibold hover:bg-gray-100 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a href="special-characters.html" style="text-decoration: none">
+<button class="bg-[#3d59d9] hover:bg-[#4d6fff] text-white rounded-xl px-8 py-4 text-2xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="border-gray-700 mb-12"/>
+<!-- Introduction -->
+<div>
+<h2 class="text-[52px] font-bold text-white mb-8">
+            String ke Characters ko Access Karna
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              C++ mein string ke andar maujood kisi particular character ko
+              access kiya ja sakta hai.
+            </p>
+<p>
+              Character ko access karne ke liye
+              <span class="text-white font-semibold"> index number </span>
+              ka use kiya jata hai.
+            </p>
+<p>
+              String ka first character hamesha
+              <span class="text-[#4d6fff] font-semibold"> index 0 </span>
+              par hota hai.
+            </p>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Index -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">String Index</h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Maan lijiye string hai
+              <span class="text-[#4d6fff] font-semibold"> "Hello" </span>.
+            </p>
+<p>
+              Is string ke characters ki position
+              <span class="text-white font-semibold"> 0 </span>
+              se start hogi.
+            </p>
+<p>
+              Isliye
+              <span class="text-white font-semibold"> H </span>
+              ka index 0,
+              <span class="text-white font-semibold"> e </span>
+              ka index 1 aur
+              <span class="text-white font-semibold"> l </span>
+              ka index 2 hoga.
+            </p>
+</div>
+<!-- HTML Code Card -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              String Index
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "Hello";
+
+cout &lt;&lt; text[0];
+cout &lt;&lt; text[1];
+cout &lt;&lt; text[2];</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Access First Character -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            First Character Access Karna
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              First character ko access karne ke liye index
+              <span class="text-white font-semibold"> 0 </span>
+              ka use karte hain.
+            </p>
+</div>
+<!-- HTML Code Card -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Access First Character
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "Hello";
+
+cout &lt;&lt; text[0];</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Other Character -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            Kisi Bhi Character ko Access Karna
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Aap kisi bhi character ko uske index number ka use karke access
+              kar sakte hain.
+            </p>
+<p>
+              Example mein index
+              <span class="text-white font-semibold"> 1 </span>
+              par maujood character ko access kiya gaya hai.
+            </p>
+</div>
+<!-- HTML Code Card -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Access a Character
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "Hello";
+
+cout &lt;&lt; text[1];</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Change Character -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            Character ko Change Karna
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              String ke kisi character ko uske index ke through change bhi kiya
+              ja sakta hai.
+            </p>
+<p>
+              Iske liye index ke saath
+              <span class="text-white font-semibold"> = </span>
+              operator ka use karte hain.
+            </p>
+</div>
+<!-- HTML Code Card -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Change a Character
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "Hello";
+
+text[0] = 'J';
+
+cout &lt;&lt; text;</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Last Character -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            Last Character Access Karna
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              String ke last character ko access karne ke liye uske last index
+              ka use kar sakte hain.
+            </p>
+<p>
+              Last index nikalne ke liye string ki length se
+              <span class="text-white font-semibold"> 1 </span>
+              minus karte hain.
+            </p>
+</div>
+<!-- HTML Code Card -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Access Last Character
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "Hello";
+
+cout &lt;&lt; text[text.length() - 1];</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Loop Through String -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            String ke Characters ko Loop Karna
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              String ke har character ko ek-ek karke access karne ke liye loop
+              ka use kiya ja sakta hai.
+            </p>
+<p>
+              Isse poori string ke characters ko ek saath process ya print kar
+              sakte hain.
+            </p>
+</div>
+<!-- HTML Code Card -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Loop Through a String
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string text = "Hello";
+
+for (int i = 0; i &lt; text.length(); i++)
+{
+    cout &lt;&lt; text[i];
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Complete Example -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">Complete Example</h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Neeche ek complete example hai jisme string ke characters ko
+              access aur modify kiya gaya hai.
+            </p>
+</div>
+<!-- HTML Code Card -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Complete Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main()
+{
+    string text = "Hello";
+
+    cout &lt;&lt; "First character: "
+         &lt;&lt; text[0] &lt;&lt; endl;
+
+    text[0] = 'J';
+
+    cout &lt;&lt; "New string: "
+         &lt;&lt; text;
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Important -->
+<div class="mt-16 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-8">
+<h2 class="text-4xl font-bold text-white mb-8">Important</h2>
+<ul class="list-disc pl-8 space-y-5 text-2xl text-gray-300 leading-[45px]">
+<li>String ka first character index 0 par hota hai.</li>
+<li>
+              Characters ko index number ke through access kar sakte hain.
+            </li>
+<li>String ke characters ko change bhi kiya ja sakta hai.</li>
+<li>Last character ka index string ki length se 1 kam hota hai.</li>
+<li>
+              Loop ka use karke string ke har character ko access kiya ja sakta
+              hai.
+            </li>
+</ul>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Bottom Navigation -->
+<div class="flex items-center justify-between mt-16 mb-10">
+<!-- Previous -->
+<a href="string-length.html" style="text-decoration: none">
+<button class="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black text-2xl font-semibold px-10 py-5 rounded-xl transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a href="special-characters.html" style="text-decoration: none">
+<button class="bg-[#293fbf] hover:bg-[#4d6fff] text-white text-2xl font-semibold px-10 py-5 rounded-xl transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- Sidebar Script Injection -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar();
+        }
+      });
+    </script>
+</body>
+</html>

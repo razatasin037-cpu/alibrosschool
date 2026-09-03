@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ Logical Operators - Ali Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Logical Operators
+        </h1>
+
+        <div class="flex justify-between items-center">
+          <a href="nested-if.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+            </button></a
+          >
+          <a href="real-life-examplesif.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+          ></a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <section class="max-w-6xl mx-auto py-10">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ Logical Operators
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Logical operators ka use do ya do se zyada conditions ko combine
+            karne ke liye kiya jata hai.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            C++ mein mainly teen logical operators hote hain:
+            <span class="text-[#4d6fff] font-bold">&amp;&amp;</span>,
+            <span class="text-[#4d6fff] font-bold">||</span> aur
+            <span class="text-[#4d6fff] font-bold">!</span>.
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Logical Operators</h2>
+          <div
+            class="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <div class="space-y-6 text-lg sm:text-xl">
+              <div>
+                <span class="text-[#4d6fff] font-bold text-2xl">&amp;&amp;</span
+                ><span class="text-gray-300 ml-3">Logical AND</span>
+                <p class="text-gray-400 mt-2">
+                  Dono conditions true honi chahiye.
+                </p>
+              </div>
+              <div>
+                <span class="text-[#4d6fff] font-bold text-2xl">||</span
+                ><span class="text-gray-300 ml-3">Logical OR</span>
+                <p class="text-gray-400 mt-2">
+                  Kam se kam ek condition true honi chahiye.
+                </p>
+              </div>
+              <div>
+                <span class="text-[#4d6fff] font-bold text-2xl">!</span
+                ><span class="text-gray-300 ml-3">Logical NOT</span>
+                <p class="text-gray-400 mt-2">
+                  Condition ke result ko reverse karta hai.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Logical Operators Overview</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">bool a = true;
+bool b = false;
+
+cout &lt;&lt; (a &amp;&amp; b) &lt;&lt; endl;
+cout &lt;&lt; (a || b) &lt;&lt; endl;
+cout &lt;&lt; (!a) &lt;&lt; endl;</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">
+            Logical AND (&amp;&amp;)
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            AND operator
+            <span class="text-[#4d6fff] font-bold">&amp;&amp;</span> tab true
+            hota hai jab dono conditions true hoti hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">AND Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">int age = 20;
+bool hasID = true;
+
+if (age &gt;= 18 &amp;&amp; hasID) {
+    cout &lt;&lt; "Access granted.";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Logical OR (||)
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            OR operator <span class="text-[#4d6fff] font-bold">||</span> tab
+            true hota hai jab kam se kam ek condition true ho.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">OR Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">bool isStudent = true;
+bool hasCoupon = false;
+
+if (isStudent || hasCoupon) {
+    cout &lt;&lt; "Discount available.";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Logical NOT (!)
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            NOT operator
+            <span class="text-[#4d6fff] font-bold">!</span> condition ke result
+            ko opposite kar deta hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">NOT Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">bool loggedIn = false;
+
+if (!loggedIn) {
+    cout &lt;&lt; "Please log in.";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Combining Conditions
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Multiple conditions ko combine karke complex decision bhi liya ja
+            sakta hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Combining Conditions Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">int age = 22;
+bool hasID = true;
+bool member = false;
+
+if ((age &gt;= 18 &amp;&amp; hasID) || member) {
+    cout &lt;&lt; "Access allowed.";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Real Example
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Maan lijiye kisi user ko access tab milega jab uski age 18 ya usse
+            zyada ho aur uske paas valid ID bhi ho.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Access Check Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">int age = 20;
+bool validID = true;
+
+if (age &gt;= 18 &amp;&amp; validID) {
+    cout &lt;&lt; "You can access this page.";
+}
+else {
+    cout &lt;&lt; "Access denied.";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                <span class="text-[#4d6fff] font-bold">&amp;&amp;</span> mein
+                dono conditions true honi chahiye.
+              </li>
+              <li>
+                <span class="text-[#4d6fff] font-bold">||</span> mein kam se kam
+                ek condition true honi chahiye.
+              </li>
+              <li>
+                <span class="text-[#4d6fff] font-bold">!</span> condition ko
+                reverse karta hai.
+              </li>
+              <li>
+                Logical operators ko
+                <span class="text-[#4d6fff] font-bold">if</span> statements ke
+                saath commonly use kiya jata hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mt-10"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">
+                Complete Logical Operators Example
+              </h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age = 21;
+    bool hasID = true;
+    bool member = false;
+
+    if (age &gt;= 18 &amp;&amp; hasID) {
+        cout &lt;&lt; "Age and ID are valid." &lt;&lt; endl;
+    }
+
+    if (member || hasID) {
+        cout &lt;&lt; "At least one condition is true." &lt;&lt; endl;
+    }
+
+    if (!member) {
+        cout &lt;&lt; "User is not a member.";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="nested-if.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button></a
+            >
+            <a href="real-life-examplesif.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+            ></a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(5);
+        }
+      });
+    </script>
+  </body>
+</html>

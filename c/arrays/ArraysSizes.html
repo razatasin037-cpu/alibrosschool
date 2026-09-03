@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Array Size & Memory</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Array Size
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Arrays.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="ArraysLoops.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Overview Intro -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">Array Size Kaise Calculate Karein?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C language mein <code class="text-yellow-300 font-bold">sizeof</code> operator ka use array ki memory size (bytes mein) nikalne ke liye hota hai. Array mein kitne elements hain, yeh janne ke liye hum poore array ke size ko uske **pehle element ke size** se divide karte hain.
+      </p>
+
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl font-mono text-cyan-300 text-lg">
+        length = sizeof(array) / sizeof(array[0]);
+      </div>
+    </section>
+
+    <!-- Size Calculation Example -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Code Example: Finding Array Length</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myNumbers[] = {<span class="text-green-400">10</span>, <span class="text-green-400">20</span>, <span class="text-green-400">30</span>, <span class="text-green-400">40</span>, <span class="text-green-400">50</span>};
+
+    <span class="text-gray-500">// Memory size in Bytes</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Total Size in Bytes: %lu\n"</span>, <span class="text-purple-400">sizeof</span>(myNumbers)); 
+
+    <span class="text-gray-500">// Calculating Length (Number of elements)</span>
+    <span class="text-green-500">int</span> length = <span class="text-purple-400">sizeof</span>(myNumbers) / <span class="text-purple-400">sizeof</span>(myNumbers[<span class="text-green-400">0</span>]);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Total Elements: %d\n"</span>, length);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-1">Output:</p>
+        <p>Total Size in Bytes: 20</p>
+        <p>Total Elements: 5</p>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Arrays.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="ArraysLoops.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

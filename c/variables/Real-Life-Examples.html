@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Variables - Real-Life Examples</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      Real-Life Examples of C Variables
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="variableNames.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../input/UserInput.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Real-World Me Variables Ka Use</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Real-world applications me variables ka istemal dynamic data store karne ke liye hota hai. Jaise kisi student ka report card banana, e-commerce bill calculate karna, ya kisi account ki details track karna.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        In examples se aapko samajh aayega ki alag-alag data types (<code class="text-green-400">int</code>, <code class="text-green-400">float</code>, <code class="text-green-400">char</code>) ek saath real-life scenarios me kaise kaam karte hain.
+      </p>
+    </section>
+
+    <!-- Example 1: Student Data -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Example 1: Student Profile System</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Ek student ka data store karne ke liye hum roll number (<code class="text-green-400">int</code>), percentage (<code class="text-green-400">float</code>), aur grade (<code class="text-green-400">char</code>) jaisse variables use kar sakte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// Student details</span>
+    <span class="text-green-500">int</span> studentID = <span class="text-green-400">101</span>;
+    <span class="text-green-500">int</span> studentAge = <span class="text-green-400">20</span>;
+    <span class="text-green-500">float</span> studentFee = <span class="text-green-400">7500.50</span>;
+    <span class="text-green-500">char</span> studentGrade = <span class="text-green-400">'A'</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Student ID: %d\n"</span>, studentID);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Age: %d\n"</span>, studentAge);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Fee: %.2f\n"</span>, studentFee);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Grade: %c\n"</span>, studentGrade);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Student ID: 101</p>
+        <p class="text-gray-300 font-mono">Age: 20</p>
+        <p class="text-gray-300 font-mono">Fee: 7500.50</p>
+        <p class="text-gray-300 font-mono">Grade: A</p>
+      </div>
+    </section>
+
+    <!-- Example 2: Area of Rectangle -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Example 2: Rectangle Ka Area Calculate Karna</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Variables ki madad se hum Mathematical operations ko aasan bana sakte hain.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> length = <span class="text-green-400">12</span>;
+    <span class="text-green-500">int</span> width = <span class="text-green-400">8</span>;
+    <span class="text-green-500">int</span> area;
+
+    <span class="text-gray-500">// Area = length * width</span>
+    area = length * width;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Length: %d\n"</span>, length);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Width: %d\n"</span>, width);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Area of Rectangle: %d\n"</span>, area);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Length: 12</p>
+        <p class="text-gray-300 font-mono">Width: 8</p>
+        <p class="text-gray-300 font-mono">Area of Rectangle: 96</p>
+      </div>
+    </section>
+
+    <!-- Example 3: Shopping Bill Calculation -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Example 3: E-Commerce Bill & Total Cost</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab hum online items khareedte hain, tab total price, quantity, aur currency format ki calculation iss tarah hoti hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> items = <span class="text-green-400">5</span>;
+    <span class="text-green-500">float</span> costPerItem = <span class="text-green-400">99.99</span>;
+    <span class="text-green-500">float</span> totalCost = items * costPerItem;
+    <span class="text-green-500">char</span> currency = <span class="text-green-400">'$'</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Number of items: %d\n"</span>, items);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Cost per item: %c%.2f\n"</span>, currency, costPerItem);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Total Cost: %c%.2f\n"</span>, currency, totalCost);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Number of items: 5</p>
+        <p class="text-gray-300 font-mono">Cost per item: $99.99</p>
+        <p class="text-gray-300 font-mono">Total Cost: $499.95</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Real-world problems ko solve karne ke liye variables, right data types, aur clear naming conventions ka use sabse zaroori step hota hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="variableNames.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../input/UserInput.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(6);
+  }
+</script>
+
+</body>
+</html>

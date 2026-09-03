@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Output (New Lines)</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <!-- Main -->
+  <main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Content -->
+    <section class="flex-1 p-6 md:px-16 md:py-8">
+
+      <!-- Heading -->
+      <h1 class="text-4xl md:text-6xl font-bold mb-10">
+        C Output - New Lines
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between items-center mb-12">
+
+        <a href="printText.html"
+          class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="../comments/comments.html"
+          class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          New Lines in C
+        </h2>
+
+        <p class="text-xl text-gray-300 leading-10 mb-6">
+          C Programming me <span class="text-red-400 font-bold">\n</span> ko
+          <strong>New Line Escape Sequence</strong> kaha jata hai.
+        </p>
+
+        <p class="text-xl text-gray-300 leading-10">
+          Jab bhi <strong>\n</strong> use karte hain to cursor next line me chala jata hai.
+        </p>
+
+      </section>
+
+      <!-- Example -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <div id="newLineOutput"></div>
+
+      </section>
+
+      <!-- Output -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Output
+        </h2>
+
+<div class="bg-black rounded-2xl p-6">
+
+<pre><code class="text-yellow-400">
+Hello
+Welcome
+</code></pre>
+
+</div>
+
+      </section>
+
+      <!-- Explanation -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Explanation
+        </h2>
+
+        <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-4">
+
+          <li><strong>\n</strong> ek Escape Sequence hai.</li>
+
+          <li>Ye cursor ko next line me le jata hai.</li>
+
+          <li>Readable output ke liye iska use kiya jata hai.</li>
+
+          <li>Ek hi <strong>printf()</strong> me multiple <strong>\n</strong> use kar sakte hain.</li>
+
+        </ul>
+
+      </section>
+
+      <!-- Multiple New Lines -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+       <div id="multipleNewLineOutput"></div>
+
+      </section>
+
+      <!-- Output -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Output
+        </h2>
+
+<div class="bg-black rounded-2xl p-6">
+
+<pre><code class="text-yellow-400">
+HTML
+CSS
+JavaScript
+C Programming
+</code></pre>
+
+</div>
+
+      </section>
+
+      <!-- Tips -->
+      <section class="mt-16 bg-[#2d3521] rounded-[30px] p-10">
+
+        <h2 class="text-3xl font-bold mb-6 text-[#e9f1c7]">
+          💡 Tips
+        </h2>
+
+        <ul class="list-disc ml-8 text-[#e9f1c7] text-xl leading-10">
+
+          <li>Long output ko readable banane ke liye <strong>\n</strong> use karein.</li>
+
+          <li><strong>\n</strong> sirf strings ke andar hi kaam karta hai.</li>
+
+          <li>Programming me Escape Sequences bahut useful hote hain.</li>
+
+        </ul>
+
+      </section>
+
+      <!-- Escape Sequences -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Escape Sequences
+        </h2>
+
+        <div class="overflow-x-auto">
+
+          <table class="w-full border border-gray-700 text-left">
+
+            <thead class="bg-[#1e293b]">
+
+              <tr>
+                <th class="border border-gray-700 p-4">Sequence</th>
+                <th class="border border-gray-700 p-4">Description</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td class="border border-gray-700 p-4 text-red-400">\n</td>
+                <td class="border border-gray-700 p-4">New Line</td>
+              </tr>
+
+              <tr>
+                <td class="border border-gray-700 p-4 text-red-400">\t</td>
+                <td class="border border-gray-700 p-4">Horizontal Tab</td>
+              </tr>
+
+              <tr>
+                <td class="border border-gray-700 p-4 text-red-400">\"</td>
+                <td class="border border-gray-700 p-4">Double Quote</td>
+              </tr>
+
+              <tr>
+                <td class="border border-gray-700 p-4 text-red-400">\\</td>
+                <td class="border border-gray-700 p-4">Backslash</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+        <!-- Important Points -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Important Points
+        </h2>
+
+        <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-3">
+
+          <li><strong>printf()</strong> output print karne ke liye use hota hai.</li>
+
+          <li>Text hamesha double quotes ke andar likha jata hai.</li>
+
+          <li>Har statement semicolon (<span class="text-red-400">;</span>) se end hoti hai.</li>
+
+          <li><span class="text-red-400">\n</span> new line ke liye use hota hai.</li>
+
+          <li><span class="text-red-400">\t</span> tab space dene ke liye use hota hai.</li>
+
+        </ul>
+
+      </section>
+
+
+      <!-- Practice -->
+      <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Practice
+        </h2>
+
+        <p class="text-xl leading-10 mb-6">
+          Ek program likhiye jo niche diya gaya output print kare:
+        </p>
+
+<div class="bg-black rounded-2xl p-6">
+
+<pre><code class="text-yellow-400">
+Apple
+Mango
+Orange
+Banana
+</code></pre>
+
+</div>
+
+      </section>
+
+      <!-- Note -->
+      <section class="mt-16">
+
+        <div class="bg-[#2d3521] rounded-[30px] p-10">
+
+          <h2 class="text-3xl font-bold mb-6">
+            📝 Note
+          </h2>
+
+          <p class="text-xl text-[#e9f1c7] leading-10">
+            <strong>\n</strong> C Programming ka sabse common Escape Sequence hai. Iska use output ko multiple lines me print karne ke liye kiya jata hai.
+          </p>
+
+        </div>
+
+      </section>
+
+      <!-- Summary -->
+      <section class="mt-16 bg-gradient-to-r from-blue-700 to-indigo-700 rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          Summary
+        </h2>
+
+        <ul class="list-disc ml-8 text-xl leading-10 space-y-3">
+
+          <li><strong>\n</strong> ek New Line Escape Sequence hai.</li>
+
+          <li>Ye cursor ko next line me le jata hai.</li>
+
+          <li>Output ko readable banata hai.</li>
+
+          <li>Iska use <strong>printf()</strong> ke andar kiya jata hai.</li>
+
+        </ul>
+
+      </section>
+
+      <!-- Footer Navigation -->
+      <div class="flex justify-between mt-12 mb-8">
+
+        <a href="printText.html"
+          class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="../comments/comments.html"
+          class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+<script src="../js/examplecard.js"></script>
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(4);
+  </script>
+
+</body>
+</html>

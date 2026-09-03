@@ -1,0 +1,6 @@
+<?php $pageTitle='Stock Ledger'; require_once __DIR__.'/../includes/header.php';
+$rows=$pdo->query("SELECT m.*,p.sku,p.name,u.name user_name FROM stock_movements m JOIN products p ON p.id=m.product_id LEFT JOIN users u ON u.id=m.created_by ORDER BY m.id DESC LIMIT 300")->fetchAll();
+?>
+<div class="toolbar"><div><h1 class="page-title">Stock Ledger</h1><div class="muted">Every opening, purchase, sale and adjustment is traceable.</div></div></div>
+<div class="card table-wrap"><table class="table"><thead><tr><th>Date</th><th>Product</th><th>Type</th><th>In</th><th>Out</th><th>Balance</th><th>Reference</th><th>User</th></tr></thead><tbody><?php foreach($rows as $r):?><tr><td><?=e($r['created_at'])?></td><td><?=e($r['sku'])?><div class="muted"><?=e($r['name'])?></div></td><td><span class="badge badge-info"><?=e($r['movement_type'])?></span></td><td class="kpi-up"><?=e($r['qty_in'])?></td><td class="kpi-down"><?=e($r['qty_out'])?></td><td><strong><?=e($r['balance_after'])?></strong></td><td><?=e($r['reference_type'].' #'.($r['reference_id']??''))?></td><td><?=e($r['user_name']??'System')?></td></tr><?php endforeach;?></tbody></table></div>
+<?php require_once __DIR__.'/../includes/footer.php';?>

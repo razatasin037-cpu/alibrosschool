@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Operator Precedence - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar Container -->
+<aside class="w-full md:w-[320px] shrink-0" id="sidebar"></aside>
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Operator Precedence
+        </h1>
+<!-- Top Navigation -->
+<div class="flex justify-between items-center">
+<a href="logicaloperators.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="../string/string.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Operator Precedence
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Jab ek calculation mein ek se zyada operators hote hain, to C++
+            decide karta hai ki sabse pehle kaunsa operation perform hoga.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            Isi order ko
+            <span class="text-[#4d6fff] font-bold"> Operator Precedence </span>
+            kaha jata hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Operator Precedence</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int result = 10 + 5 * 2;
+cout &lt;&lt; result;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Multiplication Pehle Kyun?
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Example ke liye agar hum
+            <span class="text-white font-semibold"> 2 + 3 * 4 </span>
+            calculate karte hain, to multiplication pehle hota hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Multiplication Pehle Kyun?</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int result = 10 + 5 * 2;
+cout &lt;&lt; result;</code></pre>
+    </div>
+  </div>
+</div>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mt-8 mb-8">
+            Isliye result
+            <span class="text-[#4d6fff] font-bold"> 14 </span>
+            aata hai, 20 nahi.
+          </p>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Parentheses Ka Use
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Agar hum chahte hain ki addition pehle perform ho, to parentheses
+            <span class="text-[#4d6fff] font-bold"> ( ) </span>
+            ka use kar sakte hain.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Parentheses Ka Use</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int result = (10 + 5) * 2;
+cout &lt;&lt; result;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Order of Operations
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            Neeche kuch common C++ operators ka order diya gaya hai, highest
+            priority se lowest priority tak.
+          </p>
+<div class="bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden">
+<div class="grid grid-cols-2 bg-[#111827] border-b border-white/10 px-5 py-5 text-lg sm:text-xl font-bold">
+<div>Operator</div>
+<div>Priority</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">( )</div>
+<div>Sabse pehle</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">*, /, %</div>
+<div>Uske baad</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">+, -</div>
+<div>Uske baad</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">
+                &gt;, &lt;, &gt;=, &lt;=
+              </div>
+<div>Comparison</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">==, !=</div>
+<div>Equality check</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">&amp;&amp;</div>
+<div>Logical AND</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">||</div>
+<div>Logical OR</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">=</div>
+<div>Assignment</div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Parentheses Hamesha Pehle
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Parentheses ke andar ka calculation sabse pehle perform hota hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Parentheses Hamesha Pehle</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int result = 10 * (5 + 2);
+cout &lt;&lt; result;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Addition aur Subtraction
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Addition aur subtraction ki same precedence hoti hai. Agar dono ek
+            saath hain, to calculation generally left se right hota hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Addition aur Subtraction</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int result = 20 - 5 + 2;
+cout &lt;&lt; result;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Complex Calculation
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Jab calculation complex ho, to parentheses ka use karna better hota
+            hai. Isse code samajhna bhi easy hota hai aur result bhi clear rehta
+            hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Complex Calculation</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int result = (10 + 5) * 2 - 8 / 2;
+cout &lt;&lt; result;</code></pre>
+    </div>
+  </div>
+</div>
+<!-- Important Summary Box -->
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>
+                Parentheses
+                <span class="text-[#4d6fff] font-bold"> ( ) </span>
+                sabse pehle calculate hote hain.
+              </li>
+<li>
+                Multiplication, division aur modulus addition aur subtraction se
+                pehle hote hain.
+              </li>
+<li>
+                Comparison operators calculation ke baad conditions check karte
+                hain.
+              </li>
+<li>Logical operators comparison ke baad evaluate hote hain.</li>
+<li>
+                Assignment operator
+                <span class="text-[#4d6fff] font-bold"> = </span>
+                ki precedence lower hoti hai.
+              </li>
+<li>
+                Calculation ka order clear karne ke liye parentheses ka use
+                karna best practice hai.
+              </li>
+</ul>
+</div>
+<!-- Bottom Navigation -->
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="logicaloperators.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="../string/string.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<!-- Scripts Implementation -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(15);
+  }
+});
+</script>
+</body>
+</html>

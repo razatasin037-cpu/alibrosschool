@@ -1,0 +1,2 @@
+ALTER TABLE customers
+    ADD COLUMN IF NOT EXISTS absent_installments INT NOT NULL DEFAULT 0;

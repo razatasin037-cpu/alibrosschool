@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Decimal Data Types - Float & Double</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Decimal Data Types
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="NumericDataType.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="MemoryOfSize.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Decimal Data Types Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C language me point (floating-point) wali values store karne ke liye **Decimal Data Types** ka use hota hai, jaise <code class="text-green-400">9.99</code>, <code class="text-green-400">3.14159</code>, ya <code class="text-green-400">-0.005</code>.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        Inko hum <strong>Floating-Point Numbers</strong> bhi kehte hain. C me teen main floating-point types hote hain: <code class="text-green-400 font-bold">float</code>, <code class="text-green-400 font-bold">double</code>, aur <code class="text-green-400 font-bold">long double</code>.
+      </p>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Decimal Types Comparison</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Data Type</th>
+              <th class="py-4 px-6">Memory Size</th>
+              <th class="py-4 px-6">Format Specifier</th>
+              <th class="py-4 px-6">Precision (Point ke baad)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">float</td>
+              <td class="py-4 px-6 text-yellow-300">4 Bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%f</td>
+              <td class="py-4 px-6 text-gray-300">6 - 7 Decimal Digits</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">double</td>
+              <td class="py-4 px-6 text-yellow-300">8 Bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%lf</td>
+              <td class="py-4 px-6 text-gray-300">15 - 17 Decimal Digits</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">long double</td>
+              <td class="py-4 px-6 text-yellow-300">10, 12, or 16 Bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%Lf</td>
+              <td class="py-4 px-6 text-gray-300">19+ Decimal Digits</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Precision Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Float vs Double Precision</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">float (Single Precision)</h3>
+          <p class="text-xl text-gray-300 leading-9">
+            <code class="text-green-400">float</code> choti values aur kam accuracy ke liye exact hota hai. Yeh point ke baad 6 se 7 digits tak sahi accurate output deta hai.
+          </p>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">double (Double Precision)</h3>
+          <p class="text-xl text-gray-300 leading-9">
+            <code class="text-green-400">double</code> jyada accuracy deta hai (point ke baad 15 digits tak). Mathematical and Scientific calculations me hamesha <code class="text-green-400">double</code> recommend kiya jata hai.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-black/50 border border-[#3158ff]/40 rounded-2xl p-6">
+        <p class="text-xl text-cyan-300 font-semibold mb-2">💡 Decimal Precision Set Karna:</p>
+        <p class="text-xl text-gray-300 leading-9">
+          Point ke baad exact digits control karne ke liye format specifier ke sath <code class="text-yellow-300">%.2f</code> (2 decimal places ke liye) ya <code class="text-yellow-300">%.4f</code> use karein.
+        </p>
+      </div>
+    </section>
+
+    <!-- Scientific Notation -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Scientific Numbers (Exponent 'e')</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Bohat zyada badi ya choti float/double values ko represent karne ke liye scientific notation 'e' ya 'E' ka istemal kiya jata hai (10 ki power):
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">float</span> f1 = <span class="text-green-400">35e3f</span>;   <span class="text-gray-500">// 35 * 10^3 = 35000</span>
+    <span class="text-green-500">double</span> d1 = <span class="text-green-400">12E4</span>;   <span class="text-gray-500">// 12 * 10^4 = 120000</span>
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%f\n"</span>, f1);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%lf\n"</span>, d1);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Main Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Decimal Data Types Code Example</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Neeche diye gaye program me dekhiye kaise <code class="text-green-400">float</code> aur <code class="text-green-400">double</code> ki accuracy me farq hota hai aur decimal precision kaise format karte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">float</span> myFloatNum = <span class="text-green-400">5.75f</span>;
+    <span class="text-green-500">double</span> myDoubleNum = <span class="text-green-400">19.99</span>;
+
+    <span class="text-gray-500">// Default output (6 decimal digits)</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Float default: %f\n"</span>, myFloatNum);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Double default: %lf\n"</span>, myDoubleNum);
+
+    <span class="text-gray-500">// Precision set karke (2 decimal places)</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Float formatted: %.2f\n"</span>, myFloatNum);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Double formatted: %.2lf\n"</span>, myDoubleNum);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Float default: 5.750000</p>
+        <p class="text-gray-300 font-mono">Double default: 19.990000</p>
+        <p class="text-gray-300 font-mono">Float formatted: 5.75</p>
+        <p class="text-gray-300 font-mono">Double formatted: 19.99</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Jab bhi decimal numbers store karne ho toh default choice <code class="text-yellow-300 font-bold">double</code> hoti hai kyunki yeh zyada precision aur safety deta hai. Memory bachani ho toh <code class="text-yellow-300 font-bold">float</code> use karein.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="NumericDataType.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="MemoryOfSize.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(6);
+  }
+</script>
+
+</body>
+</html>

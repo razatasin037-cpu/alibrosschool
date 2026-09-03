@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C User Input (scanf)</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C User Input   </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="../variables/Real-Life-Examples.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../datatypes/data-types.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+  <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">User Input Kya Hota Hai?</h2>
+      
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Ab tak humne jitne bhi C programs banaye hain, unme variables ki values pehle se hi code ke andar fix (hardcode) hoti thi. Jaise <code class="text-green-400">int age = 20;</code>. Isme har baar program run karne par age hamesha 20 hi print hoti thi.
+      </p>
+
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Lekin real-world software aur applications me aisa nahi hota! Applications me user keyboard se khud apni value type karta hai (jaise apna naam, password, ya age) aur program us input ko accept karke process karta hai. 
+      </p>
+
+      <div class="bg-black/50 border border-[#3158ff]/40 rounded-2xl p-6 mb-6">
+        <p class="text-xl text-cyan-300 font-semibold mb-2">💡 User Input ka matlab:</p>
+        <p class="text-xl text-gray-300 leading-9">
+          Jab program chalne ke baad (runtime par) user keyboard ke zariye computer ko data deta hai, aur program us data ko apne kisi variable me store kar leta hai, toh ise <strong>User Input</strong> kehte hain.
+        </p>
+      </div>
+
+      <p class="text-xl text-gray-300 leading-10">
+        C Language me user se keyboard input lene ke liye <code class="text-cyan-400 font-bold">scanf()</code> function ka use kiya jata hai. Yeh function standard input (yani keyboard) se value read karke variable ko de deta hai.
+      </p>
+    </section>
+
+    <!-- Syntax Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">scanf() Ka Syntax</h2>
+      
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-8">
+        <pre><code><span class="text-cyan-400">scanf</span>(<span class="text-yellow-300">"%format_specifier"</span>, &amp;<span class="text-white">variableName</span>);</code></pre>
+      </div>
+
+      <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-4">
+        <li>
+          <strong class="text-yellow-300">%format_specifier</strong> - Yeh batata hai ki kis type ka data input lena hai (Jaise: <code class="text-green-400">%d</code> for int, <code class="text-green-400">%f</code> for float, <code class="text-green-400">%c</code> for char).
+        </li>
+        <li>
+          <strong class="text-green-400">&amp; (Address-of Operator)</strong> - Yeh variable ka memory address batata hai jaha user ka enter kiya data store hoga.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Basic Input Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Single Value Input Example</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Neeche diye gaye program me user se ek integer number liya gaya hai aur usko print kiya gaya hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myNum;
+
+    <span class="text-gray-500">// User ko message dikhana</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Type a number: \n"</span>);
+
+    <span class="text-gray-500">// User se input lena (&amp; operator zaroori hai)</span>
+    <span class="text-cyan-400">scanf</span>(<span class="text-yellow-300">"%d"</span>, &amp;myNum);
+
+    <span class="text-gray-500">// User ka enter kiya number print karna</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Your number is: %d"</span>, myNum);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Type a number:</p>
+        <p class="text-green-400 font-mono">42</p>
+        <p class="text-gray-300 font-mono">Your number is: 42</p>
+      </div>
+    </section>
+
+    <!-- Multiple Inputs Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Multiple Inputs Lena</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Aap ek hi <code class="text-cyan-400">scanf()</code> me multiple values bhi user se input karwa sakte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myNum;
+    <span class="text-green-500">char</span> myChar;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Type a number AND a character, then press enter: \n"</span>);
+
+    <span class="text-gray-500">// Ek saath do inputs lena</span>
+    <span class="text-cyan-400">scanf</span>(<span class="text-yellow-300">"%d %c"</span>, &amp;myNum, &amp;myChar);
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Your number is: %d\n"</span>, myNum);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Your character is: %c\n"</span>, myChar);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Common Mistake Warning -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8 text-red-400">⚠️ Common Mistakes (Sabhse Zyada Hone Wali Galati)</h2>
+      
+      <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-4">
+        <li>
+          <strong class="text-red-400">&amp; Symbol Bhool Jana:</strong> <code class="text-cyan-400">scanf()</code> me variable name ke aage <code class="text-yellow-300">&amp;</code> nahi lagane par program crash ho sakta hai.
+          <div class="bg-black rounded-xl p-4 mt-2">
+            <span class="text-red-500">scanf("%d", myNum);</span> <span class="text-gray-500">// ❌ Galat</span><br>
+            <span class="text-green-400">scanf("%d", &amp;myNum);</span> <span class="text-gray-500">// ✅ Sahi</span>
+          </div>
+        </li>
+        <li>
+          <strong class="text-red-400">Wrong Format Specifier:</strong> <code class="text-green-400">int</code> ke liye <code class="text-yellow-300">%f</code> ya <code class="text-yellow-300">%c</code> use kar dena.
+        </li>
+      </ul>
+    </section>
+
+    <!-- String Input Section (fgets vs scanf) -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">String (Text) Input (fgets)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <code class="text-cyan-400">scanf("%s", name)</code> space milte hi ruk jata hai. Isliye poora naam ya line input lene ke liye <code class="text-cyan-400">fgets()</code> ka istemal kiya jata hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">char</span> fullName[<span class="text-green-400">30</span>];
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Enter your full name: \n"</span>);
+
+    <span class="text-gray-500">// Full text input lene ke liye fgets</span>
+    <span class="text-cyan-400">fgets</span>(fullName, <span class="text-purple-400">sizeof</span>(fullName), stdin);
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Hello %s"</span>, fullName);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        User se value lene ke liye <code class="text-cyan-300 font-bold">scanf()</code> ka use hota hai. Scanner me hamesha right format specifier aur <code class="text-yellow-300 font-bold">&amp;</code> (address-of) operator ka dhyan rakhna zaroori hai. Full string/text line ke liye <code class="text-cyan-300 font-bold">fgets()</code> best practice hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="../variables/Real-Life-Examples.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../datatypes/data-types.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(7);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Data Types - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<div id="sidebar"></div>
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Data Types
+        </h1>
+<div class="flex justify-between items-center">
+<a href="../userinput/user-input.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+
+              Previous
+            </button>
+</a>
+<a href="numerictypes.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ Data Types
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein jab hum koi variable banate hain, to uske data ka type
+            batana zaroori hota hai.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            Data type compiler ko batata hai ki variable mein kis type ka data
+            store hoga.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Basic Data Types</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int age = 20;
+float price = 10.5;
+double salary = 25000.75;
+char grade = &#x27;A&#x27;;
+bool passed = true;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Basic Data Types
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            C++ mein kuch commonly used basic data types hain, jaise
+            <span class="text-[#4d6fff] font-bold">int</span>,
+            <span class="text-[#4d6fff] font-bold">float</span>,
+            <span class="text-[#4d6fff] font-bold">double</span>,
+            <span class="text-[#4d6fff] font-bold">char</span>
+            aur
+            <span class="text-[#4d6fff] font-bold">bool</span>.
+          </p>
+<div class="bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden">
+<div class="grid grid-cols-2 bg-[#111827] border-b border-white/10 px-5 py-5 text-lg sm:text-xl font-bold">
+<div>Data Type</div>
+<div>Use</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">int</div>
+<div class="text-gray-300">Whole numbers ke liye</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">float</div>
+<div class="text-gray-300">Decimal numbers ke liye</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">double</div>
+<div class="text-gray-300">
+                Decimal numbers ke liye zyada precision ke saath
+              </div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">char</div>
+<div class="text-gray-300">Ek single character ke liye</div>
+</div>
+<div class="grid grid-cols-2 px-5 py-5 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">bool</div>
+<div class="text-gray-300">true ya false ke liye</div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            int Data Type
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">int</span>
+            ka use whole numbers store karne ke liye hota hai. Ismein decimal
+            value nahi hoti.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">int Data Type</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int age = 20;
+cout &lt;&lt; age;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            float Data Type
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">float</span>
+            ka use decimal ya fractional numbers store karne ke liye kiya jata
+            hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">float Data Type</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>float price = 10.5f;
+cout &lt;&lt; price;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            double Data Type
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">double</span>
+            bhi decimal numbers store karta hai aur
+            <span class="text-white font-semibold">float</span>
+            ke comparison mein zyada precision provide karta hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">double Data Type</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>double salary = 25000.75;
+cout &lt;&lt; salary;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            char Data Type
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">char</span>
+            ka use ek single character store karne ke liye hota hai. Character
+            ko single quotes ke andar likhte hain.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">char Data Type</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>char grade = &#x27;A&#x27;;
+cout &lt;&lt; grade;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            bool Data Type
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">bool</span>
+            data type sirf do values store karta hai:
+            <span class="text-white font-semibold">true</span>
+            ya
+            <span class="text-white font-semibold">false</span>.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">bool Data Type</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>bool isStudent = true;
+cout &lt;&lt; isStudent;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            String Data Type
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">string</span>
+            ka use text store karne ke liye hota hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">String Data Type</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>string name = &quot;Ali&quot;;
+cout &lt;&lt; name;</code></pre>
+    </div>
+  </div>
+</div>
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>
+<span class="text-[#4d6fff] font-bold">int</span>
+                whole numbers ke liye use hota hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">float</span>
+                aur
+                <span class="text-[#4d6fff] font-bold">double</span>
+                decimal numbers ke liye use hote hain.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">char</span>
+                single character ke liye use hota hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">bool</span>
+                true ya false store karta hai.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">string</span>
+                text store karne ke liye use hota hai.
+              </li>
+</ul>
+</div>
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="../userinput/user-input.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+
+                Previous
+              </button>
+</a>
+<a href="numerictypes.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(0);
+  }
+});
+</script>
+</body>
+</html>

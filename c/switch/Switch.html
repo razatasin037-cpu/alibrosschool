@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Switch Statement</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Switch 
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Real-Life-Examples.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../loop/WhileLoop.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Switch Statement Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <code class="font-bold text-yellow-300">switch</code> statement ka use multiple alternatives me se kisi ek code block ko execute karne ke liye kiya jata hai. Yeh multiple <code class="text-yellow-300">else-if</code> statements ka ek cleaner aur faster substitute hai.
+      </p>
+      
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl mt-6">
+        <p class="text-2xl font-bold mb-3">Key Points:</p>
+        <ul class="list-disc list-inside text-lg text-gray-300 space-y-3 leading-8">
+          <li>Expression ki value ko alag-alag <code class="text-yellow-300">case</code> values se compare kiya jata hai.</li>
+          <li>Match hone par us case ka code block execute hota hai.</li>
+          <li><code class="text-yellow-300">break</code> statement switch block se bahar nikalne ke liye zaroori hota hai.</li>
+          <li><code class="text-yellow-300">default</code> keyword tab chalta hai jab koi bhi case match nahi hota.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Syntax Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Syntax</h2>
+      
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 border border-gray-800 font-mono text-gray-300">
+<pre><code><span class="text-purple-400">switch</span> (expression) {
+    <span class="text-purple-400">case</span> value1:
+        <span class="text-gray-500">// Code to be executed if expression == value1</span>
+        <span class="text-purple-400">break</span>;
+    <span class="text-purple-400">case</span> value2:
+        <span class="text-gray-500">// Code to be executed if expression == value2</span>
+        <span class="text-purple-400">break</span>;
+    <span class="text-purple-400">default</span>:
+        <span class="text-gray-500">// Code to be executed if no case matches</span>
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Day of the Week</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> day = <span class="text-green-400">3</span>;
+
+    <span class="text-purple-400">switch</span> (day) {
+        <span class="text-purple-400">case</span> <span class="text-green-400">1</span>:
+            <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Monday\n"</span>);
+            <span class="text-purple-400">break</span>;
+        <span class="text-purple-400">case</span> <span class="text-green-400">2</span>:
+            <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Tuesday\n"</span>);
+            <span class="text-purple-400">break</span>;
+        <span class="text-purple-400">case</span> <span class="text-green-400">3</span>:
+            <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Wednesday\n"</span>);
+            <span class="text-purple-400">break</span>;
+        <span class="text-purple-400">default</span>:
+            <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Invalid Day\n"</span>);
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-1">Output:</p>
+        <p>Wednesday</p>
+      </div>
+    </section>
+
+    <!-- Important Keywords -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Important Keywords to Remember</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl font-bold mb-2">1. The break Keyword</p>
+          <p class="text-gray-300">Jab C <code class="text-yellow-300">break</code> keyword par pahunchta hai, toh yeh switch block se bahar nikal jata hai. Agar <code class="text-yellow-300">break</code> na ho, toh agla case bhi automatically execute ho jayega (jise Fall-through bolte hain).</p>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl font-bold mb-2">2. The default Keyword</p>
+          <p class="text-gray-300"><code class="text-yellow-300">default</code> keyword tab execute hota hai jab koi bhi case value match nahi hoti. Yeh optional hota hai lekin fallback ke liye recommended hai.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        <code class="font-bold text-yellow-300">switch</code> statement fixed discrete values (integers ya characters) ko compare karne ke liye best hai aur complex <code class="text-yellow-300">else-if</code> ladders ke muqable code ko zyada readable banata hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Real-Life-Examples.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../loop/WhileLoop.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(19);
+  }
+</script>
+
+</body>
+</html>

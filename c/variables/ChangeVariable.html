@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Change Variables</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Change Variable Values
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="formatSpecifiers.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="MultipleVariable.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Variable Value Ko Badlana (Overwrite)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C Language me Variable ka matlab hi hota hai <strong>"jo change ho sake"</strong>. Jab aap pehle se bane kisi variable ko nayi value assign karte hain, to purani value delete (overwrite) ho jati hai aur usme nayi value store ho jati hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        Subse zaroori baat: Value change karte waqt dobara <strong>Data Type</strong> (jaise <code class="text-green-400">int</code>, <code class="text-green-400">float</code>) nahi likha jata.
+      </p>
+    </section>
+
+    <!-- Method 1: Overwrite Values -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">1. Direct Value Overwrite Karna</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Is method me hum variable ke naam me naya data assign kar dete hain.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// Variable declare &amp; initialize</span>
+    <span class="text-green-500">int</span> myNum = <span class="text-green-400">15</span>; 
+
+    <span class="text-gray-500">// Value overwrite kar rahe hain (Dobara int mat likho)</span>
+    myNum = <span class="text-green-400">20</span>; 
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%d"</span>, myNum); <span class="text-gray-500">// Output: 20</span>
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Method 2: Assign Value to Another Variable -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">2. Ek Variable Ki Value Doosre Me Copy Karna</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Aap ek variable ki value ko kisi doosre variable me assign (copy) bhi kar sakte hain.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myNum = <span class="text-green-400">15</span>;
+    <span class="text-green-500">int</span> myOtherNum = <span class="text-green-400">23</span>;
+
+    <span class="text-gray-500">// myOtherNum (23) ki value myNum me copy ho jayegi</span>
+    myNum = myOtherNum;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%d"</span>, myNum); <span class="text-gray-500">// Output: 23</span>
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Method 3: Using Arithmetic Operations -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">3. Calculation Karke Value Change Karna</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Aap math operators (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) use karke bhi variable ki current value me changes kar sakte hain.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> score = <span class="text-green-400">50</span>;
+
+    <span class="text-gray-500">// 50 + 10 = 60 ab score me store ho jayega</span>
+    score = score + <span class="text-green-400">10</span>; 
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"New Score: %d"</span>, score); <span class="text-gray-500">// Output: 60</span>
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Common Mistake Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8 text-red-400">❌ Common Mistake (Khas Dhyan Rakhein)</h2>
+      
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab variable pehle se bana ho to uski value update karte waqt Data Type dobara likhne se Compile Error aata hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto">
+<pre><code><span class="text-green-500">int</span> age = <span class="text-green-400">18</span>;
+<span class="text-red-500">int age = 20;</span> <span class="text-gray-500">// ❌ WRONG: "redefinition of 'age'" error aayega!</span>
+
+<span class="text-green-400">age = 20;</span>     <span class="text-gray-500">// ✅ CORRECT: Direct variable name use karein.</span></code></pre>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Variable ki value ko badalna bohot aasan hai. Sirf Variable Name likhein, `=` sign lagayein aur nayi value assign kar dein. Purani value apne aap replace ho jayegi.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="ChangeVariable.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="MultipleVariable.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(6);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Syntax Code Challenge</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <!-- Main -->
+  <main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Content -->
+    <section class="flex-1 p-6 md:p-10">
+
+      <!-- Heading -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-10">
+        C Syntax Code Challenge
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between items-center mb-12">
+        <a href="statements.html"
+          class="bg-white text-black md:px-8 md:py-4 px-3 py-3 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="../output/printText.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+      </div>
+
+      <!-- Introduction -->
+      <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-3xl p-8">
+
+      <div id="ChallengeSyntax1"></div>
+
+        <div class="mt-6 bg-[#1f2937] rounded-xl p-5">
+          <p class="text-lg">
+            <strong>Question:</strong> Blank (<span class="text-yellow-400">_____</span>) ki jagah kaunsa keyword aayega?
+          </p>
+        </div>
+
+      </section>
+
+      <!-- Challenge 2 -->
+      <section class="mt-10 bg-[#0f172a] border border-[#3158ff] rounded-3xl p-8">
+
+        <div id="Challenge2"> </div>
+
+        <p class="mt-6 text-lg text-gray-300">
+          Program me syntax error dhoondo aur usse correct karo.
+        </p>
+
+      </section>
+
+      <!-- Challenge 3 -->
+      <section class="mt-10 bg-[#0f172a] border border-[#3158ff] rounded-3xl p-8">
+
+       <div id="challenge3"></div>
+
+        <p class="mt-6 text-lg text-gray-300">
+          Is program ka output kya hoga?
+        </p>
+
+      </section>
+
+      <!-- Tips -->
+      <section class="mt-10 bg-[#2d3521] rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-5 text-[#e9f1c7]">
+          💡 Tips
+        </h2>
+
+        <ul class="list-disc ml-8 text-[#e9f1c7] text-lg leading-9">
+          <li>Har statement ke end me semicolon (<code>;</code>) lagana na bhoolo.</li>
+          <li><code>main()</code> function C program ka starting point hota hai.</li>
+          <li><code>#include &lt;stdio.h&gt;</code> header file zaroor include karo.</li>
+          <li>Compiler error ko dhyan se padhna coding improve karta hai.</li>
+        </ul>
+
+      </section>
+
+      <!-- Practice -->
+      <section class="mt-10 bg-gradient-to-r from-green-700 to-blue-700 rounded-3xl p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+          🎯 Practice Yourself
+        </h2>
+
+        <p class="text-lg leading-8">
+          Ab khud ek C program likho jo screen par
+          <strong>"I Love C Programming"</strong> print kare.
+        </p>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-12">
+        <a href="statements.html"
+          class="bg-white text-black md:px-8 md:py-4 px-3 py-3 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="../output/printText.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+<script src="../js/examplecard.js"></script>
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(3);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C For Loop</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C For Loop
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="DoWhileLoop.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../BreakandContinue/BreakandContinue.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">For Loop Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab aapko pehle se pata ho ki aapko code kitni baar repeat chalana hai, tab <code class="font-bold text-yellow-300">for</code> loop sabse best choice hoti hai. Yeh initialization, condition, aur counter update ko ek hi line me combine kar deta hai.
+      </p>
+
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl mt-6">
+        <p class="text-2xl font-bold mb-3">For Loop Ke 3 Parts:</p>
+        <ul class="list-disc list-inside text-lg text-gray-300 space-y-3 leading-8">
+          <li><span class="font-bold text-white">Initialization:</span> Loop counter variable create aur set karta hai (ek baar chalta hai).</li>
+          <li><span class="font-bold text-white">Condition:</span> Check hota hai ki loop chalu rahega ya nahi.</li>
+          <li><span class="font-bold text-white">Update (Increment/Decrement):</span> Har step ke baad variable ki value change hoti hai.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Syntax Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Syntax</h2>
+      
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 border border-gray-800 font-mono text-gray-300">
+<pre><code><span class="text-purple-400">for</span> (initialization; condition; increment/decrement) {
+    <span class="text-gray-500">// Code to be executed repeatedly</span>
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Printing Numbers 1 to 5</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> i;
+
+    <span class="text-purple-400">for</span> (i = <span class="text-green-400">1</span>; i &lt;= <span class="text-green-400">5</span>; i++) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%d\n"</span>, i);
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-1">Output:</p>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+      </div>
+    </section>
+
+    <!-- Nested For Loop Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Nested For Loop</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab ek <code class="text-yellow-300">for</code> loop ke andar doosra <code class="text-yellow-300">for</code> loop use hota hai, toh use Nested For Loop kehte hain. Iska istemal patterns, matrices, aur 2D arrays me hota hai.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> i, j;
+
+    <span class="text-purple-400">for</span> (i = <span class="text-green-400">1</span>; i &lt;= <span class="text-green-400">2</span>; i++) {
+        <span class="text-purple-400">for</span> (j = <span class="text-green-400">1</span>; j &lt;= <span class="text-green-400">3</span>; j++) {
+            <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"i=%d, j=%d\n"</span>, i, j);
+        }
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        <code class="font-bold text-yellow-300">for</code> loop sabse concise aur popular loop structures me se ek hai, jo fixed-count iterations ke liye ideal mana jata hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="DoWhileLoop.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../BreakandContinue/BreakandContinue.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(22);
+  }
+</script>
+
+</body>
+</html>

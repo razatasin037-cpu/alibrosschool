@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C else-if Statement</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C else-if Statement
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="IfElse.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="ShortHandIf.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">else-if Ladder Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab hamare paas 2 se zyada conditions check karni hoti hain, tab hum <code class="font-bold text-yellow-300">else-if ladder</code> ka use karte hain. Yeh top se bottom conditions check karta hai aur jahan pehli condition <span class="font-bold">True</span> milti hai, sirf wahi block execute hota hai.
+      </p>
+      
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl mt-6">
+        <p class="text-2xl font-bold mb-3">Key Points:</p>
+        <ul class="list-disc list-inside text-lg text-gray-300 space-y-3 leading-8">
+          <li>Multiple conditions ko sequentially test karne ke liye kaam aata hai.</li>
+          <li>Jaise hi koi condition True hoti hai, baaki ki saari conditions skip ho jaati hain.</li>
+          <li>Agar koi bhi condition True nahi hoti, toh last wala <code class="text-yellow-300">else</code> block run hota hai (agar diya gaya ho).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Syntax Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Syntax</h2>
+      
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 border border-gray-800 font-mono text-gray-300">
+<pre><code><span class="text-purple-400">if</span> (condition1) {
+    <span class="text-gray-500">// Executed if condition1 is true</span>
+    <span class="text-cyan-400">code_block_1</span>;
+} <span class="text-purple-400">else if</span> (condition2) {
+    <span class="text-gray-500">// Executed if condition1 is false and condition2 is true</span>
+    <span class="text-cyan-400">code_block_2</span>;
+} <span class="text-purple-400">else</span> {
+    <span class="text-gray-500">// Executed if all conditions are false</span>
+    <span class="text-cyan-400">code_block_default</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Grade Calculator</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> marks = <span class="text-green-400">85</span>;
+
+    <span class="text-purple-400">if</span> (marks &gt;= <span class="text-green-400">90</span>) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Grade: A+\n"</span>);
+    } <span class="text-purple-400">else if</span> (marks &gt;= <span class="text-green-400">80</span>) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Grade: A\n"</span>);
+    } <span class="text-purple-400">else if</span> (marks &gt;= <span class="text-green-400">70</span>) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Grade: B\n"</span>);
+    } <span class="text-purple-400">else</span> {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Grade: Fail\n"</span>);
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-1">Output:</p>
+        <p>Grade: A</p>
+      </div>
+    </section>
+
+    <!-- Important Rules Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Important Rules to Remember</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl font-bold mb-2">1. Sequence Matters</p>
+          <p class="text-gray-300">Conditions upar se neeche check hoti hain. Isliye specific conditions ko pehle aur general conditions ko baad me rakhna chahiye.</p>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl font-bold mb-2">2. Optional Final Else</p>
+          <p class="text-gray-300">Aakhiri me <code class="text-yellow-300">else</code> lagana optional hota hai, lekin yeh tab kaam aata hai jab baaki saari conditions false ho jayein.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        <code class="font-bold text-yellow-300">else-if ladder</code> multiple choices me se sahi decision lene me madad karta hai. Program execution pehli true condition milte hi complete ho jata hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="IfElse.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="ShortHandIf.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(15);
+  }
+</script>
+
+</body>
+</html>

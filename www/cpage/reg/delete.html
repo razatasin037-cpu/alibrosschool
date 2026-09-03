@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Student</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .form-container {
+        width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-group input {
+        width: 95%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      /* Form ke andar ka delete button */
+      .btn-delete {
+        padding: 10px 20px;
+        background: red;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 4px;
+      }
+      .btn-delete:hover {
+        background: #cc0000;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="bg-blue-600 p-4 shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-white text-xl font-bold tracking-wide"
+          >Bank Portal</a
+        >
+        <div class="space-x-2">
+          <a
+            href="home.html"
+            class="text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded transition duration-200"
+            >Home</a
+          >
+          <a
+            href="create.html"
+            class="text-white bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded transition duration-200"
+            >Create Account</a
+          >
+          <a
+            href="delete.html"
+            class="text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded transition duration-200 font-medium"
+            >Delete Account</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Delete Form Container -->
+    <div class="form-container">
+      <h2 style="margin-top: 0; margin-bottom: 20px; color: #333">
+        Delete Account
+      </h2>
+      <form action="delete.php" method="POST">
+        <div class="form-group">
+          <label for="number">Account Number:</label>
+          <input type="text" id="number" name="number" class="input" required />
+        </div>
+        <button type="submit" class="btn-delete">Delete</button>
+      </form>
+    </div>
+  </body>
+</html>

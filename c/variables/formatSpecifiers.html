@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Format Specifiers</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Format Specifiers
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="createVariables.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="ChangeVariable.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Format Specifiers Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C language me <strong>Format Specifiers</strong> ka use Compiler ko yeh batane ke liye kiya jata hai ki variable me kis type ka data store hai aur usko screen par kaise print ya input karna hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        Format specifiers hamesha percentage symbol <span class="text-yellow-300 font-bold">%</span> se start hote hain aur inka use <code class="text-cyan-400">printf()</code> aur <code class="text-cyan-400">scanf()</code> functions ke sath hota hai.
+      </p>
+    </section>
+
+    <!-- Commonly Used Format Specifiers Table -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Common Format Specifiers List</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Format Specifier</th>
+              <th class="py-4 px-6">Data Type</th>
+              <th class="py-4 px-6">Description</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-300">%d / %i</td>
+              <td class="py-4 px-6 font-semibold text-green-400">int</td>
+              <td class="py-4 px-6">Signed Integer numbers (jaise 10, -50)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-300">%f</td>
+              <td class="py-4 px-6 font-semibold text-green-400">float</td>
+              <td class="py-4 px-6">Decimal values (jaise 12.34)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-300">%lf</td>
+              <td class="py-4 px-6 font-semibold text-green-400">double</td>
+              <td class="py-4 px-6">Double precision floating-point numbers</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-300">%c</td>
+              <td class="py-4 px-6 font-semibold text-green-400">char</td>
+              <td class="py-4 px-6">Single Character (jaise 'A', 'b')</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-300">%s</td>
+              <td class="py-4 px-6 font-semibold text-green-400">char[] / String</td>
+              <td class="py-4 px-6">Sequence of characters / Text</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Code Example Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+  <h2 class="text-4xl font-bold mb-8">Example Program</h2>
+
+  <div class="bg-black rounded-2xl p-6 overflow-x-auto">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// 1. Integer Data Type (Whole Numbers)</span>
+    <span class="text-green-500">int</span> myNum = <span class="text-green-400">15</span>;
+
+    <span class="text-gray-500">// 2. Float Data Type (Decimal Numbers)</span>
+    <span class="text-green-500">float</span> myFloatNum = <span class="text-green-400">5.99</span>;
+
+    <span class="text-gray-500">// 3. Character Data Type (Single Letter)</span>
+    <span class="text-green-500">char</span> myLetter = <span class="text-green-400">'D'</span>;
+
+    <span class="text-gray-500">// Printing using Format Specifiers (%d, %f, %c)</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Integer: %d\n"</span>, myNum);     <span class="text-gray-500">// %d -> int ke liye</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Float: %f\n"</span>, myFloatNum);   <span class="text-gray-500">// %f -> float ke liye</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Character: %c\n"</span>, myLetter);  <span class="text-gray-500">// %c -> char ke liye</span>
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+  </div>
+</section>
+
+    <!-- Output Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Output</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto">
+<pre><code class="text-yellow-400">Integer: 15
+Float: 5.990000
+Character: D</code></pre>
+      </div>
+    </section>
+
+    <!-- Decimal Precision formatting -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Set Precision (Decimal Format)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        By default, Float Value print karte waqt point ke baad 6 digits dikhta hai. Isko control karne ke liye hum <strong class="text-yellow-300">%.1f</strong>, <strong class="text-yellow-300">%.2f</strong> jaisa format style use karte hain.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto">
+<pre><code><span class="text-green-500">float</span> myFloat = <span class="text-green-400">9.5742</span>;
+
+<span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%.1f\n"</span>, myFloat); <span class="text-gray-500">// Output: 9.6</span>
+<span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%.2f\n"</span>, myFloat); <span class="text-gray-500">// Output: 9.57</span></code></pre>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Format Specifiers variables ki values output screen par sahi format me dikhane aur user input receive karne ke liye essential tools hain.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="createVariables.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="ChangeVariable.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    // Variable submenu ke Format Specifiers link highlight karne ke liye
+    document.getElementById("sidebar").innerHTML = createSidebar(6);
+  }
+</script>
+
+</body>
+</html>

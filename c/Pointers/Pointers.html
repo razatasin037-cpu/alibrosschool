@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Pointers - Basics & Memory Addresses</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<nav id="navbar"></nav>
+
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <div id="sidebar"></div>
+
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Pointers
+    </h1>
+
+    <div class="flex justify-between items-center mb-12">
+      <a href="../strings/StringFunctions.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="PointersandArrays.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">Memory Address Kya Hota Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab bhi hum C language mein koi variable create karte hain, toh RAM (Computer Memory) mein us variable ke liye ek space allocate hoti hai. Us memory location ka ek unique address hota hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Kisi variable ka memory address lene ke liye hum Reference Operator (<code class="text-yellow-300 font-bold">&amp;</code>) ka upyog karte hain, aur use print karne ke liye <code class="text-yellow-300 font-bold">%p</code> format specifier ka use hota hai.
+      </p>
+
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+        <p class="text-2xl font-bold mb-3 text-yellow-300">Code Example: Getting Memory Address</p>
+        <div class="bg-black rounded-xl p-4 font-mono text-gray-300 border border-gray-800 mb-4">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myAge = <span class="text-green-400">43</span>;
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Memory Address: %p\n"</span>, &amp;myAge);
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+        </div>
+        <div class="font-mono text-gray-300">
+          <p class="font-bold text-white mb-1 border-b border-gray-700 pb-1">Output (Hexadecimal Format):</p>
+          <p class="text-green-400">Memory Address: 0x7ffe5367e044</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Pointer Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Pointer ek aisa variable hota hai jo kisi doosre variable ka memory address store karta hai.
+      </p>
+
+      <div class="bg-black/50 border border-gray-700 p-6 rounded-2xl mb-8 space-y-4">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-2">Key Highlights:</h3>
+        <ul class="list-disc ml-6 text-lg text-gray-300 leading-8 space-y-2">
+          <li>Pointer declare karne ke liye data type ke baad asterisk symbol (<code class="text-yellow-300 font-bold">*</code>) lagaya jata hai.</li>
+          <li>Pointer ka data type wahi hona chahiye jo us variable ka hai jiska address aap store kar rahe hain.</li>
+        </ul>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-white">Code Example: Pointer Declaration & Usage</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myAge = <span class="text-green-400">43</span>;     <span class="text-gray-500">// Normal variable</span>
+    <span class="text-green-500">int</span>* ptr = &amp;myAge;   <span class="text-gray-500">// Pointer variable storing the address of myAge</span>
+
+    <span class="text-gray-500">// Output the value of myAge</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value of myAge: %d\n"</span>, myAge);
+
+    <span class="text-gray-500">// Output the memory address of myAge</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Memory address of myAge: %p\n"</span>, &amp;myAge);
+
+    <span class="text-gray-500">// Output the memory address stored in ptr</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value stored in ptr: %p\n"</span>, ptr);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Value of myAge: 43</p>
+        <p class="text-green-400">Memory address of myAge: 0x7ffe5367e044</p>
+        <p class="text-green-400">Value stored in ptr: 0x7ffe5367e044</p>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">Dereferencing (Pointer Se Value Access Karna)</h2>
+      
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab aapke paas pointer mein kisi variable ka address hota hai, toh aap Dereference Operator (<code class="text-yellow-300 font-bold">*</code>) ka use karke us address par rakhi actual value ko access ya modify kar sakte hain.
+      </p>
+
+      <h3 class="text-2xl font-bold mb-4 text-white">Code Example: Dereferencing</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myAge = <span class="text-green-400">43</span>;
+    <span class="text-green-500">int</span>* ptr = &amp;myAge;
+
+    <span class="text-gray-500">// Reference: Outputting address stored in ptr</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Address: %p\n"</span>, ptr);
+
+    <span class="text-gray-500">// Dereference: Outputting the value of the variable pointed by ptr</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300 font-bold">"Value: %d\n"</span>, *ptr);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p>Address: 0x7ffe5367e044</p>
+        <p class="text-green-400">Value: 43</p>
+      </div>
+    </section>
+
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="../strings/StringFunctions.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="PointersandArrays.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

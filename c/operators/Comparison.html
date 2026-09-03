@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Comparison Operators</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Comparison Operators 
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Assignment.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Logical.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Comparison Operators Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        **Comparison (ya Relational) Operators** ka use do values ya variables ko compare karne ke liye kiya jata hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        C language me Boolean (<code class="text-yellow-300 font-bold">true/false</code>) built-in data type nahi hota (jab tak <code class="text-green-400 font-mono">&lt;stdbool.h&gt;</code> na use karein). Isliye comparison result integers me aata hai:
+      </p>
+      <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-2 mt-4">
+        <li><strong class="text-green-400">1 (True):</strong> Agar condition sahi (satisfy) hai.</li>
+        <li><strong class="text-red-400">0 (False):</strong> Agar condition galat hai.</li>
+      </ul>
+    </section>
+
+    <!-- Table Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">List of Comparison Operators</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Operator</th>
+              <th class="py-4 px-6">Name</th>
+              <th class="py-4 px-6">Description</th>
+              <th class="py-4 px-6 text-yellow-300">Example (a = 10, b = 20)</th>
+              <th class="py-4 px-6 text-cyan-300">Result</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">==</td>
+              <td class="py-4 px-6 text-white font-bold">Equal to</td>
+              <td class="py-4 px-6">Check karta hai ki kya dono values barabar hain</td>
+              <td class="py-4 px-6 font-mono text-gray-300">a == b</td>
+              <td class="py-4 px-6 font-mono text-red-400 font-bold">0 (False)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">!=</td>
+              <td class="py-4 px-6 text-white font-bold">Not Equal to</td>
+              <td class="py-4 px-6">Check karta hai ki kya dono values barabar nahi hain</td>
+              <td class="py-4 px-6 font-mono text-gray-300">a != b</td>
+              <td class="py-4 px-6 font-mono text-green-400 font-bold">1 (True)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">&gt;</td>
+              <td class="py-4 px-6 text-white font-bold">Greater than</td>
+              <td class="py-4 px-6">Check karta hai ki kya pehli value doosri se badi hai</td>
+              <td class="py-4 px-6 font-mono text-gray-300">a &gt; b</td>
+              <td class="py-4 px-6 font-mono text-red-400 font-bold">0 (False)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">&lt;</td>
+              <td class="py-4 px-6 text-white font-bold">Less than</td>
+              <td class="py-4 px-6">Check karta hai ki kya pehli value doosri se choti hai</td>
+              <td class="py-4 px-6 font-mono text-gray-300">a &lt; b</td>
+              <td class="py-4 px-6 font-mono text-green-400 font-bold">1 (True)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">&gt;=</td>
+              <td class="py-4 px-6 text-white font-bold">Greater than or Equal to</td>
+              <td class="py-4 px-6">Check karta hai ki kya pehli value badi ya barabar hai</td>
+              <td class="py-4 px-6 font-mono text-gray-300">a &gt;= 10</td>
+              <td class="py-4 px-6 font-mono text-green-400 font-bold">1 (True)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">&lt;=</td>
+              <td class="py-4 px-6 text-white font-bold">Less than or Equal to</td>
+              <td class="py-4 px-6">Check karta hai ki kya pehli value choti ya barabar hai</td>
+              <td class="py-4 px-6 font-mono text-gray-300">b &lt;= 15</td>
+              <td class="py-4 px-6 font-mono text-red-400 font-bold">0 (False)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Common Mistake Warning -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Common Beginners Mistake ⚠️</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-red-500/50 p-6 rounded-2xl">
+          <p class="text-xl text-red-400 font-bold mb-2">❌ Incorrect: Assignment Operator</p>
+          <p class="text-lg text-gray-300 mb-2">Single equal (<code class="text-yellow-300 font-mono font-bold">=</code>) value assign karne ke liye hota hai.</p>
+          <div class="bg-black p-3 rounded-lg text-red-400 font-mono">if (x = 5) // Always True! Modifies x</div>
+        </div>
+
+        <div class="bg-black/60 border border-green-500/50 p-6 rounded-2xl">
+          <p class="text-xl text-green-400 font-bold mb-2">✅ Correct: Comparison Operator</p>
+          <p class="text-lg text-gray-300 mb-2">Double equal (<code class="text-yellow-300 font-mono font-bold">==</code>) values compare karne ke liye hota hai.</p>
+          <div class="bg-black p-3 rounded-lg text-green-400 font-mono">if (x == 5) // Compares x with 5</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Comparison Operators</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> age = <span class="text-green-400">18</span>;
+    <span class="text-green-500">int</span> passingScore = <span class="text-green-400">50</span>;
+    <span class="text-green-500">int</span> userScore = <span class="text-green-400">75</span>;
+
+    <span class="text-gray-500">// Returns 1 (True) or 0 (False)</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Is eligible to vote? (age &gt;= 18): %d\n"</span>, age &gt;= <span class="text-green-400">18</span>);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Is score equal to passing? (userScore == passingScore): %d\n"</span>, userScore == passingScore);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Has passed test? (userScore &gt;= passingScore): %d\n"</span>, userScore &gt;= passingScore);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Is score not equal to 100?: %d\n"</span>, userScore != <span class="text-green-400">100</span>);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Is eligible to vote? (age &gt;= 18): 1</p>
+        <p class="text-gray-300 font-mono">Is score equal to passing? (userScore == passingScore): 0</p>
+        <p class="text-gray-300 font-mono">Has passed test? (userScore &gt;= passingScore): 1</p>
+        <p class="text-gray-300 font-mono">Is score not equal to 100?: 1</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Comparison operators ka mostly use <code class="text-yellow-300 font-bold">if-else</code> conditions aur loops me control flow structure tay karne ke liye kiya jata hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Assignment.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Logical.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(12);
+  }
+</script>
+
+</body>
+</html>

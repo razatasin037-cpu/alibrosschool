@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Numeric Data Types - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- JS Files: Order Fix -->
+<script src="./js/card.js"></script>
+<script src="../js/sidebar.js"></script>
+<script src="../../js/insert.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar container with width constraint -->
+<aside class="w-full md:w-[320px] shrink-0" id="sidebar"></aside>
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Numeric Data Types
+        </h1>
+<div class="flex justify-between items-center">
+<a href="datatypes.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+
+              Previous
+            </button>
+</a>
+<a href="booleanss.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Numeric Data Types
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein numbers store karne ke liye mainly
+            <span class="text-[#4d6fff] font-bold">int</span>,
+            <span class="text-[#4d6fff] font-bold">float</span>
+            aur
+            <span class="text-[#4d6fff] font-bold">double</span>
+            ka use kiya jata hai.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            Agar number mein decimal nahi hai, to
+            <span class="text-white font-semibold">int</span>
+            useful hota hai. Decimal numbers ke liye
+            <span class="text-white font-semibold">float</span>
+            ya
+            <span class="text-white font-semibold">double</span>
+            use kar sakte hain.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Integer Number</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int myNum = 1000;
+cout &lt;&lt; myNum;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">int</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">int</span>
+            whole numbers store karta hai. Ismein decimal values nahi hoti hain.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">int Example</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int age = 25;
+int score = 100;
+cout &lt;&lt; age &lt;&lt; endl;
+cout &lt;&lt; score;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">float</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">float</span>
+            decimal ya floating-point numbers store karne ke liye use hota hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">float Example</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>float myNum = 5.75;
+cout &lt;&lt; myNum;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">double</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+<span class="text-[#4d6fff] font-bold">double</span>
+            bhi decimal numbers ke liye use hota hai aur
+            <span class="text-white font-semibold">float</span>
+            se zyada precision provide karta hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">double Example</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>double myNum = 19.99;
+cout &lt;&lt; myNum;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            float vs double
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Floating-point number ki precision batati hai ki decimal point ke
+            baad kitne digits accurately store kiye ja sakte hain.
+          </p>
+<div class="bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden">
+<div class="grid grid-cols-3 bg-[#111827] border-b border-white/10 px-5 py-5 text-lg sm:text-xl font-bold">
+<div>Type</div>
+<div>Precision</div>
+<div>Use</div>
+</div>
+<div class="grid grid-cols-3 px-5 py-5 border-b border-white/10 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">float</div>
+<div class="text-gray-300">6-7 digits</div>
+<div class="text-gray-300">Decimal values</div>
+</div>
+<div class="grid grid-cols-3 px-5 py-5 text-lg sm:text-xl">
+<div class="text-[#4d6fff] font-bold">double</div>
+<div class="text-gray-300">About 15 digits</div>
+<div class="text-gray-300">More precise calculations</div>
+</div>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">float and double</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>float f = 5.1234567;
+double d = 5.123456789012345;
+cout &lt;&lt; f &lt;&lt; endl;
+cout &lt;&lt; d;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Scientific Numbers
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein floating-point number ko scientific notation mein bhi likh
+            sakte hain.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            Iske liye
+            <span class="text-[#4d6fff] font-bold">e</span>
+            ya
+            <span class="text-[#4d6fff] font-bold">E</span>
+            ka use kiya jata hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Scientific Numbers</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>float f1 = 35e3;
+double d1 = 12E4;
+cout &lt;&lt; f1 &lt;&lt; endl;
+cout &lt;&lt; d1;</code></pre>
+    </div>
+  </div>
+</div>
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>
+                Whole numbers ke liye
+                <span class="text-[#4d6fff] font-bold">int</span>
+                use karein.
+              </li>
+<li>
+                Decimal numbers ke liye
+                <span class="text-[#4d6fff] font-bold">float</span>
+                ya
+                <span class="text-[#4d6fff] font-bold">double</span>
+                use karein.
+              </li>
+<li>
+<span class="text-[#4d6fff] font-bold">double</span>
+                generally
+                <span class="text-white font-semibold">float</span>
+                se zyada precision deta hai.
+              </li>
+<li>
+                Scientific numbers mein
+                <span class="text-[#4d6fff] font-bold">e</span>
+                ya
+                <span class="text-[#4d6fff] font-bold">E</span>
+                use kar sakte hain.
+              </li>
+</ul>
+</div>
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="datatypes.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+
+                Previous
+              </button>
+</a>
+<a href="booleanss.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(0);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Real-Life Example - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar Container -->
+<aside class="w-full md:w-[320px] shrink-0" id="sidebar"></aside>
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Real-Life Example
+        </h1>
+<!-- Top Navigation -->
+<div class="flex justify-between items-center">
+<a href="auto.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="../opretor/operators.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Practical Examples
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Ab hum C++ ke variables aur data types ko use karke kuch practical
+            real-life examples dekhenge.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            In examples se aap samajh sakte hain ki real programs mein variables
+            aur different data types ka use kaise hota hai.
+          </p>
+<h2 class="text-3xl sm:text-4xl font-bold mb-8">
+            Student Ki Information
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Hum ek college student ki ID, age, fees aur grade ko different
+            variables mein store kar sakte hain.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Student Ki Information</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int studentID = 15;
+int studentAge = 23;
+float studentFee = 75.25;
+char studentGrade = &#x27;B&#x27;;
+
+cout &lt;&lt; &quot;Student ID: &quot; &lt;&lt; studentID &lt;&lt; &quot;\n&quot;;
+cout &lt;&lt; &quot;Student Age: &quot; &lt;&lt; studentAge &lt;&lt; &quot;\n&quot;;
+cout &lt;&lt; &quot;Student Fee: &quot; &lt;&lt; studentFee &lt;&lt; &quot;\n&quot;;
+cout &lt;&lt; &quot;Student Grade: &quot; &lt;&lt; studentGrade;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Rectangle Ka Area
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Rectangle ka area nikalne ke liye hum length aur width ko variables
+            mein store kar sakte hain.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Rectangle Ka Area</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int length = 4;
+int width = 6;
+int area = length * width;
+cout &lt;&lt; &quot;Area: &quot; &lt;&lt; area;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Shopping Total Calculate Karna
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Shopping system mein items ki quantity aur har item ki price ko
+            store karke total cost calculate kar sakte hain.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Shopping Total Calculate Karna</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int items = 50;
+double costPerItem = 9.99;
+double totalCost = items * costPerItem;
+char currency = &#x27;$&#x27;;
+
+cout &lt;&lt; &quot;Total cost: &quot; &lt;&lt; totalCost &lt;&lt; currency;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Welcome Message
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            String variables ka use karke user ke liye ek simple welcome message
+            bana sakte hain.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Welcome Message</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>string message = &quot;Good to see you, &quot;;
+string name = &quot;Ali&quot;;
+cout &lt;&lt; message + name;</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Voting Age Check
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Age aur voting age ko compare karke hum check kar sakte hain ki
+            person vote karne ke liye eligible hai ya nahi.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Voting Age Check</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int myAge = 25;
+int votingAge = 18;
+
+if (myAge &gt;= votingAge) {
+    cout &lt;&lt; &quot;Old enough to vote!&quot;;
+} else {
+    cout &lt;&lt; &quot;Not old enough to vote.&quot;;
+}</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Even Ya Odd Number
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Kisi number ko 2 se divide karke check kar sakte hain ki number even
+            hai ya odd.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Even Ya Odd Number</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int myNum = 5;
+
+if (myNum % 2 == 0) {
+    cout &lt;&lt; myNum &lt;&lt; &quot; is even.&quot;;
+} else {
+    cout &lt;&lt; myNum &lt;&lt; &quot; is odd.&quot;;
+}</code></pre>
+    </div>
+  </div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Temperature Check
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Temperature ki value ko check karke hum bata sakte hain ki weather
+            freezing, cool ya warm hai.
+          </p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4">
+    <h3 class="text-xl sm:text-2xl font-bold text-white">Temperature Check</h3>
+  </div>
+  <div class="p-6 sm:p-8">
+    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
+      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
+      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int temperature = 30;
+
+if (temperature &lt; 0) {
+    cout &lt;&lt; &quot;It&#x27;s freezing!&quot;;
+} else if (temperature &lt; 20) {
+    cout &lt;&lt; &quot;It&#x27;s cool.&quot;;
+} else {
+    cout &lt;&lt; &quot;It&#x27;s warm.&quot;;
+}</code></pre>
+    </div>
+  </div>
+</div>
+<!-- Important Summary Box -->
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">
+              Is Section Se Kya Seekha?
+            </h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>
+                Variables ka use real-world information store karne ke liye kiya
+                ja sakta hai.
+              </li>
+<li>
+                Different data types ko ek hi program mein use kiya ja sakta
+                hai.
+              </li>
+<li>Variables ke saath calculations perform kar sakte hain.</li>
+<li>
+                Comparison aur conditions ki madad se decisions liye ja sakte
+                hain.
+              </li>
+<li>
+                C++ ke basic concepts ko combine karke practical programs banaye
+                ja sakte hain.
+              </li>
+</ul>
+</div>
+<!-- Bottom Navigation -->
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="auto.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="../opretor/operators.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<!-- Scripts Implementation -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(0);
+  }
+});
+</script>
+</body>
+</html>
