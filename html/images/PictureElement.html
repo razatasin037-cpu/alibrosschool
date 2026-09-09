@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Picture Element - Complete Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <!-- Page Main Heading -->
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML &lt;picture&gt; Element
+        </h1>
+
+        <!-- Top Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./BackgroundImages.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../favicon/Favicon.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Banner / Introductory Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Picture Element Guide
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML <code class="text-yellow-400">&lt;picture&gt;</code> element ka use alag-alag screen sizes (Mobile, Tablet, Desktop) ya device types ke liye alag-alag images show karne ke liye kiya jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Ise <strong>Responsive Images</strong> aur <strong>Modern Image Formats</strong> (jaise AVIF/WebP) serve karne ke liye sabse best tarika mana jata hai.
+          </p>
+        </div>
+
+        <!-- SECTION 1: Basic Syntax & Live Demo -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            1. Basic &lt;picture&gt; Syntax & Media Query
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Browser upar se niche tak <code class="text-yellow-400">&lt;source&gt;</code> tags ko check karta hai. Pehla matching condition waala image load hota hai, otherwise fallback <code class="text-yellow-400">&lt;img&gt;</code> tag render hota hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;picture&gt;
+  &lt;!-- Large Screens (Min 768px) --&gt;
+  &lt;source 
+    <span class="text-yellow-400">media="(min-width: 768px)"</span> 
+    srcset="desktop.jpg" /&gt;
+
+  &lt;!-- Small Screens (Min 480px) --&gt;
+  &lt;source 
+    <span class="text-yellow-400">media="(min-width: 480px)"</span> 
+    srcset="tablet.jpg" /&gt;
+
+  &lt;!-- Fallback Default Image --&gt;
+  &lt;img 
+    <span class="text-yellow-400">src="mobile.jpg" alt="Responsive View"</span> /&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+            <!-- Live Visual Demo -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex flex-col items-center justify-center text-center">
+              <picture class="w-full flex justify-center">
+                <!-- Large Screen Image -->
+                <source 
+                  media="(min-width: 768px)" 
+                  srcset="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop" 
+                />
+                <!-- Small Screen / Fallback Image -->
+                <img 
+                  src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=400&auto=format&fit=crop" 
+                  alt="Responsive Picture Demo" 
+                  class="rounded-lg shadow object-cover h-48 w-full max-w-sm"
+                />
+              </picture>
+              <p class="text-xs text-gray-500 mt-3 font-semibold">
+                💡 Screen ko resize karke dekhein: Desktop par Laptop aur Mobile par Phone image swapp hogi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Key Use Cases -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            2. Main Use Cases of &lt;picture&gt; Tag
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Developer do sabse bade kaaranon se <code class="text-yellow-400">&lt;picture&gt;</code> tag ka use karte hain:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Media Query / Art Direction -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155]">
+              <div class="inline-block px-3 py-1 bg-blue-600/30 text-blue-400 font-bold text-xs rounded mb-3">
+                Art Direction
+              </div>
+              <h4 class="text-white font-semibold text-lg mb-2">Screen Size Adaptability</h4>
+              <p class="text-gray-400 text-xs mb-3">Desktop ke liye wide landscape image aur Mobile ke liye cropped vertical image dikhana.</p>
+              <code class="text-xs text-yellow-400 block bg-[#0f172a] p-2 rounded font-mono">media="(min-width: 650px)"</code>
+            </div>
+
+            <!-- Format Support -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155]">
+              <div class="inline-block px-3 py-1 bg-green-600/30 text-green-400 font-bold text-xs rounded mb-3">
+                Format Selection
+              </div>
+              <h4 class="text-white font-semibold text-lg mb-2">Modern Format Support</h4>
+              <p class="text-gray-400 text-xs mb-3">Browser ke according lightweight modern formats (AVIF/WebP) load karna, purane browser ke liye JPG/PNG fallback dena.</p>
+              <code class="text-xs text-yellow-400 block bg-[#0f172a] p-2 rounded font-mono">type="image/webp"</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Tags & Attributes Reference Table -->
+        <div id="table-section" class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            3. Tags & Attributes Reference
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#334155] text-gray-400 text-sm">
+                <th class="py-3 px-4">Tag / Attribute</th>
+                <th class="py-3 px-4">Value / Type</th>
+                <th class="py-3 px-4">Description</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-200 divide-y divide-[#334155]/50">
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">&lt;picture&gt;</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">Wrapper Tag</td>
+                <td class="py-3 px-4">Multiple &lt;source&gt; tags aur ek fallback &lt;img&gt; tag ka main container.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">&lt;source&gt;</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">Child Tag</td>
+                <td class="py-3 px-4">Specific condition waale image files define karta hai.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">srcset</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">URL path</td>
+                <td class="py-3 px-4">&lt;source&gt; tag ke andar image ka source file URL batata hai.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">media</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">Media Query (e.g. min-width)</td>
+                <td class="py-3 px-4">Screen size condition define karta hai jispar image trigger hoti hai.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">type</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">MIME Type (e.g. image/webp)</td>
+                <td class="py-3 px-4">Image format define karta hai taaki browser support ke hisab se pick kare.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">&lt;img&gt;</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">Required Tag</td>
+                <td class="py-3 px-4">Last fallback tag - iske bina &lt;picture&gt; screen par render nahi hota.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Bottom Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./BackgroundImages.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../favicon/Favicon.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(14);
+    </script>
+  </body>
+</html>

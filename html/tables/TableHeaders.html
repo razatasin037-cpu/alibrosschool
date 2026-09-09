@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Table Headers - Complete Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <!-- Page Main Heading -->
+        <h1 class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight">
+          HTML Table Headers
+        </h1>
+
+        <!-- Top Page Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="./TableSizes.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableStyling.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Introductory Card -->
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            What are Table Headers (&lt;th&gt;)?
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            HTML table me header information dene ke liye <code class="text-yellow-400">&lt;th&gt;</code> element ka use kiya jata hai. By default, browser <code class="text-yellow-400">&lt;th&gt;</code> elements ke text ko <strong>bold</strong> aur <strong>center-aligned</strong> dikhata hai.
+          </p>
+        </div>
+
+        <!-- SECTION 1: Vertical vs Horizontal Headers -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            1. Table Header Placement
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Headers ko aap table ke top (columns ke liye) ya row ke starting me (vertical header ke liye) place kar sakte hain.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">&lt;table&gt;</span>
+  <span class="text-blue-400">&lt;tr&gt;</span>
+    <span class="text-blue-400">&lt;th&gt;</span>Name<span class="text-blue-400">&lt;/th&gt;</span>
+    <span class="text-blue-400">&lt;th&gt;</span>Age<span class="text-blue-400">&lt;/th&gt;</span>
+  <span class="text-blue-400">&lt;/tr&gt;</span>
+  <span class="text-blue-400">&lt;tr&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>Aman<span class="text-blue-400">&lt;/td&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>24<span class="text-blue-400">&lt;/td&gt;</span>
+  <span class="text-blue-400">&lt;/tr&gt;</span>
+<span class="text-blue-400">&lt;/table&gt;</span></code></pre>
+            </div>
+
+            <!-- Visual Result Box -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Visual Output</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse border border-slate-700">
+                  <thead>
+                    <tr class="bg-slate-800">
+                      <th class="p-3 border border-slate-700 text-yellow-400 text-center font-bold">Name</th>
+                      <th class="p-3 border border-slate-700 text-yellow-400 text-center font-bold">Age</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="p-3 border border-slate-700 text-gray-300 text-center">Aman</td>
+                      <td class="p-3 border border-slate-700 text-gray-300 text-center">24</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Header Alignment & Attributes -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            2. Important Header Attributes
+          </h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <span class="inline-block px-3 py-1 bg-blue-600/30 text-blue-400 font-bold text-sm rounded-lg mb-3">Accessibility</span>
+              <h4 class="text-white font-bold text-xl mb-2">`scope` Attribute</h4>
+              <p class="text-gray-300 text-sm leading-relaxed mb-3">
+                Screen readers ko batane ke liye ki header row ke liye hai ya column ke liye:
+              </p>
+              <div class="bg-[#0f172a] p-3 rounded-lg font-mono text-xs text-yellow-400">
+                &lt;th scope="col"&gt; ya &lt;th scope="row"&gt;
+              </div>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <span class="inline-block px-3 py-1 bg-green-600/30 text-green-400 font-bold text-sm rounded-lg mb-3">Styling</span>
+              <h4 class="text-white font-bold text-xl mb-2">Text Alignment</h4>
+              <p class="text-gray-300 text-sm leading-relaxed mb-3">
+                CSS <code class="text-yellow-400">text-align: left;</code> use karke default center alignment ko change kar sakte hain:
+              </p>
+              <div class="bg-[#0f172a] p-3 rounded-lg font-mono text-xs text-yellow-400">
+                th { text-align: left; }
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Page Navigation -->
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="./TableSizes.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableStyling.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(17);
+    </script>
+  </body>
+</html>

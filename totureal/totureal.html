@@ -6,8 +6,6 @@
     <title>Modern Learning Platform</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link
       rel="stylesheet"
@@ -59,7 +57,7 @@
               class="text-[#4d6fff] drop-shadow-[0_0_35px_rgba(77,111,255,0.6)]"
               >1200+ Free</span
             >
-
+          
             <span
               class="text-[#4d6fff] drop-shadow-[0_0_35px_rgba(77,111,255,0.6)]"
               >Tutorials</span
@@ -148,7 +146,7 @@
           >
             <span class="mr-2">Popular:</span>
             <a
-              href="#"
+              href="/html/home/Home.html"
               class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
               >HTML</a
             >
@@ -158,23 +156,23 @@
               >CSS</a
             >
               <a
-              href="/c/home.html"
+              href="/c/home/home.html"
               class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
               >C</a
             >
-            <a
+              <a
               href="/C++/home/c++tutoreal.html"
               class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
               >C++</a
             >
             <a
-              href="#"
+              href="/javascript/home/Home.html"
               class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
               >JavaScript</a
             >
-
+          
             <a
-              href="../php/home/home.html"
+              href="/php/home/home.html"
               class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
               >PHP</a
             >
@@ -193,184 +191,195 @@
       </section>
 <!-- Trending Tutorials -->
       <section class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
-        <div class="flex items-center gap-4 mb-10">
+  <div class="flex items-center gap-4 mb-10">
+    <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
+      Trending Tutorials
+    </h2>
+
+    <span
+      class="px-4 py-1 rounded-full bg-[#0d33cb] text-white text-xs sm:text-sm font-bold tracking-wider uppercase"
+    >
+      Popular
+    </span>
+
+    <div class="h-[1px] bg-white/10 flex-1"></div>
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  >
+
+ <!--HTML-->
+    <a href="/html/home/Home.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#1</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center font-bold text-orange-500 text-lg"
+      >
+        5
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">HTML</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Web Dev</p>
+      </div>
+    </a>
+
+    <!--CSS-->
+    <a href="/css/index.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#2</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-lg"
+      >
+        3
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">CSS</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Web Dev</p>
+      </div>
+    </a>
+
+
+
+    <!--C-->
+    <a href="/c/home/home.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#3</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-sm"
+      >
+        C
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">C</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Programming</p>
+      </div>
+    </a>
+
+    <!--C++-->
+    <a href="/C++/home/c++tutoreal.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#4</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-sm"
+      >
+        C++
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">C++</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Programming</p>
+      </div>
+    </a>
+
+    <!--JavaScript-->
+    <a href="/javascript/home/Home.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#5</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center font-bold text-yellow-500 text-lg"
+      >
+        JS
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">JavaScript</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Programming</p>
+      </div>
+    </a>
+
+    <!--SQL-->
+    <a href="/sql/index.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#6</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-sm"
+      >
+        SQL
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">SQL</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Databases</p>
+      </div>
+    </a>
+
+   
+    <!--PHP-->
+    <a href="/php/home/home.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#7</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center font-bold text-indigo-400 text-xs"
+      >
+        PHP
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">PHP</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Backend</p>
+      </div>
+    </a>
+
+    <!--MySQL-->
+    <a href="/mysql/index.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#8</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center font-bold text-amber-400 text-xs text-center"
+      >
+        MySQL
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">MySQL</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Databases</p>
+      </div>
+    </a>
+  </div>
+</section>
+<!--Learning Paths-->
+      <section class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-12">
   <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
-    Trending Tutorials
+    Learning Paths
   </h2>
 
   <span
-    class="px-4 py-1 rounded-full bg-[#0d33cb] text-white text-xs sm:text-sm font-bold tracking-wider uppercase"
+    class="w-fit px-4 py-1 rounded-full bg-[#0633e6] text-white text-xs sm:text-sm font-bold tracking-wider uppercase"
   >
-    Popular
+    Guided
   </span>
 
-  <div class="h-[1px] bg-white/10 flex-1"></div>
+  <div class="hidden sm:block h-[1px] bg-white/10 flex-1"></div>
 </div>
-
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-        >
-        <!--C-->
-          <a href="/c/home.html"
-            class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
-          >
-            <span
-              class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
-              >#1</span
-            >
-            <div
-              class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-sm"
-            >
-              C
-            </div>
-            <div>
-              <h3 class="font-extrabold text-lg text-white">C</h3>
-              <p class="text-gray-400 text-xs sm:text-sm">Programming</p>
-            </div>
-          </a>
-        <!--C++-->
-          <a href="/C++/c++tutoreal.html"
-            class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
-          >
-            <span
-              class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
-              >#2</span
-            >
-            <div
-              class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-sm"
-            >
-              C++
-            </div>
-            <div>
-              <h3 class="font-extrabold text-lg text-white">C++</h3>
-              <p class="text-gray-400 text-xs sm:text-sm">Programming</p>
-            </div>
-          </a>
-<!--JavaScript-->
-          <div
-            class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
-          >
-            <span
-              class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
-              >#3</span
-            >
-            <div
-              class="w-12 h-12 shrink-0 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center font-bold text-yellow-500 text-lg"
-            >
-              JS
-            </div>
-            <div>
-              <h3 class="font-extrabold text-lg text-white">JavaScript</h3>
-              <p class="text-gray-400 text-xs sm:text-sm">Programming</p>
-            </div>
-          </div>
-<!--SQL-->
-          <div
-            class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
-          >
-            <span
-              class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
-              >#4</span
-            >
-            <div
-              class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-sm"
-            >
-              SQL
-            </div>
-            <div>
-              <h3 class="font-extrabold text-lg text-white">SQL</h3>
-              <p class="text-gray-400 text-xs sm:text-sm">Databases</p>
-            </div>
-          </div>
-<!--ReactJS-->
-          <div
-            class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
-          >
-            <span
-              class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
-              >#5</span
-            >
-            <div
-              class="w-12 h-12 shrink-0 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center font-bold text-cyan-400 text-lg"
-            >
-              ⚛
-            </div>
-            <div>
-              <h3 class="font-extrabold text-lg text-white">ReactJS</h3>
-              <p class="text-gray-400 text-xs sm:text-sm">Web Dev</p>
-            </div>
-          </div>
-<!--Spring Boot-->
-          <div
-            class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
-          >
-            <span
-              class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
-              >#6</span
-            >
-            <div
-              class="w-12 h-12 shrink-0 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center font-bold text-red-400 text-xs text-center"
-            >
-              Spring
-            </div>
-            <div>
-              <h3 class="font-extrabold text-lg text-white">Spring Boot</h3>
-              <p class="text-gray-400 text-xs sm:text-sm">Java</p>
-            </div>
-          </div>
-<!--HTML-->
-          <div
-            class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
-          >
-            <span
-              class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
-              >#7</span
-            >
-            <div
-              class="w-12 h-12 shrink-0 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center font-bold text-orange-500 text-lg"
-            >
-              5
-            </div>
-            <div>
-              <h3 class="font-extrabold text-lg text-white">HTML</h3>
-              <p class="text-gray-400 text-xs sm:text-sm">Web Dev</p>
-            </div>
-          </div>
-<!--CSS-->
-          <div
-            class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
-          >
-            <span
-              class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
-              >#8</span
-            >
-            <div
-              class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-lg"
-            >
-              3
-            </div>
-            <div>
-              <h3 class="font-extrabold text-lg text-white">CSS</h3>
-              <p class="text-gray-400 text-xs sm:text-sm">Web Dev</p>
-            </div>
-          </div>
-        </div>
-      </section>
-<!--Learning Paths-->
-      <section class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-12">
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
-            Learning Paths
-          </h2>
-
-          <span
-            class="w-fit px-4 py-1 rounded-full bg-[#0633e6] text-white text-xs sm:text-sm font-bold tracking-wider uppercase"
-          >
-            Guided
-          </span>
-
-          <div class="hidden sm:block h-[1px] bg-white/10 flex-1"></div>
-        </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div
@@ -757,5 +766,7 @@
       </section>
     </main>
     <footer id="footer"></footer>
+
+    
   </body>
 </html>

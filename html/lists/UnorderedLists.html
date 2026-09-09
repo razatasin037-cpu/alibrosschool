@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Unordered Lists - Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <!-- Page Main Heading -->
+        <h1 class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight">
+          HTML Unordered Lists
+        </h1>
+
+        <!-- Top Page Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="./Lists.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./OrderedLists.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Introductory Card -->
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            Unordered HTML List Kya Hai?
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            Ek unordered list <code class="text-blue-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;ul&gt;</code> tag se shuru hoti hai. Iske items me koi particular order ya numbering nahi hoti, balki yeh bullet points ke roop me dikhayi dete hain.
+          </p>
+        </div>
+
+        <!-- Basic Unordered List Example -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Basic Example
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            Unordered list banane ke liye har item ko <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;li&gt;</code> tag ke andar rakha jata hai:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Code Block -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">&lt;ul&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>Coffee<span class="text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>Tea<span class="text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>Milk<span class="text-blue-400">&lt;/li&gt;</span>
+<span class="text-blue-400">&lt;/ul&gt;</span></code></pre>
+            </div>
+
+            <!-- Visual Result -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <span class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">Output Preview:</span>
+              <ul class="list-disc list-inside space-y-2 text-gray-200 text-xl">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bullet Style Types Section -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Unordered List Item Markers (CSS Styles)
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            CSS property <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">list-style-type</code> ka use karke aap bullet markers ki shape badal sakte hain:
+          </p>
+
+          <div class="space-y-6">
+            <!-- Disc Style -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <span class="text-blue-400 font-mono text-lg font-bold">list-style-type: disc;</span>
+                <p class="text-gray-400 text-sm mt-1">Default shape (Filled black circle)</p>
+              </div>
+              <ul class="space-y-1 text-gray-200" style="list-style-type: disc; padding-left: 20px;">
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+            </div>
+
+            <!-- Circle Style -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <span class="text-green-400 font-mono text-lg font-bold">list-style-type: circle;</span>
+                <p class="text-gray-400 text-sm mt-1">Hollow circle bullet marker</p>
+              </div>
+              <ul class="space-y-1 text-gray-200" style="list-style-type: circle; padding-left: 20px;">
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+            </div>
+
+            <!-- Square Style -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <span class="text-purple-400 font-mono text-lg font-bold">list-style-type: square;</span>
+                <p class="text-gray-400 text-sm mt-1">Solid square bullet marker</p>
+              </div>
+              <ul class="space-y-1 text-gray-200" style="list-style-type: square; padding-left: 20px;">
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+            </div>
+
+            <!-- None Style -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <span class="text-red-400 font-mono text-lg font-bold">list-style-type: none;</span>
+                <p class="text-gray-400 text-sm mt-1">Bina kisi bullet marker ke (Navigation menus ke liye best)</p>
+              </div>
+              <ul class="space-y-1 text-gray-200" style="list-style-type: none; padding-left: 0;">
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nested Unordered Lists -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Nested Unordered Lists
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            Aap ek list ke andar doosri list bhi daal sakte hain (jise Nested List kaha jata hai):
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-sm overflow-x-auto">
+<pre class="text-gray-300 leading-relaxed"><code><span class="text-blue-400">&lt;ul&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>Coffee<span class="text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>Tea
+    <span class="text-blue-400">&lt;ul&gt;</span>
+      <span class="text-blue-400">&lt;li&gt;</span>Black tea<span class="text-blue-400">&lt;/li&gt;</span>
+      <span class="text-blue-400">&lt;li&gt;</span>Green tea<span class="text-blue-400">&lt;/li&gt;</span>
+    <span class="text-blue-400">&lt;/ul&gt;</span>
+  <span class="text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>Milk<span class="text-blue-400">&lt;/li&gt;</span>
+<span class="text-blue-400">&lt;/ul&gt;</span></code></pre>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <span class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">Output Preview:</span>
+              <ul class="list-disc list-inside space-y-1 text-gray-200 text-lg">
+                <li>Coffee</li>
+                <li>Tea
+                  <ul class="list-circle list-inside ml-6 space-y-1 text-gray-400" style="list-style-type: circle;">
+                    <li>Black tea</li>
+                    <li>Green tea</li>
+                  </ul>
+                </li>
+                <li>Milk</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Page Navigation -->
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="./Lists.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./OrderedLists.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(18);
+    </script>
+  </body>
+</html>

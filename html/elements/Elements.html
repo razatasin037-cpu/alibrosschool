@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Elements</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Elements
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../editors/Editors.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../attributes/attributes.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Element Kya Hota Hai?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            An <strong>HTML Element</strong> Start Tag se lekar End Tag tak ka sab kuch hota hai. Isme content tag ke andar likha jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Syntax Format: <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded">&lt;tagname&gt; Content yahan likhein... &lt;/tagname&gt;</code>
+          </p>
+        </div>
+
+       
+
+        <!-- Elements Table -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            HTML Elements Table Examples
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+            Kuch popular HTML elements aur unke components:
+          </p>
+
+          <div class="overflow-x-auto rounded-xl border border-[#334155]">
+            <table class="w-full text-left text-gray-300">
+              <thead class="bg-[#0f172a] text-yellow-400 text-base font-bold border-b border-[#334155]">
+                <tr>
+                  <th class="p-4">Start Tag</th>
+                  <th class="p-4">Element Content</th>
+                  <th class="p-4">End Tag</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#334155] bg-[#020617]/50 text-sm md:text-base font-mono">
+                <tr>
+                  <td class="p-4 text-green-400">&lt;h1&gt;</td>
+                  <td class="p-4 text-white font-sans">Mera Pehla Heading</td>
+                  <td class="p-4 text-green-400">&lt;/h1&gt;</td>
+                </tr>
+                <tr>
+                  <td class="p-4 text-green-400">&lt;p&gt;</td>
+                  <td class="p-4 text-white font-sans">Mera pehla paragraph.</td>
+                  <td class="p-4 text-green-400">&lt;/p&gt;</td>
+                </tr>
+                <tr>
+                  <td class="p-4 text-green-400">&lt;button&gt;</td>
+                  <td class="p-4 text-white font-sans">Click Me</td>
+                  <td class="p-4 text-green-400">&lt;/button&gt;</td>
+                </tr>
+                <tr>
+                  <td class="p-4 text-green-400">&lt;br&gt;</td>
+                  <td class="p-4 text-gray-500 italic font-sans">None (Empty Element)</td>
+                  <td class="p-4 text-gray-500 italic font-sans">None</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Nested Elements -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Nested HTML Elements
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              HTML elements ko ek doosre ke andar dala ja sakta hai. Is process ko <strong>Nesting</strong> kehte hain. Webpage ka pura structure nesting par hi chalta hai.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+  <span class="text-green-400">&lt;body&gt;</span>
+
+    <span class="text-green-400">&lt;h1&gt;</span>Heading <span class="text-yellow-400">&lt;span&gt;</span>Text<span class="text-yellow-400">&lt;/span&gt;</span><span class="text-green-400">&lt;/h1&gt;</span>
+    <span class="text-green-400">&lt;p&gt;</span>Ye ek <span class="text-yellow-400">&lt;b&gt;</span>bold paragraph<span class="text-yellow-400">&lt;/b&gt;</span> hai.<span class="text-green-400">&lt;/p&gt;</span>
+
+  <span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Empty Elements -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Empty HTML Elements (Self-closing)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Jin HTML elements me koi text/content nahi hota aur unka koi closing tag nahi hota, unhein <strong>Empty Elements</strong> kehte hain.
+            </p>
+
+            <ul class="space-y-4 text-gray-300 text-base md:text-lg">
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;br&gt;</strong> - Line break dene ke liye use hota hai.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;hr&gt;</strong> - Horizontal rule (line) draw karne ke liye.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;img&gt;</strong> - Image attach karne ke liye tag.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;input&gt;</strong> - Form input fields ke liye.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../editors/Editors.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../attributes/attributes.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(3);
+    </script>
+  </body>
+</html>

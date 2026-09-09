@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>HTML Form Input Types Tutorial</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[42px] sm:text-[52px] md:text-[60px] font-extrabold text-white mb-6 tracking-tight"
+      >
+        HTML Form Input Types
+      </h1>
+
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between items-center mt-10 mb-10">
+
+        <!-- Previous -->
+        <a
+          href="./Elements.html"
+          class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition flex items-center gap-2"
+        >
+          <i data-lucide="chevron-left" class="w-6 h-6"></i>
+          Previous
+        </a>
+
+        <!-- Next -->
+        <a
+          href="./Input-Attributes.html"
+          class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-[#2445d8] transition flex items-center gap-2"
+        >
+          Next
+          <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </a>
+
+      </div>
+
+
+      <!-- Introduction -->
+      <div
+        class="mt-8 bg-[#111827] p-8 md:p-12 rounded-3xl border border-gray-700"
+      >
+
+        <h2
+          class="text-[30px] md:text-[44px] font-bold mb-5 text-white flex items-center gap-3"
+        >
+      
+          Input Types Overview
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-gray-300 leading-relaxed">
+          HTML <code class="text-blue-400">&lt;input&gt;</code> element me <code class="text-blue-400">type</code> attribute define karta hai ki user se kis tarah ka data collect kiya jayega, jaise text, password, email, numbers ya files.
+        </p>
+
+      </div>
+
+
+      <!-- Main Content -->
+      <div
+        class="mt-10 bg-[#111827] rounded-3xl p-7 md:p-10 border border-gray-700"
+      >
+
+
+        <!-- Common Input Types Table -->
+        <div class="mb-12">
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Commonly Used Input Types
+          </h3>
+
+          <div class="overflow-x-auto rounded-xl border border-gray-700 mb-6">
+
+            <table class="w-full text-left">
+
+              <thead class="bg-[#020617]">
+
+                <tr>
+                  <th class="p-4 text-white">Input Type</th>
+                  <th class="p-4 text-white">Description</th>
+                </tr>
+
+              </thead>
+
+              <tbody class="divide-y divide-gray-700">
+
+                <tr>
+                  <td class="p-4 font-mono text-blue-400">text</td>
+                  <td class="p-4 text-gray-300">Single-line text field banata hai (default value).</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-blue-400">password</td>
+                  <td class="p-4 text-gray-300">Characters mask ho jate hain (dots ya asterisks me).</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-blue-400">email</td>
+                  <td class="p-4 text-gray-300">Email format check karta hai aur automatic validation deta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-blue-400">number</td>
+                  <td class="p-4 text-gray-300">Sirf numeric values allow karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-blue-400">checkbox</td>
+                  <td class="p-4 text-gray-300">Multiple options select karne ke liye checkbox deta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-blue-400">radio</td>
+                  <td class="p-4 text-gray-300">Group me se sirf ek option choose karne ke liye use hota hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-blue-400">file</td>
+                  <td class="p-4 text-gray-300">User ko file upload karne ka option deta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-blue-400">submit</td>
+                  <td class="p-4 text-gray-300">Form data submit karne ke liye button banata hai.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+
+        <!-- 1. Text & Password -->
+        <div class="mb-12">
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            1. Text and Password Inputs
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            Username aur passwords collect karne ke liye use hone wale basic input types:
+          </p>
+
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"user"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Username:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"text"</span> <span>id</span>=<span class="text-yellow-300">"user"</span> <span>name</span>=<span class="text-yellow-300">"user"</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"pass"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Password:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"password"</span> <span>id</span>=<span class="text-yellow-300">"pass"</span> <span>name</span>=<span class="text-yellow-300">"pass"</span><span class="text-blue-400">&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+
+        <!-- 2. Radio & Checkbox -->
+        <div class="mb-12">
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            2. Radio Buttons and Checkboxes
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            Radio buttons single selection ke liye aur checkboxes multi-selection ke liye hote hain:
+          </p>
+
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-gray-400">&lt;!-- Radio Buttons --&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"radio"</span> <span>id</span>=<span class="text-yellow-300">"male"</span> <span>name</span>=<span class="text-yellow-300">"gender"</span> <span>value</span>=<span class="text-yellow-300">"male"</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"male"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Male</span><span class="text-blue-400">&lt;/label&gt;</span>
+
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"radio"</span> <span>id</span>=<span class="text-yellow-300">"female"</span> <span>name</span>=<span class="text-yellow-300">"gender"</span> <span>value</span>=<span class="text-yellow-300">"female"</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"female"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Female</span><span class="text-blue-400">&lt;/label&gt;</span>
+
+<span class="text-gray-400">&lt;!-- Checkbox --&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"checkbox"</span> <span>id</span>=<span class="text-yellow-300">"subscribe"</span> <span>name</span>=<span class="text-yellow-300">"subscribe"</span> <span>value</span>=<span class="text-yellow-300">"yes"</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"subscribe"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Subscribe to newsletter</span><span class="text-blue-400">&lt;/label&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+
+        <!-- 3. Date & Time Inputs -->
+        <div class="mb-12">
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            3. Date and Time Picker Inputs
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            Browsers me inbuilt date/time selectors enable karne ke liye in types ka use hota hai:
+          </p>
+
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"birthday"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Birthday:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"date"</span> <span>id</span>=<span class="text-yellow-300">"birthday"</span> <span>name</span>=<span class="text-yellow-300">"birthday"</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"appt"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Select Time:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"time"</span> <span>id</span>=<span class="text-yellow-300">"appt"</span> <span>name</span>=<span class="text-yellow-300">"appt"</span><span class="text-blue-400">&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+
+        <!-- 4. HTML5 Special Inputs -->
+        <div>
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            4. Color, Range and File Inputs
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            HTML5 ke specialized inputs color picker, slider control aur file uploader enable karte hain:
+          </p>
+
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"favcolor"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Select Color:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"color"</span> <span>id</span>=<span class="text-yellow-300">"favcolor"</span> <span>name</span>=<span class="text-yellow-300">"favcolor"</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"volume"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Volume:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"range"</span> <span>id</span>=<span class="text-yellow-300">"volume"</span> <span>name</span>=<span class="text-yellow-300">"volume"</span> <span>min</span>=<span class="text-yellow-300">"0"</span> <span>max</span>=<span class="text-yellow-300">"100"</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"myfile"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Select File:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"file"</span> <span>id</span>=<span class="text-yellow-300">"myfile"</span> <span>name</span>=<span class="text-yellow-300">"myfile"</span><span class="text-blue-400">&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between items-center mt-12 mb-10">
+
+        <!-- Previous -->
+        <a
+          href="./Elements.html"
+          class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition flex items-center gap-2"
+        >
+          <i data-lucide="chevron-left" class="w-6 h-6"></i>
+          Previous
+        </a>
+
+
+        <!-- Next -->
+        <a
+          href="./Input-Attributes.html"
+          class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-[#2445d8] transition flex items-center gap-2"
+        >
+          Next
+          <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(32);
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

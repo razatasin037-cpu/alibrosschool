@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Quotations & Citations - Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Quotation & Citation
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../formatting/formatting.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../comments/Comments.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Quotation Elements Kya Hain?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML me kisi external source, quote, address, abbreviation, ya book/work reference ko display karne ke liye <strong>Quotation & Citation Tags</strong> ka use kiya jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Ye elements search engines aur browsers ko batate hain ki text ek quotation hai aur iska origin source kya hai.
+          </p>
+        </div>
+
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <i class="fa-solid fa-code text-yellow-400 mr-2"></i> Practical Code Example
+          </h3>
+          <p class="text-gray-300 text-base mb-6">
+            Basic quotation aur citation tags ka example aur live rendering dekhein:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <div class="flex justify-between items-center pb-3 mb-3 border-b border-[#334155] text-xs text-gray-400">
+                <span>index.html</span>
+                <span class="text-yellow-400"><i class="fa-regular fa-copy mr-1"></i> HTML</span>
+              </div>
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;p&gt;APJ Abdul Kalam ne kaha tha: &lt;q&gt;Dream is not that which you see while sleeping...&lt;/q&gt;&lt;/p&gt;
+
+&lt;blockquote cite="https://example.com"&gt;
+  Failures are the stepping stones to success.
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; web dev ke liye zaroori hai.&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;Mona Lisa&lt;/cite&gt; was painted by Leonardo da Vinci.&lt;/p&gt;</code></pre>
+            </div>
+
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 shadow-inner flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 pb-3 mb-4 border-b border-gray-200">
+                  <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                  <span class="text-xs text-gray-400 font-sans ml-2">Browser Result Preview</span>
+                </div>
+                <div class="space-y-4 font-sans text-gray-800">
+                  <p>APJ Abdul Kalam ne kaha tha: <q>Dream is not that which you see while sleeping...</q></p>
+                  <blockquote class="border-l-4 border-blue-500 pl-4 py-1 italic bg-gray-50 my-2">
+                    Failures are the stepping stones to success.
+                  </blockquote>
+                  <p><abbr title="HyperText Markup Language" class="border-b-2 border-dotted cursor-help">HTML</abbr> web dev ke liye zaroori hai.</p>
+                  <p><cite class="italic">Mona Lisa</cite> was painted by Leonardo da Vinci.</p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-gray-200 text-xs text-gray-500 font-sans">
+                💡 Notice karein ki <code>&lt;q&gt;</code> tag automatically quotes (" ") add kar deta hai.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            Quotation Tags Quick Reference
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#334155] text-gray-400 text-sm">
+                <th class="py-3 px-4">Tag</th>
+                <th class="py-3 px-4">Description</th>
+                <th class="py-3 px-4">Default Behavior</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-200 divide-y divide-[#334155]/50">
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;blockquote&gt;</td>
+                <td class="py-3 px-4">Long quotation from another source.</td>
+                <td class="py-3 px-4 text-xs text-gray-300">Indented (Margin Left & Right) block</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;q&gt;</td>
+                <td class="py-3 px-4">Short inline quotation.</td>
+                <td class="py-3 px-4 text-xs text-gray-300">Automatic quotation marks (" ")</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;abbr&gt;</td>
+                <td class="py-3 px-4">Abbreviation ya Acronym. Hover par full form show karta hai.</td>
+                <td class="py-3 px-4 text-xs text-gray-300">Dotted underline & hover tooltip (using title attribute)</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;address&gt;</td>
+                <td class="py-3 px-4">Author/Owner ki contact information.</td>
+                <td class="py-3 px-4 text-xs text-gray-300">Italic text with line break</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;cite&gt;</td>
+                <td class="py-3 px-4">Creative work ka title (Book, Song, Painting, Movie, etc.).</td>
+                <td class="py-3 px-4 text-xs text-gray-300">Italic text</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;bdo&gt;</td>
+                <td class="py-3 px-4">Bi-Directional Override (Text Direction reverse karta hai).</td>
+                <td class="py-3 px-4 text-xs text-gray-300">Changes text flow (e.g. <code>dir="rtl"</code>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <i class="fa-solid fa-lightbulb text-amber-400 mr-2"></i> Best Practices (Dhyan Rakhne Yagya Baatein)
+          </h3>
+          <ul class="space-y-3 text-gray-300 text-sm md:text-base">
+            <li class="flex items-start">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+              <span><strong>Use <code>cite</code> attribute in <code>&lt;blockquote&gt;</code>:</strong> Search engines ko source URL batane ke liye <code>cite="URL"</code> attribute ka use zaroor karein.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+              <span><strong>Always use <code>title</code> in <code>&lt;abbr&gt;</code>:</strong> Abbreviation ki full form dene ke liye <code>title</code> attribute compulsary hai.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../formatting/formatting.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../comments/Comments.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(9);
+    </script>
+  </body>
+</html>

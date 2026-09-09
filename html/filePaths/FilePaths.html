@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML File Paths - Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <h1 class="text-[48px] sm:text-[60px] md:text-[65px] font-extrabold text-white mb-6 mt-0 tracking-tight flex items-center gap-4">
+          
+          HTML File Paths
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="../javaScript/JavaScript.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="../head/Head.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            HTML File Path Kya Hai?
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            HTML me <span class="text-blue-400 font-mono font-bold">File Path</span> kisi external file (jaise Images, CSS, JavaScript, ya doosre HTML pages) ka address batata hai. Yeh browser ko batata hai ki file folder structure me kahan par hai.
+          </p>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Types of File Paths
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-blue-400 mb-2 flex items-center gap-2">
+                <i data-lucide="globe" class="w-5 h-5 text-blue-400"></i> Absolute File Path
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Yeh internet par file ka pura Web URL address (<code>https://...</code>) hota hai.
+              </p>
+              <code class="block bg-slate-900 text-xs p-3 rounded-lg text-emerald-400 font-mono overflow-x-auto">
+                https://www.example.com/images/logo.png
+              </code>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-emerald-400 mb-2 flex items-center gap-2">
+                <i data-lucide="folder" class="w-5 h-5 text-emerald-400"></i> Relative File Path
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Yeh current working file/folder ke hisab se relative address hota hai.
+              </p>
+              <code class="block bg-slate-900 text-xs p-3 rounded-lg text-emerald-400 font-mono overflow-x-auto">
+                ../images/logo.png
+              </code>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
+              <i data-lucide="terminal" class="w-8 h-8 text-cyan-400"></i>
+              Relative Path Symbols & Rules
+            </h3>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-mono rounded-lg border border-cyan-500/30">Cheat Sheet</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-[#334155] bg-[#020617] text-blue-400 font-mono text-sm">
+                  <th class="p-4 rounded-tl-xl">Path Syntax</th>
+                  <th class="p-4">Kya Matlab Hai?</th>
+                  <th class="p-4 rounded-tr-xl">Example Use</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#334155] text-gray-300 text-sm md:text-base font-mono">
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">picture.jpg</td>
+                  <td class="p-4 font-sans text-gray-300">File usi same folder me hai jahan HTML file hai.</td>
+                  <td class="p-4 text-emerald-400">&lt;img src="picture.jpg"&gt;</td>
+                </tr>
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">images/picture.jpg</td>
+                  <td class="p-4 font-sans text-gray-300">Same folder ke andar <code>images</code> naam ke sub-folder me.</td>
+                  <td class="p-4 text-emerald-400">&lt;img src="images/picture.jpg"&gt;</td>
+                </tr>
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">/images/picture.jpg</td>
+                  <td class="p-4 font-sans text-gray-300">Root directory (main domain folder) ke andar.</td>
+                  <td class="p-4 text-emerald-400">&lt;img src="/images/picture.jpg"&gt;</td>
+                </tr>
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">../picture.jpg</td>
+                  <td class="p-4 font-sans text-gray-300">Current folder se 1 folder piche (parent directory) me.</td>
+                  <td class="p-4 text-emerald-400">&lt;img src="../picture.jpg"&gt;</td>
+                </tr>
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">../../js/app.js</td>
+                  <td class="p-4 font-sans text-gray-300">2 level piche jakar <code>js</code> folder ke andar file.</td>
+                  <td class="p-4 text-emerald-400">&lt;script src="../../js/app.js"&gt;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
+              <i data-lucide="code-2" class="w-8 h-8 text-blue-400"></i>
+              HTML Code Example
+            </h3>
+            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-mono rounded-lg border border-blue-500/30">Code Block</span>
+          </div>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            Real projects me file paths embed karne ke alag-alag tarike:
+          </p>
+
+          <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+            <pre class="font-mono text-sm md:text-base text-gray-300 overflow-x-auto p-4 bg-slate-900/90 rounded-xl leading-relaxed border border-slate-800"><code>&lt;!-- Absolute Path (External Web URL) --&gt;
+&lt;img src="https://cdn.tailwindcss.com" alt="External File"&gt;
+
+&lt;!-- Relative Path: File in Subfolder --&gt;
+&lt;img src="assets/images/logo.png" alt="Logo"&gt;
+
+&lt;!-- Relative Path: Going 1 Step Backwards (Parent Folder) --&gt;
+&lt;a href="../index.html" class="text-blue-400"&gt;Back to Home&lt;/a&gt;
+
+&lt;!-- Relative Path: Going 2 Folders Backwards --&gt;
+&lt;script src="../../js/sidebar.js"&gt;&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            File Path Best Practices
+          </h3>
+
+          <ul class="space-y-4 text-gray-300 text-base md:text-lg">
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-green-400 font-bold text-xl">✓</span>
+              <span><strong>Use Relative Paths for Local Files:</strong> Website deployment easy rakhne ke liye hamesha local files ke liye relative paths hi use karein.</span>
+            </li>
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-green-400 font-bold text-xl">✓</span>
+              <span><strong>Case-Sensitivity:</strong> File names aur extensions me capital/small letters dhyan se likhein (jaise <code>Image.PNG</code> aur <code>image.png</code> Linux servers par alag hote hain).</span>
+            </li>
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-red-400 font-bold text-xl">✕</span>
+              <span><strong>Avoid Hardcoded Local Disk Paths:</strong> HTML me <code>C:\Users\Name\Desktop\image.png</code> jaisa path mat use karein, yeh dusre kisi browser ya server par nahi chalega.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="../javaScript/JavaScript.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="../head/Head.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(26);
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

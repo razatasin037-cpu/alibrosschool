@@ -147,11 +147,17 @@ function createSidebar(activeIndex = 0) {
       name: " PHP Advanced",
       link: "/php/advanceds/Advanced.html",
       submenu: [
-        { name: "Time And Date", link: "/php/advanceds/TimeAndDate.html" },
-        { name: "Include", link: "/php/advanceds/Include.html" },
-        { name: " Forms - Required", link: "/php/forms/FormsRequired.html" },
-        { name: "Forms - Validate E-mail and URL", link: "/php/forms/FormsValidateE-mailandURL.html" }
-        // { name:"Form  Complete", link:"/php/forms/FormComplete.html"}
+        { name: "PHP Time And Date", link: "/php/advanceds/TimeAndDate.html" },
+        { name: "PHP Include", link: "/php/advanceds/Include.html" },
+        { name: "PHP File Handling", link: "/php/advanceds/FileHandling.html" },
+        { name: "PHP File Open/Read ", link: "/php/advanceds/FileOpenRead.html" },
+        { name:"PHP File Upload", link:"/php/advanceds/FileUpload.html"},
+        { name: "PHP Cookies", link:"/php/advanceds/Cookies.html"},
+        { name: "PHP Sessions", link: "/php/advanceds/Sessions.html"},
+        { name: "PHP Filters", link:"/php/advanceds/Filters.html"},
+        { name: "PHP JSON", link:"/php/advanceds/JSON.html"},
+        { name: "PHP Exceptions", link:"/php/advanceds/Exceptions.html"}
+      
       ]
     }
    

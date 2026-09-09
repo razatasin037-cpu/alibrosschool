@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          JavaScript Tutorial
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="/aillearing.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Home
+          </a>
+
+          <a
+            href="../intro/Intro.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            JavaScript Kya Hai?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            JavaScript duniya ki sabse popular <strong>Programming Language</strong> hai. Ye web pages ko interactive aur dynamic banane ke liye use hoti hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            HTML structure banata hai, CSS design karta hai, aur JavaScript page me <strong class="text-blue-400">interactivity & logic</strong> daalta hai.
+          </p>
+        </div>
+
+        <!-- Key Highlights Grid -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-blue-950/40 border border-blue-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-blue-400 mb-2">
+              <i class="fa-brands fa-js mr-2 text-blue-400"></i> Client-Side Interactivity
+            </h4>
+            <p class="text-gray-300 text-base">
+              Buttons click actions, form validation, animations, aur interactive content sab JavaScript se handle hota hai.
+            </p>
+          </div>
+
+          <div class="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-emerald-400 mb-2">
+              <i class="fa-solid fa-server mr-2 text-emerald-400"></i> Full-Stack Capability
+            </h4>
+            <p class="text-gray-300 text-base">
+              Node.js ke aane ke baad JavaScript ab backend servers aur database operations ke liye bhi use hoti hai.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: Basic JS Code Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Simple JavaScript Code Example
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              JavaScript code ko HTML me <code>&lt;script&gt;</code> tag ke andar likha jata hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+  <span class="text-green-400">&lt;h2&gt;</span>My First JavaScript<span class="text-green-400">&lt;/h2&gt;</span>
+
+  <span class="text-green-400">&lt;button</span> <span class="text-blue-400">onclick</span>=<span class="text-emerald-400">"displayDate()"</span><span class="text-green-400">&gt;</span>Click Me<span class="text-green-400">&lt;/button&gt;</span>
+
+  <span class="text-green-400">&lt;p</span> <span class="text-blue-400">id</span>=<span class="text-emerald-400">"demo"</span><span class="text-green-400">&gt;&lt;/p&gt;</span>
+
+  <span class="text-green-400">&lt;script&gt;</span>
+    <span class="text-blue-400">function</span> <span class="text-green-400">displayDate</span>() {
+      document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">'demo'</span>).innerHTML = <span class="text-green-400">Date</span>();
+    }
+  <span class="text-green-400">&lt;/script&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: What JavaScript Can Do -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. JavaScript Se Aap Kya Kar Sakte Hain?
+            </h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg leading-relaxed">
+              <li>HTML content ko change kar sakte hain (DOM Manipulation).</li>
+              <li>HTML CSS styles ko dynamic badal sakte hain.</li>
+              <li>User inputs (Forms) ko validate kar sakte hain.</li>
+              <li>APIs se data fetch karke web page par bina refresh kiye dikha sakte hain (AJAX/Fetch API).</li>
+            </ul>
+          </div>
+
+          <!-- Section 3: Extended JS References Grid -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+              3. Complete JavaScript References
+            </h3>
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              Aapko JavaScript Objects, DOM Methods, Web APIs, aur Built-in Functions ki poori reference list niche milegi:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!-- Array Methods -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-list-ol text-blue-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">JS Array Methods</span>
+              </a>
+
+              <!-- String Methods -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-font text-emerald-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">JS String Methods</span>
+              </a>
+
+              <!-- Number & Math -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-calculator text-blue-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">Math & Number Object</span>
+              </a>
+
+              <!-- Objects Reference -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-cube text-emerald-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">JS Objects Reference</span>
+              </a>
+
+              <!-- Date Reference -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-regular fa-calendar-days text-blue-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">JS Date & Time</span>
+              </a>
+
+              <!-- HTML DOM -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-sitemap text-emerald-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">HTML DOM Reference</span>
+              </a>
+
+              <!-- Browser BOM -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-window-maximize text-blue-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">Browser BOM Reference</span>
+              </a>
+
+              <!-- Fetch API & Promises -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-cloud-arrow-down text-emerald-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">Fetch API & Async/Await</span>
+              </a>
+
+              <!-- JSON Reference -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-code-compare text-blue-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">JSON Methods</span>
+              </a>
+
+              <!-- Web Storage -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-database text-emerald-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">Local & Session Storage</span>
+              </a>
+
+              <!-- JS Events -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-bolt text-blue-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">DOM Event Handlers</span>
+              </a>
+
+              <!-- RegExp -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-asterisk text-emerald-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">Regular Expressions (RegExp)</span>
+              </a>
+
+              <!-- Console API -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-[#3158ff] fa-terminal text-blue-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">Console Object Reference</span>
+              </a>
+
+              <!-- Classes & OOP -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-layer-group text-emerald-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">JS Classes & OOP</span>
+              </a>
+
+              <!-- ES6+ Features -->
+              <a href="#" class="flex items-center p-4 bg-[#0f172a] hover:bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-xl transition group">
+                <i class="fa-solid fa-code text-blue-400 text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white">ES6+ Features Guide</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="/aillearing.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Home
+          </a>
+
+          <a
+            href="../intro/Intro.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(0);
+    </script>
+  </body>
+</html>

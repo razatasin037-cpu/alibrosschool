@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP File Upload - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP File Upload
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./FileOpenRead.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Cookies.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Uploading Files to Server
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            PHP ke saath aap server par files (Images, Documents, PDFs) upload kar sakte hain. Iske liye HTML form me <code class="text-yellow-300">enctype="multipart/form-data"</code> aur PHP me <code class="text-yellow-300">$_FILES</code> superglobal variable ka use hota hai.
+          </p>
+        </div>
+
+        <!-- Security Warning Box -->
+        <div class="mt-8 bg-amber-950/40 border border-amber-500/50 rounded-2xl p-6 flex items-start space-x-4">
+          <i class="fa-solid fa-shield-halved text-amber-400 text-2xl mt-1"></i>
+          <div>
+            <h4 class="text-xl font-bold text-amber-400 mb-1">Security Warning</h4>
+            <p class="text-gray-300 text-base">
+              File upload features me validation bohot zaroori hai! Hamesha file extensions, MIME types, aur size limits check karein taaki malicious script (.php, .exe) upload na ho sake.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: HTML Form Setup -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. HTML Form Requirements
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              File upload karne ke liye HTML Form me in teen cheezon ka hona zaroori hai:
+            </p>
+            <ul class="list-disc pl-6 text-gray-300 text-base md:text-lg space-y-2 mb-6">
+              <li>Form ka <code class="text-yellow-300">method</code> hamesha <strong class="text-white">"POST"</strong> hona chahiye.</li>
+              <li>Form attribute me <code class="text-yellow-300">enctype="multipart/form-data"</code> zaroor set karein.</li>
+              <li>Input field ka type <code class="text-yellow-300">type="file"</code> hona chahiye.</li>
+            </ul>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;!-- upload.html --&gt;</span>
+<span class="text-green-400">&lt;form</span> <span class="text-yellow-300">action="upload.php" method="post" enctype="multipart/form-data"</span><span class="text-green-400">&gt;</span>
+  Select image to upload:
+  <span class="text-green-400">&lt;input</span> <span class="text-yellow-300">type="file" name="fileToUpload" id="fileToUpload"</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;input</span> <span class="text-yellow-300">type="submit" value="Upload Image" name="submit"</span><span class="text-green-400">&gt;</span>
+<span class="text-green-400">&lt;/form&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: Complete PHP Upload Script -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Complete PHP Upload Script (upload.php)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Ye script file ko check karti hai, validation apply karti hai aur safe hone par <code class="text-yellow-300">move_uploaded_file()</code> ka use karke file ko target directory me save karti hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-[#94a3b8]">// Directory jahan files save hongi</span>
+<span class="text-green-400">$target_dir</span> = <span class="text-yellow-300">"uploads/"</span>;
+<span class="text-green-400">$target_file</span> = <span class="text-green-400">$target_dir</span> . <span class="text-green-400">basename</span>(<span class="text-green-400">$_FILES</span>[<span class="text-yellow-300">"fileToUpload"</span>][<span class="text-yellow-300">"name"</span>]);
+<span class="text-green-400">$uploadOk</span> = <span class="text-yellow-300">1</span>;
+<span class="text-green-400">$imageFileType</span> = <span class="text-green-400">strtolower</span>(<span class="text-green-400">pathinfo</span>(<span class="text-green-400">$target_file</span>, PATHINFO_EXTENSION));
+
+<span class="text-[#94a3b8]">// 1. Check if file already exists</span>
+<span class="text-green-400">if</span> (<span class="text-green-400">file_exists</span>(<span class="text-green-400">$target_file</span>)) {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"Sorry, file already exists.&lt;br&gt;"</span>;
+    <span class="text-green-400">$uploadOk</span> = <span class="text-yellow-300">0</span>;
+}
+
+<span class="text-[#94a3b8]">// 2. Check file size (Limit to 2MB)</span>
+<span class="text-green-400">if</span> (<span class="text-green-400">$_FILES</span>[<span class="text-yellow-300">"fileToUpload"</span>][<span class="text-yellow-300">"size"</span>] &gt; <span class="text-yellow-300">2000000</span>) {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"Sorry, your file is too large.&lt;br&gt;"</span>;
+    <span class="text-green-400">$uploadOk</span> = <span class="text-yellow-300">0</span>;
+}
+
+<span class="text-[#94a3b8]">// 3. Allow only specific file formats</span>
+<span class="text-green-400">if</span>(<span class="text-green-400">$imageFileType</span> != <span class="text-yellow-300">"jpg"</span> &amp;&amp; <span class="text-green-400">$imageFileType</span> != <span class="text-yellow-300">"png"</span> &amp;&amp; <span class="text-green-400">$imageFileType</span> != <span class="text-yellow-300">"jpeg"</span>) {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"Sorry, only JPG, JPEG, &amp; PNG files are allowed.&lt;br&gt;"</span>;
+    <span class="text-green-400">$uploadOk</span> = <span class="text-yellow-300">0</span>;
+}
+
+<span class="text-[#94a3b8]">// 4. Process Upload if all checks pass</span>
+<span class="text-green-400">if</span> (<span class="text-green-400">$uploadOk</span> == <span class="text-yellow-300">0</span>) {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"Sorry, your file was not uploaded."</span>;
+} <span class="text-green-400">else</span> {
+    <span class="text-[#94a3b8]">// Move file from temporary location to server directory</span>
+    <span class="text-green-400">if</span> (<span class="text-green-400">move_uploaded_file</span>(<span class="text-green-400">$_FILES</span>[<span class="text-yellow-300">"fileToUpload"</span>][<span class="text-yellow-300">"tmp_name"</span>], <span class="text-green-400">$target_file</span>)) {
+        <span class="text-green-400">echo</span> <span class="text-yellow-300">"The file "</span>. <span class="text-green-400">htmlspecialchars</span>(<span class="text-green-400">basename</span>(<span class="text-green-400">$_FILES</span>[<span class="text-yellow-300">"fileToUpload"</span>][<span class="text-yellow-300">"name"</span>])). <span class="text-yellow-300">" has been uploaded."</span>;
+    } <span class="text-green-400">else</span> {
+        <span class="text-green-400">echo</span> <span class="text-yellow-300">"Sorry, there was an error uploading your file."</span>;
+    }
+}
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 3: Understanding $_FILES Array -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Understanding the $_FILES Superglobal
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              Jab aap file upload karte hain, to PHP <code class="text-yellow-300">$_FILES</code> array me file ki complete details store karta hai:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-sm">
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <span class="text-blue-400 font-bold">$_FILES['file']['name']</span>
+                <p class="text-gray-400 text-xs mt-1 font-sans">Uploaded file ka original name.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <span class="text-blue-400 font-bold">$_FILES['file']['type']</span>
+                <p class="text-gray-400 text-xs mt-1 font-sans">File ka MIME type (e.g. image/png).</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <span class="text-blue-400 font-bold">$_FILES['file']['tmp_name']</span>
+                <p class="text-gray-400 text-xs mt-1 font-sans">Server par temporary location jahan file temporary store hoti hai.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <span class="text-blue-400 font-bold">$_FILES['file']['size']</span>
+                <p class="text-gray-400 text-xs mt-1 font-sans">Bytes me file ka exact size.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./FileOpenRead.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Cookies.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(21);
+    </script>
+  </body>
+</html>

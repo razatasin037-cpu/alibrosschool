@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Operators - Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          JavaScript Operators
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../syntax/Types.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="/javascript/Operators/Arithmetic.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            JavaScript Operators Kya Hote Hain?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            JavaScript <strong>Operators</strong> vishesh symbols (jaise <code>+</code>, <code>-</code>, <code>*</code>, <code>=</code>) hote hain jinaka upayog variables aur values par computation, logic, ya data modification karne ke liye kiya jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Misaal ke taur par: Expression <code>x = 10 + 5</code> me <code>+</code> aur <code>=</code> operators hain, jabki <code>10</code>, <code>5</code>, aur <code>x</code> ko <strong>Operands</strong> kaha jata hai.
+          </p>
+        </div>
+
+        <!-- Operands vs Operators Visual Box -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 border border-[#334155]">
+          <h3 class="text-xl font-bold text-white mb-3">
+            Anatomy of an Operation:
+          </h3>
+          <div class="bg-[#0f172a] p-4 rounded-xl flex flex-wrap items-center justify-center gap-3 text-lg md:text-2xl font-mono text-center">
+            <span class="bg-blue-900/60 text-blue-300 px-4 py-2 rounded-lg border border-blue-500/40">
+              x <small class="block text-xs text-gray-400 font-sans">Operand</small>
+            </span>
+            <span class="text-emerald-400 font-bold">=
+              <small class="block text-xs text-gray-400 font-sans">Operator</small>
+            </span>
+            <span class="bg-blue-900/60 text-blue-300 px-4 py-2 rounded-lg border border-blue-500/40">
+              10 <small class="block text-xs text-gray-400 font-sans">Operand</small>
+            </span>
+            <span class="text-emerald-400 font-bold">+
+              <small class="block text-xs text-gray-400 font-sans">Operator</small>
+            </span>
+            <span class="bg-blue-900/60 text-blue-300 px-4 py-2 rounded-lg border border-blue-500/40">
+              5 <small class="block text-xs text-gray-400 font-sans">Operand</small>
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Categories Grid -->
+        <h3 class="text-2xl md:text-3xl font-bold text-white mt-12 mb-6">
+          Types of JavaScript Operators
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Arithmetic Card -->
+          <div class="bg-blue-950/40 border border-blue-500/50 rounded-2xl p-6 hover:border-blue-400 transition">
+            <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">Arithmetic Operators</h4>
+            <p class="text-gray-300 text-sm mb-4">
+              Math calculations ke liye: Addition, Subtraction, Multiplication, Division, etc.
+            </p>
+            <code class="text-xs bg-[#0f172a] text-emerald-400 px-3 py-1.5 rounded-lg border border-[#334155] block">
+              + , - , * , / , % , **
+            </code>
+          </div>
+
+          <!-- Assignment Card -->
+          <div class="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-6 hover:border-emerald-400 transition">
+            <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-equals"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">Assignment Operators</h4>
+            <p class="text-gray-300 text-sm mb-4">
+              Variables me values assign aur update karne ke liye use kiye jaate hain.
+            </p>
+            <code class="text-xs bg-[#0f172a] text-emerald-400 px-3 py-1.5 rounded-lg border border-[#334155] block">
+              = , += , -= , *= , /=
+            </code>
+          </div>
+
+          <!-- Comparison Card -->
+          <div class="bg-purple-950/40 border border-purple-500/50 rounded-2xl p-6 hover:border-purple-400 transition">
+            <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">Comparison Operators</h4>
+            <p class="text-gray-300 text-sm mb-4">
+              Do values ya expressions ko compare karke Boolean (`true`/`false`) result dete hain.
+            </p>
+            <code class="text-xs bg-[#0f172a] text-emerald-400 px-3 py-1.5 rounded-lg border border-[#334155] block">
+              == , === , != , &gt; , &lt;
+            </code>
+          </div>
+
+          <!-- Logical Card -->
+          <div class="bg-amber-950/40 border border-amber-500/50 rounded-2xl p-6 hover:border-amber-400 transition">
+            <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-code-branch"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">Logical Operators</h4>
+            <p class="text-gray-300 text-sm mb-4">
+              Multiple conditions ko combine karke decision making ke liye.
+            </p>
+            <code class="text-xs bg-[#0f172a] text-emerald-400 px-3 py-1.5 rounded-lg border border-[#334155] block">
+              && (AND) , || (OR) , ! (NOT)
+            </code>
+          </div>
+
+          <!-- String Operators Card -->
+          <div class="bg-slate-800/60 border border-slate-600/50 rounded-2xl p-6 hover:border-slate-500 transition">
+            <div class="w-12 h-12 bg-slate-700 text-gray-300 rounded-xl flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-font"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">String Concatenation</h4>
+            <p class="text-gray-300 text-sm mb-4">
+              Text strings ko aapas me jodne ke liye `+` operator ka use hota hai.
+            </p>
+            <code class="text-xs bg-[#0f172a] text-emerald-400 px-3 py-1.5 rounded-lg border border-[#334155] block">
+              "Hello " + "World"
+            </code>
+          </div>
+
+          <!-- Ternary Card -->
+          <div class="bg-rose-950/40 border border-rose-500/50 rounded-2xl p-6 hover:border-rose-400 transition">
+            <div class="w-12 h-12 bg-rose-500/20 text-rose-400 rounded-xl flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-question"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">Conditional (Ternary)</h4>
+            <p class="text-gray-300 text-sm mb-4">
+              `if-else` ka inline shortcut operator (`condition ? true : false`).
+            </p>
+            <code class="text-xs bg-[#0f172a] text-emerald-400 px-3 py-1.5 rounded-lg border border-[#334155] block">
+              (age &gt;= 18) ? "Adult" : "Minor"
+            </code>
+          </div>
+        </div>
+
+        <!-- Code Examples Section -->
+        <section class="mt-12 space-y-8">
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Operators Code Examples
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Dekhiye ki alag-alag operators real code me kaise kaam karte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-500">// 1. Arithmetic Operators</span>
+<span class="text-blue-400">let</span> a = <span class="text-emerald-400">10</span>;
+<span class="text-blue-400">let</span> b = <span class="text-emerald-400">3</span>;
+<span class="text-blue-400">let</span> sum = a + b;       <span class="text-gray-500">// 13</span>
+<span class="text-blue-400">let</span> remainder = a % b; <span class="text-gray-500">// 1</span>
+
+<span class="text-gray-500">// 2. Assignment Operator</span>
+<span class="text-blue-400">let</span> x = <span class="text-emerald-400">5</span>;
+x += <span class="text-emerald-400">2</span>;               <span class="text-gray-500">// x ab 7 ban jayega (x = x + 2)</span>
+
+<span class="text-gray-500">// 3. String Operator (Concatenation)</span>
+<span class="text-blue-400">let</span> text1 = <span class="text-emerald-400">"John"</span>;
+<span class="text-blue-400">let</span> text2 = <span class="text-emerald-400">"Doe"</span>;
+<span class="text-blue-400">let</span> fullName = text1 + <span class="text-emerald-400">" "</span> + text2; <span class="text-gray-500">// "John Doe"</span>
+
+<span class="text-gray-500">// 4. Comparison Operator</span>
+<span class="text-blue-400">let</span> isGreater = (a &gt; b); <span class="text-gray-500">// true</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../syntax/Types.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="/javascript/Operators/Arithmetic.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Indexing for "JS Operators"
+      document.getElementById("sidebar").innerHTML = createSidebar(5);
+    </script>
+  </body>
+</html>

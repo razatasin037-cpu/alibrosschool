@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Filters - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Filters
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Sessions.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./JSON.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Validating & Sanitizing User Input
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            PHP Filters ka use user ke dwara bheje gaye data ko check (Validate) aur clean (Sanitize) karne ke liye hota hai. Ye features Web Application ki security ke liye zaroori hain.
+          </p>
+        </div>
+
+        <!-- Validation vs Sanitization Box -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-blue-950/40 border border-blue-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-blue-400 mb-2">
+              <i class="fa-solid fa-broom mr-2"></i> Sanitization
+            </h4>
+            <p class="text-gray-300 text-base">
+              Data se unwanted characters (jaise HTML tags, spaces, illegal symbols) ko permanently hata kar data ko clean karta hai.
+            </p>
+          </div>
+
+          <div class="bg-purple-950/40 border border-purple-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-purple-400 mb-2">
+              <i class="fa-solid fa-circle-check mr-2"></i> Validation
+            </h4>
+            <p class="text-gray-300 text-base">
+              Ye check karta hai ki input sahi format me hai ya nahi (e.g. valid Email, URL ya Integer). Ye output True/False deta hai.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: Sanitize and Validate Email -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Sanitize & Validate an Email
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Pehle <code class="text-yellow-300">FILTER_SANITIZE_EMAIL</code> se invalid characters hatate hain, phir <code class="text-yellow-300">FILTER_VALIDATE_EMAIL</code> se email ka format test karte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">$email</span> = <span class="text-yellow-300">"john.doe(parenthesis)@example.com"</span>;
+
+<span class="text-[#94a3b8]">// Remove all illegal characters from email</span>
+<span class="text-green-400">$email</span> = <span class="text-green-400">filter_var</span>(<span class="text-green-400">$email</span>, FILTER_SANITIZE_EMAIL);
+
+<span class="text-[#94a3b8]">// Validate email</span>
+<span class="text-green-400">if</span> (!<span class="text-green-400">filter_var</span>(<span class="text-green-400">$email</span>, FILTER_VALIDATE_EMAIL) === <span class="text-yellow-300">false</span>) {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"$email is a valid email address"</span>;
+} <span class="text-green-400">else</span> {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"$email is not a valid email address"</span>;
+}
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: Validate URL -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Validate URL (Web Address)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-yellow-300">FILTER_VALIDATE_URL</code> ka use karke verify karein ki URL correct structure me hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">$url</span> = <span class="text-yellow-300">"https://www.google.com"</span>;
+
+<span class="text-[#94a3b8]">// Remove all illegal characters from a url</span>
+<span class="text-green-400">$url</span> = <span class="text-green-400">filter_var</span>(<span class="text-green-400">$url</span>, FILTER_SANITIZE_URL);
+
+<span class="text-[#94a3b8]">// Validate URL</span>
+<span class="text-green-400">if</span> (!<span class="text-green-400">filter_var</span>(<span class="text-green-400">$url</span>, FILTER_VALIDATE_URL) === <span class="text-yellow-300">false</span>) {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"$url is a valid URL"</span>;
+} <span class="text-green-400">else</span> {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"$url is not a valid URL"</span>;
+}
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 3: Validate Integer within Range -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Validate Integer Within a Range
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Options array ke saath <code class="text-yellow-300">min_range</code> aur <code class="text-yellow-300">max_range</code> set karke number ki limit check kar sakte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">$int</span> = <span class="text-yellow-300">122</span>;
+<span class="text-green-400">$min</span> = <span class="text-yellow-300">1</span>;
+<span class="text-green-400">$max</span> = <span class="text-yellow-300">200</span>;
+
+<span class="text-[#94a3b8]">// Check if integer is in range</span>
+<span class="text-green-400">if</span> (<span class="text-green-400">filter_var</span>(<span class="text-green-400">$int</span>, FILTER_VALIDATE_INT, <span class="text-green-400">array</span>(<span class="text-yellow-300">"options"</span> =&gt; <span class="text-green-400">array</span>(<span class="text-yellow-300">"min_range"</span>=&gt;<span class="text-green-400">$min</span>, <span class="text-yellow-300">"max_range"</span>=&gt;<span class="text-green-400">$max</span>))) === <span class="text-yellow-300">false</span>) {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"Variable value is not within the allowed range"</span>;
+} <span class="text-green-400">else</span> {
+    <span class="text-green-400">echo</span> <span class="text-yellow-300">"Variable value is within the allowed range"</span>;
+}
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Sessions.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./JSON.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(21);
+    </script>
+  </body>
+</html>

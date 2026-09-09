@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Text Formatting - Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Text Formatting
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../styles/Styles.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../quotation/Quotation.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Text Formatting Kya Hoti Hai?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML me text ko special visual look (Bold, Italic, Highlighted, Subscript, etc.) dene ya special meaning show karne ke liye <strong>Formatting Elements</strong> ka use hota hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Ye elements text ka visual presence change karne ke sath screen readers aur Search Engines ko bhi batate hain ki kaunsa text important hai.
+          </p>
+        </div>
+
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <i class="fa-solid fa-code text-yellow-400 mr-2"></i> Practical Code Example
+          </h3>
+          <p class="text-gray-300 text-base mb-6">
+            Basic formatting tags ka code aur unka real-time output dekhein:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-[#020617]   p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <div class="flex justify-between items-center pb-3 mb-3 border-b border-[#334155] text-xs text-gray-400">
+                <span>index.html</span>
+                <span class="text-yellow-400"><i class="fa-regular fa-copy mr-1"></i> HTML</span>
+              </div>
+              <pre class="text-gray-300 h-[300px] leading-relaxed overflow-x-auto"><code>&lt;p&gt;Ye &lt;b&gt;Bold Text&lt;/b&gt; hai.&lt;/p&gt;
+&lt;p&gt;Ye &lt;strong&gt;Important Text&lt;/strong&gt; hai.&lt;/p&gt;
+&lt;p&gt;Ye &lt;i&gt;Italic Text&lt;/i&gt; hai.&lt;/p&gt;
+&lt;p&gt;Ye &lt;em&gt;Emphasized Text&lt;/em&gt; hai.&lt;/p&gt;
+&lt;p&gt;Ye &lt;mark&gt;Marked Text&lt;/mark&gt; hai.&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O (Subscript) aur X&lt;sup&gt;2&lt;/sup&gt; (Superscript)&lt;/p&gt;</code></pre>
+            </div>
+
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 shadow-inner flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 pb-3 mb-4 border-b border-gray-200">
+                  <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                  <span class="text-xs text-gray-400 font-sans ml-2">Browser Result Preview</span>
+                </div>
+                <div class="space-y-2 font-sans text-gray-800">
+                  <p>Ye <b>Bold Text</b> hai.</p>
+                  <p>Ye <strong>Important Text</strong> hai.</p>
+                  <p>Ye <i>Italic Text</i> hai.</p>
+                  <p>Ye <em>Emphasized Text</em> hai.</p>
+                  <p>Ye <mark class="bg-yellow-300 px-1">Marked Text</mark> hai.</p>
+                  <p>H<sub>2</sub>O (Subscript) aur X<sup>2</sup> (Superscript)</p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-gray-200 text-xs text-gray-500 font-sans">
+                💡 Notice karein ki <code>&lt;sub&gt;</code> text ko thoda neeche aur <code>&lt;sup&gt;</code> text ko thoda oopar le jata hai.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+           Formatting Tags Reference
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#334155] text-gray-400 text-sm">
+                <th class="py-3 px-4">Tag</th>
+                <th class="py-3 px-4">Description</th>
+                <th class="py-3 px-4">Browser Output Style</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-200 divide-y divide-[#334155]/50">
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;b&gt;</td>
+                <td class="py-3 px-4">Bold text (Bina kisi extra importance ke).</td>
+                <td class="py-3 px-4 font-bold">Bold Text</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;strong&gt;</td>
+                <td class="py-3 px-4">Important text (Strong importance show karta hai).</td>
+                <td class="py-3 px-4 font-bold">Important Text</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;i&gt;</td>
+                <td class="py-3 px-4">Italic text (Technical term, foreign words, etc.).</td>
+                <td class="py-3 px-4 italic">Italic Text</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;em&gt;</td>
+                <td class="py-3 px-4">Emphasized text (Stress dene ke liye).</td>
+                <td class="py-3 px-4 italic">Emphasized Text</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;mark&gt;</td>
+                <td class="py-3 px-4">Highlighted/Marked text.</td>
+                <td class="py-3 px-4"><span class="bg-yellow-300 text-black px-1">Marked Text</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;small&gt;</td>
+                <td class="py-3 px-4">Smaller text (Copyright info/Fine print ke liye).</td>
+                <td class="py-3 px-4 text-xs">Small Text</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;del&gt;</td>
+                <td class="py-3 px-4">Deleted text (Line-through strike effect).</td>
+                <td class="py-3 px-4 line-through">Deleted Text</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;ins&gt;</td>
+                <td class="py-3 px-4">Inserted text (Underline effect).</td>
+                <td class="py-3 px-4 underline">Inserted Text</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;sub&gt;</td>
+                <td class="py-3 px-4">Subscript text (Chemical formulas ke liye).</td>
+                <td class="py-3 px-4">H<sub>2</sub>O</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">&lt;sup&gt;</td>
+                <td class="py-3 px-4">Superscript text (Math powers/Dates ke liye).</td>
+                <td class="py-3 px-4">X<sup>2</sup>, 1st</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <i class="fa-solid fa-lightbulb text-amber-400 mr-2"></i> Best Practices (&lt;b&gt; vs &lt;strong&gt;)
+          </h3>
+          <ul class="space-y-3 text-gray-300 text-sm md:text-base">
+            <li class="flex items-start">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+              <span><strong>Semantic Meaning:</strong> Structural importance aur SEO ke liye <code>&lt;strong&gt;</code> aur <code>&lt;em&gt;</code> ka use karein. Only visual look ke liye <code>&lt;b&gt;</code> aur <code>&lt;i&gt;</code> use karein.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+              <span><strong>Screen Readers:</strong> Screen readers <code>&lt;strong&gt;</code> aur <code>&lt;em&gt;</code> tags ko bolte waqt alag emphasis/tone ke sath read karte hain, jo Accessibility (a11y) ke liye accha hai.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../styles/Styles.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../quotation/Quotation.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(8);
+    </script>
+  </body>
+</html>

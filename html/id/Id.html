@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML ID Attribute - Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      /* ID Selector: Starts with a Hash (#) Symbol */
+      #main-header {
+        background-color: #0f172a;
+        border: 2px solid #3158ff;
+        border-radius: 16px;
+        padding: 24px;
+        margin-top: 16px;
+      }
+
+      #unique-title {
+        color: #60a5fa;
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+
+      #special-card {
+        background-color: #020617;
+        border: 2px dashed #10b981;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 16px;
+      }
+
+      #action-btn {
+        background-color: #10b981;
+        color: #ffffff;
+        padding: 10px 24px;
+        border-radius: 10px;
+        font-weight: bold;
+        display: inline-block;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      #action-btn:hover {
+        background-color: #059669;
+      }
+    </style>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <h1 class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight flex items-center gap-4">
+        
+          HTML ID Attribute
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="../classes/Classes.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="../buttons/Buttons.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            HTML ID Attribute Kya Hai?
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            HTML me <span class="text-blue-400 font-mono font-bold">id</span> attribute ka use kisi specific element ko <span class="text-blue-400 font-bold">Uniquely Identify</span> (eklauta pehchan) karne ke liye hota hai. Ek HTML page me ek <code>id</code> name sirf <strong>ek hi element</strong> ko diya ja sakta hai.
+          </p>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            ID Attribute Ki Khasiyat
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-white mb-2">Unique Identifier</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Poore HTML document me ek ID ka naam sirf ek baar use hona chahiye.
+              </p>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-white mb-2">CSS Hash (#) Selector</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                CSS me ID wale element ko style karne ke liye hash Symbol (<code>#header</code>) ka use kiya jata hai.
+              </p>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-white mb-2">JS & Page Anchors</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                JavaScript <code>getElementById()</code> aur bookmark links (<code>href="#section1"</code>) ke liye ID zaroori hoti hai.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
+              <i data-lucide="palette" class="w-8 h-8 text-yellow-400"></i>
+              CSS &lt;style&gt; Tag Example (#ID)
+            </h3>
+            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs font-mono rounded-lg border border-yellow-500/30">CSS ID Selector</span>
+          </div>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            Dekhein kaise <code>&lt;style&gt;</code> tag me hash (<code>#</code>) symbol se specific element ko targeted styling di jati hai:
+          </p>
+
+          <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] mb-6">
+            <pre class="font-mono text-sm md:text-base text-gray-300 overflow-x-auto p-4 bg-slate-900/90 rounded-xl leading-relaxed border border-slate-800"><code>&lt;style&gt;
+  /* ID Selector hash (#) se start hota hai */
+  #main-header {
+    background-color: #0f172a;
+    border: 2px solid #3158ff;
+    padding: 24px;
+  }
+
+  #unique-title {
+    color: #60a5fa;
+  }
+
+  #special-card {
+    border: 2px dashed #10b981;
+  }
+
+  #action-btn {
+    background-color: #10b981;
+    color: #ffffff;
+  }
+&lt;/style&gt;</code></pre>
+          </div>
+
+          <div class="bg-[#020617] p-8 rounded-2xl border border-[#334155]">
+            <p class="text-gray-400 text-sm mb-4">CSS #ID Selectors Applied Output:</p>
+            <div id="main-header">
+              <h4 id="unique-title">Unique Header Section (#unique-title)</h4>
+              <p class="text-gray-300 mb-4">Yeh block <code>#main-header</code> ID ke through styled hai.</p>
+              
+              <div id="special-card">
+                <p class="text-emerald-400 font-semibold mb-3">Yeh card <code>#special-card</code> ID dwara green dashed border me styled hai.</p>
+                <a href="#" id="action-btn">Custom ID Button (#action-btn)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
+              <i data-lucide="code-2" class="w-8 h-8 text-blue-400"></i>
+              HTML Code Example
+            </h3>
+            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-mono rounded-lg border border-blue-500/30">Code Block</span>
+          </div>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            Kaise kisi specific element ko Unique ID di jati hai aur CSS / Links me connect kiya jata hai:
+          </p>
+
+          <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+            <pre class="font-mono text-sm md:text-base text-gray-300 overflow-x-auto p-4 bg-slate-900/90 rounded-xl leading-relaxed border border-slate-800"><code>&lt;!-- Unique Header with ID --&gt;
+&lt;h1 id="main-heading"&gt;Welcome to My Website&lt;/h1&gt;
+
+&lt;!-- Bookmark Link targeting ID --&gt;
+&lt;a href="#about-section"&gt;Go to About Section&lt;/a&gt;
+
+&lt;!-- Target Section with ID --&gt;
+&lt;div id="about-section" class="card"&gt;
+  &lt;p&gt;Yeh ek specific section hai jiska ID unique hai.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
+              <i data-lucide="eye" class="w-8 h-8 text-green-400"></i>
+              Visual Result
+            </h3>
+            <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-mono rounded-lg border border-green-500/30">Live Preview</span>
+          </div>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            Unique ID wale elements ka preview niche dikhaya gaya hai:
+          </p>
+
+          <div class="bg-[#020617] p-8 rounded-2xl border border-[#334155] space-y-6">
+            <h1 class="text-3xl font-extrabold text-blue-400 border-b border-blue-500/30 pb-3">
+              Welcome to My Website (#main-heading)
+            </h1>
+
+            <div>
+              <a href="#about-demo" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition shadow-lg">
+                Go to About Section (#about-section)
+              </a>
+            </div>
+
+            <div id="about-demo" class="p-6 bg-slate-800/80 rounded-2xl border-2 border-emerald-500 shadow-xl">
+              <p class="text-emerald-400 font-semibold text-base md:text-lg">
+                Yeh ek specific section hai jiska ID unique hai (#about-section).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Class vs ID Quick Rules
+          </h3>
+
+          <ul class="space-y-4 text-gray-300 text-base md:text-lg">
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-green-400 font-bold text-xl">✓</span>
+              <span><strong>ID Unique Hoti Hai:</strong> Ek page me ek ID naam sirf EK element ko mil sakta hai (e.g., <code>id="header"</code>).</span>
+            </li>
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-green-400 font-bold text-xl">✓</span>
+              <span><strong>Class Multiple Hoti Hai:</strong> Ek class naam MULTIPLE elements ko diya ja sakta hai (e.g., <code>class="btn"</code>).</span>
+            </li>
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-red-400 font-bold text-xl">✕</span>
+              <span><strong>Niyam:</strong> Ek element me multiple IDs (jaise <code>id="box1 box2"</code>) nahi de sakte. Yeh invalid HTML hai.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="../classes/Classes.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="../buttons/Buttons.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(22);
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

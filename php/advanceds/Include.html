@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Include and Require - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Include Files
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./TimeAndDate.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FileHandling.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Reusing Code with Include & Require
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            <code class="text-yellow-300">include</code> aur <code class="text-yellow-300">require</code> statements ka use ek PHP file ke content ko dusri PHP file me inject ya embed karne ke liye hota hai. Isse code reusable aur maintainable banta hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: Difference -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. PHP include vs require Difference
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Dono statements ka kaam same hai, lekin error handling alag hoti hai:
+            </p>
+            <ul class="list-disc pl-6 text-gray-300 text-base md:text-lg space-y-2 mb-6">
+              <li><strong class="text-white">include:</strong> Agar file nahi milti to ek <span class="text-yellow-400 font-semibold">E_WARNING</span> generate hoti hai aur script rest code ko execute karti rehti hai.</li>
+              <li><strong class="text-white">require:</strong> Agar file nahi milti to <span class="text-red-400 font-semibold">E_COMPILE_ERROR (Fatal Error)</span> generate hoti hai aur script execution wahi ruk jati hai.</li>
+            </ul>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Layout components embed karna</span>
+  <span class="text-green-400">include</span> <span class="text-yellow-300">'footer.php'</span>;
+
+  <span class="text-[#94a3b8]">// Critical files (Jaise Database Connection) ke liye require use karein</span>
+  <span class="text-green-400">require</span> <span class="text-yellow-300">'db_config.php'</span>; 
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: Real World Examples -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. PHP Include Example (Reusing Footer & Menu)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Maan lijiye aapke paas ek standard footer file <code class="text-yellow-300">footer.php</code> hai:
+            </p>
+            
+            <!-- Code snippet for footer.php -->
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mb-4">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-[#94a3b8]">&lt;!-- footer.php --&gt;</span>
+<span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">echo</span> <span class="text-yellow-300">"&lt;p&gt;Copyright &amp;copy; 2010-"</span> . <span class="text-green-400">date</span>(<span class="text-yellow-300">"Y"</span>) . <span class="text-yellow-300">" AlibrosSchool.com&lt;/p&gt;"</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Ab aap is footer file ko apne sabhi web pages me include kar sakte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+<span class="text-white">&lt;h1&gt;Welcome to my home page!&lt;/h1&gt;</span>
+<span class="text-white">&lt;p&gt;Some text.&lt;/p&gt;</span>
+
+<span class="text-green-400">&lt;?php</span> <span class="text-green-400">include</span> <span class="text-yellow-300">'footer.php'</span>; <span class="text-green-400">?&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 3: Including Variables -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Including Variables from External File
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Aap dusri file me defined variables ko bhi apne current script me import kar ke access kar sakte hain.
+            </p>
+            
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mb-4">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-[#94a3b8]">// vars.php</span>
+<span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$color</span> = <span class="text-yellow-300">'red'</span>;
+  <span class="text-green-400">$car</span> = <span class="text-yellow-300">'BMW'</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-[#94a3b8]">// index.php</span>
+<span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">include</span> <span class="text-yellow-300">'vars.php'</span>;
+  <span class="text-green-400">echo</span> <span class="text-white">"I have a "</span> . <span class="text-green-400">$color</span> . <span class="text-white">" "</span> . <span class="text-green-400">$car</span>; <span class="text-[#94a3b8]">// Outputs: I have a red BMW</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 4: include_once & require_once -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4. include_once and require_once
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Agar aap galti se ek hi file ko multiple times include kar dete hain, to function redeclaration ya variable overwrite errors ho sakte hain. Isse bachne ke liye <code class="text-yellow-300">include_once</code> ya <code class="text-yellow-300">require_once</code> use hota hai.
+            </p>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// File only once include hogi, chahe kitni baar bhi call karein</span>
+  <span class="text-green-400">include_once</span> <span class="text-yellow-300">'functions.php'</span>;
+  <span class="text-green-400">require_once</span> <span class="text-yellow-300">'config.php'</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./TimeAndDate.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FileHandling.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(21);
+    </script>
+  </body>
+</html>

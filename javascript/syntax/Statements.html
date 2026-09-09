@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Statements - Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          JavaScript Statements
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="/javascript/syntax/Syntax.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="/javascript/syntax/Comments.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            JavaScript Statements Kya Hain?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            Aapke dwara likhe gaye computer instructions ko **Statements** kaha jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            JavaScript programs me kai statements hoti hain, jo ek ke baad ek sequential order me execute hoti hain.
+          </p>
+        </div>
+
+        <!-- Statements Overview Grid -->
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-blue-950/40 border border-blue-500/50 rounded-2xl p-5">
+            <h4 class="text-lg font-bold text-blue-400 mb-2">
+              <i class="fa-solid fa-asterisk mr-2"></i> Semicolons ( ; )
+            </h4>
+            <p class="text-gray-300 text-sm">
+              Har statement ke aakhir me semicolon lagana best practice maana jata hai.
+            </p>
+          </div>
+
+          <div class="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-5">
+            <h4 class="text-lg font-bold text-emerald-400 mb-2">
+              <i class="fa-solid fa-cubes mr-2"></i> Code Blocks
+            </h4>
+            <p class="text-gray-300 text-sm">
+              Multiple statements ko `{ ... }` ke andar group karke saath execute kar sakte hain.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-600/50 rounded-2xl p-5">
+            <h4 class="text-lg font-bold text-white mb-2">
+              <i class="fa-solid fa-key mr-2"></i> Keywords
+            </h4>
+            <p class="text-gray-300 text-sm">
+              Statements aksar reserved keywords (jaise `let`, `if`, `function`) se start hoti hain.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: Anatomy of a Statement -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Example of a JavaScript Statement
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Ye statement browser ko batati hai ki ek variable `x` banao, usme `5` assign karo aur element me result write karo:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> x, y, z;  <span class="text-gray-500">// Statement 1: Variables declare karna</span>
+x = <span class="text-emerald-400">5</span>;         <span class="text-gray-500">// Statement 2: Value 5 assign karna</span>
+y = <span class="text-emerald-400">6</span>;         <span class="text-gray-500">// Statement 3: Value 6 assign karna</span>
+z = x + y;     <span class="text-gray-500">// Statement 4: Addition compute karna</span>
+
+document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">"demo"</span>).innerHTML = z; <span class="text-gray-500">// Statement 5</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: Semicolons & Multiple Statements -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Semicolons ( ; )
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              JavaScript statements ko alag karne ke liye **Semicolons** ka upayog kiya jata hai. Agar aap semicolon lagate hain, toh ek hi line me multiple statements bhi likh sakte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> a, b, c;
+a = <span class="text-emerald-400">1</span>; b = <span class="text-emerald-400">2</span>; c = a + b; <span class="text-gray-500">// Multiple statements on one line</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 3: White Space & Line Breaking -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. White Space & Line Length
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              JavaScript multiple spaces ko ignore kar deti hai. Aap apne code ko clean aur readable banane ke liye white space add kar sakte hain.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mb-4">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-500">// Ye dono statements bilkul same kaam karti hain:</span>
+<span class="text-blue-400">let</span> person = <span class="text-emerald-400">"John"</span>;
+<span class="text-blue-400">let</span> person =   <span class="text-emerald-400">"John"</span>  ;</code></pre>
+            </div>
+
+            <p class="text-gray-300 text-base">
+              Agar koi statement bahut lambi ho, toh best practice ye hai ki use operator ke baad break karein:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mt-3">
+              <pre class="font-mono text-sm sm:text-base"><code>document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">"demo"</span>).innerHTML =
+  <span class="text-emerald-400">"Hello World!"</span>;</code></pre>
+            </div>
+          </div>
+
+          <!-- Section 4: Code Blocks -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4. JavaScript Code Blocks
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Statements ko Curly Brackets <code>{ ... }</code> ke andar group kiya jata hai taaki block ke andar ki saari statements ek saath execute ho sakein (jaise JavaScript Functions me):
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> <span class="text-emerald-400">myFunction</span>() {
+  document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">"demo1"</span>).innerHTML = <span class="text-emerald-400">"Hello World!"</span>;
+  document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">"demo2"</span>).innerHTML = <span class="text-emerald-400">"How are you?"</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Section 5: Common Keywords -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              5. Common JavaScript Keywords
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Aap aage ke chapters me in mukhya keywords ko seekhenge:
+            </p>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-[#334155] text-emerald-400">
+                    <th class="p-3">Keyword</th>
+                    <th class="p-3">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300 text-sm md:text-base">
+                  <tr>
+                    <td class="p-3 font-mono text-blue-400">var / let</td>
+                    <td class="p-3">Naya variable declare karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-blue-400">const</td>
+                    <td class="p-3">Constant (non-changeable) variable declare karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-blue-400">if ... else</td>
+                    <td class="p-3">Conditions ke base par code execute karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-blue-400">for / while</td>
+                    <td class="p-3">Block of code ko loop me bar-bar execute karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-blue-400">function</td>
+                    <td class="p-3">Reusable function declare karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-blue-400">return</td>
+                    <td class="p-3">Function se exit hota hai aur value return karta hai.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="/javascript/syntax/Syntax.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="/javascript/syntax/Comments.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar indexing based on Syntax menu
+      document.getElementById("sidebar").innerHTML = createSidebar(4);
+    </script>
+  </body>
+</html>
