@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Optimization</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Optimization
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Optimization ka matlab hai CSS code ko is tarah improve karna ki
+            website fast load ho, browser efficiently styles calculate kare,
+            code maintain karna easy ho aur unnecessary CSS kam se kam ho.
+            Optimization sirf code ko chhota karne ka naam nahi hai, balki
+            performance, maintainability, readability aur responsive behavior ko
+            better banane ka process hai.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../important/important.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../accessibility/accessibility.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS OPTIMIZATION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-gauge-high text-blue-400 mr-2"></i>
+            CSS Optimization Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Jab website mein CSS bahut zyada ho jaati hai, duplicate rules
+            create ho jaate hain, unnecessary selectors use hote hain ya unused
+            styles project mein pade rehte hain, tab CSS ko optimize karna
+            useful hota hai. Optimized CSS browser ko kam unnecessary work karne
+            deti hai aur developer ke liye code samajhna bhi easy hota hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek achhi optimized stylesheet mein generally reusable classes,
+            sensible selectors, organized structure aur minimum duplication hota
+            hai. Production website mein CSS optimization page speed aur overall
+            user experience ko improve karne mein contribute kar sakti hai.
+          </p>
+
+          <!-- BASIC EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Optimization Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.title</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">32px</span>;
+}
+
+<span class="text-blue-400">.subtitle</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Yahan same color property multiple selectors mein repeat ho rahi
+            hai. Project ke design ke according common styles ko reusable class
+            ya sensible component structure mein organize karke duplication
+            reduce ki ja sakti hai.
+          </p>
+
+          <!-- REMOVE DUPLICATION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-copy text-blue-400 mr-2"></i>
+            1. Duplicate CSS Ko Reduce Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS optimization ka ek important part repeated declarations ko
+            identify karna hai. Agar same property aur same value bahut saare
+            selectors mein repeat ho rahi hai, to usko reusable rule mein
+            organize kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Before and After
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.title</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}
+
+<span class="text-blue-400">.subtitle</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}
+
+<span class="text-blue-400">.description</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i
+                  class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"
+                ></i>
+                Optimized Structure
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.text-white</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- MINIMIZE SELECTORS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-filter text-blue-400 mr-2"></i>
+            2. Unnecessary Selectors Avoid Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Bahut deeply nested selectors CSS ko unnecessarily complicated bana
+            sakte hain. Simple aur meaningful selectors generally maintain karna
+            easier hota hai. Har styling ke liye long selector chain banana
+            zaroori nahi hota.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Avoid Unnecessary Complexity
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.page .content .section .card .title</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Agar same styling ek simple class ke through clearly represent ki ja
+            sakti hai, to unnecessary nesting ko avoid karna better hota hai.
+          </p>
+
+          <!-- REUSABLE CLASSES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-recycle text-blue-400 mr-2"></i>
+            3. Reusable Classes Use Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Reusable classes ka use CSS duplication ko reduce karta hai. Agar
+            website mein multiple buttons same design follow karte hain, to har
+            button ke liye separate CSS likhne ke bajay common button class
+            create ki ja sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Reusable Button
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.btn</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 20px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">8px</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">600</span>;
+}
+
+<span class="text-blue-400">.btn-primary</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- REMOVE UNUSED -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-trash-can text-blue-400 mr-2"></i>
+            4. Unused CSS Remove Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Large projects mein aisi CSS rules reh sakti hain jo ab website mein
+            use hi nahi ho rahi. Unused CSS stylesheet ka size unnecessarily
+            increase kar sakti hai aur project ko confusing bana sakti hai.
+            Production build se unused styles ko identify aur remove karna
+            useful optimization step hai.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-5">
+              Unused CSS ke Examples
+            </h3>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Deleted components ki purani classes.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Old page layouts ke unused selectors.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Duplicate utility rules.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Features remove hone ke baad bachi hui CSS.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SHORTHAND -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-compress text-blue-400 mr-2"></i>
+            5. Shorthand Properties ka Use
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS shorthand properties multiple related declarations ko compact
+            way mein represent karne mein help karti hain. Ye code ko readable
+            aur kabhi-kabhi smaller bana sakti hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Margin Shorthand
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">margin-top</span>: <span class="text-green-400">10px</span>;
+  <span class="text-blue-400">margin-right</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">margin-bottom</span>: <span class="text-green-400">10px</span>;
+  <span class="text-blue-400">margin-left</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Shorthand Version
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px 20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- CSS FILES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-file-code text-blue-400 mr-2"></i>
+            6. CSS Files ko Organize Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Large website mein saari CSS ek hi huge file mein rakhne se
+            maintainability difficult ho sakti hai. Project ke structure ke
+            according base styles, components, layouts aur responsive rules ko
+            logically organize karna useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-folder-tree text-blue-400 mr-2"></i>
+                Example Structure
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">css/</span>
+  <span class="text-green-400">base.css</span>
+  <span class="text-green-400">components.css</span>
+  <span class="text-green-400">layout.css</span>
+  <span class="text-green-400">responsive.css</span></code></pre>
+            </div>
+          </div>
+
+          <!-- MINIFY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-compress-arrows-alt text-blue-400 mr-2"></i>
+            7. CSS Minification
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Production website mein CSS minification ka use karke unnecessary
+            whitespace, comments aur formatting characters ko remove kiya ja
+            sakta hai. Isse stylesheet ka transfer size reduce ho sakta hai.
+            Development ke time readable CSS aur production mein minified CSS ka
+            workflow common approach hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Readable CSS
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Minifier is code ko production ke liye compact form mein convert kar
+            sakta hai. Developer ko manually readability sacrifice karne ki
+            zarurat nahi hoti.
+          </p>
+
+          <!-- LOAD CSS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-bolt text-blue-400 mr-2"></i>
+            8. CSS Loading ko Optimize Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Website ke critical rendering path ko dhyan mein rakhna important
+            hai. Unnecessary stylesheets ko load karna avoid karein aur project
+            ke build setup ke according CSS ko efficiently deliver karein.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Unused stylesheet ko page par load na karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Production build mein CSS minification consider karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Critical styles aur non-critical styles ko project requirements
+                ke according manage karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Duplicate external CSS libraries load karne se bachein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SELECTOR SPECIFICITY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-ranking-star text-blue-400 mr-2"></i>
+            9. Specificity ko Simple Rakhein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            High specificity selectors ko override karna difficult ho sakta hai.
+            CSS optimization mein selectors ko predictable aur unnecessarily
+            powerful na banana useful practice hai. Simple class-based styling
+            frequently maintain karna easier hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Better Selector
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card-title</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">24px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- !IMPORTANT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-exclamation text-blue-400 mr-2"></i>
+            10. !important ka Excessive Use Avoid Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            !important useful ho sakta hai, lekin har CSS conflict mein
+            !important lagana optimization nahi hai. Excessive !important
+            declarations cascade aur future overrides ko difficult bana sakti
+            hain. Better approach ye hai ki pehle selector structure aur
+            specificity ko improve kiya jaye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Avoid Excessive !important
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.button</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white !important</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">blue !important</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">15px !important</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- VARIABLES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sliders text-blue-400 mr-2"></i>
+            11. CSS Variables ka Use
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS custom properties repeated values ko centralize karne mein help
+            karti hain. Colors, spacing aur other design values ko variable mein
+            store karke multiple places par reuse kiya ja sakta hai. Isse design
+            changes aur maintenance easier ho sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                CSS Variables Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">:root</span> {
+  <span class="text-blue-400">--primary-color</span>: <span class="text-green-400">#254ccb</span>;
+  <span class="text-blue-400">--space</span>: <span class="text-green-400">16px</span>;
+}
+
+<span class="text-blue-400">.button</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">var(--primary-color)</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">var(--space)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- RESPONSIVE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            12. Responsive CSS Optimize Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Responsive website mein CSS ko unnecessarily duplicate karne ke
+            bajay flexible layouts, reusable classes aur appropriate media
+            queries use karna better hota hai. Isse desktop, tablet aur mobile
+            ke liye CSS manageable rehti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Responsive Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">90%</span>;
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">1200px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">0 auto</span>;
+}
+
+<span class="text-blue-400">@media (max-width: 768px)</span> {
+  <span class="text-blue-400">.container</span> {
+    <span class="text-blue-400">width</span>: <span class="text-green-400">95%</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ANIMATIONS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+            13. Animations ko Optimize Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Animations website ko interactive bana sakti hain, lekin unnecessary
+            heavy animations performance ko affect kar sakti hain. Simple
+            transitions aur appropriate properties ka use karna generally better
+            hota hai. Animations ko user experience ke according purposeful
+            rakhna chahiye.
+          </p>
+
+          <!-- COMPLETE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+            14. Complete Optimized CSS Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ab ek small practical structure dekhte hain jisme reusable
+            variables, common classes, simple selectors aur responsive design ko
+            combine kiya gaya hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Complete Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">:root</span> {
+  <span class="text-blue-400">--primary</span>: <span class="text-green-400">#254ccb</span>;
+  <span class="text-blue-400">--spacing</span>: <span class="text-green-400">16px</span>;
+}
+
+<span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">90%</span>;
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">1100px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">0 auto</span>;
+}
+
+<span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">var(--spacing)</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">12px</span>;
+}
+
+<span class="text-blue-400">.button</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">var(--primary)</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 20px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">0</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">8px</span>;
+}
+
+<span class="text-blue-400">@media (max-width: 768px)</span> {
+  <span class="text-blue-400">.container</span> {
+    <span class="text-blue-400">width</span>: <span class="text-green-400">95%</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PERFORMANCE CHECKLIST -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-gauge-high text-blue-400 mr-2"></i>
+            CSS Performance Checklist
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Unused CSS ko identify aur remove karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Duplicate declarations ko reduce karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Reusable classes aur CSS variables use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Selectors ko unnecessarily complex na banayein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Production mein CSS minification consider karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Unnecessary external stylesheets avoid karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive CSS ko reusable aur organized rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                !important ka excessive use avoid karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Har component ke liye duplicate CSS likhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Unused CSS ko project mein indefinitely rakhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Bahut complex aur deeply nested selectors use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Har CSS problem ke liye !important use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Production website mein CSS ko minify na karna jab build process
+                minification support karta ho.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Responsive rules ko duplicate karke stylesheet unnecessarily
+                bada karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            CSS Optimization Best Practices
+          </h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS ko logical sections aur components mein organize karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Common values ke liye CSS variables consider karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Repeated styles ko reusable classes mein convert karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Simple selectors ko preference dein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Production build mein minification aur unused CSS removal
+                consider karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Performance optimization ke saath readability aur
+                maintainability ka bhi balance rakhein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS Optimization ka goal performance aur maintainability ko
+                improve karna hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Duplicate CSS ko reduce karna stylesheet ko cleaner bana sakta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Unused CSS ko remove karna important optimization step hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Reusable classes repeated code ko reduce karti hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS variables repeated design values ko centralize kar sakti
+                hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Complex selectors aur unnecessary specificity avoid karni
+                chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Production builds mein CSS minification useful ho sakti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                !important ka excessive use avoid karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive CSS ko organized aur reusable rakhna chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Optimization karte waqt readability aur maintainability ko
+                ignore nahi karna chahiye.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Optimization ka matlab CSS ko unnecessarily large aur
+              complicated banane ke bajay efficient, reusable aur maintainable
+              banana hai. Duplicate rules ko reduce karna, unused CSS remove
+              karna, reusable classes use karna, selectors ko simple rakhna aur
+              production CSS ko minify karna important techniques hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Ek optimized stylesheet sirf chhoti nahi hoti, balki logically
+              organized bhi hoti hai. CSS variables, responsive structure,
+              sensible specificity aur limited !important usage ke through
+              project ko long-term mein maintain karna easier banaya ja sakta
+              hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../important/important.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../accessibility/accessibility.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(44);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Access Arrays - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="flex min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full lg:w-[calc(100%-300px)] px-5 sm:px-8 lg:px-12 py-8"
+      >
+        <div class="max-w-6xl mx-auto">
+          <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10"
+          >
+            <div>
+              <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">
+                C++ Access Arrays
+              </h1>
+              <p class="text-gray-400 mt-3 text-lg">
+                Array ke elements ko index number ke through access kiya ja
+                sakta hai.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10 mb-10"
+          >
+            <a href="arrays.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+            <a href="change-array.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next<i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <div class="space-y-10">
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Access Array Elements
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Array ke kisi element ko access karne ke liye uska index square
+                brackets ke andar likhte hain.
+              </p>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                C++ arrays ka index 0 se start hota hai. Isliye first element
+                [0] hota hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Example: Access First Element
+                  </h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+cout << cars[0];</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Volvo</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Access Different Elements
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Index badalkar array ke different elements ko access kar sakte
+                ho.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example: Other Elements</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">cout << cars[1];
+cout << cars[2];
+cout << cars[3];</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">BMW
+Ford
+Mazda</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">Index Table</h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Ek 4-element array ke indexes 0, 1, 2 aur 3 honge.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Indexes</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">cars[0]  // First
+cars[1]  // Second
+cars[2]  // Third
+cars[3]  // Fourth</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="arrays.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+                </button>
+              </a>
+              <a href="change-array.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next<i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(7);
+        }
+      });
+    </script>
+  </body>
+</html>

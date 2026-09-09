@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Position</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Position
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS ka
+            <span class="text-blue-400 font-semibold">position</span>
+            property kisi element ko webpage par kis jagah aur kis tarah
+            position karna hai, ye control karta hai.
+          </p>
+
+          <!-- Top Buttons -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../display/display.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="#">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- Introduction -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-location-crosshairs text-blue-400 mr-2"></i>
+              CSS Position Property
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS mein
+              <span class="text-green-400">position</span>
+              property ka use kisi HTML element ki positioning ko control karne
+              ke liye kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Is property ki help se hum decide kar sakte hain ki element normal
+              document flow mein rahega ya kisi specific position par place
+              hoga.
+            </p>
+          </div>
+
+          <!-- Position Values -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+                CSS Position ki Values
+              </h3>
+            </div>
+
+            <div class="p-6">
+              <p class="text-lg sm:text-xl text-gray-300 mb-5">
+                CSS mein position property ki mainly ye values hoti hain:
+              </p>
+
+              <ul
+                class="list-disc list-inside space-y-3 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  <span class="text-green-400 font-semibold">static</span>
+                  – default position
+                </li>
+
+                <li>
+                  <span class="text-green-400 font-semibold">relative</span>
+                  – apni normal position ke according move karna
+                </li>
+
+                <li>
+                  <span class="text-green-400 font-semibold">absolute</span>
+                  – positioned parent ke according position karna
+                </li>
+
+                <li>
+                  <span class="text-green-400 font-semibold">fixed</span>
+                  – screen ke according fixed rehna
+                </li>
+
+                <li>
+                  <span class="text-green-400 font-semibold">sticky</span>
+                  – scroll karne par ek position par stick rehna
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Static -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-thumbtack text-blue-400 mr-2"></i>
+              position: static
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">static</span>
+              CSS position ki default value hoti hai. Agar hum kisi element ki
+              position define nahi karte hain, to normally element static
+              position mein hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">static</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Relative -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i
+                class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+              ></i>
+              position: relative
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">relative</span>
+              position ka use karke hum element ko uski normal position ke
+              comparison mein move kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Iske saath hum
+              <span class="text-green-400">top</span>,
+              <span class="text-green-400">right</span>,
+              <span class="text-green-400">bottom</span>
+              aur
+              <span class="text-green-400">left</span>
+              properties ka use kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">relative</span>;
+  <span class="text-blue-400">left</span>: <span class="text-green-400">30px</span>;
+  <span class="text-blue-400">top</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Absolute -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i
+                class="fa-solid fa-up-right-and-down-left-from-center text-blue-400 mr-2"
+              ></i>
+              position: absolute
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">absolute</span>
+              position wala element normal document flow se remove ho jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Ye element apne nearest positioned parent ke according position
+              hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">absolute</span>;
+  <span class="text-blue-400">top</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">right</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Fixed -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-lock text-blue-400 mr-2"></i>
+              position: fixed
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">fixed</span>
+              position wala element browser window ke according fixed position
+              par rehta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Page ko scroll karne ke baad bhi element apni position par bana
+              rehta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">fixed</span>;
+  <span class="text-blue-400">bottom</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">right</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Sticky -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-thumbtack text-blue-400 mr-2"></i>
+              position: sticky
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">sticky</span>
+              position initially normal position ki tarah behave karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Lekin jab page scroll hota hai aur element specified position tak
+              pahunchta hai, to wo wahan stick ho jata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">sticky</span>;
+  <span class="text-blue-400">top</span>: <span class="text-green-400">0</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Top / Right / Bottom / Left -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-arrows-to-dot text-blue-400 mr-2"></i>
+              Top, Right, Bottom aur Left
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Positioned elements ko move karne ke liye hum
+              <span class="text-green-400">top</span>,
+              <span class="text-green-400">right</span>,
+              <span class="text-green-400">bottom</span>
+              aur
+              <span class="text-green-400">left</span>
+              properties ka use kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">relative</span>;
+  <span class="text-blue-400">top</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">left</span>: <span class="text-green-400">30px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Important Points -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>static</b> position default hoti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>relative</b> element ko uski normal position se move karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>absolute</b> element normal document flow se bahar ho jata
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>fixed</b> element viewport ke according fixed rehta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>sticky</b> scrolling ke time specified position par stick
+                hota hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              CSS Position Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS ka position property elements ki positioning ko control karne
+              ke liye use hota hai. Iski important values
+              <span class="text-green-400">static</span>,
+              <span class="text-green-400">relative</span>,
+              <span class="text-green-400">absolute</span>,
+              <span class="text-green-400">fixed</span>
+              aur
+              <span class="text-green-400">sticky</span>
+              hain.
+            </p>
+          </div>
+
+          <!-- Bottom Buttons -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../display/display.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="#">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(23);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Fonts - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Fonts
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../text/text.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../icons/icons.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-font text-[#4d6fff] mr-3"></i>
+              CSS Fonts Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS font properties ka use webpage ke text ka
+              <b>font, size, style, weight aur appearance</b>
+              change karne ke liye kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              Fonts website ko readable aur attractive banane mein important
+              role play karte hain.
+            </p>
+
+            <!-- FONT FAMILY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-typewriter text-[#4d6fff] mr-3"></i>
+              1. Font Family
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>font-family</b> property decide karti hai ki text ka font
+              kaunsa hoga.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">font-family</span>: <span class="text-[#4ade80]">Arial</span>;
+}</code></pre>
+            </div>
+
+            <!-- FONT SIZE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-text-height text-[#4d6fff] mr-3"></i>
+              2. Font Size
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>font-size</b> property text ka size change karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+            </div>
+
+            <!-- FONT WEIGHT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-bold text-[#4d6fff] mr-3"></i>
+              3. Font Weight
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>font-weight</b> property text ko normal, bold ya kisi specific
+              thickness mein show karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">font-weight</span>: <span class="text-[#4ade80]">bold</span>;
+}</code></pre>
+            </div>
+
+            <!-- FONT STYLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-italic text-[#4d6fff] mr-3"></i>
+              4. Font Style
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>font-style</b> property text ko normal, italic ya oblique style
+              mein display karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">font-style</span>: <span class="text-[#4ade80]">italic</span>;
+}</code></pre>
+            </div>
+
+            <!-- FONT VARIANT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-font text-[#4d6fff] mr-3"></i>
+              5. Font Variant
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>font-variant</b> property text ko small-caps jaise format mein
+              display kar sakti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">font-variant</span>: <span class="text-[#4ade80]">small-caps</span>;
+}</code></pre>
+            </div>
+
+            <!-- FONT STRETCH -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-left-right text-[#4d6fff] mr-3"></i>
+              6. Font Stretch
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>font-stretch</b> available font variations ke according text ko
+              condensed ya expanded karne ke liye use hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">font-stretch</span>: <span class="text-[#4ade80]">condensed</span>;
+}</code></pre>
+            </div>
+
+            <!-- GOOGLE FONTS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-brands fa-google text-[#4d6fff] mr-3"></i>
+              7. Google Fonts
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Website mein external fonts bhi use kiye ja sakte hain. Google
+              Fonts ek popular source hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">@import</span> <span class="text-[#4ade80]">url('https://fonts.googleapis.com/css2?family=Poppins')</span>;
+
+<span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">font-family</span>: <span class="text-[#4ade80]">Poppins</span>;
+}</code></pre>
+            </div>
+
+            <!-- FONT SHORTHAND -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              8. Font Shorthand
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>font</b> shorthand property se multiple font properties ko ek
+              hi line mein likha ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">font</span>: <span class="text-[#4ade80]">italic bold 20px Arial</span>;
+}</code></pre>
+            </div>
+
+            <!-- FONT FAMILY TYPES -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-layer-group text-[#4d6fff] mr-3"></i>
+              9. Generic Font Families
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">Serif</h3>
+                <p class="text-gray-300 text-lg">
+                  Letters ke edges par small strokes hote hain.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">Sans-serif</h3>
+                <p class="text-gray-300 text-lg">
+                  Simple fonts jinke edges par strokes nahi hote.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">Monospace</h3>
+                <p class="text-gray-300 text-lg">
+                  Har character same width ka hota hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">Cursive</h3>
+                <p class="text-gray-300 text-lg">
+                  Handwriting style jaisa appearance.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">Fantasy</h3>
+                <p class="text-gray-300 text-lg">
+                  Decorative aur stylish fonts.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">System-ui</h3>
+                <p class="text-gray-300 text-lg">
+                  User ke operating system ka default UI font.
+                </p>
+              </div>
+            </div>
+
+            <!-- PRACTICAL EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-laptop-code text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">font-family</span>: <span class="text-[#4ade80]">Arial, sans-serif</span>;
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">40px</span>;
+  <span class="text-[#60a5fa]">font-weight</span>: <span class="text-[#4ade80]">bold</span>;
+  <span class="text-[#60a5fa]">font-style</span>: <span class="text-[#4ade80]">italic</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li><b>font-family</b> font ka type select karta hai.</li>
+
+                <li><b>font-size</b> text ka size set karta hai.</li>
+
+                <li><b>font-weight</b> text ki thickness control karta hai.</li>
+
+                <li>
+                  <b>font-style</b> italic ya normal style ke liye use hota hai.
+                </li>
+
+                <li>
+                  <b>font-variant</b> small-caps jaise formats ke liye use hota
+                  hai.
+                </li>
+
+                <li>
+                  Multiple font properties ko <b>font</b> shorthand se likh
+                  sakte hain.
+                </li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Fonts Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS Fonts text ke appearance ko control karte hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Font family aur font size sabse commonly used properties
+                    hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Font weight se text ko bold ya light banaya ja sakta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Google Fonts jaise external fonts bhi use kiye ja sakte
+                    hain.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../text/text.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../icons/icons.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(17);
+      });
+    </script>
+  </body>
+</html>

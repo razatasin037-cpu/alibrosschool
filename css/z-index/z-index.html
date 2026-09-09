@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Z-Index</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Z-Index
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS ka
+            <span class="text-blue-400 font-semibold">z-index</span>
+            property elements ke overlap hone par unki stacking order ko control
+            karta hai.
+          </p>
+
+          <!-- Top Buttons -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../position/position.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="#">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- Introduction -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+              Z-Index Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              Jab webpage par do ya usse zyada elements ek doosre ke upar
+              overlap karte hain, tab
+              <span class="text-green-400">z-index</span>
+              decide karta hai ki kaunsa element upar dikhai dega.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Jis element ka z-index value zyada hota hai, wo generally doosre
+              overlapping element ke upar dikhai deta hai.
+            </p>
+          </div>
+
+          <!-- Basic Syntax -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+              Z-Index Syntax
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Z-index ko CSS mein is tarah use kiya jata hai:
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">relative</span>;
+  <span class="text-blue-400">z-index</span>: <span class="text-green-400">5</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Higher Z Index -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-arrow-up text-blue-400 mr-2"></i>
+              Higher Z-Index
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Agar overlapping elements mein kisi element ka
+              <span class="text-green-400">z-index</span>
+              zyada hai, to wo element upar dikhai dega.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box1</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">relative</span>;
+  <span class="text-blue-400">z-index</span>: <span class="text-green-400">1</span>;
+}
+
+<span class="text-blue-400">.box2</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">relative</span>;
+  <span class="text-blue-400">z-index</span>: <span class="text-green-400">2</span>;
+}</code></pre>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mt-5"
+            >
+              Yahan <span class="text-green-400">box2</span> ka z-index zyada
+              hai, isliye overlapping hone par box2 upar dikhai dega.
+            </p>
+          </div>
+
+          <!-- Negative Z Index -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-arrow-down text-blue-400 mr-2"></i>
+              Negative Z-Index
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Z-index mein negative values bhi use ki ja sakti hain. Negative
+              z-index wala element doosre elements ke peeche ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">relative</span>;
+  <span class="text-blue-400">z-index</span>: <span class="text-green-400">-1</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Z Index with Position -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-crosshairs text-blue-400 mr-2"></i>
+              Z-Index aur Position
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Z-index ka use commonly positioned elements ke saath kiya jata
+              hai, jaise
+              <span class="text-green-400">relative</span>,
+              <span class="text-green-400">absolute</span>,
+              <span class="text-green-400">fixed</span>
+              aur
+              <span class="text-green-400">sticky</span>.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.header</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">fixed</span>;
+  <span class="text-blue-400">top</span>: <span class="text-green-400">0</span>;
+  <span class="text-blue-400">z-index</span>: <span class="text-green-400">100</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Example -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-flask text-blue-400 mr-2"></i>
+              Practical Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Maan lo do boxes ek doosre ke upar overlap kar rahe hain. Hum
+              z-index ki help se decide kar sakte hain ki kaunsa box sabse upar
+              rahega.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-4">
+                <span class="text-gray-300 font-semibold"> Example </span>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box1</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">absolute</span>;
+  <span class="text-blue-400">z-index</span>: <span class="text-green-400">1</span>;
+}
+
+<span class="text-blue-400">.box2</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">absolute</span>;
+  <span class="text-blue-400">z-index</span>: <span class="text-green-400">10</span>;
+}</code></pre>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mt-5"
+            >
+              Is example mein
+              <span class="text-green-400">box2</span>
+              upar dikhai dega kyunki uska z-index
+              <span class="text-green-400">10</span>
+              hai, jabki box1 ka z-index
+              <span class="text-green-400">1</span>
+              hai.
+            </p>
+          </div>
+
+          <!-- Important Points -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Z-index overlapping elements ki stacking order control karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Higher z-index wala element generally upar dikhai deta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Z-index mein positive aur negative dono values use kar sakte
+                hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Z-index ka use positioned elements ke saath commonly hota hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Z-index ka default value <b>auto</b> hota hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              CSS Z-Index Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS ka
+              <span class="text-green-400">z-index</span>
+              property overlapping elements ki layering ko control karta hai.
+              Jis element ka z-index value higher hota hai, wo generally doosre
+              overlapping elements ke upar dikhai deta hai.
+            </p>
+          </div>
+
+          <!-- Bottom Buttons -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../position/position.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="/css/overflow/overflow.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(24);
+      });
+    </script>
+  </body>
+</html>

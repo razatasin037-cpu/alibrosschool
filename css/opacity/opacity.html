@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Opacity</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Opacity
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Opacity ka use kisi element ko transparent ya semi-transparent
+            banane ke liye kiya jata hai. Opacity ki help se hum decide kar
+            sakte hain ki element kitna visible ya kitna transparent dikhega. Is
+            page par hum opacity property ko simple Hinglish mein detail mein
+            samjhenge, different values dekhenge aur practical examples ke saath
+            ise browser mein use karna seekhenge.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../pseudo-elements/pseudo-elements.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../navbar/navbar.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS OPACITY -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-eye text-blue-400 mr-2"></i>
+              CSS Opacity Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              CSS mein <span class="text-blue-400 font-semibold">opacity</span>
+              property kisi element ki transparency ko control karti hai. Simple
+              words mein, opacity batati hai ki element kitna visible rahega aur
+              uske peeche ka content kitna nazar aayega.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Opacity ki value normally
+              <span class="text-green-400 font-semibold">0</span> se
+              <span class="text-green-400 font-semibold">1</span> ke beech hoti
+              hai. Agar opacity <span class="text-green-400">1</span> hai to
+              element completely visible hota hai. Agar opacity
+              <span class="text-green-400">0</span> hai to element completely
+              transparent ho jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Beech ki values jaise
+              <span class="text-green-400">0.5</span> element ko partially
+              transparent banati hain. Iska use overlays, hover effects,
+              disabled-looking elements, images aur modern UI designs mein bahut
+              common hai.
+            </p>
+          </section>
+
+          <!-- SYNTAX -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+              CSS Opacity Syntax
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Opacity set karne ke liye hum CSS mein
+              <span class="text-blue-400 font-semibold">opacity</span>
+              property ka use karte hain. Iske baad ek value di jati hai jo
+              element ki transparency decide karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Syntax
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">selector</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">value</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Example ke liye agar hum kisi box ko
+              <span class="text-green-400">0.5</span> opacity dete hain, to box
+              approximately 50% visible aur 50% transparent dikhega.
+            </p>
+          </section>
+
+          <!-- OPACITY 1 -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-circle text-blue-400 mr-2"></i>
+              Opacity: 1 — Completely Visible
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400 font-semibold">opacity: 1</span>
+              default opacity value hai. Iska matlab element completely visible
+              hoga aur uske andar ka content normal tarike se dikhega.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Agar aapne kisi element par opacity set nahi ki hai, generally
+              uski opacity effectively 1 hoti hai. Normal buttons, headings,
+              cards aur images isi tarah fully visible hote hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">royalblue</span>;
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">1</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Is example mein box completely visible rahega kyunki opacity ki
+              value 1 hai.
+            </p>
+          </section>
+
+          <!-- OPACITY 0.5 -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-adjust text-blue-400 mr-2"></i>
+              Opacity: 0.5 — Semi Transparent
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400 font-semibold">opacity: 0.5</span>
+              element ko semi-transparent bana deta hai. Is situation mein
+              element ka content aur background partially transparent dikhta
+              hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Ye value overlays, images aur hover effects ke liye useful hai.
+              Background ke peeche jo content hota hai, wo bhi kuch extent tak
+              visible ho sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">blue</span>;
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.5</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Yahan box ki visibility kam ho jayegi aur background ka effect
+              partially visible hoga.
+            </p>
+          </section>
+
+          <!-- OPACITY 0 -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-eye-slash text-blue-400 mr-2"></i>
+              Opacity: 0 — Completely Transparent
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400 font-semibold">opacity: 0</span>
+              element ko completely transparent bana deta hai. Iska matlab
+              element visually screen par dikhai nahi dega.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Ek important baat ye hai ki opacity 0 karne se element
+              automatically page se remove nahi hota. Element layout mein exist
+              kar sakta hai, lekin user ko visible nahi hoga.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.hidden-box</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">red</span>;
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Is example mein red box visible nahi hoga, kyunki uski opacity
+              zero hai.
+            </p>
+          </section>
+
+          <!-- OPACITY VALUES -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-sliders text-blue-400 mr-2"></i>
+              Opacity Values Ko Samjhein
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Opacity ki different values element ke visible level ko change
+              karti hain. Value jitni kam hogi, element utna hi transparent
+              dikhega.
+            </p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold text-green-400 mb-3">1</h3>
+                <p class="text-lg text-gray-300">Completely visible.</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold text-green-400 mb-3">0.75</h3>
+                <p class="text-lg text-gray-300">
+                  Mostly visible with slight transparency.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold text-green-400 mb-3">0.5</h3>
+                <p class="text-lg text-gray-300">
+                  Half visible and semi-transparent.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold text-green-400 mb-3">0</h3>
+                <p class="text-lg text-gray-300">Completely transparent.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- IMAGE OPACITY -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-image text-blue-400 mr-2"></i>
+              Opacity With Images
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Opacity ka use images ke saath bhi bahut common hai. Hum kisi
+              image ko slightly faded bana sakte hain ya user interaction ke
+              time uski visibility change kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Example ke liye gallery website mein normal image ko thoda
+              transparent rakha ja sakta hai aur hover karne par usse fully
+              visible banaya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.6</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- HOVER OPACITY -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+              Opacity With Hover Effect
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Opacity ka sabse popular use hover effect ke saath hota hai. Jab
+              user kisi element ke upar mouse le jata hai, tab opacity change
+              karke visual feedback diya ja sakta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Ye effect images, buttons, cards aur navigation elements mein
+              frequently use hota hai. Isse website zyada interactive feel hoti
+              hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.image</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.6</span>;
+}
+
+<span class="text-blue-400">.image:hover</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">1</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Normal state mein image 60% visible rahegi. Jab mouse image ke
+              upar jayega, opacity 1 ho jayegi aur image completely visible
+              dikhegi.
+            </p>
+          </section>
+
+          <!-- PRACTICAL CARD -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+              Practical Opacity Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Ab ek practical example dekhte hain jisme ek card initially
+              semi-transparent rahega aur hover karne par completely visible ho
+              jayega.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Complete Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"card"</span><span class="text-blue-400">&gt;</span>
+  <span class="text-blue-400">&lt;h2&gt;</span>CSS Opacity<span class="text-blue-400">&lt;/h2&gt;</span>
+  <span class="text-blue-400">&lt;p&gt;</span>
+    Learn how opacity works in CSS.
+  <span class="text-blue-400">&lt;/p&gt;</span>
+<span class="text-blue-400">&lt;/div&gt;</span>
+
+<span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">royalblue</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">30px</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.6</span>;
+}
+
+<span class="text-blue-400">.card:hover</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">1</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- OPACITY VS DISPLAY -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+              Opacity Aur display: none Mein Difference
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Beginners aksar opacity 0 ko
+              <span class="text-blue-400 font-semibold">display: none</span>
+              ke same samajh lete hain, lekin dono ka behavior different hota
+              hai.
+            </p>
+
+            <div class="overflow-x-auto mb-7">
+              <table class="w-full text-left border-collapse text-lg">
+                <thead>
+                  <tr class="bg-[#1e293b]">
+                    <th class="p-5 border border-gray-700">Property</th>
+                    <th class="p-5 border border-gray-700">Result</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr class="bg-[#0f172a]">
+                    <td class="p-5 border border-gray-700 text-blue-400">
+                      opacity: 0
+                    </td>
+                    <td class="p-5 border border-gray-700 text-gray-300">
+                      Element invisible ho sakta hai, lekin element layout mein
+                      reh sakta hai.
+                    </td>
+                  </tr>
+
+                  <tr class="bg-[#111827]">
+                    <td class="p-5 border border-gray-700 text-blue-400">
+                      display: none
+                    </td>
+                    <td class="p-5 border border-gray-700 text-gray-300">
+                      Element layout se remove ho jata hai.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- COMMON USES -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+              CSS Opacity Ke Common Uses
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Images</h3>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Images ko faded ya semi-transparent banane ke liye opacity
+                  useful hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Hover Effects</h3>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Mouse hover ke time element ki visibility change kar sakte
+                  hain.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Overlays</h3>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Background image ke upar transparent layer create karne mein
+                  opacity helpful hoti hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">UI Effects</h3>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Cards, buttons aur other UI elements ko subtle visual effect
+                  dene ke liye opacity use ki ja sakti hai.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- COMMON MISTAKES -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <div class="space-y-5">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  1. Opacity value ka wrong format
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Opacity ke liye normally 0 se 1 ke beech decimal value use
+                  karna easy aur clear approach hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  2. Opacity aur display none ko same samajhna
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  opacity 0 visual transparency control karta hai, jabki display
+                  none element ko layout se remove karta hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  3. Text ko bhi accidentally transparent kar dena
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Agar parent element par opacity apply ki jati hai, to uske
+                  andar ke child content par bhi transparency ka visual effect
+                  aa sakta hai.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS opacity element ki transparency control karti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Opacity 1 par element completely visible hota hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Opacity 0 par element completely transparent ho jata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                0 aur 1 ke beech values semi-transparent effects create karti
+                hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Opacity images, cards aur hover effects mein commonly use hoti
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                opacity: 0 aur display: none same nahi hote.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Opacity kisi element ki transparency ko control karne ke liye
+              use hoti hai. Iski value element ke visible level ko decide karti
+              hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              <span class="text-green-400 font-semibold">opacity: 1</span>
+              ka matlab completely visible,
+              <span class="text-green-400 font-semibold">opacity: 0.5</span>
+              ka matlab semi-transparent aur
+              <span class="text-green-400 font-semibold">opacity: 0</span>
+              ka matlab completely transparent.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Opacity ko hover effects, images, overlays, cards aur modern
+              website interfaces mein effectively use kiya ja sakta hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../pseudo-elements/pseudo-elements.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../navbar/navbar.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(32);
+      });
+    </script>
+  </body>
+</html>

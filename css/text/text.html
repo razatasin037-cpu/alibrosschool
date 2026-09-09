@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Text - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- NAVBAR -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+      <div id="sidebar"></div>
+
+      <!-- MAIN CONTENT -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Text
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../height-width/height-width.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../fonts/fonts.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-font text-[#4d6fff] mr-3"></i>
+              CSS Text Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS mein text properties ka use text ka
+              <b>color, alignment, decoration, spacing aur appearance</b>
+              control karne ke liye kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              CSS text properties ki help se website ke text ko attractive aur
+              readable banaya ja sakta hai.
+            </p>
+
+            <!-- TEXT COLOR -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-palette text-[#4d6fff] mr-3"></i>
+              1. Text Color
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>color</b> property text ka color change karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+}</code></pre>
+            </div>
+
+            <!-- TEXT ALIGNMENT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-align-center text-[#4d6fff] mr-3"></i>
+              2. Text Alignment
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>text-align</b> property text ko left, right, center ya justify
+              karne ke liye use hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+}</code></pre>
+            </div>
+
+            <!-- LEFT RIGHT CENTER -->
+            <div class="grid sm:grid-cols-3 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i
+                  class="fa-solid fa-align-left text-[#4d6fff] text-3xl mb-5"
+                ></i>
+                <h4 class="text-xl font-bold mb-3">Left</h4>
+                <p class="text-gray-300 text-lg">
+                  Text left side align hota hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i
+                  class="fa-solid fa-align-center text-[#4d6fff] text-3xl mb-5"
+                ></i>
+                <h4 class="text-xl font-bold mb-3">Center</h4>
+                <p class="text-gray-300 text-lg">
+                  Text center mein align hota hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i
+                  class="fa-solid fa-align-right text-[#4d6fff] text-3xl mb-5"
+                ></i>
+                <h4 class="text-xl font-bold mb-3">Right</h4>
+                <p class="text-gray-300 text-lg">
+                  Text right side align hota hai.
+                </p>
+              </div>
+            </div>
+
+            <!-- TEXT DECORATION -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-underline text-[#4d6fff] mr-3"></i>
+              3. Text Decoration
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>text-decoration</b> property text ke upar, neeche ya through
+              line lagane ke liye use hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">text-decoration</span>: <span class="text-[#4ade80]">underline</span>;
+}</code></pre>
+            </div>
+
+            <!-- TEXT TRANSFORM -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-text-height text-[#4d6fff] mr-3"></i>
+              4. Text Transform
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>text-transform</b> text ko uppercase, lowercase ya capitalize
+              karne ke liye use hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">text-transform</span>: <span class="text-[#4ade80]">uppercase</span>;
+}</code></pre>
+            </div>
+
+            <!-- TEXT INDENT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-indent text-[#4d6fff] mr-3"></i>
+              5. Text Indent
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>text-indent</b> paragraph ki first line ko indent karne ke liye
+              use hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">text-indent</span>: <span class="text-[#4ade80]">40px</span>;
+}</code></pre>
+            </div>
+
+            <!-- LETTER SPACING -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-left-right text-[#4d6fff] mr-3"></i>
+              6. Letter Spacing
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>letter-spacing</b> letters ke beech ka horizontal space control
+              karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">letter-spacing</span>: <span class="text-[#4ade80]">3px</span>;
+}</code></pre>
+            </div>
+
+            <!-- WORD SPACING -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i
+                class="fa-solid fa-arrows-left-right-to-line text-[#4d6fff] mr-3"
+              ></i>
+              7. Word Spacing
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>word-spacing</b> words ke beech ka space control karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">word-spacing</span>: <span class="text-[#4ade80]">10px</span>;
+}</code></pre>
+            </div>
+
+            <!-- LINE HEIGHT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-up-down text-[#4d6fff] mr-3"></i>
+              8. Line Height
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>line-height</b> text ki lines ke beech vertical spacing control
+              karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">line-height</span>: <span class="text-[#4ade80]">1.8</span>;
+}</code></pre>
+            </div>
+
+            <!-- TEXT SHADOW -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-clone text-[#4d6fff] mr-3"></i>
+              9. Text Shadow
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>text-shadow</b> text ke peeche shadow effect create karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">text-shadow</span>: <span class="text-[#4ade80]">2px 2px 5px gray</span>;
+}</code></pre>
+            </div>
+
+            <!-- TEXT DIRECTION -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i
+                class="fa-solid fa-arrow-right-arrow-left text-[#4d6fff] mr-3"
+              ></i>
+              10. Text Direction
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>direction</b> property text ki writing direction set karne ke
+              liye use hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">direction</span>: <span class="text-[#4ade80]">rtl</span>;
+}</code></pre>
+            </div>
+
+            <!-- WHITE SPACE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-space-awesome text-[#4d6fff] mr-3"></i>
+              11. White Space
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>white-space</b> property decide karti hai ki spaces aur line
+              breaks ko browser kaise handle karega.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">white-space</span>: <span class="text-[#4ade80]">nowrap</span>;
+}</code></pre>
+            </div>
+
+            <!-- TEXT OVERFLOW -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ellipsis text-[#4d6fff] mr-3"></i>
+              12. Text Overflow
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>text-overflow</b> ka use overflowing text ko indicate karne ke
+              liye kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.text</span> {
+  <span class="text-[#60a5fa]">white-space</span>: <span class="text-[#4ade80]">nowrap</span>;
+  <span class="text-[#60a5fa]">overflow</span>: <span class="text-[#4ade80]">hidden</span>;
+  <span class="text-[#60a5fa]">text-overflow</span>: <span class="text-[#4ade80]">ellipsis</span>;
+}</code></pre>
+            </div>
+
+            <!-- PRACTICAL EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-globe text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#ffffff</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+  <span class="text-[#60a5fa]">text-transform</span>: <span class="text-[#4ade80]">uppercase</span>;
+  <span class="text-[#60a5fa]">letter-spacing</span>: <span class="text-[#4ade80]">2px</span>;
+  <span class="text-[#60a5fa]">text-shadow</span>: <span class="text-[#4ade80]">2px 2px 5px gray</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT POINTS -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li><b>color</b> text ka color change karta hai.</li>
+
+                <li><b>text-align</b> text ki alignment control karta hai.</li>
+
+                <li>
+                  <b>text-decoration</b> underline aur doosri decorations ke
+                  liye use hota hai.
+                </li>
+
+                <li>
+                  <b>text-transform</b> uppercase, lowercase aur capitalize ke
+                  liye use hota hai.
+                </li>
+
+                <li>
+                  <b>letter-spacing</b> letters ke beech distance control karta
+                  hai.
+                </li>
+
+                <li>
+                  <b>word-spacing</b> words ke beech distance control karta hai.
+                </li>
+
+                <li>
+                  <b>line-height</b> lines ke beech vertical space control karta
+                  hai.
+                </li>
+
+                <li><b>text-shadow</b> text ko shadow effect deta hai.</li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Text Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS text properties text ki appearance ko control karti
+                    hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Alignment, decoration aur transformation easily change ki ja
+                    sakti hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Letter, word aur line spacing ko control kiya ja sakta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Text shadow se attractive text effects banaye ja sakte hain.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../height-width/height-width.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../fonts/fonts.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(16);
+      });
+    </script>
+  </body>
+</html>

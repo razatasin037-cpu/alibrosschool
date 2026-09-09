@@ -1,105 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>C++ For Loop - Ali Learning</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="../../js/insert.js"></script>
-<script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen">
-<div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">C++ For Loop</h1>
-<div class="flex justify-between items-center">
-<a href="../switch/switch.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="nested-loops.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<hr class="mt-12 border-white/10"/>
-<section class="max-w-6xl mx-auto py-10">
-
-<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">C++ For Loop</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
-Jab aapko exactly pata ho ki kisi block of code ko kitni baar repeat karna hai,
-tab <span class="text-[#4d6fff] font-bold">for</span> loop use karna useful hota hai.
-</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10">
-<div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
-<h3 class="text-xl font-semibold">Syntax</h3><span class="text-sm text-gray-400">Syntax</span>
-</div>
-<div class="p-6"><div class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto">
-<pre><code class="text-green-400 text-base sm:text-lg">for (statement 1; statement 2; statement 3) {
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ For Loop - Ali Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ For Loop
+        </h1>
+        <div class="flex justify-between items-center">
+          <a href="/C++/while/do-while.html"
+            ><button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+            </button></a
+          >
+          <a href="nested-loops.html"
+            ><button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+          ></a>
+        </div>
+        <hr class="mt-12 border-white/10" />
+        <section class="max-w-6xl mx-auto py-10">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ For Loop
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Jab aapko exactly pata ho ki kisi block of code ko kitni baar repeat
+            karna hai, tab
+            <span class="text-[#4d6fff] font-bold">for</span> loop use karna
+            useful hota hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Syntax</h3>
+              <span class="text-sm text-gray-400">Syntax</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">for (statement 1; statement 2; statement 3) {
     // code block to be executed
 }</code></pre>
-</div></div></div>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
-<span class="text-[#4d6fff] font-bold">Statement 1</span> loop start hone se pehle ek baar execute hota hai.
-<span class="text-[#4d6fff] font-bold">Statement 2</span> condition define karta hai.
-<span class="text-[#4d6fff] font-bold">Statement 3</span> har iteration ke baad execute hota hai.
-</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10">
-<div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
-<h3 class="text-xl font-semibold">Print Numbers 0 to 4</h3><span class="text-sm text-gray-400">Example</span>
-</div>
-<div class="p-6"><div class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto">
-<pre><code class="text-green-400 text-base sm:text-lg">for (int i = 0; i < 5; i++) {
+              </div>
+            </div>
+          </div>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-[#4d6fff] font-bold">Statement 1</span> loop start
+            hone se pehle ek baar execute hota hai.
+            <span class="text-[#4d6fff] font-bold">Statement 2</span> condition
+            define karta hai.
+            <span class="text-[#4d6fff] font-bold">Statement 3</span> har
+            iteration ke baad execute hota hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Print Numbers 0 to 4</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">for (int i = 0; i < 5; i++) {
     cout << i << "\n";
 }</code></pre>
-</div></div></div>
-<h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">Example Explained</h2>
-<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300 mb-10">
-<li><span class="text-[#4d6fff] font-bold">int i = 0</span> variable set karta hai.</li>
-<li><span class="text-[#4d6fff] font-bold">i &lt; 5</span> loop ki condition hai.</li>
-<li><span class="text-[#4d6fff] font-bold">i++</span> har iteration ke baad value increase karta hai.</li>
-<li>Condition false hone par loop end ho jata hai.</li>
-</ul>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10">
-<div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
-<h3 class="text-xl font-semibold">Print Even Numbers</h3><span class="text-sm text-gray-400">Example</span>
-</div>
-<div class="p-6"><div class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto">
-<pre><code class="text-green-400 text-base sm:text-lg">for (int i = 0; i <= 10; i = i + 2) {
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Example Explained
+          </h2>
+          <ul
+            class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300 mb-10"
+          >
+            <li>
+              <span class="text-[#4d6fff] font-bold">int i = 0</span> variable
+              set karta hai.
+            </li>
+            <li>
+              <span class="text-[#4d6fff] font-bold">i &lt; 5</span> loop ki
+              condition hai.
+            </li>
+            <li>
+              <span class="text-[#4d6fff] font-bold">i++</span> har iteration ke
+              baad value increase karta hai.
+            </li>
+            <li>Condition false hone par loop end ho jata hai.</li>
+          </ul>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Print Even Numbers</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">for (int i = 0; i <= 10; i = i + 2) {
     cout << i << "\n";
 }</code></pre>
-</div></div></div><div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10">
-<div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
-<h3 class="text-xl font-semibold">Sum of Numbers</h3><span class="text-sm text-gray-400">Example</span>
-</div>
-<div class="p-6"><div class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto">
-<pre><code class="text-green-400 text-base sm:text-lg">int sum = 0;
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Sum of Numbers</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">int sum = 0;
 
 for (int i = 1; i <= 5; i++) {
     sum = sum + i;
 }
 
 cout << "Sum is " << sum;</code></pre>
-</div></div></div><div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10">
-<div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
-<h3 class="text-xl font-semibold">Countdown</h3><span class="text-sm text-gray-400">Example</span>
-</div>
-<div class="p-6"><div class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto">
-<pre><code class="text-green-400 text-base sm:text-lg">for (int i = 5; i > 0; i--) {
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Countdown</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">for (int i = 5; i > 0; i--) {
     cout << i << "\n";
 }</code></pre>
-</div></div></div>
-<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
-<a href="../switch/switch.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="nested-loops.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-</section>
-</section>
-</main>
-<footer id="footer"></footer>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof createSidebar === "function") {
-    document.getElementById("sidebar").innerHTML = createSidebar(8);
-  }
-});
-</script>
-</body>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../switch/switch.html"
+              ><button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button></a
+            >
+            <a href="nested-loops.html"
+              ><button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+            ></a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(8);
+        }
+      });
+    </script>
+  </body>
 </html>

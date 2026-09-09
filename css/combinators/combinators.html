@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Combinators</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../combinators/combinators.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../pseudo-classes/pseudo-classes.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- TITLE -->
+          <section class="mb-12">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+              CSS Combinators
+            </h1>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Combinators ka use HTML elements ke beech ke
+              <span class="text-[#4d6fff] font-bold"> relationship </span>
+              ko define karne ke liye kiya jata hai. Inki madad se hum ye decide
+              kar sakte hain ki CSS style exactly kin elements par apply honi
+              chahiye.
+            </p>
+          </section>
+
+          <!-- INTRODUCTION -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-7">
+              <i class="fa-solid fa-link text-blue-400 mr-3"></i>
+              CSS Combinators Kya Hote Hain?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              CSS mein selector ka use kisi particular HTML element ko select
+              karne ke liye kiya jata hai. Lekin kabhi-kabhi humein sirf element
+              ko select nahi karna hota, balki ye bhi batana hota hai ki ek
+              element ka doosre element ke saath kya relationship hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Isi kaam ke liye
+              <span class="text-[#4d6fff] font-bold"> CSS Combinators </span>
+              use hote hain. Combinator do ya do se zyada selectors ke beech
+              relationship establish karta hai. Isse hum parent, child, sibling
+              aur descendant elements ko accurately target kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Large websites mein combinators bahut useful hote hain, kyunki har
+              element ko alag class dene ki zarurat nahi padti. Hum HTML
+              structure ke basis par elements ko directly select kar sakte hain.
+            </p>
+          </section>
+
+          <!-- TYPES CARD -->
+          <section class="mb-14">
+            <div
+              class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-layer-group text-blue-400 mr-3"></i>
+                CSS Combinators ke Types
+              </h2>
+
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-7">
+                CSS mein mainly chaar important combinators hote hain. Har
+                combinator HTML elements ke relationship ko alag tarike se
+                represent karta hai.
+              </p>
+
+              <ul
+                class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  <span class="text-blue-400 font-bold">
+                    Descendant Combinator
+                  </span>
+                  — Space
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">
+                    Child Combinator
+                  </span>
+                  — &gt;
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">
+                    Adjacent Sibling Combinator
+                  </span>
+                  — +
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">
+                    General Sibling Combinator
+                  </span>
+                  — ~
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- DESCENDANT -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              1. Descendant Combinator
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Descendant combinator ko ek simple
+              <span class="text-white font-bold"> space </span>
+              se represent kiya jata hai. Iska use kisi parent element ke andar
+              maujood kisi bhi matching descendant element ko select karne ke
+              liye hota hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Yahan descendant ka matlab sirf direct child nahi hai. Agar ek
+              element parent ke andar directly ya multiple levels ke andar
+              present hai, to descendant combinator usko select kar sakta hai.
+              Isi wajah se ye nested HTML structures ke saath kaafi useful hota
+              hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+            >
+              <div class="bg-[#1e293b] px-6 py-4">
+                <h3 class="text-xl font-bold">Descendant Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">div p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+              Is example mein
+              <span class="text-blue-400 font-bold">div p</span>
+              ka matlab hai ki kisi bhi
+              <span class="text-blue-400 font-bold">div</span>
+              ke andar jo bhi
+              <span class="text-blue-400 font-bold">p</span>
+              element hoga, uska text blue ho jayega.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] px-6 py-4">
+                <h3 class="text-xl font-bold">Complete Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;div&gt;</span>
+  <span class="text-blue-400">&lt;p&gt;</span>This paragraph will be blue.<span class="text-blue-400">&lt;/p&gt;</span>
+
+  <span class="text-blue-400">&lt;section&gt;</span>
+    <span class="text-blue-400">&lt;p&gt;</span>This paragraph will also be blue.<span class="text-blue-400">&lt;/p&gt;</span>
+  <span class="text-blue-400">&lt;/section&gt;</span>
+<span class="text-blue-400">&lt;/div&gt;</span>
+
+<span class="text-blue-400">div p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- CHILD -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              2. Child Combinator
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Child combinator ko
+              <span class="text-white font-bold"> &gt; </span>
+              symbol se represent kiya jata hai. Ye descendant combinator se
+              thoda different hota hai, kyunki child combinator sirf un elements
+              ko select karta hai jo specified parent ke
+              <span class="text-[#4d6fff] font-bold"> direct children </span>
+              hote hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Agar kisi parent ke andar ek aur element ke andar paragraph hai,
+              to wo paragraph direct child nahi hai. Isliye
+              <span class="text-blue-400 font-bold"> div &gt; p </span>
+              us paragraph ko select nahi karega.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+            >
+              <div class="bg-[#1e293b] px-6 py-4">
+                <h3 class="text-xl font-bold">Child Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">div &gt; p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+              Yahan sirf wahi
+              <span class="text-blue-400 font-bold">p</span>
+              select hoga jo
+              <span class="text-blue-400 font-bold">div</span>
+              ka direct child hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] px-6 py-4">
+                <h3 class="text-xl font-bold">Complete Child Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;div&gt;</span>
+  <span class="text-blue-400">&lt;p&gt;</span>Direct child<span class="text-blue-400">&lt;/p&gt;</span>
+
+  <span class="text-blue-400">&lt;section&gt;</span>
+    <span class="text-blue-400">&lt;p&gt;</span>Nested paragraph<span class="text-blue-400">&lt;/p&gt;</span>
+  <span class="text-blue-400">&lt;/section&gt;</span>
+<span class="text-blue-400">&lt;/div&gt;</span>
+
+<span class="text-blue-400">div &gt; p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- ADJACENT -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              3. Adjacent Sibling Combinator
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Adjacent sibling combinator ko
+              <span class="text-white font-bold"> + </span>
+              symbol se represent kiya jata hai. Ye kisi element ke immediately
+              baad aane wale
+              <span class="text-[#4d6fff] font-bold"> next sibling </span>
+              ko select karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Is combinator mein order bahut important hota hai. Agar selector
+              mein
+              <span class="text-blue-400 font-bold"> h2 + p </span>
+              likha hai, to sirf wahi paragraph select hoga jo h2 ke immediately
+              baad aata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+            >
+              <div class="bg-[#1e293b] px-6 py-4">
+                <h3 class="text-xl font-bold">Adjacent Sibling Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">h2 + p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">green</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Agar h2 ke turant baad paragraph hai to paragraph green ho jayega.
+              Lekin agar h2 ke baad koi aur element aa gaya, to uske baad wala
+              paragraph select nahi hoga.
+            </p>
+          </section>
+
+          <!-- GENERAL SIBLING -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              4. General Sibling Combinator
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              General sibling combinator ko
+              <span class="text-white font-bold"> ~ </span>
+              symbol se represent kiya jata hai. Ye kisi element ke baad aane
+              wale
+              <span class="text-[#4d6fff] font-bold">
+                saare matching sibling elements
+              </span>
+              ko select kar sakta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Adjacent sibling mein sirf immediately next element select hota
+              tha, lekin general sibling mein same parent ke andar baad mein
+              aane wale multiple matching elements select ho sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+            >
+              <div class="bg-[#1e293b] px-6 py-4">
+                <h3 class="text-xl font-bold">General Sibling Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">h2 ~ p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">orange</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Is example mein h2 ke baad same parent ke andar jitne bhi matching
+              p elements hain, un sab par style apply ho sakti hai. Beech mein
+              koi doosra element hone se selection nahi rukta.
+            </p>
+          </section>
+
+          <!-- PRACTICAL EXAMPLE -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-code text-blue-400 mr-3"></i>
+              Practical Website Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Real website mein combinators ka use navigation menus, cards,
+              article sections, forms aur content layouts mein kiya ja sakta
+              hai. Is example mein hum ek article ke andar heading ke
+              immediately baad wale paragraph ko alag style kar rahe hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] px-6 py-4">
+                <h3 class="text-xl font-bold">Article Styling</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;article&gt;</span>
+
+  <span class="text-blue-400">&lt;h2&gt;</span>CSS Combinators<span class="text-blue-400">&lt;/h2&gt;</span>
+
+  <span class="text-blue-400">&lt;p&gt;</span>
+    Ye heading ke immediately baad wala paragraph hai.
+  <span class="text-blue-400">&lt;/p&gt;</span>
+
+  <span class="text-blue-400">&lt;p&gt;</span>
+    Ye second paragraph hai.
+  <span class="text-blue-400">&lt;/p&gt;</span>
+
+<span class="text-blue-400">&lt;/article&gt;</span>
+
+<span class="text-blue-400">article h2 + p</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">bold</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- DIFFERENCE -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              Combinators Mein Difference
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden"
+            >
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-lg">
+                  <thead class="bg-[#1e293b]">
+                    <tr>
+                      <th class="px-6 py-5">Combinator</th>
+                      <th class="px-6 py-5">Symbol</th>
+                      <th class="px-6 py-5">Kya Select Karta Hai?</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="text-gray-300">
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-blue-400 font-bold">
+                        Descendant
+                      </td>
+                      <td class="px-6 py-5">Space</td>
+                      <td class="px-6 py-5">
+                        Parent ke andar matching descendants
+                      </td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-blue-400 font-bold">Child</td>
+                      <td class="px-6 py-5">&gt;</td>
+                      <td class="px-6 py-5">Sirf direct children</td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-blue-400 font-bold">
+                        Adjacent Sibling
+                      </td>
+                      <td class="px-6 py-5">+</td>
+                      <td class="px-6 py-5">Immediately next sibling</td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-blue-400 font-bold">
+                        General Sibling
+                      </td>
+                      <td class="px-6 py-5">~</td>
+                      <td class="px-6 py-5">Baad ke matching siblings</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- COMMON MISTAKES -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i
+                class="fa-solid fa-triangle-exclamation text-blue-400 mr-3"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-9"
+            >
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>Descendant aur Child combinator ko same samajhna.</li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">+</span>
+                  ko General Sibling ke liye use karna.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">~</span>
+                  aur
+                  <span class="text-blue-400 font-bold">+</span>
+                  ke difference ko ignore karna.
+                </li>
+
+                <li>
+                  HTML elements ke parent-child relationship ko properly
+                  understand na karna.
+                </li>
+
+                <li>
+                  Bahut complex selectors bana dena jab simple combinator se
+                  same result mil sakta ho.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- IMPORTANT -->
+          <section class="mb-14">
+            <div
+              class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold mb-6">
+                <i class="fa-solid fa-circle-info text-blue-400 mr-3"></i>
+                Important Points
+              </h2>
+
+              <ul
+                class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+              >
+                <li>Descendant combinator ke liye space use hota hai.</li>
+
+                <li>
+                  Child combinator ke liye
+                  <span class="text-blue-400 font-bold">&gt;</span>
+                  use hota hai.
+                </li>
+
+                <li>
+                  Adjacent sibling combinator ke liye
+                  <span class="text-blue-400 font-bold">+</span>
+                  use hota hai.
+                </li>
+
+                <li>
+                  General sibling combinator ke liye
+                  <span class="text-blue-400 font-bold">~</span>
+                  use hota hai.
+                </li>
+
+                <li>Child combinator sirf direct child ko select karta hai.</li>
+
+                <li>
+                  Adjacent sibling sirf immediately next matching sibling ko
+                  select karta hai.
+                </li>
+
+                <li>
+                  General sibling baad mein aane wale matching siblings ko
+                  select kar sakta hai.
+                </li>
+
+                <li>
+                  Combinators HTML structure ko samajhkar CSS ko zyada powerful
+                  aur precise banate hain.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- SUMMARY -->
+          <section class="mb-10">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">Summary</h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              CSS Combinators ka main purpose HTML elements ke beech
+              relationship ko use karke elements ko accurately select karna hai.
+              Ye especially tab useful hote hain jab webpage mein nested
+              elements ya multiple sibling elements present hon.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Agar aap
+              <span class="text-[#4d6fff] font-bold">
+                space, &gt;, + aur ~
+              </span>
+              ke difference ko properly samajh lete ho, to aap complex HTML
+              structures ko bhi CSS ke through easily target kar sakte ho.
+            </p>
+          </section>
+
+          <!-- BOTTOM BUTTONS -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../combinators/combinators.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../pseudo-classes/pseudo-classes.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(29);
+      });
+    </script>
+  </body>
+</html>

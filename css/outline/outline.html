@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Outline - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- NAVBAR -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+      <div id="sidebar"></div>
+
+      <!-- MAIN CONTENT -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Outline
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../box-model/box-model.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../text/text.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRODUCTION -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-pen-to-square text-[#4d6fff] mr-3"></i>
+              CSS Outline Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS mein <b>outline</b> ka use kisi HTML element ke border ke
+              bahar ek line draw karne ke liye kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              Outline border se alag hota hai aur element ki layout size ko
+              normally affect nahi karta.
+            </p>
+
+            <!-- BORDER VS OUTLINE -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-circle-info text-[#4d6fff] mr-3"></i>
+                Border vs Outline
+              </h3>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-[#020617] rounded-2xl p-6">
+                  <i
+                    class="fa-solid fa-square text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+
+                  <h4 class="text-xl sm:text-2xl font-bold mb-3">Border</h4>
+
+                  <p class="text-lg text-gray-300 leading-relaxed">
+                    Border element ke box ka part hota hai aur box model ko
+                    affect kar sakta hai.
+                  </p>
+                </div>
+
+                <div class="bg-[#020617] rounded-2xl p-6">
+                  <i
+                    class="fa-solid fa-expand text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+
+                  <h4 class="text-xl sm:text-2xl font-bold mb-3">Outline</h4>
+
+                  <p class="text-lg text-gray-300 leading-relaxed">
+                    Outline border ke bahar draw hota hai aur normally layout
+                    size ko affect nahi karta.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SIMPLE EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              Simple Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Neeche element ke around ek solid outline lagayi gayi hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">outline</span>: <span class="text-[#4ade80]">2px solid blue</span>;
+}</code></pre>
+            </div>
+
+            <!-- OUTLINE STYLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-brush text-[#4d6fff] mr-3"></i>
+              Outline Style
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>outline-style</b> se outline ka style set kiya jata hai.
+            </p>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-4">solid</h4>
+                <div
+                  class="outline outline-2 outline-solid outline-[#4d6fff] p-5 rounded-lg"
+                >
+                  Solid Outline
+                </div>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-4">dashed</h4>
+                <div
+                  class="outline outline-2 outline-dashed outline-[#4d6fff] p-5 rounded-lg"
+                >
+                  Dashed Outline
+                </div>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-4">dotted</h4>
+                <div
+                  class="outline outline-2 outline-dotted outline-[#4d6fff] p-5 rounded-lg"
+                >
+                  Dotted Outline
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">outline-style</span>: <span class="text-[#4ade80]">solid</span>;
+}</code></pre>
+            </div>
+
+            <!-- OUTLINE WIDTH -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ruler-horizontal text-[#4d6fff] mr-3"></i>
+              Outline Width
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>outline-width</b> se outline ki thickness set ki jati hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">outline-width</span>: <span class="text-[#4ade80]">4px</span>;
+  <span class="text-[#60a5fa]">outline-style</span>: <span class="text-[#4ade80]">solid</span>;
+}</code></pre>
+            </div>
+
+            <!-- OUTLINE COLOR -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-palette text-[#4d6fff] mr-3"></i>
+              Outline Color
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>outline-color</b> se outline ka color set kiya jata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">outline-style</span>: <span class="text-[#4ade80]">solid</span>;
+  <span class="text-[#60a5fa]">outline-width</span>: <span class="text-[#4ade80]">3px</span>;
+  <span class="text-[#60a5fa]">outline-color</span>: <span class="text-[#4ade80]">blue</span>;
+}</code></pre>
+            </div>
+
+            <!-- OUTLINE OFFSET -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-outward text-[#4d6fff] mr-3"></i>
+              Outline Offset
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>outline-offset</b> outline aur element ke border ke beech
+              distance create karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">outline</span>: <span class="text-[#4ade80]">3px solid blue</span>;
+  <span class="text-[#60a5fa]">outline-offset</span>: <span class="text-[#4ade80]">5px</span>;
+}</code></pre>
+            </div>
+
+            <!-- SHORTHAND -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              Outline Shorthand
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>outline</b> shorthand se width, style aur color ko ek hi line
+              mein set kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">outline</span>: <span class="text-[#4ade80]">3px solid blue</span>;
+}</code></pre>
+            </div>
+
+            <!-- OUTLINE STYLES -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-list text-[#4d6fff] mr-3"></i>
+              Common Outline Styles
+            </h2>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">solid</h4>
+                <p class="text-gray-300 text-lg">Single solid line.</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">dashed</h4>
+                <p class="text-gray-300 text-lg">Dashed line.</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">dotted</h4>
+                <p class="text-gray-300 text-lg">Dotted line.</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">double</h4>
+                <p class="text-gray-300 text-lg">Double line.</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">groove</h4>
+                <p class="text-gray-300 text-lg">3D grooved appearance.</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">ridge</h4>
+                <p class="text-gray-300 text-lg">3D ridged appearance.</p>
+              </div>
+            </div>
+
+            <!-- PRACTICAL EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-globe text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Outline ka common use input fields ko focus state mein highlight
+              karna hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">input:focus</span> {
+  <span class="text-[#60a5fa]">outline</span>: <span class="text-[#4ade80]">3px solid blue</span>;
+  <span class="text-[#60a5fa]">outline-offset</span>: <span class="text-[#4ade80]">2px</span>;
+}</code></pre>
+            </div>
+
+            <!-- OUTLINE NONE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ban text-[#4d6fff] mr-3"></i>
+              outline: none
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>outline: none</b> outline ko remove kar deta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">input</span> {
+  <span class="text-[#60a5fa]">outline</span>: <span class="text-[#4ade80]">none</span>;
+}</code></pre>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-6">
+                <i
+                  class="fa-solid fa-triangle-exclamation text-[#4d6fff] mr-3"
+                ></i>
+                Accessibility Tip
+              </h3>
+
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+                Keyboard users ke liye focus indicator important hota hai.
+                Isliye <b>outline: none</b> use karte waqt ek alternative
+                visible focus style dena chahiye.
+              </p>
+            </div>
+
+            <!-- IMPORTANT POINTS -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>Outline border ke bahar draw hota hai.</li>
+
+                <li>
+                  Outline normally element ki layout size ko affect nahi karta.
+                </li>
+
+                <li><b>outline-style</b> se style set hota hai.</li>
+
+                <li><b>outline-width</b> se thickness set hoti hai.</li>
+
+                <li><b>outline-color</b> se color set hota hai.</li>
+
+                <li>
+                  <b>outline-offset</b> outline aur border ke beech distance
+                  deta hai.
+                </li>
+
+                <li>
+                  <b>outline</b> shorthand se multiple values ek saath set ki ja
+                  sakti hain.
+                </li>
+
+                <li>
+                  Focus states mein outline accessibility ke liye useful hota
+                  hai.
+                </li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Outline Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Outline element ke border ke bahar draw hota hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Outline mein width, style aur color set kiya ja sakta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>outline-offset</b> outline ki position ko control karta
+                    hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Focus indicators ke liye outline bahut useful hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../box-model/box-model.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../text/text.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(15);
+      });
+    </script>
+  </body>
+</html>

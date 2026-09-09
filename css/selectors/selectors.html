@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Selectors - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- TITLE -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          CSS Selectors
+        </h1>
+
+        <!-- TOP BUTTONS -->
+        <div class="flex justify-between items-center">
+          <a href="../syntax/syntax.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+          </a>
+
+          <a href="../grouping-selectors/grouping-selectors.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <!-- CONTENT -->
+        <section class="max-w-6xl mx-auto py-10">
+          <!-- INTRO -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            <i class="fa-solid fa-crosshairs text-[#4d6fff] mr-3"></i>
+            CSS Selectors Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS selector ka use HTML page ke un elements ko
+            <span class="text-[#4d6fff] font-bold"> select </span>
+            karne ke liye hota hai jinhe hum style karna chahte hain.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Simple words mein, selector CSS ko batata hai ki
+            <span class="text-white font-bold">
+              kis HTML element par styling apply karni hai </span
+            >.
+          </p>
+
+          <!-- SELECTOR CATEGORIES -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff]/40 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+              <i class="fa-solid fa-list-check text-[#4d6fff] mr-3"></i>
+              CSS Selectors Ki Main Categories
+            </h3>
+
+            <div class="grid md:grid-cols-2 gap-5">
+              <div class="bg-[#020617] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-3">
+                  <i class="fa-solid fa-tag mr-2"></i>
+                  Simple Selectors
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  Element name, ID aur class ke basis par elements select karte
+                  hain.
+                </p>
+              </div>
+
+              <div class="bg-[#020617] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-3">
+                  <i class="fa-solid fa-link mr-2"></i>
+                  Combinator Selectors
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  HTML elements ke relationship ke basis par elements select
+                  karte hain.
+                </p>
+              </div>
+
+              <div class="bg-[#020617] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-3">
+                  <i class="fa-solid fa-hand-pointer mr-2"></i>
+                  Pseudo-class Selectors
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  Kisi element ki specific state ko target karte hain, jaise
+                  hover.
+                </p>
+              </div>
+
+              <div class="bg-[#020617] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-3">
+                  <i class="fa-solid fa-puzzle-piece mr-2"></i>
+                  Pseudo-elements
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  Element ke kisi specific part ko style karne ke liye use hote
+                  hain.
+                </p>
+              </div>
+
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-2xl p-6 md:col-span-2"
+              >
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-3">
+                  <i class="fa-solid fa-filter mr-2"></i>
+                  Attribute Selectors
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  HTML attributes ya unki values ke basis par elements select
+                  karte hain.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ELEMENT SELECTOR -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+            CSS Element Selector
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Element selector HTML element ke
+            <span class="text-[#4d6fff] font-bold"> tag name </span>
+            ke basis par usko select karta hai.
+          </p>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Jaise agar hum
+            <span class="text-[#4d6fff] font-bold"> p </span>
+            selector use karte hain, to page ke sabhi paragraph elements target
+            ho jayenge.
+          </p>
+
+          <!-- ELEMENT CODE -->
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;
+}</code></pre>
+          </div>
+
+          <!-- HTML EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl mb-10"
+          >
+            <h3 class="text-2xl font-bold mb-5">
+              <i class="fa-solid fa-file-code text-[#4d6fff] mr-2"></i>
+              HTML Example
+            </h3>
+
+            <div
+              class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono"
+            >
+              <pre
+                class="text-[16px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;p&gt;</span>
+  <span class="text-[#4ade80]">First paragraph</span>
+<span class="text-[#60a5fa]">&lt;/p&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;p&gt;</span>
+  <span class="text-[#4ade80]">Second paragraph</span>
+<span class="text-[#60a5fa]">&lt;/p&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- ID SELECTOR -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-fingerprint text-[#4d6fff] mr-3"></i>
+            CSS ID Selector
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            ID selector ka use kisi
+            <span class="text-[#4d6fff] font-bold">
+              specific unique element
+            </span>
+            ko select karne ke liye kiya jata hai.
+          </p>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            ID selector likhne ke liye ID ke naam se pehle
+            <span class="text-[#4ade80] font-bold"> # </span>
+            symbol lagaya jata hai.
+          </p>
+
+          <!-- ID CODE -->
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">#title</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- ID HTML -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl mb-10"
+          >
+            <h3 class="text-2xl font-bold mb-5">
+              <i class="fa-solid fa-id-card text-[#4d6fff] mr-2"></i>
+              HTML Mein ID
+            </h3>
+
+            <div
+              class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono"
+            >
+              <pre
+                class="text-[16px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;h1</span>
+  <span class="text-[#60a5fa]">id</span>=<span class="text-[#4ade80]">"title"</span>
+<span class="text-[#60a5fa]">&gt;</span>
+  <span class="text-[#4ade80]">My Website</span>
+<span class="text-[#60a5fa]">&lt;/h1&gt;</span></code></pre>
+            </div>
+
+            <p class="text-gray-300 text-lg leading-8 mt-5">
+              Yahan
+              <span class="text-[#4ade80]"> title </span>
+              ID hai aur CSS mein usko
+              <span class="text-[#4ade80]"> #title </span>
+              se target kiya gaya hai.
+            </p>
+          </div>
+
+          <!-- ID UNIQUE -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-9 shadow-xl mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-5">
+              <i class="fa-solid fa-circle-exclamation text-[#4d6fff] mr-2"></i>
+              Important
+            </h3>
+
+            <p class="text-gray-300 text-lg sm:text-xl leading-8">
+              Ek page par ID ko normally
+              <span class="text-white font-bold"> unique </span>
+              rakhna chahiye. Ek hi ID ko multiple unrelated elements par use
+              karna avoid karo.
+            </p>
+          </div>
+
+          <!-- CLASS SELECTOR -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-layer-group text-[#4d6fff] mr-3"></i>
+            CSS Class Selector
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Class selector ka use un HTML elements ko select karne ke liye hota
+            hai jinke paas same
+            <span class="text-[#4d6fff] font-bold"> class </span>
+            hoti hai.
+          </p>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Class selector ke liye class name se pehle
+            <span class="text-[#4ade80] font-bold"> . </span>
+            dot lagaya jata hai.
+          </p>
+
+          <!-- CLASS CODE -->
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">.center</span> {
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;
+}</code></pre>
+          </div>
+
+          <!-- CLASS HTML -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl mb-10"
+          >
+            <h3 class="text-2xl font-bold mb-5">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-2"></i>
+              HTML Example
+            </h3>
+
+            <div
+              class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono"
+            >
+              <pre
+                class="text-[16px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;h1</span>
+  <span class="text-[#60a5fa]">class</span>=<span class="text-[#4ade80]">"center"</span>
+<span class="text-[#60a5fa]">&gt;</span>
+  <span class="text-[#4ade80]">Welcome</span>
+<span class="text-[#60a5fa]">&lt;/h1&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;p</span>
+  <span class="text-[#60a5fa]">class</span>=<span class="text-[#4ade80]">"center"</span>
+<span class="text-[#60a5fa]">&gt;</span>
+  <span class="text-[#4ade80]">This is a paragraph.</span>
+<span class="text-[#60a5fa]">&lt;/p&gt;</span></code></pre>
+            </div>
+
+            <p class="text-gray-300 text-lg leading-8 mt-5">
+              Dono elements ki class
+              <span class="text-[#4ade80]"> center </span>
+              hai, isliye dono par
+              <span class="text-[#4ade80]"> .center </span>
+              selector ki styling apply ho sakti hai.
+            </p>
+          </div>
+
+          <!-- ELEMENT + CLASS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-filter-circle-dollar text-[#4d6fff] mr-3"></i>
+            Element ke Saath Class Selector
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Kabhi-kabhi humein kisi class ko use karne wale
+            <span class="text-[#4d6fff] font-bold">
+              sirf specific HTML element
+            </span>
+            ko target karna hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">p.center</span> {
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;
+}</code></pre>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-5">
+              <i class="fa-solid fa-bullseye text-[#4d6fff] mr-2"></i>
+              Iska Matlab
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-8">
+              <span class="text-[#60a5fa]"> p.center </span>
+              ka matlab hai: sirf un
+              <span class="text-[#60a5fa]"> &lt;p&gt; </span>
+              elements ko select karo jinki class
+              <span class="text-[#4ade80]"> center </span>
+              hai.
+            </p>
+          </div>
+
+          <!-- MULTIPLE CLASSES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-shapes text-[#4d6fff] mr-3"></i>
+            Multiple Classes
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek HTML element ke andar ek se zyada classes bhi di ja sakti hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">&lt;p</span>
+  <span class="text-[#60a5fa]">class</span>=<span class="text-[#4ade80]">"center large"</span>
+<span class="text-[#60a5fa]">&gt;</span>
+  <span class="text-[#4ade80]">This paragraph has two classes.</span>
+<span class="text-[#60a5fa]">&lt;/p&gt;</span></code></pre>
+          </div>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-10 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">.center</span> {
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+}
+
+<span class="text-[#60a5fa]">.large</span> {
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">24px</span>;
+}</code></pre>
+          </div>
+
+          <!-- REAL LIFE EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-cart-shopping text-[#4d6fff] mr-3"></i>
+            Real-Life Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Maan lo tum ek shopping website bana rahe ho. Tumhare paas bahut
+            saare product cards hain aur sabhi cards ka same design hona
+            chahiye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">.product</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+  <span class="text-[#60a5fa]">border-radius</span>: <span class="text-[#4ade80]">16px</span>;
+  <span class="text-[#60a5fa]">background</span>: <span class="text-[#4ade80]">#0f172a</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">white</span>;
+}
+
+<span class="text-[#60a5fa]">.product h2</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#4d6fff</span>;
+}
+
+<span class="text-[#60a5fa]">.product button</span> {
+  <span class="text-[#60a5fa]">background</span>: <span class="text-[#4ade80]">#3158ff</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">white</span>;
+}</code></pre>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5 mb-12">
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+            >
+              <i class="fa-solid fa-box text-[#4d6fff] text-3xl mb-5"></i>
+
+              <h3 class="text-xl font-bold mb-3">Product 1</h3>
+
+              <p class="text-gray-400">Same class se same styling.</p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+            >
+              <i class="fa-solid fa-box text-[#4d6fff] text-3xl mb-5"></i>
+
+              <h3 class="text-xl font-bold mb-3">Product 2</h3>
+
+              <p class="text-gray-400">Same class se same styling.</p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+            >
+              <i class="fa-solid fa-box text-[#4d6fff] text-3xl mb-5"></i>
+
+              <h3 class="text-xl font-bold mb-3">Product 3</h3>
+
+              <p class="text-gray-400">Same class se same styling.</p>
+            </div>
+          </div>
+
+          <!-- ID VS CLASS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-code-compare text-[#4d6fff] mr-3"></i>
+            ID vs Class
+          </h2>
+
+          <div
+            class="overflow-x-auto rounded-2xl border border-gray-800 shadow-xl mb-12"
+          >
+            <table class="w-full text-left">
+              <thead class="bg-[#0f172a]">
+                <tr>
+                  <th class="p-5 text-lg">Feature</th>
+
+                  <th class="p-5 text-lg text-[#4d6fff]">ID</th>
+
+                  <th class="p-5 text-lg text-[#4d6fff]">Class</th>
+                </tr>
+              </thead>
+
+              <tbody class="bg-[#0b1220] text-gray-300">
+                <tr class="border-t border-gray-800">
+                  <td class="p-5">Symbol</td>
+
+                  <td class="p-5 text-[#4ade80]">#</td>
+
+                  <td class="p-5 text-[#4ade80]">.</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5">Main Use</td>
+
+                  <td class="p-5">Specific element</td>
+
+                  <td class="p-5">Reusable styling</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5">Reuse</td>
+
+                  <td class="p-5">Normally unique</td>
+
+                  <td class="p-5">Multiple elements</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- IMPORTANT -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+              <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+              Important Points
+            </h3>
+
+            <ul
+              class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Selector decide karta hai ki CSS kis element par apply hogi.
+              </li>
+
+              <li>
+                Element selector tag name ke basis par elements select karta
+                hai.
+              </li>
+
+              <li>
+                ID selector ke liye
+                <span class="text-[#4ade80] font-bold"> # </span>
+                use hota hai.
+              </li>
+
+              <li>
+                Class selector ke liye
+                <span class="text-[#4ade80] font-bold"> . </span>
+                use hota hai.
+              </li>
+
+              <li>Ek element mein multiple classes ho sakti hain.</li>
+
+              <li>
+                Same class ko multiple elements par reuse kiya ja sakta hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- QUICK SUMMARY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+            CSS Selectors Quick Summary
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+          >
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                <p class="text-lg sm:text-xl text-gray-300">
+                  <span class="text-[#60a5fa] font-mono"> p </span>
+                  → sabhi paragraph elements select karega.
+                </p>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                <p class="text-lg sm:text-xl text-gray-300">
+                  <span class="text-[#60a5fa] font-mono"> #title </span>
+                  → specific ID wale element ko select karega.
+                </p>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                <p class="text-lg sm:text-xl text-gray-300">
+                  <span class="text-[#60a5fa] font-mono"> .center </span>
+                  → center class wale elements select karega.
+                </p>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                <p class="text-lg sm:text-xl text-gray-300">
+                  <span class="text-[#60a5fa] font-mono"> p.center </span>
+                  → sirf center class wale paragraphs select karega.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM BUTTONS -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../syntax/syntax.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../grouping-selectors/grouping-selectors.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(3);
+      });
+    </script>
+  </body>
+</html>

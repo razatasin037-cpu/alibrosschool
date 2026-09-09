@@ -1,305 +1,431 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>C++ auto Keyword - Ali Learning</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- External Scripts -->
-<script src="../js/sidebar.js"></script>
-<script src="../../js/insert.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen">
-<!-- Sidebar Container -->
-<aside class="w-full md:w-[320px] shrink-0" id="sidebar"></aside>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ auto Keyword - Ali Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- External Scripts -->
+    <script src="../js/sidebar.js"></script>
+    <script src="../../js/insert.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Container -->
+      <aside class="w-full md:w-[320px] shrink-0" id="sidebar"></aside>
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
           C++ auto Keyword
         </h1>
-<div class="flex justify-between items-center">
-<a href="stringsdata.html">
-<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
-<i class="fa-solid fa-chevron-left mr-2"></i>
+        <div class="flex justify-between items-center">
+          <a href="stringsdata.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
               Previous
             </button>
-</a>
-<a href="real-life-example-datatypes.html">
-<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+          </a>
+          <a href="/C++/datatype/real-life-example-datatypes.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
               Next
               <i class="fa-solid fa-chevron-right ml-2"></i>
-</button>
-</a>
-</div>
-<hr class="mt-12 border-white/10"/>
-<section class="max-w-6xl mx-auto py-10">
-<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            </button>
+          </a>
+        </div>
+        <hr class="mt-12 border-white/10" />
+        <section class="max-w-6xl mx-auto py-10">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
             The auto Keyword
           </h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
             C++ mein
             <span class="text-[#4d6fff] font-bold">auto</span>
             keyword compiler ko variable ka data type automatically detect karne
             deta hai.
           </p>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
             Compiler us value ko dekhta hai jo variable ko assign ki gayi hai
             aur uske according variable ka type decide karta hai.
           </p>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
             Isse code ko short, clean aur easy to read banaya ja sakta hai.
           </p>
-<!-- Code Block 1 -->
-<div class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400">
-            auto x = 5;<br/><br/>
+          <!-- Code Block 1 -->
+          <div
+            class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400"
+          >
+            auto x = 5;<br /><br />
             cout &lt;&lt; x;
           </div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
-  <div class="bg-[#1e293b] px-6 py-4">
-    <h3 class="text-xl sm:text-2xl font-bold text-white">The auto Keyword</h3>
-  </div>
-  <div class="p-6 sm:p-8">
-    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
-      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
-      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>auto age = 20;
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                The auto Keyword
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>auto age = 20;
 cout &lt;&lt; age;</code></pre>
-    </div>
-  </div>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
             Normal Type vs auto
           </h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
             Agar humein pata hai ki variable
             <span class="text-[#4d6fff] font-bold">int</span>
             hai, to normally hum
             <span class="text-white font-semibold">int</span>
             likhte hain.
           </p>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
             Lekin
             <span class="text-[#4d6fff] font-bold">auto</span>
             use karne par compiler khud type identify kar leta hai.
           </p>
-<!-- Code Block 2 -->
-<div class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400">
-            int x = 5;<br/>
-            auto y = 5;<br/><br/>
-            cout &lt;&lt; x &lt;&lt; endl;<br/>
+          <!-- Code Block 2 -->
+          <div
+            class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400"
+          >
+            int x = 5;<br />
+            auto y = 5;<br /><br />
+            cout &lt;&lt; x &lt;&lt; endl;<br />
             cout &lt;&lt; y;
           </div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
-  <div class="bg-[#1e293b] px-6 py-4">
-    <h3 class="text-xl sm:text-2xl font-bold text-white">Normal Type vs auto</h3>
-  </div>
-  <div class="p-6 sm:p-8">
-    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
-      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
-      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>int age = 20;
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Normal Type vs auto
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int age = 20;
 auto score = 100;
 cout &lt;&lt; age &lt;&lt; endl &lt;&lt; score;</code></pre>
-    </div>
-  </div>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
             Different Data Types ke Saath auto
           </h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
-<span class="text-[#4d6fff] font-bold">auto</span>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-[#4d6fff] font-bold">auto</span>
             different values ke according different data types automatically
             select kar sakta hai.
           </p>
-<!-- Code Block 3 -->
-<div class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400">
-            auto myNum = 5;<br/>
-            auto myFloatNum = 5.99f;<br/>
-            auto myDoubleNum = 9.98;<br/>
-            auto myLetter = 'D';<br/>
+          <!-- Code Block 3 -->
+          <div
+            class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400"
+          >
+            auto myNum = 5;<br />
+            auto myFloatNum = 5.99f;<br />
+            auto myDoubleNum = 9.98;<br />
+            auto myLetter = 'D';<br />
             auto myBoolean = true;
           </div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
-  <div class="bg-[#1e293b] px-6 py-4">
-    <h3 class="text-xl sm:text-2xl font-bold text-white">Different Data Types ke Saath auto</h3>
-  </div>
-  <div class="p-6 sm:p-8">
-    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
-      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
-      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>auto number = 10;
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Different Data Types ke Saath auto
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>auto number = 10;
 auto price = 99.99;
 auto grade = &#x27;A&#x27;;
 cout &lt;&lt; number &lt;&lt; endl &lt;&lt; price &lt;&lt; endl &lt;&lt; grade;</code></pre>
-    </div>
-  </div>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
             auto ko Value Dena Zaroori Hai
           </h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
-<span class="text-[#4d6fff] font-bold">auto</span>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-[#4d6fff] font-bold">auto</span>
             ko use karte waqt variable ko same time par value assign karni padti
             hai.
           </p>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
             Sirf
             <span class="text-white font-semibold">auto x;</span>
             likhna valid nahi hai kyunki compiler ko type pata nahi chalega.
           </p>
-<!-- Code Block 4 -->
-<div class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400">
-            auto x = 5;<br/><br/>
+          <!-- Code Block 4 -->
+          <div
+            class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400"
+          >
+            auto x = 5;<br /><br />
             cout &lt;&lt; x;
           </div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
-  <div class="bg-[#1e293b] px-6 py-4">
-    <h3 class="text-xl sm:text-2xl font-bold text-white">auto ko Value Dena Zaroori Hai</h3>
-  </div>
-  <div class="p-6 sm:p-8">
-    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
-      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
-      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>auto age = 20;
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                auto ko Value Dena Zaroori Hai
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>auto age = 20;
 // auto age;  // value ke bina auto use nahi kar sakte</code></pre>
-    </div>
-  </div>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
             auto Ka Type Baad Mein Change Nahi Hota
           </h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
             Ek baar
             <span class="text-[#4d6fff] font-bold">auto</span>
             ne variable ka type determine kar liya, to woh type same rehta hai.
           </p>
-<!-- Code Block 5 -->
-<div class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400">
-            auto x = 5;<br/>
-            x = 10;<br/><br/>
+          <!-- Code Block 5 -->
+          <div
+            class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400"
+          >
+            auto x = 5;<br />
+            x = 10;<br /><br />
             cout &lt;&lt; x;
           </div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
-  <div class="bg-[#1e293b] px-6 py-4">
-    <h3 class="text-xl sm:text-2xl font-bold text-white">auto Ka Type Baad Mein Change Nahi Hota</h3>
-  </div>
-  <div class="p-6 sm:p-8">
-    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
-      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
-      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>auto number = 10;
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                auto Ka Type Baad Mein Change Nahi Hota
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>auto number = 10;
 // number = &quot;Hello&quot;;  // type int hi rahega</code></pre>
-    </div>
-  </div>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
             auto ke Saath Different Values
           </h2>
-<!-- Code Block 6 -->
-<div class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400">
-            auto myNum = 5;<br/>
-            auto myFloatNum = 5.99f;<br/>
-            auto myDoubleNum = 9.98;<br/>
-            auto myLetter = 'D';<br/>
-            auto myBoolean = true;<br/><br/>
-            cout &lt;&lt; myNum &lt;&lt; endl;<br/>
-            cout &lt;&lt; myFloatNum &lt;&lt; endl;<br/>
-            cout &lt;&lt; myDoubleNum &lt;&lt; endl;<br/>
-            cout &lt;&lt; myLetter &lt;&lt; endl;<br/>
+          <!-- Code Block 6 -->
+          <div
+            class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400"
+          >
+            auto myNum = 5;<br />
+            auto myFloatNum = 5.99f;<br />
+            auto myDoubleNum = 9.98;<br />
+            auto myLetter = 'D';<br />
+            auto myBoolean = true;<br /><br />
+            cout &lt;&lt; myNum &lt;&lt; endl;<br />
+            cout &lt;&lt; myFloatNum &lt;&lt; endl;<br />
+            cout &lt;&lt; myDoubleNum &lt;&lt; endl;<br />
+            cout &lt;&lt; myLetter &lt;&lt; endl;<br />
             cout &lt;&lt; myBoolean;
           </div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
-  <div class="bg-[#1e293b] px-6 py-4">
-    <h3 class="text-xl sm:text-2xl font-bold text-white">auto ke Saath Different Values</h3>
-  </div>
-  <div class="p-6 sm:p-8">
-    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
-      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
-      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>auto age = 20;
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                auto ke Saath Different Values
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>auto age = 20;
 auto name = &quot;Ali&quot;;
 auto price = 99.99;</code></pre>
-    </div>
-  </div>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
             auto Kab Use Karna Chahiye?
           </h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
             Simple aur easily understandable types ke liye
             <span class="text-[#4d6fff] font-bold">int</span>,
             <span class="text-[#4d6fff] font-bold">double</span>
             aur doosre basic types directly likhna zyada clear ho sakta hai.
           </p>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
             Lekin complex types ke saath
             <span class="text-[#4d6fff] font-bold">auto</span>
             code ko kaafi clean aur readable bana sakta hai.
           </p>
-<!-- Code Block 7 -->
-<div class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400">
-            auto x = 5;<br/>
-            auto price = 99.99;<br/>
-            auto grade = 'A';<br/><br/>
-            cout &lt;&lt; x &lt;&lt; endl;<br/>
-            cout &lt;&lt; price &lt;&lt; endl;<br/>
+          <!-- Code Block 7 -->
+          <div
+            class="bg-[#1e293b] border border-white/10 rounded-xl p-5 mb-10 font-mono text-lg text-emerald-400"
+          >
+            auto x = 5;<br />
+            auto price = 99.99;<br />
+            auto grade = 'A';<br /><br />
+            cout &lt;&lt; x &lt;&lt; endl;<br />
+            cout &lt;&lt; price &lt;&lt; endl;<br />
             cout &lt;&lt; grade;
           </div>
-<!-- Important Box -->
-<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
-<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
-<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
-<li>
-<span class="text-[#4d6fff] font-bold">auto</span>
+          <!-- Important Box -->
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                <span class="text-[#4d6fff] font-bold">auto</span>
                 variable ka type automatically detect karta hai.
               </li>
-<li>
-<span class="text-[#4d6fff] font-bold">auto</span>
+              <li>
+                <span class="text-[#4d6fff] font-bold">auto</span>
                 ke saath value assign karna zaroori hai.
               </li>
-<li>Ek baar type decide hone ke baad woh change nahi hota.</li>
-<li>
-<span class="text-[#4d6fff] font-bold">auto</span>
+              <li>Ek baar type decide hone ke baad woh change nahi hota.</li>
+              <li>
+                <span class="text-[#4d6fff] font-bold">auto</span>
                 C++11 se available hai.
               </li>
-<li>
+              <li>
                 Complex types ke saath
                 <span class="text-[#4d6fff] font-bold">auto</span>
                 code ko cleaner bana sakta hai.
               </li>
-</ul>
-</div>
-<!-- Pagination -->
-<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
-<a href="stringsdata.html">
-<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
-<i class="fa-solid fa-chevron-left mr-2"></i>
+            </ul>
+          </div>
+          <!-- Pagination -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="stringsdata.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
                 Previous
               </button>
-</a>
-<a href="real-life-example-datatypes.html">
-<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+            </a>
+            <a href="real-life-example-datatypes.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
                 Next
                 <i class="fa-solid fa-chevron-right ml-2"></i>
-</button>
-</a>
-</div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
-  <div class="bg-[#1e293b] px-6 py-4">
-    <h3 class="text-xl sm:text-2xl font-bold text-white">auto Kab Use Karna Chahiye?</h3>
-  </div>
-  <div class="p-6 sm:p-8">
-    <div class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden">
-      <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">C++ Example</div>
-      <pre class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"><code>auto total = 10 + 20;
+              </button>
+            </a>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                auto Kab Use Karna Chahiye?
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>auto total = 10 + 20;
 cout &lt;&lt; total;</code></pre>
-    </div>
-  </div>
-</div>
-
-</section>
-</section>
-</main>
-<footer id="footer"></footer>
-<!-- Sidebar Script -->
-<script>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+    <!-- Sidebar Script -->
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
         const sidebar = document.getElementById("sidebar");
         if (sidebar && typeof createSidebar === "function") {
@@ -307,5 +433,5 @@ cout &lt;&lt; total;</code></pre>
         }
       });
     </script>
-</body>
+  </body>
 </html>

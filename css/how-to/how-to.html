@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS How To - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- NAVBAR -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+      <div id="sidebar"></div>
+
+      <!-- MAIN -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS How To
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../grouping-selectors/grouping-selectors.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../comments/comments.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRODUCTION -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i
+                class="fa-solid fa-wand-magic-sparkles text-[#4d6fff] mr-3"
+              ></i>
+              CSS How To Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS ko HTML page ke saath connect karne ke liye hum alag-alag
+              methods use kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              CSS ko external file mein, HTML ke andar, ya directly kisi HTML
+              element ke andar likha ja sakta hai.
+            </p>
+
+            <!-- THREE WAYS -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-layer-group text-[#4d6fff] mr-3"></i>
+                CSS Add Karne Ke 3 Ways
+              </h3>
+
+              <div class="grid md:grid-cols-3 gap-5">
+                <!-- EXTERNAL CSS -->
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-file-code text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+
+                  <h4 class="text-xl font-bold mb-3">External CSS</h4>
+
+                  <p class="text-gray-300 text-lg leading-8">
+                    CSS ko ek separate
+                    <b>.css</b>
+                    file mein likha jata hai.
+                  </p>
+                </div>
+
+                <!-- INTERNAL CSS -->
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i class="fa-solid fa-code text-[#4d6fff] text-3xl mb-5"></i>
+
+                  <h4 class="text-xl font-bold mb-3">Internal CSS</h4>
+
+                  <p class="text-gray-300 text-lg leading-8">
+                    CSS ko HTML ke
+                    <b>&lt;style&gt;</b>
+                    tag ke andar likha jata hai.
+                  </p>
+                </div>
+
+                <!-- INLINE CSS -->
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i class="fa-solid fa-pen text-[#4d6fff] text-3xl mb-5"></i>
+
+                  <h4 class="text-xl font-bold mb-3">Inline CSS</h4>
+
+                  <p class="text-gray-300 text-lg leading-8">
+                    CSS ko directly HTML element ke
+                    <b>style</b>
+                    attribute mein likha jata hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- EXTERNAL CSS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-file-code text-[#4d6fff] mr-3"></i>
+              1. External CSS
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              External CSS mein styling ko ek separate CSS file mein rakha jata
+              hai. Is method mein same CSS file ko multiple HTML pages ke saath
+              use kiya ja sakta hai.
+            </p>
+
+            <!-- EXTERNAL HTML -->
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-file-code text-[#4d6fff] mr-2"></i>
+                HTML File
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;!DOCTYPE html&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;html&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;head&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;link</span>
+  <span class="text-[#60a5fa]">rel</span>=<span class="text-[#4ade80]">"stylesheet"</span>
+  <span class="text-[#60a5fa]">href</span>=<span class="text-[#4ade80]">"style.css"</span>
+  <span class="text-[#60a5fa]">&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/head&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;body&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;h1&gt;</span>
+    <span class="text-[#4ade80]">Hello CSS</span>
+  <span class="text-[#60a5fa]">&lt;/h1&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/body&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/html&gt;</span></code></pre>
+            </div>
+
+            <!-- EXTERNAL CSS FILE -->
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-palette text-[#4d6fff] mr-2"></i>
+                style.css
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">40px</span>;
+}</code></pre>
+            </div>
+
+            <!-- LINK TAG -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-6">
+                <i class="fa-solid fa-link text-[#4d6fff] mr-3"></i>
+                &lt;link&gt; Tag Ka Kaam
+              </h3>
+
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-7">
+                External CSS ko HTML page se connect karne ke liye
+                <b>&lt;link&gt;</b>
+                tag ka use hota hai.
+              </p>
+
+              <pre
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;link</span>
+  <span class="text-[#60a5fa]">rel</span>=<span class="text-[#4ade80]">"stylesheet"</span>
+  <span class="text-[#60a5fa]">href</span>=<span class="text-[#4ade80]">"style.css"</span>
+<span class="text-[#60a5fa]">&gt;</span></code></pre>
+
+              <div class="mt-7 space-y-4">
+                <p class="text-lg text-gray-300">
+                  <span class="text-[#60a5fa] font-bold">
+                    rel="stylesheet"
+                  </span>
+
+                  browser ko batata hai ki linked file stylesheet hai.
+                </p>
+
+                <p class="text-lg text-gray-300">
+                  <span class="text-[#60a5fa] font-bold">
+                    href="style.css"
+                  </span>
+
+                  CSS file ka path ya location batata hai.
+                </p>
+              </div>
+            </div>
+
+            <!-- INTERNAL CSS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              2. Internal CSS
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Internal CSS mein CSS rules ko HTML document ke
+              <b>&lt;head&gt;</b>
+              ke andar
+              <b>&lt;style&gt;</b>
+              tag mein likha jata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-code text-[#4d6fff] mr-2"></i>
+                Example
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;html&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;head&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;style&gt;</span>
+
+    <span class="text-[#60a5fa]">h1</span> {
+      <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">green</span>;
+      <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+    }
+
+  <span class="text-[#60a5fa]">&lt;/style&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/head&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;body&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;h1&gt;</span>
+    <span class="text-[#4ade80]">Hello World</span>
+  <span class="text-[#60a5fa]">&lt;/h1&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/body&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/html&gt;</span></code></pre>
+            </div>
+
+            <!-- INLINE CSS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-pen-to-square text-[#4d6fff] mr-3"></i>
+              3. Inline CSS
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Inline CSS mein styling directly HTML element ke
+              <b>style</b>
+              attribute ke andar likhi jati hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-code text-[#4d6fff] mr-2"></i>
+                Example
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;h1</span>
+  <span class="text-[#60a5fa]">style</span>=<span class="text-[#4ade80]">"color: blue;"</span>
+<span class="text-[#60a5fa]">&gt;</span>
+
+  <span class="text-[#4ade80]">Hello World</span>
+
+<span class="text-[#60a5fa]">&lt;/h1&gt;</span></code></pre>
+            </div>
+
+            <!-- MULTIPLE PROPERTIES -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-sliders text-[#4d6fff] mr-3"></i>
+              Multiple CSS Properties
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Ek hi HTML element ke andar multiple CSS properties bhi add ki ja
+              sakti hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;p</span>
+  <span class="text-[#60a5fa]">style</span>=<span class="text-[#4ade80]">"
+    color: red;
+    font-size: 20px;
+    text-align: center;
+  "</span>
+<span class="text-[#60a5fa]">&gt;</span>
+
+  <span class="text-[#4ade80]">CSS Example</span>
+
+<span class="text-[#60a5fa]">&lt;/p&gt;</span></code></pre>
+            </div>
+
+            <!-- MULTIPLE STYLE SHEETS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-copy text-[#4d6fff] mr-3"></i>
+              Multiple Style Sheets
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Ek HTML page mein ek se zyada external CSS files bhi connect ki ja
+              sakti hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;head&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;link</span>
+  <span class="text-[#60a5fa]">rel</span>=<span class="text-[#4ade80]">"stylesheet"</span>
+  <span class="text-[#60a5fa]">href</span>=<span class="text-[#4ade80]">"style.css"</span>
+  <span class="text-[#60a5fa]">&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;link</span>
+  <span class="text-[#60a5fa]">rel</span>=<span class="text-[#4ade80]">"stylesheet"</span>
+  <span class="text-[#60a5fa]">href</span>=<span class="text-[#4ade80]">"layout.css"</span>
+  <span class="text-[#60a5fa]">&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/head&gt;</span></code></pre>
+            </div>
+
+            <!-- COMPARISON -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code-compare text-[#4d6fff] mr-3"></i>
+              CSS Methods Comparison
+            </h2>
+
+            <div
+              class="overflow-x-auto rounded-2xl border border-gray-800 shadow-xl mb-12"
+            >
+              <table class="w-full text-left">
+                <thead class="bg-[#0f172a]">
+                  <tr>
+                    <th class="p-5 text-lg">Method</th>
+
+                    <th class="p-5 text-lg text-[#4d6fff]">Location</th>
+
+                    <th class="p-5 text-lg text-[#4d6fff]">Best Use</th>
+                  </tr>
+                </thead>
+
+                <tbody class="bg-[#0b1220] text-gray-300">
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 font-bold">External CSS</td>
+
+                    <td class="p-5">Separate .css file</td>
+
+                    <td class="p-5">Multiple pages</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 font-bold">Internal CSS</td>
+
+                    <td class="p-5">&lt;style&gt; tag</td>
+
+                    <td class="p-5">Single page</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 font-bold">Inline CSS</td>
+
+                    <td class="p-5">style attribute</td>
+
+                    <td class="p-5">Specific element</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- REAL LIFE EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-globe text-[#4d6fff] mr-3"></i>
+              Real-Life Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Maan lo tum ek website bana rahe ho jisme bahut saare HTML pages
+              hain aur sabhi pages ka design same hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <div class="space-y-6">
+                <div class="flex gap-4 items-start">
+                  <i
+                    class="fa-solid fa-folder text-[#4d6fff] text-2xl mt-1"
+                  ></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Ek common
+                    <span class="text-[#4ade80] font-bold"> style.css </span>
+                    file banayi ja sakti hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-link text-[#4d6fff] text-2xl mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Har HTML page mein CSS file ko
+                    <b>&lt;link&gt;</b>
+                    tag se connect kiya ja sakta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i
+                    class="fa-solid fa-wand-magic-sparkles text-[#4d6fff] text-2xl mt-1"
+                  ></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS file mein changes karne par connected pages ki styling
+                    update ho sakti hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  External CSS ke liye
+                  <b>&lt;link&gt;</b>
+                  tag use hota hai.
+                </li>
+
+                <li>
+                  Internal CSS
+                  <b>&lt;style&gt;</b>
+                  tag ke andar likha jata hai.
+                </li>
+
+                <li>
+                  Inline CSS
+                  <b>style</b>
+                  attribute ke andar likha jata hai.
+                </li>
+
+                <li>
+                  Multiple external CSS files ko ek page mein connect kiya ja
+                  sakta hai.
+                </li>
+
+                <li>Large websites ke liye External CSS useful hota hai.</li>
+              </ul>
+            </div>
+
+            <!-- QUICK SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS How To Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS ko HTML mein 3 main ways se add kiya ja sakta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    External CSS separate CSS file mein hota hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Internal CSS
+                    <span class="text-[#60a5fa] font-mono">
+                      &lt;style&gt;
+                    </span>
+                    tag ke andar hota hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Inline CSS
+                    <span class="text-[#60a5fa] font-mono"> style </span>
+                    attribute ke andar hota hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Ek page mein multiple CSS files bhi connect ki ja sakti
+                    hain.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../grouping-selectors/grouping-selectors.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../comments/comments.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(5);
+      });
+    </script>
+  </body>
+</html>
