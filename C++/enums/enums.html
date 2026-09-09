@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Enums - Ali Learning</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+    <main class="flex min-h-screen">
+      <div id="sidebar"></div>
+      <section
+        class="w-full lg:w-[calc(100%-300px)] px-5 sm:px-8 lg:px-12 py-8"
+      >
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-10">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">
+              C++ Enums
+            </h1>
+            <p class="text-gray-400 mt-3 text-lg">
+              Enums ka use related named constants ko ek custom type mein
+              represent karne ke liye hota hai.
+            </p>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10 mb-10"
+          >
+            <a href="../structures/structures.html"
+              ><button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button></a
+            >
+            <a href="/C++/pointers/pointers.html"
+              ><button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next<i class="fa-solid fa-chevron-right ml-2"></i></button
+            ></a>
+          </div>
+
+          <div class="space-y-10">
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                What is an Enum?
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Enumeration (enum) ek special data type hai jisme named constant
+                values ka group define kiya jata hai.
+              </p>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Enum ka use code ko readable banane ke liye kiya ja sakta hai.
+              </p>
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Important</h3>
+                <p class="text-gray-300 leading-7">
+                  Default enum values normally 0 se start hoti hain aur har next
+                  item ka value increase hota hai.
+                </p>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Enum Declaration</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">enum Level {
+    LOW,
+    MEDIUM,
+    HIGH
+};</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Create an Enum Variable
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Enum define karne ke baad us enum type ka variable bana sakte
+                ho.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example: Enum Variable</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">enum Level {
+    LOW,
+    MEDIUM,
+    HIGH
+};
+
+Level myLevel = MEDIUM;
+cout << myLevel;</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">1</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Assign Custom Values
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Enum members ko apni integer values bhi assign kar sakte ho.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example: Custom Values</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">enum Level {
+    LOW = 25,
+    MEDIUM = 50,
+    HIGH = 75
+};
+
+Level myLevel = HIGH;
+cout << myLevel;</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">75</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Enum with Switch
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Enums switch statement ke saath readable condition handling ke
+                liye useful hote hain.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example: Enum + Switch</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">enum Level { LOW, MEDIUM, HIGH };
+
+Level level = HIGH;
+
+switch (level) {
+    case LOW:
+        cout << "Low";
+        break;
+    case MEDIUM:
+        cout << "Medium";
+        break;
+    case HIGH:
+        cout << "High";
+        break;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">High</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">Enum Names</h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Enum ke names descriptive rakhna better hota hai, taaki code
+                dekhte hi value ka meaning samajh aaye.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example: Days</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">enum Day {
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY
+};</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Important Points
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Enum named constants ka group hota hai.
+              </p>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Default values 0 se start ho sakti hain.
+              </p>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Custom integer values assign ki ja sakti hain.
+              </p>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Enums switch statements ke saath useful hote hain.
+              </p>
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Important</h3>
+                <p class="text-gray-300 leading-7">
+                  Enum values ko meaningful names dene se program ki readability
+                  improve hoti hai.
+                </p>
+              </div>
+            </section>
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../structures/structures.html"
+                ><button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+                </button></a
+              >
+              <a href="/C++/pointers/pointers.html"
+                ><button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next<i class="fa-solid fa-chevron-right ml-2"></i></button
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(12);
+        }
+      });
+    </script>
+  </body>
+</html>

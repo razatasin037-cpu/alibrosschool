@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Height and Width - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- NAVBAR -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+      <div id="sidebar"></div>
+
+      <!-- MAIN CONTENT -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Height and Width
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../padding/padding.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../box-model/box-model.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-ruler-combined text-[#4d6fff] mr-3"></i>
+              CSS Height and Width Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS mein <b>height</b> aur <b>width</b> properties ka use HTML
+              element ki height aur width set karne ke liye kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              In properties ki help se hum element ka size control kar sakte
+              hain.
+            </p>
+
+            <!-- SIMPLE EXAMPLE -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+                Simple Example
+              </h3>
+
+              <div
+                class="bg-[#020617] rounded-2xl p-6 overflow-x-auto font-mono"
+              >
+                <pre
+                  class="text-[16px] sm:text-[17px] leading-8"
+                ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">300px</span>;
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">200px</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <!-- WIDTH -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-left-right text-[#4d6fff] mr-3"></i>
+              CSS Width
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>width</b> property element ki horizontal size set karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">400px</span>;
+}</code></pre>
+            </div>
+
+            <!-- HEIGHT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-up-down text-[#4d6fff] mr-3"></i>
+              CSS Height
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>height</b> property element ki vertical size set karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">200px</span>;
+}</code></pre>
+            </div>
+
+            <!-- PIXELS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ruler text-[#4d6fff] mr-3"></i>
+              Width and Height in Pixels
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Pixels ek fixed unit hai. Iska use karke exact size set kiya ja
+              sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">500px</span>;
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">250px</span>;
+}</code></pre>
+            </div>
+
+            <!-- PERCENTAGE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-percent text-[#4d6fff] mr-3"></i>
+              Percentage Width
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Percentage value parent element ke size ke according element ki
+              size determine kar sakti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">50%</span>;
+}</code></pre>
+            </div>
+
+            <!-- AUTO -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i
+                class="fa-solid fa-arrows-left-right-to-line text-[#4d6fff] mr-3"
+              ></i>
+              Width Auto
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>auto</b> browser ko available space ke according width
+              calculate karne deta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">auto</span>;
+}</code></pre>
+            </div>
+
+            <!-- MAX WIDTH -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-expand text-[#4d6fff] mr-3"></i>
+              max-width
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>max-width</b> element ki maximum width set karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">max-width</span>: <span class="text-[#4ade80]">600px</span>;
+}</code></pre>
+            </div>
+
+            <!-- MIN WIDTH -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-expand text-[#4d6fff] mr-3"></i>
+              min-width
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>min-width</b> element ki minimum width set karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">min-width</span>: <span class="text-[#4ade80]">200px</span>;
+}</code></pre>
+            </div>
+
+            <!-- MAX HEIGHT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-up-down text-[#4d6fff] mr-3"></i>
+              max-height
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>max-height</b> element ki maximum height set karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">max-height</span>: <span class="text-[#4ade80]">300px</span>;
+}</code></pre>
+            </div>
+
+            <!-- MIN HEIGHT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-up-down-left-right text-[#4d6fff] mr-3"></i>
+              min-height
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>min-height</b> element ki minimum height set karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">min-height</span>: <span class="text-[#4ade80]">150px</span>;
+}</code></pre>
+            </div>
+
+            <!-- HEIGHT AUTO -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i
+                class="fa-solid fa-wand-magic-sparkles text-[#4d6fff] mr-3"
+              ></i>
+              Height Auto
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Height ke liye <b>auto</b> browser ko content aur available layout
+              ke according height determine karne deta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">auto</span>;
+}</code></pre>
+            </div>
+
+            <!-- VIEWPORT UNITS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-mobile-screen text-[#4d6fff] mr-3"></i>
+              Viewport Units
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Responsive layouts mein <b>vw</b> aur <b>vh</b> ka use kiya ja
+              sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">50vw</span>;
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">50vh</span>;
+}</code></pre>
+            </div>
+
+            <!-- PRACTICAL EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-globe text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.card</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">100%</span>;
+  <span class="text-[#60a5fa]">max-width</span>: <span class="text-[#4ade80]">500px</span>;
+  <span class="text-[#60a5fa]">min-height</span>: <span class="text-[#4ade80]">200px</span>;
+  <span class="text-[#60a5fa]">margin</span>: <span class="text-[#4ade80]">20px auto</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT POINTS -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li><b>width</b> element ki horizontal size set karta hai.</li>
+
+                <li><b>height</b> element ki vertical size set karta hai.</li>
+
+                <li><b>min-width</b> minimum width set karta hai.</li>
+
+                <li><b>max-width</b> maximum width set karta hai.</li>
+
+                <li><b>min-height</b> minimum height set karta hai.</li>
+
+                <li><b>max-height</b> maximum height set karta hai.</li>
+
+                <li>
+                  Percentage values responsive layouts mein useful hoti hain.
+                </li>
+
+                <li>
+                  <b>vw</b> viewport width aur <b>vh</b> viewport height ke
+                  according size set karte hain.
+                </li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Height and Width Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>width</b> horizontal size control karta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>height</b> vertical size control karta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>min</b> aur <b>max</b> properties size ki limits set
+                    karti hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Responsive design mein percentage, vw aur vh useful hain.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../padding/padding.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../box-model/box-model.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(13);
+      });
+    </script>
+  </body>
+</html>

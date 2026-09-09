@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Dropdowns</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Dropdowns
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Dropdown ek interactive menu hota hai jisme kisi button ya link
+            par hover ya interaction karne par additional options show hote
+            hain. Dropdowns ka use navigation menus, categories, account menus,
+            settings aur website ke different sections ko organize karne ke liye
+            kiya jata hai.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../navbar/navbar.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../image-gallery/image-gallery.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS DROPDOWN -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-caret-down text-blue-400 mr-2"></i>
+              CSS Dropdown Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Dropdown ek hidden menu hota hai jo normally screen par visible
+              nahi hota. Jab user kisi particular button ya link par hover karta
+              hai, tab dropdown menu visible ho jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Example ke liye website ke navigation bar mein "Services" naam ka
+              link ho sakta hai. User Services par mouse le jaye to Web Design,
+              App Development aur SEO jaise additional options dropdown ke andar
+              appear ho sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS dropdown banane ke liye mainly positioning, hover selector,
+              display property aur nested elements ka use kiya jata hai. Isse
+              bina JavaScript ke basic hover-based dropdown menu banaya ja sakta
+              hai.
+            </p>
+          </section>
+
+          <!-- BASIC STRUCTURE -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+              Basic Dropdown Structure
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Dropdown ke liye hum ek parent container ke andar button aur
+              dropdown content rakh sakte hain. Dropdown content ke andar actual
+              menu links hote hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  HTML Structure
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"dropdown"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;button</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"dropbtn"</span><span class="text-blue-400">&gt;</span>
+    Services
+  <span class="text-blue-400">&lt;/button&gt;</span>
+
+  <span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"dropdown-content"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Web Design<span class="text-blue-400">&lt;/a&gt;</span>
+    <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Development<span class="text-blue-400">&lt;/a&gt;</span>
+    <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>SEO<span class="text-blue-400">&lt;/a&gt;</span>
+  <span class="text-blue-400">&lt;/div&gt;</span>
+
+<span class="text-blue-400">&lt;/div&gt;</span></code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- POSITION RELATIVE -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-crosshairs text-blue-400 mr-2"></i>
+              Parent Ko Position Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Dropdown ko correct location par show karne ke liye parent
+              container ko usually
+              <span class="text-blue-400 font-semibold"
+                >position: relative</span
+              >
+              diya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Iska fayda ye hai ki dropdown content ki absolute positioning
+              parent dropdown container ke according calculate ki ja sakti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.dropdown</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">relative</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- DROPDOWN CONTENT -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+              Dropdown Content Ko Position Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Dropdown content ko parent ke neeche display karne ke liye
+              <span class="text-blue-400">position: absolute</span> use kiya
+              jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-blue-400">left: 0</span> se dropdown parent ke
+              left edge se align hota hai aur
+              <span class="text-blue-400">top: 100%</span> se parent ke
+              immediately neeche place kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.dropdown-content</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">absolute</span>;
+  <span class="text-blue-400">top</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">left</span>: <span class="text-green-400">0</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- HIDE DROPDOWN -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-eye-slash text-blue-400 mr-2"></i>
+              Dropdown Ko Initially Hide Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Dropdown menu normally tab tak visible nahi hona chahiye jab tak
+              user uske parent button par hover na kare. Isliye dropdown content
+              ko initially hide karne ke liye
+              <span class="text-blue-400">display: none</span> use kiya ja sakta
+              hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.dropdown-content</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">none</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- SHOW ON HOVER -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+              Hover Karne Par Dropdown Show Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Ab main step hai hidden dropdown ko hover karne par show karna.
+              Iske liye CSS ki
+              <span class="text-blue-400 font-semibold">:hover</span>
+              pseudo-class ka use kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Jab user parent
+              <span class="text-blue-400">.dropdown</span> ke upar hover karega,
+              tab uske andar ka
+              <span class="text-blue-400">.dropdown-content</span> visible ho
+              jayega.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.dropdown-content</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">none</span>;
+}
+
+<span class="text-blue-400">.dropdown:hover .dropdown-content</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- DROPDOWN LINKS -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-link text-blue-400 mr-2"></i>
+              Dropdown Links Ko Style Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Dropdown ke andar links ko readable aur clickable banane ke liye
+              padding aur display properties ka use karna important hai. Usually
+              links ko block display diya jata hai taaki wo poori width mein
+              clickable area provide karein.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.dropdown-content a</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 18px</span>;
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- HOVER LINKS -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-mouse-pointer text-blue-400 mr-2"></i>
+              Dropdown Items Par Hover Effect
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Dropdown menu ko professional look dene ke liye menu items par
+              hover effect add kiya jata hai. User jab kisi item par mouse le
+              jata hai, tab background ya text color change ho sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.dropdown-content a:hover</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#334155</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- BOX SHADOW -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+              Dropdown Mein Box Shadow
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Dropdown ko page ke baaki content se visually separate karne ke
+              liye box shadow ka use kiya ja sakta hai. Isse dropdown ek
+              floating menu jaisa appear hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.dropdown-content</span> {
+  <span class="text-blue-400">box-shadow</span>: <span class="text-green-400">0 8px 20px rgba(0,0,0,0.25)</span>;
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#ffffff</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- COMPLETE DROPDOWN -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+              Complete CSS Dropdown Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Ab ek complete dropdown example dekhte hain jisme HTML structure,
+              relative positioning, absolute positioning, hidden content, hover
+              effect aur dropdown links sabhi concepts ko combine kiya gaya hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Complete Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"dropdown"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;button</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"dropbtn"</span><span class="text-blue-400">&gt;</span>
+    Services
+  <span class="text-blue-400">&lt;/button&gt;</span>
+
+  <span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"dropdown-content"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Web Design<span class="text-blue-400">&lt;/a&gt;</span>
+    <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Development<span class="text-blue-400">&lt;/a&gt;</span>
+    <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>SEO<span class="text-blue-400">&lt;/a&gt;</span>
+  <span class="text-blue-400">&lt;/div&gt;</span>
+
+<span class="text-blue-400">&lt;/div&gt;</span>
+
+
+<span class="text-blue-400">.dropdown</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">relative</span>;
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+}
+
+<span class="text-blue-400">.dropbtn</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#2563eb</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">14px 20px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">none</span>;
+}
+
+<span class="text-blue-400">.dropdown-content</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">position</span>: <span class="text-green-400">absolute</span>;
+  <span class="text-blue-400">top</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">left</span>: <span class="text-green-400">0</span>;
+  <span class="text-blue-400">min-width</span>: <span class="text-green-400">180px</span>;
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">box-shadow</span>: <span class="text-green-400">0 8px 20px rgba(0,0,0,0.25)</span>;
+}
+
+<span class="text-blue-400">.dropdown-content a</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 18px</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">black</span>;
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">none</span>;
+}
+
+<span class="text-blue-400">.dropdown-content a:hover</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#e5e7eb</span>;
+}
+
+<span class="text-blue-400">.dropdown:hover .dropdown-content</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- NAVBAR DROPDOWN -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-bars-staggered text-blue-400 mr-2"></i>
+              Navigation Bar Mein Dropdown
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Dropdown ka sabse common use navigation bar mein hota hai. Agar
+              website mein bahut saare related pages hain, to unhe ek category
+              ke andar dropdown mein organize kiya ja sakta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Example ke liye "Products" menu ke andar Mobile, Laptop, Tablet
+              aur Accessories jaise options rakhe ja sakte hain. Isse navigation
+              bar clean rehta hai aur users ko related options easily mil jate
+              hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Navigation Dropdown
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;nav&gt;</span>
+
+  <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Home<span class="text-blue-400">&lt;/a&gt;</span>
+
+  <span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"dropdown"</span><span class="text-blue-400">&gt;</span>
+
+    <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Products<span class="text-blue-400">&lt;/a&gt;</span>
+
+    <span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"dropdown-content"</span><span class="text-blue-400">&gt;</span>
+      <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Mobile<span class="text-blue-400">&lt;/a&gt;</span>
+      <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Laptop<span class="text-blue-400">&lt;/a&gt;</span>
+      <span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Tablet<span class="text-blue-400">&lt;/a&gt;</span>
+    <span class="text-blue-400">&lt;/div&gt;</span>
+
+  <span class="text-blue-400">&lt;/div&gt;</span>
+
+<span class="text-blue-400">&lt;/nav&gt;</span></code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- DROPDOWN POSITION -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i
+                class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+              ></i>
+              Dropdown Ki Position Control Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Absolute positioning ke saath dropdown ko different directions
+              mein place kiya ja sakta hai. Normally dropdown parent ke neeche
+              open hota hai, lekin requirement ke according right ya left side
+              mein bhi position kiya ja sakta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Isliye <span class="text-blue-400">top</span>,
+              <span class="text-blue-400">left</span>,
+              <span class="text-blue-400">right</span> aur
+              <span class="text-blue-400">bottom</span> properties ko samajhna
+              dropdown design ke liye important hai.
+            </p>
+          </section>
+
+          <!-- COMMON USES -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+              CSS Dropdowns Ke Common Uses
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Navigation Menus</h3>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Related pages ko ek single navigation option ke andar organize
+                  karne ke liye dropdown use hota hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Categories</h3>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Shopping websites mein product categories aur subcategories
+                  dikhane ke liye dropdown useful hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Account Menu</h3>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Profile, Settings, Logout aur other account options ko
+                  dropdown menu mein rakha ja sakta hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Settings</h3>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Different settings aur actions ko compact menu ke form mein
+                  show karne ke liye dropdown use kiya ja sakta hai.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- COMMON MISTAKES -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <div class="space-y-5">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  1. Parent ko relative position na dena
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Agar dropdown content absolute positioned hai, to parent ko
+                  relative position dena layout ko predictable banata hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  2. Dropdown ko hide na karna
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Agar initial state mein display none nahi diya gaya hai, to
+                  dropdown menu page load hote hi visible ho sakta hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  3. Hover selector galat lagana
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Parent ke hover ke andar dropdown content ko show karna
+                  important hai. Selector galat hone par dropdown open nahi
+                  hoga.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  4. Mobile users ko ignore karna
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Hover-based dropdown desktop par convenient ho sakta hai,
+                  lekin touch devices ke liye responsive aur accessible
+                  interaction ka dhyan rakhna zaroori hai.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Dropdown ek hidden menu hota hai jo interaction par visible ho
+                sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Dropdown parent ko generally position: relative diya jata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Dropdown content ko position: absolute ke saath place kiya ja
+                sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                display: none se dropdown initially hidden rakha ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                :hover pseudo-class se dropdown ko show kiya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Dropdown links ko block display dene se clickable area improve
+                hota hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Box shadow dropdown ko floating menu jaisa appearance de sakta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive aur touch-friendly design ka dhyan rakhna important
+                hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Dropdowns ka use additional menu options ko organized aur
+              compact way mein show karne ke liye kiya jata hai. Ye navigation
+              bars, categories, account menus aur settings mein commonly use
+              hote hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              Basic dropdown banane ke liye parent container, relative
+              positioning, absolute positioning, display property aur :hover
+              pseudo-class important concepts hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Dropdown ko professional banane ke liye proper spacing, hover
+              effects, shadows, positioning aur responsive behavior ka dhyan
+              rakhna chahiye.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../navbar/navbar.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../image-gallery/image-gallery.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(34);
+      });
+    </script>
+  </body>
+</html>

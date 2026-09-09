@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CSS !important</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+
+<nav id="navbar"></nav>
+
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+
+  <div id="sidebar"></div>
+
+  <section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+
+    <div class="max-w-6xl mx-auto">
+
+      <!-- TITLE -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+        CSS !important
+      </h1>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+        CSS <strong>!important</strong> ek special declaration hai jo kisi
+        CSS property ki priority ko bahut strongly increase kar deta hai.
+        Iska use tab kiya ja sakta hai jab normal CSS cascade, specificity
+        ya source order ki wajah se required style apply nahi ho rahi ho.
+        Lekin !important ko carefully use karna chahiye, kyunki iska
+        unnecessary use CSS ko difficult to maintain bana sakta hai.
+      </p>
+
+      <!-- TOP NAVIGATION -->
+      <div class="flex justify-between items-center gap-4 mb-12">
+
+        <a href="../specificity/specificity.html">
+          <button
+            class="rounded-xl px-6 sm:px-8 py-4 sm:py-5
+            text-lg sm:text-xl font-semibold text-black
+            bg-white hover:bg-gray-200 transition"
+          >
+            <i class="fa-solid fa-chevron-left mr-2"></i>
+            Previous
+          </button>
+        </a>
+
+        <a href="../optimization/optimization.html">
+          <button
+            class="bg-[#254ccb] hover:bg-[#304cd6]
+            text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5
+            text-lg sm:text-xl font-semibold transition"
+          >
+            Next
+            <i class="fa-solid fa-chevron-right ml-2"></i>
+          </button>
+        </a>
+
+      </div>
+
+      <!-- WHAT IS IMPORTANT -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-circle-exclamation text-blue-400 mr-2"></i>
+        CSS !important Kya Hai?
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        CSS mein <strong>!important</strong> ek special flag hai jo
+        declaration ke saath lagaya jata hai. Jab kisi declaration ke end
+        mein !important likha hota hai, to browser us declaration ko
+        normal declarations ke comparison mein higher priority deta hai.
+      </p>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+        Iska syntax simple hai. Property aur value ke baad
+        <strong>!important</strong> likha jata hai. Exclamation mark ke
+        baad important keyword aata hai.
+      </p>
+
+      <!-- BASIC EXAMPLE -->
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+        <div class="bg-[#1e293b] p-5">
+          <h3 class="text-2xl font-bold">
+            <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+            Basic Example
+          </h3>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red !important</span>;
+}</code></pre>
+        </div>
+
+      </div>
+
+      <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+        Yahan color declaration ke saath !important use kiya gaya hai.
+        Isliye normal competing declarations ke comparison mein ye
+        declaration higher priority le sakti hai.
+      </p>
+
+      <!-- WHY USE IMPORTANT -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-question text-blue-400 mr-2"></i>
+        !important Ki Zarurat Kyun Padti Hai?
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        Normally CSS cascade aur specificity ke rules decide karte hain ki
+        kaunsi declaration apply hogi. Lekin kuch situations mein existing
+        stylesheet ke rules ko override karna difficult ho sakta hai.
+        Aise cases mein !important useful ho sakta hai.
+      </p>
+
+      <div class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12">
+
+        <h3 class="text-2xl sm:text-3xl font-bold mb-5">
+          Common Situations
+        </h3>
+
+        <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Existing CSS rule ko forcefully override karna.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Third-party stylesheet ke kisi rule ko override karna.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Utility classes ke saath temporary override karna.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Debugging ke waqt kisi style ko temporarily force karna.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- NORMAL VS IMPORTANT -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-scale-balanced text-blue-400 mr-2"></i>
+        Normal Declaration vs !important
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        Normal declaration aur !important declaration mein main difference
+        unki priority ka hai. Normal declaration normal cascade process ka
+        part hoti hai, jabki !important declaration important cascade
+        level mein chali jaati hai.
+      </p>
+
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+        <div class="bg-[#1e293b] p-5">
+          <h3 class="text-2xl font-bold">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Comparison Example
+          </h3>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}
+
+<span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red !important</span>;
+}</code></pre>
+        </div>
+
+      </div>
+
+      <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+        Same element aur same property ke case mein important declaration
+        normal declaration ko override kar sakti hai.
+      </p>
+
+      <!-- IMPORTANT WITH SPECIFICITY -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-ranking-star text-blue-400 mr-2"></i>
+        !important aur Specificity
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        CSS specificity mein normally ID selector class selector se higher
+        hota hai aur class selector element selector se higher hota hai.
+        Lekin important declarations normal declarations ke comparison mein
+        separate priority level par operate karti hain.
+      </p>
+
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+        <div class="bg-[#1e293b] p-5">
+          <h3 class="text-2xl font-bold">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Specificity Example
+          </h3>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">#title</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}
+
+<span class="text-blue-400">.heading</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red !important</span>;
+}</code></pre>
+        </div>
+
+      </div>
+
+      <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+        Yahan ID selector ki normal specificity high hai, lekin class
+        declaration important hai. Isliye important declaration normal
+        declaration ke upar priority le sakti hai.
+      </p>
+
+      <!-- TWO IMPORTANT -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+        Do !important Rules Hone Par
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        Agar same property ke liye do competing declarations dono
+        !important hain, to sirf !important hona enough nahi hota.
+        Us situation mein specificity aur cascade ke doosre rules
+        important ho jaate hain.
+      </p>
+
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+        <div class="bg-[#1e293b] p-5">
+          <h3 class="text-2xl font-bold">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Two !important Rules
+          </h3>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue !important</span>;
+}
+
+<span class="text-blue-400">#box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red !important</span>;
+}</code></pre>
+        </div>
+
+      </div>
+
+      <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+        Dono declarations important hain, isliye ab selector ki specificity
+        comparison matter karegi. Yahan ID selector class selector se more
+        specific hai.
+      </p>
+
+      <!-- INLINE IMPORTANT -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-pen-to-square text-blue-400 mr-2"></i>
+        Inline Style ke Saath !important
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        Inline styles normally high priority rakhti hain, lekin agar
+        stylesheet mein kisi declaration par !important laga ho, to
+        important declaration normal inline declaration ke against bhi
+        strong priority le sakti hai.
+      </p>
+
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+        <div class="bg-[#1e293b] p-5">
+          <h3 class="text-2xl font-bold">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Inline Example
+          </h3>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">.message</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue !important</span>;
+}</code>
+
+<span class="text-blue-400">&lt;p</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"message"</span>
+   <span class="text-blue-400">style</span>=<span class="text-green-400">"color: red;"</span><span class="text-blue-400">&gt;</span>
+  Message
+<span class="text-blue-400">&lt;/p&gt;</span></code></pre>
+        </div>
+
+      </div>
+
+      <!-- !IMPORTANT WITH HOVER -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+        !important aur :hover
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        Pseudo-classes ke saath bhi !important use kiya ja sakta hai.
+        Lekin hover, focus aur active states ko design karte waqt unnecessary
+        important declarations se bachna better hota hai, warna state-based
+        styles ko later override karna difficult ho sakta hai.
+      </p>
+
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+        <div class="bg-[#1e293b] p-5">
+          <h3 class="text-2xl font-bold">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Hover Example
+          </h3>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">.button</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">blue !important</span>;
+}
+
+<span class="text-blue-400">.button:hover</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">red</span>;
+}</code></pre>
+        </div>
+
+      </div>
+
+      <!-- THIRD PARTY -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-puzzle-piece text-blue-400 mr-2"></i>
+        Third-Party CSS ko Override Karna
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        Kabhi-kabhi website mein kisi external library ya framework ki CSS
+        loaded hoti hai aur uske rules directly change karna easy nahi hota.
+        Aise cases mein carefully selected !important declaration temporary
+        override ke liye useful ho sakti hai.
+      </p>
+
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+        <div class="bg-[#1e293b] p-5">
+          <h3 class="text-2xl font-bold">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Override Example
+          </h3>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">.external-button</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">12px !important</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">14px 24px !important</span>;
+}</code></pre>
+        </div>
+
+      </div>
+
+      <!-- UTILITY -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-toolbox text-blue-400 mr-2"></i>
+        Utility CSS ke Saath !important
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+        Utility-based CSS systems mein kabhi-kabhi ek utility ko kisi
+        component ke existing style ke against priority deni pad sakti hai.
+        Lekin project ke architecture ke according iska use limited rakhna
+        better hota hai.
+      </p>
+
+      <!-- ALL IMPORTANT -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+        Multiple Properties ke Saath !important
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        Ek hi selector mein multiple declarations important banayi ja sakti
+        hain. Lekin har property ke saath !important lagana generally good
+        practice nahi hai. Sirf wahi property important honi chahiye jise
+        actually override karna required ho.
+      </p>
+
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+        <div class="bg-[#1e293b] p-5">
+          <h3 class="text-2xl font-bold">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Multiple Properties Example
+          </h3>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">.notice</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red !important</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">white !important</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+        </div>
+
+      </div>
+
+      <!-- WHEN NOT TO USE -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-ban text-blue-400 mr-2"></i>
+        !important Kab Use Nahi Karna Chahiye?
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+        !important powerful hai, lekin iska matlab ye nahi ki har CSS
+        conflict ko solve karne ke liye ise use kiya jaye. Agar normal
+        specificity, selector structure ya source order ko improve karke
+        problem solve ho sakti hai, to generally wahi approach better hoti hai.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+
+        <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+
+          <h3 class="text-2xl font-bold mb-4">
+            <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+            Avoid When
+          </h3>
+
+          <ul class="space-y-3 text-lg text-gray-300">
+            <li>Simple selector change enough ho.</li>
+            <li>Source order se problem solve ho sakti ho.</li>
+            <li>Better class naming possible ho.</li>
+            <li>Component CSS ko properly organize kiya ja sakta ho.</li>
+          </ul>
+
+        </div>
+
+        <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+
+          <h3 class="text-2xl font-bold mb-4">
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Consider When
+          </h3>
+
+          <ul class="space-y-3 text-lg text-gray-300">
+            <li>Third-party style override karni ho.</li>
+            <li>Legacy CSS ko temporarily control karna ho.</li>
+            <li>Specific external rule ko forcefully override karna ho.</li>
+            <li>Debugging mein temporary test karna ho.</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- DEBUGGING -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-bug text-blue-400 mr-2"></i>
+        !important ke Saath Debugging
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        Agar CSS expected output nahi de rahi hai, to blindly !important
+        add karna best solution nahi hai. Browser DevTools mein element ko
+        inspect karke dekhein ki kaunsa rule apply ho raha hai aur kaunsa
+        rule crossed out hai. Isse actual conflict identify karna easy hota hai.
+      </p>
+
+      <div class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12">
+
+        <h3 class="text-2xl sm:text-3xl font-bold mb-5">
+          Debugging Steps
+        </h3>
+
+        <ol class="space-y-4 text-lg sm:text-xl text-gray-300">
+
+          <li>
+            <i class="fa-solid fa-1 text-blue-400 mr-2"></i>
+            Browser DevTools mein element inspect karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-2 text-blue-400 mr-2"></i>
+            Applied CSS declarations check karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-3 text-blue-400 mr-2"></i>
+            Specificity aur selector ko compare karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-4 text-blue-400 mr-2"></i>
+            Source order aur cascade ko check karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-5 text-blue-400 mr-2"></i>
+            Sirf zarurat hone par !important use karein.
+          </li>
+
+        </ol>
+
+      </div>
+
+      <!-- PRACTICAL EXAMPLE -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+        <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+        Complete Practical Example
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
+        Is example mein ek normal class aur ek important declaration
+        compare ki gayi hai. Isse clearly samajh sakte hain ki important
+        declaration normal competing declaration ko kaise override kar sakti hai.
+      </p>
+
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+        <div class="bg-[#1e293b] p-5">
+          <h3 class="text-2xl font-bold">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Complete Example
+          </h3>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">gray</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">.theme-card</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">blue !important</span>;
+}
+
+<span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">black</span>;
+}</code></pre>
+        </div>
+
+      </div>
+
+      <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+        Agar element par card aur theme-card dono classes hain, to
+        theme-card ki important background declaration normal background
+        declaration ke comparison mein higher priority rakhegi.
+      </p>
+
+      <!-- BEST PRACTICES -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+        <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+        Best Practices
+      </h2>
+
+      <div class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12">
+
+        <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            !important ko sirf genuine override situations mein use karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Pehle specificity aur cascade problem ko samajhne ki koshish karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Third-party CSS ko override karne ke liye carefully use karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Har property ko !important banane se avoid karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            DevTools se actual CSS conflict identify karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Long-term projects mein CSS architecture ko clean rakhne ki koshish karein.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- COMMON MISTAKES -->
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+        <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+        Common Mistakes
+      </h2>
+
+      <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12">
+
+        <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+
+          <li>
+            <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+            Har CSS conflict ke solution mein !important laga dena.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+            Specificity ko samjhe bina important declarations add karna.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+            Multiple selectors mein unnecessary !important use karna.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+            Temporary debugging code ko final production CSS mein chhod dena.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+            !important ki wajah se future overrides ko difficult bana dena.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- IMPORTANT POINTS -->
+      <div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
+
+        <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+          <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+          Important Points
+        </h2>
+
+        <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            !important CSS declaration ki priority ko increase karta hai.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Iska syntax property value ke baad <strong>!important</strong> hota hai.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Normal declarations ke comparison mein important declarations higher priority rakhti hain.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Agar multiple important declarations compete kar rahi hon, to specificity aur cascade rules matter karte hain.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            !important third-party CSS ko override karne mein useful ho sakta hai.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            Iska unnecessary use maintainability ko difficult bana sakta hai.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            CSS conflict solve karne se pehle selector specificity aur source order check karein.
+          </li>
+
+          <li>
+            <i class="fa-solid fa-check text-green-400 mr-2"></i>
+            !important ko CSS ka default solution nahi banana chahiye.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
+
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+          <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+          Summary
+        </h2>
+
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5">
+          CSS <strong>!important</strong> ek special CSS declaration hai
+          jo normal declarations ke comparison mein kisi property ko
+          higher priority dene ke liye use hoti hai. Ye especially tab
+          useful ho sakti hai jab existing CSS rule ko normal cascade ya
+          specificity ke through easily override nahi kiya ja raha ho.
+        </p>
+
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">
+          Lekin !important ko carefully use karna chahiye. Agar project mein
+          bahut saare !important rules use kar diye jayein, to CSS conflicts
+          aur future maintenance difficult ho sakti hai. Isliye pehle
+          selector structure, specificity aur source order ko samjhein aur
+          sirf zarurat hone par !important ka use karein.
+        </p>
+
+      </div>
+
+      <!-- BOTTOM NAVIGATION -->
+      <div class="flex justify-between items-center gap-4 mt-10">
+
+        <a href="../specificity/specificity.html">
+          <button
+            class="rounded-xl px-6 sm:px-8 py-4 sm:py-5
+            text-lg sm:text-xl font-semibold text-black
+            bg-white hover:bg-gray-200 transition"
+          >
+            <i class="fa-solid fa-chevron-left mr-2"></i>
+            Previous
+          </button>
+        </a>
+
+        <a href="../optimization/optimization.html">
+          <button
+            class="bg-[#254ccb] hover:bg-[#304cd6]
+            text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5
+            text-lg sm:text-xl font-semibold transition"
+          >
+            Next
+            <i class="fa-solid fa-chevron-right ml-2"></i>
+          </button>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("sidebar").innerHTML = createSidebar(43);
+});
+</script>
+
+</body>
+</html>

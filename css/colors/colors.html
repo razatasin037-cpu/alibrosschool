@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Colors - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- NAVBAR -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+      <div id="sidebar"></div>
+
+      <!-- MAIN CONTENT -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Colors
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../how-to/how-to.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../backgrounds/backgrounds.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-palette text-[#4d6fff] mr-3"></i>
+              CSS Colors Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS ka use karke hum HTML elements ke text, background, border aur
+              doosre parts ke colors change kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              CSS mein colors ko alag-alag formats mein define kiya ja sakta
+              hai, jaise color name, HEX, RGB, RGBA, HSL aur HSLA.
+            </p>
+
+            <!-- COLOR PROPERTY -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-6">
+                <i class="fa-solid fa-brush text-[#4d6fff] mr-3"></i>
+                CSS Color Property
+              </h3>
+
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-7">
+                Text ka color change karne ke liye CSS mein
+                <b>color</b> property ka use kiya jata hai.
+              </p>
+
+              <pre
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+}</code></pre>
+            </div>
+
+            <!-- COLOR NAMES -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-font text-[#4d6fff] mr-3"></i>
+              CSS Color Names
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS mein predefined color names ka directly use kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-code text-[#4d6fff] mr-2"></i>
+                Example
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;
+}
+
+<span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+}
+
+<span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">green</span>;
+}</code></pre>
+            </div>
+
+            <!-- COLOR NAMES CARDS -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div class="w-full h-20 rounded-xl bg-red-500 mb-5"></div>
+                <h4 class="text-xl font-bold">Red</h4>
+                <p class="text-gray-400 mt-2">red</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div class="w-full h-20 rounded-xl bg-blue-500 mb-5"></div>
+                <h4 class="text-xl font-bold">Blue</h4>
+                <p class="text-gray-400 mt-2">blue</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div class="w-full h-20 rounded-xl bg-green-500 mb-5"></div>
+                <h4 class="text-xl font-bold">Green</h4>
+                <p class="text-gray-400 mt-2">green</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div class="w-full h-20 rounded-xl bg-yellow-400 mb-5"></div>
+                <h4 class="text-xl font-bold">Yellow</h4>
+                <p class="text-gray-400 mt-2">yellow</p>
+              </div>
+            </div>
+
+            <!-- BACKGROUND COLOR -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-fill-drip text-[#4d6fff] mr-3"></i>
+              CSS Background Color
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Kisi element ka background color change karne ke liye
+              <b>background-color</b> property ka use hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">lightblue</span>;
+}</code></pre>
+            </div>
+
+            <!-- TEXT COLOR -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-text-height text-[#4d6fff] mr-3"></i>
+              Text Color
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Text ka color set karne ke liye <b>color</b> property use hoti
+              hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">tomato</span>;
+}
+
+<span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">dodgerblue</span>;
+}</code></pre>
+            </div>
+
+            <!-- BORDER COLOR -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-border-all text-[#4d6fff] mr-3"></i>
+              Border Color
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Border ka color change karne ke liye
+              <b>border-color</b> property ka use hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">2px solid</span>;
+  <span class="text-[#60a5fa]">border-color</span>: <span class="text-[#4ade80]">red</span>;
+}</code></pre>
+            </div>
+
+            <!-- HEX COLORS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-hashtag text-[#4d6fff] mr-3"></i>
+              HEX Colors
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              HEX color hexadecimal value ka use karta hai. Ye normally
+              <b>#</b> se start hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#ff0000</span>;
+}
+
+<span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#0000ff</span>;
+}</code></pre>
+            </div>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div class="h-16 rounded-xl bg-[#ff0000] mb-4"></div>
+                <p class="text-lg font-bold">#ff0000</p>
+                <p class="text-gray-400">Red</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div class="h-16 rounded-xl bg-[#00ff00] mb-4"></div>
+                <p class="text-lg font-bold">#00ff00</p>
+                <p class="text-gray-400">Green</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div class="h-16 rounded-xl bg-[#0000ff] mb-4"></div>
+                <p class="text-lg font-bold">#0000ff</p>
+                <p class="text-gray-400">Blue</p>
+              </div>
+            </div>
+
+            <!-- RGB -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-sliders text-[#4d6fff] mr-3"></i>
+              RGB Colors
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              RGB ka matlab hai
+              <b>Red, Green, Blue</b>. RGB mein teen values hoti hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">rgb(255, 0, 0)</span>;
+}</code></pre>
+            </div>
+
+            <!-- RGBA -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-circle-half-stroke text-[#4d6fff] mr-3"></i>
+              RGBA Colors
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              RGBA, RGB ka extended version hai. Ismein fourth value
+              <b>alpha</b> hoti hai jo transparency ko control karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">background-color</span>:
+    <span class="text-[#4ade80]">rgba(255, 0, 0, 0.5)</span>;
+}</code></pre>
+            </div>
+
+            <!-- HSL -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-circle-nodes text-[#4d6fff] mr-3"></i>
+              HSL Colors
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              HSL ka matlab hai
+              <b>Hue, Saturation, Lightness</b>.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">hsl(0, 100%, 50%)</span>;
+}</code></pre>
+            </div>
+
+            <!-- HSLA -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-droplet text-[#4d6fff] mr-3"></i>
+              HSLA Colors
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              HSLA mein HSL ke saath alpha value bhi hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>:
+    <span class="text-[#4ade80]">hsla(0, 100%, 50%, 0.5)</span>;
+}</code></pre>
+            </div>
+
+            <!-- COLOR FORMATS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-table-list text-[#4d6fff] mr-3"></i>
+              CSS Color Formats
+            </h2>
+
+            <div
+              class="overflow-x-auto rounded-2xl border border-gray-800 shadow-xl mb-12"
+            >
+              <table class="w-full text-left">
+                <thead class="bg-[#0f172a]">
+                  <tr>
+                    <th class="p-5 text-lg">Format</th>
+                    <th class="p-5 text-lg">Example</th>
+                  </tr>
+                </thead>
+
+                <tbody class="bg-[#0b1220] text-gray-300">
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 font-bold">Color Name</td>
+                    <td class="p-5 font-mono text-[#4ade80]">red</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 font-bold">HEX</td>
+                    <td class="p-5 font-mono text-[#4ade80]">#ff0000</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 font-bold">RGB</td>
+                    <td class="p-5 font-mono text-[#4ade80]">rgb(255,0,0)</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 font-bold">RGBA</td>
+                    <td class="p-5 font-mono text-[#4ade80]">
+                      rgba(255,0,0,0.5)
+                    </td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 font-bold">HSL</td>
+                    <td class="p-5 font-mono text-[#4ade80]">
+                      hsl(0,100%,50%)
+                    </td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 font-bold">HSLA</td>
+                    <td class="p-5 font-mono text-[#4ade80]">
+                      hsla(0,100%,50%,0.5)
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  Text ka color set karne ke liye
+                  <b>color</b> property use hoti hai.
+                </li>
+
+                <li>
+                  Background ka color set karne ke liye
+                  <b>background-color</b> use hota hai.
+                </li>
+
+                <li>CSS mein predefined color names use kiye ja sakte hain.</li>
+
+                <li>HEX colors <b>#</b> symbol se start hote hain.</li>
+
+                <li>RGB mein Red, Green aur Blue values hoti hain.</li>
+
+                <li>RGBA mein alpha value transparency control karti hai.</li>
+
+                <li>HSL mein Hue, Saturation aur Lightness use hote hain.</li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Colors Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS colors website ke elements ko attractive banate hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Color names simple aur easy method hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    HEX colors web development mein bahut commonly use hote
+                    hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    RGB aur RGBA se colors ko numerical values ke through define
+                    kiya ja sakta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    HSL aur HSLA colors ko Hue, Saturation aur Lightness ke
+                    basis par define karte hain.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../how-to/how-to.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="/css/backgrounds/backgrounds.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(8);
+      });
+    </script>
+  </body>
+</html>

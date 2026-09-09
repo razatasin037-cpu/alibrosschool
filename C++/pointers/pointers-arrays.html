@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Pointers and Arrays - Ali Learning</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="flex min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full lg:w-[calc(100%-300px)] px-5 sm:px-8 lg:px-12 py-8"
+      >
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-10">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">
+              C++ Pointers and Arrays
+            </h1>
+            <p class="text-gray-400 mt-3 text-lg">
+              Pointers ka use arrays ke elements ko access, loop aur modify
+              karne ke liye kaise hota hai.
+            </p>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10 mb-10"
+          >
+            <a href="pointer-operators.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+            <a href="/C++/functions/functions.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next<i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <div class="space-y-10">
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Pointers and Arrays
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Pointers ka use arrays ke elements ko access karne ke liye bhi
+                kiya ja sakta hai.
+              </p>
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Important</h3>
+                <p class="text-gray-300 leading-7">
+                  Array name pointer expressions mein first element ke address
+                  ko represent kar sakta hai. Isliye pointer arithmetic ke
+                  through array elements access kiye ja sakte hain.
+                </p>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Get the Address of Array Elements
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Array ke har element ka apna memory address hota hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int numbers[4] = {25, 50, 75, 100};
+
+cout &lt;&lt; &amp;numbers[0] &lt;&lt; "\n";
+cout &lt;&lt; &amp;numbers[1] &lt;&lt; "\n";
+cout &lt;&lt; &amp;numbers[2] &lt;&lt; "\n";
+cout &lt;&lt; &amp;numbers[3];</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Array Name and First Element
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                <code>numbers</code> aur <code>&amp;numbers[0]</code> array ke
+                starting address ko represent kar sakte hain.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int numbers[4] = {25, 50, 75, 100};
+
+cout &lt;&lt; numbers &lt;&lt; "\n";
+cout &lt;&lt; &amp;numbers[0];</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Access the First Element
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Array name ko dereference karke first element access kiya ja
+                sakta hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int numbers[4] = {25, 50, 75, 100};
+
+cout &lt;&lt; *numbers;</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">25</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Access Other Elements with Pointer Arithmetic
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                <code>numbers + 1</code> next element aur
+                <code>numbers + 2</code> third element ko refer karta hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int numbers[4] = {25, 50, 75, 100};
+
+cout &lt;&lt; *(numbers + 1) &lt;&lt; "\n";
+cout &lt;&lt; *(numbers + 2);</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">50
+75</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Loop Through an Array with a Pointer
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Pointer ko array ke saath use karke loop mein elements access
+                kiye ja sakte hain.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int numbers[4] = {25, 50, 75, 100};
+int* ptr = numbers;
+
+for (int i = 0; i &lt; 4; i++) {
+    cout &lt;&lt; *(ptr + i) &lt;&lt; "\n";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">25
+50
+75
+100</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Change Array Values with Pointers
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Pointer expressions ko dereference karke array elements ki
+                values modify bhi ki ja sakti hain.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int numbers[4] = {25, 50, 75, 100};
+
+*numbers = 13;
+*(numbers + 1) = 17;
+
+cout &lt;&lt; *numbers &lt;&lt; "\n";
+cout &lt;&lt; *(numbers + 1);</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">13
+17</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Important Points
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                <code>*numbers</code> first element ko access karta hai.
+              </p>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                <code>*(numbers + 1)</code> second element ko access karta hai.
+              </p>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Pointer arithmetic array ke elements ke saath carefully use
+                karna chahiye.
+              </p>
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Important</h3>
+                <p class="text-gray-300 leading-7">
+                  Array ki boundary ke bahar pointer se value access nahi karni
+                  chahiye. Pointers ko carefully handle karna zaroori hai.
+                </p>
+              </div>
+            </section>
+
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="pointer-operators.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+                </button>
+              </a>
+              <a href="/C++/functions/functions.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next<i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(13);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>C++ Break and Continue - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="flex min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full lg:w-[calc(100%-300px)] px-5 sm:px-8 lg:px-12 py-8"
+      >
+        <div class="max-w-6xl mx-auto">
+          <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10"
+          >
+            <div>
+              <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">
+                C++ Break and Continue
+              </h1>
+
+              <p class="text-gray-400 mt-3 text-lg">
+                Loops ko control karne ke liye
+                <span class="text-white font-semibold">break</span> aur
+                <span class="text-white font-semibold">continue</span>
+                statements ka use karte hain.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Buttons -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="/C++/for/real-life-examples.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="/C++/arrays/arrays.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <div class="space-y-10">
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">C++ Break</h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                C++ mein <code class="text-green-400">break</code> statement ka
+                use loop ko turant stop karne ke liye hota hai.
+              </p>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Jab program ko koi particular condition milti hai, tab
+                <code class="text-green-400">break</code> loop se bahar nikal
+                jata hai. Matlab loop ki remaining iterations execute nahi hoti.
+              </p>
+
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Simple Meaning</h3>
+
+                <p class="text-gray-300 leading-7">
+                  <span class="text-white font-semibold">break</span> ka matlab
+                  hai:
+                  <span class="text-green-400 font-semibold"
+                    >"Loop ko abhi ke abhi stop karo."</span
+                  >
+                </p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Break Syntax</h3>
+
+                  <span class="text-sm text-gray-400"> Syntax </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">break;</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">Break Example</h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Neeche loop numbers print karta hai, lekin jab
+                <code class="text-green-400">i == 4</code> hota hai,
+                <code class="text-green-400">break</code> loop ko stop kar deta
+                hai.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Example 1: Break in For Loop
+                  </h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">for (int i = 0; i &lt; 10; i++) {
+    if (i == 4) {
+        break;
+    }
+
+    cout &lt;&lt; i &lt;&lt; "\n";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">0
+1
+2
+3</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">C++ Continue</h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                C++ mein <code class="text-green-400">continue</code> statement
+                current iteration ko skip karta hai aur loop ki next iteration
+                par chala jata hai.
+              </p>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Iska matlab loop completely stop nahi hota. Sirf current
+                iteration ka remaining code skip hota hai.
+              </p>
+
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Simple Meaning</h3>
+
+                <p class="text-gray-300 leading-7">
+                  <span class="text-white font-semibold">continue</span> ka
+                  matlab hai:
+                  <span class="text-green-400 font-semibold"
+                    >"Is iteration ko skip karo aur next iteration par
+                    jao."</span
+                  >
+                </p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Continue Syntax</h3>
+
+                  <span class="text-sm text-gray-400"> Syntax </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">continue;</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Continue Example
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Is example mein jab
+                <code class="text-green-400">i == 4</code> hota hai, value 4
+                print nahi hoti. Loop next iteration par chala jata hai.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Example 2: Continue in For Loop
+                  </h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">for (int i = 0; i &lt; 10; i++) {
+    if (i == 4) {
+        continue;
+    }
+
+    cout &lt;&lt; i &lt;&lt; "\n";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">0
+1
+2
+3
+5
+6
+7
+8
+9</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Break and Continue in While Loop
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-8">
+                <code class="text-green-400">break</code> aur
+                <code class="text-green-400">continue</code> ko
+                <code class="text-green-400">while</code> loop ke saath bhi use
+                kar sakte hain.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Break Example</h3>
+
+                  <span class="text-sm text-gray-400"> While Loop </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int i = 0;
+
+while (i &lt; 10) {
+    cout &lt;&lt; i &lt;&lt; "\n";
+
+    i++;
+
+    if (i == 4) {
+        break;
+    }
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Continue Example</h3>
+
+                  <span class="text-sm text-gray-400"> While Loop </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int i = 0;
+
+while (i &lt; 10) {
+    if (i == 4) {
+        i++;
+        continue;
+    }
+
+    cout &lt;&lt; i &lt;&lt; "\n";
+
+    i++;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Break vs Continue
+              </h2>
+
+              <div class="overflow-x-auto rounded-2xl border border-gray-800">
+                <table class="w-full text-left">
+                  <thead class="bg-[#1e293b]">
+                    <tr>
+                      <th class="px-6 py-4 text-lg">Break</th>
+                      <th class="px-6 py-4 text-lg">Continue</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="bg-[#0f172a]">
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-gray-300">
+                        Loop ko completely stop karta hai.
+                      </td>
+
+                      <td class="px-6 py-5 text-gray-300">
+                        Sirf current iteration ko skip karta hai.
+                      </td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-gray-300">
+                        Loop ke bahar control chala jata hai.
+                      </td>
+
+                      <td class="px-6 py-5 text-gray-300">
+                        Control next iteration par chala jata hai.
+                      </td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-green-400">break;</td>
+
+                      <td class="px-6 py-5 text-green-400">continue;</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Important Points
+              </h2>
+
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6"
+              >
+                <ul class="space-y-4 text-gray-300 text-lg">
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                    <span
+                      ><code class="text-green-400">break</code> loop ko
+                      completely stop karta hai.</span
+                    >
+                  </li>
+
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                    <span
+                      ><code class="text-green-400">continue</code> current
+                      iteration ko skip karta hai.</span
+                    >
+                  </li>
+
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                    <span
+                      >Dono statements ko
+                      <code class="text-green-400">for</code> aur
+                      <code class="text-green-400">while</code> loops mein use
+                      kar sakte hain.</span
+                    >
+                  </li>
+
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                    <span
+                      ><code class="text-green-400">break</code> ke baad loop ki
+                      remaining iterations execute nahi hoti.</span
+                    >
+                  </li>
+
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                    <span
+                      ><code class="text-green-400">continue</code> ke baad loop
+                      next iteration se continue hota hai.</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">Summary</h2>
+
+              <p class="text-gray-300 text-lg leading-8">
+                C++ mein <code class="text-green-400">break</code> aur
+                <code class="text-green-400">continue</code> loop ko control
+                karne ke important statements hain.
+                <code class="text-green-400">break</code>
+                loop ko completely stop karta hai, jabki
+                <code class="text-green-400">continue</code> current iteration
+                ko skip karke next iteration par chala jata hai.
+              </p>
+            </section>
+
+            <!-- Bottom Buttons -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="/C++/for/real-life-examples.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="/C++/arrays/arrays.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(6);
+        }
+      });
+    </script>
+  </body>
+</html>

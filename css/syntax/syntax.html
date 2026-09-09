@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Syntax - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- TITLE -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          CSS Syntax
+        </h1>
+
+        <!-- TOP BUTTONS -->
+        <div class="flex justify-between items-center">
+          <a href="../intro/intro.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+          </a>
+
+          <a href="../selectors/selectors.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <!-- CONTENT -->
+        <section class="max-w-6xl mx-auto py-10">
+          <!-- CSS SYNTAX INTRO -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            CSS Syntax Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS syntax ka matlab hai CSS rule ko likhne ka
+            <span class="text-[#4d6fff] font-bold"> proper structure </span>.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Ek normal CSS rule mein mainly
+            <span class="text-[#4d6fff] font-bold"> selector </span>
+            aur
+            <span class="text-[#4d6fff] font-bold"> declaration block </span>
+            hota hai.
+          </p>
+
+          <!-- BASIC SYNTAX -->
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-10 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">selector</span> {
+  <span class="text-[#60a5fa]">property</span>: <span class="text-[#4ade80]">value</span>;
+}</code></pre>
+          </div>
+
+          <!-- SYNTAX PARTS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            CSS Syntax Ke Parts
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is basic syntax ko samajhne ke liye humein uske different parts ko
+            samajhna hoga.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- SELECTOR -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold text-[#4d6fff] mb-5">
+                1. Selector
+              </h3>
+
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Selector batata hai ki CSS kis HTML element par apply karni hai.
+              </p>
+
+              <div
+                class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono"
+              >
+                <pre
+                  class="text-lg"
+                ><code><span class="text-[#60a5fa]">p</span> {
+  ...
+}</code></pre>
+              </div>
+
+              <p class="text-gray-400 text-base mt-5">
+                Yahan <span class="text-[#60a5fa]">p</span>
+                paragraph element ko select kar raha hai.
+              </p>
+            </div>
+
+            <!-- DECLARATION BLOCK -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold text-[#4d6fff] mb-5">
+                2. Declaration Block
+              </h3>
+
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Curly braces
+                <span class="text-[#4d6fff] font-bold"> { } </span>
+                ke andar jo CSS declarations hoti hain, unko declaration block
+                kaha jata hai.
+              </p>
+
+              <div
+                class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono"
+              >
+                <pre
+                  class="text-lg"
+                ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <!-- PROPERTY -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold text-[#4d6fff] mb-5">
+                3. Property
+              </h3>
+
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Property batati hai ki selected HTML element mein kya change
+                karna hai.
+              </p>
+
+              <div
+                class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono"
+              >
+                <pre
+                  class="text-lg"
+                ><code><span class="text-[#60a5fa]">color</span>: red;</code></pre>
+              </div>
+
+              <p class="text-gray-400 text-base mt-5">
+                Yahan <span class="text-[#60a5fa]">color</span>
+                property hai.
+              </p>
+            </div>
+
+            <!-- VALUE -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold text-[#4d6fff] mb-5">
+                4. Value
+              </h3>
+
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Value batati hai ki property ko kaunsi setting deni hai.
+              </p>
+
+              <div
+                class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono"
+              >
+                <pre class="text-lg"><code>color:
+<span class="text-[#4ade80]">red</span>;</code></pre>
+              </div>
+
+              <p class="text-gray-400 text-base mt-5">
+                Yahan <span class="text-[#4ade80]">red</span>
+                property ki value hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- COLON -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Colon ( : ) Ka Use
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS mein property aur value ko separate karne ke liye
+            <span class="text-[#4d6fff] font-bold"> colon (:) </span>
+            ka use hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;</code></pre>
+          </div>
+
+          <div
+            class="bg-[#0f172a]/80 border border-gray-700 rounded-xl p-6 mb-10"
+          >
+            <p class="text-gray-300 text-lg leading-8">
+              Is example mein
+              <span class="text-[#60a5fa]">color</span>
+              property hai aur
+              <span class="text-[#4ade80]">blue</span>
+              uski value hai.
+            </p>
+
+            <p class="text-gray-400 text-lg leading-8 mt-4">
+              Dono ke beech colon
+              <span class="text-white font-bold"> : </span>
+              lagaya gaya hai.
+            </p>
+          </div>
+
+          <!-- SEMICOLON -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Semicolon ( ; ) Ka Use
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS mein ek declaration ke end mein
+            <span class="text-[#4d6fff] font-bold"> semicolon (;) </span>
+            lagaya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;
+<span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">20px</span>;
+<span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;</code></pre>
+          </div>
+
+          <div
+            class="bg-[#0f172a]/80 border border-gray-700 rounded-xl p-6 mb-10"
+          >
+            <p class="text-gray-300 text-lg leading-8">
+              Yahan teen alag declarations hain aur har declaration ke end mein
+              semicolon use hua hai.
+            </p>
+          </div>
+
+          <!-- CURLY BRACES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Curly Braces { } Ka Use
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS declaration block ko curly braces
+            <span class="text-[#4d6fff] font-bold"> { } </span>
+            ke andar likha jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">36px</span>;
+}</code></pre>
+          </div>
+
+          <!-- COMPLETE EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Complete CSS Syntax Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab selector, property, value, colon, semicolon aur curly braces ko
+            ek hi example mein dekhte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+          </div>
+
+          <!-- BREAKDOWN -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+              Is Code Ko Step-by-Step Samjho
+            </h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-2">
+                  Step 1 — Selector
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  <span class="text-[#60a5fa]">p</span>
+                  selector hai. Iska matlab hai ki ye CSS paragraph elements par
+                  apply hogi.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-2">
+                  Step 2 — Opening Curly Brace
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  <span class="text-white font-bold">{</span>
+                  declaration block ko start karta hai.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-2">
+                  Step 3 — Property
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  <span class="text-[#60a5fa]">color</span>,
+                  <span class="text-[#60a5fa]">text-align</span>
+                  aur
+                  <span class="text-[#60a5fa]">font-size</span>
+                  properties hain.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-2">
+                  Step 4 — Value
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  <span class="text-[#4ade80]">red</span>,
+                  <span class="text-[#4ade80]">center</span>
+                  aur
+                  <span class="text-[#4ade80]">20px</span>
+                  properties ki values hain.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-2">
+                  Step 5 — Semicolon
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  Har declaration ke end mein
+                  <span class="text-white font-bold">;</span>
+                  lagaya gaya hai.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold text-[#4d6fff] mb-2">
+                  Step 6 — Closing Curly Brace
+                </h4>
+
+                <p class="text-gray-300 text-lg leading-8">
+                  <span class="text-white font-bold">}</span>
+                  declaration block ko close karta hai.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- MULTIPLE DECLARATIONS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Multiple CSS Declarations
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek CSS selector ke andar hum ek se zyada declarations likh sakte
+            hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#4d6fff</span>;
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">40px</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+  <span class="text-[#60a5fa]">margin-bottom</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10">
+            Is example mein ek hi
+            <span class="text-[#60a5fa] font-bold"> h1 </span>
+            selector ke andar chaar different properties use ki gayi hain.
+          </p>
+
+          <!-- PRACTICAL EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Practical Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Maan lo tumhare webpage par ek paragraph hai aur tum uska color
+            blue, text center aur font size 18px karna chahte ho.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">18px</span>;
+}</code></pre>
+          </div>
+
+          <div
+            class="bg-[#0f172a]/80 border border-gray-700 rounded-xl p-6 mb-12"
+          >
+            <h4 class="text-xl font-bold text-[#4d6fff] mb-4">Result</h4>
+
+            <ul
+              class="list-disc pl-6 space-y-3 text-lg text-gray-300 leading-8"
+            >
+              <li>Paragraph ka color blue hoga.</li>
+
+              <li>Paragraph center mein align hoga.</li>
+
+              <li>Paragraph ka font size 18px hoga.</li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            CSS Syntax Mein Common Mistakes
+          </h2>
+
+          <div class="space-y-6">
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <h3 class="text-xl sm:text-2xl font-bold mb-4">
+                ❌ Property aur value ke beech colon bhoolna
+              </h3>
+
+              <div
+                class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono mb-4"
+              >
+                <pre
+                  class="text-lg"
+                ><code><span class="text-[#60a5fa]">color</span> <span class="text-[#4ade80]">red</span>;</code></pre>
+              </div>
+
+              <p class="text-gray-300 text-lg">Sahi syntax:</p>
+
+              <div
+                class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono mt-3"
+              >
+                <pre
+                  class="text-lg"
+                ><code><span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;</code></pre>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <h3 class="text-xl sm:text-2xl font-bold mb-4">
+                ❌ Property ke end mein semicolon na lagana
+              </h3>
+
+              <div
+                class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono"
+              >
+                <pre
+                  class="text-lg"
+                ><code><span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>
+<span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">20px</span>;</code></pre>
+              </div>
+
+              <p class="text-gray-300 text-lg mt-5">
+                Better practice hai ki har declaration ke baad semicolon lagao.
+              </p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <h3 class="text-xl sm:text-2xl font-bold mb-4">
+                ❌ Curly braces bhool jana
+              </h3>
+
+              <div
+                class="bg-[#020617] rounded-xl p-5 border border-gray-800 font-mono"
+              >
+                <pre class="text-lg"><code><span class="text-[#60a5fa]">p</span>
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;</code></pre>
+              </div>
+
+              <p class="text-gray-300 text-lg mt-5">
+                CSS declaration ko selector ke curly braces ke andar likhna
+                chahiye.
+              </p>
+            </div>
+          </div>
+
+          <!-- QUICK SUMMARY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            CSS Syntax Quick Summary
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+          >
+            <ul
+              class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Selector batata hai ki kis HTML element ko style karna hai.
+              </li>
+
+              <li>
+                Declaration block curly braces
+                <span class="text-white font-bold">{ }</span>
+                ke andar hota hai.
+              </li>
+
+              <li>Property batati hai ki kya change karna hai.</li>
+
+              <li>Value property ki setting batati hai.</li>
+
+              <li>
+                Property aur value ke beech colon
+                <span class="text-white font-bold">:</span>
+                hota hai.
+              </li>
+
+              <li>
+                Declarations ko normally semicolon
+                <span class="text-white font-bold">;</span>
+                se separate kiya jata hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BOTTOM BUTTONS -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../intro/intro.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../selectors/selectors.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(2);
+      });
+    </script>
+  </body>
+</html>

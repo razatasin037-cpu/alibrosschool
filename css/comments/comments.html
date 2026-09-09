@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Comments - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Comments
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../how-to/how-to.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../errors/errors.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-comment text-[#4d6fff] mr-3"></i>
+              CSS Comments Kya Hote Hain?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS comments ka use code ke andar notes ya explanations likhne ke
+              liye kiya jata hai. Browser comments ko ignore karta hai, isliye
+              comments webpage par display nahi hote.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              Comments developer ko code ko samajhne, organize karne aur future
+              mein code ko easily maintain karne mein help karte hain.
+            </p>
+
+            <!-- SYNTAX -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              CSS Comment Syntax
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS mein comment
+              <span class="text-[#4ade80] font-bold">/*</span>
+              se start aur
+              <span class="text-[#4ade80] font-bold">*/</span>
+              se end kiya jata hai.
+            </p>
+
+            <!-- SYNTAX CODE -->
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-10 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">/*</span>
+  <span class="text-[#4ade80]">This is a CSS comment</span>
+<span class="text-[#60a5fa]">*/</span></code></pre>
+            </div>
+
+            <!-- SIMPLE COMMENT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-note-sticky text-[#4d6fff] mr-3"></i>
+              Simple CSS Comment
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Aap kisi CSS rule ke upar comment likhkar bata sakte hain ki us
+              rule ka kaam kya hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-10 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">/* Main heading ka color */</span>
+
+<span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+}</code></pre>
+            </div>
+
+            <!-- COMMENT ABOVE RULE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrow-down text-[#4d6fff] mr-3"></i>
+              Rule Ke Upar Comment
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Usually comments ko us CSS rule ke upar likhna useful hota hai
+              jiske baare mein comment information de raha hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-10 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">/* Website ka main background */</span>
+
+<span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">lightgray</span>;
+}
+
+<span class="text-[#60a5fa]">/* Main heading */</span>
+
+<span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">darkblue</span>;
+}</code></pre>
+            </div>
+
+            <!-- COMMENT INSIDE RULE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code-branch text-[#4d6fff] mr-3"></i>
+              CSS Rule Ke Andar Comment
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Comment ko CSS declaration block ke andar bhi likha ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-10 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+
+  <span class="text-[#60a5fa]">/* Heading ko center mein rakhen */</span>
+
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+
+}</code></pre>
+            </div>
+
+            <!-- MULTI LINE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-align-left text-[#4d6fff] mr-3"></i>
+              Multi-Line Comment
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Agar comment lamba ho to usse multiple lines mein bhi likh sakte
+              hain. Bas comment
+              <span class="text-[#4ade80] font-bold">/*</span>
+              se start aur
+              <span class="text-[#4ade80] font-bold">*/</span>
+              se end hona chahiye.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-10 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">/*
+  Ye website ke main heading ka style hai.
+  Is heading ko center mein rakha gaya hai.
+  Color blue rakha gaya hai.
+*/</span>
+
+<span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+}</code></pre>
+            </div>
+
+            <!-- DISABLE CODE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-eye-slash text-[#4d6fff] mr-3"></i>
+              CSS Code Ko Temporarily Disable Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Comments ka ek useful use kisi CSS rule ko temporarily disable
+              karna bhi hai. Isse rule code mein rahta hai, lekin browser usse
+              apply nahi karta.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-10 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+}
+
+<span class="text-[#60a5fa]">/*
+p {
+  color: red;
+}
+*/</span></code></pre>
+            </div>
+
+            <!-- USES -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book text-[#4d6fff] mr-3"></i>
+              Comments Ka Use Kahan Kare?
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-5 mb-12">
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+              >
+                <i
+                  class="fa-solid fa-circle-info text-[#4d6fff] text-3xl mb-5"
+                ></i>
+
+                <h3 class="text-xl font-bold mb-3">Explanation</h3>
+
+                <p class="text-gray-400 leading-relaxed">
+                  Complex CSS ko samjhane ke liye notes add kar sakte hain.
+                </p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+              >
+                <i class="fa-solid fa-bug text-[#4d6fff] text-3xl mb-5"></i>
+
+                <h3 class="text-xl font-bold mb-3">Debugging</h3>
+
+                <p class="text-gray-400 leading-relaxed">
+                  Kisi CSS rule ko temporarily disable karke problem find kar
+                  sakte hain.
+                </p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+              >
+                <i class="fa-solid fa-users text-[#4d6fff] text-3xl mb-5"></i>
+
+                <h3 class="text-xl font-bold mb-3">Team Work</h3>
+
+                <p class="text-gray-400 leading-relaxed">
+                  Team members ke liye important information comments mein likhi
+                  ja sakti hai.
+                </p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+              >
+                <i
+                  class="fa-solid fa-folder-tree text-[#4d6fff] text-3xl mb-5"
+                ></i>
+
+                <h3 class="text-xl font-bold mb-3">Code Organization</h3>
+
+                <p class="text-gray-400 leading-relaxed">
+                  Large CSS files mein different sections ko identify karna easy
+                  ho jata hai.
+                </p>
+              </div>
+            </div>
+
+            <!-- REAL LIFE EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-globe text-[#4d6fff] mr-3"></i>
+              Real-Life Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Ek large website mein CSS file bahut badi ho sakti hai. Comments
+              ki help se developer easily identify kar sakta hai ki kaunsa
+              section kis purpose ke liye hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">/* Header Section */</span>
+
+<span class="text-[#60a5fa]">header</span> {
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">80px</span>;
+}
+
+<span class="text-[#60a5fa]">/* Navigation Section */</span>
+
+<span class="text-[#60a5fa]">nav</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">flex</span>;
+}
+
+<span class="text-[#60a5fa]">/* Footer Section */</span>
+
+<span class="text-[#60a5fa]">footer</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  CSS comments
+                  <span class="text-[#4ade80] font-bold">/* */</span>
+                  ke andar likhe jate hain.
+                </li>
+
+                <li>Browser comments ko ignore karta hai.</li>
+
+                <li>Comments webpage par normally display nahi hote.</li>
+
+                <li>Comments single-line ya multi-line ho sakte hain.</li>
+
+                <li>
+                  Comments ka use CSS code ko explain aur organize karne ke liye
+                  kiya ja sakta hai.
+                </li>
+
+                <li>
+                  CSS rules ko temporarily disable karne ke liye bhi comments
+                  useful hain.
+                </li>
+              </ul>
+            </div>
+
+            <!-- QUICK SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Comments Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS comments
+                    <span class="text-[#60a5fa] font-mono"> /* */ </span>
+                    ke andar likhe jate hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Browser CSS comments ko ignore karta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Comments code ko explain aur organize karne mein help karte
+                    hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Comments ke through CSS rules ko temporarily disable kiya ja
+                    sakta hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../how-to/how-to.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../errors/errors.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(6);
+      });
+    </script>
+  </body>
+</html>

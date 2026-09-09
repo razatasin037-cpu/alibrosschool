@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Overflow</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Title -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Overflow
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS ka
+            <span class="text-blue-400 font-semibold">overflow</span>
+            property tab useful hota hai jab kisi element ke andar ka content
+            uske available area se bada ho jata hai. Is property ki help se hum
+            decide kar sakte hain ki extra content ko kaise handle karna hai.
+          </p>
+
+          <!-- Top Buttons -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../z-index/z-index.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../float/float.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- What is Overflow -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i
+                class="fa-solid fa-up-right-and-down-left-from-center text-blue-400 mr-2"
+              ></i>
+              CSS Overflow Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              Jab kisi HTML element ki width ya height fixed hoti hai aur uske
+              andar ka content us available space se bahar nikalne lagta hai, to
+              is situation ko
+              <span class="text-green-400">overflow</span>
+              kaha jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS ka
+              <span class="text-green-400">overflow</span>
+              property hume control deta hai ki ye extra content visible rahe,
+              hide ho, scroll ho ya automatically handle ho.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Overflow ka use specially fixed-height boxes, cards, menus,
+              tables, images aur responsive layouts mein bahut useful hota hai.
+            </p>
+          </div>
+
+          <!-- Syntax -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+              CSS Overflow Syntax
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Overflow property ko CSS mein simple tarike se is tarah likha jata
+              hai:
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">100px</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">hidden</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Overflow Values -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-list text-blue-400 mr-2"></i>
+              CSS Overflow ki Values
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              CSS overflow property ki kuch important values hoti hain:
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="p-6">
+                <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+                  <li>
+                    <span class="text-green-400 font-semibold">visible</span>
+                    – extra content normally visible rahega.
+                  </li>
+
+                  <li>
+                    <span class="text-green-400 font-semibold">hidden</span>
+                    – extra content hide ho jayega.
+                  </li>
+
+                  <li>
+                    <span class="text-green-400 font-semibold">scroll</span>
+                    – scrollbars available ho jayenge.
+                  </li>
+
+                  <li>
+                    <span class="text-green-400 font-semibold">auto</span>
+                    – browser zarurat ke according scrolling provide karega.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visible -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-eye text-blue-400 mr-2"></i>
+              overflow: visible
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">visible</span>
+              overflow ki default value hoti hai. Isme agar content element ke
+              box se bahar nikalta hai, to wo content visible rehta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">Example</h3>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">100px</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">visible</span>;
+}</code></pre>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mt-5"
+            >
+              Is case mein extra content ko browser hide nahi karega. Content
+              box ke bahar bhi dikh sakta hai.
+            </p>
+          </div>
+
+          <!-- Hidden -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-eye-slash text-blue-400 mr-2"></i>
+              overflow: hidden
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">hidden</span>
+              value extra content ko element ke box ke bahar display nahi hone
+              deti.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Jo content defined width ya height se bahar chala jata hai, wo
+              visible nahi hota.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">Example</h3>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">100px</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">hidden</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Scroll -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+              overflow: scroll
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">scroll</span>
+              value use karne par element ke andar scrolling ki facility
+              available ho jati hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Content kam ho tab bhi browser scrollbar show kar sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">Example</h3>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">100px</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">scroll</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Auto -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+              overflow: auto
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">auto</span>
+              value browser ko allow karti hai ki jab content overflow kare, tab
+              zarurat ke according scrollbar provide kare.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Isliye responsive layouts mein
+              <span class="text-green-400">overflow: auto</span>
+              kaafi useful hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">Example</h3>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">300px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">150px</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">auto</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Overflow X -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+              overflow-x
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">overflow-x</span>
+              horizontal direction mein hone wale overflow ko control karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Agar content left aur right side se bahar nikal raha hai, to
+              overflow-x ka use kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">Example</h3>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">300px</span>;
+  <span class="text-blue-400">overflow-x</span>: <span class="text-green-400">auto</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Overflow Y -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+              overflow-y
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              <span class="text-green-400">overflow-y</span>
+              vertical direction mein hone wale overflow ko control karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Agar content upar ya neeche ki taraf available height se bahar ja
+              raha hai, to overflow-y useful hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">Example</h3>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">height</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">overflow-y</span>: <span class="text-green-400">auto</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- X and Y Together -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+              overflow-x aur overflow-y Together
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Hum horizontal aur vertical overflow ko separately bhi control kar
+              sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">Example</h3>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">300px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">150px</span>;
+
+  <span class="text-blue-400">overflow-x</span>: <span class="text-green-400">auto</span>;
+  <span class="text-blue-400">overflow-y</span>: <span class="text-green-400">hidden</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Real World Example -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-globe text-blue-400 mr-2"></i>
+              Real World Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Overflow ka practical use tables mein bahut common hai. Mobile
+              screen par agar table bahut wide ho, to hum horizontal scrolling
+              allow kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">Responsive Table Example</h3>
+              </div>
+
+              <pre
+                class="p-6 overflow-x-auto text-lg"
+              ><code><span class="text-blue-400">.table-container</span> {
+  <span class="text-blue-400">overflow-x</span>: <span class="text-green-400">auto</span>;
+}
+
+<span class="text-blue-400">table</span> {
+  <span class="text-blue-400">min-width</span>: <span class="text-green-400">700px</span>;
+}</code></pre>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mt-5"
+            >
+              Isse chhoti screen par table page ko break nahi karega. User
+              horizontal scroll karke table ko dekh sakta hai.
+            </p>
+          </div>
+
+          <!-- Difference -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-scale-balanced text-blue-400 mr-2"></i>
+              Overflow Values mein Difference
+            </h2>
+
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[700px] text-left border-collapse">
+                <thead>
+                  <tr class="bg-[#1e293b]">
+                    <th class="p-4 border border-gray-700 text-blue-400">
+                      Value
+                    </th>
+                    <th class="p-4 border border-gray-700 text-blue-400">
+                      Kya Karta Hai?
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody class="text-lg text-gray-300">
+                  <tr>
+                    <td class="p-4 border border-gray-700 text-green-400">
+                      visible
+                    </td>
+                    <td class="p-4 border border-gray-700">
+                      Extra content visible rehta hai.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 border border-gray-700 text-green-400">
+                      hidden
+                    </td>
+                    <td class="p-4 border border-gray-700">
+                      Extra content hide ho jata hai.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 border border-gray-700 text-green-400">
+                      scroll
+                    </td>
+                    <td class="p-4 border border-gray-700">
+                      Scrolling available hoti hai.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 border border-gray-700 text-green-400">
+                      auto
+                    </td>
+                    <td class="p-4 border border-gray-700">
+                      Zarurat padne par scrollbar aata hai.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Important Points -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>visible</b> overflow ki default value hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>hidden</b> extra content ko hide karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>scroll</b> scrolling provide karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>auto</b> zarurat ke according scrolling provide karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>overflow-x</b> horizontal overflow control karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b>overflow-y</b> vertical overflow control karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive tables aur containers mein overflow bahut useful hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              CSS Overflow Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS ka overflow property tab use hota hai jab element ke andar ka
+              content uski available width ya height se bahar nikal jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              <span class="text-green-400">visible</span>,
+              <span class="text-green-400">hidden</span>,
+              <span class="text-green-400">scroll</span>
+              aur
+              <span class="text-green-400">auto</span>
+              iski important values hain. Horizontal aur vertical overflow ko
+              separately control karne ke liye
+              <span class="text-green-400">overflow-x</span>
+              aur
+              <span class="text-green-400">overflow-y</span>
+              use kiye ja sakte hain.
+            </p>
+          </div>
+
+          <!-- Bottom Buttons -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../z-index/z-index.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../float/float.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(25);
+      });
+    </script>
+  </body>
+</html>

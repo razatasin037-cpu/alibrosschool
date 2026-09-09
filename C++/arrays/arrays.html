@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>C++ Arrays - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="flex min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full lg:w-[calc(100%-300px)] px-5 sm:px-8 lg:px-12 py-8"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading -->
+          <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10"
+          >
+            <div>
+              <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">
+                C++ Arrays
+              </h1>
+
+              <p class="text-gray-400 mt-3 text-lg">
+                Arrays ka use ek hi variable ke andar multiple values store
+                karne ke liye hota hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- Top Navigation -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="/C++/break/BreakContinue.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="/C++/arrays/access-arrays.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <div class="space-y-10">
+            <!-- Introduction -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">C++ Arrays</h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                C++ mein array ka use ek hi variable ke andar multiple values
+                store karne ke liye kiya jata hai.
+              </p>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Agar tumhare paas same type ki bahut saari values hain, to har
+                value ke liye alag variable banane ke bajay array use karna easy
+                hota hai.
+              </p>
+
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Simple Meaning</h3>
+
+                <p class="text-gray-300 leading-7">
+                  <span class="text-white font-semibold">Array</span>
+                  ka matlab hai:
+                  <span class="text-green-400 font-semibold">
+                    "Ek variable mein same type ki multiple values store karna."
+                  </span>
+                </p>
+              </div>
+            </section>
+
+            <!-- Declare Array -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Declare an Array
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Array declare karne ke liye pehle data type, phir array ka naam
+                aur square brackets ke andar array ka size likha jata hai.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Array Declaration</h3>
+
+                  <span class="text-sm text-gray-400"> Syntax </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">string cars[4];</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Is example mein
+                <code class="text-green-400">cars</code>
+                naam ka array banaya gaya hai jo 4 string values store kar sakta
+                hai.
+              </p>
+            </section>
+
+            <!-- Initialize Array -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Initialize an Array
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Array declare karte waqt uske andar values bhi directly store
+                kar sakte hain.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Array Initialization</h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">string cars[4] = {
+    "Volvo",
+    "BMW",
+    "Ford",
+    "Mazda"
+};</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Curly braces
+                <code class="text-green-400">{ }</code>
+                ke andar values comma se separate hoti hain.
+              </p>
+            </section>
+
+            <!-- Integer Array -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">Integer Array</h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Array ke andar numbers bhi store kiye ja sakte hain. Jaise:
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example: Integer Array</h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int myNum[3] = {10, 20, 30};</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Yahan
+                <code class="text-green-400">myNum</code>
+                array mein 3 integer values store hain.
+              </p>
+            </section>
+
+            <!-- Access Elements -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Access the Elements of an Array
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Array ke kisi element ko access karne ke liye uska index number
+                square brackets
+                <code class="text-green-400">[ ]</code>
+                ke andar likhte hain.
+              </p>
+
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Important</h3>
+
+                <p class="text-gray-300 leading-7">
+                  C++ arrays ka index
+                  <span class="text-green-400 font-semibold">0</span>
+                  se start hota hai.
+                </p>
+
+                <p class="text-gray-300 leading-7 mt-2">
+                  Isliye first element ka index
+                  <span class="text-green-400">0</span>, second ka
+                  <span class="text-green-400">1</span>, third ka
+                  <span class="text-green-400">2</span>
+                  hota hai.
+                </p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Example 1: Access Array Element
+                  </h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">string cars[4] = {
+    "Volvo",
+    "BMW",
+    "Ford",
+    "Mazda"
+};
+
+cout &lt;&lt; cars[0];</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Volvo</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Index Table -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">Array Index</h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Neeche dekho ki array ke andar index kaise work karta hai:
+              </p>
+
+              <div class="overflow-x-auto rounded-2xl border border-gray-800">
+                <table class="w-full text-left">
+                  <thead class="bg-[#1e293b]">
+                    <tr>
+                      <th class="px-6 py-4 text-lg">Index</th>
+
+                      <th class="px-6 py-4 text-lg">Value</th>
+
+                      <th class="px-6 py-4 text-lg">Access</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="bg-[#0f172a]">
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-gray-300">0</td>
+                      <td class="px-6 py-5 text-gray-300">Volvo</td>
+                      <td class="px-6 py-5 text-green-400">cars[0]</td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-gray-300">1</td>
+                      <td class="px-6 py-5 text-gray-300">BMW</td>
+                      <td class="px-6 py-5 text-green-400">cars[1]</td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-gray-300">2</td>
+                      <td class="px-6 py-5 text-gray-300">Ford</td>
+                      <td class="px-6 py-5 text-green-400">cars[2]</td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5 text-gray-300">3</td>
+                      <td class="px-6 py-5 text-gray-300">Mazda</td>
+                      <td class="px-6 py-5 text-green-400">cars[3]</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Change Element -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Change an Array Element
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Array ke kisi element ki value ko change karne ke liye uska
+                index use karke new value assign kar sakte hain.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Example 2: Change Array Element
+                  </h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">string cars[4] = {
+    "Volvo",
+    "BMW",
+    "Ford",
+    "Mazda"
+};
+
+cars[0] = "Opel";
+
+cout &lt;&lt; cars[0];</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Opel</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Arrays and Loops -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Arrays and Loops
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Array ke saare elements ko ek-ek karke print karne ke liye
+                <code class="text-green-400">for</code> loop ka use kar sakte
+                hain.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Example 3: Loop Through an Array
+                  </h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">string cars[5] = {
+    "Volvo",
+    "BMW",
+    "Ford",
+    "Mazda",
+    "Tesla"
+};
+
+for (int i = 0; i &lt; 5; i++) {
+    cout &lt;&lt; cars[i] &lt;&lt; "\n";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Volvo
+BMW
+Ford
+Mazda
+Tesla</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Index with Value -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Print Index and Value
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Loop ke andar tum index number aur uski value dono ko print kar
+                sakte ho.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example 4</h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">string cars[5] = {
+    "Volvo",
+    "BMW",
+    "Ford",
+    "Mazda",
+    "Tesla"
+};
+
+for (int i = 0; i &lt; 5; i++) {
+    cout &lt;&lt; i &lt;&lt; " = " &lt;&lt; cars[i] &lt;&lt; "\n";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Integer Loop -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Loop Through Integer Array
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Integer array ko bhi for loop ki help se easily traverse kar
+                sakte hain.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example 5</h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int myNumbers[5] = {
+    10,
+    20,
+    30,
+    40,
+    50
+};
+
+for (int i = 0; i &lt; 5; i++) {
+    cout &lt;&lt; myNumbers[i] &lt;&lt; "\n";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Foreach -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                The foreach Loop
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                C++ mein version 11 se
+                <code class="text-green-400">for-each</code>
+                loop available hai. Iska use array ke elements ko directly
+                access karne ke liye kiya ja sakta hai.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Example 6: For-Each Loop
+                  </h3>
+
+                  <span class="text-sm text-gray-400"> C++11 </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int myNumbers[5] = {
+    10,
+    20,
+    30,
+    40,
+    50
+};
+
+for (int num : myNumbers) {
+    cout &lt;&lt; num &lt;&lt; "\n";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Isme index manually manage karne ki zarurat nahi hoti. Har
+                iteration mein
+                <code class="text-green-400">num</code>
+                ke andar next value aa jati hai.
+              </p>
+            </section>
+
+            <!-- Array Size -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Get the Size of an Array
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Array ka total size bytes mein jaanne ke liye
+                <code class="text-green-400">sizeof()</code>
+                operator use kiya ja sakta hai.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example 7: sizeof()</h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int myNumbers[5] = {
+    10,
+    20,
+    30,
+    40,
+    50
+};
+
+cout &lt;&lt; sizeof(myNumbers);</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6"
+              >
+                <h3 class="text-xl font-semibold mb-3">Important</h3>
+
+                <p class="text-gray-300 leading-7">
+                  <code class="text-green-400">sizeof()</code>
+                  array ke bytes return karta hai, elements ki count nahi.
+                </p>
+              </div>
+            </section>
+
+            <!-- Get Number of Elements -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Get Array Length
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Array mein kitne elements hain ye find karne ke liye array ke
+                total size ko first element ke size se divide kar sakte hain.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example 8</h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int myNumbers[5] = {
+    10,
+    20,
+    30,
+    40,
+    50
+};
+
+int length =
+    sizeof(myNumbers) / sizeof(myNumbers[0]);
+
+cout &lt;&lt; length;</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Loop using Size -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Loop Using Array Size
+              </h2>
+
+              <p class="text-gray-300 text-lg leading-8 mb-6">
+                Array ki length ko calculate karke usse loop ki condition mein
+                use karna hard-coded size se zyada useful ho sakta hai.
+              </p>
+
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example 9</h3>
+
+                  <span class="text-sm text-gray-400"> C++ </span>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">int myNumbers[5] = {
+    10,
+    20,
+    30,
+    40,
+    50
+};
+
+int length =
+    sizeof(myNumbers) / sizeof(myNumbers[0]);
+
+for (int i = 0; i &lt; length; i++) {
+    cout &lt;&lt; myNumbers[i] &lt;&lt; "\n";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Important Points -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Important Points
+              </h2>
+
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6"
+              >
+                <ul class="space-y-4 text-gray-300 text-lg">
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                    <span>
+                      Array ek variable mein multiple values store kar sakta
+                      hai.
+                    </span>
+                  </li>
+
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                    <span>
+                      Array ka index
+                      <code class="text-green-400">0</code>
+                      se start hota hai.
+                    </span>
+                  </li>
+
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                    <span>
+                      Array elements ko
+                      <code class="text-green-400">array[index]</code>
+                      se access kiya ja sakta hai.
+                    </span>
+                  </li>
+
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                    <span>
+                      Array ke elements ko change bhi kiya ja sakta hai.
+                    </span>
+                  </li>
+
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                    <span>
+                      Arrays ke saath
+                      <code class="text-green-400">for</code>
+                      aur
+                      <code class="text-green-400">for-each</code>
+                      loops commonly use hote hain.
+                    </span>
+                  </li>
+
+                  <li class="flex gap-3">
+                    <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                    <span>
+                      <code class="text-green-400">sizeof()</code>
+                      se array ka memory size aur elements ki count calculate ki
+                      ja sakti hai.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Summary -->
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">Summary</h2>
+
+              <p class="text-gray-300 text-lg leading-8">
+                C++ arrays same type ki multiple values ko ek single variable
+                mein store karne ka useful way hain. Array ko declare aur
+                initialize karne ke baad uske elements ko index ke through
+                access aur change kiya ja sakta hai. Loops ki help se array ke
+                saare elements ko easily process kiya ja sakta hai.
+              </p>
+            </section>
+
+            <!-- Bottom Navigation -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="/C++/break/break-continue.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="/C++/arrays/access-arrays.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(7);
+        }
+      });
+    </script>
+  </body>
+</html>

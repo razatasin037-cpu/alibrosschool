@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Backgrounds - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- NAVBAR -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+      <div id="sidebar"></div>
+
+      <!-- MAIN CONTENT -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Backgrounds
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../colors/colors.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../borders/borders.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRODUCTION -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-image text-[#4d6fff] mr-3"></i>
+              CSS Backgrounds Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS ka use karke hum kisi HTML element ke background ko color,
+              image ya different settings ke saath style kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              Background ko control karne ke liye CSS mein kai background
+              properties available hain.
+            </p>
+
+            <!-- BACKGROUND PROPERTIES -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-layer-group text-[#4d6fff] mr-3"></i>
+                Main Background Properties
+              </h3>
+
+              <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-fill-drip text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">background-color</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Element ka background color set karta hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i class="fa-solid fa-image text-[#4d6fff] text-3xl mb-5"></i>
+                  <h4 class="text-xl font-bold mb-3">background-image</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Background mein image add karta hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-expand text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">background-size</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Background image ka size control karta hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-location-crosshairs text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">background-position</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Background image ki position set karta hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-repeat text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">background-repeat</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Image repeat hogi ya nahi, ye control karta hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-paperclip text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">background-attachment</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Background image scroll ke saath kaise behave karegi, ye
+                    define karta hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BACKGROUND COLOR -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-fill-drip text-[#4d6fff] mr-3"></i>
+              1. Background Color
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>background-color</b> property se kisi element ka background
+              color set kiya jata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-code text-[#4d6fff] mr-2"></i>
+                Example
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">lightblue</span>;
+}
+
+<span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">yellow</span>;
+}</code></pre>
+            </div>
+
+            <!-- DEMO -->
+            <div class="rounded-2xl p-8 mb-12 bg-blue-500 text-center">
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+                Background Color Example
+              </h3>
+
+              <p class="text-lg">Is box ka background blue hai.</p>
+            </div>
+
+            <!-- BACKGROUND IMAGE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-image text-[#4d6fff] mr-3"></i>
+              2. Background Image
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>background-image</b> property ka use background mein image
+              lagane ke liye kiya jata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background-image</span>:
+    <span class="text-[#4ade80]">url("background.jpg")</span>;
+}</code></pre>
+            </div>
+
+            <!-- BACKGROUND REPEAT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-repeat text-[#4d6fff] mr-3"></i>
+              3. Background Repeat
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              By default background image repeat ho sakti hai.
+              <b>background-repeat</b> property se is behavior ko control kiya
+              ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background-image</span>:
+    <span class="text-[#4ade80]">url("image.jpg")</span>;
+
+  <span class="text-[#60a5fa]">background-repeat</span>: <span class="text-[#4ade80]">no-repeat</span>;
+}</code></pre>
+            </div>
+
+            <!-- REPEAT VALUES -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">repeat</h4>
+                <p class="text-gray-300">Image repeat hoti hai.</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">no-repeat</h4>
+                <p class="text-gray-300">Image repeat nahi hoti.</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">repeat-x</h4>
+                <p class="text-gray-300">Horizontal direction mein repeat.</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3">repeat-y</h4>
+                <p class="text-gray-300">Vertical direction mein repeat.</p>
+              </div>
+            </div>
+
+            <!-- BACKGROUND POSITION -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i
+                class="fa-solid fa-location-crosshairs text-[#4d6fff] mr-3"
+              ></i>
+              4. Background Position
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>background-position</b> property background image ki position
+              set karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background-image</span>:
+    <span class="text-[#4ade80]">url("image.jpg")</span>;
+
+  <span class="text-[#60a5fa]">background-repeat</span>: <span class="text-[#4ade80]">no-repeat</span>;
+
+  <span class="text-[#60a5fa]">background-position</span>: <span class="text-[#4ade80]">center</span>;
+}</code></pre>
+            </div>
+
+            <!-- BACKGROUND SIZE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-expand text-[#4d6fff] mr-3"></i>
+              5. Background Size
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>background-size</b> property background image ka size control
+              karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background-image</span>:
+    <span class="text-[#4ade80]">url("image.jpg")</span>;
+
+  <span class="text-[#60a5fa]">background-size</span>: <span class="text-[#4ade80]">cover</span>;
+}</code></pre>
+            </div>
+
+            <!-- COVER CONTAIN -->
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <i class="fa-solid fa-expand text-[#4d6fff] text-3xl mb-5"></i>
+
+                <h3 class="text-2xl font-bold mb-4">cover</h3>
+
+                <p class="text-lg text-gray-300 leading-8">
+                  Image element ke complete area ko cover karne ki koshish karti
+                  hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <i
+                  class="fa-solid fa-compress text-[#4d6fff] text-3xl mb-5"
+                ></i>
+
+                <h3 class="text-2xl font-bold mb-4">contain</h3>
+
+                <p class="text-lg text-gray-300 leading-8">
+                  Image ko element ke andar fit karne ki koshish karti hai.
+                </p>
+              </div>
+            </div>
+
+            <!-- BACKGROUND ATTACHMENT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-paperclip text-[#4d6fff] mr-3"></i>
+              6. Background Attachment
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>background-attachment</b> property background image ko
+              scrolling ke saath kaise behave karna hai, ye define karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background-image</span>:
+    <span class="text-[#4ade80]">url("image.jpg")</span>;
+
+  <span class="text-[#60a5fa]">background-attachment</span>: <span class="text-[#4ade80]">fixed</span>;
+}</code></pre>
+            </div>
+
+            <!-- SHORTHAND -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              7. Background Shorthand
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Multiple background properties ko ek hi
+              <b>background</b> property mein combine kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background</span>:
+    <span class="text-[#4ade80]">#020617 url("image.jpg") no-repeat center</span>;
+}</code></pre>
+            </div>
+
+            <!-- MULTIPLE BACKGROUNDS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-layer-group text-[#4d6fff] mr-3"></i>
+              8. Multiple Background Images
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS mein ek element ke liye multiple background images bhi define
+              ki ja sakti hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">background-image</span>:
+    <span class="text-[#4ade80]">url("image1.png"),
+    url("image2.png")</span>;
+}</code></pre>
+            </div>
+
+            <!-- PRACTICAL EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-globe text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Neeche ek simple card ka example hai jisme background color aur
+              background image dono use kiye gaye hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.card</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">#111827</span>;
+
+  <span class="text-[#60a5fa]">background-image</span>:
+    <span class="text-[#4ade80]">url("image.jpg")</span>;
+
+  <span class="text-[#60a5fa]">background-repeat</span>: <span class="text-[#4ade80]">no-repeat</span>;
+
+  <span class="text-[#60a5fa]">background-position</span>: <span class="text-[#4ade80]">center</span>;
+
+  <span class="text-[#60a5fa]">background-size</span>: <span class="text-[#4ade80]">cover</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  <b>background-color</b> background ka color set karta hai.
+                </li>
+
+                <li>
+                  <b>background-image</b> se background mein image add hoti hai.
+                </li>
+
+                <li>
+                  <b>background-repeat</b> image repetition ko control karta
+                  hai.
+                </li>
+
+                <li>
+                  <b>background-position</b> image ki position set karta hai.
+                </li>
+
+                <li><b>background-size</b> image ka size control karta hai.</li>
+
+                <li>
+                  <b>background-attachment</b> scrolling behavior control karta
+                  hai.
+                </li>
+
+                <li>
+                  Multiple background images ko comma se separate kiya ja sakta
+                  hai.
+                </li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Backgrounds Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS background ko color ya image ke saath style kiya ja
+                    sakta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Background image ko repeat, position aur size control kiya
+                    ja sakta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>cover</b> aur <b>contain</b> background image sizing ke
+                    useful values hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Background shorthand se multiple properties ko short form
+                    mein likh sakte hain.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../colors/colors.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../borders/borders.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(9);
+      });
+    </script>
+  </body>
+</html>

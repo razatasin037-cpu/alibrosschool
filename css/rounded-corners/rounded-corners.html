@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Rounded Corners</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Rounded Corners
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Rounded Corners ka use HTML elements ke sharp corners ko smooth
+            aur rounded banane ke liye kiya jata hai. Iske liye CSS mein sabse
+            important property
+            <span class="text-blue-400">border-radius</span> hai. Cards,
+            buttons, images, input fields, containers aur modern UI components
+            mein rounded corners bahut commonly use hote hain. Is chapter mein
+            hum <span class="text-blue-400">border-radius</span> ko basic se
+            advanced level tak examples ke saath samjhenge.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../layout/layout.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../border-images/border-images.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- What Are Rounded Corners -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-notch text-blue-400 mr-2"></i>
+            CSS Rounded Corners Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Normally HTML elements jaise <span class="text-blue-400">div</span>,
+            <span class="text-blue-400">button</span> ya input box ke corners
+            square hote hain. CSS ki
+            <span class="text-blue-400">border-radius</span> property in corners
+            ko round kar deti hai. Radius jitna increase karenge, corners utne
+            hi zyada curved dikhai denge.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Rounded corners website ko modern aur visually clean appearance de
+            sakte hain. Lekin har element par same radius use karna zaroori nahi
+            hai. Buttons ke liye small radius, cards ke liye medium radius aur
+            pill-shaped elements ke liye bahut large radius use kiya ja sakta
+            hai.
+          </p>
+
+          <!-- Basic Syntax -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            border-radius Syntax
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Rounded corners banane ke liye basic syntax bahut simple hai.
+            Selector ke andar
+            <span class="text-blue-400">border-radius</span> property likhkar
+            uski value set karni hoti hai. Value pixels, percentage ya other
+            supported length units mein di ja sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">15px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Is example mein box ke chaaron corners ka radius 15px hai. Matlab
+            top-left, top-right, bottom-right aur bottom-left sabhi corners same
+            amount se round honge.
+          </p>
+
+          <!-- Different Radius -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sliders text-blue-400 mr-2"></i>
+            Different Border Radius Values
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Aap ek hi value dene ke alawa multiple values bhi de sakte hain.
+            Values ki position ke according different corners control hote hain.
+            Isse har corner ko individually ya group mein customize kiya ja
+            sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Four Values Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px 20px 30px 40px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Jab chaar values di jaati hain, to order hota hai:
+            <span class="text-blue-400">top-left</span>,
+            <span class="text-blue-400">top-right</span>,
+            <span class="text-blue-400">bottom-right</span> aur
+            <span class="text-blue-400">bottom-left</span>. Is order ko yaad
+            rakhna important hai, especially jab custom shapes design kar rahe
+            hon.
+          </p>
+
+          <!-- Two Values -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            Two Values Ka Use
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Agar sirf do values di jaati hain, to pehli value top-left aur
+            bottom-right corners par apply hoti hai, aur doosri value top-right
+            aur bottom-left corners par apply hoti hai. Ye symmetrical designs
+            banane ke liye useful hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Two Values Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">20px 40px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Ismein top-left aur bottom-right ka radius 20px hoga, jabki
+            top-right aur bottom-left ka radius 40px hoga. Is technique se
+            simple box ko interesting shape diya ja sakta hai.
+          </p>
+
+          <!-- Three Values -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-ol text-blue-400 mr-2"></i>
+            Three Values Ka Use
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Teen values ke case mein pehli value top-left, doosri top-right aur
+            bottom-left, aur teesri bottom-right corner par apply hoti hai. Is
+            shorthand behavior ko samajhna useful hai kyunki CSS shorthand
+            properties mein values repeat ki ja sakti hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Three Values Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px 20px 30px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Individual Corners -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+            Individual Corners Ko Control Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Kabhi-kabhi hume chaaron corners par same radius nahi chahiye hota.
+            CSS mein har corner ke liye separate properties available hain. In
+            properties ki help se aap ek specific corner ko independently round
+            kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Individual Corner Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border-top-left-radius</span>: <span class="text-green-400">30px</span>;
+  <span class="text-blue-400">border-top-right-radius</span>: <span class="text-green-400">10px</span>;
+  <span class="text-blue-400">border-bottom-right-radius</span>: <span class="text-green-400">30px</span>;
+  <span class="text-blue-400">border-bottom-left-radius</span>: <span class="text-green-400">10px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Individual corner properties tab useful hoti hain jab design mein
+            asymmetric shape chahiye. Example ke liye ek card ka sirf top-left
+            aur bottom-right corner zyada rounded rakha ja sakta hai.
+          </p>
+
+          <!-- Percentage -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-percent text-blue-400 mr-2"></i>
+            Percentage Ke Saath Rounded Corners
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-blue-400">border-radius</span> mein percentage
+            values bhi use ki ja sakti hain. Percentage responsive designs mein
+            useful ho sakta hai kyunki radius element ke dimensions ke relative
+            calculate hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Percentage Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">300px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">20%</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Percentage radius especially flexible shapes ke liye useful ho sakta
+            hai. Lekin percentage ka behavior element ke dimensions par depend
+            karta hai, isliye complex designs mein output browser mein check
+            karna achha practice hai.
+          </p>
+
+          <!-- Circle -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle text-blue-400 mr-2"></i>
+            Circle Banana
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Agar element ki width aur height equal ho aur
+            <span class="text-blue-400">border-radius: 50%</span> use kiya jaye,
+            to square element circle ki shape le sakta hai. Ye profile pictures,
+            icons, status indicators aur avatar designs mein commonly use hota
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Circle Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.circle</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">150px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">150px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">50%</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Width aur height equal hone ki wajah se 50% radius element ko
+            circular shape deta hai. Agar width aur height equal na hon, to
+            result circle ki jagah ellipse jaisa dikh sakta hai.
+          </p>
+
+          <!-- Pill -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-capsules text-blue-400 mr-2"></i>
+            Pill Shape Banana
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Buttons, badges aur tags ke liye pill-shaped design bahut popular
+            hai. Ismein element ki height comparatively chhoti hoti hai aur
+            border radius ko kaafi large value diya jata hai. Isse left aur
+            right side completely rounded appearance deti hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Pill Button Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.pill</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">10px 25px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">999px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Large radius value ka purpose element ko pill-like shape dena hai.
+            Ye approach modern UI mein buttons, categories, filters aur status
+            badges ke liye frequently use hoti hai.
+          </p>
+
+          <!-- Card -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-id-card text-blue-400 mr-2"></i>
+            Cards Mein Rounded Corners
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Cards modern websites ka common component hain. Product cards, blog
+            cards, profile cards aur dashboard panels mein rounded corners
+            design ko softer appearance dete hain. Card ke andar content ko
+            proper padding dena bhi important hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Card Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">320px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">25px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #334155</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Card mein radius ke saath padding aur border ka combination use kiya
+            gaya hai. Isse card ka outer shape rounded hota hai aur content ke
+            around comfortable spacing maintain hoti hai.
+          </p>
+
+          <!-- Images -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-image text-blue-400 mr-2"></i>
+            Images Ko Rounded Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Rounded corners sirf containers ke liye nahi hain. Images par bhi
+            <span class="text-blue-400">border-radius</span> apply kiya ja sakta
+            hai. Isse normal rectangular image ko rounded image ya circular
+            avatar mein convert kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Rounded Image Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">250px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">.avatar</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">120px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">120px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">50%</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-toggle-on text-blue-400 mr-2"></i>
+            Buttons Ko Rounded Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Buttons par rounded corners use karna modern interface design mein
+            common hai. Small radius se subtle rounded button milta hai, jabki
+            large radius se pill-style button create hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Rounded Button Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 24px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">12px</span>;
+  <span class="text-blue-400">cursor</span>: <span class="text-green-400">pointer</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Overflow -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-scissors text-blue-400 mr-2"></i>
+            border-radius Aur overflow
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Kabhi-kabhi parent container ko rounded corners dene ke baad uske
+            andar ka image ya background rounded shape ke bahar visible ho sakta
+            hai. Aise situation mein
+            <span class="text-blue-400">overflow: hidden</span> useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Overflow Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">hidden</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            <span class="text-blue-400">overflow: hidden</span> child content ko
+            parent ke rounded boundary ke andar clip karta hai. Ye especially
+            image cards mein useful hai jahan image card ke top corners ke saath
+            perfectly match karni hoti hai.
+          </p>
+
+          <!-- Practical -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-globe text-blue-400 mr-2"></i>
+            Complete Practical Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab ek practical card design dekhte hain jisme rounded container,
+            rounded image, button aur pill badge ko ek saath use kiya gaya hai.
+            Real websites mein isi tarah multiple rounded components combine
+            kiye ja sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Complete Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.product-card</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">320px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #334155</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">hidden</span>;
+}
+
+<span class="text-blue-400">.product-card img</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">15px</span>;
+}
+
+<span class="text-blue-400">.tag</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">6px 14px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">999px</span>;
+}
+
+<span class="text-blue-400">button</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 22px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Common Mistakes -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Beginners aksar <span class="text-blue-400">border-radius</span> ko
+            sirf visual decoration samajhte hain, lekin layout ke context ko bhi
+            consider karna important hai. Bahut bada radius small element par
+            unexpected shape create kar sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ek common mistake hai circle banane ke liye unequal width aur height
+            ke saath <span class="text-blue-400">50%</span> use karna. Agar
+            proper circle chahiye, to generally width aur height equal rakhna
+            easier hota hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Dusri mistake rounded parent ke andar overflowing child content ko
+            ignore karna hai. Image ya background agar parent ke rounded corners
+            se bahar aa raha ho, to
+            <span class="text-blue-400">overflow: hidden</span> ko consider kiya
+            ja sakta hai.
+          </p>
+
+          <!-- Best Practices -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                UI ke different components ke liye consistent border-radius
+                values maintain karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Buttons aur badges ke liye unnecessarily extreme radius use na
+                karein jab tak pill shape required na ho.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Circle banate waqt equal width aur height ka use karna simple
+                approach hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Rounded cards ke andar overflowing images ke liye overflow
+                behavior check karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Shorthand aur individual corner properties ko situation ke
+                according use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Different screen sizes par rounded components ka appearance test
+                karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Important Points -->
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS mein rounded corners ke liye mainly
+                <span class="text-blue-400">border-radius</span> property use
+                hoti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Ek value dene par chaaron corners same radius lete hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Multiple values se different corners ko customize kiya ja sakta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Individual corners ke liye
+                <span class="text-blue-400">border-top-left-radius</span> jaise
+                properties available hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Equal width aur height ke element par
+                <span class="text-blue-400">border-radius: 50%</span> se circle
+                banaya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Large radius values pill-shaped buttons aur badges ke liye
+                useful hoti hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Images, cards, buttons aur input elements par rounded corners
+                apply kiye ja sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Rounded parent ke andar overflowing content ke liye
+                <span class="text-blue-400">overflow: hidden</span> useful ho
+                sakta hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Rounded Corners ke liye
+              <span class="text-blue-400">border-radius</span> property ka use
+              kiya jata hai. Is property se normal square corners ko smooth aur
+              rounded appearance diya ja sakta hai. Aap ek, do, teen ya chaar
+              values ke through different corner combinations create kar sakte
+              hain. Individual corner properties se aur bhi precise control
+              milta hai. Equal dimensions aur 50% radius se circle banaya ja
+              sakta hai, jabki large radius se pill-shaped buttons aur badges
+              create kiye ja sakte hain. Modern website design mein cards,
+              images, buttons, forms aur other UI components ko visually improve
+              karne ke liye rounded corners kaafi useful hain.
+            </p>
+          </div>
+
+          <!-- Bottom Navigation -->
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../layout/layout.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../border-images/border-images.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(47);
+      });
+    </script>
+  </body>
+</html>

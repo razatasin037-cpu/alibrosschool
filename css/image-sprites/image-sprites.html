@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Image Sprites</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Image Sprites
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Image Sprites ek technique hai jisme multiple small images ya
+            icons ko ek hi large image file ke andar combine kiya jata hai. CSS
+            ke
+            <span class="text-blue-400">background-image</span>,
+            <span class="text-blue-400">background-position</span> aur
+            <span class="text-blue-400">background-size</span> properties ki
+            help se us large image ka sirf required part screen par show kiya
+            jata hai. Isse website par bahut saari separate image requests ko
+            reduce kiya ja sakta hai.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../image-gallery/image-gallery.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../attribute-selectors/attribute-selectors.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT ARE IMAGE SPRITES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-images text-blue-400 mr-2"></i>
+            Image Sprites Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Normally website par agar hume 10 different icons use karne hain, to
+            hum 10 different image files load kar sakte hain. Har image ke liye
+            browser ko ek separate resource request karni pad sakti hai. Image
+            Sprite technique mein in small images ko ek single image mein
+            combine kar diya jata hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab browser ko ek large image load karni hoti hai. CSS
+            <span class="text-blue-400">background-position</span> ki help se
+            hum decide karte hain ki large image ka kaunsa portion particular
+            element ke andar visible hoga.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4">
+              <i class="fa-solid fa-lightbulb text-yellow-400 mr-2"></i>
+              Simple Idea
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Socho ek bade poster par bahut saare chhote icons lage hue hain.
+              Hum poora poster nahi dikhate. CSS us poster ki position change
+              karke sirf required icon wala area element ke andar show karta
+              hai.
+            </p>
+          </div>
+
+          <!-- BASIC SPRITE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            Basic Image Sprite
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Image sprite banane ke liye sabse important properties
+            <span class="text-blue-400">background-image</span> aur
+            <span class="text-blue-400">background-position</span> hain. Element
+            ka size itna rakha jata hai jitna required icon ka size ho. Uske
+            baad background position se sprite image ka correct section select
+            kiya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Sprite Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.icon</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">background-image</span>: <span class="text-green-400">url("sprite.png")</span>;
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">0 0</span>;
+  <span class="text-blue-400">background-repeat</span>: <span class="text-green-400">no-repeat</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Yahan <span class="text-blue-400">width</span> aur
+            <span class="text-blue-400">height</span> icon ke visible area ko
+            define karte hain.
+            <span class="text-blue-400">background-image</span> sprite image ko
+            load karta hai, aur
+            <span class="text-blue-400">background-position</span> decide karta
+            hai ki image ka kaunsa part element ke andar appear karega.
+          </p>
+
+          <!-- BACKGROUND POSITION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+            ></i>
+            background-position Se Icon Select Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Sprite ka sabse important part
+            <span class="text-blue-400">background-position</span>
+            hai. Large sprite image ke andar har icon ki ek alag location hoti
+            hai. Negative X aur Y position use karke hum image ko move karte
+            hain. Element ke fixed size ke bahar wala portion visible nahi hota.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Position Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.icon-home</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">background-image</span>: <span class="text-green-400">url("icons.png")</span>;
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">0 0</span>;
+}
+
+<span class="text-blue-400">.icon-search</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">background-image</span>: <span class="text-green-400">url("icons.png")</span>;
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">-40px 0</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Agar search icon sprite ke 40px ke baad start ho raha hai, to
+            <span class="text-blue-400">-40px 0</span> image ko left side move
+            karega. Is tarah element ke andar search icon ka required portion
+            visible ho sakta hai.
+          </p>
+
+          <!-- BACKGROUND REPEAT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-repeat text-blue-400 mr-2"></i>
+            background-repeat
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Sprite ke case mein usually background ko repeat nahi karna chahiye,
+            kyunki hume sirf ek particular icon ka area dikhana hota hai. Isliye
+            <span class="text-blue-400">background-repeat: no-repeat</span>
+            commonly use kiya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                No Repeat Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.sprite-icon</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">48px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">48px</span>;
+  <span class="text-blue-400">background-image</span>: <span class="text-green-400">url("sprite.png")</span>;
+  <span class="text-blue-400">background-repeat</span>: <span class="text-green-400">no-repeat</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- SPRITE ICONS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-icons text-blue-400 mr-2"></i>
+            Multiple Icons Ek Sprite Mein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek sprite image mein multiple icons ko horizontal ya vertical
+            arrangement mein rakha ja sakta hai. Har icon ke liye separate CSS
+            class banakar alag
+            <span class="text-blue-400">background-position</span> set ki ja
+            sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Multiple Sprite Classes
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.icon</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">32px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">32px</span>;
+  <span class="text-blue-400">background-image</span>: <span class="text-green-400">url("icons.png")</span>;
+  <span class="text-blue-400">background-repeat</span>: <span class="text-green-400">no-repeat</span>;
+}
+
+<span class="text-blue-400">.home</span> {
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">0 0</span>;
+}
+
+<span class="text-blue-400">.search</span> {
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">-32px 0</span>;
+}
+
+<span class="text-blue-400">.user</span> {
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">-64px 0</span>;
+}
+
+<span class="text-blue-400">.settings</span> {
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">-96px 0</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- HTML STRUCTURE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            HTML Mein Sprite Icons Use Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS sprite ko HTML mein use karne ke liye ek empty
+            <span class="text-blue-400">&lt;span&gt;</span> ya
+            <span class="text-blue-400">&lt;div&gt;</span> element use kiya ja
+            sakta hai. Us element ko appropriate CSS class dene par sprite ka
+            selected part display hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                HTML + CSS Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;span</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"icon home"</span><span class="text-blue-400">&gt;&lt;/span&gt;</span>
+
+<span class="text-blue-400">&lt;span</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"icon search"</span><span class="text-blue-400">&gt;&lt;/span&gt;</span>
+
+<span class="text-blue-400">&lt;span</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"icon user"</span><span class="text-blue-400">&gt;&lt;/span&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- HORIZONTAL SPRITE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            Horizontal Sprite
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar icons ek row mein placed hain aur har icon ka size same hai, to
+            background position ke X-axis ko change karke different icons select
+            kiye ja sakte hain. Example ke liye agar har icon 50px wide hai, to
+            second icon ke liye approximately
+            <span class="text-blue-400">-50px</span> ka horizontal offset use
+            kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Horizontal Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.icon-one</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">url("sprite.png") 0 0 no-repeat</span>;
+}
+
+<span class="text-blue-400">.icon-two</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">url("sprite.png") -50px 0 no-repeat</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- VERTICAL SPRITE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            Vertical Sprite
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Icons vertical direction mein bhi arrange kiye ja sakte hain. Aise
+            case mein X position same reh sakti hai aur Y position ko negative
+            value diya jata hai. Isse sprite image vertically move hoti hai aur
+            required icon visible hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Vertical Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.icon-one</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">url("sprite.png") 0 0 no-repeat</span>;
+}
+
+<span class="text-blue-400">.icon-two</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">50px</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">url("sprite.png") 0 -50px no-repeat</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- HOVER SPRITE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+            Hover Effect Ke Saath Sprite
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Image sprites ka use navigation icons aur buttons mein hover state
+            ke liye bhi kiya ja sakta hai. Ek hi sprite image mein normal aur
+            hover dono versions rakhe ja sakte hain. Hover hone par sirf
+            <span class="text-blue-400">background-position</span>
+            change kiya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Hover Sprite Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.button-icon</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">background-image</span>: <span class="text-green-400">url("buttons.png")</span>;
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">0 0</span>;
+  <span class="text-blue-400">background-repeat</span>: <span class="text-green-400">no-repeat</span>;
+}
+
+<span class="text-blue-400">.button-icon:hover</span> {
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">-40px 0</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- SPRITES WITH BACKGROUND SIZE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+            background-size Ke Saath Sprites
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar sprite image ko resize karna ho, to
+            <span class="text-blue-400">background-size</span> useful hota hai.
+            Lekin sprite ke coordinates bhi resized image ke according adjust
+            karne pad sakte hain. Isliye sprite design karte waqt dimensions ka
+            consistent rehna important hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Background Size Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.icon</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">background-image</span>: <span class="text-green-400">url("sprite.png")</span>;
+  <span class="text-blue-400">background-size</span>: <span class="text-green-400">160px 40px</span>;
+  <span class="text-blue-400">background-repeat</span>: <span class="text-green-400">no-repeat</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COMPLETE EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-flask text-blue-400 mr-2"></i>
+            Complete Image Sprite Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Neeche ek complete structure diya gaya hai jisme same sprite image
+            se multiple icon positions define ki gayi hain. Real project mein
+            <span class="text-blue-400">icons.png</span> ko actual sprite image
+            se replace karna hoga.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Complete HTML + CSS
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"icon home"</span><span class="text-blue-400">&gt;&lt;/div&gt;</span>
+<span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"icon search"</span><span class="text-blue-400">&gt;&lt;/div&gt;</span>
+<span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"icon user"</span><span class="text-blue-400">&gt;&lt;/div&gt;</span>
+
+<span class="text-blue-400">.icon</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">background-image</span>: <span class="text-green-400">url("icons.png")</span>;
+  <span class="text-blue-400">background-repeat</span>: <span class="text-green-400">no-repeat</span>;
+}
+
+<span class="text-blue-400">.home</span> {
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">0 0</span>;
+}
+
+<span class="text-blue-400">.search</span> {
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">-40px 0</span>;
+}
+
+<span class="text-blue-400">.user</span> {
+  <span class="text-blue-400">background-position</span>: <span class="text-green-400">-80px 0</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ADVANTAGES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-gauge-high text-blue-400 mr-2"></i>
+            Image Sprites Ke Advantages
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-bolt text-yellow-400 mr-2"></i>
+                Fewer Image Requests
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Multiple small images ko combine karne se browser ko potentially
+                fewer image resources request karne padte hain.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-server text-blue-400 mr-2"></i>
+                Efficient Asset Loading
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Icons ko ek sprite asset mein organize karna small UI graphics
+                ke liye asset management ko simple bana sakta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-folder-tree text-green-400 mr-2"></i>
+                Centralized Icons
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Related icons ko ek image file mein rakhne se unhe ek jagah
+                manage karna easy ho sakta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-palette text-purple-400 mr-2"></i>
+                Consistent UI
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Ek sprite mein carefully designed icons use karne se interface
+                mein visual consistency maintain ki ja sakti hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- WHEN TO USE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-check text-blue-400 mr-2"></i>
+            Image Sprites Kab Use Karein?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Image sprites especially small repeated graphical assets, icons, UI
+            symbols aur legacy web interfaces mein useful ho sakte hain. Modern
+            projects mein SVG icons aur icon libraries bhi common alternatives
+            hain, isliye project ki requirements ke according approach choose
+            karna chahiye.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Small icons
+                ko ek asset mein combine karna ho.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Repeated UI
+                graphics use ho rahe hon.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Same icon
+                ke normal aur hover states manage karne hon.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Legacy
+                CSS-based icon systems maintain karne hon.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+            ></i>
+            Common Mistakes
+          </h2>
+
+          <div class="space-y-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                1. Wrong Background Position
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Agar X ya Y coordinate wrong hai, to required icon ke instead
+                sprite ka koi aur portion visible ho sakta hai. Coordinates ko
+                sprite ke actual dimensions ke according calculate karein.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                2. Element Size Wrong Rakhna
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Agar element ka width ya height icon ke actual area se different
+                hai, to unwanted portions visible ho sakte hain.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                3. background-repeat Bhool Jana
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Default repeat behavior ki wajah se sprite ka selected portion
+                repeat ho sakta hai. Isliye icons ke liye generally
+                <span class="text-blue-400">no-repeat</span> use karein.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                4. Sprite Coordinates Resize Ke Baad Update Na Karna
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Agar sprite image ko resize kiya gaya hai aur background
+                positions same rakhi gayi hain, to icon selection incorrect ho
+                sakta hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Image Sprite mein multiple small images ko ek single image asset
+                mein combine kiya jata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">background-image</span> sprite image
+                ko load karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">background-position</span> sprite ke
+                required portion ko select karne mein important hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Icons ke liye usually
+                <span class="text-blue-400">background-repeat: no-repeat</span>
+                use kiya jata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Element ka width aur height visible sprite area ke according set
+                karna chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Sprite coordinates ko actual image dimensions ke according
+                calculate karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Modern projects mein sprites ke alawa SVG aur icon libraries bhi
+                useful alternatives ho sakte hain.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Image Sprites ek technique hai jisme multiple small images ko
+              ek single sprite image ke andar combine kiya jata hai. CSS ke
+              <span class="text-blue-400">background-image</span>,
+              <span class="text-blue-400">background-position</span>,
+              <span class="text-blue-400">background-repeat</span> aur zarurat
+              ke according <span class="text-blue-400">background-size</span> ka
+              use karke sprite ka required portion display kiya jata hai. Is
+              concept ko samajhne ka sabse important part background position
+              aur element dimensions ko correctly match karna hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../image-gallery/image-gallery.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../attribute-selectors/attribute-selectors.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(36);
+      });
+    </script>
+  </body>
+</html>

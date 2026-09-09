@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Inline-Block</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- PAGE TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Inline-Block
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS <b class="text-white">inline-block</b> ek important display
+            value hai jo inline aur block elements ke features ko combine karta
+            hai. Iska use elements ko ek hi line mein rakhne ke saath unki width
+            aur height set karne ke liye kiya ja sakta hai.
+          </p>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../float/float.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../align/align.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS INLINE BLOCK -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            CSS Inline-Block Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Normally ek block element apni poori available width le sakta hai
+            aur new line se start hota hai. Inline element generally same line
+            mein doosre elements ke saath aa sakta hai, lekin uski width aur
+            height ko control karna limited hota hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <b class="text-white">display: inline-block;</b> dono behaviors ko
+            combine karta hai. Element same line mein reh sakta hai aur saath hi
+            hum uski width, height, padding aur margin ko bhi properly control
+            kar sakte hain.
+          </p>
+
+          <!-- DISPLAY PROPERTY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            display: inline-block
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Inline-block use karne ke liye element ke CSS mein
+            <b class="text-white">display</b> property ko
+            <b class="text-white">inline-block</b> set karna hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">100px</span>;
+}</code></pre>
+          </div>
+
+          <!-- INLINE VS BLOCK VS INLINE BLOCK -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-code-compare text-blue-400 mr-2"></i>
+            Inline, Block aur Inline-Block mein Difference
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Inline-block ko achhe se samajhne ke liye inline aur block display
+            ke behavior ko compare karna useful hai.
+          </p>
+
+          <div class="overflow-x-auto mb-12">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-4 text-lg border border-gray-700">Display</th>
+
+                  <th class="p-4 text-lg border border-gray-700">New Line</th>
+
+                  <th class="p-4 text-lg border border-gray-700">
+                    Width / Height
+                  </th>
+
+                  <th class="p-4 text-lg border border-gray-700">Same Line</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    block
+                  </td>
+
+                  <td class="p-4 border border-gray-700">Usually yes</td>
+
+                  <td class="p-4 border border-gray-700">Yes</td>
+
+                  <td class="p-4 border border-gray-700">No</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    inline
+                  </td>
+
+                  <td class="p-4 border border-gray-700">No</td>
+
+                  <td class="p-4 border border-gray-700">Limited</td>
+
+                  <td class="p-4 border border-gray-700">Yes</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    inline-block
+                  </td>
+
+                  <td class="p-4 border border-gray-700">No</td>
+
+                  <td class="p-4 border border-gray-700">Yes</td>
+
+                  <td class="p-4 border border-gray-700">Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- INLINE BLOCK BOXES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-boxes-stacked text-blue-400 mr-2"></i>
+            Multiple Boxes ko Same Line mein Rakhna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Inline-block ka common use multiple boxes ko ek hi line mein rakhna
+            hai. Agar boxes ki total width available space se kam hai, to boxes
+            ek doosre ke side mein appear kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">30%</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">150px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">1%</span>;
+}</code></pre>
+          </div>
+
+          <!-- WIDTH -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            Inline-Block mein Width Set Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Inline-block elements ki width ko pixels, percentage, rem ya kisi
+            other supported CSS unit mein set kiya ja sakta hai. Is wajah se
+            inline-block buttons, cards aur menu items ke liye useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.item</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">200px</span>;
+}</code></pre>
+          </div>
+
+          <!-- HEIGHT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            Inline-Block mein Height Set Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Inline-block element ki height bhi easily set ki ja sakti hai. Ye
+            feature inline-block ko normal inline elements se different banata
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">250px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">180px</span>;
+}</code></pre>
+          </div>
+
+          <!-- PADDING AND MARGIN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+            Padding aur Margin
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Inline-block elements ke saath padding aur margin ka use bhi kiya ja
+            sakta hai. Isse elements ke andar aur bahar spacing control karna
+            easy ho jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.button</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 24px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
+}</code></pre>
+          </div>
+
+          <!-- NAVIGATION MENU -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-bars text-blue-400 mr-2"></i>
+            Navigation Menu mein Inline-Block
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Inline-block ka use navigation menu ke items ko ek hi horizontal
+            line mein dikhane ke liye bhi kiya ja sakta hai. Har list item ko
+            inline-block dene se menu items side-by-side aa sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">li</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">margin-right</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">a</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">10px 15px</span>;
+}</code></pre>
+          </div>
+
+          <!-- BUTTONS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+            Buttons ke Liye Inline-Block
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Buttons aur custom links ko style karte waqt inline-block kaafi
+            useful ho sakta hai. Isse element ko same line mein rakhte hue
+            padding, width aur height control ki ja sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.btn</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 25px</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">150px</span>;
+  <span class="text-blue-400">text-align</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- WHITE SPACE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-text-width text-blue-400 mr-2"></i>
+            Inline-Block ke Beech Space
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            HTML mein inline-block elements ke beech agar whitespace ya newline
+            hoti hai, to browser usse ek chhote gap ke roop mein render kar
+            sakta hai. Isliye inline-block layouts banate waqt unwanted spacing
+            ka dhyan rakhna important hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">vertical-align</span>: <span class="text-green-400">top</span>;
+}</code></pre>
+          </div>
+
+          <!-- VERTICAL ALIGN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-align-center text-blue-400 mr-2"></i>
+            vertical-align ke Saath Inline-Block
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Inline-block elements ke vertical alignment ko control karne ke liye
+            <b class="text-white">vertical-align</b> property useful hai. Isse
+            elements ko top, middle ya bottom ke according align kiya ja sakta
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">vertical-align</span>: <span class="text-green-400">middle</span>;
+}</code></pre>
+          </div>
+
+          <!-- PRACTICAL EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-globe text-blue-400 mr-2"></i>
+            Practical Card Layout
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Inline-block ka use simple card layout banane mein bhi kiya ja sakta
+            hai. Har card ko fixed ya percentage width dekar ek row mein place
+            kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Card Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">30%</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">1%</span>;
+  <span class="text-blue-400">vertical-align</span>: <span class="text-green-400">top</span>;
+}</code></pre>
+          </div>
+
+          <!-- RESPONSIVE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            Inline-Block aur Responsive Design
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Responsive website banate waqt inline-block elements ki width ka
+            dhyan rakhna zaroori hai. Desktop par jo 3 cards ek line mein aa
+            rahe hain, wo mobile screen par fit na ho sakte hain. Media queries
+            ke through width change ki ja sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">31%</span>;
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">600px</span>) {
+  <span class="text-blue-400">.card</span> {
+    <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  }
+}</code></pre>
+          </div>
+
+          <!-- INLINE BLOCK VS FLOAT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-code-compare text-blue-400 mr-2"></i>
+            Inline-Block vs Float
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-4 border border-gray-700">Feature</th>
+
+                  <th class="p-4 border border-gray-700">Inline-Block</th>
+
+                  <th class="p-4 border border-gray-700">Float</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+                <tr>
+                  <td class="p-4 border border-gray-700">Same line</td>
+
+                  <td class="p-4 border border-gray-700 text-green-400">Yes</td>
+
+                  <td class="p-4 border border-gray-700">Yes</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700">Width / Height</td>
+
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    Easy to control
+                  </td>
+
+                  <td class="p-4 border border-gray-700">Supported</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700">Text wrapping</td>
+
+                  <td class="p-4 border border-gray-700">Normal inline flow</td>
+
+                  <td class="p-4 border border-gray-700">
+                    Text can flow around floated element
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b class="text-white">display: inline-block;</b>
+                inline aur block dono ka behavior combine karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Inline-block elements same line mein aa sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Inline-block elements ki width aur height set ki ja sakti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Padding aur margin ko easily control kiya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Navigation menus aur buttons mein inline-block useful ho sakta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Inline-block elements ke beech unwanted whitespace aa sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive design mein width ko screen size ke according adjust
+                karna chahiye.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS <b class="text-white">inline-block</b> ka use elements ko same
+              line mein rakhne ke saath unki width aur height ko control karne
+              ke liye kiya jata hai. Ye inline aur block display ke features ko
+              combine karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Inline-block ka use cards, buttons, navigation menus aur simple
+              horizontal layouts mein kiya ja sakta hai. Responsive website
+              banate waqt element ki width aur available screen space ka dhyan
+              rakhna important hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM BUTTONS -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../float/float.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../align/align.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(27);
+      });
+    </script>
+  </body>
+</html>

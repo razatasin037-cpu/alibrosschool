@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Counters</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Counters
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Counters ka use CSS ke through automatically numbering create
+            karne ke liye kiya jata hai. Agar page par headings, chapters,
+            sections, nested lists ya steps ko automatically number dena ho, to
+            har element ke andar manually numbers likhne ki zarurat nahi hoti.
+            CSS counter ko
+            <span class="text-blue-400">counter-reset</span>,
+            <span class="text-blue-400">counter-increment</span> aur
+            <span class="text-blue-400">counter()</span> jaise features ke
+            through control kiya jata hai.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../forms/forms.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../units/units.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS COUNTER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-ol text-blue-400 mr-2"></i>
+            CSS Counter Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS counter ek variable ki tarah kaam karta hai jo elements ki
+            numbering ko automatically maintain karta hai. Browser counter ki
+            current value ko track karta hai aur CSS generated content ke
+            through us value ko page par display kiya ja sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Iska sabse bada benefit ye hai ki agar list mein ek naya item add ya
+            remove ho jaye, to numbering automatically update ho sakti hai. Hume
+            har item ke aage manually <span class="text-blue-400">1.</span>,
+            <span class="text-blue-400">2.</span>,
+            <span class="text-blue-400">3.</span> likhne ki zarurat nahi hoti.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4">
+              <i class="fa-solid fa-lightbulb text-yellow-400 mr-2"></i>
+              Simple Idea
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Socho ek tutorial page par 10 chapters hain. Agar chapter
+              numbering manually likhi gayi hai aur beech mein ek chapter add
+              kar diya, to baaki numbers bhi manually change karne padenge. CSS
+              counter mein numbering automatically update ho sakti hai.
+            </p>
+          </div>
+
+          <!-- COUNTER RESET -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-rotate-left text-blue-400 mr-2"></i>
+            1. counter-reset
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">counter-reset</span> kisi counter ko
+            create ya reset karne ke liye use hota hai. Normally counter ko
+            parent container par reset karna useful hota hai. Isse browser ko
+            pata chalta hai ki numbering kis point se start karni hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                counter-reset Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">counter-reset</span>: <span class="text-green-400">section</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Yahan <span class="text-blue-400">section</span> counter ka naam
+            hai. Counter ki initial value normally
+            <span class="text-blue-400">0</span> hoti hai, jab tak reset ke
+            saath koi different starting value provide na ki jaye.
+          </p>
+
+          <!-- COUNTER INCREMENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-plus text-blue-400 mr-2"></i>
+            2. counter-increment
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">counter-increment</span> counter ki
+            current value ko increase ya decrease karta hai. Jab bhi targeted
+            element aata hai, counter ki value update ki ja sakti hai. Default
+            increment generally <span class="text-blue-400">1</span> hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                counter-increment Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">h2</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">section</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Har matching <span class="text-blue-400">h2</span> element par
+            <span class="text-blue-400">section</span> counter increment hoga.
+            Is value ko display karne ke liye generated content ka use kiya jata
+            hai.
+          </p>
+
+          <!-- COUNTER FUNCTION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-display text-blue-400 mr-2"></i>
+            3. counter() Function
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">counter()</span> function counter ki
+            current value ko generated content mein display karta hai. Usually
+            ise <span class="text-blue-400">::before</span> ya
+            <span class="text-blue-400">::after</span> pseudo-element ke saath
+            use kiya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                counter() Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">h2::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">counter(section) ". "</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            <span class="text-blue-400">content</span> property counter ki
+            current value ko page par insert karti hai. Agar counter ki value 1
+            hai to <span class="text-blue-400">counter(section)</span> 1 display
+            karega. Uske baad manually diya gaya
+            <span class="text-blue-400">". "</span> heading ke number ke baad
+            dot aur space add karta hai.
+          </p>
+
+          <!-- BASIC COMPLETE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-ol text-blue-400 mr-2"></i>
+            4. Automatic Heading Numbering
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS counters ka ek common example headings ko automatically number
+            karna hai. Ismein parent container counter ko reset karta hai, har
+            heading counter ko increment karti hai aur
+            <span class="text-blue-400">::before</span> generated content number
+            display karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Complete Heading Counter
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">counter-reset</span>: <span class="text-green-400">section</span>;
+}
+
+<span class="text-blue-400">h2</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">section</span>;
+}
+
+<span class="text-blue-400">h2::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">counter(section) ". "</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- HTML -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                HTML
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;h2&gt;</span>HTML<span class="text-blue-400">&lt;/h2&gt;</span>
+<span class="text-blue-400">&lt;h2&gt;</span>CSS<span class="text-blue-400">&lt;/h2&gt;</span>
+<span class="text-blue-400">&lt;h2&gt;</span>JavaScript<span class="text-blue-400">&lt;/h2&gt;</span>
+<span class="text-blue-400">&lt;h2&gt;</span>Projects<span class="text-blue-400">&lt;/h2&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Browser mein headings automatically numbered form mein appear hongi,
+            jaise
+            <span class="text-blue-400">1. HTML</span>,
+            <span class="text-blue-400">2. CSS</span>,
+            <span class="text-blue-400">3. JavaScript</span> aur
+            <span class="text-blue-400">4. Projects</span>. HTML mein numbers
+            manually likhne ki zarurat nahi hai.
+          </p>
+
+          <!-- STARTING VALUE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-up-1-9 text-blue-400 mr-2"></i>
+            5. Counter Ko Different Value Se Start Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Counter ko sirf zero se start karna zaroori nahi hai. Agar numbering
+            kisi specific number se start karni ho, to
+            <span class="text-blue-400">counter-reset</span>
+            ke saath starting value provide ki ja sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Starting Value Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">counter-reset</span>: <span class="text-green-400">section 5</span>;
+}
+
+<span class="text-blue-400">h2</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">section</span>;
+}
+
+<span class="text-blue-400">h2::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">counter(section) ". "</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Is setup mein first increment ke baad heading number
+            <span class="text-blue-400">6</span> se appear hoga, kyunki counter
+            ko initially <span class="text-blue-400">5</span> par reset kiya
+            gaya hai.
+          </p>
+
+          <!-- CUSTOM INCREMENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-forward-step text-blue-400 mr-2"></i>
+            6. Counter Ko 1 Se Zyada Increase Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">counter-increment</span> mein custom
+            number bhi provide kiya ja sakta hai. Agar hume har matching element
+            par counter ko 2 se increase karna ho, to counter name ke baad
+            <span class="text-blue-400">2</span> likha ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Custom Increment Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">counter-reset</span>: <span class="text-green-400">item</span>;
+}
+
+<span class="text-blue-400">h3</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">item 2</span>;
+}
+
+<span class="text-blue-400">h3::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">counter(item) ". "</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- NESTED COUNTERS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sitemap text-blue-400 mr-2"></i>
+            7. Nested Counters
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Nested counters ka use tab hota hai jab page mein main sections ke
+            andar subsections bhi numbered hon. Example ke liye
+            <span class="text-blue-400">1</span>,
+            <span class="text-blue-400">1.1</span>,
+            <span class="text-blue-400">1.2</span>, phir
+            <span class="text-blue-400">2</span>,
+            <span class="text-blue-400">2.1</span> jaise numbering create ki ja
+            sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Nested Counter Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.content</span> {
+  <span class="text-blue-400">counter-reset</span>: <span class="text-green-400">section</span>;
+}
+
+<span class="text-blue-400">h2</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">section</span>;
+  <span class="text-blue-400">counter-reset</span>: <span class="text-green-400">subsection</span>;
+}
+
+<span class="text-blue-400">h2::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">counter(section) ". "</span>;
+}
+
+<span class="text-blue-400">h3</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">subsection</span>;
+}
+
+<span class="text-blue-400">h3::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">counter(section) "." counter(subsection) " "</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Yahan main section ka counter alag hai aur subsection ka counter
+            alag. Is approach se hierarchical numbering create ki ja sakti hai.
+          </p>
+
+          <!-- COUNTER STYLES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-font text-blue-400 mr-2"></i>
+            8. Counter Ki Numbering Style
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">counter()</span> ke second argument se
+            counter ki numbering style specify ki ja sakti hai. For example,
+            <span class="text-blue-400">decimal</span>,
+            <span class="text-blue-400">upper-roman</span>,
+            <span class="text-blue-400">lower-alpha</span> jaise styles use kiye
+            ja sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Roman Numbering Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">counter-reset</span>: <span class="text-green-400">chapter</span>;
+}
+
+<span class="text-blue-400">h2</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">chapter</span>;
+}
+
+<span class="text-blue-400">h2::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">counter(chapter, upper-roman) ". "</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- OL COUNTER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list text-blue-400 mr-2"></i>
+            9. Custom Ordered List
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS counters ka use custom ordered lists banane ke liye bhi kiya ja
+            sakta hai. Is approach mein browser ki default list numbering par
+            depend karne ke bajay hum apna counter create karte hain aur
+            generated content ke through number show karte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Custom List Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">ol</span> {
+  <span class="text-blue-400">counter-reset</span>: <span class="text-green-400">step</span>;
+  <span class="text-blue-400">list-style</span>: <span class="text-green-400">none</span>;
+}
+
+<span class="text-blue-400">li</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">step</span>;
+}
+
+<span class="text-blue-400">li::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">counter(step) ". "</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">bold</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- BEFORE AFTER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+            10. ::before Aur ::after Ke Saath Counters
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS counter ki value directly normal HTML text ke andar insert nahi
+            hoti. Generated content ke liye commonly
+            <span class="text-blue-400">::before</span> aur
+            <span class="text-blue-400">::after</span> pseudo-elements use kiye
+            jate hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Before / After Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.chapter</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">chapter</span>;
+}
+
+<span class="text-blue-400">.chapter::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">"Chapter " counter(chapter) ": "</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COMPLETE PROJECT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-flask text-blue-400 mr-2"></i>
+            11. Complete CSS Counter Project
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Neeche ek complete example hai jisme tutorial ke chapters
+            automatically number honge. Is type ka pattern documentation pages,
+            tutorials aur long articles mein useful ho sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Complete HTML + CSS
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"tutorial"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;h2&gt;</span>HTML Basics<span class="text-blue-400">&lt;/h2&gt;</span>
+  <span class="text-blue-400">&lt;h2&gt;</span>CSS Basics<span class="text-blue-400">&lt;/h2&gt;</span>
+  <span class="text-blue-400">&lt;h2&gt;</span>JavaScript Basics<span class="text-blue-400">&lt;/h2&gt;</span>
+  <span class="text-blue-400">&lt;h2&gt;</span>Web Projects<span class="text-blue-400">&lt;/h2&gt;</span>
+
+<span class="text-blue-400">&lt;/div&gt;</span>
+
+
+<span class="text-blue-400">.tutorial</span> {
+  <span class="text-blue-400">counter-reset</span>: <span class="text-green-400">chapter</span>;
+}
+
+<span class="text-blue-400">h2</span> {
+  <span class="text-blue-400">counter-increment</span>: <span class="text-green-400">chapter</span>;
+  <span class="text-blue-400">margin-bottom</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">h2::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">"Chapter " counter(chapter) ": "</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#4d6fff</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- IMPORTANT -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Counter Ka Scope Samajhna
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Counter ko jahan
+              <span class="text-blue-400">counter-reset</span> kiya jata hai,
+              wahan se us counter ka scope start hota hai. Isliye counter reset
+              karne wale container ko carefully choose karna important hai. Agar
+              counter wrong parent par reset kar diya gaya, to numbering
+              expected tarike se continue nahi karegi.
+            </p>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+            ></i>
+            Common Mistakes
+          </h2>
+
+          <div class="space-y-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                1. counter-reset Bhool Jana
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Counter ko predictable starting point dene ke liye appropriate
+                container par
+                <span class="text-blue-400">counter-reset</span> define karna
+                important hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                2. counter-increment Wrong Element Par Lagana
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Agar increment kisi aise element par laga diya gaya jo expected
+                number of times match nahi hota, to numbering unexpected ho
+                sakti hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                3. content Property Use Na Karna
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Counter value ko generated content mein show karne ke liye
+                <span class="text-blue-400">content</span> property aur
+                generally <span class="text-blue-400">::before</span> ya
+                <span class="text-blue-400">::after</span> ki zarurat hoti hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                4. Nested Counter Ka Scope Ignore Karna
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Nested sections mein alag counters use karte waqt parent aur
+                child counter ka scope clearly samajhna zaroori hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- PRACTICAL USES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-briefcase text-blue-400 mr-2"></i>
+            Practical Uses
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-book text-blue-400 mr-2"></i>
+                Tutorial Chapters
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Tutorial aur documentation pages mein headings ko automatically
+                number karne ke liye counters useful hain.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-list-ol text-green-400 mr-2"></i>
+                Steps
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Multi-step instructions mein automatically numbered steps create
+                kiye ja sakte hain.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-sitemap text-purple-400 mr-2"></i>
+                Nested Sections
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Main sections aur subsections ke liye hierarchical numbering
+                create ki ja sakti hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-file-lines text-yellow-400 mr-2"></i>
+                Documentation
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Technical documentation mein automatically generated section
+                numbers maintain karna easy ho sakta hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS Counters automatic numbering create karne ke liye use hote
+                hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">counter-reset</span> counter ko
+                create ya reset karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">counter-increment</span> counter ki
+                value ko update karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">counter()</span> current counter
+                value ko generated content mein display karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">::before</span> aur
+                <span class="text-blue-400">::after</span>
+                counters ko display karne ke common methods hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Counter ki starting value ko customize kiya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Counter ko default 1 ke alawa custom amount se increment kiya ja
+                sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Nested counters ki help se section aur subsection numbering
+                create ki ja sakti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">counter()</span> mein numbering
+                style specify ki ja sakti hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Counters CSS ke through automatic numbering create karne ka
+              powerful feature hai.
+              <span class="text-blue-400">counter-reset</span> se counter ko
+              initialize ya reset kiya jata hai,
+              <span class="text-blue-400">counter-increment</span> se uski value
+              update hoti hai, aur
+              <span class="text-blue-400">counter()</span> function se current
+              value ko generated content mein display kiya jata hai. CSS
+              counters ka use headings, lists, chapters, steps aur nested
+              documentation sections ko automatically number karne ke liye kiya
+              ja sakta hai. Isse HTML mein manually numbering maintain karne ki
+              zarurat kam ho jati hai aur content add ya remove hone par
+              numbering automatically adjust ho sakti hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../forms/forms.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../units/units.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(39);
+      });
+    </script>
+  </body>
+</html>

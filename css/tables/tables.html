@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Tables - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Tables
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../lists/lists.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../display/display.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-table text-[#4d6fff] mr-3"></i>
+              CSS Tables Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS ka use HTML tables ko attractive aur readable banane ke liye
+              kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              CSS se table ke
+              <b
+                >borders, padding, alignment, colors, spacing aur hover
+                effects</b
+              >
+              ko control kar sakte hain.
+            </p>
+
+            <!-- BASIC TABLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              1. Basic Table
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              HTML mein table banane ke liye
+              <b>&lt;table&gt;</b>, <b>&lt;tr&gt;</b>, <b>&lt;th&gt;</b> aur
+              <b>&lt;td&gt;</b> elements use hote hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;table&gt;</span>
+  <span class="text-[#60a5fa]">&lt;tr&gt;</span>
+    <span class="text-[#60a5fa]">&lt;th&gt;</span>Name<span class="text-[#60a5fa]">&lt;/th&gt;</span>
+    <span class="text-[#60a5fa]">&lt;th&gt;</span>Age<span class="text-[#60a5fa]">&lt;/th&gt;</span>
+  <span class="text-[#60a5fa]">&lt;/tr&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;tr&gt;</span>
+    <span class="text-[#60a5fa]">&lt;td&gt;</span>Ali<span class="text-[#60a5fa]">&lt;/td&gt;</span>
+    <span class="text-[#60a5fa]">&lt;td&gt;</span>20<span class="text-[#60a5fa]">&lt;/td&gt;</span>
+  <span class="text-[#60a5fa]">&lt;/tr&gt;</span>
+<span class="text-[#60a5fa]">&lt;/table&gt;</span></code></pre>
+            </div>
+
+            <!-- TABLE BORDER -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-border-all text-[#4d6fff] mr-3"></i>
+              2. Table Border
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Table aur cells ke around border add karne ke liye
+              <b>border</b> property use hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">table, th, td</span> {
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">1px solid white</span>;
+}</code></pre>
+            </div>
+
+            <!-- BORDER COLLAPSE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-compress text-[#4d6fff] mr-3"></i>
+              3. Border Collapse
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>border-collapse</b> property se adjacent borders ko ek single
+              border mein combine kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">table</span> {
+  <span class="text-[#60a5fa]">border-collapse</span>: <span class="text-[#4ade80]">collapse</span>;
+}</code></pre>
+            </div>
+
+            <!-- TABLE WIDTH -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-left-right text-[#4d6fff] mr-3"></i>
+              4. Table Width
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>width</b> property se table ki width set ki ja sakti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">table</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">100%</span>;
+}</code></pre>
+            </div>
+
+            <!-- TABLE HEIGHT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-up-down text-[#4d6fff] mr-3"></i>
+              5. Table Height
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>height</b> property se table rows ya cells ki height control ki
+              ja sakti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">td</span> {
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">50px</span>;
+}</code></pre>
+            </div>
+
+            <!-- TABLE ALIGNMENT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-align-center text-[#4d6fff] mr-3"></i>
+              6. Table Text Alignment
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>text-align</b> property se table ke text ko left, center ya
+              right align kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">td</span> {
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+}</code></pre>
+            </div>
+
+            <!-- VERTICAL ALIGN -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-up-down text-[#4d6fff] mr-3"></i>
+              7. Vertical Alignment
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>vertical-align</b> property cell ke content ko vertically align
+              karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">td</span> {
+  <span class="text-[#60a5fa]">vertical-align</span>: <span class="text-[#4ade80]">middle</span>;
+}</code></pre>
+            </div>
+
+            <!-- TABLE PADDING -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-expand text-[#4d6fff] mr-3"></i>
+              8. Table Padding
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Cells ke andar spacing dene ke liye <b>padding</b> use hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">th, td</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">15px</span>;
+}</code></pre>
+            </div>
+
+            <!-- TABLE COLORS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-palette text-[#4d6fff] mr-3"></i>
+              9. Table Colors
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>background-color</b> aur <b>color</b> properties se table ka
+              background aur text color change kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">th</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">#254ccb</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">white</span>;
+}</code></pre>
+            </div>
+
+            <!-- HOVER -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-hand-pointer text-[#4d6fff] mr-3"></i>
+              10. Table Hover Effect
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>:hover</b> pseudo-class se mouse ko table row ke upar le jaane
+              par background change kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">tr:hover</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">#1e293b</span>;
+}</code></pre>
+            </div>
+
+            <!-- ZEBRA STRIPES -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-grip-lines text-[#4d6fff] mr-3"></i>
+              11. Zebra Striped Table
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>:nth-child(even)</b> ka use alternate rows ko different
+              background dene ke liye kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">tr:nth-child(even)</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">#1e293b</span>;
+}</code></pre>
+            </div>
+
+            <!-- RESPONSIVE TABLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-mobile-screen text-[#4d6fff] mr-3"></i>
+              12. Responsive Table
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Large tables ko small screens par responsive banane ke liye table
+              ko ek scrollable container ke andar rakha ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.table-container</span> {
+  <span class="text-[#60a5fa]">overflow-x</span>: <span class="text-[#4ade80]">auto</span>;
+}
+
+<span class="text-[#60a5fa]">table</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">100%</span>;
+}</code></pre>
+            </div>
+
+            <!-- PRACTICAL EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-laptop-code text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">table</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">100%</span>;
+  <span class="text-[#60a5fa]">border-collapse</span>: <span class="text-[#4ade80]">collapse</span>;
+}
+
+<span class="text-[#60a5fa]">th, td</span> {
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">1px solid #64748b</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">12px</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">left</span>;
+}
+
+<span class="text-[#60a5fa]">th</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">#254ccb</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">white</span>;
+}
+
+<span class="text-[#60a5fa]">tr:hover</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">#1e293b</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  <b>border</b> table aur cells ke around border create karta
+                  hai.
+                </li>
+
+                <li><b>border-collapse</b> borders ko combine karta hai.</li>
+
+                <li>
+                  <b>padding</b> cells ke andar spacing ke liye use hoti hai.
+                </li>
+
+                <li>
+                  <b>text-align</b> table content ki horizontal alignment set
+                  karta hai.
+                </li>
+
+                <li>
+                  <b>vertical-align</b> vertical alignment control karta hai.
+                </li>
+
+                <li>
+                  <b>:hover</b> se table rows mein hover effect add kar sakte
+                  hain.
+                </li>
+
+                <li>
+                  <b>:nth-child(even)</b> se zebra-striped tables banayi ja
+                  sakti hain.
+                </li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Tables Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS se HTML tables ko attractive aur readable bana sakte
+                    hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Borders, padding aur alignment ko customize kiya ja sakta
+                    hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Hover effects aur zebra stripes tables ko better UI dete
+                    hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Responsive tables small screens par bhi usable reh sakti
+                    hain.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../lists/lists.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../display/display.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(21);
+      });
+    </script>
+  </body>
+</html>

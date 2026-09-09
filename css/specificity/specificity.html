@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Specificity</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Specificity
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Specificity ek important concept hai jo decide karta hai ki jab
+            ek hi HTML element par multiple CSS rules apply ho rahe hon, to
+            browser ko kaunsa rule priority dena chahiye. Simple words mein,
+            specificity ek system hai jiske through CSS selectors ki priority
+            calculate hoti hai.
+          </p>
+
+          <!-- TOP NAV -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../inheritance/inheritance.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../important/important.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS SPECIFICITY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            CSS Specificity Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Jab ek element ko target karne ke liye multiple selectors use kiye
+            jaate hain, to sabhi selectors ki priority same nahi hoti. Browser
+            selector ki specificity ko calculate karta hai aur generally
+            higher-specificity rule ko lower-specificity rule ke upar priority
+            deta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Iska matlab hai ki agar ek paragraph ko ek element selector, ek
+            class selector aur ek ID selector se style kiya gaya hai, to in
+            selectors ki priority different hogi. Specificity samajhne se CSS
+            conflicts ko easily solve kiya ja sakta hai.
+          </p>
+
+          <!-- BASIC EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}
+
+<span class="text-blue-400">.text</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}
+
+<span class="text-blue-400">#special</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">green</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Agar ek element par ye teen selectors apply ho rahe hain, to ID
+            selector ki specificity class aur element selector se higher hogi.
+            Isliye ID wala color normally apply hoga.
+          </p>
+
+          <!-- SPECIFICITY ORDER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-ranking-star text-blue-400 mr-2"></i>
+            CSS Specificity ka Priority Order
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS specificity ko samajhne ka easiest way priority levels ko
+            samajhna hai. Generally selector ki specificity roughly is order
+            mein increase hoti hai:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-1 text-blue-400 mr-2"></i>
+                Inline Style
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Element ke andar directly diya gaya style attribute bahut high
+                specificity rakhta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-2 text-blue-400 mr-2"></i>
+                ID Selector
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                ID selector class aur simple element selector se zyada specific
+                hota hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-3 text-blue-400 mr-2"></i>
+                Class Selector
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Class, attribute aur pseudo-class selectors specificity mein
+                element selector se higher hote hain.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-4 text-blue-400 mr-2"></i>
+                Element Selector
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Simple element selectors jaise p, div aur h1 ki specificity
+                comparatively low hoti hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- INLINE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-pen text-blue-400 mr-2"></i>
+            1. Inline CSS
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Inline CSS directly HTML element ke <strong>style</strong> attribute
+            ke andar likhi jaati hai. Specificity ke comparison mein inline
+            styling normal selector rules se bahut high priority rakhti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Inline Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;p</span>
+  <span class="text-blue-400">style</span>=<span class="text-green-400">"color: red;"</span>
+<span class="text-blue-400">&gt;</span>
+  Hello CSS
+<span class="text-blue-400">&lt;/p&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- ID -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-hashtag text-blue-400 mr-2"></i>
+            2. ID Selector
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            ID selector ko <strong>#</strong> symbol ke saath likha jata hai.
+            Specificity mein ID selector class aur element selectors se zyada
+            powerful hota hai. Isliye agar same element ko ID aur class dono
+            target kar rahe hain, to ID rule generally priority le sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                ID Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">#title</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}
+
+<span class="text-blue-400">.heading</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- CLASS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-dot text-blue-400 mr-2"></i>
+            3. Class, Attribute aur Pseudo-Class Selectors
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Class selector ko <strong>.</strong> symbol se identify kiya jata
+            hai. Attribute selectors aur pseudo-classes bhi isi specificity
+            category mein count hote hain. Ye selectors element selectors se
+            higher specificity rakhte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Class Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.button</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}
+
+<span class="text-blue-400">button:hover</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">yellow</span>;
+}
+
+<span class="text-blue-400">input[type="text"]</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ELEMENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-tag text-blue-400 mr-2"></i>
+            4. Element Selector
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Element selectors jaise <strong>p</strong>, <strong>div</strong>,
+            <strong>h1</strong> aur <strong>button</strong> simple selectors
+            hain. Inki specificity class aur ID selectors ke comparison mein
+            lower hoti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Element Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">gray</span>;
+}
+
+<span class="text-blue-400">h1</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">40px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- SPECIFICITY CALCULATION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-calculator text-blue-400 mr-2"></i>
+            5. Specificity Calculate Kaise Karein?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Specificity ko samajhne ke liye selectors ke different parts ko
+            count kiya jata hai. Practical CSS mein aap ise ek four-part
+            comparison ke roop mein soch sakte hain: inline styles, IDs,
+            classes/attributes/pseudo-classes, aur elements/pseudo-elements.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-5">
+              Specificity Components
+            </h3>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Inline style sabse high normal specificity level par hoti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                ID selectors IDs ko count karte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Classes, attributes aur pseudo-classes ek category mein count
+                hote hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Elements aur pseudo-elements lower category mein count hote
+                hain.
+              </li>
+            </ul>
+          </div>
+
+          <!-- MULTIPLE CLASSES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            6. Multiple Classes ki Specificity
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Agar selector mein multiple classes hain, to har class specificity
+            mein contribute karti hai. Isliye multiple class selectors ek simple
+            single-class selector se zyada specific ho sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Multiple Classes Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.button</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">gray</span>;
+}
+
+<span class="text-blue-400">.button.primary</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COMBINATORS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code-branch text-blue-400 mr-2"></i>
+            7. Combinators aur Specificity
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Child, descendant, sibling aur doosre combinators selector ke
+            relationship ko define karte hain. Important baat ye hai ki
+            combinator khud specificity mein extra weight add nahi karta.
+            Selector ke actual IDs, classes aur elements specificity determine
+            karte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Combinator Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.menu li</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}
+
+<span class="text-blue-400">.menu &gt; li</span> {
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">bold</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- SAME SPECIFICITY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-equals text-blue-400 mr-2"></i>
+            8. Jab Specificity Same Ho
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Agar do CSS selectors ki specificity same ho, to CSS cascade mein
+            source order important ho sakta hai. Normally jo applicable rule
+            baad mein aata hai, woh earlier same-specificity rule ko override
+            kar sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Same Specificity Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.text</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}
+
+<span class="text-blue-400">.text</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Dono selectors same hain, isliye second rule ki declaration
+            generally final applied color ko determine karegi.
+          </p>
+
+          <!-- ID VS CLASS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-scale-balanced text-blue-400 mr-2"></i>
+            9. ID vs Class
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ye specificity ka common practical example hai. Agar ek element ko
+            ID aur class dono target kar rahe hain, to ID selector ki
+            specificity class selector se higher hoti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                ID vs Class Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">blue</span>;
+}
+
+<span class="text-blue-400">#box</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">red</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- CLASS VS ELEMENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code-compare text-blue-400 mr-2"></i>
+            10. Class vs Element
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Class selector simple element selector se more specific hota hai.
+            Isliye agar ek hi element ko p selector aur class selector target
+            karte hain, to class selector normally higher priority rakhega.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Class vs Element Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}
+
+<span class="text-blue-400">.message</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- !IMPORTANT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-exclamation text-blue-400 mr-2"></i>
+            11. !important aur Specificity
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>!important</strong> normal specificity comparison ko
+            override karne ke liye use kiya ja sakta hai. Lekin iska excessive
+            use avoid karna chahiye, kyunki baad mein CSS rules ko override
+            karna difficult ho sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                !important Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">#title</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red !important</span>;
+}
+
+<span class="text-blue-400">.title</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- SPECIFICITY WITH PSEUDO -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+            12. Pseudo-Classes aur Pseudo-Elements
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Pseudo-class selectors jaise <strong>:hover</strong>,
+            <strong>:focus</strong> aur <strong>:active</strong> specificity
+            mein class-level contribution karte hain. Pseudo-elements jaise
+            <strong>::before</strong> aur <strong>::after</strong> element-level
+            contribution karte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Pseudo Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">a:hover</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">cyan</span>;
+}
+
+<span class="text-blue-400">.link::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">"&gt; "</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- DESCENDANT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-diagram-project text-blue-400 mr-2"></i>
+            13. Complex Selectors
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Complex selector mein multiple selector components combine ho sakte
+            hain. Jaise ID ke saath class aur element selector combine karna.
+            Jitne relevant specificity components selector mein honge, unke
+            according selector ki overall specificity compare ki jayegi.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Complex Selector Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">#main .card p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}
+
+<span class="text-blue-400">.card p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">gray</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PRACTICAL -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+            14. Complete Practical Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ab ek complete example dekhte hain jisme element, class aur ID
+            selectors ek hi paragraph ko target kar rahe hain. Is example se
+            specificity ke priority behavior ko easily samjha ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Complete Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">gray</span>;
+}
+
+<span class="text-blue-400">.message</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}
+
+<span class="text-blue-400">#important-message</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-5">
+              <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+              Is Example mein kya hoga?
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Agar paragraph par <strong>message</strong> class aur
+              <strong>important-message</strong> ID dono lage hue hain, to ID
+              selector ki specificity higher hone ki wajah se ID wala color
+              normally apply hoga. Agar ID rule remove kar diya jaye, to class
+              rule element selector se higher priority le sakta hai.
+            </p>
+          </div>
+
+          <!-- SPECIFICITY AND SOURCE ORDER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-clock text-blue-400 mr-2"></i>
+            15. Specificity aur Source Order
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Source order tab important hota hai jab competing declarations
+            otherwise same level par hon. Isliye CSS file mein rules ka order
+            bhi kabhi-kabhi output ko affect karta hai. Lekin lower-specificity
+            rule ko sirf neeche likh dene se woh automatically
+            higher-specificity rule ko override nahi karta.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Source Order Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}
+
+<span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- HOW TO AVOID SPECIFICITY PROBLEMS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            Specificity Problems Kaise Avoid Karein?
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Selectors ko unnecessarily complex na banayein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                IDs ko excessive styling hooks ke roop mein use karne se
+                bachein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Reusable components ke liye classes ka use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                !important ka unnecessary use avoid karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS ko predictable order aur clear naming ke saath maintain
+                karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Sirf CSS rule neeche likhne ko higher specificity samajhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Class aur ID specificity ko same samajhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Combinators ko specificity ka extra point samajhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Har conflict ko solve karne ke liye !important use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Complex selectors bana kar CSS ko unnecessarily difficult kar
+                dena.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Browser DevTools mein computed aur matched styles check na
+                karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- IMPORTANT -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Specificity decide karti hai ki competing CSS rules mein kis
+                rule ki priority zyada hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Inline styles normal selector specificity ke comparison mein
+                bahut high priority rakhti hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                ID selectors class selectors se zyada specific hote hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Classes, attributes aur pseudo-classes ek specificity category
+                mein count hote hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Elements aur pseudo-elements lower specificity category mein
+                hote hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Combinators khud specificity mein extra weight add nahi karte.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Same specificity hone par source order important ho sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                !important normal declarations ko override kar sakta hai, isliye
+                iska use carefully karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS ko maintainable rakhne ke liye unnecessarily high
+                specificity avoid karni chahiye.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Specificity ek priority system hai jo browser ko help karta
+              hai decide karne mein ki same element par apply hone wale
+              conflicting CSS rules mein kaunsa rule prefer kiya jaye. Inline
+              styles, IDs, classes/attributes/pseudo-classes aur
+              elements/pseudo-elements specificity ke different levels
+              contribute karte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Specificity ko achhe se samajhne ke baad CSS conflicts ko debug
+              karna kaafi easy ho jata hai. Practical CSS mein unnecessarily
+              complex selectors aur excessive
+              <strong>!important</strong> use karne ke bajay simple, reusable
+              aur predictable class-based styling rakhna better hota hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAV -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../inheritance/inheritance.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../important/important.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(42);
+      });
+    </script>
+  </body>
+</html>

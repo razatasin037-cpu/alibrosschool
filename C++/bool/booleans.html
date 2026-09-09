@@ -238,10 +238,14 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        cout << (10 < 5);
-
-cout << (10 == 10);`,
-          );
+        document.getElementById("comparisonCard").innerHTML = `
+          <p class="text-lg sm:text-xl text-gray-300">
+            cout << (10 < 5);
+          </p>
+          <p class="text-lg sm:text-xl text-gray-300">
+            cout << (10 == 10);
+          </p>
+        `;
 
         document.getElementById("sidebar").innerHTML = createSidebar(8);
       });

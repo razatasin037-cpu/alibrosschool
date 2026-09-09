@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Lists - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Lists
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../links/links.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../tables/tables.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-list text-[#4d6fff] mr-3"></i>
+              CSS Lists Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS ka use HTML lists ko style karne ke liye kiya jata hai. Aap
+              list ke <b>marker, position, color aur appearance</b>
+              ko easily change kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              HTML mein mainly do types ki lists hoti hain:
+              <b>unordered list</b> aur <b>ordered list</b>.
+            </p>
+
+            <!-- UNORDERED LIST -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-list-ul text-[#4d6fff] mr-3"></i>
+              1. Unordered List
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Unordered list mein items ke saamne normally bullets dikhte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">&lt;ul&gt;</span>
+  <span class="text-[#60a5fa]">&lt;li&gt;</span>HTML<span class="text-[#60a5fa]">&lt;/li&gt;</span>
+  <span class="text-[#60a5fa]">&lt;li&gt;</span>CSS<span class="text-[#60a5fa]">&lt;/li&gt;</span>
+  <span class="text-[#60a5fa]">&lt;li&gt;</span>JavaScript<span class="text-[#60a5fa]">&lt;/li&gt;</span>
+<span class="text-[#60a5fa]">&lt;/ul&gt;</span></code></pre>
+            </div>
+
+            <!-- LIST STYLE TYPE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-shapes text-[#4d6fff] mr-3"></i>
+              2. List Style Type
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>list-style-type</b> property list ke marker ka type change
+              karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">ul</span> {
+  <span class="text-[#60a5fa]">list-style-type</span>: <span class="text-[#4ade80]">square</span>;
+}</code></pre>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">disc</h3>
+                <p class="text-gray-300">● Default bullet</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">circle</h3>
+                <p class="text-gray-300">○ Circle marker</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">square</h3>
+                <p class="text-gray-300">■ Square marker</p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-3">none</h3>
+                <p class="text-gray-300">No marker</p>
+              </div>
+            </div>
+
+            <!-- ORDERED LIST -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-list-ol text-[#4d6fff] mr-3"></i>
+              3. Ordered List
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Ordered list mein items numbers ya letters ke sequence mein show
+              hote hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">ol</span> {
+  <span class="text-[#60a5fa]">list-style-type</span>: <span class="text-[#4ade80]">upper-roman</span>;
+}</code></pre>
+            </div>
+
+            <!-- LIST STYLE IMAGE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-regular fa-image text-[#4d6fff] mr-3"></i>
+              4. List Style Image
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>list-style-image</b> property se bullet ki jagah image use ki
+              ja sakti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">ul</span> {
+  <span class="text-[#60a5fa]">list-style-image</span>:
+    <span class="text-[#4ade80]">url("star.png")</span>;
+}</code></pre>
+            </div>
+
+            <!-- LIST STYLE POSITION -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-left-right text-[#4d6fff] mr-3"></i>
+              5. List Style Position
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>list-style-position</b> property marker ki position ko control
+              karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">ul</span> {
+  <span class="text-[#60a5fa]">list-style-position</span>: <span class="text-[#4ade80]">inside</span>;
+}</code></pre>
+            </div>
+
+            <!-- LIST STYLE SHORTHAND -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              6. List Style Shorthand
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>list-style</b> shorthand se multiple list properties ko ek hi
+              line mein set kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">ul</span> {
+  <span class="text-[#60a5fa]">list-style</span>: <span class="text-[#4ade80]">square inside</span>;
+}</code></pre>
+            </div>
+
+            <!-- REMOVE MARKERS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ban text-[#4d6fff] mr-3"></i>
+              7. Remove List Markers
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              List ke bullets ya numbers remove karne ke liye
+              <b>list-style-type: none</b> use kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">ul</span> {
+  <span class="text-[#60a5fa]">list-style-type</span>: <span class="text-[#4ade80]">none</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">0</span>;
+}</code></pre>
+            </div>
+
+            <!-- HORIZONTAL LIST -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-bars text-[#4d6fff] mr-3"></i>
+              8. Horizontal List
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              List items ko horizontal navigation menu ke liye bhi use kiya ja
+              sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">li</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">inline</span>;
+  <span class="text-[#60a5fa]">margin-right</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+            </div>
+
+            <!-- PRACTICAL EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-laptop-code text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">ul</span> {
+  <span class="text-[#60a5fa]">list-style-type</span>: <span class="text-[#4ade80]">none</span>;
+  <span class="text-[#60a5fa]">margin</span>: <span class="text-[#4ade80]">0</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">0</span>;
+}
+
+<span class="text-[#60a5fa]">li</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">inline-block</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">12px 20px</span>;
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">#254ccb</span>;
+  <span class="text-[#60a5fa]">margin-right</span>: <span class="text-[#4ade80]">8px</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>CSS list ke markers ko customize kar sakta hai.</li>
+
+                <li><b>list-style-type</b> marker ka type change karta hai.</li>
+
+                <li>
+                  <b>list-style-image</b> se custom image marker use kar sakte
+                  hain.
+                </li>
+
+                <li>
+                  <b>list-style-position</b> marker ki position control karta
+                  hai.
+                </li>
+
+                <li><b>list-style</b> shorthand property hai.</li>
+
+                <li>
+                  Lists ko navigation menus ke liye bhi use kiya ja sakta hai.
+                </li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Lists Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS se HTML lists ko easily style kar sakte hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Bullets aur numbers ke different styles available hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    List markers ko remove ya custom image se replace kar sakte
+                    hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Lists ko horizontal navigation ke liye bhi use kiya ja sakta
+                    hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../links/links.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../tables/tables.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(20);
+      });
+    </script>
+  </body>
+</html>

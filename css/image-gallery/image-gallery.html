@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Image Gallery</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Image Gallery
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Image Gallery ka use multiple images ko ek organized aur
+            attractive layout mein display karne ke liye kiya jata hai. CSS ki
+            help se hum images ko rows aur columns mein arrange kar sakte hain,
+            unke size ko control kar sakte hain, borders aur spacing add kar
+            sakte hain aur hover effects ke through gallery ko interactive bana
+            sakte hain.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../dropdowns/dropdowns.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../image-sprites/image-sprites.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS IMAGE GALLERY -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-images text-blue-400 mr-2"></i>
+              CSS Image Gallery Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Image Gallery ek aisa layout hota hai jisme multiple images ko ek
+              hi page par systematically display kiya jata hai. Example ke liye
+              photography website, product website, portfolio ya travel website
+              mein bahut saari images ko gallery ke form mein show kiya ja sakta
+              hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Agar hum images ko simple tarike se ek ke neeche ek rakh dein, to
+              large collection ke liye page unnecessarily long ho sakta hai. CSS
+              Grid, Flexbox aur other CSS properties ki help se hum images ko
+              columns aur rows mein efficiently arrange kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Ek achhi image gallery mein image size, aspect ratio, spacing,
+              borders, hover effects aur responsive behavior ka dhyan rakha jata
+              hai, taaki gallery desktop aur mobile dono par properly display
+              ho.
+            </p>
+          </section>
+
+          <!-- BASIC IMAGE -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-image text-blue-400 mr-2"></i>
+              Basic Image Gallery Structure
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Basic gallery banane ke liye hum ek parent container ke andar
+              multiple images rakh sakte hain. Baad mein CSS ke through parent
+              container ko gallery layout diya jata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  HTML Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"gallery"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;img</span> <span class="text-blue-400">src</span>=<span class="text-green-400">"image1.jpg"</span> <span class="text-blue-400">alt</span>=<span class="text-green-400">"Image 1"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;img</span> <span class="text-blue-400">src</span>=<span class="text-green-400">"image2.jpg"</span> <span class="text-blue-400">alt</span>=<span class="text-green-400">"Image 2"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;img</span> <span class="text-blue-400">src</span>=<span class="text-green-400">"image3.jpg"</span> <span class="text-blue-400">alt</span>=<span class="text-green-400">"Image 3"</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-blue-400">&lt;/div&gt;</span></code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- GRID GALLERY -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-table-cells text-blue-400 mr-2"></i>
+              CSS Grid Se Image Gallery
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Multiple images ko rows aur columns mein arrange karne ke liye CSS
+              Grid ek bahut useful method hai. Grid mein hum columns ki number
+              define karke images ko automatically arrange kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Example ke liye agar hum
+              <span class="text-blue-400">grid-template-columns</span> mein teen
+              equal columns define karte hain, to gallery mein har row mein teen
+              images aa sakti hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.gallery</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(3, 1fr)</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">15px</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- GAP -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i
+                class="fa-solid fa-arrows-left-right-to-line text-blue-400 mr-2"
+              ></i>
+              Gallery Mein Gap
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Gallery ki images agar bilkul ek doosre se chipki hui hon to
+              layout cluttered lag sakta hai. Isliye images ke beech spacing
+              dene ke liye <span class="text-blue-400">gap</span> property ka
+              use kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Gap property rows aur columns dono ke beech equal spacing provide
+              kar sakti hai. Isse gallery clean aur readable appearance deti
+              hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.gallery</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(3, 1fr)</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- IMAGE WIDTH -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+              Images Ki Width Aur Height
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Gallery mein images ko consistent appearance dene ke liye unki
+              width aur height control karna useful hota hai. Agar har image ka
+              size bahut different ho, to gallery uneven dikh sakti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.gallery img</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">220px</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- OBJECT FIT -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-crop-simple text-blue-400 mr-2"></i>
+              object-fit Ka Use
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Jab hum sabhi images ki height same rakhte hain, to different
+              aspect ratio wali images distort ho sakti hain. Is problem ko
+              handle karne ke liye
+              <span class="text-blue-400">object-fit</span> property useful hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-green-400">object-fit: cover</span> image ko
+              given area mein cover karta hai aur zarurat padne par image ke
+              kuch parts crop ho sakte hain. Gallery layouts mein ye bahut
+              common choice hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.gallery img</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">220px</span>;
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- BORDER -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-border-all text-blue-400 mr-2"></i>
+              Images Mein Border Add Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Gallery images ko visually separate karne ke liye border ka use
+              kiya ja sakta hai. Border ki width, style aur color ko requirement
+              ke according change kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.gallery img</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">3px solid #334155</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- HOVER EFFECT -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+              Image Gallery Mein Hover Effect
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Gallery ko interactive banane ke liye hover effect add kiya ja
+              sakta hai. Jab user image ke upar mouse le jata hai, image ka
+              opacity, size, border ya shadow change kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.gallery img</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.8</span>;
+  <span class="text-blue-400">transition</span>: <span class="text-green-400">0.3s</span>;
+}
+
+<span class="text-blue-400">.gallery img:hover</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">1</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Is example mein normal state mein image slightly transparent
+              rahegi. Hover karne par opacity 1 ho jayegi aur image completely
+              visible dikhegi.
+            </p>
+          </section>
+
+          <!-- CAPTION -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-closed-captioning text-blue-400 mr-2"></i>
+              Image Caption Add Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Image gallery mein sirf images hi nahi, balki image ke saath
+              caption bhi show kiya ja sakta hai. Caption image ke baare mein
+              short information provide karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Caption ke liye image aur text ko ek container ke andar rakhna
+              useful hota hai. Container ko style karke ek complete gallery card
+              create kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"gallery-item"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;img</span> <span class="text-blue-400">src</span>=<span class="text-green-400">"mountain.jpg"</span> <span class="text-blue-400">alt</span>=<span class="text-green-400">"Mountain"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;p&gt;</span>
+    Beautiful Mountain
+  <span class="text-blue-400">&lt;/p&gt;</span>
+
+<span class="text-blue-400">&lt;/div&gt;</span></code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- RESPONSIVE GALLERY -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i
+                class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"
+              ></i>
+              Responsive Image Gallery
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Image gallery ko different screen sizes par properly display karna
+              important hai. Desktop par 3 ya 4 columns useful ho sakti hain,
+              lekin mobile screen par itni columns images ko bahut chhota bana
+              sakti hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Media queries ki help se hum screen size ke according columns ki
+              number change kar sakte hain. Isse gallery mobile devices par
+              readable aur user-friendly rahegi.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Responsive Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.gallery</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(4, 1fr)</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">15px</span>;
+}
+
+<span class="text-blue-400">@media</span> (max-width: <span class="text-green-400">900px</span>) {
+
+  <span class="text-blue-400">.gallery</span> {
+    <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(2, 1fr)</span>;
+  }
+
+}
+
+<span class="text-blue-400">@media</span> (max-width: <span class="text-green-400">600px</span>) {
+
+  <span class="text-blue-400">.gallery</span> {
+    <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">1fr</span>;
+  }
+
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- COMPLETE GALLERY -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+              Complete CSS Image Gallery Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Ab ek complete image gallery example dekhte hain jisme CSS Grid,
+              gap, image sizing, object-fit, border-radius aur hover effect ko
+              ek saath use kiya gaya hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Complete Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"gallery"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;img</span>
+    <span class="text-blue-400">src</span>=<span class="text-green-400">"image1.jpg"</span>
+    <span class="text-blue-400">alt</span>=<span class="text-green-400">"Nature"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;img</span>
+    <span class="text-blue-400">src</span>=<span class="text-green-400">"image2.jpg"</span>
+    <span class="text-blue-400">alt</span>=<span class="text-green-400">"Mountain"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;img</span>
+    <span class="text-blue-400">src</span>=<span class="text-green-400">"image3.jpg"</span>
+    <span class="text-blue-400">alt</span>=<span class="text-green-400">"Forest"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;img</span>
+    <span class="text-blue-400">src</span>=<span class="text-green-400">"image4.jpg"</span>
+    <span class="text-blue-400">alt</span>=<span class="text-green-400">"Lake"</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-blue-400">&lt;/div&gt;</span>
+
+
+<span class="text-blue-400">.gallery</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(4, 1fr)</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">15px</span>;
+}
+
+<span class="text-blue-400">.gallery img</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">220px</span>;
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">12px</span>;
+  <span class="text-blue-400">transition</span>: <span class="text-green-400">0.3s</span>;
+}
+
+<span class="text-blue-400">.gallery img:hover</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.8</span>;
+}
+
+<span class="text-blue-400">@media</span> (max-width: <span class="text-green-400">900px</span>) {
+
+  <span class="text-blue-400">.gallery</span> {
+    <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(2, 1fr)</span>;
+  }
+
+}
+
+<span class="text-blue-400">@media</span> (max-width: <span class="text-green-400">600px</span>) {
+
+  <span class="text-blue-400">.gallery</span> {
+    <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">1fr</span>;
+  }
+
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- BEST PRACTICES -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+              Image Gallery Ke Best Practices
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Same Image Size</h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Gallery ko clean dikhane ke liye images ke displayed
+                  dimensions ko consistent rakhna useful hota hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">object-fit: cover</h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Different aspect ratio wali images ko uniform gallery cards
+                  mein display karne ke liye object-fit useful hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Proper Spacing</h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Gap aur padding ka proper use gallery ko cluttered hone se
+                  bachata hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+                <h3 class="text-2xl font-bold mb-3">Responsive Design</h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Gallery ko mobile, tablet aur desktop screens par properly
+                  adjust hona chahiye.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ACCESSIBILITY -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-universal-access text-blue-400 mr-2"></i>
+              Images Mein alt Attribute
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Image gallery banate waqt images ke saath meaningful
+              <span class="text-blue-400">alt</span> text dena important hai.
+              Alt text image ke content ko describe karta hai aur jab image load
+              na ho to useful information provide kar sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;img</span>
+  <span class="text-blue-400">src</span>=<span class="text-green-400">"mountain.jpg"</span>
+  <span class="text-blue-400">alt</span>=<span class="text-green-400">"Snow covered mountain"</span><span class="text-blue-400">&gt;</span></code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- COMMON MISTAKES -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <div class="space-y-5">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  1. Images ko fixed size dena without responsive planning
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Bahut bada fixed width mobile screen par horizontal scrolling
+                  create kar sakta hai. Responsive layout ka use karna better
+                  hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  2. object-fit ko ignore karna
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Same dimensions ke box mein different aspect ratio images
+                  distort ho sakti hain. object-fit is problem ko handle karne
+                  mein helpful hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  3. alt attribute na dena
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Important images ke liye meaningful alt text provide karna
+                  accessibility aur fallback information ke liye useful hai.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">
+                  4. Mobile layout test na karna
+                </h3>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  Gallery desktop par achhi dikh sakti hai, lekin mobile screen
+                  par columns bahut narrow ho sakti hain. Isliye different
+                  screen sizes par test karna important hai.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS Image Gallery multiple images ko organized layout mein
+                display karti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS Grid gallery banane ke liye ek powerful layout method hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                gap property images ke beech spacing create karti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                object-fit: cover images ko fixed gallery area mein properly fit
+                karne mein useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Hover effects gallery ko interactive bana sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Media queries se gallery ko responsive banaya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Images ke liye meaningful alt text use karna important hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Gallery ko desktop aur mobile dono screen sizes par test karna
+                chahiye.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Image Gallery ka use multiple images ko rows aur columns mein
+              organized way se display karne ke liye kiya jata hai. CSS Grid
+              gallery layout banane ke liye commonly useful hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              Images ki width, height, gap, border, border-radius aur
+              <span class="text-blue-400">object-fit</span> properties ke
+              through gallery ka appearance control kiya ja sakta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Hover effects aur media queries gallery ko interactive aur
+              responsive banate hain. Ek good image gallery ko visually
+              attractive hone ke saath different screen sizes par usable bhi
+              hona chahiye.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../dropdowns/dropdowns.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../image-sprites/image-sprites.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(35);
+      });
+    </script>
+  </body>
+</html>

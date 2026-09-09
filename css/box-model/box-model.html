@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Box Model - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Box Model
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../padding/padding.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="/css/outline/outline.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-box text-[#4d6fff] mr-3"></i>
+              CSS Box Model Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS ka <b>Box Model</b> har HTML element ko ek box ke form mein
+              treat karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              Har element ke andar aur bahar alag-alag layers hoti hain:
+              <b>Content, Padding, Border aur Margin</b>.
+            </p>
+
+            <!-- FOUR PARTS -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i
+                  class="fa-solid fa-file-lines text-[#4d6fff] text-3xl mb-5"
+                ></i>
+                <h4 class="text-xl font-bold mb-3">Content</h4>
+                <p class="text-gray-300 text-lg">
+                  Element ka actual text ya content.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i class="fa-solid fa-expand text-[#4d6fff] text-3xl mb-5"></i>
+                <h4 class="text-xl font-bold mb-3">Padding</h4>
+                <p class="text-gray-300 text-lg">
+                  Content ke around andar ka space.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i class="fa-solid fa-square text-[#4d6fff] text-3xl mb-5"></i>
+                <h4 class="text-xl font-bold mb-3">Border</h4>
+                <p class="text-gray-300 text-lg">
+                  Padding aur margin ke beech ki boundary.
+                </p>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i
+                  class="fa-solid fa-arrows-left-right text-[#4d6fff] text-3xl mb-5"
+                ></i>
+                <h4 class="text-xl font-bold mb-3">Margin</h4>
+                <p class="text-gray-300 text-lg">Element ke bahar ka space.</p>
+              </div>
+            </div>
+
+            <!-- BOX STRUCTURE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-layer-group text-[#4d6fff] mr-3"></i>
+              Box Model Structure
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <div
+                class="border-4 border-dashed border-gray-500 p-5 sm:p-8 rounded-2xl"
+              >
+                <div class="border-4 border-[#4d6fff] p-5 sm:p-8 rounded-2xl">
+                  <div class="border-4 border-green-500 p-5 sm:p-8 rounded-2xl">
+                    <div class="bg-[#254ccb] rounded-xl p-8 text-center">
+                      <p class="text-2xl sm:text-3xl font-bold">Content</p>
+                    </div>
+
+                    <p class="text-center text-green-400 mt-5 font-bold">
+                      Padding
+                    </p>
+                  </div>
+
+                  <p class="text-center text-[#4d6fff] mt-5 font-bold">
+                    Border
+                  </p>
+                </div>
+
+                <p class="text-center text-gray-400 mt-5 font-bold">Margin</p>
+              </div>
+            </div>
+
+            <!-- CONTENT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-file-lines text-[#4d6fff] mr-3"></i>
+              1. Content
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Content element ka main part hota hai. Ismein text, image ya koi
+              doosra HTML content ho sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">300px</span>;
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">150px</span>;
+}</code></pre>
+            </div>
+
+            <!-- PADDING -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-expand text-[#4d6fff] mr-3"></i>
+              2. Padding
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Padding content aur border ke beech ka internal space hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+            </div>
+
+            <!-- BORDER -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-square text-[#4d6fff] mr-3"></i>
+              3. Border
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Border padding ko surround karta hai aur element ki boundary
+              create karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">2px solid blue</span>;
+}</code></pre>
+            </div>
+
+            <!-- MARGIN -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-left-right text-[#4d6fff] mr-3"></i>
+              4. Margin
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Margin element ke bahar space create karta hai aur doosre elements
+              se distance maintain karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">margin</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+            </div>
+
+            <!-- COMPLETE EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              Complete Box Model Example
+            </h2>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">300px</span>;
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">150px</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">5px solid blue</span>;
+  <span class="text-[#60a5fa]">margin</span>: <span class="text-[#4ade80]">30px</span>;
+}</code></pre>
+            </div>
+
+            <!-- TOTAL WIDTH -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ruler-horizontal text-[#4d6fff] mr-3"></i>
+              Total Width
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Default box model mein total width calculate karte waqt content,
+              left-right padding aur left-right border ko include kiya jata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code>Total Width =
+Width
++ Padding Left
++ Padding Right
++ Border Left
++ Border Right</code></pre>
+            </div>
+
+            <!-- TOTAL HEIGHT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ruler-vertical text-[#4d6fff] mr-3"></i>
+              Total Height
+            </h2>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code>Total Height =
+Height
++ Padding Top
++ Padding Bottom
++ Border Top
++ Border Bottom</code></pre>
+            </div>
+
+            <!-- BOX SIZING -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ruler-combined text-[#4d6fff] mr-3"></i>
+              box-sizing Property
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>box-sizing</b> property decide karti hai ki element ki width
+              aur height kaise calculate hogi.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">* </span>{
+  <span class="text-[#60a5fa]">box-sizing</span>: <span class="text-[#4ade80]">border-box</span>;
+}</code></pre>
+            </div>
+
+            <!-- CONTENT BOX -->
+            <h3 class="text-2xl sm:text-3xl font-bold mt-12 mb-7">
+              <i class="fa-solid fa-box text-[#4d6fff] mr-3"></i>
+              content-box
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+              <b>content-box</b> default value hai. Ismein width aur height sirf
+              content area ke liye hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">box-sizing</span>: <span class="text-[#4ade80]">content-box</span>;
+}</code></pre>
+            </div>
+
+            <!-- BORDER BOX -->
+            <h3 class="text-2xl sm:text-3xl font-bold mt-12 mb-7">
+              <i class="fa-solid fa-square-check text-[#4d6fff] mr-3"></i>
+              border-box
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+              <b>border-box</b> mein specified width aur height ke andar padding
+              aur border include hote hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">box-sizing</span>: <span class="text-[#4ade80]">border-box</span>;
+}</code></pre>
+            </div>
+
+            <!-- PRACTICAL -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-globe text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.card</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">300px</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">2px solid #3158ff</span>;
+  <span class="text-[#60a5fa]">margin</span>: <span class="text-[#4ade80]">20px auto</span>;
+  <span class="text-[#60a5fa]">box-sizing</span>: <span class="text-[#4ade80]">border-box</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT POINTS -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  CSS Box Model ke four main parts hain:
+                  <b>Content, Padding, Border aur Margin</b>.
+                </li>
+
+                <li>Padding content ke andar hota hai.</li>
+
+                <li>Border element ki boundary create karta hai.</li>
+
+                <li>Margin element ke bahar space create karta hai.</li>
+
+                <li>
+                  <b>box-sizing: border-box</b> layouts ko manage karna easier
+                  bana sakta hai.
+                </li>
+
+                <li>
+                  Width aur height calculate karte waqt box model ko samajhna
+                  important hai.
+                </li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Box Model Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>Content</b> element ka actual content hota hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>Padding</b> content ke around internal space hota hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>Border</b> element ki boundary hoti hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>Margin</b> element ke bahar ka space hota hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../padding/padding.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="/css/outline/outline.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(14);
+      });
+    </script>
+  </body>
+</html>

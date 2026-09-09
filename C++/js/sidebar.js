@@ -198,7 +198,7 @@ function createSidebar(title = "C++ Tutorial", menus = null) {
     },
     { name: "C++ Structures", link: "/C++/structures/structures.html" },
     { name: "C++ Enums", link: "/C++/enums/enums.html" },
-    { name: "C++ References", link: "/C++/references/references.html" },
+
     {
       name: "C++ Pointers",
       link: "/C++/pointers/pointers.html",
@@ -218,37 +218,116 @@ function createSidebar(title = "C++ Tutorial", menus = null) {
       name: "C++ Functions",
       link: "/C++/functions/functions.html",
       submenu: [
-        { name: "Functions", link: "/C++/functions/functions.html" },
-        { name: "Parameters", link: "/C++/functions/parameters.html" },
-        { name: "Return Values", link: "/C++/functions/return-values.html" },
+        {
+          name: "Functions",
+          link: "/C++/functions/functions.html",
+        },
+        {
+          name: "Parameters/Arguments",
+          link: "/C++/functions/parameters.html",
+        },
+        {
+          name: "Default Parameter",
+          link: "/C++/functions/default-parameter.html",
+        },
+        {
+          name: "Multiple Parameters",
+          link: "/C++/functions/multiple-parameters.html",
+        },
+        {
+          name: "Return Values",
+          link: "/C++/functions/return-values.html",
+        },
+        {
+          name: "Pass By Reference",
+          link: "/C++/functions/pass-by-reference.html",
+        },
+        {
+          name: "Pass Arrays",
+          link: "/C++/functions/pass-arrays.html",
+        },
+        {
+          name: "Pass Structures",
+          link: "/C++/functions/pass-structures.html",
+        },
+        {
+          name: "Real-Life Example",
+          link: "/C++/functions/real-life-example.html",
+        },
         {
           name: "Function Overloading",
           link: "/C++/functions/function-overloading.html",
         },
-        { name: "Recursion", link: "/C++/functions/recursion.html" },
+        {
+          name: "Recursion",
+          link: "/C++/functions/recursion.html",
+        },
       ],
     },
     {
       name: "C++ OOP",
       link: "/C++/oop/oop.html",
       submenu: [
-        { name: "Classes / Objects", link: "/C++/oop/classes.html" },
-        { name: "Class Attributes", link: "/C++/oop/class-attributes.html" },
-        { name: "Class Methods", link: "/C++/oop/class-methods.html" },
-        { name: "Constructors", link: "/C++/oop/constructors.html" },
-        { name: "Access Specifiers", link: "/C++/oop/access-specifiers.html" },
-        { name: "Encapsulation", link: "/C++/oop/encapsulation.html" },
-        { name: "Inheritance", link: "/C++/oop/inheritance.html" },
-        { name: "Polymorphism", link: "/C++/oop/polymorphism.html" },
+        {
+          name: "C++ OOP",
+          link: "/C++/oop/oop.html",
+        },
+        {
+          name: "C++ Classes/Objects",
+          link: "/C++/oop/classes.html",
+        },
+        {
+          name: "C++ Class Methods",
+          link: "/C++/oop/class-methods.html",
+        },
+
+        {
+          name: "C++ Constructors",
+          link: "/C++/oop/constructors.html",
+        },
+        {
+          name: "C++ Constructor Overloading",
+          link: "/C++/oop/constructor-overloading.html",
+        },
+        {
+          name: "C++ Access Specifiers",
+          link: "/C++/oop/access-specifiers.html",
+        },
+        {
+          name: "C++ Encapsulation",
+          link: "/C++/oop/encapsulation.html",
+        },
+        {
+          name: "C++ Friend Functions",
+          link: "/C++/oop/friend-functions.html",
+        },
+        {
+          name: "C++ Inheritance",
+          link: "/C++/oop/inheritance.html",
+        },
+
+        {
+          name: "Multilevel Inheritance",
+          link: "/C++/oop/multilevel-inheritance.html",
+        },
+        {
+          name: "Multiple Inheritance",
+          link: "/C++/oop/multiple-inheritance.html",
+        },
+        {
+          name: "Inheritance Access Specifiers",
+          link: "/C++/oop/inheritance-access-specifiers.html",
+        },
+        {
+          name: "C++ Polymorphism",
+          link: "/C++/oop/polymorphism.html",
+        },
+        {
+          name: "Virtual Functions",
+          link: "/C++/oop/virtual-functions.html",
+        },
       ],
     },
-    { name: "C++ Files", link: "/C++/files/files.html" },
-    { name: "C++ Exceptions", link: "/C++/exceptions/exceptions.html" },
-    { name: "C++ Date", link: "/C++/date/date.html" },
-    { name: "C++ Examples", link: "/C++/examples/examples.html" },
-    { name: "C++ Exercises", link: "/C++/exercises/exercises.html" },
-    { name: "C++ Quiz", link: "/C++/quiz/quiz.html" },
-    { name: "C++ Reference", link: "/C++/reference/reference.html" },
   ];
 
   const menuList = menus || defaultMenus;

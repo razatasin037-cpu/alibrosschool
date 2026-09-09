@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Pseudo-Classes</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Pseudo-Classes
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Pseudo-Classes ka use HTML elements ki different
+            <span class="text-[#4d6fff] font-bold">
+              states aur special conditions
+            </span>
+            ko select aur style karne ke liye kiya jata hai. Jaise jab user kisi
+            button par mouse lekar jata hai, input mein click karta hai, link
+            visit kar chuka hota hai, ya list ka first item select karna hota
+            hai.
+          </p>
+
+          <!-- TOP BUTTONS -->
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../combinators/combinators.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../pseudo-elements/pseudo-elements.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- INTRODUCTION -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-7">
+              <i class="fa-solid fa-code text-blue-400 mr-3"></i>
+              CSS Pseudo-Classes Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Pseudo-Class ek special keyword hota hai jo selector ke saath use
+              kiya jata hai. Iski madad se hum kisi HTML element ki
+              <span class="text-white font-bold"> particular state </span>
+              ko target kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Normal selector jaise
+              <span class="text-blue-400 font-bold"> button </span>
+              ya
+              <span class="text-blue-400 font-bold"> .box </span>
+              kisi element ko directly select karta hai. Lekin pseudo-class us
+              element ki condition ke according styling apply karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Example ke liye agar hum chahte hain ki mouse button ke upar jaane
+              par button ka background change ho jaye, to hum
+              <span class="text-[#4d6fff] font-bold"> :hover </span>
+              pseudo-class use kar sakte hain.
+            </p>
+          </section>
+
+          <!-- BASIC SYNTAX -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              Pseudo-Class Syntax
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Pseudo-class ko selector ke baad
+              <span class="text-white font-bold"> colon (:) </span>
+              ke saath likha jata hai. Colon ke baad pseudo-class ka naam diya
+              jata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl sm:text-2xl font-bold">
+                  <i class="fa-solid fa-terminal text-blue-400 mr-2"></i>
+                  Basic Syntax
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">selector:pseudo-class</span> {
+  <span class="text-blue-400">property</span>: <span class="text-green-400">value</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Yahan selector HTML element ko represent karta hai aur
+              pseudo-class us element ki specific state ya condition ko
+              represent karta hai.
+            </p>
+          </section>
+
+          <!-- HOVER -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              1. :hover Pseudo-Class
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold">:hover</span>
+              sabse commonly used pseudo-class mein se ek hai. Iska use tab hota
+              hai jab user apne mouse pointer ko kisi element ke upar lekar jata
+              hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Buttons, links, cards aur navigation menus mein hover effect bahut
+              common hota hai. Isse user ko visual feedback milta hai ki jis
+              element par cursor hai wo interactive hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Hover Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">button:hover</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">blue</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Is code mein jab user button ke upar mouse lekar jayega, tab
+              button ka background blue aur text white ho jayega.
+            </p>
+          </section>
+
+          <!-- FOCUS -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              2. :focus Pseudo-Class
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold">:focus</span>
+              pseudo-class ka use us element ko style karne ke liye hota hai jo
+              currently focus mein hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Input fields mein iska use bahut important hai. Jab user kisi
+              input field par click karta hai ya keyboard se us input ko focus
+              karta hai, tab hum border, outline ya background change karke user
+              ko clearly bata sakte hain ki abhi kaunsa field active hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Focus Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">input:focus</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid blue</span>;
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">none</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- ACTIVE -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              3. :active Pseudo-Class
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold">:active</span>
+              pseudo-class us waqt apply hota hai jab user kisi interactive
+              element ko actively press kar raha hota hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Buttons par click karte waqt ek chhota visual effect dene ke liye
+              :active ka use kiya ja sakta hai. Isse interface zyada responsive
+              aur interactive feel hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Active Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">button:active</span> {
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">scale(0.95)</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- VISITED -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              4. :visited Pseudo-Class
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold">:visited</span>
+              pseudo-class ka use un links ko style karne ke liye kiya jata hai
+              jinko user pehle visit kar chuka hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Iska use documentation websites, navigation systems aur long
+              article pages mein useful ho sakta hai, jahan user ko pata chal
+              sake ki kaunsa link already visit kiya ja chuka hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Visited Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">a:visited</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">purple</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- FIRST CHILD -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">5. :first-child</h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold">:first-child</span>
+              pseudo-class parent ke andar maujood first child element ko select
+              karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Ye list, menus aur repeated content blocks mein useful hota hai.
+              Isse first item ko alag margin, color, border ya kisi bhi other
+              style ke saath design kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">First Child Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">li:first-child</span> {
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">bold</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- LAST CHILD -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">6. :last-child</h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold">:last-child</span>
+              parent ke andar jo element last mein hota hai usko select karta
+              hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Iska use specially list aur cards ke layout mein useful hota hai.
+              Example ke liye last item ka bottom border remove karna ho to
+              :last-child ka use kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Last Child Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">li:last-child</span> {
+  <span class="text-blue-400">border-bottom</span>: <span class="text-green-400">none</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- NTH CHILD -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">7. :nth-child()</h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold">:nth-child()</span>
+              pseudo-class ka use child elements ke specific position ko select
+              karne ke liye hota hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Iska sabse common use tables, lists, cards aur grid layouts mein
+              hota hai. Hum specific item jaise second, third ya even/odd items
+              ko target kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Nth Child Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">li:nth-child(2)</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Is example mein list ka second item red ho jayega. Isi tarah
+              <span class="text-blue-400 font-bold"> :nth-child(3) </span>
+              third item ko select karega.
+            </p>
+          </section>
+
+          <!-- EVEN ODD -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              8. Even aur Odd Items
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              :nth-child() ki help se hum even aur odd items ko bhi easily
+              select kar sakte hain. Tables aur lists ko readable banane ke liye
+              alternating styles dena ek common practical use hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Even and Odd Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">tr:nth-child(even)</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#1e293b</span>;
+}
+
+<span class="text-blue-400">tr:nth-child(odd)</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#0f172a</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- PRACTICAL EXAMPLE -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-laptop-code text-blue-400 mr-3"></i>
+              Practical Form Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Real website mein pseudo-classes ka use form inputs, buttons aur
+              links ko interactive banane ke liye bahut kiya jata hai. Neeche ek
+              simple form ka example hai jahan focus hone par input ka border
+              change hota hai aur button hover hone par uska background change
+              hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Complete Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;input</span>
+  <span class="text-blue-400">type</span>=<span class="text-green-400">"text"</span>
+  <span class="text-blue-400">placeholder</span>=<span class="text-green-400">"Enter your name"</span>
+<span class="text-blue-400">/&gt;</span>
+
+<span class="text-blue-400">&lt;button&gt;</span>
+  Submit
+<span class="text-blue-400">&lt;/button&gt;</span>
+
+<span class="text-blue-400">input:focus</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid #4d6fff</span>;
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">none</span>;
+}
+
+<span class="text-blue-400">button:hover</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#254ccb</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- COMMON USES -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              Pseudo-Classes Kahan Use Hote Hain?
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-9"
+            >
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>Buttons ke hover aur active effects ke liye.</li>
+
+                <li>
+                  Input fields ko focus state mein highlight karne ke liye.
+                </li>
+
+                <li>Visited links ko alag style dene ke liye.</li>
+
+                <li>Lists ke first aur last items ko target karne ke liye.</li>
+
+                <li>Tables mein even aur odd rows ko style karne ke liye.</li>
+
+                <li>Navigation menus ko interactive banane ke liye.</li>
+
+                <li>
+                  Cards aur repeated components mein specific items ko select
+                  karne ke liye.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- IMPORTANT POINTS -->
+
+          <section class="mb-14">
+            <div
+              class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold mb-6">
+                <i class="fa-solid fa-circle-info text-blue-400 mr-3"></i>
+                Important Points
+              </h2>
+
+              <ul
+                class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  Pseudo-classes ko colon
+                  <span class="text-blue-400 font-bold">:</span>
+                  ke saath likha jata hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">:hover</span>
+                  mouse pointer element ke upar hone par apply hota hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">:focus</span>
+                  focused element ko target karta hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">:active</span>
+                  element ko press karte waqt apply hota hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">:visited</span>
+                  visited links ko target karta hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">:first-child</span>
+                  first child ko select karta hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">:last-child</span>
+                  last child ko select karta hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold">:nth-child()</span>
+                  specific child position ko target karta hai.
+                </li>
+
+                <li>
+                  Pseudo-classes interactive aur dynamic webpages banane mein
+                  bahut useful hain.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- SUMMARY -->
+
+          <section class="mb-10">
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                <i class="fa-solid fa-book-open text-blue-400 mr-3"></i>
+                Summary
+              </h2>
+
+              <p
+                class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+              >
+                CSS Pseudo-Classes ka use HTML elements ki different states aur
+                conditions ko target karne ke liye hota hai. Inki help se hum
+                buttons, links, forms, lists, tables aur other interactive
+                elements ko easily style kar sakte hain.
+              </p>
+
+              <p
+                class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+              >
+                Sabse commonly used pseudo-classes mein
+                <span class="text-[#4d6fff] font-bold">
+                  :hover, :focus, :active, :visited, :first-child, :last-child
+                  aur :nth-child()
+                </span>
+                aate hain. Inka proper use website ko zyada interactive, clean
+                aur user-friendly banata hai.
+              </p>
+            </div>
+          </section>
+
+          <!-- BOTTOM BUTTONS -->
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../combinators/combinators.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../pseudo-elements/pseudo-elements.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(30);
+      });
+    </script>
+  </body>
+</html>
