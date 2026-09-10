@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML CSS - Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML CSS
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../colors/Colors.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../links/Links.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Introduction Section -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML me CSS Kya Hoti Hai?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            <strong>CSS (Cascading Style Sheets)</strong> ka upayog HTML elements ke layout, colors, fonts, aur overall visual look ko design karne ke liye kiya jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            HTML me CSS ko add karne ke 3 alag tareeqe hote hain:
+          </p>
+          <ul class="list-disc list-inside mt-3 space-y-1 text-gray-300 text-sm md:text-base">
+            <li><strong class="text-blue-400">Inline CSS:</strong> HTML element ke andar <code class="text-yellow-400">style</code> attribute ka use karke.</li>
+            <li><strong class="text-blue-400">Internal CSS:</strong> HTML page ke <code class="text-yellow-400">&lt;head&gt;</code> section me <code class="text-yellow-400">&lt;style&gt;</code> tag ka use karke.</li>
+            <li><strong class="text-blue-400">External CSS:</strong> External <code class="text-yellow-400">.css</code> file ko <code class="text-yellow-400">&lt;link&gt;</code> tag se connect karke.</li>
+          </ul>
+        </div>
+
+        <!-- 1. Inline CSS Example -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i> 1. Inline CSS
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Inline CSS me single HTML element par unique style apply karne ke liye <code class="text-yellow-400">style</code> attribute use karte hain.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <div class="flex justify-between items-center pb-3 mb-3 border-b border-[#334155] text-xs text-gray-400">
+                <span>inline-example.html</span>
+                <span class="text-yellow-400"><i class="fa-regular fa-copy mr-1"></i> HTML</span>
+              </div>
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;h1 <span class="text-yellow-400">style="color: #3158ff; text-align: center;"</span>&gt;
+  Inline CSS Heading
+&lt;/h1&gt;
+&lt;p <span class="text-yellow-400">style="color: #22c55e; font-size: 18px;"</span>&gt;
+  Ye text green color me render hoga.
+&lt;/p&gt;</code></pre>
+            </div>
+
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 shadow-inner flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 pb-3 mb-4 border-b border-gray-200">
+                  <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                  <span class="text-xs text-gray-400 font-sans ml-2">Browser Output</span>
+                </div>
+                <div class="space-y-3 font-sans">
+                  <h1 style="color: #3158ff; text-align: center;" class="text-2xl font-bold">
+                    Inline CSS Heading
+                  </h1>
+                  <p style="color: #22c55e; font-size: 18px;">
+                    Ye text green color me render hoga.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Internal CSS Example -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            <i class="fa-solid fa-file-code text-purple-400 mr-2"></i> 2. Internal CSS
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Jab ek poore single page ko alag design dena ho tab <code class="text-yellow-400">&lt;head&gt;</code> ke andar <code class="text-yellow-400">&lt;style&gt;</code> tag me CSS likhi jati hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <div class="flex justify-between items-center pb-3 mb-3 border-b border-[#334155] text-xs text-gray-400">
+                <span>internal-example.html</span>
+                <span class="text-yellow-400"><i class="fa-regular fa-copy mr-1"></i> HTML</span>
+              </div>
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;head&gt;
+  &lt;style&gt;
+    <span class="text-purple-400">.my-box</span> {
+      background-color: #1e1b4b;
+      color: #a7f3d0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div <span class="text-yellow-400">class="my-box"</span>&gt;Internal CSS Box&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+            </div>
+
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 shadow-inner flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 pb-3 mb-4 border-b border-gray-200">
+                  <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                  <span class="text-xs text-gray-400 font-sans ml-2">Browser Output</span>
+                </div>
+                <div>
+                  <div style="background-color: #1e1b4b; color: #a7f3d0; padding: 15px; border-radius: 8px;" class="font-bold text-center">
+                    Internal CSS Box
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. External CSS Example -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            <i class="fa-solid fa-link text-emerald-400 mr-2"></i> 3. External CSS
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Multiple web pages ko ek sath style karne ke liye external <code class="text-yellow-400">style.css</code> file banakar <code class="text-yellow-400">&lt;link&gt;</code> tag se link karte hain.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <div class="flex justify-between items-center pb-3 mb-3 border-b border-[#334155] text-xs text-gray-400">
+                <span>index.html & style.css</span>
+                <span class="text-yellow-400"><i class="fa-regular fa-copy mr-1"></i> HTML/CSS</span>
+              </div>
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-gray-500">&lt;!-- HTML File --&gt;</span>
+&lt;head&gt;
+  &lt;link <span class="text-yellow-400">rel="stylesheet" href="style.css"</span>&gt;
+&lt;/head&gt;
+
+<span class="text-gray-500">/* style.css File */</span>
+<span class="text-emerald-400">button</span> {
+  background-color: #3158ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+}</code></pre>
+            </div>
+
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 shadow-inner flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 pb-3 mb-4 border-b border-gray-200">
+                  <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                  <span class="text-xs text-gray-400 font-sans ml-2">Browser Output</span>
+                </div>
+                <div class="text-center py-4">
+                  <button style="background-color: #3158ff; color: white; padding: 10px 20px; border-radius: 6px;" class="font-bold cursor-pointer hover:opacity-90 transition">
+                    Styled External Button
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison Summary Table -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <i class="fa-solid fa-table text-amber-400 mr-2"></i> CSS Methods Quick Comparison
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#334155] text-gray-400 text-sm">
+                <th class="py-3 px-4">Method</th>
+                <th class="py-3 px-4">Syntax Location</th>
+                <th class="py-3 px-4">Best Use Case</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-200 divide-y divide-[#334155]/50">
+              <tr>
+                <td class="py-3 px-4 font-bold text-blue-400">Inline CSS</td>
+                <td class="py-3 px-4 font-mono text-xs text-gray-300">style="..." attribute inside HTML element</td>
+                <td class="py-3 px-4">Quick testing ya single element styling ke liye.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-purple-400">Internal CSS</td>
+                <td class="py-3 px-4 font-mono text-xs text-gray-300">&lt;style&gt; tag inside &lt;head&gt;</td>
+                <td class="py-3 px-4">Single page custom layout ke liye.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-emerald-400">External CSS</td>
+                <td class="py-3 px-4 font-mono text-xs text-gray-300">&lt;link rel="stylesheet" href="style.css"&gt;</td>
+                <td class="py-3 px-4">Large websites aur full multi-page styling ke liye (Best Practice).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../colors/Colors.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../links/Links.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(12);
+    </script>
+  </body>
+</html>

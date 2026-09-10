@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Forms - Required Fields - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Forms - Required Fields
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./FormValidation.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FormsValidateE-mailandURL.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Required Fields Validation Kya Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            Form handling me kuch fields mandatory hote hain (jaise Name, Email, Gender). Server-side script se ye check karna zaroori hai ki user ne in fields ko empty na chhoda ho.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            PHP me hum <strong class="text-white">empty()</strong> function ka use karke required fields check karte hain aur field-specific error messages show karte hain.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Validation Logic Flow -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Required Field Logic Mechanics
+            </h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
+              <li><strong>Error Variables:</strong> Har field ke liye alag error variable declare karein (e.g., <code class="text-green-400">$nameErr</code>).</li>
+              <li><strong>Empty Check:</strong> <code class="text-green-400">empty($_POST["field"])</code> se validation run karein.</li>
+              <li><strong>Error Display:</strong> Form ke sath red color asterisks (<span class="text-red-500">*</span>) aur dynamic messages highlight karein.</li>
+            </ul>
+          </div>
+
+          <!-- 1. Full Working Example Code -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. PHP Required Fields Script with Inline Errors
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Ye complete code hai jo empty fields detect karta hai aur errors return karta hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Define variables and set to empty values</span>
+  <span class="text-green-400">$nameErr</span> = <span class="text-green-400">$emailErr</span> = <span class="text-green-400">$genderErr</span> = <span class="text-white">""</span>;
+  <span class="text-green-400">$name</span> = <span class="text-green-400">$email</span> = <span class="text-green-400">$gender</span> = <span class="text-white">""</span>;
+
+  <span class="text-green-400">if</span> (<span class="text-green-400">$_SERVER</span>[<span class="text-white">"REQUEST_METHOD"</span>] == <span class="text-white">"POST"</span>) {
+      <span class="text-[#94a3b8]">// Validate Name</span>
+      <span class="text-green-400">if</span> (<span class="text-green-400">empty</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"name"</span>])) {
+          <span class="text-green-400">$nameErr</span> = <span class="text-white">"Name is required"</span>;
+      } <span class="text-green-400">else</span> {
+          <span class="text-green-400">$name</span> = <span class="text-white">test_input</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"name"</span>]);
+      }
+      
+      <span class="text-[#94a3b8]">// Validate Email</span>
+      <span class="text-green-400">if</span> (<span class="text-green-400">empty</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"email"</span>])) {
+          <span class="text-green-400">$emailErr</span> = <span class="text-white">"Email is required"</span>;
+      } <span class="text-green-400">else</span> {
+          <span class="text-green-400">$email</span> = <span class="text-white">test_input</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"email"</span>]);
+      }
+
+      <span class="text-[#94a3b8]">// Validate Gender</span>
+      <span class="text-green-400">if</span> (<span class="text-green-400">empty</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"gender"</span>])) {
+          <span class="text-green-400">$genderErr</span> = <span class="text-white">"Gender selection is required"</span>;
+      } <span class="text-green-400">else</span> {
+          <span class="text-green-400">$gender</span> = <span class="text-white">test_input</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"gender"</span>]);
+      }
+  }
+
+  <span class="text-green-400">function</span> <span class="text-white">test_input</span>(<span class="text-green-400">$data</span>) {
+      <span class="text-green-400">$data</span> = <span class="text-green-400">trim</span>(<span class="text-green-400">$data</span>);
+      <span class="text-green-400">$data</span> = <span class="text-green-400">stripslashes</span>(<span class="text-green-400">$data</span>);
+      <span class="text-green-400">$data</span> = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$data</span>);
+      <span class="text-green-400">return</span> <span class="text-green-400">$data</span>;
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. HTML Form Integration -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. HTML Form UI Rendering Error Spans
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Errors ko user interface par render karne ke liye `<span class="error">*</span>` pattern:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;form</span> <span class="text-white">method</span>=<span class="text-yellow-300">"post"</span> <span class="text-white">action</span>=<span class="text-yellow-300">"&lt;?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?&gt;"</span><span class="text-green-400">&gt;</span>
+  <span class="text-[#94a3b8]">&lt;!-- Name Field --&gt;</span>
+  Name: <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"text"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"name"</span> <span class="text-white">value</span>=<span class="text-yellow-300">"&lt;?php echo $name; ?&gt;"</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;span</span> <span class="text-white">class</span>=<span class="text-yellow-300">"text-red-500"</span><span class="text-green-400">&gt;</span>* <span class="text-green-400">&lt;?php</span> <span class="text-green-400">echo</span> <span class="text-green-400">$nameErr</span>; <span class="text-green-400">?&gt;&lt;/span&gt;</span>
+  <span class="text-green-400">&lt;br&gt;&lt;br&gt;</span>
+
+  <span class="text-[#94a3b8]">&lt;!-- Email Field --&gt;</span>
+  E-mail: <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"text"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"email"</span> <span class="text-white">value</span>=<span class="text-yellow-300">"&lt;?php echo $email; ?&gt;"</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;span</span> <span class="text-white">class</span>=<span class="text-yellow-300">"text-red-500"</span><span class="text-green-400">&gt;</span>* <span class="text-green-400">&lt;?php</span> <span class="text-green-400">echo</span> <span class="text-green-400">$emailErr</span>; <span class="text-green-400">?&gt;&lt;/span&gt;</span>
+  <span class="text-green-400">&lt;br&gt;&lt;br&gt;</span>
+
+  <span class="text-green-400">&lt;button</span> <span class="text-white">type</span>=<span class="text-yellow-300">"submit"</span><span class="text-green-400">&gt;</span>Submit<span class="text-green-400">&lt;/button&gt;</span>
+<span class="text-green-400">&lt;/form&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Best Practice Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-yellow-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-yellow-400">
+              <span>📌</span> Pro Tip: Retaining User Values
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              User experience enhance karne ke liye validation error subtle dikhayein aur <code class="text-green-400">value="&lt;?php echo $name; ?&gt;"</code> ka use karke user ka entered valid data dobara form fields me fill rehne dein (form re-population).
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./FormValidation.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FormsValidateE-mailandURL.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(20);
+    </script>
+  </body>
+</html>

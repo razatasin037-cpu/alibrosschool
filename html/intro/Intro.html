@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Introduction</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Introduction
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../home/Home.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../editors/Editors.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Kya Hai?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML ka full form <strong>HyperText Markup Language</strong> hai. Ye Web Pages ka basic structure (dhancha) banane ke liye use hone wali standard language hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            HTML browser ko batata hai ki content ko page par kaise display karna hai. Isme alag-alag <strong>Tags</strong> hote hain (jaise headings, paragraphs, links, images, tables).
+          </p>
+        </div>
+
+        <!-- Key Highlights Grid -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-orange-950/40 border border-orange-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-orange-400 mb-2">
+              <i class="fa-solid fa-code mr-2"></i> HTML Tags
+            </h4>
+            <p class="text-gray-300 text-base">
+              HTML tags elements ko wrap karte hain, jaise <code>&lt;h1&gt;</code> Heading ke liye aur <code>&lt;p&gt;</code> Paragraph ke liye.
+            </p>
+          </div>
+
+          <div class="bg-blue-950/40 border border-blue-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-blue-400 mb-2">
+              <i class="fa-solid fa-globe mr-2"></i> Web Browsers
+            </h4>
+            <p class="text-gray-300 text-base">
+              Chrome, Firefox, Edge jaise browsers HTML code ko read karke use visual web page me convert karte hain.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: Basic Document Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Simple HTML Document Code
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Har HTML page ka basic structure kuch is tarah ka dikhta hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+  <span class="text-green-400">&lt;head&gt;</span>
+    <span class="text-green-400">&lt;title&gt;</span>Page Ka Title<span class="text-green-400">&lt;/title&gt;</span>
+  <span class="text-green-400">&lt;/head&gt;</span>
+  <span class="text-green-400">&lt;body&gt;</span>
+
+    <span class="text-green-400">&lt;h1&gt;</span>Mera Pehla Heading<span class="text-green-400">&lt;/h1&gt;</span>
+    <span class="text-green-400">&lt;p&gt;</span>Mera pehla paragraph text.<span class="text-green-400">&lt;/p&gt;</span>
+
+  <span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: Code Explanation -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Code Ka MATLAB (Step-by-Step)
+            </h3>
+            
+            <ul class="space-y-4 text-gray-300 text-base md:text-lg">
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;!DOCTYPE html&gt;</strong> - Ye browser ko batata hai ki ye HTML5 document hai.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;html&gt;</strong> - Ye HTML document ka root element hai.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;head&gt;</strong> - Isme page ki metadata aur title rakha jata hai (jo page par directly nahi dikhta).
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;title&gt;</strong> - Ye browser tab me dikhne wala title set karta hai.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;body&gt;</strong> - Website ka main visible area! Saara dikhne wala content iske andar hi aata hai.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;h1&gt;</strong> - Badi Heading ke liye use hota hai.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">&lt;p&gt;</strong> - Paragraph likhne ke liye use hota hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Section 3: HTML Elements & Structure Table -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. HTML Elements Structure
+            </h3>
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              An <strong>HTML Element</strong> Start Tag se shuru hokar End Tag par khatam hota hai. Kuch elements me koi content ya closing tag nahi hota, inhein <strong>Empty Elements</strong> kehte hain.
+            </p>
+
+            <!-- Elements Table -->
+            <div class="overflow-x-auto rounded-xl border border-[#334155]">
+              <table class="w-full text-left text-gray-300">
+                <thead class="bg-[#0f172a] text-yellow-400 text-base font-bold border-b border-[#334155]">
+                  <tr>
+                    <th class="p-4">Start Tag</th>
+                    <th class="p-4">Element Content</th>
+                    <th class="p-4">End Tag</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] bg-[#020617]/50 text-sm md:text-base font-mono">
+                  <tr>
+                    <td class="p-4 text-green-400">&lt;h1&gt;</td>
+                    <td class="p-4 text-white font-sans">My First Heading</td>
+                    <td class="p-4 text-green-400">&lt;/h1&gt;</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-green-400">&lt;p&gt;</td>
+                    <td class="p-4 text-white font-sans">My first paragraph.</td>
+                    <td class="p-4 text-green-400">&lt;/p&gt;</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-green-400">&lt;br&gt;</td>
+                    <td class="p-4 text-gray-500 italic font-sans">None (Line break)</td>
+                    <td class="p-4 text-gray-500 italic font-sans">None</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-green-400">&lt;img src="..."&gt;</td>
+                    <td class="p-4 text-gray-500 italic font-sans">None (Self-closing)</td>
+                    <td class="p-4 text-gray-500 italic font-sans">None</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-green-400">&lt;a href="..."&gt;</td>
+                    <td class="p-4 text-white font-sans">Click Here Link</td>
+                    <td class="p-4 text-green-400">&lt;/a&gt;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 4: Additional Concepts (Nested Elements & Attributes) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-[#1e293b] rounded-2xl p-6 border border-[#334155] shadow-lg">
+              <h4 class="text-xl font-bold text-yellow-400 mb-3">
+                <i class="fa-solid fa-layer-group mr-2"></i> Nested HTML Elements
+              </h4>
+              <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                HTML elements ek doosre ke andar rakhe ja sakte hain (Nesting). Jaise <code>&lt;body&gt;</code> ke andar <code>&lt;h1&gt;</code> aur <code>&lt;p&gt;</code> tags hain.
+              </p>
+            </div>
+
+            <div class="bg-[#1e293b] rounded-2xl p-6 border border-[#334155] shadow-lg">
+              <h4 class="text-xl font-bold text-yellow-400 mb-3">
+                <i class="fa-solid fa-sliders mr-2"></i> HTML Attributes
+              </h4>
+              <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                Attributes elements ko extra information dete hain. Ye hamesha start tag me likhe jate hain (jaise <code>href=""</code> link ke liye ya <code>src=""</code> image ke liye).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../home/Home.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../editors/Editors.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(1);
+    </script>
+  </body>
+</html>

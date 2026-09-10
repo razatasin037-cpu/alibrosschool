@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Type Casting - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Type Casting
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../numbers/Numbers.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../maths/Maths.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Type Casting Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            Jab aap kisi variable ka data type forcefully ek type se doosre type me badalte hain (jaise String ko Integer me ya Float ko Integer me convert karna), toh us process ko **Type Casting** kehte hain.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            PHP me casting karne ke liye variable ke aage parenthesis <code class="text-green-400">( )</code> ke andar target data type ka naam likha jata hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. Cast to Integer -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              1. Cast to Integer <code class="text-green-400 text-xl">(int)</code>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Float numbers ya numeric strings ko integer me badalne ke liye <code class="text-green-400">(int)</code> ya <code class="text-green-400">(integer)</code> ka use hota hai. Float se int me convert hone par decimal ke baad ki values discard ho jaati hain.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Cast Float to Integer</span>
+  <span class="text-green-400">$a</span> = <span class="text-white">23465.768</span>;
+  <span class="text-green-400">$int_a</span> = (<span class="text-green-400">int</span>)<span class="text-green-400">$a</span>; <span class="text-[#94a3b8]">// Result: 23465</span>
+
+  <span class="text-[#94a3b8]">// Cast String to Integer</span>
+  <span class="text-green-400">$b</span> = <span class="text-white">"25 kilometers"</span>;
+  <span class="text-green-400">$int_b</span> = (<span class="text-green-400">int</span>)<span class="text-green-400">$b</span>; <span class="text-[#94a3b8]">// Result: 25</span>
+
+  <span class="text-green-400">var_dump</span>(<span class="text-green-400">$int_a</span>);
+  <span class="text-green-400">var_dump</span>(<span class="text-green-400">$int_b</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Cast to String -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              2. Cast to String <code class="text-green-400 text-xl">(string)</code>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Kisi integer, float ya boolean value ko string text format me convert karne ke liye <code class="text-green-400">(string)</code> ka upyog hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$x</span> = <span class="text-white">500</span>;
+  <span class="text-green-400">$str_x</span> = (<span class="text-green-400">string</span>)<span class="text-green-400">$x</span>;
+
+  <span class="text-green-400">var_dump</span>(<span class="text-green-400">$str_x</span>); <span class="text-[#94a3b8]">// Output: string(3) "500"</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Cast to Boolean -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              3. Cast to Boolean <code class="text-green-400 text-xl">(bool)</code>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">0</code>, empty string <code class="text-green-400">""</code>, aur <code class="text-green-400">null</code> boolean conversion par <code class="text-green-400">false</code> bante hain. Baki saari non-zero values <code class="text-green-400">true</code> me convert hoti hain.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$a</span> = <span class="text-white">0</span>;
+  <span class="text-green-400">$b</span> = <span class="text-white">"Hello"</span>;
+
+  <span class="text-green-400">var_dump</span>((<span class="text-green-400">bool</span>)<span class="text-green-400">$a</span>); <span class="text-[#94a3b8]">// Output: bool(false)</span>
+  <span class="text-green-400">var_dump</span>((<span class="text-green-400">bool</span>)<span class="text-green-400">$b</span>); <span class="text-[#94a3b8]">// Output: bool(true)</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Reference Table -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-list-check text-green-400"></i> PHP Casting Operators Reference
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Cast Operator</th>
+                    <th class="py-3 px-4">Target Type</th>
+                    <th class="py-3 px-4">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">(int), (integer)</td>
+                    <td class="py-3 px-4">Integer</td>
+                    <td class="py-3 px-4">Value ko Integer me cast karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">(float), (double)</td>
+                    <td class="py-3 px-4">Float</td>
+                    <td class="py-3 px-4">Value ko Floating-point number me convert karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">(string)</td>
+                    <td class="py-3 px-4">String</td>
+                    <td class="py-3 px-4">Value ko String text format me badalta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">(bool), (boolean)</td>
+                    <td class="py-3 px-4">Boolean</td>
+                    <td class="py-3 px-4">Value ko true ya false (Boolean) me convert karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">(array)</td>
+                    <td class="py-3 px-4">Array</td>
+                    <td class="py-3 px-4">Variable ko Indexed Array me convert karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">(object)</td>
+                    <td class="py-3 px-4">Object</td>
+                    <td class="py-3 px-4">Variable ko stdClass Object me badalta hai.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Highlight Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-green-400/30">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-green-400">
+              <span>💡</span> Important Tip: Array & Object Casting
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              Jab aap kisi simple variable ko <code class="text-green-400">(array)</code> cast karte hain, toh PHP us value ko array ke index 0 par place kar deta hai:
+            </p>
+            <div class="mt-4 bg-[#1e293b] p-4 rounded-xl font-mono text-sm text-green-400 border border-[#334155]">
+              $a = "PHP";<br />
+              $arr = (array)$a; // Result: array(0 => "PHP")
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../numbers/Numbers.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../maths/Maths.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(10);
+    </script>
+  </body>
+</html>

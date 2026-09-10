@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Output - Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          JavaScript Output
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../whereto/WhereTo.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮  Previous 
+          </a>
+
+          <a
+            href="../syntax/Syntax.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            JavaScript Output Display Techniques
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            JavaScript me Data Display ya Output show karne ke mukhya tarike hote hain.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Aap web page elements, alert dialog box, browser console ya direct document output ka use karke result ko user tak pahuncha sakte hain.
+          </p>
+        </div>
+
+        <!-- Output Methods Grid -->
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-blue-950/40 border border-blue-500/50 rounded-2xl p-5">
+            <h4 class="text-lg font-bold text-blue-400 mb-2">
+              <i class="fa-solid fa-code mr-2"></i> innerHTML
+            </h4>
+            <p class="text-gray-300 text-sm">
+              HTML element ke andar dynamic text/content insert karne ke liye.
+            </p>
+          </div>
+
+          <div class="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-5">
+            <h4 class="text-lg font-bold text-emerald-400 mb-2">
+              <i class="fa-solid fa-file-pen mr-2"></i> document.write()
+            </h4>
+            <p class="text-gray-300 text-sm">
+              Direct HTML output stream me data print karne ke liye.
+            </p>
+          </div>
+
+          <div class="bg-blue-950/40 border border-blue-500/50 rounded-2xl p-5">
+            <h4 class="text-lg font-bold text-blue-400 mb-2">
+              <i class="fa-solid fa-bell mr-2"></i> window.alert()
+            </h4>
+            <p class="text-gray-300 text-sm">
+              Browser alert box show karke output pop-up dikhane ke liye.
+            </p>
+          </div>
+
+          <div class="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-5">
+            <h4 class="text-lg font-bold text-emerald-400 mb-2">
+              <i class="fa-solid fa-terminal mr-2"></i> console.log()
+            </h4>
+            <p class="text-gray-300 text-sm">
+              Debugging & testing ke liye browser console par write karne ke liye.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Method 1: innerHTML -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Using innerHTML
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              HTML element ka content badalane ke liye <code>document.getElementById(id)</code> ka upayog karke <code>innerHTML</code> property ko assign kiya jata hai.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+  <span class="text-green-400">&lt;h2&gt;</span>My First Web Page<span class="text-green-400">&lt;/h2&gt;</span>
+  <span class="text-green-400">&lt;p</span> <span class="text-blue-400">id</span>=<span class="text-emerald-400">"demo"</span><span class="text-green-400">&gt;&lt;/p&gt;</span>
+
+  <span class="text-green-400">&lt;script&gt;</span>
+    document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">"demo"</span>).innerHTML = <span class="text-emerald-400">5 + 6</span>;
+  <span class="text-green-400">&lt;/script&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Method 2: document.write() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Using document.write()
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Testing purpose ke liye <code>document.write()</code> ka use hota hai. 
+              <span class="text-amber-400 font-semibold">Note:</span> HTML document load hone ke BAAD ise run karne se saara purana HTML overwrite/delete ho jata hai.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+  <span class="text-green-400">&lt;h2&gt;</span>Document Write Example<span class="text-green-400">&lt;/h2&gt;</span>
+
+  <span class="text-green-400">&lt;script&gt;</span>
+    document.<span class="text-blue-400">write</span>(<span class="text-emerald-400">5 + 6</span>);
+  <span class="text-green-400">&lt;/script&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Method 3: window.alert() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Using window.alert()
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Aap alert box ka use karke output popup show kar sakte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+  <span class="text-green-400">&lt;script&gt;</span>
+    window.<span class="text-blue-400">alert</span>(<span class="text-emerald-400">5 + 6</span>);
+    <span class="text-gray-500">// Aap sirf alert(5 + 6); bhi likh sakte hain</span>
+  <span class="text-green-400">&lt;/script&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Method 4: console.log() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4. Using console.log()
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Debugging ke liye, aap browser me **F12** daba kar Console tab me values output dekhne ke liye <code>console.log()</code> method ka use kar sakte hain.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+  <span class="text-green-400">&lt;script&gt;</span>
+    console.<span class="text-blue-400">log</span>(<span class="text-emerald-400">5 + 6</span>);
+  <span class="text-green-400">&lt;/script&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../whereto/WhereTo.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮  Previous
+          </a>
+
+          <a
+            href="../syntax/Syntax.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(3);
+    </script>
+  </body>
+</html>

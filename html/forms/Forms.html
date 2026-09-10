@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Forms Tutorial - HTML Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <h1 class="text-[48px] sm:text-[60px] md:text-[60px] font-extrabold text-white mb-6 mt-0 tracking-tight flex items-center gap-4">
+          HTML Forms
+        </h1>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="../responsive/Responsive.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="./Attributes.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+
+        <!-- Banner / Hero Card -->
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white flex items-center gap-3">
+       
+            HTML Form Basics
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-white leading-relaxed mb-5">
+            <span class="text-amber-300 font-semibold">HTML Form</span> ka use user input collect karne ke liye kiya jata hai. Yeh user input aamtaur par processing ke liye server par bheja jata hai.
+          </p>
+        </div>
+
+        <!-- HTML Forms Sections -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          
+          <!-- 1. The <form> Element -->
+          <div class="mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center gap-3">
+               1. The <span class="text-amber-300">&lt;form&gt;</span> Element
+            </h3>
+            <p class="text-white text-base md:text-lg mb-4 leading-relaxed">
+              HTML <code class="text-amber-300">&lt;form&gt;</code> element ka use user input ke liye HTML form create karne mein hota hai:
+            </p>
+            <div class="rounded-xl border border-slate-700 bg-[#020617] p-6 font-mono text-sm mb-4">
+              <pre class="text-white"><code class="text-amber-300">&lt;form&gt;</code>
+form elements
+<code class="text-amber-300">&lt;/form&gt;</code></pre>
+            </div>
+            <p class="text-white text-base md:text-lg mb-4 leading-relaxed">
+              <code class="text-amber-300">&lt;form&gt;</code> element alag-alag tarah ke input elements ke liye ek container hota hai, jaise: text fields, checkboxes, radio buttons, submit buttons, aadi.
+            </p>
+          </div>
+
+          <!-- 2. The <input> Element -->
+          <div class="mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center gap-3">
+               2. The <span class="text-amber-300">&lt;input&gt;</span> Element
+            </h3>
+            <p class="text-white text-base md:text-lg mb-4 leading-relaxed">
+              HTML <code class="text-amber-300">&lt;input&gt;</code> element sabse zyada istemaal hone wala form element hai. Ek <code class="text-amber-300">&lt;input&gt;</code> element ko <code class="text-amber-300">type</code> attribute ke aadhar par kai tarikon se display kiya ja sakta hai.
+            </p>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-700 mt-6">
+              <table class="w-full border-collapse text-left">
+                <thead>
+                  <tr class="border-b border-slate-700 bg-slate-900 text-amber-300 font-mono">
+                    <th class="p-4">Type</th>
+                    <th class="p-4 text-white">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="font-mono divide-y divide-slate-800 text-sm md:text-base">
+                  <tr>
+                    <td class="p-4 text-amber-300">&lt;input type="text"&gt;</td>
+                    <td class="p-4 font-sans text-white">Ek single-line text input field display karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-amber-300">&lt;input type="radio"&gt;</td>
+                    <td class="p-4 font-sans text-white">Ek radio button display karta hai (kai choices mein se ek select karne ke liye)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-amber-300">&lt;input type="checkbox"&gt;</td>
+                    <td class="p-4 font-sans text-white">Ek checkbox display karta hai (kai choices mein se zero ya zyada select karne ke liye)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-amber-300">&lt;input type="submit"&gt;</td>
+                    <td class="p-4 font-sans text-white">Ek submit button display karta hai (form submit karne ke liye)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-amber-300">&lt;input type="button"&gt;</td>
+                    <td class="p-4 font-sans text-white">Ek clickable button display karta hai</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 3. Text Fields & The <label> Element -->
+          <div class="mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center gap-3">
+               3. Text Fields &amp; The <span class="text-amber-300">&lt;label&gt;</span> Element
+            </h3>
+            <p class="text-white text-base md:text-lg mb-4 leading-relaxed">
+              <code class="text-amber-300">&lt;input type="text"&gt;</code> text input ke liye ek single-line input field define karta hai. Note karein ki form khud visible nahi hota. Saath hi dhyan dein ki ek input field ki default width 20 characters hoti hai.
+            </p>
+            <p class="text-white text-base md:text-lg mb-4 leading-relaxed">
+              <code class="text-amber-300">&lt;label&gt;</code> tag kai form elements ke liye ek label define karta hai. Yeh screen-reader users ke liye useful hai, aur un users ki bhi madad karta hai jinhe bahut chote regions par click karne mein dikkat hoti hai. <code class="text-amber-300">&lt;label&gt;</code> tag ka <code class="text-amber-300">for</code> attribute aur <code class="text-amber-300">&lt;input&gt;</code> element ka <code class="text-amber-300">id</code> attribute barabar hona chahiye taaki unhe ek saath bind kiya ja sake.
+            </p>
+            
+            <div class="rounded-xl border border-slate-700 bg-[#020617] p-6 font-mono text-sm">
+              <pre class="overflow-x-auto text-amber-300"><code>&lt;form&gt;
+  <span class="text-white">&lt;label for="fname"&gt;First name:&lt;/label&gt;&lt;br&gt;</span>
+  &lt;input type="text" id="fname" name="fname"&gt;&lt;br&gt;
+  <span class="text-white">&lt;label for="lname"&gt;Last name:&lt;/label&gt;&lt;br&gt;</span>
+  &lt;input type="text" id="lname" name="lname"&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- 4. Radio Buttons -->
+          <div class="mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center gap-3">
+               4. Radio <span class="text-amber-300">Buttons</span>
+            </h3>
+            <p class="text-white text-base md:text-lg mb-4 leading-relaxed">
+              <code class="text-amber-300">&lt;input type="radio"&gt;</code> ek radio button define karta hai. Radio buttons user ko limited choices mein se sirf <strong class="text-amber-300">EK</strong> select karne dete hain.
+            </p>
+            
+            <div class="rounded-xl border border-slate-700 bg-[#020617] p-6 font-mono text-sm">
+              <pre class="overflow-x-auto text-amber-300"><code>&lt;p&gt;Choose your favorite Web language:&lt;/p&gt;
+
+&lt;form&gt;
+  <span class="text-white">&lt;input type="radio" id="html" name="fav_language" value="HTML"&gt;</span>
+  &lt;label for="html"&gt;HTML&lt;/label&gt;&lt;br&gt;
+  <span class="text-white">&lt;input type="radio" id="css" name="fav_language" value="CSS"&gt;</span>
+  &lt;label for="css"&gt;CSS&lt;/label&gt;&lt;br&gt;
+  <span class="text-white">&lt;input type="radio" id="javascript" name="fav_language" value="JavaScript"&gt;</span>
+  &lt;label for="javascript"&gt;JavaScript&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- 5. Checkboxes -->
+          <div class="mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center gap-3">
+               5. <span class="text-amber-300">Checkboxes</span>
+            </h3>
+            <p class="text-white text-base md:text-lg mb-4 leading-relaxed">
+              <code class="text-amber-300">&lt;input type="checkbox"&gt;</code> ek checkbox define karta hai. Checkboxes user ko limited choices mein se <strong class="text-amber-300">ZERO ya MORE (zyada)</strong> options select karne dete hain.
+            </p>
+            
+            <div class="rounded-xl border border-slate-700 bg-[#020617] p-6 font-mono text-sm">
+              <pre class="overflow-x-auto text-amber-300"><code>&lt;form&gt;
+  <span class="text-white">&lt;input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"&gt;</span>
+  &lt;label for="vehicle1"&gt; I have a bike&lt;/label&gt;&lt;br&gt;
+  <span class="text-white">&lt;input type="checkbox" id="vehicle2" name="vehicle2" value="Car"&gt;</span>
+  &lt;label for="vehicle2"&gt; I have a car&lt;/label&gt;&lt;br&gt;
+  <span class="text-white">&lt;input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"&gt;</span>
+  &lt;label for="vehicle3"&gt; I have a boat&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- 6. The Submit Button -->
+          <div class="mb-6">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center gap-3">
+               6. The <span class="text-amber-300">Submit Button</span>
+            </h3>
+            <p class="text-white text-base md:text-lg mb-4 leading-relaxed">
+              <code class="text-amber-300">&lt;input type="submit"&gt;</code> form data ko form-handler par submit karne ke liye ek button define karta hai. Form-handler aamtaur par server par ek file hoti hai jisme input data ko process karne ke liye ek script hoti hai. Form-handler form ke <code class="text-amber-300">action</code> attribute mein specify kiya jata hai.
+            </p>
+            
+            <div class="rounded-xl border border-slate-700 bg-[#020617] p-6 font-mono text-sm">
+              <pre class="overflow-x-auto text-amber-300"><code>&lt;form action="/action_page.php"&gt;
+  <span class="text-white">&lt;label for="fname"&gt;First name:&lt;/label&gt;&lt;br&gt;</span>
+  &lt;input type="text" id="fname" name="fname" value="John"&gt;&lt;br&gt;
+  <span class="text-white">&lt;label for="lname"&gt;Last name:&lt;/label&gt;&lt;br&gt;</span>
+  &lt;input type="text" id="lname" name="lname" value="Doe"&gt;&lt;br&gt;&lt;br&gt;
+  <span class="text-white">&lt;input type="submit" value="Submit"&gt;</span>
+&lt;/form&gt;</code></pre>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Navigation Buttons Bottom -->
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="../responsive/Responsive.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="./Attributes.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(30);
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

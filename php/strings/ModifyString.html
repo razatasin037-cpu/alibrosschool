@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Modify Strings - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navigation Bar -->
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <!-- PHP Modify Strings Content Section -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Modify Strings
+        </h1>
+
+        <!-- Top Navigation Buttons -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="StringFunctions.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="EscapeCharacters.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Intro Section -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Modify Strings Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me strings me badlav (modify) karne ke liye alag-alag built-in functions hote hain. 
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Aap string ko Uppercase/Lowercase me badal sakte hain, extra spaces hata sakte hain, characters ko replace kar sakte hain ya string ko slice kar sakte hain.
+          </p>
+        </div>
+
+        <!-- MAIN DETAILS SECTION -->
+        <section class="mt-12 space-y-8">
+
+          <!-- Upper Case & Lower Case -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              Upper and Lower Case
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              String letters ko UPPERCASE ya lowercase me convert karne ke liye <code class="text-green-400">strtoupper()</code> aur <code class="text-green-400">strtolower()</code> ka upyog hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$x</span> = <span class="text-white">"Hello World!"</span>;
+
+  <span class="text-[#94a3b8]">// Convert to Uppercase</span>
+  <span class="text-green-400">echo</span> <span class="text-white">strtoupper</span>(<span class="text-green-400">$x</span>); <span class="text-[#94a3b8]">// Output: HELLO WORLD!</span>
+
+  <span class="text-[#94a3b8]">// Convert to Lowercase</span>
+  <span class="text-green-400">echo</span> <span class="text-white">strtolower</span>(<span class="text-green-400">$x</span>); <span class="text-[#94a3b8]">// Output: hello world!</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Replace String -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+     Replace String (str_replace)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              String ke kisi specific word ya character ko dusre word se badalne ke liye <code class="text-green-400">str_replace()</code> ka use karte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$x</span> = <span class="text-white">"Hello World!"</span>;
+
+  <span class="text-[#94a3b8]">// Replace "World" with "Dolly"</span>
+  <span class="text-green-400">echo</span> <span class="text-white">str_replace</span>(<span class="text-white">"World"</span>, <span class="text-white">"Dolly"</span>, <span class="text-green-400">$x</span>); <span class="text-[#94a3b8]">// Output: Hello Dolly!</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Reverse String -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+           Reverse String (strrev)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Poori string ko ulta (reverse) karne ke liye <code class="text-green-400">strrev()</code> function use kiya jata hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$x</span> = <span class="text-white">"Hello World!"</span>;
+
+  <span class="text-[#94a3b8]">// Reverse the string</span>
+  <span class="text-green-400">echo</span> <span class="text-white">strrev</span>(<span class="text-green-400">$x</span>); <span class="text-[#94a3b8]">// Output: !dlroW olleH</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Remove Whitespace -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+            Remove Whitespace (trim)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Whitespace string ke start aur end wale space ko kehte hain. <code class="text-green-400">trim()</code> extra space ko hata deta hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$x</span> = <span class="text-white">" Hello World! "</span>;
+
+  <span class="text-[#94a3b8]">// Removes spaces from beginning and end</span>
+  <span class="text-green-400">echo</span> <span class="text-white">trim</span>(<span class="text-green-400">$x</span>); <span class="text-[#94a3b8]">// Output: "Hello World!"</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Convert String into Array -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+             Convert String into Array (explode)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">explode()</code> function string ko specific separator (jaise space ya comma) ke basis par tod kar **Array** me convert kar deta hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$x</span> = <span class="text-white">"Hello World!"</span>;
+
+  <span class="text-[#94a3b8]">// Split string into array by space</span>
+  <span class="text-green-400">$y</span> = <span class="text-white">explode</span>(<span class="text-white">" "</span>, <span class="text-green-400">$x</span>);
+
+  <span class="text-[#94a3b8]">// Display Array</span>
+  <span class="text-white">print_r</span>(<span class="text-green-400">$y</span>);
+  <span class="text-[#94a3b8]">/* Output:
+  Array ( 
+    [0] => Hello 
+    [1] => World! 
+  ) */</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Functions Summary Table -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-table text-green-400"></i> Quick Reference Table
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Function</th>
+                    <th class="py-3 px-4">Kaya karta hai?</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">strtoupper()</td>
+                    <td class="py-3 px-4">String ko Uppercase me convert karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">strtolower()</td>
+                    <td class="py-3 px-4">String ko Lowercase me convert karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">str_replace()</td>
+                    <td class="py-3 px-4">String me kisi text ko doosre text se badalta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">strrev()</td>
+                    <td class="py-3 px-4">Poori string ko reverse (ulta) kar deta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">trim()</td>
+                    <td class="py-3 px-4">Start aur End ke extra space ko remove karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">explode()</td>
+                    <td class="py-3 px-4">String ko array me divide kar deta hai.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Note Block -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-green-400/30">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-green-400">
+              <span>💡</span> Important Note
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              PHP me string modify karne wale functions original variable ko change **nahi** karte. Woh bas ek modified new string return karte hain. Agar original variable ki value change karni ho, toh us variable me nayi value assign karni padegi (jaise: <code class="text-green-400">$x = strtoupper($x);</code>).
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation Buttons -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="StringFunctions.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="EscapeCharacters.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Script -->
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(8);
+    </script>
+  </body>
+</html>

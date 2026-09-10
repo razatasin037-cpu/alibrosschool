@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Background Images - Complete Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <!-- Page Main Heading -->
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Background Images
+        </h1>
+
+        <!-- Top Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./ImageMap.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./PictureElement.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Banner / Introductory Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Background Images Guide
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML elements (jaise <code class="text-yellow-400">&lt;div&gt;</code> ya <code class="text-yellow-400">&lt;body&gt;</code>) ke background me image set karne ke liye CSS <code class="text-yellow-400">background-image</code> property ka use kiya jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Is guide me hum background images ko repeat na hone dena, screen par fit karna aur parallax effect lagana sikhenge.
+          </p>
+        </div>
+
+        <!-- SECTION 1: Basic Syntax -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            1. Basic Background Image Syntax
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            CSS me <code class="text-yellow-400">background-image: url('image_name.jpg');</code> attribute ka use karke background image apply ki jati hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;!-- Inline CSS Example --&gt;
+&lt;div style="<span class="text-yellow-400">background-image: url('bg.jpg');</span>"&gt;
+  &lt;h2&gt;Hello World&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;!-- Internal CSS Example --&gt;
+&lt;style&gt;
+  body {
+    <span class="text-yellow-400">background-image: url('bg.jpg');</span>
+  }
+&lt;/style&gt;</code></pre>
+            </div>
+            <!-- Live Visual Demo -->
+            <div 
+              class="p-6 rounded-xl border border-gray-300 flex flex-col justify-center items-center text-center h-48 bg-cover bg-center"
+              style="background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=600&auto=format&fit=crop');"
+            >
+              <div class="bg-black/60 p-4 rounded-xl backdrop-blur-sm">
+                <p class="text-white font-bold text-lg">Background Image Preview</p>
+                <p class="text-gray-300 text-xs mt-1">Yeh text image ke upar visible hai</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Background Repeat & Size Controls -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            2. Background Repeat & Size Control
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            By default, background image repeat hoti hai. Usse control karne ke liye ye CSS properties use hoti hain:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- No Repeat -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155]">
+              <div class="inline-block px-3 py-1 bg-blue-600/30 text-blue-400 font-bold text-xs rounded mb-3">
+                background-repeat
+              </div>
+              <h4 class="text-white font-semibold text-lg mb-2">no-repeat</h4>
+              <p class="text-gray-400 text-xs mb-3">Image ko multiple times tile/repeat hone se rokta hai.</p>
+              <code class="text-xs text-yellow-400 block bg-[#0f172a] p-2 rounded font-mono">background-repeat: no-repeat;</code>
+            </div>
+
+            <!-- Cover Size -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155]">
+              <div class="inline-block px-3 py-1 bg-green-600/30 text-green-400 font-bold text-xs rounded mb-3">
+                background-size
+              </div>
+              <h4 class="text-white font-semibold text-lg mb-2">cover</h4>
+              <p class="text-gray-400 text-xs mb-3">Image ko poore container me stretch karke fit kar deta hai.</p>
+              <code class="text-xs text-yellow-400 block bg-[#0f172a] p-2 rounded font-mono">background-size: cover;</code>
+            </div>
+
+            <!-- Contain Size -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155]">
+              <div class="inline-block px-3 py-1 bg-purple-600/30 text-purple-400 font-bold text-xs rounded mb-3">
+                background-size
+              </div>
+              <h4 class="text-white font-semibold text-lg mb-2">contain</h4>
+              <p class="text-gray-400 text-xs mb-3">Image ka full view bina crop kiye fit karta hai.</p>
+              <code class="text-xs text-yellow-400 block bg-[#0f172a] p-2 rounded font-mono">background-size: contain;</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: CSS Properties Reference Table -->
+        <div id="table-section" class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            3. Background Image CSS Properties Table
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#334155] text-gray-400 text-sm">
+                <th class="py-3 px-4">Property</th>
+                <th class="py-3 px-4">Common Values</th>
+                <th class="py-3 px-4">Description</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-200 divide-y divide-[#334155]/50">
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">background-image</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">url('path/image.jpg')</td>
+                <td class="py-3 px-4">Element par background image set karta hai.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">background-repeat</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">repeat | no-repeat | repeat-x | repeat-y</td>
+                <td class="py-3 px-4">Define karta hai ki image repeat hogi ya nahi.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">background-size</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">auto | cover | contain | 100% 100%</td>
+                <td class="py-3 px-4">Image ke display size ko control karta hai.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">background-position</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">center | top right | 50% 50%</td>
+                <td class="py-3 px-4">Image ki starting alignment set karta hai.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">background-attachment</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">scroll | fixed</td>
+                <td class="py-3 px-4">Fixed value se image scroll karne par bhi ek jagah lock rehti hai (Parallax Effect).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Bottom Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./ImageMap.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./PictureElement.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(14);
+    </script>
+  </body>
+</html>

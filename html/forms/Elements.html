@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>HTML Form Elements Tutorial</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[42px] sm:text-[52px] md:text-[60px] font-extrabold text-white mb-6 tracking-tight"
+      >
+        HTML Form Elements
+      </h1>
+
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between items-center mt-10 mb-10">
+
+        <!-- Previous -->
+        <a
+          href="./Attributes.html"
+          class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition flex items-center gap-2"
+        >
+          <i data-lucide="chevron-left" class="w-6 h-6"></i>
+          Previous
+        </a>
+
+        <!-- Next -->
+        <a
+          href="./InputTypes.html"
+          class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-[#2445d8] transition flex items-center gap-2"
+        >
+          Next
+          <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </a>
+
+      </div>
+
+
+      <!-- Introduction -->
+      <div
+        class="mt-8 bg-[#111827] p-8 md:p-12 rounded-3xl border border-gray-700"
+      >
+
+        <h2
+          class="text-[30px] md:text-[44px] font-bold mb-5 text-white flex items-center gap-3"
+        >
+
+          Form Elements Basics
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-gray-300 leading-relaxed">
+          HTML forms ke andar alag-alag tarah ke interactive controls hote hain jaise input fields, drop-down lists, textareas, aur buttons. Inhe <code class="text-blue-400">Form Elements</code> kaha jata hai.
+        </p>
+
+      </div>
+
+
+      <!-- Main Content -->
+      <div
+        class="mt-10 bg-[#111827] rounded-3xl p-7 md:p-10 border border-gray-700"
+      >
+
+
+        <!-- 1. The <input> Element -->
+        <div class="mb-12">
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            1. The &lt;input&gt; Element
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            Yeh sabse zyada use hone wala form element hai. <code class="text-blue-400">type</code> attribute ke basis par iska behavior change hota hai (e.g., text, password, checkbox, radio).
+          </p>
+
+          <!-- Code -->
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"username"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Username:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"text"</span> <span>id</span>=<span class="text-yellow-300">"username"</span> <span>name</span>=<span class="text-yellow-300">"username"</span><span class="text-blue-400">&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+
+        <!-- 2. The <label> Element -->
+        <div class="mb-12">
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            2. The &lt;label&gt; Element
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            <code class="text-blue-400">&lt;label&gt;</code> element form controls ko text caption deta hai. Isse screen readers aur mobile accessibility improve hoti hai.
+          </p>
+
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"email"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Email Address:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"email"</span> <span>id</span>=<span class="text-yellow-300">"email"</span> <span>name</span>=<span class="text-yellow-300">"email"</span><span class="text-blue-400">&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+
+        <!-- 3. The <select> and <option> Elements -->
+        <div class="mb-12">
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            3. The &lt;select&gt; and &lt;option&gt; Elements
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            <code class="text-blue-400">&lt;select&gt;</code> element ek drop-down list banata hai, aur <code class="text-blue-400">&lt;option&gt;</code> tags list ke items define karte hain.
+          </p>
+
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"cars"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Choose a car:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;select</span> <span>id</span>=<span class="text-yellow-300">"cars"</span> <span>name</span>=<span class="text-yellow-300">"cars"</span><span class="text-blue-400">&gt;</span>
+  <span class="text-blue-400">&lt;option</span> <span>value</span>=<span class="text-yellow-300">"volvo"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Volvo</span><span class="text-blue-400">&lt;/option&gt;</span>
+  <span class="text-blue-400">&lt;option</span> <span>value</span>=<span class="text-yellow-300">"bmw"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">BMW</span><span class="text-blue-400">&lt;/option&gt;</span>
+  <span class="text-blue-400">&lt;option</span> <span>value</span>=<span class="text-yellow-300">"audi"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Audi</span><span class="text-blue-400">&lt;/option&gt;</span>
+<span class="text-blue-400">&lt;/select&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+
+        <!-- 4. The <textarea> Element -->
+        <div class="mb-12">
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            4. The &lt;textarea&gt; Element
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            Multi-line text input (jaise feedback, address ya message) lene ke liye <code class="text-blue-400">&lt;textarea&gt;</code> use kiya jata hai.
+          </p>
+
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"message"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">Message:</span><span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;textarea</span> <span>id</span>=<span class="text-yellow-300">"message"</span> <span>name</span>=<span class="text-yellow-300">"message"</span> <span>rows</span>=<span class="text-yellow-300">"4"</span> <span>cols</span>=<span class="text-yellow-300">"50"</span><span class="text-blue-400">&gt;</span>
+<span class="text-gray-200">Type your message here...</span>
+<span class="text-blue-400">&lt;/textarea&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+
+        <!-- 5. The <button> Element -->
+        <div class="mb-12">
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            5. The &lt;button&gt; Element
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            <code class="text-blue-400">&lt;button&gt;</code> element clickable button define karta hai. Isme aap text, images ya icons add kar sakte hain.
+          </p>
+
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-blue-400">&lt;button</span> <span>type</span>=<span class="text-yellow-300">"button"</span> <span>onclick</span>=<span class="text-yellow-300">"alert('Hello World!')"</span><span class="text-blue-400">&gt;</span>
+  <span class="text-gray-200">Click Me!</span>
+<span class="text-blue-400">&lt;/button&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+
+        <!-- 6. Fieldset and Legend -->
+        <div>
+
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            6. The &lt;fieldset&gt; and &lt;legend&gt; Elements
+          </h3>
+
+          <p class="text-gray-300 text-base md:text-lg mb-5 leading-relaxed">
+            <code class="text-blue-400">&lt;fieldset&gt;</code> related elements ko ek group me box kar deta hai, aur <code class="text-blue-400">&lt;legend&gt;</code> us box ka title/caption define karta hai.
+          </p>
+
+          <div class="rounded-xl border border-gray-700 bg-[#020617] p-6">
+<pre class="overflow-x-auto text-sm md:text-base"><code><span class="text-blue-400">&lt;fieldset&gt;</span>
+  <span class="text-blue-400">&lt;legend&gt;</span><span class="text-gray-200">Personal Info:</span><span class="text-blue-400">&lt;/legend&gt;</span>
+
+  <span class="text-blue-400">&lt;label</span> <span>for</span>=<span class="text-yellow-300">"fname"</span><span class="text-blue-400">&gt;</span><span class="text-gray-200">First name:</span><span class="text-blue-400">&lt;/label&gt;</span>
+  <span class="text-blue-400">&lt;input</span> <span>type</span>=<span class="text-yellow-300">"text"</span> <span>id</span>=<span class="text-yellow-300">"fname"</span> <span>name</span>=<span class="text-yellow-300">"fname"</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;/fieldset&gt;</span></code></pre>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between items-center mt-12 mb-10">
+
+        <!-- Previous -->
+        <a
+          href="./Attributes.html"
+          class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition flex items-center gap-2"
+        >
+          <i data-lucide="chevron-left" class="w-6 h-6"></i>
+          Previous
+        </a>
+
+        <!-- Next -->
+        <a
+          href="./InputTypes.html"
+          class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-[#2445d8] transition flex items-center gap-2"
+        >
+          Next
+          <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(31);
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Arithmetic Operators - Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          JavaScript Arithmetic
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Operators.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="/javascript/Operators/Assignment.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Arithmetic Operators Kya Hain?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            Arithmetic Operators ka upayog numbers (literals ya variables) par ganitiya (mathematical) calculations karne ke liye kiya jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Inme basic addition, subtraction se lekar exponentiation (power) aur modulus (remainder) jaise advanced operations shamil hain.
+          </p>
+        </div>
+
+        <!-- Operators Table Section -->
+        <section class="mt-12 space-y-8">
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+              List of Arithmetic Operators
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-[#334155] text-emerald-400">
+                    <th class="p-4 text-lg">Operator</th>
+                    <th class="p-4 text-lg">Name</th>
+                    <th class="p-4 text-lg">Description</th>
+                    <th class="p-4 text-lg">Example</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300 text-sm md:text-base">
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-blue-400 text-lg">+</td>
+                    <td class="p-4 font-semibold text-white">Addition</td>
+                    <td class="p-4">Do numbers ko jodta hai</td>
+                    <td class="p-4 font-mono text-emerald-400">10 + 5 = 15</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-blue-400 text-lg">-</td>
+                    <td class="p-4 font-semibold text-white">Subtraction</td>
+                    <td class="p-4">Ek number se doosra ghatata hai</td>
+                    <td class="p-4 font-mono text-emerald-400">10 - 5 = 5</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-blue-400 text-lg">*</td>
+                    <td class="p-4 font-semibold text-white">Multiplication</td>
+                    <td class="p-4">Numbers ko guna karta hai</td>
+                    <td class="p-4 font-mono text-emerald-400">10 * 5 = 50</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-blue-400 text-lg">**</td>
+                    <td class="p-4 font-semibold text-white">Exponentiation</td>
+                    <td class="p-4">Power calculate karta hai (ES6)</td>
+                    <td class="p-4 font-mono text-emerald-400">10 ** 2 = 100</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-blue-400 text-lg">/</td>
+                    <td class="p-4 font-semibold text-white">Division</td>
+                    <td class="p-4">Numbers ko bhaag deta hai</td>
+                    <td class="p-4 font-mono text-emerald-400">10 / 5 = 2</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-blue-400 text-lg">%</td>
+                    <td class="p-4 font-semibold text-white">Modulus</td>
+                    <td class="p-4">Division ka remainder (shesh) deta hai</td>
+                    <td class="p-4 font-mono text-emerald-400">10 % 3 = 1</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-blue-400 text-lg">++</td>
+                    <td class="p-4 font-semibold text-white">Increment</td>
+                    <td class="p-4">Value me 1 jodta hai</td>
+                    <td class="p-4 font-mono text-emerald-400">x++ (x = x + 1)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-blue-400 text-lg">--</td>
+                    <td class="p-4 font-semibold text-white">Decrement</td>
+                    <td class="p-4">Value se 1 ghatata hai</td>
+                    <td class="p-4 font-mono text-emerald-400">x-- (x = x - 1)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Code Example Section -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Arithmetic Code Example
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Niche diye gaye example me dekhiye ki JavaScript me arithmetic operations kaise execute hote hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> a = <span class="text-emerald-400">100</span>;
+<span class="text-blue-400">let</span> b = <span class="text-emerald-400">50</span>;
+
+<span class="text-blue-400">let</span> add = a + b;        <span class="text-gray-500">// Output: 150</span>
+<span class="text-blue-400">let</span> sub = a - b;        <span class="text-gray-500">// Output: 50</span>
+<span class="text-blue-400">let</span> mult = a * b;       <span class="text-gray-500">// Output: 5000</span>
+<span class="text-blue-400">let</span> div = a / b;        <span class="text-gray-500">// Output: 2</span>
+<span class="text-blue-400">let</span> mod = a % <span class="text-emerald-400">30</span>;       <span class="text-gray-500">// Output: 10</span>
+
+<span class="text-blue-400">let</span> x = <span class="text-emerald-400">5</span>;
+x++;                    <span class="text-gray-500">// x ab 6 ho gaya</span>
+<span class="text-blue-400">let</span> z = x ** <span class="text-emerald-400">2</span>;         <span class="text-gray-500">// Output: 36 (6 * 6)</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Operator Precedence Box -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Operator Precedence (Niyam)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Jab ek se zyada operators ek sath hote hain, to **BODMAS** rule ke mutabiq Multiplication (<code>*</code>) aur Division (<code>/</code>) ko Addition (<code>+</code>) aur Subtraction (<code>-</code>) se pehle calculate kiya jata hai.
+            </p>
+            <div class="bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> res1 = <span class="text-emerald-400">100</span> + <span class="text-emerald-400">50</span> * <span class="text-emerald-400">3</span>;     <span class="text-gray-500">// Output: 250 (Pehle 50 * 3 = 150, fir + 100)</span>
+<span class="text-blue-400">let</span> res2 = (<span class="text-emerald-400">100</span> + <span class="text-emerald-400">50</span>) * <span class="text-emerald-400">3</span>;   <span class="text-gray-500">// Output: 450 (Pehle Parentheses calculation)</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Operators.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="/javascript/Operators/Assignment.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Indexing for "JS Arithmetic" (Category Index 1, Submenu Item 1)
+      document.getElementById("sidebar").innerHTML = createSidebar(5);
+    </script>
+  </body>
+</html>

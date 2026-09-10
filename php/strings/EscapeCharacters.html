@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Escape Characters - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Escape Characters
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="ModifyString.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../numbers/Numbers.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Escape Characters Kya Hote Hain?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            Jab aapko string ke andar aise special characters insert karne hote hain jo PHP syntax se clash karte hain (jaise double quotes ke andar double quotes), tab **Escape Characters** ka upyog kiya jata hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            PHP me kisi character ko escape karne ke liye backslash (<code class="text-green-400">\</code>) Symbol ka use hota hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+           Escaping Quotes
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Agar aap double quotes string ke andar ek aur double quote likhenge bina escape kiye, toh PHP error de dega. Isko prevent karne ke liye <code class="text-green-400">\"</code> use karein:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Correct Syntax with Escape Backslash</span>
+  <span class="text-green-400">$x</span> = <span class="text-white">"We are the \"Vikings\" from the north."</span>;
+  <span class="text-green-400">echo</span> <span class="text-green-400">$x</span>; <span class="text-[#94a3b8]">// Output: We are the "Vikings" from the north.</span>
+
+  <span class="text-[#94a3b8]">// Escaping Single Quote in Single-Quoted String</span>
+  <span class="text-green-400">$y</span> = <span class="text-white">'It\'s a beautiful day!'</span>;
+  <span class="text-green-400">echo</span> <span class="text-green-400">$y</span>; <span class="text-[#94a3b8]">// Output: It's a beautiful day!</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              Control Characters (\n, \t, \$)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Double-quoted strings me escape sequences ka upyog Nayi Line (`\n`), Tab space (`\t`), ya Dollar symbol (`\$`) ko literals ki tarah dikhane ke liye hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// 1. Prevent Variable Parsing (\$)</span>
+  <span class="text-green-400">$price</span> = 100;
+  <span class="text-green-400">echo</span> <span class="text-white">"The product cost is \$price."</span>; <span class="text-[#94a3b8]">// Output: The product cost is $price.</span>
+
+  <span class="text-[#94a3b8]">// 2. New line (\n) & Tab (\t) - visible in source code / terminal</span>
+  <span class="text-green-400">$text</span> = <span class="text-white">"Hello\tWorld!\nWelcome to PHP."</span>;
+  <span class="text-green-400">echo</span> <span class="text-[#94a3b8]">nl2br</span>(<span class="text-green-400">$text</span>); <span class="text-[#94a3b8]">// nl2br converts \n to HTML &lt;br&gt; tag</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-list-check text-green-400"></i> Common Escape Sequences Reference
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Escape Code</th>
+                    <th class="py-3 px-4">Character Name</th>
+                    <th class="py-3 px-4">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">\'</td>
+                    <td class="py-3 px-4">Single Quote</td>
+                    <td class="py-3 px-4">Single quote ko print karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">\"</td>
+                    <td class="py-3 px-4">Double Quote</td>
+                    <td class="py-3 px-4">Double quote ko print karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">\$</td>
+                    <td class="py-3 px-4">PHP Dollar Sign</td>
+                    <td class="py-3 px-4">Variable expansion ko rok kar dollar sign ($) print karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">\\</td>
+                    <td class="py-3 px-4">Backslash</td>
+                    <td class="py-3 px-4">Ek single backslash (\) character print karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">\n</td>
+                    <td class="py-3 px-4">New Line</td>
+                    <td class="py-3 px-4">Output me nayi line insert karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">\r</td>
+                    <td class="py-3 px-4">Carriage Return</td>
+                    <td class="py-3 px-4">Line break control ke liye use hota hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">\t</td>
+                    <td class="py-3 px-4">Tab Space</td>
+                    <td class="py-3 px-4">Horizontal tab space add karta hai.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-green-400/30">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-green-400">
+              <span>💡</span> Important Difference
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              Escape sequences jaise <code class="text-green-400">\n</code>, <code class="text-green-400">\t</code>, aur <code class="text-green-400">\$</code> <strong>sirf Double-Quoted Strings (`""`)</strong> ke andar kaam karte hain. Single-quoted strings (`''`) me `\n` ya `\t` ko plain text ki tarah maana jayega.
+            </p>
+          </div>
+
+        </section>
+
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="ModifyString.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../numbers/Numbers.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(8);
+    </script>
+  </body>
+</html>
