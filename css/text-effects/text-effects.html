@@ -1,44 +1,389 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Text Effects</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Text Effects</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Text Effects CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../shadows/shadows.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../text-effects/text-effects.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Text Effects Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Text Effects CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Text Effects CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../shadows/shadows.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../text-effects/text-effects.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(53);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Text Effects</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Text Effects
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Text Effects ka use text ko control aur stylish banane ke liye
+            kiya jata hai. Isme text wrapping, overflow aur spacing jaise
+            effects handle kiye ja sakte hain.
+          </p>
+
+          <!-- Navigation -->
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../shadows/shadows.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../custom-fonts/custom-fonts.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- What is Text Effects -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-font text-blue-400 mr-2"></i>
+            CSS Text Effects Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS text effects ki help se long text ko properly handle aur display
+            kiya ja sakta hai. Ye especially cards, headings aur responsive
+            layouts mein useful hain.
+          </p>
+
+          <!-- Text Overflow -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrow-right-from-bracket text-blue-400 mr-2"
+            ></i>
+            text-overflow
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <b>text-overflow</b> tab useful hota hai jab text container se bahar
+            ja raha ho. Iske saath commonly <b>overflow</b> aur
+            <b>white-space</b> use kiye jate hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.text</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">white-space</span>: <span class="text-green-400">nowrap</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">hidden</span>;
+  <span class="text-blue-400">text-overflow</span>: <span class="text-green-400">ellipsis</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Word Wrapping -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-text-width text-blue-400 mr-2"></i>
+            Word Wrapping
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Long words kabhi-kabhi container se bahar nikal sakte hain.
+            <b>overflow-wrap</b> aise words ko break karne mein help karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.content</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">250px</span>;
+  <span class="text-blue-400">overflow-wrap</span>: <span class="text-green-400">break-word</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Word Break -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-scissors text-blue-400 mr-2"></i>
+            word-break
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <b>word-break</b> property decide karti hai ki words ko line ke
+            andar kis tarah break kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.text</span> {
+  <span class="text-blue-400">word-break</span>: <span class="text-green-400">break-all</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Writing Mode -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+            ></i>
+            writing-mode
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <b>writing-mode</b> text ki writing direction ko control karta hai.
+            Iska use vertical text layouts mein kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.vertical</span> {
+  <span class="text-blue-400">writing-mode</span>: <span class="text-green-400">vertical-rl</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Text Spacing -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-left-right-to-line text-blue-400 mr-2"
+            ></i>
+            Text Spacing Effects
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Text ko stylish banane ke liye letter aur word spacing ko bhi
+            control kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">h1</span> {
+  <span class="text-blue-400">letter-spacing</span>: <span class="text-green-400">3px</span>;
+  <span class="text-blue-400">word-spacing</span>: <span class="text-green-400">8px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Practical Example -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-globe text-blue-400 mr-2"></i>
+            Practical Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Responsive card mein long title ko handle karne ke liye text effects
+            ka use kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Complete Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card-title</span> {
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">250px</span>;
+  <span class="text-blue-400">white-space</span>: <span class="text-green-400">nowrap</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">hidden</span>;
+  <span class="text-blue-400">text-overflow</span>: <span class="text-green-400">ellipsis</span>;
+  <span class="text-blue-400">letter-spacing</span>: <span class="text-green-400">1px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Important Points -->
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code>text-overflow</code> overflowing text ko handle karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code>overflow-wrap</code> long words ko break kar sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code>word-break</code> word breaking behavior control karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code>writing-mode</code> text ki direction change kar sakta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Text spacing ke liye <code>letter-spacing</code> aur
+                <code>word-spacing</code>
+                use kar sakte hain.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Text Effects ki help se text ko properly fit, wrap aur style
+              kiya ja sakta hai. Important properties mein <b>text-overflow</b>,
+              <b>overflow-wrap</b>, <b>word-break</b> aur
+              <b>writing-mode</b> shamil hain.
+            </p>
+          </div>
+
+          <!-- Bottom Navigation -->
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../shadows/shadows.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../custom-fonts/custom-fonts.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(53);
+      });
+    </script>
+  </body>
+</html>

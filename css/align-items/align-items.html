@@ -1,44 +1,674 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Align Items</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Align Items</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Align Items CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../justify-content/justify-content.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../align-items/align-items.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Align Items Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Align Items CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Align Items CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../justify-content/justify-content.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../align-items/align-items.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(77);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Align Items</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .align-demo {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 180px;
+        padding: 20px;
+        background: #1e293b;
+        border-radius: 14px;
+      }
+
+      .align-item {
+        background: #254ccb;
+        padding: 18px 24px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .start-demo {
+        align-items: flex-start;
+      }
+
+      .end-demo {
+        align-items: flex-end;
+      }
+
+      .center-demo {
+        align-items: center;
+      }
+
+      .stretch-demo {
+        align-items: stretch;
+      }
+
+      .stretch-demo .align-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .baseline-demo {
+        align-items: baseline;
+      }
+
+      .baseline-demo .align-item:nth-child(1) {
+        font-size: 18px;
+      }
+
+      .baseline-demo .align-item:nth-child(2) {
+        font-size: 30px;
+      }
+
+      .baseline-demo .align-item:nth-child(3) {
+        font-size: 22px;
+      }
+
+      .column-demo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        min-height: 280px;
+        padding: 20px;
+        background: #1e293b;
+        border-radius: 14px;
+      }
+
+      .column-demo .align-item {
+        width: 180px;
+        text-align: center;
+      }
+
+      .card-layout {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 20px;
+        background: #1e293b;
+        border-radius: 14px;
+      }
+
+      .card-icon {
+        width: 70px;
+        height: 70px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #254ccb;
+        border-radius: 14px;
+        font-size: 28px;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Align Items
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS <code class="text-green-400">align-items</code> Flex Container
+            ke cross axis par Flex Items ki alignment control karta hai. Ye
+            especially vertical alignment ke liye useful hai jab direction row
+            ho.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../justify-content/justify-content.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../flex-items/flex-items.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-align-center text-blue-400 mr-2"></i>
+            Align Items Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Jab parent element par
+            <code class="text-green-400">display: flex</code> hota hai, tab
+            <code class="text-green-400">align-items</code> uske direct children
+            ko cross axis par align karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Syntax
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="align-demo center-demo mb-12">
+            <div class="align-item">Item 1</div>
+            <div class="align-item">Item 2</div>
+            <div class="align-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-up text-blue-400 mr-2"></i>
+            align-items: flex-start
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">flex-start</code> items ko cross axis
+            ke starting point par align karta hai. Row direction mein items
+            container ke top par aa jate hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">flex-start</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="align-demo start-demo mb-12">
+            <div class="align-item">Item 1</div>
+            <div class="align-item">Item 2</div>
+            <div class="align-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-down text-blue-400 mr-2"></i>
+            align-items: flex-end
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">flex-end</code> items ko cross axis ke
+            ending point par align karta hai. Row direction mein items bottom
+            par aa jate hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">flex-end</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="align-demo end-demo mb-12">
+            <div class="align-item">Item 1</div>
+            <div class="align-item">Item 2</div>
+            <div class="align-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            align-items: center
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">center</code> items ko cross axis ke
+            center mein align karta hai. Ye Flexbox mein vertical centering ke
+            liye commonly use hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="align-demo center-demo mb-12">
+            <div class="align-item">Item 1</div>
+            <div class="align-item">Item 2</div>
+            <div class="align-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+            ></i>
+            align-items: stretch
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">stretch</code> items ko cross axis par
+            container ki available size tak stretch karta hai, agar items ki
+            cross-axis size explicitly set na ho.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">stretch</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="align-demo stretch-demo mb-12">
+            <div class="align-item">Item 1</div>
+            <div class="align-item">Item 2</div>
+            <div class="align-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-text-height text-blue-400 mr-2"></i>
+            align-items: baseline
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">baseline</code> items ke text baselines
+            ko align karta hai. Different font sizes wale text ko same baseline
+            par rakhne ke liye useful hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">baseline</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="align-demo baseline-demo mb-12">
+            <div class="align-item">Small</div>
+            <div class="align-item">Large</div>
+            <div class="align-item">Medium</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            Column Direction Mein align-items
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Agar <code class="text-green-400">flex-direction: column</code> use
+            kiya hai, to cross axis horizontal ho jata hai. Isliye
+            <code class="text-green-400">align-items</code> horizontal alignment
+            control karega.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">flex-direction</span>: <span class="text-green-400">column</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="column-demo mb-12">
+            <div class="align-item">Item 1</div>
+            <div class="align-item">Item 2</div>
+            <div class="align-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-id-card text-blue-400 mr-2"></i>
+            Practical Card Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Card ke andar icon aur text ko vertically center karne ke liye
+            <code class="text-green-400">align-items: center</code> ka use kiya
+            ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Live Example
+              </h3>
+            </div>
+
+            <div class="p-6">
+              <div class="card-layout">
+                <div class="card-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2">CSS Flexbox</h3>
+                  <p class="text-gray-300">
+                    Align-items se icon aur content vertically center mein
+                    aligned hain.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">18px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table-list text-blue-400 mr-2"></i>
+            Align Items Values
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-5 text-lg">Value</th>
+                  <th class="p-5 text-lg">Kaam</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">stretch</td>
+                  <td class="p-5">
+                    Items ko cross axis par stretch karta hai.
+                  </td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">flex-start</td>
+                  <td class="p-5">Items ko starting point par rakhta hai.</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">flex-end</td>
+                  <td class="p-5">Items ko ending point par rakhta hai.</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">center</td>
+                  <td class="p-5">Items ko center mein rakhta hai.</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">baseline</td>
+                  <td class="p-5">
+                    Items ke text baselines ko align karta hai.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><code class="text-green-400">align-items</code> cross axis par
+                alignment control karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Row
+                direction mein cross axis vertical hota hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Column
+                direction mein cross axis horizontal hota hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><code class="text-green-400">center</code> vertical ya
+                horizontal centering ke liye commonly use hota hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><code class="text-green-400">baseline</code> text-based
+                alignment ke liye useful hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i
+                class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i
+                ><code class="text-green-400">align-items</code> aur
+                <code class="text-green-400">justify-content</code> ko same
+                samajhna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i
+                ><code class="text-green-400">flex-direction</code> change hone
+                par cross axis bhi change hoti hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i
+                ><code class="text-green-400">stretch</code> ka expected result
+                na milne par child ki fixed cross-axis size check na karna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Parent par
+                <code class="text-green-400">display: flex</code> lagana bhool
+                jana.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Alignment
+                se pehle main axis aur cross axis identify karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Simple
+                centering ke liye
+                <code class="text-green-400">align-items: center</code> useful
+                hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Text
+                elements ke different sizes mein
+                <code class="text-green-400">baseline</code> try karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive
+                layouts mein Flexbox alignment properties ko fixed positioning
+                se prefer karein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS <code class="text-green-400">align-items</code> Flex Container
+              ke cross axis par items ki alignment control karta hai. Iski
+              important values <code class="text-green-400">stretch</code>,
+              <code class="text-green-400">flex-start</code>,
+              <code class="text-green-400">flex-end</code>,
+              <code class="text-green-400">center</code> aur
+              <code class="text-green-400">baseline</code> hain. Flex direction
+              ke according cross axis change ho sakti hai.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../justify-content/justify-content.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../flex-items/flex-items.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(77);
+      });
+    </script>
+  </body>
+</html>

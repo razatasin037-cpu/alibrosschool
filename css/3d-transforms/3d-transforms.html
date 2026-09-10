@@ -1,44 +1,886 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS 3D Transforms</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS 3D Transforms</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS 3D Transforms CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../2d-transforms/2d-transforms.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../3d-transforms/3d-transforms.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS 3D Transforms Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS 3D Transforms CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS 3D Transforms CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../2d-transforms/2d-transforms.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../3d-transforms/3d-transforms.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(56);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS 3D Transforms</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      /* ================================
+         3D LIVE EXAMPLES
+      ================================= */
+
+      .perspective-600 {
+        perspective: 600px;
+      }
+
+      .perspective-700 {
+        perspective: 700px;
+      }
+
+      .perspective-800 {
+        perspective: 800px;
+      }
+
+      .transform-box {
+        transform-style: preserve-3d;
+        transition: transform 0.5s ease;
+      }
+
+      .rotate-x-example:hover {
+        transform: rotateX(45deg);
+      }
+
+      .rotate-y-example:hover {
+        transform: rotateY(45deg);
+      }
+
+      .rotate-z-example:hover {
+        transform: rotateZ(45deg);
+      }
+
+      .translate-z-example:hover {
+        transform: translateZ(100px);
+      }
+
+      .scale-3d-example:hover {
+        transform: scale3d(1.2, 1.2, 1.2);
+      }
+
+      .combined-3d-example:hover {
+        transform: rotateX(12deg) rotateY(18deg) translateZ(40px)
+          scale3d(1.05, 1.05, 1.05);
+      }
+
+      .origin-example {
+        transform-origin: top left;
+      }
+
+      .origin-example:hover {
+        transform: rotateY(35deg);
+      }
+
+      .card-3d {
+        transform-style: preserve-3d;
+        transition: transform 0.5s ease;
+      }
+
+      .card-3d:hover {
+        transform: perspective(700px) rotateX(8deg) rotateY(12deg)
+          translateZ(35px) scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS 3D Transforms
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS 3D Transforms ka use elements ko three-dimensional space mein
+            move, rotate aur scale karne ke liye kiya jata hai. Isme X, Y aur Z
+            axes ka use hota hai. <strong>perspective</strong>,
+            <strong>rotateX()</strong>, <strong>rotateY()</strong>,
+            <strong>translate3d()</strong> aur <strong>scale3d()</strong>
+            important functions hain.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../2d-transforms/2d-transforms.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../transitions/transitions.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS 3D TRANSFORM -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-cube text-blue-400 mr-2"></i>
+            CSS 3D Transform Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            2D transforms mein X aur Y axes hoti hain, jabki 3D transforms mein
+            Z-axis bhi add ho jati hai. Isse element ko depth ke saath screen ke
+            andar ya bahar move kiya ja sakta hai.
+          </p>
+
+          <!-- BASIC EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Basic 3D Transform
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">rotateY(45deg)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PERSPECTIVE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-eye text-blue-400 mr-2"></i>
+            1. perspective()
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>perspective()</strong> 3D element ki depth ko visible banata
+            hai. Perspective value jitni chhoti hogi, 3D effect utna strong
+            dikhega.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Perspective Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">transform</span>:
+    <span class="text-green-400">perspective(600px) rotateY(45deg)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE PERSPECTIVE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-eye text-blue-400 mr-2"></i>
+              Live Perspective
+            </h3>
+
+            <div class="flex justify-center py-12 perspective-600">
+              <div
+                class="transform-box bg-[#254ccb] rounded-xl px-10 py-7 text-xl font-bold cursor-pointer hover:rotate-y-45"
+              >
+                Hover Me
+              </div>
+            </div>
+          </div>
+
+          <!-- ROTATE X -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            2. rotateX()
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>rotateX()</strong> element ko X-axis ke around rotate karta
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                rotateX()
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">rotateX(45deg)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE ROTATE X -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+              Live rotateX()
+            </h3>
+
+            <div class="flex justify-center py-14 perspective-600">
+              <div
+                class="transform-box rotate-x-example bg-[#254ccb] rounded-xl px-10 py-7 text-xl font-bold cursor-pointer"
+              >
+                Hover Me
+              </div>
+            </div>
+          </div>
+
+          <!-- ROTATE Y -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            3. rotateY()
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>rotateY()</strong> element ko Y-axis ke around rotate karta
+            hai. Ye card flip aur 3D hover effects ke liye bahut useful hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                rotateY()
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">rotateY(45deg)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE ROTATE Y -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+              Live rotateY()
+            </h3>
+
+            <div class="flex justify-center py-14 perspective-600">
+              <div
+                class="transform-box rotate-y-example bg-[#254ccb] rounded-xl px-10 py-7 text-xl font-bold cursor-pointer"
+              >
+                Hover Me
+              </div>
+            </div>
+          </div>
+
+          <!-- ROTATE Z -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-rotate text-blue-400 mr-2"></i>
+            4. rotateZ()
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>rotateZ()</strong> element ko Z-axis ke around rotate karta
+            hai. Ye normal 2D rotation jaisa effect deta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                rotateZ()
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">rotateZ(45deg)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE ROTATE Z -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-rotate text-blue-400 mr-2"></i>
+              Live rotateZ()
+            </h3>
+
+            <div class="flex justify-center py-10">
+              <div
+                class="transform-box rotate-z-example bg-[#254ccb] rounded-xl w-32 h-32 flex items-center justify-center text-xl font-bold cursor-pointer"
+              >
+                Rotate Z
+              </div>
+            </div>
+          </div>
+
+          <!-- TRANSLATE 3D -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+            ></i>
+            5. translate3d()
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>translate3d()</strong> element ko X, Y aur Z teeno
+            directions mein move karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                translate3d()
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">transform</span>:
+    <span class="text-green-400">translate3d(50px, 30px, 100px)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE TRANSLATE Z -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i
+                class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+              ></i>
+              Live translateZ()
+            </h3>
+
+            <div class="flex justify-center py-14 perspective-600">
+              <div
+                class="transform-box translate-z-example bg-[#254ccb] rounded-xl px-10 py-7 text-xl font-bold cursor-pointer"
+              >
+                Move Forward
+              </div>
+            </div>
+          </div>
+
+          <!-- SCALE 3D -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+            6. scale3d()
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>scale3d()</strong> X, Y aur Z axes par element ki scaling
+            control karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                scale3d()
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">transform</span>:
+    <span class="text-green-400">scale3d(1.2, 1.2, 1.2)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE SCALE 3D -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+              Live scale3d()
+            </h3>
+
+            <div class="flex justify-center py-10">
+              <div
+                class="transform-box scale-3d-example bg-[#254ccb] rounded-xl px-10 py-7 text-xl font-bold cursor-pointer"
+              >
+                Scale Me
+              </div>
+            </div>
+          </div>
+
+          <!-- TRANSFORM STYLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-cubes text-blue-400 mr-2"></i>
+            7. transform-style
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>transform-style</strong> batata hai ki child elements 3D
+            space mein preserve honge ya flat ho jayenge.
+            <strong>preserve-3d</strong> commonly use kiya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                preserve-3d
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">transform-style</span>:
+    <span class="text-green-400">preserve-3d</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- BACKFACE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-clone text-blue-400 mr-2"></i>
+            8. backface-visibility
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>backface-visibility</strong> control karta hai ki element
+            rotate hone ke baad uska back side visible rahega ya hidden hoga.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Backface Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">backface-visibility</span>:
+    <span class="text-green-400">hidden</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- 3D CARD -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-id-card text-blue-400 mr-2"></i>
+            9. 3D Card Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            3D transforms ka use cards ko interactive depth aur hover effect
+            dene ke liye kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-cube text-blue-400 mr-2"></i>
+              Live 3D Card
+            </h3>
+
+            <div class="flex justify-center py-14 perspective-800">
+              <div
+                class="card-3d bg-[#254ccb] rounded-2xl w-64 h-40 flex items-center justify-center text-2xl font-bold cursor-pointer"
+              >
+                3D Card
+              </div>
+            </div>
+          </div>
+
+          <!-- MULTIPLE 3D -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            10. Multiple 3D Transforms
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Multiple 3D transform functions ko ek hi element par combine kiya ja
+            sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Combined 3D Transform
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card:hover</span> {
+  <span class="text-blue-400">transform</span>:
+    <span class="text-green-400">rotateX(12deg)
+    rotateY(18deg)
+    translateZ(40px)
+    scale3d(1.05, 1.05, 1.05)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE COMBINED -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+              Live Combined 3D Effect
+            </h3>
+
+            <div class="flex justify-center py-14 perspective-700">
+              <div
+                class="transform-box combined-3d-example bg-[#254ccb] rounded-2xl w-64 h-40 flex items-center justify-center text-xl font-bold cursor-pointer"
+              >
+                Hover For 3D
+              </div>
+            </div>
+          </div>
+
+          <!-- TRANSFORM ORIGIN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-crosshairs text-blue-400 mr-2"></i>
+            11. transform-origin
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>transform-origin</strong> transformation ka pivot point
+            define karta hai. Isse rotation ka starting point control kiya ja
+            sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Transform Origin
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">transform-origin</span>: <span class="text-green-400">top left</span>;
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">rotateY(35deg)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE ORIGIN -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-crosshairs text-blue-400 mr-2"></i>
+              Live Transform Origin
+            </h3>
+
+            <div class="flex justify-center py-14 perspective-600">
+              <div
+                class="transform-box origin-example bg-[#254ccb] rounded-xl w-56 h-36 flex items-center justify-center text-xl font-bold cursor-pointer"
+              >
+                Top Left Origin
+              </div>
+            </div>
+          </div>
+
+          <!-- PRACTICAL -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+            12. Practical 3D Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Is practical example mein perspective, rotateX, rotateY, translateZ
+            aur scale ko ek saath use kiya gaya hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Complete 3D Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">transition</span>:
+    <span class="text-green-400">transform 0.5s ease</span>;
+}
+
+<span class="text-blue-400">.card:hover</span> {
+  <span class="text-blue-400">transform</span>:
+    <span class="text-green-400">perspective(600px)
+    rotateX(8deg)
+    rotateY(12deg)
+    translateZ(30px)
+    scale(1.05)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE PRACTICAL -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+              Live Practical Example
+            </h3>
+
+            <div class="flex justify-center py-14 perspective-700">
+              <div
+                class="card-3d bg-gradient-to-br from-[#111827] to-[#25304b] border border-gray-700 rounded-2xl w-72 h-44 p-7 flex flex-col justify-center cursor-pointer"
+              >
+                <i class="fa-solid fa-cube text-blue-400 text-3xl mb-4"></i>
+
+                <h4 class="text-2xl font-bold mb-2">3D Transform</h4>
+
+                <p class="text-gray-300">Hover karke 3D effect dekho.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                3D transforms mein X, Y aur Z axes hoti hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>rotateX()</strong> X-axis ke around rotate karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>rotateY()</strong> Y-axis ke around rotate karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>rotateZ()</strong> Z-axis ke around rotate karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>translate3d()</strong> X, Y aur Z direction mein
+                movement deta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>perspective</strong> 3D depth ko visible banata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>transform-style: preserve-3d</strong> nested 3D elements
+                ke liye useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>backface-visibility</strong> back side ko control karta
+                hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                3D effects ko simple aur purposeful rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Smooth effects ke liye transition use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Perspective ko carefully choose karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Excessive 3D effects se readability affect ho sakti hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS 3D Transforms elements ko three-dimensional space mein
+              manipulate karne ke liye use hote hain. Isme
+              <strong>rotateX()</strong>, <strong>rotateY()</strong>,
+              <strong>rotateZ()</strong>, <strong>translate3d()</strong>,
+              <strong>scale3d()</strong> aur <strong>perspective()</strong>
+              important hain. Inka use karke interactive cards, hover effects
+              aur depth-based UI create ki ja sakti hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../2d-transforms/2d-transforms.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../transitions/transitions.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <!-- SIDEBAR CALL -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(56);
+      });
+    </script>
+  </body>
+</html>

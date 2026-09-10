@@ -1,44 +1,731 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Variables</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Variables</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Variables CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../user-interface/user-interface.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../variables/variables.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Variables Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Variables CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Variables CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../user-interface/user-interface.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../variables/variables.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(70);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Variables</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e293b;
+        --text-color: #e2e8f0;
+        --card-radius: 16px;
+        --card-padding: 24px;
+        --main-gap: 20px;
+      }
+
+      .variable-card {
+        background: var(--secondary-color);
+        color: var(--text-color);
+        border-radius: var(--card-radius);
+        padding: var(--card-padding);
+      }
+
+      .variable-button {
+        background: var(--primary-color);
+        color: white;
+        padding: 12px 22px;
+        border-radius: 10px;
+        transition: 0.25s;
+      }
+
+      .variable-button:hover {
+        filter: brightness(1.15);
+      }
+
+      .theme-box {
+        background: var(--primary-color);
+        color: white;
+        border-radius: var(--card-radius);
+        padding: var(--card-padding);
+      }
+
+      .local-variable {
+        --local-color: #22c55e;
+        color: var(--local-color);
+      }
+
+      .fallback-box {
+        color: var(--missing-color, #60a5fa);
+      }
+
+      .calc-box {
+        --base-size: 20px;
+        font-size: calc(var(--base-size) + 4px);
+      }
+
+      .variable-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--main-gap);
+      }
+
+      @media (max-width: 768px) {
+        .variable-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- HEADING -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Variables
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Variables reusable values ko store karne ke liye use hote hain.
+            Isse colors, spacing, sizes aur themes ko easily manage aur update
+            kar sakte hain.
+          </p>
+
+          <!-- TOP NAV -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../user-interface/user-interface.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../property/property.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT ARE VARIABLES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            CSS Variables Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS Variables ko custom properties bhi kaha jata hai. Variable ka
+            naam usually <span class="text-blue-400">--</span> se start hota hai
+            aur uski value ko <span class="text-blue-400">var()</span> se use
+            kiya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="variable-card text-lg">
+              Ye card CSS Variables ka use kar raha hai.
+            </div>
+          </div>
+
+          <!-- BASIC SYNTAX -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-terminal text-blue-400 mr-2"></i>
+            Basic Syntax
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Variable define karne ke liye property name ko
+            <span class="text-blue-400">--</span>
+            se start karte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">:root</span> {
+  <span class="text-blue-400">--main-color</span>: <span class="text-green-400">#2563eb</span>;
+  <span class="text-blue-400">--text-color</span>: <span class="text-green-400">white</span>;
+}
+
+<span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">var(--text-color)</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">var(--main-color)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ROOT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-globe text-blue-400 mr-2"></i>
+            :root Variables
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">:root</span> mein define ki gayi
+            variables generally poori document mein available hoti hain. Global
+            colors aur common spacing ke liye ye bahut useful hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="theme-box text-xl font-semibold">
+              Global Primary Color
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">:root</span> {
+  <span class="text-blue-400">--primary-color</span>: <span class="text-green-400">#2563eb</span>;
+}
+
+<span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">var(--primary-color)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- VAR FUNCTION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-brackets-curly text-blue-400 mr-2"></i>
+            var() Function
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Variable ki stored value ko use karne ke liye
+            <span class="text-blue-400">var()</span>
+            function ka use hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <button class="variable-button">Primary Button</button>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">:root</span> {
+  <span class="text-blue-400">--primary-color</span>: <span class="text-green-400">#2563eb</span>;
+}
+
+<span class="text-blue-400">button</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">var(--primary-color)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- REUSABLE VALUES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-repeat text-blue-400 mr-2"></i>
+            Reusable Variables
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Ek variable ko multiple elements mein use kar sakte hain. Isse same
+            value baar-baar likhne ki zarurat nahi padti.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="variable-grid">
+              <div class="variable-card">Card One</div>
+
+              <div class="variable-card">Card Two</div>
+
+              <div class="variable-card">Card Three</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">:root</span> {
+  <span class="text-blue-400">--card-gap</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">var(--card-gap)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LOCAL VARIABLES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-location-dot text-blue-400 mr-2"></i>
+            Local Variables
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Variable kisi specific selector ke andar bhi define ki ja sakti hai.
+            Aisi variable ka scope us element aur uske descendants tak hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="local-variable text-xl font-semibold">
+              Ye local variable se green color le raha hai.
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">--local-color</span>: <span class="text-green-400">green</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">var(--local-color)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- FALLBACK -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            Fallback Value
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Agar variable available nahi hai to
+            <span class="text-blue-400">var()</span>
+            ke andar fallback value provide kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="fallback-box text-xl font-semibold">
+              Fallback color apply hua hai.
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">var(--unknown-color, blue)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- VARIABLES WITH CALC -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-calculator text-blue-400 mr-2"></i>
+            Variables with calc()
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            CSS Variables ko <span class="text-blue-400">calc()</span> ke saath
+            combine karke dynamic values create kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="calc-box text-white">Variable + calc() Example</div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">:root</span> {
+  <span class="text-blue-400">--base-size</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">.text</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">calc(var(--base-size) + 4px)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- THEME -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-palette text-blue-400 mr-2"></i>
+            Variables for Themes
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            CSS Variables themes ke colors manage karne ke liye bahut useful
+            hain. Ek variable ki value change karke multiple elements ka color
+            update ho sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div class="theme-box">Primary Theme</div>
+
+              <div class="variable-card">Secondary Theme</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Theme Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">:root</span> {
+  <span class="text-blue-400">--primary</span>: <span class="text-green-400">#2563eb</span>;
+  <span class="text-blue-400">--secondary</span>: <span class="text-green-400">#1e293b</span>;
+}
+
+<span class="text-blue-400">.button</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">var(--primary)</span>;
+}
+
+<span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">var(--secondary)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PRACTICAL -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-globe text-blue-400 mr-2"></i>
+            Practical Example
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Real website mein variables colors, spacing, border-radius aur
+            common sizes ko centrally manage karne ke liye use kiye ja sakte
+            hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="variable-card">
+              <h3 class="text-2xl font-bold mb-3">CSS Tutorial</h3>
+
+              <p class="text-gray-300 text-lg mb-5">
+                Learn CSS with simple examples and practical projects.
+              </p>
+
+              <button class="variable-button">Start Learning</button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Complete Variable Setup
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">:root</span> {
+  <span class="text-blue-400">--primary-color</span>: <span class="text-green-400">#2563eb</span>;
+  <span class="text-blue-400">--secondary-color</span>: <span class="text-green-400">#1e293b</span>;
+  <span class="text-blue-400">--text-color</span>: <span class="text-green-400">#e2e8f0</span>;
+  <span class="text-blue-400">--radius</span>: <span class="text-green-400">16px</span>;
+  <span class="text-blue-400">--spacing</span>: <span class="text-green-400">24px</span>;
+}
+
+<span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">var(--secondary-color)</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">var(--text-color)</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">var(--radius)</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">var(--spacing)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS Variables ko custom properties bhi kaha jata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Variable names normally <span class="text-blue-400">--</span> se
+                start hote hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Stored value ko use karne ke liye
+                <span class="text-blue-400">var()</span> use hota hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">:root</span> global variables define
+                karne ke liye useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Variables ko colors, spacing, sizes aur themes ke liye reuse kar
+                sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Fallback value
+                <span class="text-blue-400">var(--name, fallback)</span> format
+                mein di ja sakti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Variables ko <span class="text-blue-400">calc()</span> ke saath
+                bhi use kar sakte hain.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Variable name ke beginning mein
+                <span class="text-blue-400">--</span> na lagana.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Variable define karke
+                <span class="text-blue-400">var()</span> use na karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Local variable ko galat scope mein use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Undefined variable ke liye fallback na dena jab fallback
+                required ho.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Variable names ko unclear ya inconsistent rakhna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-star text-yellow-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Common colors aur spacing ko variables mein store karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Global variables ke liye
+                <span class="text-blue-400">:root</span> ka use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Variable names meaningful rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Themes ke liye variables ka use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Reusable values ko baar-baar hard-code karne se avoid karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Variables reusable CSS values ko store karne ka powerful way
+              hain. Variable ko <span class="text-blue-400">--name</span> se
+              define aur <span class="text-blue-400">var(--name)</span> se use
+              kiya jata hai. <span class="text-blue-400">:root</span> global
+              variables ke liye, fallback values missing variables ke liye aur
+              <span class="text-blue-400">calc()</span>
+              dynamic calculations ke liye useful hai. Variables ka use code ko
+              clean, consistent aur easy to maintain banata hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAV -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../user-interface/user-interface.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../property/property.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(70);
+      });
+    </script>
+  </body>
+</html>

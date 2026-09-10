@@ -1,44 +1,650 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Masking</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Masking</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Masking CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../object-position/object-position.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../masking/masking.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Masking Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Masking CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Masking CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../object-position/object-position.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../masking/masking.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(65);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Masking</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .mask-box {
+        width: 100%;
+        max-width: 320px;
+        height: 220px;
+        overflow: hidden;
+        border-radius: 18px;
+        background: #1e293b;
+      }
+
+      .mask-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .circle-mask {
+        -webkit-mask-image: radial-gradient(circle, black 60%, transparent 61%);
+        mask-image: radial-gradient(circle, black 60%, transparent 61%);
+      }
+
+      .gradient-mask {
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 25%,
+          black 75%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 25%,
+          black 75%,
+          transparent
+        );
+      }
+
+      .vertical-mask {
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          transparent,
+          black 25%,
+          black 75%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          transparent,
+          black 25%,
+          black 75%,
+          transparent
+        );
+      }
+
+      .ellipse-mask {
+        -webkit-mask-image: radial-gradient(
+          ellipse,
+          black 55%,
+          transparent 56%
+        );
+        mask-image: radial-gradient(ellipse, black 55%, transparent 56%);
+      }
+
+      .diagonal-mask {
+        -webkit-mask-image: linear-gradient(135deg, black 50%, transparent 51%);
+        mask-image: linear-gradient(135deg, black 50%, transparent 51%);
+      }
+
+      .soft-mask {
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 20%,
+          black 80%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 20%,
+          black 80%,
+          transparent
+        );
+        transition: 0.4s ease;
+      }
+
+      .soft-mask:hover {
+        transform: scale(1.03);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading -->
+          <div class="mb-8">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+              CSS Masking
+            </h1>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Masking ka use element ke kuch parts ko hide ya visible karne
+              ke liye kiya jata hai. Isse images aur other elements ko creative
+              shapes aur fade effects diye ja sakte hain.
+            </p>
+          </div>
+
+          <!-- TOP PREVIOUS / NEXT -->
+          <div class="w-full flex justify-between items-center gap-4 mb-12">
+            <!-- Previous -->
+            <a href="../object-position/object-position.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <!-- Next -->
+            <a href="../buttons/buttons.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- What is Masking -->
+          <div class="mb-10">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+              CSS Masking Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Masking ek technique hai jisme mask decide karta hai ki
+              element ka kaunsa part visible rahega aur kaunsa part hide hoga.
+              Masking ka use mostly images, backgrounds aur decorative designs
+              mein hota hai.
+            </p>
+          </div>
+
+          <!-- mask-image -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              mask-image Property
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">mask-image</span> kisi image, gradient
+              ya other mask source ko use karke element ki visibility control
+              karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-semibold">Basic Syntax</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.image</span> {
+  <span class="text-blue-400">mask-image</span>:
+    <span class="text-green-400">linear-gradient(to right, transparent, black)</span>;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Circle Mask -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              1. Circular Mask
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Radial gradient ka use karke image ko circular shape mein mask
+              kiya ja sakta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="mask-box">
+                <img
+                  src="https://picsum.photos/id/1015/600/400"
+                  class="circle-mask"
+                  alt="Circular mask"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.circle</span> {
+  <span class="text-blue-400">mask-image</span>:
+    <span class="text-green-400">radial-gradient(circle, black 60%, transparent 61%)</span>;
+}</code></pre>
+          </div>
+
+          <!-- Gradient Mask -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              2. Gradient Mask
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Linear gradient se image ke edges ko smoothly fade kiya ja sakta
+              hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="mask-box">
+                <img
+                  src="https://picsum.photos/id/1018/600/400"
+                  class="gradient-mask"
+                  alt="Gradient mask"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.fade</span> {
+  <span class="text-blue-400">mask-image</span>:
+    <span class="text-green-400">linear-gradient(
+      to right,
+      transparent,
+      black 25%,
+      black 75%,
+      transparent
+    )</span>;
+}</code></pre>
+          </div>
+
+          <!-- Vertical Mask -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              3. Vertical Mask
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Mask ko vertical direction mein bhi apply kiya ja sakta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="mask-box">
+                <img
+                  src="https://picsum.photos/id/1020/600/400"
+                  class="vertical-mask"
+                  alt="Vertical mask"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.vertical</span> {
+  <span class="text-blue-400">mask-image</span>:
+    <span class="text-green-400">linear-gradient(
+      to bottom,
+      transparent,
+      black 25%,
+      black 75%,
+      transparent
+    )</span>;
+}</code></pre>
+          </div>
+
+          <!-- Ellipse -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">4. Ellipse Mask</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Radial gradient ka ellipse shape use karke image ko oval
+              appearance diya ja sakta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="mask-box">
+                <img
+                  src="https://picsum.photos/id/1035/600/400"
+                  class="ellipse-mask"
+                  alt="Ellipse mask"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.ellipse</span> {
+  <span class="text-blue-400">mask-image</span>:
+    <span class="text-green-400">radial-gradient(
+      ellipse,
+      black 55%,
+      transparent 56%
+    )</span>;
+}</code></pre>
+          </div>
+
+          <!-- Diagonal -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              5. Diagonal Mask
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Linear gradient ke angle ko change karke diagonal masking effect
+              create kar sakte hain.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="mask-box">
+                <img
+                  src="https://picsum.photos/id/1040/600/400"
+                  class="diagonal-mask"
+                  alt="Diagonal mask"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.diagonal</span> {
+  <span class="text-blue-400">mask-image</span>:
+    <span class="text-green-400">linear-gradient(
+      135deg,
+      black 50%,
+      transparent 51%
+    )</span>;
+}</code></pre>
+          </div>
+
+          <!-- Mask Position -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">mask-position</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">mask-position</span> mask ki position
+              control karta hai.
+            </p>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.image</span> {
+  <span class="text-blue-400">mask-position</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- Mask Size -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">mask-size</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">mask-size</span> mask ke size ko
+              control karta hai.
+            </p>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.image</span> {
+  <span class="text-blue-400">mask-size</span>: <span class="text-green-400">cover</span>;
+}</code></pre>
+          </div>
+
+          <!-- Mask Repeat -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">mask-repeat</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">mask-repeat</span> decide karta hai ki
+              mask repeat hoga ya nahi.
+            </p>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.image</span> {
+  <span class="text-blue-400">mask-repeat</span>: <span class="text-green-400">no-repeat</span>;
+}</code></pre>
+          </div>
+
+          <!-- Mask Shorthand -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">Mask Shorthand</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              Mask properties ko shorthand mein bhi combine kiya ja sakta hai.
+            </p>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.image</span> {
+  <span class="text-blue-400">mask</span>:
+    <span class="text-green-400">linear-gradient(to right, transparent, black)</span>;
+}</code></pre>
+          </div>
+
+          <!-- Practical Gallery -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              Practical Example
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Masking ka use modern image cards aur decorative gallery designs
+              mein kiya ja sakta hai.
+            </p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-52 overflow-hidden rounded-xl">
+                  <img
+                    src="https://picsum.photos/id/1015/600/400"
+                    class="w-full h-full object-cover circle-mask"
+                    alt="Circle"
+                  />
+                </div>
+
+                <h3 class="text-xl font-semibold mt-4">Circle Mask</h3>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-52 overflow-hidden rounded-xl">
+                  <img
+                    src="https://picsum.photos/id/1018/600/400"
+                    class="w-full h-full object-cover gradient-mask"
+                    alt="Gradient"
+                  />
+                </div>
+
+                <h3 class="text-xl font-semibold mt-4">Gradient Mask</h3>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-52 overflow-hidden rounded-xl">
+                  <img
+                    src="https://picsum.photos/id/1025/600/400"
+                    class="w-full h-full object-cover soft-mask"
+                    alt="Soft mask"
+                  />
+                </div>
+
+                <h3 class="text-xl font-semibold mt-4">Soft Edge Mask</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Points -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS masking element ke visible aur hidden areas ko control karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">mask-image</span> masking ke liye
+                sabse important property hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Gradients se creative masking effects banaye ja sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">mask-position</span>,
+                <span class="text-blue-400">mask-size</span> aur
+                <span class="text-blue-400">mask-repeat</span> additional
+                control dete hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Browser compatibility ke liye
+                <span class="text-blue-400">-webkit-mask-*</span> bhi useful ho
+                sakta hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Common Mistakes -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">Common Mistakes</h2>
+
+            <ul class="space-y-4 text-lg text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Mask ke liye incorrect gradient ya image source use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                <span class="text-blue-400">black</span> aur
+                <span class="text-blue-400">transparent</span> areas ka effect
+                na samajhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Browser compatibility ke liye
+                <span class="text-blue-400">-webkit-</span> prefix ko ignore
+                karna jab required ho.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Best Practices -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">Best Practices</h2>
+
+            <ul class="space-y-4 text-lg text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Simple masks se start karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Images ke important content ko accidentally hide na karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Gradients ko carefully adjust karke smooth edges banayein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Different browsers mein masking effects test karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Masking ka use elements ke visible area ko control karne ke
+              liye hota hai. <span class="text-blue-400">mask-image</span>
+              ke saath gradients aur images use karke circular, diagonal, faded
+              aur other creative effects create kiye ja sakte hain.
+              <span class="text-blue-400">mask-position</span>,
+              <span class="text-blue-400">mask-size</span> aur
+              <span class="text-blue-400">mask-repeat</span> se mask ko aur
+              control kiya ja sakta hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM PREVIOUS / NEXT -->
+          <div
+            class="w-full flex justify-between items-center gap-4 mt-14 mb-8"
+          >
+            <!-- Previous -->
+            <a href="../object-position/object-position.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <!-- Next -->
+            <a href="../buttons/buttons.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(65);
+      });
+    </script>
+  </body>
+</html>

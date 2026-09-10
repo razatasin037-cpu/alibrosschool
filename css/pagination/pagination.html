@@ -1,44 +1,794 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Pagination</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Pagination</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Pagination CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../buttons/buttons.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../pagination/pagination.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Pagination Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Pagination CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Pagination CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../buttons/buttons.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../pagination/pagination.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(67);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Pagination</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .pagination {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .pagination a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        height: 44px;
+        padding: 0 14px;
+        border-radius: 8px;
+        background: #1e293b;
+        color: white;
+        text-decoration: none;
+        transition: 0.25s;
+      }
+
+      .pagination a:hover {
+        background: #334155;
+      }
+
+      .pagination a.active {
+        background: #2563eb;
+      }
+
+      .pagination a.disabled {
+        opacity: 0.45;
+        pointer-events: none;
+      }
+
+      .pagination.round a {
+        border-radius: 50%;
+        padding: 0;
+        width: 44px;
+      }
+
+      .pagination.outline a {
+        background: transparent;
+        border: 1px solid #475569;
+      }
+
+      .pagination.outline a:hover {
+        background: #1e293b;
+      }
+
+      .pagination.outline a.active {
+        background: #2563eb;
+        border-color: #2563eb;
+      }
+
+      .pagination.large a {
+        min-width: 52px;
+        height: 50px;
+        font-size: 18px;
+      }
+
+      .pagination.small a {
+        min-width: 36px;
+        height: 36px;
+        padding: 0 10px;
+        font-size: 14px;
+      }
+
+      .pagination.center {
+        justify-content: center;
+      }
+
+      .pagination.left {
+        justify-content: flex-start;
+      }
+
+      .pagination.right {
+        justify-content: flex-end;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Pagination
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Pagination ka use jab content multiple pages mein divide hota
+            hai tab users ko pages ke beech navigate karne ke liye kiya jata
+            hai.
+          </p>
+
+          <!-- TOP NAV -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../buttons/buttons.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../multiple-columns/multiple-columns.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS PAGINATION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            CSS Pagination Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Pagination ka matlab hai large content ko chhote-chhote pages mein
+            divide karna. CSS se hum pagination links ko attractive, responsive
+            aur easy to use bana sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <div class="pagination">
+              <a href="#" class="disabled">«</a>
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">»</a>
+            </div>
+          </div>
+
+          <!-- BASIC PAGINATION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-ol text-blue-400 mr-2"></i>
+            Basic Pagination
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Sabse simple pagination mein page numbers ko links ke form mein show
+            kiya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.pagination</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">8px</span>;
+}
+
+<span class="text-blue-400">.pagination a</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">10px 16px</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">#1e293b</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">none</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ACTIVE PAGE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-check text-blue-400 mr-2"></i>
+            Active Page
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Current page ko highlight karne ke liye active class use kar sakte
+            hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="pagination">
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Active Page Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.pagination a.active</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">#2563eb</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ROUNDED PAGINATION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle text-blue-400 mr-2"></i>
+            Rounded Pagination
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            border-radius ka use karke pagination links ko rounded ya circular
+            bana sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="pagination round">
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.pagination a</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">50%</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- OUTLINE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-regular fa-square text-blue-400 mr-2"></i>
+            Outline Pagination
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Background remove karke border-based pagination bhi bana sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="pagination outline">
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.pagination a</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">transparent</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #475569</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ALIGNMENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-align-center text-blue-400 mr-2"></i>
+            Pagination Alignment
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            justify-content ke through pagination ko left, center ya right align
+            kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <p class="text-gray-400 mb-3">Left</p>
+            <div class="pagination left mb-6">
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+            </div>
+
+            <p class="text-gray-400 mb-3">Center</p>
+            <div class="pagination center mb-6">
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+            </div>
+
+            <p class="text-gray-400 mb-3">Right</p>
+            <div class="pagination right">
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.pagination</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- SIZES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-up-right-and-down-left-from-center text-blue-400 mr-2"
+            ></i>
+            Pagination Sizes
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Different screen aur design requirements ke according pagination ka
+            size small, normal ya large rakha ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <p class="text-gray-400 mb-3">Small</p>
+            <div class="pagination small mb-6">
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+            </div>
+
+            <p class="text-gray-400 mb-3">Large</p>
+            <div class="pagination large">
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.pagination.large a</span> {
+  <span class="text-blue-400">min-width</span>: <span class="text-green-400">52px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">50px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PREVIOUS NEXT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            Previous and Next Buttons
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Pagination mein Previous aur Next buttons user ko pages ke beech
+            quickly move karne mein help karte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="pagination">
+              <a href="#" class="disabled">
+                <i class="fa-solid fa-chevron-left"></i>
+              </a>
+
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+
+              <a href="#">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span>&gt;
+  <span class="text-blue-400">&lt;i</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"fa-solid fa-chevron-left"</span>&gt;&lt;/i&gt;
+<span class="text-blue-400">&lt;/a&gt;</span>
+
+<span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span>&gt;
+  <span class="text-blue-400">&lt;i</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"fa-solid fa-chevron-right"</span>&gt;&lt;/i&gt;
+<span class="text-blue-400">&lt;/a&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- DISABLED -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-ban text-blue-400 mr-2"></i>
+            Disabled Page
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Agar Previous ya Next page available nahi hai to disabled state show
+            karna useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="pagination">
+              <a href="#" class="disabled">Previous</a>
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">Next</a>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.pagination a.disabled</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.45</span>;
+  <span class="text-blue-400">pointer-events</span>: <span class="text-green-400">none</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PRACTICAL -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-globe text-blue-400 mr-2"></i>
+            Practical Pagination
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Real website mein pagination ko article, product list, search
+            results ya table ke neeche use kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="space-y-3 mb-8">
+              <div class="bg-[#1e293b] rounded-xl p-4">
+                <p class="font-semibold">Product 1</p>
+              </div>
+
+              <div class="bg-[#1e293b] rounded-xl p-4">
+                <p class="font-semibold">Product 2</p>
+              </div>
+
+              <div class="bg-[#1e293b] rounded-xl p-4">
+                <p class="font-semibold">Product 3</p>
+              </div>
+
+              <div class="bg-[#1e293b] rounded-xl p-4">
+                <p class="font-semibold">Product 4</p>
+              </div>
+            </div>
+
+            <div class="pagination">
+              <a href="#" class="disabled">«</a>
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">»</a>
+            </div>
+          </div>
+
+          <!-- RESPONSIVE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen text-blue-400 mr-2"></i>
+            Responsive Pagination
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Mobile screens par pagination links wrap ho sakte hain. Isliye
+            <span class="text-blue-400">flex-wrap: wrap</span> useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.pagination</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">flex-wrap</span>: <span class="text-green-400">wrap</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">8px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- IMPORTANT -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Pagination large content ko multiple pages mein divide karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">display: flex</span> se links ko
+                easily arrange kar sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Active page ko different background se highlight karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Previous aur Next buttons navigation ko easy banate hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Mobile ke liye <span class="text-blue-400">flex-wrap</span> ka
+                use karna useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Pagination links ko readable aur clickable size ka rakhein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Active page ko highlight na karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Mobile screen par pagination overflow hone dena.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Bahut chhote clickable links banana.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Previous/Next button ko confusing banana.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Current page ka clear indication na dena.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-star text-yellow-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Active page ko clearly highlight karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Pagination ko responsive rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Previous aur Next navigation provide karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Links ke beech proper spacing rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                User ko clearly batayein ki kaunsa page currently active hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Pagination ka use large content ko multiple pages mein divide
+              karne ke liye hota hai.
+              <span class="text-blue-400">display: flex</span>,
+              <span class="text-blue-400">gap</span>,
+              <span class="text-blue-400">border-radius</span>,
+              <span class="text-blue-400">background</span> aur
+              <span class="text-blue-400">justify-content</span> jaise CSS
+              properties se attractive pagination design ki ja sakti hai.
+              Active, disabled, Previous aur Next states ko properly style karna
+              important hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAV -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../buttons/buttons.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../multiple-columns/multiple-columns.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(67);
+      });
+    </script>
+  </body>
+</html>

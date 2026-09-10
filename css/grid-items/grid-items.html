@@ -1,44 +1,594 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Grid Items</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Grid Items</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Grid Items CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../grid-align/grid-align.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../grid-items/grid-items.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Grid Items Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Grid Items CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Grid Items CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../grid-align/grid-align.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../grid-items/grid-items.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(85);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Grid Item Alignment</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <style>
+      .grid-demo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        min-height: 260px;
+        padding: 16px;
+        background: #111827;
+        border-radius: 16px;
+      }
+      .grid-demo .item {
+        background: #254ccb;
+        border-radius: 10px;
+        padding: 18px;
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+      }
+      .item-start {
+        justify-self: start;
+      }
+      .item-center {
+        justify-self: center;
+      }
+      .item-end {
+        justify-self: end;
+      }
+      .item-stretch {
+        justify-self: stretch;
+      }
+
+      .align-demo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        min-height: 260px;
+        padding: 16px;
+        background: #111827;
+        border-radius: 16px;
+      }
+      .align-demo .item {
+        background: #3158ff;
+        border-radius: 10px;
+        padding: 18px;
+        min-height: 70px;
+      }
+      .align-start {
+        align-self: start;
+      }
+      .align-center {
+        align-self: center;
+      }
+      .align-end {
+        align-self: end;
+      }
+
+      .place-demo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        min-height: 260px;
+        padding: 16px;
+        background: #111827;
+        border-radius: 16px;
+      }
+      .place-demo .item {
+        background: #4d6fff;
+        border-radius: 10px;
+        padding: 18px;
+        place-self: center;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Grid Item Alignment
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Grid Item Alignment se hum individual Grid Item ko uske grid
+            area ke andar horizontally aur vertically position kar sakte hain.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../named-grid-items/named-grid-items.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../named-grid-items/named-grid-items.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>Grid Item
+            Alignment Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Grid container ko align karne ke alawa hum kisi ek Grid Item ko bhi
+            independently align kar sakte hain. Iske liye mainly
+            <span class="text-blue-400">justify-self</span>,
+            <span class="text-blue-400">align-self</span> aur
+            <span class="text-blue-400">place-self</span> use hote hain.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Main Properties
+            </h3>
+            <ul class="space-y-3 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">justify-self</span> — item ko
+                horizontal direction mein align karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">align-self</span> — item ko
+                vertical direction mein align karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">place-self</span> — justify-self
+                aur align-self ko ek saath set karta hai.
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">1. justify-self</h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">justify-self</span> Grid Item ko uske
+            cell ke andar horizontal direction mein position karta hai.
+          </p>
+
+          <div class="grid-demo mb-8">
+            <div class="item item-start">Start</div>
+            <div class="item item-center">Center</div>
+            <div class="item item-end">End</div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box1</span> {
+  <span class="text-blue-400">justify-self</span>: <span class="text-green-400">start</span>;
+}
+
+<span class="text-blue-400">.box2</span> {
+  <span class="text-blue-400">justify-self</span>: <span class="text-green-400">center</span>;
+}
+
+<span class="text-blue-400">.box3</span> {
+  <span class="text-blue-400">justify-self</span>: <span class="text-green-400">end</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            2. justify-self Values
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead class="bg-[#1e293b]">
+                <tr>
+                  <th class="p-4 text-lg">Value</th>
+                  <th class="p-4 text-lg">Meaning</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300 text-lg">
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">start</td>
+                  <td class="p-4">Item ko cell ke start par rakhta hai.</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">center</td>
+                  <td class="p-4">
+                    Item ko horizontal center mein rakhta hai.
+                  </td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">end</td>
+                  <td class="p-4">Item ko cell ke end par rakhta hai.</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">stretch</td>
+                  <td class="p-4">
+                    Item ko available horizontal space mein stretch karta hai.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">3. align-self</h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">align-self</span> ek individual Grid
+            Item ko vertical direction mein align karta hai.
+          </p>
+
+          <div class="align-demo mb-8">
+            <div class="item align-start">Start</div>
+            <div class="item align-center">Center</div>
+            <div class="item align-end">End</div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box1</span> {
+  <span class="text-blue-400">align-self</span>: <span class="text-green-400">start</span>;
+}
+
+<span class="text-blue-400">.box2</span> {
+  <span class="text-blue-400">align-self</span>: <span class="text-green-400">center</span>;
+}
+
+<span class="text-blue-400">.box3</span> {
+  <span class="text-blue-400">align-self</span>: <span class="text-green-400">end</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            4. align-self Values
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead class="bg-[#1e293b]">
+                <tr>
+                  <th class="p-4 text-lg">Value</th>
+                  <th class="p-4 text-lg">Meaning</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300 text-lg">
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">start</td>
+                  <td class="p-4">
+                    Item ko grid area ke top/start par rakhta hai.
+                  </td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">center</td>
+                  <td class="p-4">Item ko vertical center mein rakhta hai.</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">end</td>
+                  <td class="p-4">Item ko bottom/end par rakhta hai.</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">stretch</td>
+                  <td class="p-4">
+                    Item ko available vertical space mein stretch karta hai.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">5. place-self</h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">place-self</span> ek shorthand property
+            hai jo <span class="text-blue-400">align-self</span> aur
+            <span class="text-blue-400">justify-self</span> dono ko ek saath set
+            karti hai.
+          </p>
+
+          <div class="place-demo mb-8">
+            <div class="item">Centered Item</div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">place-self</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            6. Different Horizontal and Vertical Alignment
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar horizontal aur vertical alignment alag rakhna ho to
+            <span class="text-blue-400">place-self</span> mein do values de
+            sakte hain. Pehli value vertical aur doosri horizontal alignment ke
+            liye hoti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">place-self</span>: <span class="text-green-400">center end</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            7. Practical Card Example
+          </h2>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-5 bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8"
+          >
+            <div class="bg-[#1e293b] rounded-xl p-5">
+              <h3 class="text-xl font-bold mb-2">Product</h3>
+              <p class="text-gray-400 mb-4">CSS Course</p>
+              <button class="bg-[#254ccb] px-5 py-2 rounded-lg">Buy Now</button>
+            </div>
+
+            <div class="bg-[#1e293b] rounded-xl p-5">
+              <h3 class="text-xl font-bold mb-2">Design</h3>
+              <p class="text-gray-400 mb-4">UI Course</p>
+              <button
+                class="bg-[#254ccb] px-5 py-2 rounded-lg justify-self-end"
+              >
+                View
+              </button>
+            </div>
+
+            <div class="bg-[#1e293b] rounded-xl p-5">
+              <h3 class="text-xl font-bold mb-2">Coding</h3>
+              <p class="text-gray-400 mb-4">C++ Course</p>
+              <button class="bg-[#254ccb] px-5 py-2 rounded-lg">Start</button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Grid
+                Item Alignment Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.grid</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(3, 1fr)</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">.button</span> {
+  <span class="text-blue-400">justify-self</span>: <span class="text-green-400">end</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i
+              >Important Points
+            </h2>
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">justify-self</span> horizontal
+                alignment control karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">align-self</span> vertical
+                alignment control karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">place-self</span> dono properties
+                ko combine karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Alignment
+                individual Grid Item par apply ki ja sakti hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Grid Item
+                ke paas available space hona alignment ko visible banata hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i
+              >Common Mistakes
+            </h2>
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i
+                ><span class="text-blue-400">justify-content</span> ko
+                <span class="text-blue-400">justify-self</span> samajhna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i
+                ><span class="text-blue-400">align-items</span> aur
+                <span class="text-blue-400">align-self</span> ko confuse karna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Grid Item ke
+                available space ko ignore karna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Unnecessary
+                alignment properties ko har item par apply karna.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-lightbulb text-yellow-400 mr-2"></i>Best
+              Practices
+            </h2>
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Simple
+                alignment ke liye <span class="text-blue-400">start</span>,
+                <span class="text-blue-400">center</span> aur
+                <span class="text-blue-400">end</span> use karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Ek item ko
+                alag position karna ho to
+                <span class="text-blue-400">justify-self</span> ya
+                <span class="text-blue-400">align-self</span> use karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Dono
+                directions ko ek saath control karna ho to
+                <span class="text-blue-400">place-self</span> use karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive
+                layouts mein unnecessary fixed sizes avoid karein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary
+            </h2>
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Grid Item Alignment mein individual Grid Items ko unke grid
+              area ke andar control kiya jata hai.
+              <span class="text-blue-400">justify-self</span> horizontal
+              alignment, <span class="text-blue-400">align-self</span> vertical
+              alignment aur <span class="text-blue-400">place-self</span> dono
+              directions ko control karta hai.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../named-grid-items/named-grid-items.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../named-grid-items/named-grid-items.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(85);
+      });
+    </script>
+  </body>
+</html>

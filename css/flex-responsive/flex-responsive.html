@@ -1,44 +1,662 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Flex Responsive</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Flex Responsive</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Flex Responsive CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../flex-items/flex-items.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../flex-responsive/flex-responsive.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Flex Responsive Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Flex Responsive CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Flex Responsive CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../flex-items/flex-items.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../flex-responsive/flex-responsive.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(79);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Flex Responsive</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .flex-demo {
+        display: flex;
+        gap: 16px;
+        padding: 20px;
+        background: #1e293b;
+        border-radius: 14px;
+      }
+
+      .flex-item {
+        flex: 1 1 200px;
+        padding: 22px;
+        background: #254ccb;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .wrap-demo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 20px;
+        background: #1e293b;
+        border-radius: 14px;
+      }
+
+      .wrap-item {
+        flex: 1 1 220px;
+        padding: 22px;
+        background: #254ccb;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .responsive-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        background: #1e293b;
+        border-radius: 14px;
+      }
+
+      .responsive-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .responsive-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+      }
+
+      .responsive-links a:hover {
+        color: white;
+      }
+
+      .responsive-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .responsive-card {
+        flex: 1 1 220px;
+        padding: 24px;
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 16px;
+      }
+
+      .mobile-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .mobile-stack .box {
+        flex: 1 1 240px;
+        padding: 24px;
+        background: #254ccb;
+        border-radius: 12px;
+      }
+
+      @media (max-width: 640px) {
+        .responsive-nav {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .responsive-links {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .responsive-links a {
+          padding: 10px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Flex Responsive
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Flexbox ki help se layouts ko different screen sizes ke
+            according responsive banaya ja sakta hai. Is page par hum
+            <code class="text-green-400">flex-wrap</code>, flexible sizing aur
+            media queries ke saath responsive Flexbox layouts dekhenge.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../flex-items/flex-items.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../grid/grid.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            Flex Responsive Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Responsive Flexbox ka matlab hai ki Flex Items available screen
+            space ke according automatically adjust ho sakein. Iske liye
+            <code class="text-green-400">flex-wrap</code>,
+            <code class="text-green-400">flex</code>,
+            <code class="text-green-400">gap</code> aur media queries ka use
+            kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Responsive Flex
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">flex-wrap</span>: <span class="text-green-400">wrap</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">.item</span> {
+  <span class="text-blue-400">flex</span>: <span class="text-green-400">1 1 200px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="wrap-demo mb-12">
+            <div class="wrap-item">Item 1</div>
+            <div class="wrap-item">Item 2</div>
+            <div class="wrap-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-repeat text-blue-400 mr-2"></i>
+            flex-wrap for Responsive Layout
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">flex-wrap: wrap</code> items ko
+            available width kam hone par next line mein move karta hai. Ye
+            responsive cards aur grids ke liye bahut useful hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">flex-wrap</span>: <span class="text-green-400">wrap</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="wrap-demo mb-12">
+            <div class="wrap-item">Card 1</div>
+            <div class="wrap-item">Card 2</div>
+            <div class="wrap-item">Card 3</div>
+            <div class="wrap-item">Card 4</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-ruler-combined text-blue-400 mr-2"></i>
+            Flexible Item Size
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">flex: 1 1 200px</code> ka matlab hai
+            item grow bhi kar sakta hai, shrink bhi kar sakta hai aur uski
+            initial basis <code class="text-green-400">200px</code> hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">flex</span>: <span class="text-green-400">1 1 200px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="flex-demo mb-12">
+            <div class="flex-item">Flexible 1</div>
+            <div class="flex-item">Flexible 2</div>
+            <div class="flex-item">Flexible 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen text-blue-400 mr-2"></i>
+            Responsive Navigation
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Flexbox navigation ko desktop par horizontal aur small screens par
+            vertical banaya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Live Example
+              </h3>
+            </div>
+
+            <div class="p-6">
+              <div class="responsive-nav">
+                <div class="text-2xl font-bold">MySite</div>
+
+                <div class="responsive-links">
+                  <a href="#">Home</a>
+                  <a href="#">About</a>
+                  <a href="#">Services</a>
+                  <a href="#">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.navbar</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">space-between</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">640px</span>) {
+  <span class="text-blue-400">.navbar</span> {
+    <span class="text-blue-400">flex-direction</span>: <span class="text-green-400">column</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            Responsive Cards
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Responsive cards mein
+            <code class="text-green-400">flex-wrap</code> aur flexible basis use
+            karke cards ko different screen sizes ke liye adjust kiya ja sakta
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Live Example
+              </h3>
+            </div>
+
+            <div class="p-6">
+              <div class="responsive-cards">
+                <div class="responsive-card">
+                  <h3 class="text-2xl font-bold mb-3">HTML</h3>
+                  <p class="text-gray-300">
+                    Website ka structure create karta hai.
+                  </p>
+                </div>
+
+                <div class="responsive-card">
+                  <h3 class="text-2xl font-bold mb-3">CSS</h3>
+                  <p class="text-gray-300">
+                    Website ko style aur responsive banata hai.
+                  </p>
+                </div>
+
+                <div class="responsive-card">
+                  <h3 class="text-2xl font-bold mb-3">JavaScript</h3>
+                  <p class="text-gray-300">
+                    Website mein interaction add karta hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.cards</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">flex-wrap</span>: <span class="text-green-400">wrap</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">18px</span>;
+}
+
+<span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">flex</span>: <span class="text-green-400">1 1 220px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code-branch text-blue-400 mr-2"></i>
+            Media Query ke Saath Flex Direction
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Kabhi-kabhi desktop par row aur mobile par column layout chahiye
+            hota hai. Iske liye media query ke andar
+            <code class="text-green-400">flex-direction</code> change kar sakte
+            hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">flex-direction</span>: <span class="text-green-400">row</span>;
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">600px</span>) {
+  <span class="text-blue-400">.container</span> {
+    <span class="text-blue-400">flex-direction</span>: <span class="text-green-400">column</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="mobile-stack mb-12">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table-list text-blue-400 mr-2"></i>
+            Responsive Flexbox Properties
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-5 text-lg">Property</th>
+                  <th class="p-5 text-lg">Responsive Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">flex-wrap</td>
+                  <td class="p-5">
+                    Items ko multiple lines mein move karta hai.
+                  </td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">flex</td>
+                  <td class="p-5">Items ko flexible size deta hai.</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">flex-direction</td>
+                  <td class="p-5">Row ya column layout control karta hai.</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">gap</td>
+                  <td class="p-5">
+                    Items ke beech consistent spacing deta hai.
+                  </td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">@media</td>
+                  <td class="p-5">
+                    Different screen sizes par layout change karta hai.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive
+                Flexbox ke liye
+                <code class="text-green-400">flex-wrap</code> bahut useful hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><code class="text-green-400">flex: 1 1 200px</code> flexible
+                item sizing ke liye useful hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Small
+                screens par
+                <code class="text-green-400">flex-direction: column</code>
+                layout ko stack kar sakta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Media
+                queries ke through different screen sizes ke liye Flexbox rules
+                change kiye ja sakte hain.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><code class="text-green-400">gap</code> responsive layouts mein
+                consistent spacing maintain karta hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i
+                class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Small screens
+                ke liye <code class="text-green-400">flex-wrap</code> na lagana
+                jab wrapping required ho.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Cards par
+                unnecessarily fixed width use karna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Media query
+                mein parent Flex Container ki property change karna bhool jana.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Responsive
+                layout test sirf desktop screen par karna.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Cards ke
+                liye <code class="text-green-400">flex-wrap</code> aur flexible
+                basis use karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Mobile
+                layout ke liye zarurat ke according
+                <code class="text-green-400">flex-direction</code> change
+                karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Spacing ke
+                liye <code class="text-green-400">gap</code> use karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Different
+                screen sizes par layout ko browser responsive mode mein test
+                karein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Flex Responsive layouts banane ke liye
+              <code class="text-green-400">flex-wrap</code>,
+              <code class="text-green-400">flex</code>,
+              <code class="text-green-400">gap</code> aur
+              <code class="text-green-400">flex-direction</code> ka use kiya
+              jata hai. Media queries ke saath Flexbox ko different screen sizes
+              ke liye easily adapt kiya ja sakta hai.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../flex-items/flex-items.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../grid/grid.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(79);
+      });
+    </script>
+  </body>
+</html>

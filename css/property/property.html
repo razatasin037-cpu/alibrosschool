@@ -1,44 +1,916 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>CSS @property</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+
+<style>
+/* ================================
+   CSS @property Live Examples
+================================ */
+
+/* Typed custom property */
+@property --progress {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.progress-box {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    conic-gradient(#4d6fff calc(var(--progress) * 1%), #1e293b 0);
+  transition: --progress 1.5s ease;
+}
+
+.progress-box:hover {
+  --progress: 75;
+}
+
+/* Color property */
+@property --card-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #254ccb;
+}
+
+.color-card {
+  background: var(--card-color);
+  transition: --card-color 1s ease;
+}
+
+.color-card:hover {
+  --card-color: #7c3aed;
+}
+
+/* Length property */
+@property --box-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 100px;
+}
+
+.size-box {
+  width: var(--box-size);
+  height: var(--box-size);
+  transition: --box-size 1s ease;
+}
+
+.size-box:hover {
+  --box-size: 180px;
+}
+
+/* Animated custom property */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.rotate-box {
+  transform: rotate(var(--angle));
+  transition: --angle 1s ease;
+}
+
+.rotate-box:hover {
+  --angle: 180deg;
+}
+
+/* Gradient using registered property */
+@property --gradient-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #254ccb;
+}
+
+.gradient-box {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-color),
+    #0f172a
+  );
+  transition: --gradient-color 1s ease;
+}
+
+.gradient-box:hover {
+  --gradient-color: #ec4899;
+}
+</style>
 </head>
+
 <body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+
 <nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS @property</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS @property CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
+
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+
+<div id="sidebar"></div>
+
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+
+<div class="max-w-6xl mx-auto">
+
+<!-- ================================
+     TITLE
+================================ -->
+
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+  CSS @property
+</h1>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+  CSS <code>@property</code> se hum custom CSS properties ko register karke
+  unka data type, inheritance aur default value control kar sakte hain.
+  Iska sabse useful feature custom properties ko smoothly animate karna hai.
+</p>
+
+
+<!-- ================================
+     TOP NAVIGATION
+================================ -->
+
 <div class="flex justify-between items-center gap-4 mb-12">
-<a href="../variables/variables.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../property/property.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
+
+<a href="../variables/variables.html">
+<button
+class="rounded-xl px-6 sm:px-8 py-4 sm:py-5
+text-lg sm:text-xl font-semibold text-black
+bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+Previous
+</button>
+</a>
+
+<a href="../box-sizing/box-sizing.html">
+<button
+class="bg-[#254ccb] hover:bg-[#304cd6]
+text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5
+text-lg sm:text-xl font-semibold transition">
+Next
+<i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+
 </div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS @property Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS @property CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
+
+
+<!-- ================================
+     WHAT IS @property
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-code text-blue-400 mr-2"></i>
+CSS @property Kya Hai?
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+  <code>@property</code> ek CSS at-rule hai jo custom property ko
+  register karta hai. Is registration se browser ko pata chalta hai
+  ki custom property kis type ki value accept karegi, kya woh inherit
+  karegi aur uski initial value kya hogi.
+</p>
+
+<div class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12">
+
+<h3 class="text-2xl sm:text-3xl font-bold mb-4">
+<i class="fa-solid fa-lightbulb text-yellow-400 mr-2"></i>
+Simple Idea
+</h3>
+
+<p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+  Normal custom property sirf value store karti hai. Lekin
+  <code>@property</code> browser ko us value ka type bhi batata hai.
+  Is wajah se browser us property ko transition aur animation mein
+  smoothly handle kar sakta hai.
+</p>
+
+</div>
+
+
+<!-- ================================
+     BASIC SYNTAX
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-terminal text-blue-400 mr-2"></i>
+Basic Syntax
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+  <code>@property</code> ke andar mainly teen important descriptors hote hain:
+  <code>syntax</code>, <code>inherits</code> aur <code>initial-value</code>.
+</p>
+
 <div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
+
+<div class="bg-[#1e293b] p-5">
+<h3 class="text-2xl font-bold">
+<i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+Example
+</h3>
+</div>
+
+<div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--progress</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;number&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">0</span>;
+}</code></pre>
+</div>
+
+</div>
+
+
+<!-- ================================
+     SYNTAX
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-filter text-blue-400 mr-2"></i>
+syntax
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+  <code>syntax</code> batata hai ki custom property kis type ki value
+  accept karegi.
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+
+<h3 class="text-2xl font-bold mb-4">
+Number
+</h3>
+
+<pre class="overflow-x-auto text-lg"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--size</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;number&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">1</span>;
+}</code></pre>
+
+</div>
+
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+
+<h3 class="text-2xl font-bold mb-4">
+Color
+</h3>
+
+<pre class="overflow-x-auto text-lg"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--main-color</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;color&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+
+</div>
+
+</div>
+
+
+<!-- ================================
+     COMMON SYNTAX TYPES
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-list text-blue-400 mr-2"></i>
+Common Syntax Types
+</h2>
+
+<div class="overflow-x-auto mb-12">
+
+<table class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden">
+
+<thead class="bg-[#1e293b]">
+<tr>
+<th class="p-5 text-lg">Syntax</th>
+<th class="p-5 text-lg">Use</th>
+</tr>
+</thead>
+
+<tbody class="text-gray-300 text-lg">
+
+<tr class="border-t border-gray-800">
+<td class="p-5 text-blue-400">&lt;number&gt;</td>
+<td class="p-5">Number values</td>
+</tr>
+
+<tr class="border-t border-gray-800">
+<td class="p-5 text-blue-400">&lt;length&gt;</td>
+<td class="p-5">px, rem, %, etc.</td>
+</tr>
+
+<tr class="border-t border-gray-800">
+<td class="p-5 text-blue-400">&lt;color&gt;</td>
+<td class="p-5">Color values</td>
+</tr>
+
+<tr class="border-t border-gray-800">
+<td class="p-5 text-blue-400">&lt;angle&gt;</td>
+<td class="p-5">deg, rad, turn</td>
+</tr>
+
+<tr class="border-t border-gray-800">
+<td class="p-5 text-blue-400">&lt;percentage&gt;</td>
+<td class="p-5">Percentage values</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- ================================
+     INHERITS
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-share-nodes text-blue-400 mr-2"></i>
+inherits
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+  <code>inherits</code> decide karta hai ki custom property parent
+  element se child element mein inherit hogi ya nahi.
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+
+<h3 class="text-2xl font-bold mb-4">
+inherits: true
+</h3>
+
+<pre class="overflow-x-auto text-lg"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--theme-color</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;color&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">true</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+
+<p class="text-gray-400 mt-4">
+Child elements parent ki value inherit kar sakte hain.
+</p>
+
+</div>
+
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+
+<h3 class="text-2xl font-bold mb-4">
+inherits: false
+</h3>
+
+<pre class="overflow-x-auto text-lg"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--theme-color</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;color&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+
+<p class="text-gray-400 mt-4">
+Child automatically parent ki value inherit nahi karega.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ================================
+     INITIAL VALUE
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-rotate-left text-blue-400 mr-2"></i>
+initial-value
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+  <code>initial-value</code> custom property ki default value define karta hai.
+  Agar property ko koi value nahi di gayi, to registered initial value use hoti hai.
+</p>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+<div class="bg-[#1e293b] p-5">
+<h3 class="text-2xl font-bold">
+<i class="fa-solid fa-code text-blue-400 mr-2"></i>
+Example
+</h3>
+</div>
+
+<div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--box-size</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;length&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">100px</span>;
+}
+
+<span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">var(--box-size)</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">var(--box-size)</span>;
+}</code></pre>
+</div>
+
+</div>
+
+
+<!-- ================================
+     LIVE NUMBER ANIMATION
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-circle-play text-blue-400 mr-2"></i>
+Live Example: Typed Number
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+  Neeche circle par mouse le jao. Registered <code>--progress</code>
+  property smoothly change hogi.
+</p>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 mb-6 flex justify-center">
+
+<div class="progress-box">
+  <span class="text-xl font-bold">75%</span>
+</div>
+
+</div>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+<div class="bg-[#1e293b] p-5">
+<h3 class="text-2xl font-bold">
+<i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+Code
+</h3>
+</div>
+
+<div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--progress</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;number&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">0</span>;
+}
+
+<span class="text-blue-400">.progress-box</span> {
+  <span class="text-blue-400">background</span>:
+    <span class="text-green-400">conic-gradient(
+      blue calc(var(--progress) * 1%),
+      gray 0
+    )</span>;
+
+  <span class="text-blue-400">transition</span>:
+    <span class="text-green-400">--progress 1.5s ease</span>;
+}
+
+<span class="text-blue-400">.progress-box:hover</span> {
+  <span class="text-blue-400">--progress</span>: <span class="text-green-400">75</span>;
+}</code></pre>
+</div>
+
+</div>
+
+
+<!-- ================================
+     COLOR PROPERTY
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-palette text-blue-400 mr-2"></i>
+Live Example: Color Property
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+  <code>&lt;color&gt;</code> syntax ke saath custom color property
+  smoothly transition kar sakti hai.
+</p>
+
+<div class="flex justify-center mb-6">
+
+<div class="color-card w-full max-w-md rounded-2xl p-10 text-center shadow-xl">
+
+<h3 class="text-3xl font-bold mb-3">
+Hover Me
+</h3>
+
+<p class="text-lg">
+Color smoothly change hoga.
+</p>
+
+</div>
+
+</div>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+<div class="bg-[#1e293b] p-5">
+<h3 class="text-2xl font-bold">
+<i class="fa-solid fa-code text-blue-400 mr-2"></i>
+Code
+</h3>
+</div>
+
+<div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--card-color</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;color&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">#254ccb</span>;
+}
+
+<span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">var(--card-color)</span>;
+  <span class="text-blue-400">transition</span>: <span class="text-green-400">--card-color 1s ease</span>;
+}
+
+<span class="text-blue-400">.card:hover</span> {
+  <span class="text-blue-400">--card-color</span>: <span class="text-green-400">#7c3aed</span>;
+}</code></pre>
+</div>
+
+</div>
+
+
+<!-- ================================
+     LENGTH PROPERTY
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+Live Example: Length Property
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+  <code>&lt;length&gt;</code> type ke saath size ko bhi smoothly animate
+  kiya ja sakta hai.
+</p>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-10 mb-6 flex justify-center items-center min-h-[260px]">
+
+<div class="size-box bg-[#254ccb] rounded-2xl flex items-center justify-center text-lg font-bold">
+Hover
+</div>
+
+</div>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+<div class="bg-[#1e293b] p-5">
+<h3 class="text-2xl font-bold">
+<i class="fa-solid fa-code text-blue-400 mr-2"></i>
+Code
+</h3>
+</div>
+
+<div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--box-size</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;length&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">100px</span>;
+}
+
+<span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">var(--box-size)</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">var(--box-size)</span>;
+  <span class="text-blue-400">transition</span>: <span class="text-green-400">--box-size 1s ease</span>;
+}
+
+<span class="text-blue-400">.box:hover</span> {
+  <span class="text-blue-400">--box-size</span>: <span class="text-green-400">180px</span>;
+}</code></pre>
+</div>
+
+</div>
+
+
+<!-- ================================
+     ANGLE PROPERTY
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-rotate text-blue-400 mr-2"></i>
+Live Example: Angle Property
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+  <code>&lt;angle&gt;</code> register karke rotation value ko smoothly
+  transition kar sakte hain.
+</p>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-10 mb-6 flex justify-center items-center min-h-[260px]">
+
+<div class="rotate-box w-32 h-32 rounded-2xl bg-[#254ccb] flex items-center justify-center text-lg font-bold">
+Hover
+</div>
+
+</div>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+
+<div class="bg-[#1e293b] p-5">
+<h3 class="text-2xl font-bold">
+<i class="fa-solid fa-code text-blue-400 mr-2"></i>
+Code
+</h3>
+</div>
+
+<div class="p-6 overflow-x-auto">
+<pre class="text-lg leading-relaxed"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--angle</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;angle&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">0deg</span>;
+}
+
+<span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">rotate(var(--angle))</span>;
+  <span class="text-blue-400">transition</span>: <span class="text-green-400">--angle 1s ease</span>;
+}
+
+<span class="text-blue-400">.box:hover</span> {
+  <span class="text-blue-400">--angle</span>: <span class="text-green-400">180deg</span>;
+}</code></pre>
+</div>
+
+</div>
+
+
+<!-- ================================
+     WHY USE @property
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-star text-blue-400 mr-2"></i>
+@property Kyun Use Karein?
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+<h3 class="text-2xl font-bold mb-3">
+<i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+Smooth Animation
+</h3>
+<p class="text-lg text-gray-300">
+Typed custom properties ko browser interpolate kar sakta hai.
+</p>
+</div>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+<h3 class="text-2xl font-bold mb-3">
+<i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+Type Control
+</h3>
+<p class="text-lg text-gray-300">
+Browser ko property ka expected data type pata hota hai.
+</p>
+</div>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+<h3 class="text-2xl font-bold mb-3">
+<i class="fa-solid fa-arrows-to-circle text-blue-400 mr-2"></i>
+Inheritance Control
+</h3>
+<p class="text-lg text-gray-300">
+<code>inherits</code> se inheritance behavior control kar sakte hain.
+</p>
+</div>
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+<h3 class="text-2xl font-bold mb-3">
+<i class="fa-solid fa-sliders text-blue-400 mr-2"></i>
+Default Value
+</h3>
+<p class="text-lg text-gray-300">
+<code>initial-value</code> se default value define hoti hai.
+</p>
+</div>
+
+</div>
+
+
+<!-- ================================
+     IMPORTANT POINTS
+================================ -->
+
 <div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-7">
+<i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+Important Points
+</h2>
+
 <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+@property ek CSS at-rule hai jo custom property ko register karta hai.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+Custom property ka naam normally <code>--</code> se start hota hai.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+<code>syntax</code> property ka data type define karta hai.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+<code>inherits</code> decide karta hai ki value children mein inherit hogi ya nahi.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+<code>initial-value</code> default value define karta hai.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+Typed custom properties smooth transitions aur animations ke liye useful hain.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+@property ko use karte waqt syntax aur initial-value compatible hone chahiye.
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- ================================
+     COMMON MISTAKES
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"></i>
+Common Mistakes
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+
+<h3 class="text-2xl font-bold mb-4 text-red-400">
+Wrong Syntax
+</h3>
+
+<pre class="overflow-x-auto text-lg"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--size</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">number</span>;
+}</code></pre>
+
+<p class="text-gray-400 mt-4">
+Syntax descriptor mein type ko string format mein likhna chahiye.
+</p>
+
+</div>
+
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+
+<h3 class="text-2xl font-bold mb-4 text-green-400">
+Correct Syntax
+</h3>
+
+<pre class="overflow-x-auto text-lg"><code><span class="text-blue-400">@property</span> <span class="text-green-400">--size</span> {
+  <span class="text-blue-400">syntax</span>: <span class="text-green-400">"&lt;number&gt;"</span>;
+  <span class="text-blue-400">inherits</span>: <span class="text-green-400">false</span>;
+  <span class="text-blue-400">initial-value</span>: <span class="text-green-400">1</span>;
+}</code></pre>
+
+</div>
+
+</div>
+
+
+<!-- ================================
+     BEST PRACTICES
+================================ -->
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-5">
+<i class="fa-solid fa-circle-check text-green-400 mr-2"></i>
+Best Practices
+</h2>
+
 <div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS @property CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
+
+<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+Custom properties ke naam meaningful rakhein.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+Correct <code>syntax</code> select karein.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+<code>inherits</code> ko requirement ke according set karein.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+Valid aur sensible <code>initial-value</code> use karein.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+@property ka use especially typed custom properties aur animations mein karein.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-green-400 mr-2"></i>
+Production project mein browser support ko bhi check karein.
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- ================================
+     SUMMARY
+================================ -->
+
+<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
+
+<h2 class="text-3xl sm:text-4xl font-bold mb-6">
+<i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+Summary
+</h2>
+
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">
+  CSS <code>@property</code> custom CSS properties ko register karne ka
+  powerful way hai. Isme <code>syntax</code> value ka type,
+  <code>inherits</code> inheritance aur <code>initial-value</code>
+  default value define karta hai. Typed custom properties ki help se
+  smooth transitions aur animations create karna easier ho jata hai.
+</p>
+
+</div>
+
+
+<!-- ================================
+     BOTTOM NAVIGATION
+================================ -->
+
 <div class="flex justify-between items-center gap-4 mt-10">
-<a href="../variables/variables.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../property/property.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
+
+<a href="../variables/variables.html">
+<button
+class="rounded-xl px-6 sm:px-8 py-4 sm:py-5
+text-lg sm:text-xl font-semibold text-black
+bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+Previous
+</button>
+</a>
+
+<a href="../box-sizing/box-sizing.html">
+<button
+class="bg-[#254ccb] hover:bg-[#304cd6]
+text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5
+text-lg sm:text-xl font-semibold transition">
+Next
+<i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+
+</div>
+
+</div>
+</section>
+</main>
+
 <footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(71);});</script>
-</body></html>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("sidebar").innerHTML = createSidebar(71);
+});
+</script>
+
+</body>
+</html>

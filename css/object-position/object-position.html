@@ -1,44 +1,666 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Object Position</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Object Position</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Object Position CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../object-fit/object-fit.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../object-position/object-position.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Object Position Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Object Position CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Object Position CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../object-fit/object-fit.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../object-position/object-position.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(64);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Object Position</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .position-box {
+        width: 100%;
+        max-width: 340px;
+        height: 220px;
+        border: 1px solid #374151;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #1e293b;
+      }
+
+      .position-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .position-center {
+        object-position: center;
+      }
+
+      .position-top {
+        object-position: top;
+      }
+
+      .position-bottom {
+        object-position: bottom;
+      }
+
+      .position-left {
+        object-position: left;
+      }
+
+      .position-right {
+        object-position: right;
+      }
+
+      .position-top-left {
+        object-position: top left;
+      }
+
+      .position-top-right {
+        object-position: top right;
+      }
+
+      .position-bottom-left {
+        object-position: bottom left;
+      }
+
+      .position-bottom-right {
+        object-position: bottom right;
+      }
+
+      .position-custom {
+        object-position: 70% 30%;
+      }
+
+      .position-card {
+        transition: 0.3s ease;
+      }
+
+      .position-card:hover {
+        transform: translateY(-5px);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading -->
+          <div class="mb-8">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+              CSS Object Position
+            </h1>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              The CSS <span class="text-blue-400">object-position</span>
+              property controls which part of an image or video is visible
+              inside its container.
+            </p>
+          </div>
+
+          <!-- TOP PREVIOUS / NEXT -->
+          <div class="w-full flex justify-between items-center gap-4 mb-12">
+            <!-- Previous -->
+            <a href="../object-fit/object-fit.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <!-- Next -->
+            <a href="../masking/masking.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- What is Object Position -->
+          <div class="mb-10">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+              CSS Object Position Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              <span class="text-blue-400">object-position</span> batata hai ki
+              container ke andar image ka kaunsa part dikhaya jayega. Ye
+              property normally
+              <span class="text-blue-400">object-fit: cover</span> ke saath
+              bahut useful hoti hai.
+            </p>
+          </div>
+
+          <!-- Syntax -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              Object Position Syntax
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-semibold">Basic Syntax</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">300px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">object-position</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              1. object-position: center
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">center</span> image ke center portion
+              ko container ke center mein rakhta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="position-box">
+                <img
+                  src="https://picsum.photos/id/1015/700/400"
+                  class="position-center"
+                  alt="Object position center"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">object-position</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- Top -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              2. object-position: top
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">top</span> image ke upper part ko
+              visible rakhta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="position-box">
+                <img
+                  src="https://picsum.photos/id/1015/700/400"
+                  class="position-top"
+                  alt="Object position top"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">object-position</span>: <span class="text-green-400">top</span>;
+}</code></pre>
+          </div>
+
+          <!-- Bottom -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              3. object-position: bottom
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">bottom</span> image ke lower part ko
+              visible rakhta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="position-box">
+                <img
+                  src="https://picsum.photos/id/1015/700/400"
+                  class="position-bottom"
+                  alt="Object position bottom"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">object-position</span>: <span class="text-green-400">bottom</span>;
+}</code></pre>
+          </div>
+
+          <!-- Left -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              4. object-position: left
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">left</span> image ke left side ko
+              visible rakhta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="position-box">
+                <img
+                  src="https://picsum.photos/id/1015/700/400"
+                  class="position-left"
+                  alt="Object position left"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">object-position</span>: <span class="text-green-400">left</span>;
+}</code></pre>
+          </div>
+
+          <!-- Right -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              5. object-position: right
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">right</span> image ke right side ko
+              visible rakhta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="position-box">
+                <img
+                  src="https://picsum.photos/id/1015/700/400"
+                  class="position-right"
+                  alt="Object position right"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">object-position</span>: <span class="text-green-400">right</span>;
+}</code></pre>
+          </div>
+
+          <!-- Corner Positions -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              Object Position with Corners
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Aap horizontal aur vertical position ko ek saath bhi use kar sakte
+              ho.
+            </p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <!-- Top Left -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-40 rounded-xl overflow-hidden mb-4">
+                  <img
+                    src="https://picsum.photos/id/1015/700/400"
+                    class="w-full h-full object-cover position-top-left"
+                    alt="Top left"
+                  />
+                </div>
+
+                <h3 class="text-lg font-semibold">top left</h3>
+              </div>
+
+              <!-- Top Right -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-40 rounded-xl overflow-hidden mb-4">
+                  <img
+                    src="https://picsum.photos/id/1015/700/400"
+                    class="w-full h-full object-cover position-top-right"
+                    alt="Top right"
+                  />
+                </div>
+
+                <h3 class="text-lg font-semibold">top right</h3>
+              </div>
+
+              <!-- Bottom Left -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-40 rounded-xl overflow-hidden mb-4">
+                  <img
+                    src="https://picsum.photos/id/1015/700/400"
+                    class="w-full h-full object-cover position-bottom-left"
+                    alt="Bottom left"
+                  />
+                </div>
+
+                <h3 class="text-lg font-semibold">bottom left</h3>
+              </div>
+
+              <!-- Bottom Right -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-40 rounded-xl overflow-hidden mb-4">
+                  <img
+                    src="https://picsum.photos/id/1015/700/400"
+                    class="w-full h-full object-cover position-bottom-right"
+                    alt="Bottom right"
+                  />
+                </div>
+
+                <h3 class="text-lg font-semibold">bottom right</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Percentage -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              Custom Position with Percentage
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              Percentage values se image ki exact position ko control kiya ja
+              sakta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="position-box">
+                <img
+                  src="https://picsum.photos/id/1015/700/400"
+                  class="position-custom"
+                  alt="Custom object position"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">object-position</span>: <span class="text-green-400">70% 30%</span>;
+}</code></pre>
+          </div>
+
+          <!-- Two Values -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              Horizontal and Vertical Position
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              Do values use karne par pehli value horizontal position aur doosri
+              value vertical position control karti hai.
+            </p>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">object-position</span>: <span class="text-green-400">70% 30%</span>;
+}</code></pre>
+          </div>
+
+          <!-- Practical Example -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              Practical Example
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Profile cards aur thumbnails mein
+              <span class="text-blue-400">object-position</span> ka use karke
+              image ka important part visible rakha ja sakta hai.
+            </p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="position-card bg-[#0f172a] border border-gray-800 rounded-2xl p-4 overflow-hidden"
+              >
+                <div class="h-52 rounded-xl overflow-hidden">
+                  <img
+                    src="https://picsum.photos/id/1005/600/500"
+                    class="w-full h-full object-cover object-top"
+                    alt="Profile image"
+                  />
+                </div>
+
+                <h3 class="text-xl font-semibold mt-4">Profile Image</h3>
+
+                <p class="text-gray-400 mt-2">Top portion is kept visible.</p>
+              </div>
+
+              <div
+                class="position-card bg-[#0f172a] border border-gray-800 rounded-2xl p-4 overflow-hidden"
+              >
+                <div class="h-52 rounded-xl overflow-hidden">
+                  <img
+                    src="https://picsum.photos/id/1011/600/500"
+                    class="w-full h-full object-cover object-center"
+                    alt="Gallery image"
+                  />
+                </div>
+
+                <h3 class="text-xl font-semibold mt-4">Gallery Image</h3>
+
+                <p class="text-gray-400 mt-2">Center portion is visible.</p>
+              </div>
+
+              <div
+                class="position-card bg-[#0f172a] border border-gray-800 rounded-2xl p-4 overflow-hidden"
+              >
+                <div class="h-52 rounded-xl overflow-hidden">
+                  <img
+                    src="https://picsum.photos/id/1027/600/500"
+                    class="w-full h-full object-cover object-bottom"
+                    alt="Thumbnail"
+                  />
+                </div>
+
+                <h3 class="text-xl font-semibold mt-4">Thumbnail</h3>
+
+                <p class="text-gray-400 mt-2">
+                  Bottom portion is kept visible.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Points -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">
+              <i class="fa-solid fa-circle-info mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">object-position</span> controls the
+                position of an image inside its container.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                It is especially useful with
+                <span class="text-blue-400">object-fit: cover</span>.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Common values include
+                <span class="text-blue-400">center</span>,
+                <span class="text-blue-400">top</span>,
+                <span class="text-blue-400">bottom</span>,
+                <span class="text-blue-400">left</span> and
+                <span class="text-blue-400">right</span>.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Percentage values can be used for custom positioning.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Two values can control horizontal and vertical positioning.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Common Mistakes -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">Common Mistakes</h2>
+
+            <ul class="space-y-4 text-lg text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Using <span class="text-blue-400">object-position</span>
+                without understanding the effect of
+                <span class="text-blue-400">object-fit</span>.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Expecting <span class="text-blue-400">object-position</span>
+                to resize the image.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Using incorrect percentage values for the desired position.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Best Practices -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">Best Practices</h2>
+
+            <ul class="space-y-4 text-lg text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Use <span class="text-blue-400">object-fit: cover</span>
+                when cropping is acceptable.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Use <span class="text-blue-400">object-position</span>
+                to keep the important part of an image visible.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Use percentages when a predefined position is not enough.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS <span class="text-blue-400">object-position</span> controls
+              which part of an image or video is visible inside its container.
+              You can use values such as
+              <span class="text-blue-400">center</span>,
+              <span class="text-blue-400">top</span>,
+              <span class="text-blue-400">bottom</span>,
+              <span class="text-blue-400">left</span>,
+              <span class="text-blue-400">right</span> and custom percentage
+              values.
+            </p>
+          </div>
+
+          <!-- BOTTOM PREVIOUS / NEXT -->
+          <div
+            class="w-full flex justify-between items-center gap-4 mt-14 mb-8"
+          >
+            <!-- Previous -->
+            <a href="../object-fit/object-fit.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <!-- Next -->
+            <a href="../masking/masking.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(64);
+      });
+    </script>
+  </body>
+</html>

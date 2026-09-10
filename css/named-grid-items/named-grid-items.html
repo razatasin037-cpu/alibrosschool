@@ -1,44 +1,601 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Named Grid Items</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Named Grid Items</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Named Grid Items CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../grid-items/grid-items.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../named-grid-items/named-grid-items.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Named Grid Items Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Named Grid Items CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Named Grid Items CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../grid-items/grid-items.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../named-grid-items/named-grid-items.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(86);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Named Grid Items</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .named-grid {
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "sidebar main main"
+          "footer footer footer";
+        grid-template-columns: 180px 1fr 1fr;
+        grid-template-rows: 80px 180px 70px;
+        gap: 12px;
+      }
+
+      .grid-header {
+        grid-area: header;
+        background: #254ccb;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+
+      .grid-sidebar {
+        grid-area: sidebar;
+        background: #3158ff;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+
+      .grid-main {
+        grid-area: main;
+        background: #1e40af;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+
+      .grid-footer {
+        grid-area: footer;
+        background: #334155;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+
+      @media (max-width: 700px) {
+        .named-grid {
+          grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+          grid-template-columns: 1fr;
+          grid-template-rows: 70px 100px 160px 70px;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Named Grid Items
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Named Grid Items se hum grid ke different areas ko naam dekar
+            layout ko easily organize kar sakte hain.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../grid-items/grid-items.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../grid-item-align/grid-item-align.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>Named Grid Items
+            Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS Grid mein
+            <span class="text-blue-400">grid-template-areas</span> ka use karke
+            hum grid ke areas ko custom names de sakte hain. Phir
+            <span class="text-blue-400">grid-area</span> property se kisi item
+            ko us named area mein place kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Main
+              Properties
+            </h3>
+            <ul class="space-y-3 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">grid-template-areas</span> — grid
+                areas ke names define karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">grid-area</span> — item ko named
+                area assign karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Named areas
+                layout ko readable aur easy-to-maintain banate hain.
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            1. grid-template-areas
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Sabse pehle grid container mein areas ke names define karte hain.
+            Har string ek row ko represent karti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+
+  <span class="text-blue-400">grid-template-areas</span>:
+    <span class="text-green-400">"header header"</span>
+    <span class="text-green-400">"sidebar main"</span>
+    <span class="text-green-400">"footer footer"</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">2. grid-area</h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab individual Grid Items ko unke named areas assign karte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.header</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">header</span>;
+}
+
+<span class="text-blue-400">.sidebar</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">sidebar</span>;
+}
+
+<span class="text-blue-400">.main</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">main</span>;
+}
+
+<span class="text-blue-400">.footer</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">footer</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            3. Complete Named Grid Layout
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Neeche ek complete layout hai jisme header, sidebar, main content
+            aur footer ko names diye gaye hain.
+          </p>
+
+          <div class="named-grid mb-8">
+            <div class="grid-header">Header</div>
+            <div class="grid-sidebar">Sidebar</div>
+            <div class="grid-main">Main Content</div>
+            <div class="grid-footer">Footer</div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Complete Code
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.layout</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+
+  <span class="text-blue-400">grid-template-areas</span>:
+    <span class="text-green-400">"header header header"</span>
+    <span class="text-green-400">"sidebar main main"</span>
+    <span class="text-green-400">"footer footer footer"</span>;
+
+  <span class="text-blue-400">grid-template-columns</span>:
+    <span class="text-green-400">180px 1fr 1fr</span>;
+
+  <span class="text-blue-400">grid-template-rows</span>:
+    <span class="text-green-400">80px 180px 70px</span>;
+
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">12px</span>;
+}
+
+<span class="text-blue-400">.header</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">header</span>;
+}
+
+<span class="text-blue-400">.sidebar</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">sidebar</span>;
+}
+
+<span class="text-blue-400">.main</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">main</span>;
+}
+
+<span class="text-blue-400">.footer</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">footer</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            4. Same Area Multiple Times
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek named area ko multiple cells mein repeat karke kisi item ko bada
+            area diya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.layout</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+
+  <span class="text-blue-400">grid-template-areas</span>:
+    <span class="text-green-400">"header header header"</span>
+    <span class="text-green-400">"sidebar content content"</span>
+    <span class="text-green-400">"sidebar content content"</span>
+    <span class="text-green-400">"footer footer footer"</span>;
+}
+
+<span class="text-blue-400">.sidebar</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">sidebar</span>;
+}
+
+<span class="text-blue-400">.content</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">content</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            5. Empty Grid Cells
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Named grid areas mein dot <span class="text-green-400">.</span> ka
+            use empty cell ke liye kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.layout</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+
+  <span class="text-blue-400">grid-template-areas</span>:
+    <span class="text-green-400">"header header"</span>
+    <span class="text-green-400">"sidebar ."</span>
+    <span class="text-green-400">"footer footer"</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            6. Responsive Named Grid
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Media Query ke andar
+            <span class="text-blue-400">grid-template-areas</span> ko change
+            karke mobile layout easily banaya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i
+                >Responsive Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.layout</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+
+  <span class="text-blue-400">grid-template-areas</span>:
+    <span class="text-green-400">"header header"</span>
+    <span class="text-green-400">"sidebar main"</span>
+    <span class="text-green-400">"footer footer"</span>;
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">700px</span>) {
+  <span class="text-blue-400">.layout</span> {
+    <span class="text-blue-400">grid-template-areas</span>:
+      <span class="text-green-400">"header"</span>
+      <span class="text-green-400">"sidebar"</span>
+      <span class="text-green-400">"main"</span>
+      <span class="text-green-400">"footer"</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            7. Named Grid Areas vs Line Numbers
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead class="bg-[#1e293b]">
+                <tr>
+                  <th class="p-4 text-lg">Method</th>
+                  <th class="p-4 text-lg">Use</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300 text-lg">
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">grid-area</td>
+                  <td class="p-4">Named areas se layout readable hota hai.</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">grid-column / grid-row</td>
+                  <td class="p-4">
+                    Grid lines ke through exact placement ke liye useful hai.
+                  </td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-4 text-green-400">grid-template-areas</td>
+                  <td class="p-4">
+                    Overall layout structure visually define karta hai.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i
+              >Important Points
+            </h2>
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">grid-template-areas</span> named
+                layout areas define karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><span class="text-blue-400">grid-area</span> item ko named area
+                mein place karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Same name
+                ko multiple cells mein repeat karke area ko span kar sakte hain.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Dot
+                <span class="text-green-400">.</span> empty grid cell ko
+                represent karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive
+                design mein named areas ko media queries ke saath change kiya ja
+                sakta hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i
+              >Common Mistakes
+            </h2>
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Different
+                rows mein named area ka invalid shape banana.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i
+                ><span class="text-blue-400">grid-area</span> ka naam
+                <span class="text-blue-400">grid-template-areas</span> se match
+                na karna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Empty cells
+                ke liye dot <span class="text-green-400">.</span> ka use
+                bhoolna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Mobile layout
+                mein areas ko update na karna.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-lightbulb text-yellow-400 mr-2"></i>Best
+              Practices
+            </h2>
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Area names
+                ko meaningful rakhein, jaise
+                <span class="text-green-400">header</span>,
+                <span class="text-green-400">sidebar</span> aur
+                <span class="text-green-400">footer</span>.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Complex
+                layouts ke liye named areas code ko readable banate hain.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive
+                layouts mein media queries ka use karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Ek area ko
+                unnecessarily bahut complex na banayein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary
+            </h2>
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Named Grid Items mein
+              <span class="text-blue-400">grid-template-areas</span> se named
+              areas define kiye jaate hain aur
+              <span class="text-blue-400">grid-area</span> se items ko un areas
+              mein place kiya jata hai. Isse complex aur responsive layouts ko
+              simple aur readable way mein create karna easy ho jata hai.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../grid-items-alignment/grid-items-alignment.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../grid-item-align/grid-item-align.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(86);
+      });
+    </script>
+  </body>
+</html>

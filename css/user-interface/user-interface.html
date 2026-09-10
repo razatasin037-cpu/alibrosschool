@@ -1,44 +1,752 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS User Interface</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS User Interface</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS User Interface CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../multiple-columns/multiple-columns.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../user-interface/user-interface.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS User Interface Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS User Interface CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS User Interface CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../multiple-columns/multiple-columns.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../user-interface/user-interface.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(69);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS User Interface</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .resize-box {
+        resize: both;
+        overflow: auto;
+        width: 260px;
+        min-height: 100px;
+        max-width: 100%;
+      }
+
+      .outline-demo {
+        outline: 3px solid #2563eb;
+        outline-offset: 8px;
+      }
+
+      .cursor-demo {
+        cursor: pointer;
+      }
+
+      .cursor-help {
+        cursor: help;
+      }
+
+      .cursor-not-allowed {
+        cursor: not-allowed;
+      }
+
+      .cursor-grab {
+        cursor: grab;
+      }
+
+      .cursor-text {
+        cursor: text;
+      }
+
+      .cursor-crosshair {
+        cursor: crosshair;
+      }
+
+      .caret-demo {
+        caret-color: #3b82f6;
+      }
+
+      .appearance-demo {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 100%;
+        max-width: 360px;
+        padding: 12px 16px;
+        border: 1px solid #475569;
+        border-radius: 10px;
+        background: #1e293b;
+        color: white;
+      }
+
+      .range-demo {
+        accent-color: #2563eb;
+        width: 100%;
+        max-width: 360px;
+      }
+
+      .select-wrapper {
+        position: relative;
+        max-width: 360px;
+      }
+
+      .select-wrapper::after {
+        content: "\f078";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #60a5fa;
+      }
+
+      @media (max-width: 640px) {
+        .resize-box {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- HEADING -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS User Interface
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS User Interface properties ka use website ke controls aur
+            elements ke interaction ko better banane ke liye hota hai. Isme
+            resize, outline, cursor, caret aur form controls ko style karna
+            important hai.
+          </p>
+
+          <!-- TOP NAV -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../multiple-columns/multiple-columns.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../variables/variables.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS UI -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-computer-mouse text-blue-400 mr-2"></i>
+            CSS User Interface Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS User Interface ka main purpose user interaction ko improve karna
+            hai. Hum cursor, focus outline, resizing aur form controls jaise
+            elements ko CSS ke through customize kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <div class="flex flex-wrap gap-3">
+              <span class="px-4 py-2 rounded-lg bg-[#1e293b] text-blue-400">
+                resize
+              </span>
+
+              <span class="px-4 py-2 rounded-lg bg-[#1e293b] text-blue-400">
+                outline
+              </span>
+
+              <span class="px-4 py-2 rounded-lg bg-[#1e293b] text-blue-400">
+                cursor
+              </span>
+
+              <span class="px-4 py-2 rounded-lg bg-[#1e293b] text-blue-400">
+                caret-color
+              </span>
+
+              <span class="px-4 py-2 rounded-lg bg-[#1e293b] text-blue-400">
+                appearance
+              </span>
+            </div>
+          </div>
+
+          <!-- RESIZE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+            resize
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            The <span class="text-blue-400">resize</span> property user ko kisi
+            element ka size manually change karne ki permission deti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <p class="text-gray-400 mb-4">Drag the bottom-right corner:</p>
+
+            <textarea
+              class="resize-box bg-[#1e293b] border border-gray-700 rounded-xl p-4 text-lg text-gray-200 outline-none"
+              placeholder="Resize this box..."
+            ></textarea>
+          </div>
+
+          <!-- CODE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">textarea</span> {
+  <span class="text-blue-400">resize</span>: <span class="text-green-400">both</span>;
+  <span class="text-blue-400">overflow</span>: <span class="text-green-400">auto</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- RESIZE VALUES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sliders text-blue-400 mr-2"></i>
+            resize Values
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Common values <span class="text-blue-400">none</span>,
+            <span class="text-blue-400">horizontal</span>,
+            <span class="text-blue-400">vertical</span> aur
+            <span class="text-blue-400">both</span> hain.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-5 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-xl font-bold mb-3">none</h3>
+              <p class="text-gray-400">
+                User element ko resize nahi kar sakta.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-xl font-bold mb-3">horizontal</h3>
+              <p class="text-gray-400">Sirf width change ki ja sakti hai.</p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-xl font-bold mb-3">vertical</h3>
+              <p class="text-gray-400">Sirf height change ki ja sakti hai.</p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-xl font-bold mb-3">both</h3>
+              <p class="text-gray-400">
+                Width aur height dono change ki ja sakti hain.
+              </p>
+            </div>
+          </div>
+
+          <!-- OUTLINE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-regular fa-square text-blue-400 mr-2"></i>
+            outline
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">outline</span> element ke border ke
+            outside ek line create karta hai. Ye focus state ke liye especially
+            useful hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-10 mb-8"
+          >
+            <div class="outline-demo bg-[#1e293b] rounded-xl p-6 text-center">
+              Outline Example
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">3px solid blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- OUTLINE OFFSET -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-border-all text-blue-400 mr-2"></i>
+            outline-offset
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">outline-offset</span> outline aur
+            element ke beech distance set karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-10 mb-8"
+          >
+            <div class="outline-demo bg-[#1e293b] rounded-xl p-6 text-center">
+              Outline Offset: 8px
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">3px solid blue</span>;
+  <span class="text-blue-400">outline-offset</span>: <span class="text-green-400">8px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- CURSOR -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-pointer text-blue-400 mr-2"></i>
+            cursor
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">cursor</span> property mouse pointer ka
+            appearance change karti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div class="cursor-demo bg-[#1e293b] rounded-xl p-5 text-center">
+                Pointer
+              </div>
+
+              <div class="cursor-help bg-[#1e293b] rounded-xl p-5 text-center">
+                Help
+              </div>
+
+              <div
+                class="cursor-not-allowed bg-[#1e293b] rounded-xl p-5 text-center"
+              >
+                Not Allowed
+              </div>
+
+              <div class="cursor-grab bg-[#1e293b] rounded-xl p-5 text-center">
+                Grab
+              </div>
+
+              <div class="cursor-text bg-[#1e293b] rounded-xl p-5 text-center">
+                Text
+              </div>
+
+              <div
+                class="cursor-crosshair bg-[#1e293b] rounded-xl p-5 text-center"
+              >
+                Crosshair
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">cursor</span>: <span class="text-green-400">pointer</span>;
+}
+
+<span class="text-blue-400">.disabled</span> {
+  <span class="text-blue-400">cursor</span>: <span class="text-green-400">not-allowed</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- CARET COLOR -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-i-cursor text-blue-400 mr-2"></i>
+            caret-color
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">caret-color</span> input ya textarea ke
+            typing cursor ka color change karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <input
+              type="text"
+              class="caret-demo w-full max-w-xl bg-[#1e293b] border border-gray-700 rounded-xl px-5 py-4 text-lg outline-none"
+              placeholder="Type here..."
+            />
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input</span> {
+  <span class="text-blue-400">caret-color</span>: <span class="text-green-400">blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- APPEARANCE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-paintbrush text-blue-400 mr-2"></i>
+            appearance
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">appearance</span> browser ke default
+            form-control styling ko remove ya customize karne ke liye use hota
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <select class="appearance-demo">
+              <option>Select an option</option>
+              <option>HTML</option>
+              <option>CSS</option>
+              <option>JavaScript</option>
+            </select>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">select</span> {
+  <span class="text-blue-400">appearance</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">-webkit-appearance</span>: <span class="text-green-400">none</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- RANGE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sliders text-blue-400 mr-2"></i>
+            Form Controls Styling
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            CSS se input, range aur select jaise controls ko bhi user-friendly
+            look diya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <label class="block text-lg text-gray-300 mb-4"> Volume </label>
+
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="65"
+              class="range-demo"
+            />
+          </div>
+
+          <!-- PRACTICAL -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-laptop text-blue-400 mr-2"></i>
+            Practical UI Example
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Neeche ek simple form diya gaya hai jisme cursor, outline, caret aur
+            custom form controls ka use kiya gaya hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <div class="max-w-xl space-y-5">
+              <div>
+                <label class="block text-gray-300 mb-2"> Name </label>
+
+                <input
+                  type="text"
+                  class="caret-demo w-full bg-[#1e293b] border border-gray-700 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 rounded-xl px-5 py-4 text-lg"
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              <div>
+                <label class="block text-gray-300 mb-2"> Message </label>
+
+                <textarea
+                  class="resize-y w-full min-h-[130px] bg-[#1e293b] border border-gray-700 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 rounded-xl px-5 py-4 text-lg"
+                  placeholder="Write your message..."
+                ></textarea>
+              </div>
+
+              <button
+                class="cursor-demo bg-[#254ccb] hover:bg-[#304cd6] px-7 py-4 rounded-xl text-lg font-semibold transition"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">resize</span> user ko element ka
+                size change karne deta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">outline</span> element ke outside
+                visual line create karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">outline-offset</span> outline ka
+                distance control karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">cursor</span> mouse pointer ka style
+                change karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">caret-color</span> typing cursor ka
+                color change karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">appearance</span> browser ke default
+                controls ko customize karne mein help karta hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Focus outline ko completely remove kar dena without replacement.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Disabled elements ke liye confusing cursor use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Form controls ko itna customize karna ki user unhe recognize na
+                kar sake.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Mobile screen par controls ko bahut small banana.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Resize karte waqt overflow handling ignore karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-star text-yellow-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Keyboard focus ke liye visible outline zaroor rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Interactive elements par appropriate cursor use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Form controls ko consistent aur recognizable rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Touch devices ke liye buttons aur inputs ko sufficient size
+                dein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Custom UI banate waqt accessibility ko ignore na karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS User Interface properties website ke interactive elements ko
+              better control karne mein help karti hain. Important properties
+              mein
+              <span class="text-blue-400">resize</span>,
+              <span class="text-blue-400">outline</span>,
+              <span class="text-blue-400">outline-offset</span>,
+              <span class="text-blue-400">cursor</span>,
+              <span class="text-blue-400">caret-color</span> aur
+              <span class="text-blue-400">appearance</span> shamil hain. Inka
+              proper use website ko more usable, consistent aur user-friendly
+              banata hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAV -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../multiple-columns/multiple-columns.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../variables/variables.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(69);
+      });
+    </script>
+  </body>
+</html>

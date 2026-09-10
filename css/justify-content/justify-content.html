@@ -1,44 +1,690 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Justify Content</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Justify Content</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Justify Content CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../flex-container/flex-container.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../justify-content/justify-content.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Justify Content Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Justify Content CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Justify Content CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../flex-container/flex-container.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../justify-content/justify-content.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(76);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Justify Content</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .justify-demo {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 20px;
+        background: #1e293b;
+        border-radius: 14px;
+        min-height: 120px;
+      }
+
+      .justify-item {
+        background: #254ccb;
+        padding: 18px 24px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .start-demo {
+        justify-content: flex-start;
+      }
+
+      .end-demo {
+        justify-content: flex-end;
+      }
+
+      .between-demo {
+        justify-content: space-between;
+      }
+
+      .around-demo {
+        justify-content: space-around;
+      }
+
+      .evenly-demo {
+        justify-content: space-evenly;
+      }
+
+      .center-demo {
+        justify-content: center;
+      }
+
+      .column-demo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        min-height: 260px;
+        padding: 20px;
+        background: #1e293b;
+        border-radius: 14px;
+      }
+
+      .nav-demo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 22px;
+        background: #1e293b;
+        border-radius: 14px;
+      }
+
+      .nav-demo .logo {
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Justify Content
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS <code class="text-green-400">justify-content</code> Flex
+            Container ke main axis par Flex Items ki position aur unke beech ki
+            spacing control karta hai.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../flex-container/flex-container.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../align-items/align-items.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            Justify Content Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Jab parent element par
+            <code class="text-green-400">display: flex</code> hota hai, tab
+            <code class="text-green-400">justify-content</code> items ko main
+            axis par arrange karta hai. Default value
+            <code class="text-green-400">flex-start</code> hoti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Syntax
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="justify-demo center-demo mb-12">
+            <div class="justify-item">Item 1</div>
+            <div class="justify-item">Item 2</div>
+            <div class="justify-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-right text-blue-400 mr-2"></i>
+            flex-start
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">flex-start</code> items ko main axis ke
+            starting point par rakhta hai. Ye default value hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">flex-start</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="justify-demo start-demo mb-12">
+            <div class="justify-item">Item 1</div>
+            <div class="justify-item">Item 2</div>
+            <div class="justify-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-left text-blue-400 mr-2"></i>
+            flex-end
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">flex-end</code> items ko main axis ke
+            ending point par place karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">flex-end</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="justify-demo end-demo mb-12">
+            <div class="justify-item">Item 1</div>
+            <div class="justify-item">Item 2</div>
+            <div class="justify-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-left-right-to-line text-blue-400 mr-2"
+            ></i>
+            center
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">center</code> items ko main axis ke
+            center mein place karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="justify-demo center-demo mb-12">
+            <div class="justify-item">Item 1</div>
+            <div class="justify-item">Item 2</div>
+            <div class="justify-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-left-right-to-line text-blue-400 mr-2"
+            ></i>
+            space-between
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">space-between</code> first item ko
+            start aur last item ko end par rakhta hai. Baaki available space
+            items ke beech equally distribute hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">space-between</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="justify-demo between-demo mb-12">
+            <div class="justify-item">Item 1</div>
+            <div class="justify-item">Item 2</div>
+            <div class="justify-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+            space-around
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">space-around</code> har item ke around
+            equal space distribute karta hai. Isliye outer edges par space inner
+            gap se comparatively half hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">space-around</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="justify-demo around-demo mb-12">
+            <div class="justify-item">Item 1</div>
+            <div class="justify-item">Item 2</div>
+            <div class="justify-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-equals text-blue-400 mr-2"></i>
+            space-evenly
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <code class="text-green-400">space-evenly</code> container ke andar
+            sabhi available spaces ko equal rakhta hai, including outer edges.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">space-evenly</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="justify-demo evenly-demo mb-12">
+            <div class="justify-item">Item 1</div>
+            <div class="justify-item">Item 2</div>
+            <div class="justify-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            Column Direction Mein justify-content
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Agar <code class="text-green-400">flex-direction: column</code> use
+            kiya hai, to main axis vertical ho jata hai. Is case mein
+            <code class="text-green-400">justify-content</code> vertical
+            position control karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">flex-direction</span>: <span class="text-green-400">column</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="column-demo mb-12">
+            <div class="justify-item">Item 1</div>
+            <div class="justify-item">Item 2</div>
+            <div class="justify-item">Item 3</div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-bars text-blue-400 mr-2"></i>
+            Practical Navigation Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Navigation bar mein
+            <code class="text-green-400">space-between</code> ka use karke logo
+            ko left aur links ko right side par easily place kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Live Example
+              </h3>
+            </div>
+
+            <div class="p-6">
+              <div class="nav-demo">
+                <div class="logo">MySite</div>
+                <div class="nav-links">
+                  <a href="#">Home</a>
+                  <a href="#">About</a>
+                  <a href="#">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.navbar</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">space-between</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+}
+
+<span class="text-blue-400">.links</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">18px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table-list text-blue-400 mr-2"></i>
+            Justify Content Values
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-5 text-lg">Value</th>
+                  <th class="p-5 text-lg">Kaam</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300">
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">flex-start</td>
+                  <td class="p-5">Items start mein</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">flex-end</td>
+                  <td class="p-5">Items end mein</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">center</td>
+                  <td class="p-5">Items center mein</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">space-between</td>
+                  <td class="p-5">Items ke beech equal space</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">space-around</td>
+                  <td class="p-5">Items ke around space</td>
+                </tr>
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-green-400">space-evenly</td>
+                  <td class="p-5">Sabhi spaces equal</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><code class="text-green-400">justify-content</code> main axis
+                par alignment control karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><code class="text-green-400">flex-direction: row</code> mein
+                main axis horizontal hota hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><code class="text-green-400">flex-direction: column</code> mein
+                main axis vertical hota hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i
+                ><code class="text-green-400">space-between</code>,
+                <code class="text-green-400">space-around</code> aur
+                <code class="text-green-400">space-evenly</code> available space
+                distribute karte hain.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Alignment
+                samajhne ke liye main axis aur cross axis ko identify karna
+                important hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i
+                class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i
+                ><code class="text-green-400">justify-content</code> ko cross
+                axis alignment ke liye use karna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i
+                ><code class="text-green-400">display: flex</code> ke bina
+                property use karna aur expected result na milna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i
+                ><code class="text-green-400">flex-direction: column</code> ke
+                baad bhi justify-content ko horizontal samajhna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>Space
+                distribution values ko bina difference samjhe use karna.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Sabse pehle
+                main axis identify karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Navigation
+                layouts ke liye
+                <code class="text-green-400">space-between</code> useful hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Equal
+                spacing ke liye
+                <code class="text-green-400">space-evenly</code> useful ho sakta
+                hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive
+                layouts mein unnecessary fixed margins ki jagah Flexbox
+                alignment use karein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS <code class="text-green-400">justify-content</code> Flex
+              Container ke main axis par items ki alignment aur spacing control
+              karta hai. Iske important values
+              <code class="text-green-400">flex-start</code>,
+              <code class="text-green-400">flex-end</code>,
+              <code class="text-green-400">center</code>,
+              <code class="text-green-400">space-between</code>,
+              <code class="text-green-400">space-around</code> aur
+              <code class="text-green-400">space-evenly</code> hain.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../flex-container/flex-container.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+
+            <a href="../align-items/align-items.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(76);
+      });
+    </script>
+  </body>
+</html>

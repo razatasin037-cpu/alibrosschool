@@ -1,44 +1,715 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Buttons</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Buttons</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Buttons CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../masking/masking.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../buttons/buttons.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Buttons Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Buttons CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Buttons CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../masking/masking.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../buttons/buttons.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(66);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Buttons</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .demo-btn {
+        transition: 0.3s ease;
+      }
+
+      .primary-btn {
+        background: #254ccb;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .primary-btn:hover {
+        background: #304cd6;
+      }
+
+      .rounded-btn {
+        background: #16a34a;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+
+      .rounded-btn:hover {
+        background: #15803d;
+      }
+
+      .outline-btn {
+        background: transparent;
+        color: #60a5fa;
+        border: 2px solid #3b82f6;
+        padding: 10px 22px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .outline-btn:hover {
+        background: #3b82f6;
+        color: white;
+      }
+
+      .shadow-btn {
+        background: #7c3aed;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-weight: 600;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      }
+
+      .shadow-btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .gradient-btn {
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        color: white;
+        padding: 13px 26px;
+        border-radius: 12px;
+        font-weight: 600;
+      }
+
+      .gradient-btn:hover {
+        transform: scale(1.04);
+      }
+
+      .icon-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #334155;
+        color: white;
+        padding: 12px 22px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .icon-btn:hover {
+        background: #475569;
+      }
+
+      .disabled-btn {
+        background: #475569;
+        color: #94a3b8;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+
+      .press-btn {
+        background: #ea580c;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.15s ease;
+      }
+
+      .press-btn:hover {
+        background: #c2410c;
+      }
+
+      .press-btn:active {
+        transform: translateY(3px);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading -->
+          <div class="mb-8">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+              CSS Buttons
+            </h1>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS se buttons ko color, size, border, shape, shadow, hover effect
+              aur different styles ke saath design kiya ja sakta hai.
+            </p>
+          </div>
+
+          <!-- TOP PREVIOUS / NEXT -->
+          <div class="w-full flex justify-between items-center gap-4 mb-12">
+            <!-- Previous -->
+            <a href="../masking/masking.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <!-- Next -->
+            <a href="../pagination/pagination.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- What are Buttons -->
+          <div class="mb-10">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+              CSS Buttons Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Button ek interactive element hota hai jise user click karke koi
+              action perform karta hai. CSS ka use karke button ka appearance
+              aur interaction improve kiya ja sakta hai.
+            </p>
+          </div>
+
+          <!-- Basic Button -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">Basic Button</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Sabse simple button banane ke liye
+              <span class="text-blue-400">background</span>,
+              <span class="text-blue-400">color</span>,
+              <span class="text-blue-400">padding</span> aur
+              <span class="text-blue-400">border-radius</span> use kar sakte
+              hain.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <button class="primary-btn demo-btn">Click Me</button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">#254ccb</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 24px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px</span>;
+}</code></pre>
+          </div>
+
+          <!-- Button Colors -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">Button Colors</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Different background colors use karke different types ke buttons
+              create kiye ja sakte hain.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-6">
+              <button
+                class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold transition"
+              >
+                Primary
+              </button>
+
+              <button
+                class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-xl font-semibold transition"
+              >
+                Success
+              </button>
+
+              <button
+                class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl font-semibold transition"
+              >
+                Danger
+              </button>
+
+              <button
+                class="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-xl font-semibold transition"
+              >
+                Warning
+              </button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.success</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">green</span>;
+}
+
+<span class="text-blue-400">.danger</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">red</span>;
+}</code></pre>
+          </div>
+
+          <!-- Rounded Buttons -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">Rounded Buttons</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              <span class="text-blue-400">border-radius</span> ka use karke
+              buttons ko rounded ya pill shape diya ja sakta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <button class="rounded-btn demo-btn">Rounded Button</button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">999px</span>;
+}</code></pre>
+          </div>
+
+          <!-- Outline Button -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">Outline Buttons</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Transparent background aur border ke saath outline button banaya
+              ja sakta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <button class="outline-btn demo-btn">Outline Button</button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">transparent</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid #3b82f6</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#3b82f6</span>;
+}</code></pre>
+          </div>
+
+          <!-- Button Size -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">Button Sizes</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Padding aur font-size change karke buttons ke different sizes
+              banaye ja sakte hain.
+            </p>
+
+            <div class="flex flex-wrap justify-center items-center gap-4 mb-6">
+              <button class="bg-[#254ccb] px-3 py-2 rounded-lg text-sm">
+                Small
+              </button>
+
+              <button class="bg-[#254ccb] px-5 py-3 rounded-lg text-base">
+                Medium
+              </button>
+
+              <button class="bg-[#254ccb] px-7 py-4 rounded-xl text-lg">
+                Large
+              </button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">.small</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">8px 12px</span>;
+}
+
+<span class="text-blue-400">.large</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">16px 28px</span>;
+}</code></pre>
+          </div>
+
+          <!-- Shadow -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">Button Shadow</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              <span class="text-blue-400">box-shadow</span> button ko depth aur
+              modern appearance deta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <button class="shadow-btn demo-btn">Shadow Button</button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">box-shadow</span>:
+    <span class="text-green-400">0 8px 20px rgba(0,0,0,0.35)</span>;
+}</code></pre>
+          </div>
+
+          <!-- Gradient -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">Gradient Button</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Gradient background se attractive modern buttons banaye ja sakte
+              hain.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <button class="gradient-btn demo-btn">Gradient Button</button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">background</span>:
+    <span class="text-green-400">linear-gradient(135deg, #2563eb, #7c3aed)</span>;
+}</code></pre>
+          </div>
+
+          <!-- Hover -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              Button Hover Effect
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              <span class="text-blue-400">:hover</span> pseudo-class se mouse
+              button par aane par style change kar sakte hain.
+            </p>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">#254ccb</span>;
+  <span class="text-blue-400">transition</span>: <span class="text-green-400">0.3s</span>;
+}
+
+<span class="text-blue-400">button:hover</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">#304cd6</span>;
+}</code></pre>
+          </div>
+
+          <!-- Icon Button -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              Buttons with Icons
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Font Awesome icons ko buttons ke andar use karke UI ko aur clear
+              banaya ja sakta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <button class="icon-btn demo-btn">
+                <i class="fa-solid fa-download"></i>
+
+                Download
+              </button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code>&lt;<span class="text-blue-400">button</span>&gt;
+
+  &lt;<span class="text-blue-400">i</span> <span class="text-green-400">class</span>=<span class="text-green-400">"fa-solid fa-download"</span>&gt;&lt;/<span class="text-blue-400">i</span>&gt;
+
+  Download
+
+&lt;/<span class="text-blue-400">button</span>&gt;</code></pre>
+          </div>
+
+          <!-- Disabled -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">Disabled Button</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              <span class="text-blue-400">disabled</span> attribute se button ko
+              inactive kiya ja sakta hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <button class="disabled-btn" disabled>Disabled</button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code>&lt;<span class="text-blue-400">button</span> <span class="text-green-400">disabled</span>&gt;
+  Disabled
+&lt;/<span class="text-blue-400">button</span>&gt;</code></pre>
+          </div>
+
+          <!-- Active -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">Active Button</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              <span class="text-blue-400">:active</span> pseudo-class button
+              press karte waqt temporary effect create karti hai.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <button class="press-btn">Press Me</button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">button:active</span> {
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">translateY(3px)</span>;
+}</code></pre>
+          </div>
+
+          <!-- Button Group -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">Button Group</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Multiple buttons ko ek group mein rakhkar toolbar ya action
+              controls banaye ja sakte hain.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+              <button class="bg-[#254ccb] px-5 py-3 rounded-lg font-semibold">
+                Save
+              </button>
+
+              <button class="bg-green-600 px-5 py-3 rounded-lg font-semibold">
+                Submit
+              </button>
+
+              <button class="bg-red-600 px-5 py-3 rounded-lg font-semibold">
+                Delete
+              </button>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code>&lt;<span class="text-blue-400">div</span> <span class="text-green-400">class</span>=<span class="text-green-400">"button-group"</span>&gt;
+
+  &lt;<span class="text-blue-400">button</span>&gt;Save&lt;/<span class="text-blue-400">button</span>&gt;
+
+  &lt;<span class="text-blue-400">button</span>&gt;Submit&lt;/<span class="text-blue-400">button</span>&gt;
+
+  &lt;<span class="text-blue-400">button</span>&gt;Delete&lt;/<span class="text-blue-400">button</span>&gt;
+
+&lt;/<span class="text-blue-400">div</span>&gt;</code></pre>
+          </div>
+
+          <!-- Practical Example -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              Practical Example
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Ek simple action card mein different CSS button styles ko combine
+              kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8"
+            >
+              <h3 class="text-2xl font-bold mb-3">Create Account</h3>
+
+              <p class="text-gray-400 text-lg mb-6">
+                Start building your account today.
+              </p>
+
+              <div class="flex flex-wrap gap-4">
+                <button class="primary-btn">Get Started</button>
+
+                <button class="outline-btn">Learn More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Points -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Buttons ko style karne ke liye
+                <span class="text-blue-400">background</span>,
+                <span class="text-blue-400">color</span>,
+                <span class="text-blue-400">padding</span> aur
+                <span class="text-blue-400">border</span> useful properties
+                hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">border-radius</span> se rounded
+                buttons banaye ja sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">:hover</span> se interactive hover
+                effects create kiye ja sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">:active</span> button press hone par
+                effect deta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Disabled buttons ke liye
+                <span class="text-blue-400">disabled</span> attribute use
+                karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Common Mistakes -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">Common Mistakes</h2>
+
+            <ul class="space-y-4 text-lg text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Button ka text aur background color readable na hona.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Hover state ko completely ignore karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Bahut chhota clickable area banana.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Disabled aur active states ko properly define na karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Best Practices -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">Best Practices</h2>
+
+            <ul class="space-y-4 text-lg text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Buttons ka text clear aur readable rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Hover aur active states provide karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Buttons ko touch devices ke liye sufficiently large rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Similar actions ke liye consistent button styling use karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Buttons ko
+              <span class="text-blue-400">background</span>,
+              <span class="text-blue-400">color</span>,
+              <span class="text-blue-400">padding</span>,
+              <span class="text-blue-400">border</span>,
+              <span class="text-blue-400">border-radius</span>,
+              <span class="text-blue-400">box-shadow</span> aur pseudo-classes
+              jaise <span class="text-blue-400">:hover</span> aur
+              <span class="text-blue-400">:active</span> ke saath attractive aur
+              interactive banaya ja sakta hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM PREVIOUS / NEXT -->
+          <div
+            class="w-full flex justify-between items-center gap-4 mt-14 mb-8"
+          >
+            <!-- Previous -->
+            <a href="../masking/masking.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <!-- Next -->
+            <a href="../pagination/pagination.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(66);
+      });
+    </script>
+  </body>
+</html>

@@ -1,44 +1,1031 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Animations</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Animations</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Animations CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../transitions/transitions.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../animations/animations.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Animations Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Animations CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Animations CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../transitions/transitions.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../animations/animations.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(58);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Animations</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      /* ================================
+         CSS ANIMATION EXAMPLES
+      ================================= */
+
+      @keyframes moveBox {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(220px);
+        }
+      }
+
+      .animation-move {
+        animation: moveBox 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes changeColor {
+        0% {
+          background: #254ccb;
+        }
+
+        50% {
+          background: #22c55e;
+        }
+
+        100% {
+          background: #9333ea;
+        }
+      }
+
+      .animation-color {
+        animation: changeColor 3s ease-in-out infinite;
+      }
+
+      @keyframes rotateBox {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .animation-rotate {
+        animation: rotateBox 2s linear infinite;
+      }
+
+      @keyframes pulseBox {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.15);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .animation-pulse {
+        animation: pulseBox 1.5s ease-in-out infinite;
+      }
+
+      @keyframes fadeBox {
+        0% {
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .animation-fade {
+        animation: fadeBox 2s ease-in-out infinite;
+      }
+
+      @keyframes bounceBox {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-80px);
+        }
+      }
+
+      .animation-bounce {
+        animation: bounceBox 1s ease-in-out infinite;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(-180px);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .animation-slide {
+        animation: slideIn 1s ease-out infinite alternate;
+      }
+
+      @keyframes cardAnimation {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+
+        50% {
+          transform: translateY(-15px) rotate(2deg);
+        }
+
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+      }
+
+      .animated-card {
+        animation: cardAnimation 2s ease-in-out infinite;
+      }
+
+      @keyframes loadingAnimation {
+        0% {
+          transform: scaleX(0);
+          transform-origin: left;
+        }
+
+        50% {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+
+        51% {
+          transform-origin: right;
+        }
+
+        100% {
+          transform: scaleX(0);
+          transform-origin: right;
+        }
+      }
+
+      .loading-line {
+        animation: loadingAnimation 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Animations
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Animations ka use elements ko automatically animate karne ke
+            liye kiya jata hai. Animation mein multiple stages define kiye ja
+            sakte hain aur element move, rotate, resize, fade ya color change
+            kar sakta hai.
+          </p>
+
+          <!-- TOP NAV -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../transitions/transitions.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../tooltips/tooltips.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS ANIMATION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-film text-blue-400 mr-2"></i>
+            CSS Animation Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS Animation ek element ki CSS properties ko different stages mein
+            change kar sakta hai. Animation ko
+            <strong>@keyframes</strong> ke through define kiya jata hai aur
+            <strong>animation</strong> properties se control kiya jata hai.
+          </p>
+
+          <!-- BASIC EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Basic Animation
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@keyframes</span> moveBox {
+  <span class="text-blue-400">from</span> {
+    <span class="text-blue-400">transform</span>: <span class="text-green-400">translateX(0)</span>;
+  }
+
+  <span class="text-blue-400">to</span> {
+    <span class="text-blue-400">transform</span>: <span class="text-green-400">translateX(200px)</span>;
+  }
+}
+
+<span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">animation</span>: <span class="text-green-400">moveBox 2s ease-in-out infinite alternate</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE BASIC -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12 overflow-hidden"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-play text-blue-400 mr-2"></i>
+              Live Animation
+            </h3>
+
+            <div class="py-10 overflow-hidden">
+              <div
+                class="animation-move bg-[#254ccb] rounded-xl w-40 h-20 flex items-center justify-center text-lg font-bold"
+              >
+                Moving
+              </div>
+            </div>
+          </div>
+
+          <!-- KEYFRAMES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-ol text-blue-400 mr-2"></i>
+            1. @keyframes
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>@keyframes</strong> animation ke different stages define
+            karta hai. Ismein <strong>from</strong> aur <strong>to</strong>
+            ya percentage values use ki ja sakti hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Keyframes Syntax
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@keyframes</span> example {
+  <span class="text-blue-400">0%</span> {
+    <span class="text-blue-400">transform</span>: <span class="text-green-400">scale(1)</span>;
+  }
+
+  <span class="text-blue-400">50%</span> {
+    <span class="text-blue-400">transform</span>: <span class="text-green-400">scale(1.2)</span>;
+  }
+
+  <span class="text-blue-400">100%</span> {
+    <span class="text-blue-400">transform</span>: <span class="text-green-400">scale(1)</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ANIMATION NAME -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-tag text-blue-400 mr-2"></i>
+            2. animation-name
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>animation-name</strong> batata hai ki element par kaunsa
+            <strong>@keyframes</strong> animation apply hoga.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">animation-name</span>: <span class="text-green-400">moveBox</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- DURATION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-clock text-blue-400 mr-2"></i>
+            3. animation-duration
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>animation-duration</strong> batata hai ki animation ka ek
+            complete cycle kitne time mein chalega.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Duration
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">animation-duration</span>: <span class="text-green-400">2s</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- TIMING FUNCTION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-gauge-high text-blue-400 mr-2"></i>
+            4. animation-timing-function
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ye animation ki speed ka behavior control karta hai. Common values
+            <strong>ease</strong>, <strong>linear</strong>,
+            <strong>ease-in</strong>, <strong>ease-out</strong> aur
+            <strong>ease-in-out</strong> hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Timing Function
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">animation-timing-function</span>: <span class="text-green-400">ease-in-out</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- DELAY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-hourglass-half text-blue-400 mr-2"></i>
+            5. animation-delay
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>animation-delay</strong> animation start hone se pehle
+            waiting time set karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Delay Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">animation-delay</span>: <span class="text-green-400">1s</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ITERATION COUNT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-repeat text-blue-400 mr-2"></i>
+            6. animation-iteration-count
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ye batata hai ki animation kitni baar repeat hoga. Ismein number ya
+            <strong>infinite</strong> use kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Repeat Animation
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">animation-iteration-count</span>: <span class="text-green-400">infinite</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- DIRECTION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrow-right-arrow-left text-blue-400 mr-2"
+            ></i>
+            7. animation-direction
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>animation-direction</strong> decide karta hai ki animation
+            normal direction mein chalega ya reverse direction mein.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Direction Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">animation-direction</span>: <span class="text-green-400">alternate</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- FILL MODE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            8. animation-fill-mode
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>animation-fill-mode</strong> define karta hai ki animation
+            ke before ya after element par kaunsi styles apply rahengi.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Fill Mode
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">animation-fill-mode</span>: <span class="text-green-400">forwards</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PLAY STATE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-pause text-blue-400 mr-2"></i>
+            9. animation-play-state
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>animation-play-state</strong> se running animation ko pause
+            ya resume kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Play State
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box:hover</span> {
+  <span class="text-blue-400">animation-play-state</span>: <span class="text-green-400">paused</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COLOR -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-palette text-blue-400 mr-2"></i>
+            10. Color Animation
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Keyframes ke different stages par background ya text color change
+            karke attractive effects create kiye ja sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-palette text-blue-400 mr-2"></i>
+              Live Color Animation
+            </h3>
+
+            <div class="flex justify-center py-10">
+              <div
+                class="animation-color rounded-xl w-56 h-24 flex items-center justify-center text-xl font-bold"
+              >
+                Color Change
+              </div>
+            </div>
+          </div>
+
+          <!-- ROTATE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-rotate text-blue-400 mr-2"></i>
+            11. Rotate Animation
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-rotate text-blue-400 mr-2"></i>
+              Live Rotate
+            </h3>
+
+            <div class="flex justify-center py-12">
+              <div
+                class="animation-rotate bg-[#254ccb] rounded-xl w-28 h-28 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-gear text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- PULSE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-heart-pulse text-blue-400 mr-2"></i>
+            12. Pulse Animation
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-heart-pulse text-blue-400 mr-2"></i>
+              Live Pulse
+            </h3>
+
+            <div class="flex justify-center py-12">
+              <div
+                class="animation-pulse bg-[#254ccb] rounded-full w-28 h-28 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-bolt text-3xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOUNCE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-up text-blue-400 mr-2"></i>
+            13. Bounce Animation
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-arrow-up text-blue-400 mr-2"></i>
+              Live Bounce
+            </h3>
+
+            <div class="flex justify-center py-16">
+              <div
+                class="animation-bounce bg-[#254ccb] w-24 h-24 rounded-full"
+              ></div>
+            </div>
+          </div>
+
+          <!-- FADE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-eye-slash text-blue-400 mr-2"></i>
+            14. Fade Animation
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-eye-slash text-blue-400 mr-2"></i>
+              Live Fade
+            </h3>
+
+            <div class="flex justify-center py-12">
+              <div
+                class="animation-fade bg-[#254ccb] rounded-xl px-10 py-6 text-xl font-bold"
+              >
+                Fade Effect
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-right text-blue-400 mr-2"></i>
+            15. Slide Animation
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12 overflow-hidden"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-arrow-right text-blue-400 mr-2"></i>
+              Live Slide
+            </h3>
+
+            <div class="py-10 overflow-hidden">
+              <div
+                class="animation-slide bg-[#254ccb] rounded-xl w-48 h-20 flex items-center justify-center text-lg font-bold"
+              >
+                Slide In
+              </div>
+            </div>
+          </div>
+
+          <!-- SHORTHAND -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            16. animation Shorthand
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Animation ki multiple properties ko shorthand
+            <strong>animation</strong> property mein likha ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Shorthand Syntax
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">animation</span>:
+    <span class="text-green-400">moveBox 2s ease-in-out 1s infinite alternate</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PRACTICAL CARD -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+            17. Practical Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Animation ka use loading indicators, cards, notifications, buttons
+            aur other interactive UI elements mein kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Animated Card
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@keyframes</span> cardMove {
+  <span class="text-blue-400">50%</span> {
+    <span class="text-blue-400">transform</span>: <span class="text-green-400">translateY(-10px)</span>;
+  }
+}
+
+<span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">animation</span>: <span class="text-green-400">cardMove 2s ease-in-out infinite</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LIVE CARD -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-8">
+              <i class="fa-solid fa-play text-blue-400 mr-2"></i>
+              Live Animated Card
+            </h3>
+
+            <div class="flex justify-center py-10">
+              <div
+                class="animated-card bg-gradient-to-br from-[#111827] to-[#25304b] border border-gray-700 rounded-2xl w-72 p-8"
+              >
+                <i class="fa-solid fa-bolt text-blue-400 text-3xl mb-5"></i>
+
+                <h4 class="text-2xl font-bold mb-3">CSS Animation</h4>
+
+                <p class="text-gray-300">
+                  This card continuously moves using CSS animation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- LOADING -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-spinner text-blue-400 mr-2"></i>
+            18. Loading Animation
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              <i class="fa-solid fa-spinner text-blue-400 mr-2"></i>
+              Live Loading Effect
+            </h3>
+
+            <div class="max-w-xl mx-auto py-10">
+              <div class="h-3 bg-[#1e293b] rounded-full overflow-hidden">
+                <div
+                  class="loading-line h-full bg-[#254ccb] rounded-full"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS animations ko <strong>@keyframes</strong> se define kiya
+                jata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>animation-name</strong> keyframes ka naam select karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>animation-duration</strong> animation ka time set karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>animation-delay</strong> start hone se pehle wait karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>animation-iteration-count</strong> repeat count control
+                karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>animation-direction</strong> animation ki direction
+                control karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>animation-play-state</strong> se animation pause ya
+                resume kiya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Multiple animation properties ko shorthand mein likh sakte hain.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                @keyframes ka naam aur animation-name mismatch karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Animation duration bahut zyada rakhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Har element par unnecessary infinite animation lagana.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Excessive motion se user experience kharab karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Animations ko simple aur meaningful rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Appropriate duration aur timing function choose karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Performance ke liye transform aur opacity jaise properties
+                prefer karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Accessibility ke liye excessive motion avoid karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Animations elements ko automatically animate karne ka powerful
+              way hain. <strong>@keyframes</strong> se animation ke stages
+              define hote hain, jabki animation properties duration, timing,
+              delay, repeat aur direction ko control karti hain.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAV -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../transitions/transitions.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../tooltips/tooltips.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(58);
+      });
+    </script>
+  </body>
+</html>

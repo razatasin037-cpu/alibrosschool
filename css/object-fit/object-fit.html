@@ -1,44 +1,610 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Object Fit</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Object Fit</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Object Fit CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../image-filters/image-filters.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../object-fit/object-fit.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Object Fit Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Object Fit CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Object Fit CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../image-filters/image-filters.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../object-fit/object-fit.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(63);});</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CSS Object Fit</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .fit-box {
+        width: 100%;
+        max-width: 320px;
+        height: 220px;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid #374151;
+      }
+
+      .fit-box img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .fit-fill {
+        object-fit: fill;
+      }
+
+      .fit-contain {
+        object-fit: contain;
+        background: #1e293b;
+      }
+
+      .fit-cover {
+        object-fit: cover;
+      }
+
+      .fit-none {
+        object-fit: none;
+      }
+
+      .fit-scale-down {
+        object-fit: scale-down;
+        background: #1e293b;
+      }
+
+      .fit-hover {
+        object-fit: cover;
+        transition: 0.4s ease;
+      }
+
+      .fit-hover:hover {
+        object-fit: contain;
+        background: #1e293b;
+      }
+
+      .fit-card {
+        transition: 0.3s ease;
+      }
+
+      .fit-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .fit-card img {
+        transition: 0.4s ease;
+      }
+
+      .fit-card:hover img {
+        transform: scale(1.04);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading -->
+          <div class="mb-8">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-5">CSS Object Fit</h1>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              The CSS <span class="text-blue-400">object-fit</span> property
+              controls how an image or video fits inside its container.
+            </p>
+          </div>
+
+          <!-- TOP PREVIOUS / NEXT BUTTONS -->
+          <div class="w-full flex justify-between items-center gap-4 mb-10">
+            <!-- Previous -->
+            <a href="../image-filters/image-filters.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <!-- Next -->
+            <a href="../object-position/object-position.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- What is Object Fit -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              What is Object Fit?
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed">
+              When an image has a fixed width and height, its original aspect
+              ratio may not match the container. The
+              <span class="text-blue-400">object-fit</span> property decides how
+              the image should be resized inside that space.
+            </p>
+          </div>
+
+          <!-- Syntax -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              Object Fit Syntax
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-semibold">Basic Syntax</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">300px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">200px</span>;
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fill -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              1. object-fit: fill
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">fill</span> stretches the image to
+              completely fill the container. The original aspect ratio may be
+              changed.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="fit-box">
+                <img
+                  src="https://picsum.photos/id/1015/500/300"
+                  class="fit-fill"
+                  alt="Object fit fill"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">fill</span>;
+}</code></pre>
+          </div>
+
+          <!-- Contain -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              2. object-fit: contain
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">contain</span> keeps the complete
+              image visible while maintaining its aspect ratio. Empty space may
+              appear inside the container.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="fit-box">
+                <img
+                  src="https://picsum.photos/id/1015/500/300"
+                  class="fit-contain"
+                  alt="Object fit contain"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">contain</span>;
+}</code></pre>
+          </div>
+
+          <!-- Cover -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              3. object-fit: cover
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">cover</span> fills the entire
+              container while maintaining the image's aspect ratio. Some parts
+              of the image may be cropped.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="fit-box">
+                <img
+                  src="https://picsum.photos/id/1015/500/300"
+                  class="fit-cover"
+                  alt="Object fit cover"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+}</code></pre>
+          </div>
+
+          <!-- None -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              4. object-fit: none
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">none</span> keeps the original image
+              size instead of scaling it to fit the container.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="fit-box">
+                <img
+                  src="https://picsum.photos/id/1015/500/300"
+                  class="fit-none"
+                  alt="Object fit none"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">none</span>;
+}</code></pre>
+          </div>
+
+          <!-- Scale Down -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              5. object-fit: scale-down
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              <span class="text-blue-400">scale-down</span> chooses the smaller
+              result between <span class="text-blue-400">none</span> and
+              <span class="text-blue-400">contain</span>.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="fit-box">
+                <img
+                  src="https://picsum.photos/id/1015/500/300"
+                  class="fit-scale-down"
+                  alt="Object fit scale down"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">scale-down</span>;
+}</code></pre>
+          </div>
+
+          <!-- Comparison -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              Object Fit Comparison
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Fill -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-44 overflow-hidden rounded-xl mb-4">
+                  <img
+                    src="https://picsum.photos/id/1020/500/300"
+                    class="w-full h-full object-fill"
+                    alt="Fill"
+                  />
+                </div>
+
+                <h3 class="text-xl font-semibold">fill</h3>
+
+                <p class="text-gray-400 mt-2">
+                  Stretches to fill the container.
+                </p>
+              </div>
+
+              <!-- Contain -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-44 overflow-hidden rounded-xl mb-4 bg-[#1e293b]">
+                  <img
+                    src="https://picsum.photos/id/1020/500/300"
+                    class="w-full h-full object-contain"
+                    alt="Contain"
+                  />
+                </div>
+
+                <h3 class="text-xl font-semibold">contain</h3>
+
+                <p class="text-gray-400 mt-2">Shows the complete image.</p>
+              </div>
+
+              <!-- Cover -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-4">
+                <div class="h-44 overflow-hidden rounded-xl mb-4">
+                  <img
+                    src="https://picsum.photos/id/1020/500/300"
+                    class="w-full h-full object-cover"
+                    alt="Cover"
+                  />
+                </div>
+
+                <h3 class="text-xl font-semibold">cover</h3>
+
+                <p class="text-gray-400 mt-2">
+                  Fills the container and may crop the image.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hover -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+              Object Fit with Hover
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-5">
+              You can combine <span class="text-blue-400">object-fit</span>
+              with hover effects to change how an image is displayed.
+            </p>
+
+            <div class="flex justify-center mb-6">
+              <div class="fit-box">
+                <img
+                  src="https://picsum.photos/id/1040/500/300"
+                  class="fit-hover"
+                  alt="Object fit hover"
+                />
+              </div>
+            </div>
+
+            <pre
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 text-lg leading-relaxed overflow-x-auto"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">cover</span>;
+  <span class="text-blue-400">transition</span>: <span class="text-green-400">0.4s</span>;
+}
+
+<span class="text-blue-400">img:hover</span> {
+  <span class="text-blue-400">object-fit</span>: <span class="text-green-400">contain</span>;
+}</code></pre>
+          </div>
+
+          <!-- Practical Example -->
+          <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              Practical Example
+            </h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              <span class="text-blue-400">object-fit: cover</span> is commonly
+              used for product cards, profile images and galleries.
+            </p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="fit-card bg-[#0f172a] border border-gray-800 rounded-2xl p-4 overflow-hidden"
+              >
+                <img
+                  src="https://picsum.photos/id/1062/600/400"
+                  class="w-full h-52 object-cover rounded-xl"
+                  alt="Profile"
+                />
+
+                <h3 class="text-xl font-semibold mt-4">Profile Image</h3>
+              </div>
+
+              <div
+                class="fit-card bg-[#0f172a] border border-gray-800 rounded-2xl p-4 overflow-hidden"
+              >
+                <img
+                  src="https://picsum.photos/id/1059/600/400"
+                  class="w-full h-52 object-cover rounded-xl"
+                  alt="Product"
+                />
+
+                <h3 class="text-xl font-semibold mt-4">Product Image</h3>
+              </div>
+
+              <div
+                class="fit-card bg-[#0f172a] border border-gray-800 rounded-2xl p-4 overflow-hidden"
+              >
+                <img
+                  src="https://picsum.photos/id/1039/600/400"
+                  class="w-full h-52 object-cover rounded-xl"
+                  alt="Gallery"
+                />
+
+                <h3 class="text-xl font-semibold mt-4">Gallery Image</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Points -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">
+              <i class="fa-solid fa-circle-info mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-3 text-lg text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-blue-400 mr-2"></i>
+                <span class="text-blue-400">object-fit</span> controls how
+                images and videos fit inside a container.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-blue-400 mr-2"></i>
+                <span class="text-blue-400">cover</span> fills the container
+                while maintaining the aspect ratio.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-blue-400 mr-2"></i>
+                <span class="text-blue-400">contain</span> keeps the complete
+                image visible.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-blue-400 mr-2"></i>
+                <span class="text-blue-400">fill</span> can distort the image.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-blue-400 mr-2"></i>
+                The property works best when the element has a defined width and
+                height.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Common Mistakes -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">Common Mistakes</h2>
+
+            <ul class="space-y-4 text-lg text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Using <span class="text-blue-400">object-fit</span> without
+                giving the image a useful container size.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Using <span class="text-blue-400">fill</span> when maintaining
+                the image ratio is important.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Expecting <span class="text-blue-400">contain</span> to fill
+                every pixel of the container.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Best Practices -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">Best Practices</h2>
+
+            <ul class="space-y-4 text-lg text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Use <span class="text-blue-400">cover</span> for cards,
+                thumbnails and galleries.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Use <span class="text-blue-400">contain</span> when the complete
+                image must remain visible.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Avoid <span class="text-blue-400">fill</span> when image
+                distortion is undesirable.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-10"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-5">Summary</h2>
+
+            <p class="text-lg text-gray-300 leading-relaxed">
+              CSS <span class="text-blue-400">object-fit</span> controls how an
+              image or video fits inside its container. The main values are
+              <span class="text-blue-400">fill</span>,
+              <span class="text-blue-400">contain</span>,
+              <span class="text-blue-400">cover</span>,
+              <span class="text-blue-400">none</span> and
+              <span class="text-blue-400">scale-down</span>.
+            </p>
+          </div>
+
+          <!-- BOTTOM PREVIOUS / NEXT BUTTONS -->
+          <div
+            class="w-full flex justify-between items-center gap-4 mt-14 mb-8"
+          >
+            <!-- Previous -->
+            <a href="../image-filters/image-filters.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <!-- Next -->
+            <a href="../object-position/object-position.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(63);
+      });
+    </script>
+  </body>
+</html>

@@ -1,44 +1,848 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Multiple Columns</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Multiple Columns</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Multiple Columns CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../pagination/pagination.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../multiple-columns/multiple-columns.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Multiple Columns Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Multiple Columns CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Multiple Columns CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../pagination/pagination.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../multiple-columns/multiple-columns.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(68);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Multiple Columns</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .columns-demo {
+        column-count: 3;
+        column-gap: 35px;
+      }
+
+      .columns-width {
+        column-width: 180px;
+        column-gap: 25px;
+      }
+
+      .columns-rule {
+        column-count: 3;
+        column-gap: 35px;
+        column-rule: 2px solid #475569;
+      }
+
+      .columns-rule-dashed {
+        column-count: 3;
+        column-gap: 35px;
+        column-rule: 2px dashed #64748b;
+      }
+
+      .columns-rule-dotted {
+        column-count: 3;
+        column-gap: 35px;
+        column-rule: 2px dotted #64748b;
+      }
+
+      .columns-span {
+        column-count: 3;
+        column-gap: 30px;
+      }
+
+      .columns-span h3 {
+        column-span: all;
+      }
+
+      .columns-card {
+        column-count: 2;
+        column-gap: 30px;
+      }
+
+      .columns-card p {
+        break-inside: avoid;
+      }
+
+      @media (max-width: 768px) {
+        .columns-demo,
+        .columns-rule,
+        .columns-rule-dashed,
+        .columns-rule-dotted {
+          column-count: 2;
+        }
+
+        .columns-card {
+          column-count: 1;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .columns-demo,
+        .columns-rule,
+        .columns-rule-dashed,
+        .columns-rule-dotted {
+          column-count: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Multiple Columns
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Multiple Columns ka use text ko ek se zyada columns mein divide
+            karne ke liye hota hai. Ye newspaper aur article layouts ke liye
+            kaafi useful hai.
+          </p>
+
+          <!-- TOP NAV -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../pagination/pagination.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../user-interface/user-interface.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS MULTIPLE COLUMNS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table-columns text-blue-400 mr-2"></i>
+            CSS Multiple Columns Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Multiple Columns CSS feature text ko automatically multiple vertical
+            columns mein arrange karta hai. Isse long text ko read karna easy ho
+            jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <div class="columns-demo text-gray-300 text-lg leading-relaxed">
+              <p>
+                CSS web pages ko attractive aur readable banane ke liye bahut
+                useful hai. Multiple columns ki help se long paragraphs ko
+                newspaper-style layout mein display kiya ja sakta hai. Browser
+                available space ke according content ko columns mein divide
+                karta hai.
+              </p>
+
+              <p>
+                Is technique ka use blogs, news websites, articles aur
+                documentation pages mein kiya ja sakta hai. Column count aur gap
+                ko easily control kiya ja sakta hai.
+              </p>
+
+              <p>
+                Responsive design ke saath multiple columns ko use karna bhi
+                possible hai. Small screen par columns ki count kam ki ja sakti
+                hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- COLUMN COUNT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-ol text-blue-400 mr-2"></i>
+            column-count
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">column-count</span> property batati hai
+            ki content ko kitne columns mein divide karna hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="columns-demo text-gray-300 text-lg leading-relaxed">
+              <p>
+                Ye first column ka content hai. Browser text ko automatically
+                next column mein continue karta hai.
+              </p>
+
+              <p>
+                Ye second column mein content continue hota hai aur available
+                height ke according text distribute hota hai.
+              </p>
+
+              <p>
+                Third column mein remaining content automatically place ho jata
+                hai.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">column-count</span>: <span class="text-green-400">3</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COLUMN WIDTH -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            column-width
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">column-width</span> se har column ki
+            preferred width set kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="columns-width text-gray-300 text-lg leading-relaxed">
+              <p>
+                Column width browser ko batati hai ki ek column approximately
+                kitna wide hona chahiye. Available space ke according browser
+                columns ki number adjust kar sakta hai.
+              </p>
+
+              <p>
+                Fixed column width responsive layouts mein useful hoti hai,
+                especially jab readability ko priority deni ho.
+              </p>
+
+              <p>
+                Width ko px, em ya rem jaise units mein specify kiya ja sakta
+                hai.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">column-width</span>: <span class="text-green-400">180px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COLUMN GAP -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-left-right-to-line text-blue-400 mr-2"
+            ></i>
+            column-gap
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">column-gap</span> columns ke beech ka
+            space control karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="grid grid-cols-2 gap-6">
+              <div>
+                <p class="text-gray-400 mb-3">Small Gap</p>
+
+                <div class="text-gray-300 text-lg columns-2 gap-3">
+                  CSS columns content ko separate sections mein divide karta
+                  hai. Gap columns ke beech distance control karta hai.
+                </div>
+              </div>
+
+              <div>
+                <p class="text-gray-400 mb-3">Large Gap</p>
+
+                <div class="text-gray-300 text-lg columns-2 gap-12">
+                  CSS columns content ko separate sections mein divide karta
+                  hai. Gap columns ke beech distance control karta hai.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">column-count</span>: <span class="text-green-400">3</span>;
+  <span class="text-blue-400">column-gap</span>: <span class="text-green-400">35px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COLUMN RULE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-grip-lines-vertical text-blue-400 mr-2"></i>
+            column-rule
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">column-rule</span> columns ke beech ek
+            line create karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="columns-rule text-gray-300 text-lg leading-relaxed">
+              <p>
+                Column rule ek visual separator ki tarah kaam karta hai. Isse
+                multiple columns ke beech clear separation milti hai.
+              </p>
+
+              <p>
+                Rule ki width, style aur color ko CSS ke through customize kiya
+                ja sakta hai.
+              </p>
+
+              <p>
+                Newspaper-style designs mein column rule kaafi useful ho sakta
+                hai.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">column-count</span>: <span class="text-green-400">3</span>;
+  <span class="text-blue-400">column-gap</span>: <span class="text-green-400">35px</span>;
+  <span class="text-blue-400">column-rule</span>: <span class="text-green-400">2px solid #475569</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COLUMN RULE STYLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-lines-leaning text-blue-400 mr-2"></i>
+            column-rule Styles
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Column rule ko solid, dashed ya dotted style mein set kar sakte
+            hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <p class="text-gray-400 mb-3">Dashed Rule</p>
+
+            <div
+              class="columns-rule-dashed text-gray-300 text-lg leading-relaxed mb-10"
+            >
+              <p>
+                Dashed column rule columns ko separate karne ke liye dotted ya
+                dashed visual effect provide karta hai.
+              </p>
+
+              <p>
+                Ye modern layouts mein subtle separator ke liye use kiya ja
+                sakta hai.
+              </p>
+
+              <p>Rule style ko design ke according change kiya ja sakta hai.</p>
+            </div>
+
+            <p class="text-gray-400 mb-3">Dotted Rule</p>
+
+            <div
+              class="columns-rule-dotted text-gray-300 text-lg leading-relaxed"
+            >
+              <p>
+                Dotted rule ek lightweight separator create karta hai jo content
+                ko visually divide karta hai.
+              </p>
+
+              <p>Iska use minimal designs mein kiya ja sakta hai.</p>
+
+              <p>Width aur color ko bhi customize kar sakte hain.</p>
+            </div>
+          </div>
+
+          <!-- COLUMN SPAN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+            ></i>
+            column-span
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">column-span: all</span> kisi heading ya
+            element ko sabhi columns ke across spread karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="columns-span text-gray-300 text-lg leading-relaxed">
+              <h3 class="text-2xl font-bold text-white mb-5">
+                Article Heading
+              </h3>
+
+              <p>
+                Ye paragraph multiple columns mein display hoga. Heading sabhi
+                columns ke upar full width mein show ho rahi hai.
+              </p>
+
+              <p>
+                column-span ka use article headings ya important section
+                headings ke liye useful hota hai.
+              </p>
+
+              <p>
+                Is property se heading ko ek particular column ke andar limit
+                karne ke bajay complete column layout ke across display kiya ja
+                sakta hai.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">h2</span> {
+  <span class="text-blue-400">column-span</span>: <span class="text-green-400">all</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COLUMN SHORTHAND -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code-branch text-blue-400 mr-2"></i>
+            column Shorthand
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">columns</span> shorthand se
+            <span class="text-blue-400">column-width</span> aur
+            <span class="text-blue-400">column-count</span> ko ek saath set kiya
+            ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">columns</span>: <span class="text-green-400">180px 3</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- BREAK INSIDE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-scissors text-blue-400 mr-2"></i>
+            break-inside
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            <span class="text-blue-400">break-inside</span> se kisi element ko
+            columns ke beech unnecessarily split hone se prevent kiya ja sakta
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-8"
+          >
+            <div class="columns-card text-gray-300 text-lg leading-relaxed">
+              <p>
+                <strong class="text-white">Card 1:</strong>
+                Is content ko break-inside avoid ki wajah se possible hone par
+                ek hi column mein rakha jata hai.
+              </p>
+
+              <p>
+                <strong class="text-white">Card 2:</strong>
+                Multiple columns mein cards ya small sections ko split hone se
+                bachana useful hota hai.
+              </p>
+
+              <p>
+                <strong class="text-white">Card 3:</strong>
+                Long content ke layouts mein ye property better readability
+                provide kar sakti hai.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">break-inside</span>: <span class="text-green-400">avoid</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PRACTICAL EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-newspaper text-blue-400 mr-2"></i>
+            Practical Newspaper Layout
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Multiple Columns ka ek common practical use newspaper ya
+            article-style layout banana hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <div
+              class="columns-1 md:columns-3 gap-8 text-gray-300 text-lg leading-relaxed"
+            >
+              <p class="mb-5">
+                Web development mein content ko readable format mein present
+                karna important hota hai. Multiple columns long articles ko
+                compact aur organized appearance de sakte hain.
+              </p>
+
+              <p class="mb-5">
+                Newspaper websites aur online magazines mein columns ka use
+                commonly dekha ja sakta hai. CSS ke through columns ko
+                responsive bhi banaya ja sakta hai.
+              </p>
+
+              <p class="mb-5">
+                Desktop par three columns aur mobile par one column ka layout
+                create karna simple CSS properties ke through possible hai.
+              </p>
+
+              <p class="mb-5">
+                Proper column gap aur readable font size use karne se content ko
+                scan aur read karna easier hota hai.
+              </p>
+
+              <p>
+                Isliye Multiple Columns ek useful CSS layout technique hai jab
+                page par large amount of text present ho.
+              </p>
+            </div>
+          </div>
+
+          <!-- RESPONSIVE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen text-blue-400 mr-2"></i>
+            Responsive Multiple Columns
+          </h2>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Desktop par multiple columns useful hain, lekin mobile par columns
+            ki number reduce karna better readability provide karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Responsive Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">column-count</span>: <span class="text-green-400">3</span>;
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">768px</span>) {
+  <span class="text-blue-400">.article</span> {
+    <span class="text-blue-400">column-count</span>: <span class="text-green-400">2</span>;
+  }
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">640px</span>) {
+  <span class="text-blue-400">.article</span> {
+    <span class="text-blue-400">column-count</span>: <span class="text-green-400">1</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">column-count</span> columns ki
+                number set karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">column-width</span> preferred column
+                width set karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">column-gap</span> columns ke beech
+                spacing control karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">column-rule</span> columns ke beech
+                separator line create karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">column-span</span> element ko all
+                columns ke across spread kar sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive design ke liye media queries ka use karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Mobile screen par bahut zyada columns use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Columns ke beech proper gap na dena.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Long elements ko unnecessarily columns ke beech split hone dena.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Column width ko readability ke bina choose karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Responsive layout ko ignore karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-star text-yellow-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Long text ke liye readable column width rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Columns ke beech sufficient gap rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Mobile par columns ki count reduce karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Important cards ya sections ke liye break-inside use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Column rules ko simple aur subtle rakhein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Multiple Columns ka use content ko multiple vertical columns
+              mein divide karne ke liye hota hai. Important properties hain
+              <span class="text-blue-400">column-count</span>,
+              <span class="text-blue-400">column-width</span>,
+              <span class="text-blue-400">column-gap</span>,
+              <span class="text-blue-400">column-rule</span> aur
+              <span class="text-blue-400">column-span</span>. Responsive design
+              ke liye columns ki count screen size ke according adjust karni
+              chahiye.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAV -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../pagination/pagination.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../user-interface/user-interface.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(68);
+      });
+    </script>
+  </body>
+</html>

@@ -1,44 +1,592 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Grid Gaps</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Grid Gaps</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Grid Gaps CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../grid-tracks/grid-tracks.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../grid-gaps/grid-gaps.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Grid Gaps Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Grid Gaps CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Grid Gaps CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../grid-tracks/grid-tracks.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../grid-gaps/grid-gaps.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(83);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Grid Gaps</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .gap-demo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .gap-demo div,
+      .column-gap-demo div,
+      .row-gap-demo div,
+      .combined-gap-demo div {
+        padding: 22px;
+        text-align: center;
+        border-radius: 12px;
+        background: #254ccb;
+      }
+
+      .column-gap-demo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 35px;
+        row-gap: 10px;
+      }
+
+      .row-gap-demo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 30px;
+        column-gap: 10px;
+      }
+
+      .combined-gap-demo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 15px;
+      }
+
+      .responsive-gap-demo {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+      }
+
+      .responsive-gap-demo div {
+        padding: 25px 15px;
+        text-align: center;
+        border-radius: 14px;
+        background: #334155;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Grid Gaps
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Grid mein <code class="text-green-400">gap</code> properties ka
+            use rows aur columns ke beech spacing dene ke liye hota hai. Is page
+            par hum <code class="text-green-400">gap</code>,
+            <code class="text-green-400">row-gap</code> aur
+            <code class="text-green-400">column-gap</code> ko examples ke saath
+            samjhenge.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../grid-tracks/grid-tracks.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../grid-align/grid-align.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-left-right-to-line text-blue-400 mr-2"
+            ></i>
+            CSS Grid Gaps Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Grid items ke beech jo empty space hota hai, use gap kaha jata hai.
+            Gap ko set karne se items ke beech clean aur consistent spacing
+            milti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Syntax
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-border-all text-blue-400 mr-2"></i>
+            gap Property
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">gap</code> ek shorthand property hai jo
+            rows aur columns dono ke beech spacing set kar sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="gap-demo">
+              <div>Item 1</div>
+              <div>Item 2</div>
+              <div>Item 3</div>
+              <div>Item 4</div>
+              <div>Item 5</div>
+              <div>Item 6</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(3, 1fr)</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            column-gap
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">column-gap</code> sirf columns ke beech
+            horizontal spacing set karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="column-gap-demo">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(3, 1fr)</span>;
+  <span class="text-blue-400">column-gap</span>: <span class="text-green-400">35px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            row-gap
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">row-gap</code> sirf rows ke beech
+            vertical spacing set karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="row-gap-demo">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(3, 1fr)</span>;
+  <span class="text-blue-400">row-gap</span>: <span class="text-green-400">30px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+            ></i>
+            Different Row and Column Gap
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">gap</code> mein do values dene par
+            pehli value row gap aur doosri value column gap hoti hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="combined-gap-demo">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">30px 15px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code-compare text-blue-400 mr-2"></i>
+            gap vs row-gap vs column-gap
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-5 text-lg">Property</th>
+                  <th class="p-5 text-lg">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300 text-lg">
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">gap</td>
+                  <td class="p-5">Rows aur columns dono ki spacing</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">row-gap</td>
+                  <td class="p-5">Sirf rows ke beech spacing</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">column-gap</td>
+                  <td class="p-5">Sirf columns ke beech spacing</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            Responsive Grid Gap
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Responsive Grid mein gap ko flexible rakhna useful hota hai.
+            <code class="text-green-400">gap</code> ke saath
+            <code class="text-green-400">auto-fit</code> aur
+            <code class="text-green-400">minmax()</code> use kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="responsive-gap-demo">
+              <div>Card 1</div>
+              <div>Card 2</div>
+              <div>Card 3</div>
+              <div>Card 4</div>
+              <div>Card 5</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(auto-fit, minmax(150px, 1fr))</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+            Important Grid Gap Properties
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-5 text-lg">Property</th>
+                  <th class="p-5 text-lg">Description</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300 text-lg">
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">gap</td>
+                  <td class="p-5">Rows aur columns dono ke beech space</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">row-gap</td>
+                  <td class="p-5">Rows ke beech vertical space</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">column-gap</td>
+                  <td class="p-5">Columns ke beech horizontal space</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">gap</code> rows aur columns dono ke
+                beech spacing set karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">row-gap</code> sirf rows ke beech
+                spacing ke liye hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">column-gap</code> sirf columns ke
+                beech spacing ke liye hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">gap: 30px 15px</code> mein 30px row
+                gap aur 15px column gap hota hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Gap margins ki tarah items ke outer edges par space add nahi
+                karta.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                <code class="text-green-400">row-gap</code> aur
+                <code class="text-green-400">column-gap</code> ko ulta samajhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Gap ki jagah unnecessary margins use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Bahut large gap rakhna jisse layout mein unnecessary empty space
+                aa jaye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Mobile screens par gap ko test na karna.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-star text-yellow-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Consistent spacing ke liye
+                <code class="text-green-400">gap</code> ka use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Rows aur columns ki different spacing chahiye to
+                <code class="text-green-400">row-gap</code> aur
+                <code class="text-green-400">column-gap</code> use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive layouts mein gap ko reasonable value par rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Unnecessary margins ke bajay Grid gap ko prefer karein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Grid mein gaps ka use Grid items ke beech spacing ke liye hota
+              hai.
+              <code class="text-green-400">gap</code> rows aur columns dono ki
+              spacing control karta hai, jabki
+              <code class="text-green-400">row-gap</code> sirf rows aur
+              <code class="text-green-400">column-gap</code> sirf columns ko
+              control karta hai. Different row aur column spacing ke liye
+              <code class="text-green-400">gap</code> mein do values bhi di ja
+              sakti hain.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../grid-tracks/grid-tracks.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../grid-align/grid-align.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(83);
+      });
+    </script>
+  </body>
+</html>

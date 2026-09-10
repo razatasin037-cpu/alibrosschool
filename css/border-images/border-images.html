@@ -1,44 +1,1072 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Border Images</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Border Images</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Border Images CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../rounded-corners/rounded-corners.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../border-images/border-images.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Border Images Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Border Images CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Border Images CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../rounded-corners/rounded-corners.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../border-images/border-images.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(48);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Border Images</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Border Images
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Border Images ka use kisi element ke normal border ko ek image
+            ya image-based pattern se replace karne ke liye kiya jata hai.
+            Normal border mein hum solid, dashed ya dotted styles use karte
+            hain, lekin border image ki help se hum decorative frames, custom
+            patterns aur unique UI borders bana sakte hain. Is topic mein sabse
+            important baat ye samajhna hai ki browser source image ko kaise
+            slices mein divide karta hai aur un slices ko element ke border ke
+            around kaise place karta hai. Is chapter mein hum
+            <span class="text-blue-400">border-image-source</span>,
+            <span class="text-blue-400">border-image-slice</span>,
+            <span class="text-blue-400">border-image-width</span>,
+            <span class="text-blue-400">border-image-outset</span>,
+            <span class="text-blue-400">border-image-repeat</span> aur shorthand
+            <span class="text-blue-400">border-image</span> ko detail mein
+            samjhenge.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../rounded-corners/rounded-corners.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../multiple-backgrounds/multiple-backgrounds.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- Introduction -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-image text-blue-400 mr-2"></i>
+            CSS Border Images Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS mein normal border banane ke liye hum
+            <span class="text-blue-400">border</span> property ka use karte
+            hain. Example ke liye
+            <span class="text-green-400">2px solid white</span> ek simple white
+            border create karta hai. Lekin agar hume border ko kisi image,
+            pattern ya decorative frame ke design mein dikhana ho, to
+            <span class="text-blue-400">border-image</span> feature ka use kiya
+            ja sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Border image ka concept thoda normal background image se different
+            hai. Yahan source image ko browser border ke liye multiple portions
+            mein divide karta hai. Image ke corner portions element ke corners
+            par aur edge portions element ki sides par use hote hain. Isi wajah
+            se ek chhoti decorative image ko bade element ke around repeat,
+            stretch ya round kiya ja sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Is feature ka practical use decorative cards, certificates,
+            invitation boxes, game interfaces, special sections aur custom UI
+            components mein kiya ja sakta hai.
+          </p>
+
+          <!-- Basic Syntax -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Basic Border Image Syntax
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Border image use karte waqt sabse pehle element par border area
+            create karna useful hota hai. Uske baad source image aur slice value
+            specify ki jaati hai. Beginners ke liye pehle individual properties
+            ko samajhna better hai aur baad mein shorthand property par jaana
+            chahiye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">10px solid transparent</span>;
+  <span class="text-blue-400">border-image-source</span>: <span class="text-green-400">url("border.png")</span>;
+  <span class="text-blue-400">border-image-slice</span>: <span class="text-green-400">30</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Yahan <span class="text-blue-400">border</span> property 10px ka
+            border area create karti hai.
+            <span class="text-blue-400">transparent</span> use karne se normal
+            border ka color visible nahi hota aur border image us area ko
+            visually occupy kar sakti hai.
+            <span class="text-blue-400">border-image-source</span> source image
+            select karta hai aur
+            <span class="text-blue-400">border-image-slice</span> browser ko
+            batata hai ki image ko kis tarah divide karna hai.
+          </p>
+
+          <!-- Source -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-link text-blue-400 mr-2"></i>
+            1. border-image-source
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-blue-400">border-image-source</span> property
+            border ke liye source image specify karti hai. Ismein commonly
+            <span class="text-blue-400">url()</span> function ka use hota hai.
+            Source image local file bhi ho sakti hai aur appropriate URL ke
+            through external image bhi ho sakti hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Sirf source define karne se complete border image setup nahi hota.
+            Source image ko browser ko kis position se slice karna hai ye batane
+            ke liye <span class="text-blue-400">border-image-slice</span> ki
+            zarurat hoti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Source Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">12px solid transparent</span>;
+  <span class="text-blue-400">border-image-source</span>: <span class="text-green-400">url("frame.png")</span>;
+  <span class="text-blue-400">border-image-slice</span>: <span class="text-green-400">40</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Slice -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-scissors text-blue-400 mr-2"></i>
+            2. border-image-slice
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-blue-400">border-image-slice</span> border image
+            ka most important part hai. Is property se source image ko sections
+            mein divide kiya jata hai. Conceptually image ko nine regions mein
+            divide kiya ja sakta hai: four corners, four edges aur center.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Four corners element ke corners ke liye preserve hote hain. Top aur
+            bottom edge portions horizontal sides par aur left aur right edge
+            portions vertical sides par use hote hain. Center portion ka normal
+            border rendering mein direct use nahi hota, jab tak
+            <span class="text-blue-400">fill</span> keyword na diya gaya ho.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Slice value source image ke design par depend karti hai. Agar image
+            100px wide hai aur important border details 30px ke andar hain, to
+            approximately 30 ki slice value useful ho sakti hai. Exact value
+            hamesha source image ko dekhkar choose karni chahiye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Slice Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">15px solid transparent</span>;
+  <span class="text-blue-400">border-image-source</span>: <span class="text-green-400">url("border.png")</span>;
+  <span class="text-blue-400">border-image-slice</span>: <span class="text-green-400">30</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Fill -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-fill-drip text-blue-400 mr-2"></i>
+            3. border-image-slice: fill
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Agar aap source image ke center region ko bhi element ke background
+            area mein use karna chahte hain, to
+            <span class="text-blue-400">fill</span> keyword use kar sakte hain.
+            Ye normal border image behavior se different hai kyunki center
+            portion bhi render hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Fill Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">15px solid transparent</span>;
+  <span class="text-blue-400">border-image-source</span>: <span class="text-green-400">url("frame.png")</span>;
+  <span class="text-blue-400">border-image-slice</span>: <span class="text-green-400">30 fill</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            <span class="text-blue-400">fill</span> tab useful hota hai jab
+            source image ka center portion bhi design ka important part ho.
+            Example ke liye ek decorative frame image ke center mein background
+            texture ho sakta hai, jise aap element ke andar bhi show karna
+            chahte hain.
+          </p>
+
+          <!-- Width -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-left-right-to-line text-blue-400 mr-2"
+            ></i>
+            4. border-image-width
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-blue-400">border-image-width</span> border image
+            ke visual width ko control karti hai. Ye normal
+            <span class="text-blue-400">border-width</span> se related hai,
+            lekin iska purpose border image ke rendered area ko control karna
+            hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar source image ka border design thick hai aur aapko usse specific
+            visual thickness mein show karna hai, to
+            <span class="text-blue-400">border-image-width</span> useful ho
+            sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Width Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">10px solid transparent</span>;
+  <span class="text-blue-400">border-image-source</span>: <span class="text-green-400">url("border.png")</span>;
+  <span class="text-blue-400">border-image-slice</span>: <span class="text-green-400">30</span>;
+  <span class="text-blue-400">border-image-width</span>: <span class="text-green-400">15px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Outset -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-up-right-and-down-left-from-center text-blue-400 mr-2"
+            ></i>
+            5. border-image-outset
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-blue-400">border-image-outset</span> se border
+            image ko element ke normal border edge ke bahar extend kiya ja sakta
+            hai. Normally border image element ke border area ke around render
+            hoti hai, lekin outset ke through usse additional distance tak bahar
+            nikala ja sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ye decorative designs ke liye useful ho sakta hai, lekin iska use
+            carefully karna chahiye. Agar image bahar extend karegi to nearby
+            elements ke saath overlap ho sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Outset Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">10px solid transparent</span>;
+  <span class="text-blue-400">border-image</span>: <span class="text-green-400">url("border.png") 30</span>;
+  <span class="text-blue-400">border-image-outset</span>: <span class="text-green-400">8px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Repeat -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-repeat text-blue-400 mr-2"></i>
+            6. border-image-repeat
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-blue-400">border-image-repeat</span> decide karti
+            hai ki source image ke edge portions available border space mein
+            kaise distribute honge. Is property ki wajah se same border image ko
+            different types ke pattern mein render kiya ja sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is property ki commonly used values hain
+            <span class="text-green-400">stretch</span>,
+            <span class="text-green-400">repeat</span>,
+            <span class="text-green-400">round</span> aur
+            <span class="text-green-400">space</span>. Inmein se kaunsi value
+            best hogi ye source image ke pattern aur element ke size par depend
+            karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Repeat Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">12px solid transparent</span>;
+  <span class="text-blue-400">border-image-source</span>: <span class="text-green-400">url("pattern.png")</span>;
+  <span class="text-blue-400">border-image-slice</span>: <span class="text-green-400">25</span>;
+  <span class="text-blue-400">border-image-repeat</span>: <span class="text-green-400">repeat</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Stretch -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            7. stretch
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-green-400">stretch</span> edge image portions ko
+            available space ke according stretch karta hai. Ismein image segment
+            ko repeat karne ki jagah uski length available border ke according
+            adjust hoti hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar border image mein continuous design hai jise poori side par
+            stretch karna acceptable hai, to
+            <span class="text-green-400">stretch</span> useful option ho sakta
+            hai. Agar image mein repeating pattern hai, to repeat ya round
+            better result de sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Stretch Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.frame</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">12px solid transparent</span>;
+  <span class="text-blue-400">border-image</span>: <span class="text-green-400">url("frame.png") 30 stretch</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Repeat and Round -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code-compare text-blue-400 mr-2"></i>
+            8. repeat aur round
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-green-400">repeat</span> edge portion ko available
+            space mein repeat karta hai. Agar available length exact multiple
+            nahi hai, to final tile partially fit ho sakta hai. Isliye pattern
+            ke edges kabhi-kabhi cut ya incomplete dikh sakte hain.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-green-400">round</span> repeated image segments ki
+            size ko adjust karta hai taaki complete segments available space
+            mein better fit ho saken. Repeating decorative patterns ke liye
+            <span class="text-green-400">round</span> visually cleaner result de
+            sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Comparison Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.repeat-border</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">12px solid transparent</span>;
+  <span class="text-blue-400">border-image</span>: <span class="text-green-400">url("pattern.png") 30 repeat</span>;
+}
+
+<span class="text-blue-400">.round-border</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">12px solid transparent</span>;
+  <span class="text-blue-400">border-image</span>: <span class="text-green-400">url("pattern.png") 30 round</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Space -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-left-right-to-line text-blue-400 mr-2"
+            ></i>
+            9. space Value
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-green-400">space</span> value repeated image
+            segments ke beech available extra space distribute karti hai. Ismein
+            image tiles ke beech gaps aa sakte hain, lekin agar available space
+            ke liye exact distribution possible na ho to behavior repeat jaisa
+            fallback bhi involve kar sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Space Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">12px solid transparent</span>;
+  <span class="text-blue-400">border-image</span>: <span class="text-green-400">url("pattern.png") 25 space</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Shorthand -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-compress text-blue-400 mr-2"></i>
+            10. border-image Shorthand
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Agar aapko multiple border-image properties ko ek hi declaration
+            mein likhna ho, to
+            <span class="text-blue-400">border-image</span> shorthand use kiya
+            ja sakta hai. Isse CSS code shorter ho jata hai aur related settings
+            ek hi jagah par dikhai deti hain.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Shorthand mein source, slice, width, outset aur repeat ke values
+            specify ki ja sakti hain. Lekin beginners ko pehle individual
+            properties samajhni chahiye, kyunki shorthand syntax initially thoda
+            complex lag sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Shorthand Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">12px solid transparent</span>;
+  <span class="text-blue-400">border-image</span>: <span class="text-green-400">url("border.png") 30 / 12px / 0 round</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Border Image Width vs Border -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-scale-balanced text-blue-400 mr-2"></i>
+            11. Border Width aur Border Image Width
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <span class="text-blue-400">border-width</span> aur
+            <span class="text-blue-400">border-image-width</span> ko same
+            property samajhna mistake hai.
+            <span class="text-blue-400">border-width</span> normal border ki
+            width define karti hai, jabki
+            <span class="text-blue-400">border-image-width</span> border image
+            ke rendered width ko control karne ke liye use hoti hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Practical development mein dono ko source image aur desired output
+            ke according set kiya ja sakta hai. Agar border image visible nahi
+            aa rahi hai, to border area, slice aur image source ko sabse pehle
+            check karna chahiye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Combined Width Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">border-style</span>: <span class="text-green-400">solid</span>;
+  <span class="text-blue-400">border-width</span>: <span class="text-green-400">10px</span>;
+  <span class="text-blue-400">border-color</span>: <span class="text-green-400">transparent</span>;
+  <span class="text-blue-400">border-image-source</span>: <span class="text-green-400">url("border.png")</span>;
+  <span class="text-blue-400">border-image-slice</span>: <span class="text-green-400">30</span>;
+  <span class="text-blue-400">border-image-width</span>: <span class="text-green-400">12px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Practical Card -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-id-card text-blue-400 mr-2"></i>
+            12. Decorative Card Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Border image ka practical use ek decorative card banane mein kiya ja
+            sakta hai. Suppose aapke paas ek custom frame image hai jisme four
+            corners aur four sides ka decorative pattern bana hua hai. Us image
+            ko border image ke roop mein apply karke normal card ko unique
+            appearance diya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Card Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">30px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">18px solid transparent</span>;
+  <span class="text-blue-400">border-image-source</span>: <span class="text-green-400">url("decorative-frame.png")</span>;
+  <span class="text-blue-400">border-image-slice</span>: <span class="text-green-400">45</span>;
+  <span class="text-blue-400">border-image-repeat</span>: <span class="text-green-400">round</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Yahan card ke content ke around decorative image render hogi.
+            <span class="text-blue-400">padding</span> content ko border se
+            sufficient distance deta hai, jabki slice aur repeat values source
+            image ke pattern ko card ke dimensions ke according distribute karte
+            hain.
+          </p>
+
+          <!-- Certificate -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-certificate text-blue-400 mr-2"></i>
+            13. Certificate Frame Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Certificate, invitation aur special announcement designs mein
+            decorative frames ka use common hai. Border image feature aise
+            designs ke liye useful ho sakta hai kyunki source image ke corners
+            ko preserve karte hue frame ko different sizes ke elements par apply
+            kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Certificate Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.certificate</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">20px solid transparent</span>;
+  <span class="text-blue-400">border-image</span>: <span class="text-green-400">url("certificate-frame.png") 50 round</span>;
+  <span class="text-blue-400">text-align</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Responsive -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            14. Responsive Border Images
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Border image responsive layout ke saath use ki ja sakti hai, lekin
+            source image ka design different element sizes par properly work
+            karna chahiye. Desktop par bada card aur mobile par chhota card hone
+            ki wajah se edge portions ka behavior change ho sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Isliye border image ko responsive design mein test karna important
+            hai. Especially small mobile widths par check karein ki corners
+            properly visible hain, edge pattern distort nahi ho raha aur content
+            border se overlap nahi kar raha.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Responsive Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">90%</span>;
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">700px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">auto</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">25px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">15px solid transparent</span>;
+  <span class="text-blue-400">border-image</span>: <span class="text-green-400">url("frame.png") 30 round</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Common Mistakes -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Sabse common mistake hoti hai
+            <span class="text-blue-400">border-image-source</span> set karna
+            lekin border area define na karna. Border image ko render hone ke
+            liye appropriate border area chahiye, isliye border width aur style
+            ko check karna important hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Dusri common mistake wrong slice value hai. Agar source image ke
+            corners aur edges ko correctly slice nahi kiya gaya, to corners
+            distorted ho sakte hain ya pattern unexpected way mein stretch ho
+            sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ek aur mistake image path ko incorrectly specify karna hai. Agar
+            <span class="text-blue-400">url()</span> ka path wrong hai ya image
+            available nahi hai, to border image render nahi hogi.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Beginners ko shorthand syntax mein values mix karne se bhi problem
+            aa sakti hai. Isliye debugging ke waqt shorthand ko individual
+            properties mein todkar check karna useful approach hai.
+          </p>
+
+          <!-- Best Practices -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Border image ke liye specially designed decorative image use
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Source image ke dimensions aur corner design ke according slice
+                value choose karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Border image use karne se pehle appropriate border width aur
+                style define karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Repeating patterns ke liye
+                <span class="text-blue-400">repeat</span> aur
+                <span class="text-blue-400">round</span> dono ko test karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Decorative frame ko content readability ke against balance
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Mobile aur desktop dono screen sizes par border image ka output
+                check karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Complex shorthand se pehle individual border-image properties ko
+                properly understand karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Important -->
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS border image ke liye
+                <span class="text-blue-400">border-image</span> aur related
+                properties ka use hota hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">border-image-source</span> source
+                image specify karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">border-image-slice</span> source
+                image ko border regions mein divide karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">fill</span> source image ke center
+                region ko bhi render kar sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">border-image-width</span> border
+                image ki rendered width control karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">border-image-outset</span> border
+                image ko element ke border area ke bahar extend kar sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">border-image-repeat</span> edge
+                portions ke distribution ko control karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">stretch</span> edge portions ko
+                stretch karta hai, jabki
+                <span class="text-blue-400">repeat</span> aur
+                <span class="text-blue-400">round</span> repeating patterns ke
+                liye useful hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Border image ka output source image aur slice values par depend
+                karta hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Border Images ka use normal CSS border ki jagah image-based
+              border create karne ke liye kiya jata hai.
+              <span class="text-blue-400">border-image-source</span> source
+              image select karta hai,
+              <span class="text-blue-400">border-image-slice</span> image ko
+              required sections mein divide karta hai,
+              <span class="text-blue-400">border-image-width</span> rendered
+              border image ki width control karta hai aur
+              <span class="text-blue-400">border-image-outset</span> image
+              border ko bahar extend kar sakta hai.
+              <span class="text-blue-400">border-image-repeat</span> edge
+              portions ko stretch, repeat, round ya space behavior ke saath
+              distribute karne mein help karta hai. In sabhi properties ko
+              shorthand <span class="text-blue-400">border-image</span> mein
+              combine bhi kiya ja sakta hai. Proper source image aur correct
+              slice values ke saath border images ka use decorative cards,
+              certificates, frames aur custom website interfaces mein kiya ja
+              sakta hai.
+            </p>
+          </div>
+
+          <!-- Bottom Navigation -->
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../rounded-corners/rounded-corners.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../multiple-backgrounds/multiple-backgrounds.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(48);
+      });
+    </script>
+  </body>
+</html>

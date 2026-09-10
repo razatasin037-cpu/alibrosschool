@@ -1,44 +1,477 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Viewport</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Viewport</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Viewport CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../responsive/responsive.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../viewport/viewport.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Viewport Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Viewport CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Viewport CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../responsive/responsive.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../viewport/viewport.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(91);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Viewport</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .viewport-demo {
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
+        padding: 24px;
+        border: 2px solid #3158ff;
+        border-radius: 20px;
+        background: #111827;
+      }
+
+      .viewport-screen {
+        min-height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 14px;
+        padding: 25px;
+        background: linear-gradient(135deg, #1e3a8a, #312e81);
+      }
+
+      @media (max-width: 600px) {
+        .viewport-screen {
+          min-height: 140px;
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Viewport
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Viewport browser window ka visible area hota hai jahan webpage दिखाई
+            deta hai. Responsive website banane ke liye viewport ko samajhna
+            bahut important hai, especially mobile devices par.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../12-column-grid/12-column-grid.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="/totureal/totureal.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            Viewport Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Viewport browser ka woh visible area hai jisme webpage user ko दिखाई
+            deta hai. Desktop par viewport usually bada hota hai, jabki mobile
+            par viewport chhota hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-[#111827] rounded-2xl p-6 border border-gray-700">
+                <i class="fa-solid fa-desktop text-blue-400 text-3xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-3">Desktop Viewport</h3>
+                <p class="text-lg text-gray-300">
+                  Screen generally wide hoti hai, isliye multiple columns aur
+                  larger layouts easily fit ho sakte hain.
+                </p>
+              </div>
+
+              <div class="bg-[#111827] rounded-2xl p-6 border border-gray-700">
+                <i
+                  class="fa-solid fa-mobile-screen text-green-400 text-3xl mb-4"
+                ></i>
+                <h3 class="text-2xl font-bold mb-3">Mobile Viewport</h3>
+                <p class="text-lg text-gray-300">
+                  Screen width chhoti hoti hai, isliye layout ko responsive
+                  banana zaroori hota hai.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Viewport Meta Tag
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Mobile browsers mein responsive layout ke liye HTML ke
+            <code class="text-green-400">&lt;head&gt;</code> section mein
+            viewport meta tag use kiya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Viewport Tag
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;meta</span>
+  <span class="text-blue-400">name</span>=<span class="text-green-400">"viewport"</span>
+  <span class="text-blue-400">content</span>=<span class="text-green-400">"width=device-width, initial-scale=1"</span>
+<span class="text-blue-400">/&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            width=device-width
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">width=device-width</code> browser ko
+            batata hai ki webpage ki viewport width device ki actual screen
+            width ke according honi chahiye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;meta</span>
+  <span class="text-blue-400">name</span>=<span class="text-green-400">"viewport"</span>
+  <span class="text-blue-400">content</span>=<span class="text-green-400">"width=device-width"</span>
+<span class="text-blue-400">/&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-magnifying-glass-plus text-blue-400 mr-2"></i>
+            initial-scale=1
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">initial-scale=1</code> page ko initial
+            load par normal 100% zoom level par display karta hai.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-5">
+              <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+              Common Viewport Settings
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-lg">
+                <thead>
+                  <tr class="border-b border-gray-700">
+                    <th class="p-4 text-blue-400">Setting</th>
+                    <th class="p-4 text-blue-400">Meaning</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                  <tr class="border-b border-gray-800">
+                    <td class="p-4 font-mono text-green-400">
+                      width=device-width
+                    </td>
+                    <td class="p-4">
+                      Viewport width ko device width ke equal karta hai.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-mono text-green-400">
+                      initial-scale=1
+                    </td>
+                    <td class="p-4">
+                      Initial zoom level ko normal rakhta hai.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-retro text-blue-400 mr-2"></i>
+            Responsive Design Mein Viewport
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Viewport meta tag responsive CSS ke saath milkar kaam karta hai.
+            Media queries, flexible widths aur responsive images ko properly
+            work karne ke liye mobile viewport setting important hai.
+          </p>
+
+          <div class="viewport-demo mb-12">
+            <div class="viewport-screen">
+              <div>
+                <i
+                  class="fa-solid fa-mobile-screen-button text-4xl text-blue-300 mb-4"
+                ></i>
+                <h3 class="text-2xl sm:text-3xl font-bold">
+                  Responsive Viewport
+                </h3>
+                <p class="text-gray-200 mt-3">
+                  Browser width change karke responsive behavior observe karein.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Complete HTML Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek simple responsive page mein viewport meta tag aur responsive CSS
+            ko is tarah use kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-file-code text-blue-400 mr-2"></i>
+                HTML + CSS
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-blue-400">&lt;html</span> <span class="text-blue-400">lang</span>=<span class="text-green-400">"en"</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;head&gt;</span>
+
+  <span class="text-blue-400">&lt;meta</span>
+    <span class="text-blue-400">name</span>=<span class="text-green-400">"viewport"</span>
+    <span class="text-blue-400">content</span>=<span class="text-green-400">"width=device-width, initial-scale=1"</span>
+  <span class="text-blue-400">/&gt;</span>
+
+  <span class="text-blue-400">&lt;style&gt;</span>
+    <span class="text-blue-400">.container</span> {
+      <span class="text-blue-400">width</span>: <span class="text-green-400">90%</span>;
+      <span class="text-blue-400">max-width</span>: <span class="text-green-400">900px</span>;
+      <span class="text-blue-400">margin</span>: <span class="text-green-400">auto</span>;
+    }
+
+    <span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">600px</span>) {
+      <span class="text-blue-400">.container</span> {
+        <span class="text-blue-400">width</span>: <span class="text-green-400">95%</span>;
+      }
+    }
+  <span class="text-blue-400">&lt;/style&gt;</span>
+
+<span class="text-blue-400">&lt;/head&gt;</span>
+<span class="text-blue-400">&lt;body&gt;</span>
+
+  <span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"container"</span><span class="text-blue-400">&gt;</span>
+    Responsive Content
+  <span class="text-blue-400">&lt;/div&gt;</span>
+
+<span class="text-blue-400">&lt;/body&gt;</span>
+<span class="text-blue-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Viewport browser ka visible area hota hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Mobile responsive pages mein viewport meta tag important hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">width=device-width</code> device ki
+                screen width ko use karta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">initial-scale=1</code> initial zoom
+                ko normal rakhta hai.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Viewport settings ko responsive CSS ke saath use karna best
+                practice hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i
+                class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Viewport meta tag ko completely remove kar dena.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Mobile layout ke liye fixed width ka excessive use karna.
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Sirf viewport par depend karna aur responsive CSS na likhna.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-star text-blue-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Standard viewport meta tag use karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Flexible widths aur responsive units use karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Media queries ke through different screen sizes handle karein.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Real mobile devices par bhi page test karein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Viewport browser ke visible area ko represent karta hai.
+              Responsive websites ke liye
+              <code class="text-green-400">width=device-width</code> aur
+              <code class="text-green-400">initial-scale=1</code> wala viewport
+              meta tag commonly use kiya jata hai. Viewport ko responsive CSS ke
+              saath use karne se webpage different screen sizes par better
+              behave karta hai.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../12-column-grid/12-column-grid.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="/totureal/totureal.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(91);
+      });
+    </script>
+  </body>
+</html>

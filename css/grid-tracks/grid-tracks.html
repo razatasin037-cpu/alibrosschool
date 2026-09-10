@@ -1,44 +1,691 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Grid Tracks</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Grid Tracks</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Grid Tracks CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../grid-container/grid-container.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../grid-tracks/grid-tracks.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Grid Tracks Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Grid Tracks CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Grid Tracks CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../grid-container/grid-container.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../grid-tracks/grid-tracks.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(82);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Grid Tracks</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .track-columns {
+        display: grid;
+        grid-template-columns: 120px 1fr 2fr;
+        gap: 12px;
+      }
+
+      .track-columns div,
+      .track-rows div,
+      .track-repeat div {
+        padding: 20px;
+        text-align: center;
+        border-radius: 12px;
+        background: #254ccb;
+      }
+
+      .track-rows {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 80px 120px 160px;
+        gap: 12px;
+      }
+
+      .track-repeat {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+
+      .track-minmax {
+        display: grid;
+        grid-template-columns: minmax(150px, 1fr) 2fr;
+        gap: 15px;
+      }
+
+      .track-minmax div {
+        padding: 25px;
+        border-radius: 14px;
+        background: #334155;
+      }
+
+      .track-auto {
+        display: grid;
+        grid-template-columns: 150px auto 1fr;
+        gap: 12px;
+      }
+
+      .track-auto div {
+        padding: 20px;
+        text-align: center;
+        border-radius: 12px;
+        background: #1e40af;
+      }
+
+      .track-practical {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto 180px auto;
+        gap: 15px;
+      }
+
+      .track-practical div {
+        padding: 20px;
+        border-radius: 14px;
+        background: #1e40af;
+      }
+
+      .track-practical .header,
+      .track-practical .footer {
+        grid-column: 1 / -1;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Grid Tracks
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Grid mein rows aur columns ko Grid Tracks kaha jata hai. Is page
+            par hum track sizes, <code class="text-green-400">fr</code>,
+            <code class="text-green-400">repeat()</code>,
+            <code class="text-green-400">auto</code> aur
+            <code class="text-green-400">minmax()</code> ko examples ke saath
+            samjhenge.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../grid-container/grid-container.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../grid-gaps/grid-gaps.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-grip text-blue-400 mr-2"></i>
+            Grid Tracks Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Grid ke andar har row aur column ek track hota hai. Columns ko
+            <code class="text-green-400">grid-template-columns</code> aur rows
+            ko <code class="text-green-400">grid-template-rows</code> se define
+            kiya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">1fr 2fr 1fr</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-grip-lines-vertical text-blue-400 mr-2"></i>
+            Column Tracks
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">grid-template-columns</code> se columns
+            ke tracks ki width define hoti hai. Aap pixels, percentages,
+            <code class="text-green-400">fr</code> ya doosri CSS units use kar
+            sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="track-columns">
+              <div>120px</div>
+              <div>1fr</div>
+              <div>2fr</div>
+              <div>120px</div>
+              <div>1fr</div>
+              <div>2fr</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">120px 1fr 2fr</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-grip-lines text-blue-400 mr-2"></i>
+            Row Tracks
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">grid-template-rows</code> se row tracks
+            ki height define ki ja sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="track-rows">
+              <div>Row 1</div>
+              <div>Row 1</div>
+              <div>Row 2</div>
+              <div>Row 2</div>
+              <div>Row 3</div>
+              <div>Row 3</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-rows</span>: <span class="text-green-400">80px 120px 160px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+            fr Unit in Tracks
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">fr</code> available space ka fractional
+            part represent karta hai. Jaise
+            <code class="text-green-400">1fr 2fr</code> mein second track ko
+            first ke comparison mein double share milta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">1fr 2fr 1fr</span>;</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-repeat text-blue-400 mr-2"></i>
+            repeat() Function
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar multiple tracks ka same pattern ho, to
+            <code class="text-green-400">repeat()</code> code ko short aur clean
+            banata hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="track-repeat">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(4, 1fr)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            auto Track
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">auto</code> track available space aur
+            content ke according size adjust kar sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="track-auto">
+              <div>150px</div>
+              <div>auto</div>
+              <div>1fr</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">150px auto 1fr</span>;</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-to-circle text-blue-400 mr-2"></i>
+            minmax()
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code class="text-green-400">minmax()</code> kisi track ke minimum
+            aur maximum size ko define karta hai. Responsive layouts mein ye
+            bahut useful hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="track-minmax">
+              <div>Minimum 150px</div>
+              <div>Flexible Content</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">minmax(150px, 1fr) 2fr</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            Multiple Track Sizes
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek hi Grid mein different track sizes combine kiye ja sakte hain.
+            Isse complex layouts easily create hote hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Example</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">200px 1fr 2fr</span>;
+  <span class="text-blue-400">grid-template-rows</span>: <span class="text-green-400">80px 1fr auto</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-display text-blue-400 mr-2"></i>
+            Practical Grid Tracks
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Neeche ek practical website layout hai jisme different column aur
+            row tracks use kiye gaye hain.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 mb-8">
+            <div class="track-practical">
+              <div class="header">Header</div>
+              <div>Sidebar</div>
+              <div>Main Content</div>
+              <div>Extra</div>
+              <div class="footer">Footer</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">Code</h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.layout</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">1fr 2fr 1fr</span>;
+  <span class="text-blue-400">grid-template-rows</span>: <span class="text-green-400">auto 180px auto</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">15px</span>;
+}
+
+<span class="text-blue-400">.header</span>,
+<span class="text-blue-400">.footer</span> {
+  <span class="text-blue-400">grid-column</span>: <span class="text-green-400">1 / -1</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+            Important Grid Track Properties
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-5 text-lg">Property / Function</th>
+                  <th class="p-5 text-lg">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300 text-lg">
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">grid-template-columns</td>
+                  <td class="p-5">Column tracks define karta hai</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">grid-template-rows</td>
+                  <td class="p-5">Row tracks define karta hai</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">fr</td>
+                  <td class="p-5">Available space ka fractional part</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">repeat()</td>
+                  <td class="p-5">Repeated tracks create karta hai</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">minmax()</td>
+                  <td class="p-5">
+                    Minimum aur maximum track size define karta hai
+                  </td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">auto</td>
+                  <td class="p-5">
+                    Available space/content ke according size adjust karta hai
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Grid ki har row aur column ko Grid Track kaha jata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">grid-template-columns</code> column
+                tracks ko control karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">grid-template-rows</code> row
+                tracks ko control karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">fr</code> flexible available space
+                ko divide karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">repeat()</code> repeated track
+                patterns ke liye useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code class="text-green-400">minmax()</code> responsive track
+                sizing ke liye useful hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i
+                class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Rows aur columns ko confuse karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Har track ke liye unnecessary fixed pixel values use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                <code class="text-green-400">fr</code> units ka proportion
+                samjhe bina use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Responsive layouts mein
+                <code class="text-green-400">minmax()</code> aur flexible units
+                ko ignore karna.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-star text-yellow-400 mr-2"></i>
+              Best Practices
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Flexible layouts ke liye
+                <code class="text-green-400">fr</code> ka use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Repeated columns ke liye
+                <code class="text-green-400">repeat()</code> use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive sizing ke liye
+                <code class="text-green-400">minmax()</code> useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Different screen sizes par Grid tracks ko test karein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Grid Tracks rows aur columns ke individual tracks hote hain.
+              <code class="text-green-400">grid-template-columns</code> aur
+              <code class="text-green-400">grid-template-rows</code> se inka
+              size define kiya jata hai. <code class="text-green-400">fr</code>,
+              <code class="text-green-400">repeat()</code>,
+              <code class="text-green-400">auto</code> aur
+              <code class="text-green-400">minmax()</code> ki help se flexible
+              aur responsive Grid layouts banaye ja sakte hain.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../grid-container/grid-container.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../grid-gaps/grid-gaps.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(82);
+      });
+    </script>
+  </body>
+</html>

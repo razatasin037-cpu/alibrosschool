@@ -1,44 +1,860 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Media Queries</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Media Queries</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Media Queries CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../box-sizing/box-sizing.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../media-queries/media-queries.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Media Queries Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Media Queries CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Media Queries CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../box-sizing/box-sizing.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../media-queries/media-queries.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(73);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Media Queries</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      .responsive-box {
+        padding: 30px;
+        border-radius: 18px;
+        text-align: center;
+        background: #254ccb;
+      }
+
+      @media (max-width: 768px) {
+        .responsive-box {
+          background: #7c3aed;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .responsive-box {
+          background: #db2777;
+          padding: 20px;
+        }
+      }
+
+      .min-width-box {
+        padding: 30px;
+        border-radius: 18px;
+        text-align: center;
+        background: #334155;
+      }
+
+      @media (min-width: 768px) {
+        .min-width-box {
+          background: #059669;
+        }
+      }
+
+      .responsive-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      @media (min-width: 640px) {
+        .responsive-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .responsive-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .responsive-text {
+        font-size: 24px;
+      }
+
+      @media (max-width: 768px) {
+        .responsive-text {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .responsive-text {
+          font-size: 17px;
+        }
+      }
+
+      .orientation-box {
+        padding: 30px;
+        border-radius: 18px;
+        text-align: center;
+        background: #1e293b;
+      }
+
+      @media (orientation: landscape) {
+        .orientation-box {
+          border: 3px solid #4d6fff;
+        }
+      }
+
+      @media (orientation: portrait) {
+        .orientation-box {
+          border: 3px solid #a855f7;
+        }
+      }
+
+      .dark-mode-demo {
+        padding: 30px;
+        border-radius: 18px;
+        background: white;
+        color: #020617;
+        text-align: center;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .dark-mode-demo {
+          background: #0f172a;
+          color: white;
+          border: 1px solid #334155;
+        }
+      }
+
+      .print-demo {
+        padding: 25px;
+        border-radius: 18px;
+        background: #1e293b;
+      }
+
+      @media print {
+        .print-demo {
+          background: white;
+          color: black;
+          border: 1px solid black;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Media Queries
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Media Queries ka use website ko different screen sizes aur
+            devices ke according responsive banane ke liye kiya jata hai. Isse
+            mobile, tablet, laptop aur desktop ke liye alag CSS rules apply kar
+            sakte hain.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../box-sizing/box-sizing.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../flexbox/flexbox.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Media Queries Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Media Query ek CSS condition hai. Jab condition true hoti hai,
+            browser uske andar likhe CSS rules apply karta hai. Ye responsive
+            web design ka important part hai.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4">
+              <i class="fa-solid fa-lightbulb text-yellow-400 mr-2"></i>
+              Simple Example
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Agar screen 768px ya usse chhoti ho, to hum kisi element ka color,
+              size, layout ya spacing change kar sakte hain.
+            </p>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-terminal text-blue-400 mr-2"></i>
+            Basic Syntax
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@media</span> (<span class="text-green-400">max-width: 768px</span>) {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">background</span>: <span class="text-green-400">blue</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-down-wide-short text-blue-400 mr-2"></i>
+            max-width
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code>max-width</code> ka use tab hota hai jab screen ki width given
+            value se kam ya equal ho.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@media</span> (<span class="text-green-400">max-width: 768px</span>) {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">background</span>: <span class="text-green-400">purple</span>;
+  }
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-green-400">max-width: 480px</span>) {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">background</span>: <span class="text-green-400">pink</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-play text-blue-400 mr-2"></i>
+            Live Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Browser window ko resize karke dekho. Width ke according box ka
+            background aur padding change hoga.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 mb-12"
+          >
+            <div class="responsive-box">
+              <p class="text-2xl font-bold">Resize The Browser</p>
+
+              <p class="text-lg mt-2">
+                Screen width ke according color change hoga.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-up-wide-short text-blue-400 mr-2"></i>
+            min-width
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code>min-width</code> tab apply hota hai jab screen ki width given
+            value se greater ya equal ho.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@media</span> (<span class="text-green-400">min-width: 768px</span>) {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">background</span>: <span class="text-green-400">green</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 mb-12"
+          >
+            <div class="min-width-box">
+              <p class="text-2xl font-bold">min-width Example</p>
+
+              <p class="text-lg mt-2">
+                768px ya usse badi screen par color change hoga.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code-branch text-blue-400 mr-2"></i>
+            Common Breakpoints
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Responsive design mein common screen ranges ke liye breakpoints use
+            kiye jate hain. Ye fixed rule nahi hain; project ke design ke
+            according breakpoints choose kiye ja sakte hain.
+          </p>
+
+          <div class="overflow-x-auto mb-12">
+            <table
+              class="w-full text-left border-collapse bg-[#0f172a] rounded-2xl overflow-hidden"
+            >
+              <thead class="bg-[#1e293b]">
+                <tr>
+                  <th class="p-5 text-lg">Breakpoint</th>
+                  <th class="p-5 text-lg">Typical Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300 text-lg">
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">480px</td>
+                  <td class="p-5">Small mobile</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">640px</td>
+                  <td class="p-5">Large mobile / small tablet</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">768px</td>
+                  <td class="p-5">Tablet</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">1024px</td>
+                  <td class="p-5">Laptop / desktop</td>
+                </tr>
+
+                <tr class="border-t border-gray-800">
+                  <td class="p-5 text-blue-400">1280px</td>
+                  <td class="p-5">Large desktop</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table-cells-large text-blue-400 mr-2"></i>
+            Responsive Grid
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Media Queries ki help se grid columns ko screen size ke according
+            change kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.grid</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">1fr</span>;
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-green-400">min-width: 640px</span>) {
+  <span class="text-blue-400">.grid</span> {
+    <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(2, 1fr)</span>;
+  }
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-green-400">min-width: 1024px</span>) {
+  <span class="text-blue-400">.grid</span> {
+    <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(3, 1fr)</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="responsive-grid mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-2">Card 1</h3>
+              <p class="text-gray-300 text-lg">Responsive card layout.</p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-2">Card 2</h3>
+              <p class="text-gray-300 text-lg">
+                Columns screen ke according change.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-2">Card 3</h3>
+              <p class="text-gray-300 text-lg">Desktop par 3 columns.</p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-text-height text-blue-400 mr-2"></i>
+            Responsive Text
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Media Queries ka use text size ko different screens ke according
+            adjust karne ke liye bhi kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 mb-12"
+          >
+            <p class="responsive-text font-bold text-center">
+              Ye text browser resize karne par change hoga.
+            </p>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            Orientation
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code>orientation</code> media feature se portrait aur landscape
+            orientation ke liye different styles apply kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 mb-6">
+            <div class="orientation-box">
+              <p class="text-2xl font-bold">Orientation Example</p>
+
+              <p class="text-lg text-gray-300 mt-2">
+                Device ko rotate karke border change dekhein.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@media</span> (<span class="text-green-400">orientation: landscape</span>) {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">border</span>: <span class="text-green-400">3px solid blue</span>;
+  }
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-green-400">orientation: portrait</span>) {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">border</span>: <span class="text-green-400">3px solid purple</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-moon text-blue-400 mr-2"></i>
+            Dark Mode
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code>prefers-color-scheme</code> se user ke operating system ya
+            browser ki preferred color scheme ke according styling kar sakte
+            hain.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 mb-6">
+            <div class="dark-mode-demo">
+              <p class="text-2xl font-bold">Color Scheme Example</p>
+
+              <p class="text-lg mt-2">
+                System ki color preference ke according style change ho sakti
+                hai.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@media</span> (<span class="text-green-400">prefers-color-scheme: dark</span>) {
+  <span class="text-blue-400">body</span> {
+    <span class="text-blue-400">background</span>: <span class="text-green-400">#020617</span>;
+    <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-print text-blue-400 mr-2"></i>
+            Print Media Query
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <code>print</code> media type ka use page ko print karte waqt
+            different styling dene ke liye kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 mb-6">
+            <div class="print-demo">
+              <h3 class="text-2xl font-bold mb-3">Print Example</h3>
+
+              <p class="text-lg">
+                Print preview mein is box ka background aur text color change
+                hoga.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@media print</span> {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">background</span>: <span class="text-green-400">white</span>;
+    <span class="text-blue-400">color</span>: <span class="text-green-400">black</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            Multiple Media Queries
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek page mein multiple media queries use kar sakte hain. Har query
+            apni condition ke according CSS rules apply karegi.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">@media</span> (<span class="text-green-400">max-width: 480px</span>) {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">font-size</span>: <span class="text-green-400">14px</span>;
+  }
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-green-400">min-width: 481px</span>) {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">font-size</span>: <span class="text-green-400">18px</span>;
+  }
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-green-400">min-width: 1024px</span>) {
+  <span class="text-blue-400">.box</span> {
+    <span class="text-blue-400">font-size</span>: <span class="text-green-400">22px</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Media Queries responsive web design ke liye important hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code>max-width</code> smaller screens ke liye commonly use hota
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code>min-width</code> larger screens ke liye commonly use hota
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Multiple media queries ek hi page par use ki ja sakti hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Media Queries se layout, font, spacing aur colors change kar
+                sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <code>orientation</code>, <code>print</code> aur
+                <code>prefers-color-scheme</code> bhi useful media features
+                hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Breakpoints ko project ke actual design aur content ke according
+                choose karein.
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+            ></i>
+            Common Mistakes
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4 text-red-400">
+                Too Many Breakpoints
+              </h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Har small screen size ke liye alag breakpoint banana unnecessary
+                complexity create kar sakta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4 text-red-400">
+                Fixed Device Assumption
+              </h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Sirf popular device widths ko target karne ke bajay content ke
+                according responsive breakpoints choose karein.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4 text-red-400">
+                Viewport Meta Tag Missing
+              </h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Mobile responsive pages mein viewport meta tag properly include
+                karein.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4 text-red-400">
+                Only Testing Desktop
+              </h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Responsive CSS ko different screen sizes par test karna
+                important hai.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-check text-green-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Mobile aur desktop dono layouts ko properly test karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Breakpoints content ke according choose karein, sirf devices ke
+                naam par nahi.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Media Queries ko readable aur organized rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive layouts mein flexible units jaise %, rem aur fr ka
+                use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Browser resize karke intermediate widths bhi test karein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Media Queries responsive websites banane ke liye use hoti
+              hain.
+              <code>max-width</code> aur <code>min-width</code> se different
+              screen sizes ke liye CSS rules apply kar sakte hain. Iske alawa
+              <code>orientation</code>, <code>print</code> aur
+              <code>prefers-color-scheme</code> jaise features bhi useful hain.
+              Media Queries ke saath flexible layouts use karke website ko
+              mobile se desktop tak responsive banaya ja sakta hai.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../box-sizing/box-sizing.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../flexbox/flexbox.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(73);
+      });
+    </script>
+  </body>
+</html>

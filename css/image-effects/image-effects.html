@@ -1,44 +1,897 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS Image Effects</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./js/card.js"></script><script src="../../js/insert.js"></script><script src="../js/sidebar.js"></script>
-</head>
-<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
-<nav id="navbar"></nav>
-<main class="w-full flex flex-col md:flex-row min-h-screen"><div id="sidebar"></div>
-<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"><div class="max-w-6xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">CSS Image Effects</h1>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">CSS Image Effects CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p>
-<div class="flex justify-between items-center gap-4 mb-12">
-<a href="../image-styling/image-styling.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../image-effects/image-effects.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div>
-<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>CSS Image Effects Kya Hai?</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">CSS Image Effects CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge. Is topic ko samajhne ke liye syntax aur practical examples ko browser mein try karna best hai.</p>
-<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
-<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Example</h3></div>
-<pre class="p-6 overflow-x-auto text-lg"><code><span class="text-blue-400">.box</span> {
-  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
-  <span class="text-blue-400">margin</span>: <span class="text-green-400">10px</span>;
-}</code></pre></div>
-<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-7"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
-<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>CSS property ko correct selector ke saath use karein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Example ko browser mein run karke output dekhein.</li>
-<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Responsive design mein screen size ka dhyan rakhein.</li>
-</ul></div>
-<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
-<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">CSS Image Effects CSS ka ek important topic hai. Is page par hum ise simple Hinglish mein samjhenge aur basic examples ke saath practice karenge.</p></div>
-<div class="flex justify-between items-center gap-4 mt-10">
-<a href="../image-styling/image-styling.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
-<a href="../image-effects/image-effects.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
-</div></div></section></main>
-<footer id="footer"></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){document.getElementById("sidebar").innerHTML=createSidebar(61);});</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Image Effects</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <style>
+      /* ================================
+         CSS IMAGE EFFECTS
+      ================================= */
+
+      .effect-zoom {
+        overflow: hidden;
+        border-radius: 20px;
+      }
+
+      .effect-zoom img {
+        display: block;
+        width: 100%;
+        transition: transform 0.6s ease;
+      }
+
+      .effect-zoom:hover img {
+        transform: scale(1.15);
+      }
+
+      .effect-opacity {
+        border-radius: 20px;
+        transition: opacity 0.5s ease;
+      }
+
+      .effect-opacity:hover {
+        opacity: 0.45;
+      }
+
+      .effect-grayscale {
+        border-radius: 20px;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease;
+      }
+
+      .effect-grayscale:hover {
+        filter: grayscale(0%);
+      }
+
+      .effect-blur {
+        border-radius: 20px;
+        filter: blur(4px);
+        transition: filter 0.5s ease;
+      }
+
+      .effect-blur:hover {
+        filter: blur(0);
+      }
+
+      .effect-sepia {
+        border-radius: 20px;
+        filter: sepia(100%);
+        transition: filter 0.5s ease;
+      }
+
+      .effect-sepia:hover {
+        filter: sepia(0%);
+      }
+
+      .effect-brightness {
+        border-radius: 20px;
+        filter: brightness(55%);
+        transition: filter 0.5s ease;
+      }
+
+      .effect-brightness:hover {
+        filter: brightness(110%);
+      }
+
+      .effect-contrast {
+        border-radius: 20px;
+        filter: contrast(55%);
+        transition: filter 0.5s ease;
+      }
+
+      .effect-contrast:hover {
+        filter: contrast(120%);
+      }
+
+      .effect-saturate {
+        border-radius: 20px;
+        filter: saturate(40%);
+        transition: filter 0.5s ease;
+      }
+
+      .effect-saturate:hover {
+        filter: saturate(180%);
+      }
+
+      .effect-hue {
+        border-radius: 20px;
+        filter: hue-rotate(120deg);
+        transition: filter 0.6s ease;
+      }
+
+      .effect-hue:hover {
+        filter: hue-rotate(0deg);
+      }
+
+      .effect-invert {
+        border-radius: 20px;
+        filter: invert(100%);
+        transition: filter 0.5s ease;
+      }
+
+      .effect-invert:hover {
+        filter: invert(0%);
+      }
+
+      .effect-shadow {
+        border-radius: 20px;
+        filter: drop-shadow(0 18px 25px rgba(37, 76, 203, 0.45));
+      }
+
+      .effect-combined {
+        border-radius: 20px;
+        filter: grayscale(100%) brightness(70%);
+        transition:
+          filter 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .effect-combined:hover {
+        filter: grayscale(0%) brightness(105%) saturate(130%);
+        transform: scale(1.04);
+      }
+
+      .overlay-effect {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+      }
+
+      .overlay-effect img {
+        display: block;
+        width: 100%;
+        transition: transform 0.6s ease;
+      }
+
+      .overlay-effect::after {
+        content: "Image Effect";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(37, 76, 203, 0.75);
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .overlay-effect:hover img {
+        transform: scale(1.08);
+      }
+
+      .overlay-effect:hover::after {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Image Effects
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Image Effects ka use images ko visually attractive banane ke
+            liye kiya jata hai. CSS ke through images par zoom, opacity,
+            grayscale, blur, brightness, contrast aur different filter effects
+            apply kiye ja sakte hain.
+          </p>
+
+          <!-- TOP NAV -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../image-styling/image-styling.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../image-filters/image-filters.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT ARE IMAGE EFFECTS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-image text-blue-400 mr-2"></i>
+            CSS Image Effects Kya Hain?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Image effects CSS properties aur filters ki help se image ka
+            appearance change karte hain. Effects ko normal state ya
+            <strong>:hover</strong> ke saath apply kiya ja sakta hai.
+          </p>
+
+          <!-- BASIC EFFECT -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Basic Image Effect
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.5</span>;
+}
+
+<span class="text-blue-400">img:hover</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">1</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ZOOM -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-magnifying-glass-plus text-blue-400 mr-2"></i>
+            1. Zoom Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>transform: scale()</strong> ka use karke hover par image ko
+            zoom kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-8">
+              <i class="fa-solid fa-play text-blue-400 mr-2"></i>
+              Live Zoom Effect
+            </h3>
+
+            <div class="effect-zoom w-full max-w-xl mx-auto">
+              <img
+                src="https://picsum.photos/800/500?random=61"
+                alt="Zoom effect"
+              />
+            </div>
+          </div>
+
+          <!-- OPACITY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-eye-slash text-blue-400 mr-2"></i>
+            2. Opacity Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>opacity</strong> image ki transparency control karta hai.
+            Hover par opacity change karke fade effect banaya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=62"
+                alt="Opacity effect"
+                class="effect-opacity w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- GRAYSCALE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-droplet text-blue-400 mr-2"></i>
+            3. Grayscale Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>grayscale()</strong> image ke colors ko black and white
+            appearance mein convert karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=63"
+                alt="Grayscale effect"
+                class="effect-grayscale w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Grayscale Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">filter</span>: <span class="text-green-400">grayscale(100%)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- BLUR -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-eye-slash text-blue-400 mr-2"></i>
+            4. Blur Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>blur()</strong> image ko blurred appearance deta hai. Hover
+            par blur remove karke clear image show ki ja sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=64"
+                alt="Blur effect"
+                class="effect-blur w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- SEPIA -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-camera-retro text-blue-400 mr-2"></i>
+            5. Sepia Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>sepia()</strong> image ko old photograph jaisa warm
+            appearance de sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=65"
+                alt="Sepia effect"
+                class="effect-sepia w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- BRIGHTNESS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sun text-blue-400 mr-2"></i>
+            6. Brightness Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>brightness()</strong> image ki lightness ko increase ya
+            decrease karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=66"
+                alt="Brightness effect"
+                class="effect-brightness w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- CONTRAST -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-half-stroke text-blue-400 mr-2"></i>
+            7. Contrast Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>contrast()</strong> image ke light aur dark areas ke
+            difference ko control karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=67"
+                alt="Contrast effect"
+                class="effect-contrast w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- SATURATE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-palette text-blue-400 mr-2"></i>
+            8. Saturation Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>saturate()</strong> colors ki intensity ko control karta
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=68"
+                alt="Saturation effect"
+                class="effect-saturate w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- HUE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-paint-roller text-blue-400 mr-2"></i>
+            9. Hue Rotate Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>hue-rotate()</strong> image ke colors ko color wheel par
+            rotate karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=69"
+                alt="Hue rotate effect"
+                class="effect-hue w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- INVERT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-half-stroke text-blue-400 mr-2"></i>
+            10. Invert Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>invert()</strong> image ke colors ko invert karta hai, jisse
+            negative-image jaisa effect mil sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=70"
+                alt="Invert effect"
+                class="effect-invert w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- DROP SHADOW -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+            11. Drop Shadow Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>drop-shadow()</strong> image ke shape ke around shadow
+            create kar sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=71"
+                alt="Drop shadow effect"
+                class="effect-shadow w-full max-w-xl"
+              />
+            </div>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Drop Shadow Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">filter</span>:
+    <span class="text-green-400">drop-shadow(0 18px 25px rgba(37, 76, 203, 0.45))</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- OVERLAY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            12. Image Overlay Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Pseudo-element aur opacity ka use karke image ke upar overlay effect
+            create kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <div class="overlay-effect w-full max-w-xl mx-auto">
+              <img
+                src="https://picsum.photos/800/500?random=72"
+                alt="Overlay effect"
+              />
+            </div>
+          </div>
+
+          <!-- COMBINED -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+            13. Combined Image Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Multiple filter effects ko combine karke ek advanced visual effect
+            create kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-8">
+              <i class="fa-solid fa-play text-blue-400 mr-2"></i>
+              Live Combined Effect
+            </h3>
+
+            <div class="flex justify-center">
+              <img
+                src="https://picsum.photos/800/500?random=73"
+                alt="Combined effect"
+                class="effect-combined w-full max-w-xl cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- CODE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Combined Filter Code
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.image</span> {
+  <span class="text-blue-400">filter</span>:
+    <span class="text-green-400">grayscale(100%) brightness(70%)</span>;
+}
+
+<span class="text-blue-400">.image:hover</span> {
+  <span class="text-blue-400">filter</span>:
+    <span class="text-green-400">grayscale(0%) brightness(105%) saturate(130%)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PRACTICAL CARD -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+            14. Practical Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Real websites mein image effects ko cards, galleries, portfolios aur
+            product sections mein use kiya ja sakta hai.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://picsum.photos/600/400?random=74"
+                alt="Gallery image"
+                class="effect-combined w-full h-52 object-cover"
+              />
+
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Gallery</h3>
+
+                <p class="text-gray-300">Hover to reveal the image effect.</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://picsum.photos/600/400?random=75"
+                alt="Portfolio image"
+                class="effect-grayscale w-full h-52 object-cover"
+              />
+
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Portfolio</h3>
+
+                <p class="text-gray-300">Grayscale changes on hover.</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://picsum.photos/600/400?random=76"
+                alt="Product image"
+                class="effect-zoom w-full h-52 object-cover"
+              />
+
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Product</h3>
+
+                <p class="text-gray-300">Smooth zoom effect on hover.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Image effects CSS properties aur filters se create kiye ja sakte
+                hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>transform: scale()</strong> se zoom effect banaya ja
+                sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>opacity</strong> se fade aur transparency effects create
+                hote hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>filter</strong> se grayscale, blur, sepia, brightness,
+                contrast aur saturation control hoti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Multiple filters ko ek saath combine kiya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>transition</strong> effects ko smooth banata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Pseudo-elements se overlay effects create kiye ja sakte hain.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Bahut zyada filters ko ek saath use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Image ko unnecessarily bahut zyada zoom karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Hover effect ke liye transition na dena.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Important information ko visual effect ke peeche hide karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Effects ko subtle aur purposeful rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Hover effects ke saath smooth transitions use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Important content ko excessive effects se hide na karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Performance ko dhyan mein rakhkar heavy effects limited rakhein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Image Effects se images ko zoom, fade, grayscale, blur, sepia,
+              brightness, contrast aur other visual styles diye ja sakte hain.
+              <strong>filter</strong>, <strong>transform</strong>,
+              <strong>opacity</strong> aur <strong>transition</strong> important
+              properties hain jo attractive image effects create karne mein help
+              karti hain.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAV -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../image-styling/image-styling.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../image-filters/image-filters.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(61);
+      });
+    </script>
+  </body>
+</html>
