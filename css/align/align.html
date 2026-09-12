@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Align</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- PAGE TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Align
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Align ka use webpage ke elements ko proper position aur
+            alignment dene ke liye kiya jata hai. Alignment ke through hum text,
+            boxes, images aur containers ko left, right, center, top ya bottom
+            mein arrange kar sakte hain.
+          </p>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../inline-block/inline-block.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../combinators/combinators.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS ALIGN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-align-center text-blue-400 mr-2"></i>
+            CSS Align Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            CSS mein alignment ka matlab hai kisi element ko uske container ke
+            andar desired position par set karna. For example, kisi heading ko
+            center mein rakhna, image ko right side par rakhna ya kisi box ke
+            content ko vertically center karna alignment ke examples hain.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS mein alignment ke liye alag-alag properties aur techniques
+            available hain. Simple text alignment ke liye
+            <b class="text-white">text-align</b>, block elements ke liye
+            <b class="text-white">margin</b>, aur modern layouts ke liye Flexbox
+            aur Grid ka use kiya jata hai.
+          </p>
+
+          <!-- TEXT ALIGN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-align-left text-blue-400 mr-2"></i>
+            Text ko Align Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Text ko horizontally align karne ke liye
+            <b class="text-white">text-align</b> property ka use kiya jata hai.
+            Is property se text ko left, right, center ya justify kiya ja sakta
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">h1</span> {
+  <span class="text-blue-400">text-align</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- TEXT ALIGN VALUES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-list text-blue-400 mr-2"></i>
+            text-align ke Values
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-4 text-lg border border-gray-700">Value</th>
+
+                  <th class="p-4 text-lg border border-gray-700">Meaning</th>
+
+                  <th class="p-4 text-lg border border-gray-700">Example</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    left
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    Text ko left side align karta hai.
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    <code>text-align: left;</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    right
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    Text ko right side align karta hai.
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    <code>text-align: right;</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    center
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    Text ko center mein align karta hai.
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    <code>text-align: center;</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    justify
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    Text ko container ki width ke according spread karta hai.
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    <code>text-align: justify;</code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- CENTER TEXT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            Text ko Center Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Kisi heading, paragraph ya doosre text ko horizontally center karne
+            ke liye <b class="text-white">text-align: center;</b> use kiya ja
+            sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.title</span> {
+  <span class="text-blue-400">text-align</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- RIGHT ALIGN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-align-right text-blue-400 mr-2"></i>
+            Text ko Right Align Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Agar text ko container ke right side mein rakhna ho to
+            <b class="text-white">text-align: right;</b> use kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">p</span> {
+  <span class="text-blue-400">text-align</span>: <span class="text-green-400">right</span>;
+}</code></pre>
+          </div>
+
+          <!-- JUSTIFY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-align-justify text-blue-400 mr-2"></i>
+            Text ko Justify Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            <b class="text-white">text-align: justify;</b> ka use paragraph ke
+            text ko container ki left aur right edges ke according align karne
+            ke liye kiya jata hai. Isse paragraph ka layout newspaper-style
+            jaisa dikh sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">p</span> {
+  <span class="text-blue-400">text-align</span>: <span class="text-green-400">justify</span>;
+}</code></pre>
+          </div>
+
+          <!-- IMAGE ALIGN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-image text-blue-400 mr-2"></i>
+            Image ko Align Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Image ko center karne ke liye ek common method ye hai ki image ko
+            block element banakar left aur right margin ko auto set kiya jaye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+  <span class="text-blue-400">margin-left</span>: <span class="text-green-400">auto</span>;
+  <span class="text-blue-400">margin-right</span>: <span class="text-green-400">auto</span>;
+}</code></pre>
+          </div>
+
+          <!-- MARGIN AUTO -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-left-right-to-line text-blue-400 mr-2"
+            ></i>
+            margin: auto se Center Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Fixed ya limited width wale block element ko horizontally center
+            karne ke liye left aur right margin ko
+            <b class="text-white">auto</b> diya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">300px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">auto</span>;
+}</code></pre>
+          </div>
+
+          <!-- VERTICAL ALIGN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            Vertical Alignment
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Vertical alignment ka matlab element ya content ko upar, center ya
+            neeche ki direction mein align karna hai. CSS mein vertical
+            alignment ke liye alag situations ke according different techniques
+            use hoti hain.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Inline aur inline-block elements ke context mein
+            <b class="text-white">vertical-align</b> property useful hoti hai,
+            jabki modern layouts mein Flexbox aur Grid vertical centering ko
+            bahut easy bana dete hain.
+          </p>
+
+          <!-- VERTICAL ALIGN EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                vertical-align Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.item</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+  <span class="text-blue-400">vertical-align</span>: <span class="text-green-400">middle</span>;
+}</code></pre>
+          </div>
+
+          <!-- FLEXBOX ALIGN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-grip text-blue-400 mr-2"></i>
+            Flexbox se Alignment
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Modern CSS mein Flexbox alignment ke liye bahut powerful method hai.
+            <b class="text-white">justify-content</b> main axis par alignment
+            control karta hai, jabki <b class="text-white">align-items</b>
+            cross axis par items ko align karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Flexbox Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">center</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- PERFECT CENTER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-crosshairs text-blue-400 mr-2"></i>
+            Element ko Perfect Center Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Kisi element ko horizontally aur vertically center karne ka modern
+            aur simple method Flexbox hai. Container ko flex banakar
+            <b class="text-white">justify-content: center</b> aur
+            <b class="text-white">align-items: center</b> use kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">center</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">300px</span>;
+}</code></pre>
+          </div>
+
+          <!-- GRID ALIGN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table-cells text-blue-400 mr-2"></i>
+            CSS Grid se Alignment
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            CSS Grid mein bhi elements ko horizontally aur vertically align kiya
+            ja sakta hai. Grid layout ke saath
+            <b class="text-white">place-items</b>,
+            <b class="text-white">align-items</b> aur
+            <b class="text-white">justify-items</b> jaise properties useful
+            hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.grid</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">place-items</span>: <span class="text-green-400">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- ALIGN METHODS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+            Alignment ke Common Methods
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-4 border border-gray-700">Method</th>
+
+                  <th class="p-4 border border-gray-700">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    text-align
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    Text ko horizontal direction mein align karne ke liye.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    margin: auto
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    Block element ko horizontally center karne ke liye.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    Flexbox
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    Horizontal aur vertical alignment ke liye.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    Grid
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    Grid items aur complex layouts ko align karne ke liye.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    vertical-align
+                  </td>
+
+                  <td class="p-4 border border-gray-700">
+                    Inline ya inline-block elements ke vertical alignment ke
+                    liye.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- RESPONSIVE ALIGNMENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            Responsive Alignment
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Responsive website mein alignment screen size ke according change ho
+            sakta hai. Desktop par horizontal layout useful ho sakta hai, jabki
+            mobile screen par elements ko vertically stack karna better ho sakta
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">center</span>;
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">600px</span>) {
+
+  <span class="text-blue-400">.container</span> {
+    <span class="text-blue-400">flex-direction</span>: <span class="text-green-400">column</span>;
+  }
+
+}</code></pre>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS alignment ka use elements ko proper position dene ke liye
+                hota hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Text ko align karne ke liye
+                <b class="text-white">text-align</b> useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Block element ko horizontally center karne ke liye margin auto
+                use kiya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Inline aur inline-block elements ke vertical alignment mein
+                <b class="text-white">vertical-align</b> useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Flexbox horizontal aur vertical alignment ko easy banata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS Grid complex layouts ke alignment ke liye powerful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive design mein alignment ko screen size ke according
+                adjust karna chahiye.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Align ka use webpage ke elements aur content ko proper
+              position aur direction mein arrange karne ke liye kiya jata hai.
+              Text ke liye <b class="text-white">text-align</b>, block elements
+              ke liye <b class="text-white">margin: auto</b> aur inline elements
+              ke liye <b class="text-white">vertical-align</b> useful properties
+              hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Modern web development mein Flexbox aur Grid alignment ko aur
+              powerful aur flexible banate hain. Responsive website banate waqt
+              alignment ko different screen sizes ke according adjust karna
+              important hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM BUTTONS -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../inline-block/inline-block.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../combinators/combinators.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(28);
+      });
+    </script>
+  </body>
+</html>

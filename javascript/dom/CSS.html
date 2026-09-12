@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript DOM CSS - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript DOM CSS
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./HTML.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Events.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          DOM CSS Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript DOM ki help se HTML elements ki CSS styling dynamically
+          change ki ja sakti hai.
+          <br><br>
+          Iske liye
+          <code class="text-blue-400">style</code>,
+          <code class="text-blue-400">className</code>
+          aur
+          <code class="text-blue-400">classList</code>
+          commonly use hote hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- style -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            style Property
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Element ki inline CSS ko JavaScript se change karne ke liye
+            <code class="text-blue-400">style</code>
+            property use hoti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+title.style.color =
+  <span class="text-emerald-400">"blue"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- font size -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Font Size Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+title.style.fontSize =
+  <span class="text-emerald-400">"40px"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- background -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Background Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.style.backgroundColor =
+  <span class="text-emerald-400">"black"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- camelcase -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            CSS Property Naming
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            JavaScript me hyphen wali CSS properties ko normally camelCase me
+            likhte hain.
+          </p>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">CSS</th>
+                  <th class="p-4">JavaScript</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">background-color</td>
+                  <td class="p-4 font-mono text-emerald-400">backgroundColor</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">font-size</td>
+                  <td class="p-4 font-mono text-emerald-400">fontSize</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">border-radius</td>
+                  <td class="p-4 font-mono text-emerald-400">borderRadius</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">margin-top</td>
+                  <td class="p-4 font-mono text-emerald-400">marginTop</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple styles -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple CSS Properties
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.style.width =
+  <span class="text-emerald-400">"200px"</span>;
+
+box.style.height =
+  <span class="text-emerald-400">"100px"</span>;
+
+box.style.backgroundColor =
+  <span class="text-emerald-400">"blue"</span>;
+
+box.style.color =
+  <span class="text-emerald-400">"white"</span>;
+
+box.style.padding =
+  <span class="text-emerald-400">"20px"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- cssText -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            style.cssText
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Multiple inline CSS properties ek saath set karne ke liye
+            <code class="text-blue-400">cssText</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.style.cssText = <span class="text-emerald-400">`
+  background: blue;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+`</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- className -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            className
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Element ka poora
+            <code class="text-blue-400">class</code>
+            attribute set ya replace karne ke liye
+            <code class="text-blue-400">className</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.className =
+  <span class="text-emerald-400">"active card"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- classList add -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            classList.add()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Existing classes ko replace kiye bina new class add karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.classList.add(
+  <span class="text-emerald-400">"active"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- multiple classes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Classes Add Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>box.classList.add(
+  <span class="text-emerald-400">"active"</span>,
+  <span class="text-emerald-400">"shadow"</span>,
+  <span class="text-emerald-400">"rounded"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- remove -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            classList.remove()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>box.classList.remove(
+  <span class="text-emerald-400">"hidden"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- toggle -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            classList.toggle()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Class present ho to remove karta hai, present na ho to add karta
+            hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>box.classList.toggle(
+  <span class="text-emerald-400">"active"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- contains -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            classList.contains()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Check karta hai ki element ke paas given class hai ya nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> result =
+  box.classList.contains(
+    <span class="text-emerald-400">"active"</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">true
+or
+false</pre>
+          </div>
+
+        </div>
+
+        <!-- replace -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            classList.replace()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>box.classList.replace(
+  <span class="text-emerald-400">"old"</span>,
+  <span class="text-emerald-400">"new"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- click change -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Button Click Par CSS Change
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h2 id=<span class="text-emerald-400">"title"</span>&gt;
+  Hello
+&lt;/h2&gt;
+
+&lt;button id=<span class="text-emerald-400">"btn"</span>&gt;
+  Change Style
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    title.style.color =
+      <span class="text-emerald-400">"blue"</span>;
+
+    title.style.fontSize =
+      <span class="text-emerald-400">"40px"</span>;
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Toggle class practical -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Toggle Class Practical Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;style&gt;
+
+.active {
+  background: blue;
+  color: white;
+  padding: 20px;
+}
+
+&lt;/style&gt;
+
+&lt;div id=<span class="text-emerald-400">"box"</span>&gt;
+  Hello DOM
+&lt;/div&gt;
+
+&lt;button id=<span class="text-emerald-400">"btn"</span>&gt;
+  Toggle
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    box.classList.toggle(
+      <span class="text-emerald-400">"active"</span>
+    );
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- hide show -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Element Hide Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.style.display =
+  <span class="text-emerald-400">"none"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- show -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Element Show Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>box.style.display =
+  <span class="text-emerald-400">"block"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- getComputedStyle -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            getComputedStyle()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser me element par actually applied computed CSS read karne ke
+            liye
+            <code class="text-blue-400">getComputedStyle()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+<span class="text-blue-400">const</span> styles =
+  getComputedStyle(box);
+
+console.log(
+  styles.color
+);
+
+console.log(
+  styles.fontSize
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- style vs classList -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            style vs classList
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">style</th>
+                  <th class="p-4">classList</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Inline CSS set karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    CSS class manage karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    element.style.color
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    element.classList.add()
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Chhoti dynamic changes ke liye useful.
+                  </td>
+
+                  <td class="p-4">
+                    Multiple reusable styles ke liye better.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Best practice -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Better Practice
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar bahut saari styles change karni hain to har property ko
+            JavaScript me manually set karne ke bajay CSS class banana aur
+            <code class="text-blue-400">classList</code>
+            se add/remove karna generally cleaner hota hai.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+              <h4 class="text-xl font-bold mb-4">
+                Less Clean
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code>box.style.color =
+  <span class="text-emerald-400">"white"</span>;
+
+box.style.background =
+  <span class="text-emerald-400">"blue"</span>;
+
+box.style.padding =
+  <span class="text-emerald-400">"20px"</span>;</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+              <h4 class="text-xl font-bold mb-4">
+                Cleaner
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// CSS</span>
+
+.active {
+  color: white;
+  background: blue;
+  padding: 20px;
+}
+
+<span class="text-gray-400">// JS</span>
+
+box.classList.add(
+  <span class="text-emerald-400">"active"</span>
+);</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM CSS Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Code</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    element.style.color
+                  </td>
+                  <td class="p-4">
+                    Inline color change
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    element.className
+                  </td>
+                  <td class="p-4">
+                    Full class string set/replace
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    classList.add()
+                  </td>
+                  <td class="p-4">
+                    Class add
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    classList.remove()
+                  </td>
+                  <td class="p-4">
+                    Class remove
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    classList.toggle()
+                  </td>
+                  <td class="p-4">
+                    Class toggle
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    classList.contains()
+                  </td>
+                  <td class="p-4">
+                    Class check
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    getComputedStyle()
+                  </td>
+                  <td class="p-4">
+                    Applied style read
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">style</code>
+              se inline CSS change kar sakte hain.
+            </p>
+
+            <p>
+              2. JavaScript me CSS property names mostly camelCase me likhe
+              jate hain.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">className</code>
+              poora class attribute set ya replace karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">classList.add()</code>
+              new class add karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">classList.remove()</code>
+              class remove karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">classList.toggle()</code>
+              class ko add/remove toggle karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">classList.contains()</code>
+              class present hai ya nahi check karta hai.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">getComputedStyle()</code>
+              applied/computed CSS read karne ke liye use hota hai.
+            </p>
+
+            <p>
+              9. Large styling changes ke liye
+              <code class="text-blue-400">classList</code>
+              use karna generally cleaner approach hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./HTML.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Events.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(27);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ If...Else Conditions</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer="" src="../../js/insert.js"></script>
+<script defer="" src="../js/sidebar.js"></script>
+<style>
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden">
+<!-- Navigation Bar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar -->
+<div id="sidebar"></div>
+<!-- Content Section -->
+<section class="w-full md:w-[calc(100%-300px)] p-5 md:pt-5 md:pb-[60px] md:px-[40px] transition-all duration-300">
+<!-- Heading -->
+<h1 class="text-[60px] font-bold text-white mb-10 mt-10">
+          C++ Conditions (If...Else)
+        </h1>
+<!-- Previous & Next -->
+<div class="flex justify-between items-center mb-10">
+<!-- Previous -->
+<a href="../boolenss/booleanss.html" style="text-decoration: none">
+<button class="bg-white text-black border border-gray-300 rounded-xl px-8 py-4 text-2xl font-semibold hover:bg-gray-100 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a href="else.html" style="text-decoration: none">
+<button class="bg-[#3d59d9] hover:bg-[#4d6fff] text-white rounded-xl px-8 py-4 text-2xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="border-gray-700 mb-12"/>
+<!-- Introduction -->
+<div>
+<h2 class="text-[52px] font-bold text-white mb-8">
+            C++ Conditions aur If Statements
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              C++ mein jab hume koi decision (faisla) lena hota hai, tab hum
+              <span class="text-[#4d6fff] font-semibold">
+                Conditional Statements
+              </span>
+              ka use karte hain.
+            </p>
+<p>C++ mein decision lene ke liye 4 main statements hote hain:</p>
+<ul class="list-disc pl-8 space-y-4">
+<li>
+<span class="text-white font-semibold">if:</span> Agar condition
+                true hai to code run hoga.
+              </li>
+<li>
+<span class="text-white font-semibold">else:</span> Agar wahi
+                condition false hai to yeh code run hoga.
+              </li>
+<li>
+<span class="text-white font-semibold">else if:</span> Nayi
+                condition check karne ke liye agar pehli condition false ho.
+              </li>
+<li>
+<span class="text-white font-semibold">switch:</span> Bahut
+                saare alternative code blocks mein se ek chunne ke liye.
+              </li>
+</ul>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- 1. The if Statement -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            1. The if Statement
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              `if` statement ka use kisi code block ko tabhi execute karne ke
+              liye kiya jata hai jab condition
+              <span class="text-white font-semibold"> true </span> ho.
+            </p>
+</div>
+<!-- HTML Code Card 1 -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              if Statement Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x = 20;
+    int y = 18;
+
+    if (x &gt; y) {
+        cout &lt;&lt; "x, y se bada hai";
+    }
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- 2. The else Statement -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            2. The else Statement
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Jab `if` ki condition
+              <span class="text-white font-semibold"> false </span> ho jati hai,
+              to `else` ke andar ka code block execute hota hai.
+            </p>
+</div>
+<!-- HTML Code Card 2 -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              else Statement Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int time = 20;
+
+    if (time &lt; 18) {
+        cout &lt;&lt; "Good day.";
+    } else {
+        cout &lt;&lt; "Good evening."; // Yeh print hoga kyunki 20 &lt; 18 false hai
+    }
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- 3. The else if Statement -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            3. The else if Statement
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Agar pehli condition false ho aur aap ek
+              <span class="text-[#4d6fff] font-semibold"> nayi condition </span>
+              check karna chahte hain, to `else if` ka use karte hain.
+            </p>
+</div>
+<!-- HTML Code Card 3 -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              else if Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int time = 22;
+
+    if (time &lt; 10) {
+        cout &lt;&lt; "Good morning.";
+    } else if (time &lt; 20) {
+        cout &lt;&lt; "Good day.";
+    } else {
+        cout &lt;&lt; "Good evening."; // Output: Good evening.
+    }
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Short Hand If...Else (Ternary Operator) -->
+<div>
+<h2 class="text-5xl font-bold text-white mb-10">
+            Short Hand If...Else (Ternary Operator)
+          </h2>
+<div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+<p>
+              Agar aapka if-else simple hai, to aap use 1 line me likhne ke liye
+              <span class="text-[#4d6fff] font-semibold">
+                Ternary Operator (?)
+              </span>
+              ka use kar sakte hain:
+            </p>
+<p class="font-mono text-white bg-[#0f172a] p-4 rounded-xl border border-gray-800 text-xl">
+              variable = (condition) ? expressionTrue : expressionFalse;
+            </p>
+</div>
+<!-- HTML Code Card 4 -->
+<div class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+<div class="bg-[#1e293b] px-6 py-4 border-b border-gray-800 text-xl font-bold text-gray-200">
+              Ternary Operator Example
+            </div>
+<div class="p-6">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    int time = 20;
+    string result = (time &lt; 18) ? "Good day." : "Good evening.";
+    
+    cout &lt;&lt; result; // Output: Good evening.
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Important -->
+<div class="mt-16 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-8">
+<h2 class="text-4xl font-bold text-white mb-8">Important Points</h2>
+<ul class="list-disc pl-8 space-y-5 text-2xl text-gray-300 leading-[45px]">
+<li>
+              `if` keywords ko hamesha lowercase (chote aksharo) mein likhein.
+              `IF` ya `If` syntax error dega.
+            </li>
+<li>
+              Condition ko hamesha parenthesis `()` ke andar likha jata hai.
+            </li>
+<li>
+              Multiple lines code ko run karne ke liye curly braces `{}` lagana
+              zaroori hai.
+            </li>
+<li>
+              Ternary operator `? :` short single-line conditional check ke liye
+              efficient hai.
+            </li>
+</ul>
+</div>
+<hr class="border-gray-700 my-16"/>
+<!-- Bottom Navigation -->
+<div class="flex items-center justify-between mt-16 mb-10">
+<!-- Previous -->
+<a href="../boolenss/booleanss.html" style="text-decoration: none">
+<button class="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black text-2xl font-semibold px-10 py-5 rounded-xl transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<!-- Next -->
+<a href="else.html" style="text-decoration: none">
+<button class="bg-[#293fbf] hover:bg-[#4d6fff] text-white text-2xl font-semibold px-10 py-5 rounded-xl transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- Sidebar Script Injection -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar();
+        }
+      });
+    </script>
+</body>
+</html>

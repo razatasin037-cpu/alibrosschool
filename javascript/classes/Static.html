@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Static Methods - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Static Methods
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Inheritance.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../modules/Modules.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Static Method Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript class me
+          <code class="text-blue-400">static</code>
+          keyword ka use aise method banane ke liye hota hai jo object ke
+          bajaye directly class se call hota hai.
+          <br><br>
+          Static method use karne ke liye object banana zaroori nahi hota.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Static Method Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> ClassName {
+
+  <span class="text-blue-400">static</span> methodName() {
+
+    <span class="text-gray-400">// code</span>
+
+  }
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Basic Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Static Method Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  <span class="text-blue-400">static</span> greet() {
+
+    console.log(
+      <span class="text-emerald-400">"Hello User"</span>
+    );
+
+  }
+
+}
+
+User.greet();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Hello User</pre>
+
+          </div>
+
+        </div>
+
+        <!-- No Object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Object Banana Zaroori Nahi
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Static method ko directly class ke naam se call kiya jata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Calculator {
+
+  <span class="text-blue-400">static</span> add(
+    a,
+    b
+  ) {
+
+    <span class="text-blue-400">return</span>
+      a + b;
+
+  }
+
+}
+
+console.log(
+  Calculator.add(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">20</span>
+  )
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">30</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Object Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Static Method Object Se Call Nahi Hota
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  <span class="text-blue-400">static</span> greet() {
+
+    console.log(
+      <span class="text-emerald-400">"Hello"</span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User();
+
+user.greet();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">TypeError:
+user.greet is not a function</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Correct Way -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Correct Way
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Wrong
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User();
+
+user.greet();</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Correct
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code>User.greet();</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Normal vs Static -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Normal Method vs Static Method
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold text-blue-400 mb-4">
+                Normal Method
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  greet() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">"Hello"</span>;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User();
+
+user.greet();</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold text-blue-400 mb-4">
+                Static Method
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  <span class="text-blue-400">static</span> greet() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">"Hello"</span>;
+
+  }
+
+}
+
+User.greet();</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Normal vs Static Method
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Normal Method
+                  </th>
+
+                  <th class="p-4">
+                    Static Method
+                  </th>
+
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Object se call hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Class se directly call hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    user.show()
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    User.show()
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Instance data ke saath kaam karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Class-level utility work ke liye useful hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Object banana padta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Object banana zaroori nahi hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Static Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Static Method With Parameters
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Calculator {
+
+  <span class="text-blue-400">static</span> multiply(
+    a,
+    b
+  ) {
+
+    <span class="text-blue-400">return</span>
+      a * b;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> result =
+  Calculator.multiply(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">5</span>
+  );
+
+console.log(result);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">50</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple static -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Static Methods
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Calculator {
+
+  <span class="text-blue-400">static</span> add(
+    a,
+    b
+  ) {
+
+    <span class="text-blue-400">return</span>
+      a + b;
+
+  }
+
+  <span class="text-blue-400">static</span> subtract(
+    a,
+    b
+  ) {
+
+    <span class="text-blue-400">return</span>
+      a - b;
+
+  }
+
+  <span class="text-blue-400">static</span> multiply(
+    a,
+    b
+  ) {
+
+    <span class="text-blue-400">return</span>
+      a * b;
+
+  }
+
+}
+
+console.log(
+  Calculator.add(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">5</span>
+  )
+);
+
+console.log(
+  Calculator.subtract(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">5</span>
+  )
+);
+
+console.log(
+  Calculator.multiply(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">5</span>
+  )
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">15
+5
+50</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Static Property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Static Property
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Static method ke saath class-level static property bhi define ki
+            ja sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  <span class="text-blue-400">static</span> role =
+    <span class="text-emerald-400">"Admin"</span>;
+
+}
+
+console.log(
+  User.role
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Admin</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Static Property Method -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Static Property Ko Static Method Me Use Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  <span class="text-blue-400">static</span> role =
+    <span class="text-emerald-400">"Admin"</span>;
+
+  <span class="text-blue-400">static</span> showRole() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.role;
+
+  }
+
+}
+
+console.log(
+  User.showRole()
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Admin</pre>
+
+          </div>
+
+        </div>
+
+        <!-- this static -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Static Method Me this
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Static method ke andar
+            <code class="text-blue-400">this</code>
+            normal instance object ko refer nahi karta. Static method class ke
+            context me call hone par
+            <code class="text-blue-400">this</code>
+            class ko refer karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mt-5 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> App {
+
+  <span class="text-blue-400">static</span> name =
+    <span class="text-emerald-400">"Stockify"</span>;
+
+  <span class="text-blue-400">static</span> getName() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.name;
+
+  }
+
+}
+
+console.log(
+  App.getName()
+);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Static calling static -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Ek Static Method Se Dusra Static Method
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Calculator {
+
+  <span class="text-blue-400">static</span> add(
+    a,
+    b
+  ) {
+
+    <span class="text-blue-400">return</span>
+      a + b;
+
+  }
+
+  <span class="text-blue-400">static</span> doubleSum(
+    a,
+    b
+  ) {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.add(
+        a,
+        b
+      ) * <span class="text-blue-400">2</span>;
+
+  }
+
+}
+
+console.log(
+  Calculator.doubleSum(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">5</span>
+  )
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">30</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Validation Utility -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Validation Utility Example
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Static methods utility/helper functions banane me bahut useful hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Validator {
+
+  <span class="text-blue-400">static</span> isEmailValid(
+    email
+  ) {
+
+    <span class="text-blue-400">return</span>
+      email.includes(
+        <span class="text-emerald-400">"@"</span>
+      );
+
+  }
+
+}
+
+console.log(
+  Validator.isEmailValid(
+    <span class="text-emerald-400">
+      "ali@gmail.com"
+    </span>
+  )
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">true</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Price Utility -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Price Utility Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> PriceHelper {
+
+  <span class="text-blue-400">static</span> calculateTax(
+    amount,
+    tax
+  ) {
+
+    <span class="text-blue-400">return</span>
+      amount +
+      (
+        amount * tax / <span class="text-blue-400">100</span>
+      );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> total =
+  PriceHelper.calculateTax(
+    <span class="text-blue-400">1000</span>,
+    <span class="text-blue-400">18</span>
+  );
+
+console.log(total);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">1180</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Discount -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Discount Calculator
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> ProductHelper {
+
+  <span class="text-blue-400">static</span> discount(
+    price,
+    percentage
+  ) {
+
+    <span class="text-blue-400">const</span> discountAmount =
+      price *
+      percentage /
+      <span class="text-blue-400">100</span>;
+
+    <span class="text-blue-400">return</span>
+      price -
+      discountAmount;
+
+  }
+
+}
+
+console.log(
+  ProductHelper.discount(
+    <span class="text-blue-400">1000</span>,
+    <span class="text-blue-400">10</span>
+  )
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">900</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Factory Method -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Static Method Se Object Create Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(
+    name,
+    role
+  ) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+    <span class="text-blue-400">this</span>.role =
+      role;
+
+  }
+
+  <span class="text-blue-400">static</span> createAdmin(
+    name
+  ) {
+
+    <span class="text-blue-400">return new</span> User(
+      name,
+      <span class="text-emerald-400">"Admin"</span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  User.createAdmin(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+console.log(
+  admin.name
+);
+
+console.log(
+  admin.role
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali
+Admin</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Inheritance -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Static Method With Inheritance
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Child class parent class ke static methods ko bhi access kar sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  <span class="text-blue-400">static</span> info() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">
+        "User Class"
+      </span>;
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+}
+
+console.log(
+  Admin.info()
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">User Class</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Instance Data -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Static Method Instance Property Directly Access Nahi Karta
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Static method kisi particular object se attached nahi hota, isliye
+            normal instance property ko
+            <code class="text-blue-400">this.name</code>
+            se directly access karna expected instance value nahi deta.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+  <span class="text-blue-400">static</span> showName() {
+
+    console.log(
+      <span class="text-blue-400">this</span>.name
+    );
+
+  }
+
+}</code></pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Agar object ka data chahiye to object ko static method me parameter
+            ke roop me pass kar sakte hain.
+          </p>
+
+        </div>
+
+        <!-- Pass instance -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Object Ko Static Method Me Pass Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+  <span class="text-blue-400">static</span> showName(
+    user
+  ) {
+
+    <span class="text-blue-400">return</span>
+      user.name;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+console.log(
+  User.showName(user)
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Real Project -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Project Utility Class
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Utils {
+
+  <span class="text-blue-400">static</span> formatPrice(
+    price
+  ) {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">"₹"</span> +
+      price.toLocaleString(
+        <span class="text-emerald-400">"en-IN"</span>
+      );
+
+  }
+
+  <span class="text-blue-400">static</span> capitalize(
+    text
+  ) {
+
+    <span class="text-blue-400">return</span>
+      text.charAt(<span class="text-blue-400">0</span>)
+        .toUpperCase()
+      +
+      text.slice(<span class="text-blue-400">1</span>);
+
+  }
+
+}
+
+console.log(
+  Utils.formatPrice(
+    <span class="text-blue-400">50000</span>
+  )
+);
+
+console.log(
+  Utils.capitalize(
+    <span class="text-emerald-400">"laptop"</span>
+  )
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">₹50,000
+Laptop</pre>
+
+          </div>
+
+        </div>
+
+        <!-- When -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Static Method Kab Use Karein?
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Jab method ko kisi specific object ke data ki zarurat na ho.
+            </p>
+
+            <p>
+              2. Utility/helper functions banane ke liye.
+            </p>
+
+            <p>
+              3. Validation methods ke liye.
+            </p>
+
+            <p>
+              4. Calculation helpers ke liye.
+            </p>
+
+            <p>
+              5. Object create karne wale factory methods ke liye.
+            </p>
+
+            <p>
+              6. Class-level common data ya behavior ke liye.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Static Method Ka Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base text-gray-300">Create Class
+
+class Calculator {
+
+  static add(a, b) {
+    return a + b;
+  }
+
+}
+
+        ↓
+
+No Object Needed
+
+        ↓
+
+Call Through Class
+
+Calculator.add(10, 20)
+
+        ↓
+
+Method Executes
+
+        ↓
+
+30</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">static</code>
+              keyword class-level method create karta hai.
+            </p>
+
+            <p>
+              2. Static method ko class name se directly call kiya jata hai.
+            </p>
+
+            <p>
+              3. Static method call karne ke liye object banana zaroori nahi hai.
+            </p>
+
+            <p>
+              4. Normal object se static method directly call nahi hota.
+            </p>
+
+            <p>
+              5. Static methods parameters receive aur value return kar sakte hain.
+            </p>
+
+            <p>
+              6. Static properties bhi define ki ja sakti hain.
+            </p>
+
+            <p>
+              7. Static method ke andar
+              <code class="text-blue-400">this</code>
+              class ko refer kar sakta hai.
+            </p>
+
+            <p>
+              8. Ek static method dusre static method ko call kar sakta hai.
+            </p>
+
+            <p>
+              9. Child class inherited static methods ko access kar sakti hai.
+            </p>
+
+            <p>
+              10. Utility, validation aur calculation functions ke liye static
+              methods useful hote hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Inheritance.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../modules/Modules.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(24);
+  </script>
+
+</body>
+
+</html>

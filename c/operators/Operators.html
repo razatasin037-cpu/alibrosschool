@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Operators - Introduction</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <!-- Main Layout -->
+  <main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Content -->
+    <section class="flex-1 p-6 md:px-16 md:py-8">
+
+      <!-- Heading -->
+      <h1 class="text-4xl md:text-6xl font-bold mb-10">
+        C Operators 
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between items-center mb-12">
+        <a href="../booleans/Booleans.html"
+          class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="Arithmetic.html"
+          class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+      </div>
+
+      <!-- Introduction Section -->
+      <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+        <h2 class="text-4xl font-bold mb-8">Operators Kya Hain?</h2>
+        <p class="text-xl text-gray-300 leading-10 mb-6">
+          **Operator** ek aisa symbol hota hai jo compiler ko specific mathematical, logical ya relational manipulation perform karne ka instruction deta hai.
+        </p>
+        <p class="text-xl text-gray-300 leading-10">
+          Jin values par operator kaam karta hai unhe **Operands** kehte hain. 
+          <br/>
+          <span class="text-yellow-300 font-mono text-2xl">Example: a + b</span> (yahan <code class="text-green-400">+</code> operator hai, aur <code class="text-cyan-400">a, b</code> operands hain).
+        </p>
+      </section>
+
+      <!-- Operators Categories Grid -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+        <h2 class="text-4xl font-bold mb-8">Types of Operators in C</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Arithmetic -->
+          <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-blue-500 transition">
+            <div class="text-3xl text-yellow-400 mb-3"><i class="fa-solid fa-calculator"></i></div>
+            <h3 class="text-2xl font-bold mb-2">Arithmetic</h3>
+            <p class="text-gray-300 text-lg mb-4">Basic maths calculations ke liye.</p>
+            <p class="text-green-400 font-mono text-xl font-bold">+ - * / %</p>
+          </div>
+
+          <!-- Relational -->
+          <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-blue-500 transition">
+            <div class="text-3xl text-cyan-400 mb-3"><i class="fa-solid fa-[#3158ff] fa-scale-balanced"></i></div>
+            <h3 class="text-2xl font-bold mb-2">Relational</h3>
+            <p class="text-gray-300 text-lg mb-4">Values compare karne ke liye.</p>
+            <p class="text-green-400 font-mono text-xl font-bold">== != &gt; &lt; &gt;= &lt;=</p>
+          </div>
+
+          <!-- Logical -->
+          <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-blue-500 transition">
+            <div class="text-3xl text-purple-400 mb-3"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="text-2xl font-bold mb-2">Logical</h3>
+            <p class="text-gray-300 text-lg mb-4">Multiple conditions combine karne ke liye.</p>
+            <p class="text-green-400 font-mono text-xl font-bold">&amp;&amp; || !</p>
+          </div>
+
+          <!-- Assignment -->
+          <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-blue-500 transition">
+            <div class="text-3xl text-green-400 mb-3"><i class="fa-solid fa-[#3158ff] fa-equals"></i></div>
+            <h3 class="text-2xl font-bold mb-2">Assignment</h3>
+            <p class="text-gray-300 text-lg mb-4">Value variable me assign karne ke liye.</p>
+            <p class="text-green-400 font-mono text-xl font-bold">= += -= *= /= %=</p>
+          </div>
+
+          <!-- Bitwise -->
+          <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-blue-500 transition">
+            <div class="text-3xl text-pink-400 mb-3"><i class="fa-solid fa-microchip"></i></div>
+            <h3 class="text-2xl font-bold mb-2">Bitwise</h3>
+            <p class="text-gray-300 text-lg mb-4">Binary level (bits) par kaam karne ke liye.</p>
+            <p class="text-green-400 font-mono text-xl font-bold">&amp; | ^ ~ &lt;&lt; &gt;&gt;</p>
+          </div>
+
+          <!-- Special Operators -->
+          <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-blue-500 transition">
+            <div class="text-3xl text-red-400 mb-3"><i class="fa-solid fa-star"></i></div>
+            <h3 class="text-2xl font-bold mb-2">Special / Misc</h3>
+            <p class="text-gray-300 text-lg mb-4">Size, pointers, aur conditional logic.</p>
+            <p class="text-green-400 font-mono text-xl font-bold">sizeof, ?, &amp;, *</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Code Example -->
+      <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+        <h2 class="text-4xl font-bold mb-8">Basic Operators Example</h2>
+
+        <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> a = <span class="text-green-400">10</span>, b = <span class="text-green-400">3</span>;
+
+    <span class="text-gray-500">// Arithmetic Operator</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Addition: %d\n"</span>, a + b);
+
+    <span class="text-gray-500">// Relational Operator</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Is 'a' greater than 'b'?: %d\n"</span>, a &gt; b); <span class="text-gray-500">// Returns 1 (True)</span>
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+          <p class="text-yellow-400 font-mono">Output:</p>
+          <p class="text-gray-300 font-mono">Addition: 13</p>
+          <p class="text-gray-300 font-mono">Is 'a' greater than 'b'?: 1</p>
+        </div>
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-12 mb-8">
+        <a href="../booleans/Booleans.html"
+          class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+          ❮ Previous
+        </a>
+
+        <a href="Arithmetic.html"
+          class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+          Next ❯
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    if (typeof createSidebar === "function") {
+      document.getElementById("sidebar").innerHTML = createSidebar(12);
+    }
+  </script>
+</body>
+</html>

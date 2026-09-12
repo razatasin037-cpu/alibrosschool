@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP and JSON - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP aur JSON
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Filters.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Exceptions.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            JSON Kya Hai?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            JSON ka matlab <strong>JavaScript Object Notation</strong> hota hai. Ye data ko store aur exchange (lene-dene) karne ka ek lightweight, text-based tareeka hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Kyunki JSON purely text format me hota hai, isse kisi bhi server par bhejna aur wahan se receive karna bahut aasan hota hai. PHP me JSON data ke sath kaam karne ke liye pehle se bane hue (built-in) functions milte hain.
+          </p>
+        </div>
+
+        <!-- Key Functions Grid -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-blue-950/40 border border-blue-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-blue-400 mb-2">
+              <i class="fa-solid fa-code mr-2"></i> json_encode()
+            </h4>
+            <p class="text-gray-300 text-base">
+              PHP Array ya Value ko JSON text format me convert karne ke liye is function ka use kiya jata hai.
+            </p>
+          </div>
+
+          <div class="bg-purple-950/40 border border-purple-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-purple-400 mb-2">
+              <i class="fa-solid fa-laptop-code mr-2"></i> json_decode()
+            </h4>
+            <p class="text-gray-300 text-base">
+              JSON text string ko read karke PHP Object ya Associative Array me badalne ke liye use hota hai.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: PHP - json_encode() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. PHP Array Ko JSON Me Convert Karna (json_encode)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-yellow-300">json_encode()</code> function ka use kisi bhi PHP value ya array ko JSON format me badalne ke liye hota hai:
+            </p>
+
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Example 1: Associative Array ko JSON Object banana</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mb-6">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-[#94a3b8]">// Associative Array (Key-Value pairs)</span>
+<span class="text-green-400">$age</span> = <span class="text-green-400">array</span>(<span class="text-yellow-300">"Peter"</span>=&gt;<span class="text-yellow-300">35</span>, <span class="text-yellow-300">"Ben"</span>=&gt;<span class="text-yellow-300">37</span>, <span class="text-yellow-300">"Joe"</span>=&gt;<span class="text-yellow-300">43</span>);
+
+<span class="text-green-400">echo</span> <span class="text-green-400">json_encode</span>(<span class="text-green-400">$age</span>);
+<span class="text-[#94a3b8]">// Output: {"Peter":35,"Ben":37,"Joe":43}</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Example 2: Indexed Array ko JSON Array banana</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-[#94a3b8]">// Simple Indexed Array</span>
+<span class="text-green-400">$cars</span> = <span class="text-green-400">array</span>(<span class="text-yellow-300">"Volvo"</span>, <span class="text-yellow-300">"BMW"</span>, <span class="text-yellow-300">"Toyota"</span>);
+
+<span class="text-green-400">echo</span> <span class="text-green-400">json_encode</span>(<span class="text-green-400">$cars</span>);
+<span class="text-[#94a3b8]">// Output: ["Volvo","BMW","Toyota"]</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: PHP - json_decode() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. JSON Data Ko PHP Me Convert Karna (json_decode)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-yellow-300">json_decode()</code> function JSON string ko parse karke PHP Object ya Associative Array me convert karta hai. By default ye PHP Object return karta hai, lekin agar aap second parameter me <code class="text-yellow-300">true</code> likhenge to ye Associative Array dega:
+            </p>
+
+            <h4 class="text-lg font-semibold text-purple-300 mb-2">Example 1: PHP Object me decode karna</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mb-6">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">$jsonobj</span> = <span class="text-yellow-300">'{"Peter":35,"Ben":37,"Joe":43}'</span>;
+
+<span class="text-[#94a3b8]">// By default Object banega</span>
+<span class="text-green-400">var_dump</span>(<span class="text-green-400">json_decode</span>(<span class="text-green-400">$jsonobj</span>));
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+
+            <h4 class="text-lg font-semibold text-purple-300 mb-2">Example 2: Associative Array me decode karna (true parameter ke sath)</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">$jsonobj</span> = <span class="text-yellow-300">'{"Peter":35,"Ben":37,"Joe":43}'</span>;
+
+<span class="text-[#94a3b8]">// true likhne se Associative Array banega</span>
+<span class="text-green-400">var_dump</span>(<span class="text-green-400">json_decode</span>(<span class="text-green-400">$jsonobj</span>, <span class="text-yellow-300">true</span>));
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 3: Accessing the Decoded Values -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Decoded Values Ko Access Karna
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Jab aap JSON data decode karte hain, toh object aur array dono se values read karne ka tareeka alag hota hai:
+            </p>
+
+            <h4 class="text-lg font-semibold text-emerald-300 mb-2">PHP Object se values nikalna (<code class="text-yellow-300">-&gt;</code> arrow syntax)</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mb-6">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">$jsonobj</span> = <span class="text-yellow-300">'{"Peter":35,"Ben":37,"Joe":43}'</span>;
+
+<span class="text-green-400">$obj</span> = <span class="text-green-400">json_decode</span>(<span class="text-green-400">$jsonobj</span>);
+
+<span class="text-[#94a3b8]">// Arrow operator (->) ka use karein</span>
+<span class="text-green-400">echo</span> <span class="text-green-400">$obj</span>-&gt;Peter;
+<span class="text-green-400">echo</span> <span class="text-green-400">$obj</span>-&gt;Ben;
+<span class="text-green-400">echo</span> <span class="text-green-400">$obj</span>-&gt;Joe;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+
+            <h4 class="text-lg font-semibold text-emerald-300 mb-2">PHP Associative Array se values nikalna (<code class="text-yellow-300">['key']</code> bracket syntax)</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">$jsonobj</span> = <span class="text-yellow-300">'{"Peter":35,"Ben":37,"Joe":43}'</span>;
+
+<span class="text-[#94a3b8]">// Second parameter true hai matlab array milega</span>
+<span class="text-green-400">$arr</span> = <span class="text-green-400">json_decode</span>(<span class="text-green-400">$jsonobj</span>, <span class="text-yellow-300">true</span>);
+
+<span class="text-[#94a3b8]">// Square brackets ['key'] ka use karein</span>
+<span class="text-green-400">echo</span> <span class="text-green-400">$arr</span>[<span class="text-yellow-300">"Peter"</span>];
+<span class="text-green-400">echo</span> <span class="text-green-400">$arr</span>[<span class="text-yellow-300">"Ben"</span>];
+<span class="text-green-400">echo</span> <span class="text-green-400">$arr</span>[<span class="text-yellow-300">"Joe"</span>];
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 4: Looping Through the Values -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4. Values Par Loop Chalana (foreach Loop)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Aap <code class="text-yellow-300">foreach</code> loop ka use karke decoded object ya array ke saare key-value pairs par bari-bari iterate kar sakte hain:
+            </p>
+
+            <h4 class="text-lg font-semibold text-amber-300 mb-2">PHP Object par Loop chalana</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mb-6">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">$jsonobj</span> = <span class="text-yellow-300">'{"Peter":35,"Ben":37,"Joe":43}'</span>;
+
+<span class="text-green-400">$obj</span> = <span class="text-green-400">json_decode</span>(<span class="text-green-400">$jsonobj</span>);
+
+<span class="text-green-400">foreach</span>(<span class="text-green-400">$obj</span> <span class="text-green-400">as</span> <span class="text-green-400">$key</span> =&gt; <span class="text-green-400">$value</span>) {
+  <span class="text-green-400">echo</span> <span class="text-green-400">$key</span> . <span class="text-yellow-300">" =&gt; "</span> . <span class="text-green-400">$value</span> . <span class="text-yellow-300">"&lt;br&gt;"</span>;
+}
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+
+            <h4 class="text-lg font-semibold text-amber-300 mb-2">PHP Associative Array par Loop chalana</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">$jsonobj</span> = <span class="text-yellow-300">'{"Peter":35,"Ben":37,"Joe":43}'</span>;
+
+<span class="text-green-400">$arr</span> = <span class="text-green-400">json_decode</span>(<span class="text-green-400">$jsonobj</span>, <span class="text-yellow-300">true</span>);
+
+<span class="text-green-400">foreach</span>(<span class="text-green-400">$arr</span> <span class="text-green-400">as</span> <span class="text-green-400">$key</span> =&gt; <span class="text-green-400">$value</span>) {
+  <span class="text-green-400">echo</span> <span class="text-green-400">$key</span> . <span class="text-yellow-300">" =&gt; "</span> . <span class="text-green-400">$value</span> . <span class="text-yellow-300">"&lt;br&gt;"</span>;
+}
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Filters.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Exceptions.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(29);
+    </script>
+  </body>
+</html>

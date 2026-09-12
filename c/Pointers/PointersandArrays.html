@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Pointers and Arrays</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<nav id="navbar"></nav>
+
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <div id="sidebar"></div>
+
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Pointers and Arrays
+    </h1>
+
+    <div class="flex justify-between items-center mb-12">
+      <a href="Pointers.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="PointerArithmetic.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">Pointers Aur Arrays Ka Relation</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C language mein Arrays aur Pointers aapas mein bahut gahre tarike se jude hue hain. Jab aap kisi array ka naam use karte hain, toh wo actual mein array ke sabse pehle element (index 0) ke memory address ko point kar raha hota hai.
+      </p>
+
+      <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+        <p class="text-2xl font-bold mb-3 text-yellow-300">Key Points:</p>
+        <ul class="list-disc ml-6 text-lg text-gray-300 leading-8 space-y-2">
+          <li>Array ka naam ek constant pointer ki tarah kaam karta hai jo first element ka location hold karta hai.</li>
+          <li>Array ke elements contiguous (ek ke baad ek continuous) memory locations par store hote hain.</li>
+          <li><code class="text-yellow-300 font-bold">myNumbers</code> aur <code class="text-yellow-300 font-bold">&amp;myNumbers[0]</code> dono exact same memory address represent karte hain.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Array Elements Ka Memory Address</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Niche diye gaye example mein dekhein ki kaise har next element ka memory address 4 bytes (standard integer size) aage badhta hai.
+      </p>
+
+      <h3 class="text-2xl font-bold mb-4 text-white">Code Example: Printing Memory Addresses</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myNumbers[<span class="text-green-400">4</span>] = {<span class="text-green-400">25</span>, <span class="text-green-400">50</span>, <span class="text-green-400">75</span>, <span class="text-green-400">100</span>};
+    <span class="text-green-500">int</span> i;
+
+    <span class="text-purple-400">for</span> (i = <span class="text-green-400">0</span>; i &lt; <span class="text-green-400">4</span>; i++) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Element %d Address: %p\n"</span>, i, &amp;myNumbers[i]);
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output (4 Bytes Offset):</p>
+        <p class="text-green-400">Element 0 Address: 0x7ffe5367e040</p>
+        <p class="text-green-400">Element 1 Address: 0x7ffe5367e044</p>
+        <p class="text-green-400">Element 2 Address: 0x7ffe5367e048</p>
+        <p class="text-green-400">Element 3 Address: 0x7ffe5367e04c</p>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">Pointer Arithmetic (Accessing via Pointer)</h2>
+      
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Aap brackets <code class="text-yellow-300 font-bold">[ ]</code> ka use kiye bina bhi dereference operator <code class="text-yellow-300 font-bold">*</code> aur pointer arithmetic ka upyog karke array ke kisi bhi element ko access kar sakte hain.
+      </p>
+
+      <div class="bg-black/50 border border-gray-700 p-6 rounded-2xl mb-8 space-y-4">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-2">Pointer Expressions:</h3>
+        <p class="text-lg text-gray-300 leading-8">
+          1. <code class="text-cyan-400">*myNumbers</code> array ke pehle element ki value deta hai.<br>
+          2. <code class="text-cyan-400">*(myNumbers + 1)</code> array ke doosre element ki value deta hai.<br>
+          3. <code class="text-cyan-400">*(myNumbers + 2)</code> array ke teesre element ki value deta hai.
+        </p>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-white">Code Example: Dereferencing Array Pointers</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myNumbers[<span class="text-green-400">4</span>] = {<span class="text-green-400">25</span>, <span class="text-green-400">50</span>, <span class="text-green-400">75</span>, <span class="text-green-400">100</span>};
+
+    <span class="text-gray-500">// Get the value of the first element</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"First Element: %d\n"</span>, *myNumbers);
+
+    <span class="text-gray-500">// Get the value of the second element</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Second Element: %d\n"</span>, *(myNumbers + <span class="text-green-400">1</span>));
+
+    <span class="text-gray-500">// Get the value of the third element</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Third Element: %d\n"</span>, *(myNumbers + <span class="text-green-400">2</span>));
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">First Element: 25</p>
+        <p class="text-green-400">Second Element: 50</p>
+        <p class="text-green-400">Third Element: 75</p>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Pointer Ke Sath Loop Chalana</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Pointer arithmetic ka use karke hum pooray array par efficiently loop chala sakte hain.
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myNumbers[<span class="text-green-400">4</span>] = {<span class="text-green-400">10</span>, <span class="text-green-400">20</span>, <span class="text-green-400">30</span>, <span class="text-green-400">40</span>};
+    <span class="text-green-500">int</span> *ptr = myNumbers;
+    <span class="text-green-500">int</span> i;
+
+    <span class="text-purple-400">for</span> (i = <span class="text-green-400">0</span>; i &lt; <span class="text-green-400">4</span>; i++) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Value at index %d = %d\n"</span>, i, *(ptr + i));
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p>Value at index 0 = 10</p>
+        <p>Value at index 1 = 20</p>
+        <p>Value at index 2 = 30</p>
+        <p>Value at index 3 = 40</p>
+      </div>
+    </section>
+
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Pointers.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="PointerArithmetic.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

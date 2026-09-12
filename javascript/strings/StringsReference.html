@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript String Reference - Tutorial</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5"
+      >
+        JavaScript String Reference
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Search.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../numbers/Numbers.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          String Reference Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript String Reference ek quick guide hai jisme important
+          String properties aur methods ko ek jagah par dekha ja sakta hai.
+          <br><br>
+          Is reference ki help se aap quickly check kar sakte ho ki kisi
+          String method ka naam kya hai, uska use kya hai aur uska basic
+          syntax kaise likha jata hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Basic Syntax -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            String Basic Syntax
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">"Hello JavaScript"</span>;
+
+console.log(text);</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold text-white mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello JavaScript</pre>
+          </div>
+
+        </div>
+
+        <!-- Properties -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            String Property
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Example</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    length
+                  </td>
+
+                  <td class="p-4">
+                    String ke total characters return karta hai.
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    text.length
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Character Methods -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Character Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Syntax</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">at()</td>
+                  <td class="p-4">Index ka character return karta hai.</td>
+                  <td class="p-4 font-mono">text.at(0)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">charAt()</td>
+                  <td class="p-4">Given index ka character return karta hai.</td>
+                  <td class="p-4 font-mono">text.charAt(0)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">charCodeAt()</td>
+                  <td class="p-4">Character ka UTF-16 code return karta hai.</td>
+                  <td class="p-4 font-mono">text.charCodeAt(0)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">codePointAt()</td>
+                  <td class="p-4">Character ka Unicode code point deta hai.</td>
+                  <td class="p-4 font-mono">text.codePointAt(0)</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Extract Methods -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Extract String Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Syntax</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">slice()</td>
+                  <td class="p-4">String ka selected part return karta hai.</td>
+                  <td class="p-4 font-mono">text.slice(0, 5)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">substring()</td>
+                  <td class="p-4">Do indexes ke beech ka text return karta hai.</td>
+                  <td class="p-4 font-mono">text.substring(0, 5)</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Case Methods -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Uppercase & Lowercase Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Syntax</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toUpperCase()
+                  </td>
+
+                  <td class="p-4">
+                    String ko uppercase me convert karta hai.
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    text.toUpperCase()
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toLowerCase()
+                  </td>
+
+                  <td class="p-4">
+                    String ko lowercase me convert karta hai.
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    text.toLowerCase()
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toLocaleUpperCase()
+                  </td>
+
+                  <td class="p-4">
+                    Locale rules ke according uppercase karta hai.
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    text.toLocaleUpperCase()
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toLocaleLowerCase()
+                  </td>
+
+                  <td class="p-4">
+                    Locale rules ke according lowercase karta hai.
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    text.toLocaleLowerCase()
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Search Methods -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            String Search Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Syntax</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">indexOf()</td>
+                  <td class="p-4">First matching text ka index deta hai.</td>
+                  <td class="p-4 font-mono">text.indexOf("JS")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">lastIndexOf()</td>
+                  <td class="p-4">Last matching text ka index deta hai.</td>
+                  <td class="p-4 font-mono">text.lastIndexOf("JS")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">includes()</td>
+                  <td class="p-4">Text present hai ya nahi check karta hai.</td>
+                  <td class="p-4 font-mono">text.includes("Java")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">startsWith()</td>
+                  <td class="p-4">Starting text check karta hai.</td>
+                  <td class="p-4 font-mono">text.startsWith("Hello")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">endsWith()</td>
+                  <td class="p-4">Ending text check karta hai.</td>
+                  <td class="p-4 font-mono">text.endsWith("Script")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">search()</td>
+                  <td class="p-4">Pattern ka matching index find karta hai.</td>
+                  <td class="p-4 font-mono">text.search(/Java/)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">match()</td>
+                  <td class="p-4">Pattern ke matches find karta hai.</td>
+                  <td class="p-4 font-mono">text.match(/Java/)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">matchAll()</td>
+                  <td class="p-4">Pattern ke sabhi matches return karta hai.</td>
+                  <td class="p-4 font-mono">text.matchAll(/JS/g)</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Modify Methods -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Modify & Format Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Syntax</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">replace()</td>
+                  <td class="p-4">Matching text ko replace karta hai.</td>
+                  <td class="p-4 font-mono">
+                    text.replace("JS", "React")
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">replaceAll()</td>
+                  <td class="p-4">Sab matching text replace karta hai.</td>
+                  <td class="p-4 font-mono">
+                    text.replaceAll("JS", "React")
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">trim()</td>
+                  <td class="p-4">Start aur end ke spaces remove karta hai.</td>
+                  <td class="p-4 font-mono">text.trim()</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">trimStart()</td>
+                  <td class="p-4">Starting spaces remove karta hai.</td>
+                  <td class="p-4 font-mono">text.trimStart()</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">trimEnd()</td>
+                  <td class="p-4">Ending spaces remove karta hai.</td>
+                  <td class="p-4 font-mono">text.trimEnd()</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">padStart()</td>
+                  <td class="p-4">Start me characters add karta hai.</td>
+                  <td class="p-4 font-mono">text.padStart(5, "0")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">padEnd()</td>
+                  <td class="p-4">End me characters add karta hai.</td>
+                  <td class="p-4 font-mono">text.padEnd(5, "0")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">repeat()</td>
+                  <td class="p-4">String ko multiple times repeat karta hai.</td>
+                  <td class="p-4 font-mono">text.repeat(3)</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Join / Split -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Join & Split Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Syntax</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">concat()</td>
+                  <td class="p-4">Multiple Strings ko join karta hai.</td>
+                  <td class="p-4 font-mono">text.concat(text2)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">split()</td>
+                  <td class="p-4">String ko Array me convert karta hai.</td>
+                  <td class="p-4 font-mono">text.split(",")</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Other Methods -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Other String Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">localeCompare()</td>
+                  <td class="p-4">Do Strings ko compare karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">normalize()</td>
+                  <td class="p-4">Unicode String normalize karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toString()</td>
+                  <td class="p-4">String representation return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">valueOf()</td>
+                  <td class="p-4">Primitive String value return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">isWellFormed()</td>
+                  <td class="p-4">Valid UTF-16 String check karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toWellFormed()</td>
+                  <td class="p-4">String ko well-formed UTF-16 banata hai.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Static Methods -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Static String Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Example</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    String.fromCharCode()
+                  </td>
+
+                  <td class="p-4">
+                    UTF-16 codes se String banata hai.
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    String.fromCharCode(65)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    String.fromCodePoint()
+                  </td>
+
+                  <td class="p-4">
+                    Unicode code point se String banata hai.
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    String.fromCodePoint(9731)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    String.raw()
+                  </td>
+
+                  <td class="p-4">
+                    Raw template String return karta hai.
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    String.raw`Hello\nJS`
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Quick Example -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Quick Reference Example
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">"Hello JavaScript"</span>;
+
+console.log(text.length);
+console.log(text.toUpperCase());
+console.log(text.includes(<span class="text-emerald-400">"Java"</span>));
+console.log(text.slice(<span class="text-emerald-400">0</span>, <span class="text-emerald-400">5</span>));</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold text-white mb-2">
+              Output:
+            </p>
+
+<pre class="text-emerald-400 font-mono">16
+HELLO JAVASCRIPT
+true
+Hello</pre>
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">length</code>
+              ek property hai, method nahi.
+            </p>
+
+            <p>
+              2. String methods ko generally
+              <code class="text-blue-400">string.method()</code>
+              syntax se use karte hain.
+            </p>
+
+            <p>
+              3. JavaScript Strings immutable hoti hain, yani String methods
+              normally original String ko change nahi karte.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">includes()</code>,
+              <code class="text-blue-400">startsWith()</code>
+              aur
+              <code class="text-blue-400">endsWith()</code>
+              boolean value
+              <code class="text-emerald-400">true/false</code>
+              return karte hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">indexOf()</code>
+              aur
+              <code class="text-blue-400">lastIndexOf()</code>
+              text na milne par
+              <code class="text-red-400">-1</code>
+              return karte hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Search.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../numbers/Numbers.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // Sidebar No. 8 -> JS String Reference
+    document.getElementById("sidebar").innerHTML = createSidebar(8);
+  </script>
+
+</body>
+</html>

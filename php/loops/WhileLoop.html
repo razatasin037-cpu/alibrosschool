@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP While Loop - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP While Loop
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Loops.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./DoWhile.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            While Loop Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            <code class="text-green-400">while</code> loop ek entry-controlled loop hai jo kisi code block ko tab tak baar-baar execute karta hai jab tak di gayi condition <strong>TRUE</strong> rehti hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Har iteration (chakar) se pehle condition check hoti hai. Agar pehli hi baar me condition FALSE ho jaye, toh loop ek baar bhi nahi chalega.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. Standard Curly Braces Syntax -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              1. Standard Syntax (<code class="text-green-400">{ }</code> Braces)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Yeh sabse zyada use hone wala standard format hai jisme loop body ko <code class="text-green-400">{ }</code> curly braces ke andar rakha jata hai.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Example: 1 se 5 tak counter print karna</span>
+  <span class="text-green-400">$i</span> = <span class="text-white">1</span>; <span class="text-[#94a3b8]">// Step 1: Initialization</span>
+
+  <span class="text-green-400">while</span> (<span class="text-green-400">$i</span> &lt;= <span class="text-white">5</span>) { <span class="text-[#94a3b8]">// Step 2: Condition Check</span>
+      <span class="text-green-400">echo</span> <span class="text-white">"Number: $i &lt;br&gt;"</span>;
+      <span class="text-green-400">$i</span>++; <span class="text-[#94a3b8]">// Step 3: Increment</span>
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Alternative Syntax (Colon & endwhile) -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              2. Alternative Syntax (<code class="text-green-400">: ... endwhile;</code>)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              PHP me curly braces ki jagah colon (<code class="text-green-400">:</code>) aur ending keyword (<code class="text-green-400">endwhile;</code>) ka istemal bhi kiya jata hai. Yeh format pure HTML / Template files ke sath mixing karte waqt sabse clean lagta hai.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Syntax Structure:</span>
+  <span class="text-[#94a3b8]">// while (condition):</span>
+  <span class="text-[#94a3b8]">//     // code to execute</span>
+  <span class="text-[#94a3b8]">// endwhile;</span>
+
+  <span class="text-green-400">$count</span> = <span class="text-white">3</span>;
+  <span class="text-green-400">while</span> (<span class="text-green-400">$count</span> &gt; <span class="text-white">0</span>):
+      <span class="text-green-400">echo</span> <span class="text-white">"Countdown: $count &lt;br&gt;"</span>;
+      <span class="text-green-400">$count</span>--;
+  <span class="text-green-400">endwhile</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Practical Example: HTML List with Alternative Syntax -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              3. Practical Example: Embedding in HTML
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Dekhiye kaise alternative syntax ka use karke HTML elements (`&lt;ul&gt;` / `&lt;li&gt;`) ke sath clean tareeqe se loop chalaya jata hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-[#94a3b8]">&lt;!-- HTML and PHP Mix Example --&gt;</span>
+<span class="text-green-400">&lt;?php</span> <span class="text-green-400">$step</span> = <span class="text-white">1</span>; <span class="text-green-400">?&gt;</span>
+
+<span class="text-white">&lt;ul class="list-disc pl-5"&gt;</span>
+  <span class="text-green-400">&lt;?php</span> <span class="text-green-400">while</span> (<span class="text-green-400">$step</span> &lt;= <span class="text-white">4</span>): <span class="text-green-400">?&gt;</span>
+      <span class="text-white">&lt;li&gt;Step Number:</span> <span class="text-green-400">&lt;?php</span> <span class="text-green-400">echo</span> <span class="text-green-400">$step</span>; <span class="text-green-400">?&gt;</span><span class="text-white">&lt;/li&gt;</span>
+      <span class="text-green-400">&lt;?php</span> <span class="text-green-400">$step</span>++; <span class="text-green-400">?&gt;</span>
+  <span class="text-green-400">&lt;?php</span> <span class="text-green-400">endwhile</span>; <span class="text-green-400">?&gt;</span>
+<span class="text-white">&lt;/ul&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 4. Practical Example: Array Traversal -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              4. Practical Example: Array Print Karna
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">count()</code> function ka upayog karke kisi array ke saare elements ko ek-ek karke fetch karne ka tareeqa:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$colors</span> = [<span class="text-white">"Red"</span>, <span class="text-white">"Green"</span>, <span class="text-white">"Blue"</span>, <span class="text-white">"Yellow"</span>];
+  <span class="text-green-400">$index</span> = <span class="text-white">0</span>;
+
+  <span class="text-green-400">while</span> (<span class="text-green-400">$index</span> &lt; <span class="text-green-400">count</span>(<span class="text-green-400">$colors</span>)) {
+      <span class="text-green-400">echo</span> <span class="text-white">"Color: "</span> . <span class="text-green-400">$colors</span>[<span class="text-green-400">$index</span>] . <span class="text-white">"&lt;br&gt;"</span>;
+      <span class="text-green-400">$index</span>++;
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 5. Loop Control: break & continue -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              5. Loop Control (<code class="text-green-400">break</code> &amp; <code class="text-green-400">continue</code>)
+            </h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-xl font-bold text-green-400 mb-2">Break Statement:</h4>
+                <p class="text-gray-300 mb-3">Loop ko kisi condition par turant roknay ke liye:</p>
+                <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+                  <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$num</span> = <span class="text-white">1</span>;
+  <span class="text-green-400">while</span> (<span class="text-green-400">$num</span> &lt;= <span class="text-white">10</span>) {
+      <span class="text-green-400">if</span> (<span class="text-green-400">$num</span> == <span class="text-white">5</span>) {
+          <span class="text-green-400">break</span>; <span class="text-[#94a3b8]">// 5 par aate hi loop stop ho jayega</span>
+      }
+      <span class="text-green-400">echo</span> <span class="text-white">"$num "</span>;
+      <span class="text-green-400">$num</span>++;
+  }
+  <span class="text-[#94a3b8]">// Output: 1 2 3 4</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold text-green-400 mb-2">Continue Statement:</h4>
+                <p class="text-gray-300 mb-3">Kisi particular iteration ko skip karke aage badhne ke liye:</p>
+                <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+                  <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$num</span> = <span class="text-white">0</span>;
+  <span class="text-green-400">while</span> (<span class="text-green-400">$num</span> &lt; <span class="text-white">5</span>) {
+      <span class="text-green-400">$num</span>++;
+      <span class="text-green-400">if</span> (<span class="text-green-400">$num</span> == <span class="text-white">3</span>) {
+          <span class="text-green-400">continue</span>; <span class="text-[#94a3b8]">// 3 ko skip kar dega</span>
+      }
+      <span class="text-green-400">echo</span> <span class="text-white">"$num "</span>;
+  }
+  <span class="text-[#94a3b8]">// Output: 1 2 4 5</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Danger/Risk Box - Infinite Loop -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-red-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-red-400">
+           Warning: Infinite Loop Risks
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Agar aap loop ke andar variable ko increment ya decrement (<code class="text-green-400">$i++</code>) karna bhool jate hain, toh condition hamesha TRUE rahegi.
+            </p>
+            <div class="bg-[#1e293b] p-4 rounded-xl font-mono text-sm text-red-400 border border-red-500/20 mb-4">
+              $i = 1;<br />
+              while ($i &lt;= 5) {<br />
+              &nbsp;&nbsp;echo $i; // Increment missing! Server response time out ho jayega.<br />
+              }
+            </div>
+            <p class="text-gray-300 text-sm">
+              <strong>Nuksan:</strong> Isse PHP script ki execution time limit cross ho jayegi aur browser hang/crash ho sakta hai.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Loops.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./DoWhile.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(16);
+    </script>
+  </body>
+</html>

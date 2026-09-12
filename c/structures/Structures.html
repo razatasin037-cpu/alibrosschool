@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Structures</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Structures (struct)
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="../functions/Recursion.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="NestedStructures.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Section 1: What is Structure? -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">C Structure Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <strong>Structure</strong> (jise <code class="text-yellow-300">struct</code> keyword se banaya jata hai) ek <em>User-Defined Data Type</em> hai. Array me hum sirf ek hi type ka data rakh sakte hain, lekin Structure me hum <strong>alag-alag data types</strong> (jaise <code class="text-cyan-400">int</code>, <code class="text-cyan-400">float</code>, <code class="text-cyan-400">char</code>) ke data ko ek single name ke andar group kar sakte hain.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-black/50 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-red-400 mb-3">❌ Array Ki Limitation</h3>
+          <p class="text-gray-300 text-lg leading-8">
+            Array me aap sirf same type ki values rakh sakte hain (jaise sare integers ya sare characters).
+          </p>
+        </div>
+
+        <div class="bg-black/50 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-green-400 mb-3">✅ Structure Ka Fayda</h3>
+          <p class="text-gray-300 text-lg leading-8">
+            Ek Student ka Data (Roll No, Name, Marks) ek jagah combine karke store kar sakte hain.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Create a Structure -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Structure Kaise Banayein? (Syntax)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Structure banane ke liye <code class="text-yellow-300 font-bold">struct</code> keyword ka use hota hai. Uske andar alag-alag variables hote hain jinhe <strong>Members</strong> bolte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-500">// Structure Definition</span>
+<span class="text-purple-400">struct</span> <span class="text-yellow-300">Student</span> {
+    <span class="text-green-500">int</span> rollNo;
+    <span class="text-green-500">char</span> name[<span class="text-cyan-400">50</span>];
+    <span class="text-green-500">float</span> marks;
+}; <span class="text-gray-500">// Semicolon mandatory hai</span></code></pre>
+      </div>
+    </section>
+
+    <!-- Section 3: Access Structure Members -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">Complete Code Example</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Structure Variable banane ke baad uske members ko access karne ke liye <strong>Dot Operator (<code class="text-yellow-300 font-bold">.</code>)</strong> ka use hota hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+<span class="text-gray-400">#include &lt;string.h&gt;</span>
+
+<span class="text-[#3158ff]">// Structure declaring</span>
+<span class="text-purple-400">struct</span> <span class="text-yellow-300">Student</span> {
+    <span class="text-green-500">int</span> rollNo;
+    <span class="text-green-500">char</span> name[<span class="text-cyan-400">30</span>];
+    <span class="text-green-500">float</span> marks;
+};
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// Structure Variable declaration</span>
+    <span class="text-purple-400">struct</span> <span class="text-yellow-300">Student</span> s1;
+
+    <span class="text-gray-500">// Values Assigning</span>
+    s1.rollNo = <span class="text-cyan-400">101</span>;
+    <span class="text-cyan-400">strcpy</span>(s1.name, <span class="text-yellow-300">"Rahul Sharma"</span>);
+    s1.marks = <span class="text-cyan-400">89.5</span>;
+
+    <span class="text-gray-500">// Printing Structure Values</span>
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Roll No: %d\n"</span>, s1.rollNo);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Name: %s\n"</span>, s1.name);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Marks: %.1f\n"</span>, s1.marks);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Roll No: 101</p>
+        <p class="text-green-400">Name: Rahul Sharma</p>
+        <p class="text-green-400">Marks: 89.5</p>
+      </div>
+    </section>
+
+    <!-- Section 4: Alternative Syntax Initialization -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-cyan-400">Direct Initialization Ka Tarika</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Aap structure variable ko declare karte waqt hi directly values assign kar sakte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-purple-400">struct</span> <span class="text-yellow-300">Car</span> {
+    <span class="text-green-500">char</span> brand[<span class="text-cyan-400">20</span>];
+    <span class="text-green-500">int</span> year;
+    <span class="text-green-500">int</span> price;
+};
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// Single-line Direct Initialization</span>
+    <span class="text-purple-400">struct</span> <span class="text-yellow-300">Car</span> c1 = {<span class="text-yellow-300">"BMW"</span>, <span class="text-cyan-400">2024</span>, <span class="text-cyan-400">7500000</span>};
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%s (%d) - Price: ₹%d\n"</span>, c1.brand, c1.year, c1.price);
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">BMW (2024) - Price: ₹7500000</p>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="../functions/Recursion.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="NestedStructures.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

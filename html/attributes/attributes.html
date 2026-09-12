@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Attributes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Attributes
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../elements/Elements.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../headings/Headings.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Attributes Kya Hote Hain?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML Attributes HTML elements ko <strong>extra information</strong> ya properties dene ke liye use kiye jaate hain.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Ye hamesha <strong>Start Tag</strong> me likhe jaate hain aur inka format <code>name="value"</code> pair me hota hai.
+          </p>
+        </div>
+
+
+        <!-- Common Attributes Grid -->
+        <div class="mt-8">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Most Common HTML Attributes
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- href Attribute -->
+            <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-6">
+              <h4 class="text-xl font-bold text-yellow-400 mb-2">
+                <i class="fa-solid fa-link mr-2"></i> href Attribute
+              </h4>
+              <p class="text-gray-300 text-sm mb-3">
+                Ye <code>&lt;a&gt;</code> tag ke sath link ka URL specify karta hai.
+              </p>
+              <div class="bg-[#0f172a] p-3 rounded-lg font-mono text-xs md:text-sm text-green-400 border border-[#334155]">
+                &lt;a href="https://example.com"&gt;Visit Site&lt;/a&gt;
+              </div>
+            </div>
+
+            <!-- src Attribute -->
+            <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-6">
+              <h4 class="text-xl font-bold text-yellow-400 mb-2">
+                <i class="fa-solid fa-image mr-2"></i> src Attribute
+              </h4>
+              <p class="text-gray-300 text-sm mb-3">
+                Ye <code>&lt;img&gt;</code> tag me image ka file path define karta hai.
+              </p>
+              <div class="bg-[#0f172a] p-3 rounded-lg font-mono text-xs md:text-sm text-green-400 border border-[#334155]">
+                &lt;img src="img_girl.jpg"&gt;
+              </div>
+            </div>
+
+            <!-- alt Attribute -->
+            <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-6">
+              <h4 class="text-xl font-bold text-yellow-400 mb-2">
+                <i class="fa-solid fa-font mr-2"></i> alt Attribute
+              </h4>
+              <p class="text-gray-300 text-sm mb-3">
+                Agar image load na ho sake toh ye alternate text show karta hai.
+              </p>
+              <div class="bg-[#0f172a] p-3 rounded-lg font-mono text-xs md:text-sm text-green-400 border border-[#334155]">
+                &lt;img src="logo.png" alt="Company Logo"&gt;
+              </div>
+            </div>
+
+            <!-- style Attribute -->
+            <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-6">
+              <h4 class="text-xl font-bold text-yellow-400 mb-2">
+                <i class="fa-solid fa-paint-brush mr-2"></i> style Attribute
+              </h4>
+              <p class="text-gray-300 text-sm mb-3">
+                Ye element par inline CSS styling (color, size) add karta hai.
+              </p>
+              <div class="bg-[#0f172a] p-3 rounded-lg font-mono text-xs md:text-sm text-green-400 border border-[#334155]">
+                &lt;p style="color:red;"&gt;Red Text&lt;/p&gt;
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Summary Table -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Attribute Quick Reference Table
+            </h3>
+
+            <div class="overflow-x-auto rounded-xl border border-[#334155]">
+              <table class="w-full text-left text-gray-300">
+                <thead class="bg-[#0f172a] text-yellow-400 text-base font-bold border-b border-[#334155]">
+                  <tr>
+                    <th class="p-4">Attribute</th>
+                    <th class="p-4">Kiske Sath Use Hota Hai</th>
+                    <th class="p-4">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] bg-[#020617]/50 text-sm md:text-base">
+                  <tr>
+                    <td class="p-4 text-green-400 font-mono">href</td>
+                    <td class="p-4 text-white font-mono">&lt;a&gt;</td>
+                    <td class="p-4">Link URL specify karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-green-400 font-mono">src</td>
+                    <td class="p-4 text-white font-mono">&lt;img&gt;, &lt;script&gt;</td>
+                    <td class="p-4">Media ya file ka source path deta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-green-400 font-mono">width &amp; height</td>
+                    <td class="p-4 text-white font-mono">&lt;img&gt;, &lt;video&gt;</td>
+                    <td class="p-4">Elements ke dimensions (pixels) set karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-green-400 font-mono">title</td>
+                    <td class="p-4 text-white font-mono">Any HTML Element</td>
+                    <td class="p-4">Hover karne par tooltip text dikhata hai</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 text-green-400 font-mono">lang</td>
+                    <td class="p-4 text-white font-mono">&lt;html&gt;</td>
+                    <td class="p-4">Document ki language specify karta hai</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../elements/Elements.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../headings/Headings.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(4);
+    </script>
+  </body>
+</html>

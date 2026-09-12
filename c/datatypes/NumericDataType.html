@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Numeric Data Types - Integer & Modifiers</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Numeric Data Types
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Characterdatatype.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="DecimalDataType.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Numeric Data Types Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C language me bina decimal point (bina point wali) values jaise <code class="text-green-400">10</code>, <code class="text-green-400">-500</code>, ya <code class="text-green-400">0</code> ko store karne ke liye <strong>Numeric Data Types</strong> ka use kiya jata hai. Unme sabse basic aur common data type <code class="text-green-400 font-bold">int</code> hota hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        Jab hume alag-alag range ya size ke numbers store karne hote hain, toh hum <strong>Type Modifiers</strong> (jaise <code class="text-yellow-300">short</code>, <code class="text-yellow-300">long</code>, <code class="text-yellow-300">unsigned</code>) ka istemal karte hain.
+      </p>
+    </section>
+
+    <!-- Numeric Types Table -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Integer Types Breakdown Table</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Type</th>
+              <th class="py-4 px-6">Memory Size</th>
+              <th class="py-4 px-6">Format Specifier</th>
+              <th class="py-4 px-6">Value Range</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">short int</td>
+              <td class="py-4 px-6 text-yellow-300">2 Bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%hd</td>
+              <td class="py-4 px-6 text-gray-300">-32,768 to 32,767</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">unsigned short int</td>
+              <td class="py-4 px-6 text-yellow-300">2 Bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%hu</td>
+              <td class="py-4 px-6 text-gray-300">0 to 65,535</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">int</td>
+              <td class="py-4 px-6 text-yellow-300">2 or 4 Bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%d</td>
+              <td class="py-4 px-6 text-gray-300">-2,147,483,648 to 2,147,483,647</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">unsigned int</td>
+              <td class="py-4 px-6 text-yellow-300">4 Bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%u</td>
+              <td class="py-4 px-6 text-gray-300">0 to 4,294,967,295</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">long int</td>
+              <td class="py-4 px-6 text-yellow-300">4 or 8 Bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%ld</td>
+              <td class="py-4 px-6 text-gray-300">-2,147,483,648 to 2,147,483,647</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">long long int</td>
+              <td class="py-4 px-6 text-yellow-300">8 Bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%lld</td>
+              <td class="py-4 px-6 text-gray-300">-9,223,372,036,854,775,808 to 9.22e18</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Signed vs Unsigned -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Signed vs Unsigned Integers</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Signed Integers (Default)</h3>
+          <p class="text-xl text-gray-300 leading-9">
+            Isme positive (<code class="text-green-400">+</code>) aur negative (<code class="text-red-400">-</code>) dono tarah ke numbers store ho sakte hain. Normal <code class="text-green-400">int</code> by default signed hi hota hai.
+          </p>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">Unsigned Integers</h3>
+          <p class="text-xl text-gray-300 leading-9">
+            Isme <strong>sirf positive numbers</strong> (0 aur usse badhe) store hote hain. Iska fayda yeh hai ki positive numbers store karne ki range double ho jaati hai!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Numeric Data Types Code Example</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Yeh program alag-alag numeric integer types ke declaration aur correct format specifiers ka use batata hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">short</span> smallVal = <span class="text-green-400">32000</span>;
+    <span class="text-green-500">int</span> normalVal = <span class="text-green-400">150000</span>;
+    <span class="text-green-500">unsigned int</span> positiveOnly = <span class="text-green-400">4000000000U</span>;
+    <span class="text-green-500">long long</span> hugeVal = <span class="text-green-400">9000000000000000000LL</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Short Value: %hd\n"</span>, smallVal);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Normal Int Value: %d\n"</span>, normalVal);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Unsigned Int Value: %u\n"</span>, positiveOnly);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Long Long Value: %lld\n"</span>, hugeVal);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Short Value: 32000</p>
+        <p class="text-gray-300 font-mono">Normal Int Value: 150000</p>
+        <p class="text-gray-300 font-mono">Unsigned Int Value: 4000000000</p>
+        <p class="text-gray-300 font-mono">Long Long Value: 9000000000000000000</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Non-decimal numbers ke liye <code class="text-yellow-300 font-bold">int</code> primary choice hoti hai. Chote data ke liye memory bachane <code class="text-yellow-300 font-bold">short</code> aur bohot bade values ke liye <code class="text-yellow-300 font-bold">long long</code> ka use karein.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Characterdatatype.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="DecimalDataType.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(8);
+  }
+</script>
+
+</body>
+</html>

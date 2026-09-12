@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Echo / Print - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navigation Bar -->
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <!-- PHP Echo/Print Content Section -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Echo / Print
+        </h1>
+
+        <!-- Top Navigation Buttons -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../variables/VariablesScope.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../datatypes/Data-Types.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Intro Section -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Echo aur Print Kya Hain?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me screen par data ya text display (output) karne ke do basic tarike hote hain: <strong class="text-green-400">echo</strong> aur <strong class="text-green-400">print</strong>.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Dono ka use output dikhane ke liye hota hai, lekin inke kaam karne me kuch chote differences hain.
+          </p>
+        </div>
+
+        <!-- Difference Table Card -->
+        <div class="mt-12 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+             Echo vs Print Difference
+          </h3>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-[#334155] text-green-400">
+                  <th class="p-3 text-lg font-bold">Feature</th>
+                  <th class="p-3 text-lg font-bold">echo</th>
+                  <th class="p-3 text-lg font-bold">print</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300 divide-y divide-[#334155]">
+                <tr>
+                  <td class="p-3 font-semibold text-white">Return Value</td>
+                  <td class="p-3">Koi value return nahi karta (Void).</td>
+                  <td class="p-3">Hamesha <code class="text-green-400">1</code> return karta hai (Expression me use kar sakte hain).</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-white">Parameters</td>
+                  <td class="p-3">Multiple parameters le sakta hai (comma se separate karke).</td>
+                  <td class="p-3">Sirf ek hi argument/string le sakta hai.</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-white">Speed</td>
+                  <td class="p-3 text-green-400 font-semibold">Thoda fast hota hai.</td>
+                  <td class="p-3">echo ke muqable thoda slow hota hai.</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-white">Syntax</td>
+                  <td class="p-3"><code class="text-white">echo</code> ya <code class="text-white">echo()</code></td>
+                  <td class="p-3"><code class="text-white">print</code> ya <code class="text-white">print()</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- MAIN DETAILS SECTION -->
+        <section class="mt-12 space-y-8">
+
+          <!-- Echo Statement Card -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              PHP echo Statement
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">echo</code> statement ke sath parentheses <code class="text-white">()</code> lagana optional hota hai. Aap HTML tags aur strings ko aasan tarike se print kar sakte hain:
+            </p>
+
+            <!-- Code Preview Block -->
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">echo</span> <span class="text-white">"&lt;h2&gt;PHP is Fun!&lt;/h2&gt;"</span>;
+  <span class="text-green-400">echo</span> <span class="text-white">"Hello World!&lt;br&gt;"</span>;
+  <span class="text-green-400">echo</span> <span class="text-white">"I'm learning PHP!&lt;br&gt;"</span>;
+  
+  <span class="text-[#94a3b8]">// Passing multiple parameters (Only allowed in echo)</span>
+  <span class="text-green-400">echo</span> <span class="text-white">"This "</span>, <span class="text-white">"string "</span>, <span class="text-white">"was "</span>, <span class="text-white">"made "</span>, <span class="text-white">"with multiple parameters."</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Display Variables with echo -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+            Displaying Variables with echo
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Variables aur text ko ek sath print karne ke liye concatenation operator (<code class="text-green-400">.</code>) ya direct double quotes interpolate ka use kiya ja sakta hai:
+            </p>
+
+            <!-- Code Preview Block -->
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$txt1</span> = <span class="text-white">"Learn PHP"</span>;
+  <span class="text-green-400">$txt2</span> = <span class="text-white">"W3Schools"</span>;
+  <span class="text-green-400">$x</span> = 5;
+  <span class="text-green-400">$y</span> = 4;
+
+  <span class="text-green-400">echo</span> <span class="text-white">"&lt;h2&gt;"</span> . <span class="text-green-400">$txt1</span> . <span class="text-white">"&lt;/h2&gt;"</span>;
+  <span class="text-green-400">echo</span> <span class="text-white">"Study PHP at "</span> . <span class="text-green-400">$txt2</span> . <span class="text-white">"&lt;br&gt;"</span>;
+  <span class="text-green-400">echo</span> <span class="text-green-400">$x</span> + <span class="text-green-400">$y</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Print Statement Card -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              PHP print Statement
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">print</code> statement bhi text print karne ke kaam aata hai. Isme bhi parentheses optional hote hain, lekin yeh multiple parameters support nahi karta.
+            </p>
+
+            <!-- Code Preview Block -->
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$txt1</span> = <span class="text-white">"PHP Scripting"</span>;
+  <span class="text-green-400">$x</span> = 10;
+
+  <span class="text-green-400">print</span> <span class="text-white">"&lt;h2&gt;"</span> . <span class="text-green-400">$txt1</span> . <span class="text-white">"&lt;/h2&gt;"</span>;
+  <span class="text-green-400">print</span> <span class="text-white">"Value of X is: $x"</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Note Block -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-green-400/30">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-green-400">
+              <span>💡</span> Important Tip
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              Real-world Web Development me ziada tar developers <code class="text-green-400">echo</code> ko prefer karte hain kyunki yeh speed me thoda fast hota hai aur syntax readable rehta hai.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation Buttons -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../variables/VariablesScope.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../datatypes/Data-Types.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Script -->
+    <script>
+      // Sidebar Load Only (Adjust index based on position in your sidebar list)
+      document.getElementById("sidebar").innerHTML = createSidebar(6);
+    </script>
+  </body>
+</html>

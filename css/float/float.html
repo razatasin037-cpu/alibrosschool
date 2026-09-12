@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Float</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- PAGE TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Float
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Float property ka use kisi element ko left ya right side par
+            place karne ke liye kiya jata hai. Float ka use especially images ke
+            around text ko flow karne, layouts banane aur old CSS layouts mein
+            columns create karne ke liye kiya jata tha.
+          </p>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../overflow/overflow.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../inline-block/inline-block.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS FLOAT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            CSS Float Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            CSS mein <b class="text-white">float</b> property ka use element ko
+            normal document flow se ek side move karne ke liye kiya jata hai.
+            Element ko left ya right float kiya ja sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Jab kisi element par float apply hota hai, to uske baad aane wala
+            content us floated element ke around flow kar sakta hai. Ye behavior
+            images aur text ke layouts mein bahut useful hota hai.
+          </p>
+
+          <!-- SYNTAX -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            CSS Float Syntax
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-terminal text-blue-400 mr-2"></i>
+                Basic Syntax
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">selector</span> {
+  <span class="text-blue-400">float</span>: <span class="text-green-400">value</span>;
+}</code></pre>
+          </div>
+
+          <!-- VALUES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-list text-blue-400 mr-2"></i>
+            Float Property ke Values
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Float property ke kuch important values hote hain. In values ko use
+            karke hum decide karte hain ki element kis direction mein float
+            karega.
+          </p>
+
+          <div class="overflow-x-auto mb-12">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-4 text-lg border border-gray-700">Value</th>
+                  <th class="p-4 text-lg border border-gray-700">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    left
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Element ko left side float karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    right
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Element ko right side float karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    none
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Element float nahi karega. Ye default value hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    inherit
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Parent element ki float value inherit karega.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- FLOAT LEFT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-left text-blue-400 mr-2"></i>
+            float: left
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            <b class="text-white">float: left;</b> ka use element ko left side
+            move karne ke liye kiya jata hai. Element ke baad ka text ya inline
+            content uske right side flow kar sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">float</span>: <span class="text-green-400">left</span>;
+  <span class="text-blue-400">margin-right</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+          </div>
+
+          <!-- FLOAT RIGHT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-right text-blue-400 mr-2"></i>
+            float: right
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            <b class="text-white">float: right;</b> element ko container ke
+            right side par move karta hai. Iska use bhi images aur layout
+            elements ke saath kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">img</span> {
+  <span class="text-blue-400">float</span>: <span class="text-green-400">right</span>;
+  <span class="text-blue-400">margin-left</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+          </div>
+
+          <!-- FLOAT NONE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-ban text-blue-400 mr-2"></i>
+            float: none
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <b class="text-white">float: none;</b> ka matlab hai ki element
+            float nahi karega. Ye float property ki default value hoti hai. Agar
+            kisi element par pehle se float apply hai aur aap usse normal
+            position mein lana chahte hain, to <b class="text-white">none</b>
+            use kiya ja sakta hai.
+          </p>
+
+          <!-- IMAGE TEXT EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-image text-blue-400 mr-2"></i>
+            Image ke Saath Float
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Float ka sabse common example image aur paragraph ke saath dekhne ko
+            milta hai. Agar image ko left float kiya jaye, to paragraph ka text
+            image ke right side se flow kar sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                HTML + CSS Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">&lt;img</span>
+  <span class="text-blue-400">src</span>=<span class="text-green-400">"image.jpg"</span>
+  <span class="text-blue-400">class</span>=<span class="text-green-400">"photo"</span>
+<span class="text-blue-400">/&gt;</span>
+
+<span class="text-blue-400">&lt;p&gt;</span>
+  Ye text floated image ke around flow karega.
+<span class="text-blue-400">&lt;/p&gt;</span>
+
+<span class="text-blue-400">.photo</span> {
+  <span class="text-blue-400">float</span>: <span class="text-green-400">left</span>;
+  <span class="text-blue-400">margin-right</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+          </div>
+
+          <!-- FLOAT AND MARGIN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-arrows-up-down-left-right text-blue-400 mr-2"
+            ></i>
+            Float ke Saath Margin
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Float karne ke baad margin ka use karna useful hota hai. Isse
+            floated element aur surrounding content ke beech proper space create
+            hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.image</span> {
+  <span class="text-blue-400">float</span>: <span class="text-green-400">left</span>;
+  <span class="text-blue-400">margin-right</span>: <span class="text-green-400">25px</span>;
+  <span class="text-blue-400">margin-bottom</span>: <span class="text-green-400">15px</span>;
+}</code></pre>
+          </div>
+
+          <!-- FLOATING BOXES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-boxes-stacked text-blue-400 mr-2"></i>
+            Multiple Elements ko Float Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Ek se zyada elements ko float kiya ja sakta hai. Agar multiple boxes
+            ko <b class="text-white">float: left;</b> diya gaya hai, to wo
+            available horizontal space ke according ek doosre ke side mein aa
+            sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Example
+              </h3>
+            </div>
+
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">float</span>: <span class="text-green-400">left</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">30%</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">1%</span>;
+}</code></pre>
+          </div>
+
+          <!-- CLEAR -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-eraser text-blue-400 mr-2"></i>
+            CSS clear Property
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Float ke saath <b class="text-white">clear</b> property ko samajhna
+            bhi important hai. Clear property ka use ye control karne ke liye
+            hota hai ki koi element floated elements ke side mein aa sakta hai
+            ya nahi.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.next-section</span> {
+  <span class="text-blue-400">clear</span>: <span class="text-green-400">both</span>;
+}</code></pre>
+          </div>
+
+          <!-- CLEAR VALUES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+            clear ke Important Values
+          </h2>
+
+          <div class="overflow-x-auto mb-12">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-4 text-lg border border-gray-700">Value</th>
+                  <th class="p-4 text-lg border border-gray-700">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    left
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Left floated elements ko clear karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    right
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Right floated elements ko clear karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    both
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Left aur right dono floats ko clear karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    none
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Clear apply nahi karta.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- OLD LAYOUT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table-columns text-blue-400 mr-2"></i>
+            Float se Layout Banana
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Purane CSS layouts mein float ka use columns create karne ke liye
+            bahut common tha. Ek container ke andar multiple boxes ko left float
+            karke columns ka layout banaya jata tha.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <pre
+              class="p-6 overflow-x-auto text-lg"
+            ><code><span class="text-blue-400">.column</span> {
+  <span class="text-blue-400">float</span>: <span class="text-green-400">left</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">33.33%</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+          </div>
+
+          <!-- FLOAT VS FLEX -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-code-compare text-blue-400 mr-2"></i>
+            Float aur Modern Layout
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+          >
+            Aaj ke modern web development mein complete page layout banane ke
+            liye Flexbox aur CSS Grid zyada convenient hote hain. Lekin iska
+            matlab ye nahi hai ki Float useless ho gaya. Text ke around images
+            flow karane jaise situations mein Float abhi bhi useful hai.
+          </p>
+
+          <div class="overflow-x-auto mb-12">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#1e293b]">
+                  <th class="p-4 border border-gray-700">Method</th>
+                  <th class="p-4 border border-gray-700">Best Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    Float
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Image ke around text aur simple floating elements.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    Flexbox
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    One-dimensional row ya column layouts.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 border border-gray-700 text-green-400">
+                    Grid
+                  </td>
+                  <td class="p-4 border border-gray-700">
+                    Complex rows aur columns wala layout.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Float property element ko left ya right side move kar sakti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b class="text-white">float: left;</b> element ko left side
+                float karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b class="text-white">float: right;</b> element ko right side
+                float karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <b class="text-white">float: none;</b> default floating behavior
+                ko remove karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Float ke saath <b class="text-white">clear</b> property ko
+                samajhna important hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Images ke around text flow karane ke liye Float useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Modern page layouts ke liye Flexbox aur Grid generally easier
+                options hain.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Float ka use elements ko left ya right side float karne ke
+              liye kiya jata hai. <b class="text-white">float: left</b> element
+              ko left side aur <b class="text-white">float: right</b> element ko
+              right side place karta hai. Float ke saath text surrounding area
+              mein flow kar sakta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mt-5"
+            >
+              Float ko properly use karne ke liye
+              <b class="text-white">clear</b>
+              property ko bhi samajhna zaroori hai. Modern layouts mein Flexbox
+              aur Grid ka use zyada common hai, lekin images ke around text
+              arrange karne ke liye Float abhi bhi useful CSS property hai.
+            </p>
+          </div>
+
+          <!-- BOTTOM BUTTONS -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../overflow/overflow.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../inline-block/inline-block.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(26);
+      });
+    </script>
+  </body>
+</html>

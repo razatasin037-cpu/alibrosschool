@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript DOM HTML - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript DOM HTML
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Elements.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./CSS.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          DOM HTML Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript DOM ki help se HTML elements ka content,
+          attributes aur structure dynamically change kiya ja sakta hai.
+          <br><br>
+          Iske liye commonly
+          <code class="text-blue-400">innerHTML</code>,
+          <code class="text-blue-400">textContent</code>,
+          <code class="text-blue-400">innerText</code>,
+          <code class="text-blue-400">setAttribute()</code>
+          aur dusre DOM methods use hote hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- innerHTML -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            innerHTML
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">innerHTML</code>
+            element ke andar ka HTML read ya change karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;div id=<span class="text-emerald-400">"box"</span>&gt;
+  Hello
+&lt;/div&gt;
+
+&lt;script&gt;
+
+document.getElementById(
+  <span class="text-emerald-400">"box"</span>
+).innerHTML =
+  <span class="text-emerald-400">"&lt;h2&gt;Hello JavaScript&lt;/h2&gt;"</span>;
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Read innerHTML -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            innerHTML Se Content Read Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+console.log(
+  box.innerHTML
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- textContent -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            textContent
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sirf text content read ya change karne ke liye
+            <code class="text-blue-400">textContent</code>
+            useful hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+title.textContent =
+  <span class="text-emerald-400">"Hello DOM"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- innerText -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            innerText
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">innerText</code>
+            element ka rendered/visible text return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> message =
+  document.getElementById(
+    <span class="text-emerald-400">"message"</span>
+  );
+
+console.log(
+  message.innerText
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Comparison -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            innerHTML vs textContent vs innerText
+          </h3>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    innerHTML
+                  </td>
+                  <td class="p-4">
+                    HTML markup ke saath content read/change karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    textContent
+                  </td>
+                  <td class="p-4">
+                    Text content read/change karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    innerText
+                  </td>
+                  <td class="p-4">
+                    Rendered visible text ko represent karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
+
+        <!-- Attribute -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            HTML Attribute Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;img
+  id=<span class="text-emerald-400">"photo"</span>
+  src=<span class="text-emerald-400">"image1.jpg"</span>
+&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> image =
+  document.getElementById(
+    <span class="text-emerald-400">"photo"</span>
+  );
+
+image.src =
+  <span class="text-emerald-400">"image2.jpg"</span>;
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- href -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Link href Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> link =
+  document.getElementById(
+    <span class="text-emerald-400">"website"</span>
+  );
+
+link.href =
+  <span class="text-emerald-400">"https://example.com"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- setAttribute -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setAttribute()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Attribute add ya update karne ke liye
+            <code class="text-blue-400">setAttribute()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> input =
+  document.getElementById(
+    <span class="text-emerald-400">"email"</span>
+  );
+
+input.setAttribute(
+  <span class="text-emerald-400">"placeholder"</span>,
+  <span class="text-emerald-400">"Enter email"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- getAttribute -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            getAttribute()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> input =
+  document.getElementById(
+    <span class="text-emerald-400">"email"</span>
+  );
+
+<span class="text-blue-400">const</span> type =
+  input.getAttribute(
+    <span class="text-emerald-400">"type"</span>
+  );
+
+console.log(type);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- removeAttribute -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            removeAttribute()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.removeAttribute(
+  <span class="text-emerald-400">"disabled"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- hasAttribute -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            hasAttribute()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+console.log(
+  button.hasAttribute(
+    <span class="text-emerald-400">"disabled"</span>
+  )
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Input value -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Input Value Read Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;input
+  id=<span class="text-emerald-400">"name"</span>
+  value=<span class="text-emerald-400">"Ali"</span>
+&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> input =
+  document.getElementById(
+    <span class="text-emerald-400">"name"</span>
+  );
+
+console.log(
+  input.value
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Input value change -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Input Value Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> input =
+  document.getElementById(
+    <span class="text-emerald-400">"name"</span>
+  );
+
+input.value =
+  <span class="text-emerald-400">"Rahul"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Create HTML -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Dynamic HTML Create Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.innerHTML = <span class="text-emerald-400">`
+  &lt;h2&gt;Product&lt;/h2&gt;
+  &lt;p&gt;Laptop&lt;/p&gt;
+  &lt;button&gt;Buy Now&lt;/button&gt;
+`</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Template -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Dynamic Data With Template Literals
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> product = {
+  name: <span class="text-emerald-400">"Laptop"</span>,
+  price: <span class="text-emerald-400">50000</span>
+};
+
+<span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.innerHTML = <span class="text-emerald-400">`
+  &lt;h2&gt;${product.name}&lt;/h2&gt;
+  &lt;p&gt;₹${product.price}&lt;/p&gt;
+`</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Multiple Cards -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array Data HTML Me Show Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> products = [
+  {
+    name: <span class="text-emerald-400">"Laptop"</span>,
+    price: <span class="text-emerald-400">50000</span>
+  },
+  {
+    name: <span class="text-emerald-400">"Mouse"</span>,
+    price: <span class="text-emerald-400">500</span>
+  }
+];
+
+<span class="text-blue-400">let</span> html =
+  <span class="text-emerald-400">""</span>;
+
+products.forEach(
+  (product) =&gt; {
+
+    html += <span class="text-emerald-400">`
+      &lt;div&gt;
+        &lt;h3&gt;${product.name}&lt;/h3&gt;
+        &lt;p&gt;₹${product.price}&lt;/p&gt;
+      &lt;/div&gt;
+    `</span>;
+
+  }
+);
+
+document.getElementById(
+  <span class="text-emerald-400">"products"</span>
+).innerHTML = html;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- createElement -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            createElement()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            New HTML element programmatically create karne ke liye
+            <code class="text-blue-400">createElement()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> heading =
+  document.createElement(
+    <span class="text-emerald-400">"h2"</span>
+  );
+
+heading.textContent =
+  <span class="text-emerald-400">"New Heading"</span>;
+
+document.body.appendChild(
+  heading
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- append -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            append()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+<span class="text-blue-400">const</span> paragraph =
+  document.createElement(
+    <span class="text-emerald-400">"p"</span>
+  );
+
+paragraph.textContent =
+  <span class="text-emerald-400">"Hello DOM"</span>;
+
+box.append(
+  paragraph
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- insertAdjacentHTML -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            insertAdjacentHTML()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Existing element ke relative position par HTML insert karne ke liye
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.insertAdjacentHTML(
+  <span class="text-emerald-400">"beforeend"</span>,
+  <span class="text-emerald-400">"&lt;p&gt;New Item&lt;/p&gt;"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Complete Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Complete DOM HTML Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h1 id=<span class="text-emerald-400">"title"</span>&gt;
+  Old Title
+&lt;/h1&gt;
+
+&lt;div id=<span class="text-emerald-400">"content"</span>&gt;&lt;/div&gt;
+
+&lt;button id=<span class="text-emerald-400">"btn"</span>&gt;
+  Change HTML
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+<span class="text-blue-400">const</span> content =
+  document.getElementById(
+    <span class="text-emerald-400">"content"</span>
+  );
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    title.textContent =
+      <span class="text-emerald-400">"New Title"</span>;
+
+    content.innerHTML =
+      <span class="text-emerald-400">`
+        &lt;p&gt;Hello JavaScript DOM&lt;/p&gt;
+        &lt;button&gt;Learn More&lt;/button&gt;
+      `</span>;
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Security Note -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            innerHTML Important Note
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Unknown ya user-provided text ko directly
+            <code class="text-blue-400">innerHTML</code>
+            me insert karna risky ho sakta hai.
+            <br><br>
+            Sirf plain text show karna ho to
+            <code class="text-blue-400">textContent</code>
+            usually safer choice hai.
+          </p>
+
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM HTML Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property / Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    innerHTML
+                  </td>
+                  <td class="p-4">
+                    HTML content read/change
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    textContent
+                  </td>
+                  <td class="p-4">
+                    Text read/change
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    value
+                  </td>
+                  <td class="p-4">
+                    Form input value read/change
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setAttribute()
+                  </td>
+                  <td class="p-4">
+                    Attribute add/update
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    getAttribute()
+                  </td>
+                  <td class="p-4">
+                    Attribute value read
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    removeAttribute()
+                  </td>
+                  <td class="p-4">
+                    Attribute remove
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    createElement()
+                  </td>
+                  <td class="p-4">
+                    New element create
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    append()
+                  </td>
+                  <td class="p-4">
+                    Content/node append
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">innerHTML</code>
+              HTML markup ke saath content change karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">textContent</code>
+              text content ke liye useful hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">innerText</code>
+              rendered text ko represent karta hai.
+            </p>
+
+            <p>
+              4. Element properties jaise
+              <code class="text-blue-400">src</code>,
+              <code class="text-blue-400">href</code>
+              aur
+              <code class="text-blue-400">value</code>
+              directly change ki ja sakti hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">setAttribute()</code>
+              attribute set karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">getAttribute()</code>
+              attribute ki value read karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">createElement()</code>
+              dynamically element create karta hai.
+            </p>
+
+            <p>
+              8. Dynamic lists aur cards banane ke liye Array ke saath DOM HTML
+              commonly use hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Elements.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./CSS.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(27);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Fetch API - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Fetch API
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./AsyncAwait.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../dom/Dom.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Fetch API Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">fetch()</code>
+          ka use server ya API se data lene aur bhejne ke liye hota hai.
+          <br><br>
+          Fetch API Promise return karta hai, isliye ise
+          <code class="text-blue-400">then()</code>
+          ya
+          <code class="text-blue-400">async / await</code>
+          ke saath use kar sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Fetch Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>fetch(url)
+  .then((response) =&gt; {
+
+    <span class="text-gray-400">// response handle</span>
+
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- GET -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            GET Request
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Server se data lene ke liye GET request use hoti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>fetch(
+  <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users"</span>
+)
+  .then((response) =&gt; {
+    <span class="text-blue-400">return</span> response.json();
+  })
+  .then((data) =&gt; {
+    console.log(data);
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- response.json -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            response.json()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Fetch se milne wala
+            <code class="text-blue-400">Response</code>
+            object directly JSON object nahi hota.
+            <br><br>
+            JSON body ko read aur parse karne ke liye
+            <code class="text-blue-400">response.json()</code>
+            use karte hain. Ye bhi Promise return karta hai.
+          </p>
+
+        </div>
+
+        <!-- Async Await -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Fetch With async / await
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getUsers() {
+
+  <span class="text-blue-400">const</span> response =
+    <span class="text-blue-400">await</span> fetch(
+      <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users"</span>
+    );
+
+  <span class="text-blue-400">const</span> data =
+    <span class="text-blue-400">await</span> response.json();
+
+  console.log(data);
+
+}
+
+getUsers();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Error Handling -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Error Handling
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Fetch network failure par reject ho sakta hai. HTTP error status,
+            jaise 404 ya 500, ko manually
+            <code class="text-blue-400">response.ok</code>
+            se check karna useful hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getUsers() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> fetch(
+        <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users"</span>
+      );
+
+    <span class="text-blue-400">if</span> (!response.ok) {
+
+      <span class="text-blue-400">throw new</span> Error(
+        <span class="text-emerald-400">"Request Failed"</span>
+      );
+
+    }
+
+    <span class="text-blue-400">const</span> data =
+      <span class="text-blue-400">await</span> response.json();
+
+    console.log(data);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  }
+
+}
+
+getUsers();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Response Status -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Response Status
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> response =
+  <span class="text-blue-400">await</span> fetch(url);
+
+console.log(
+  response.status
+);
+
+console.log(
+  response.ok
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Example:
+            <code class="text-blue-400">200</code>
+            status normally successful response ko indicate karta hai.
+          </p>
+
+        </div>
+
+        <!-- POST -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            POST Request
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Server ko new data bhejne ke liye POST request use ki ja sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+
+  name:
+    <span class="text-emerald-400">"Ali"</span>,
+
+  email:
+    <span class="text-emerald-400">"ali@gmail.com"</span>
+
+};
+
+fetch(
+  <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users"</span>,
+  {
+
+    method:
+      <span class="text-emerald-400">"POST"</span>,
+
+    headers: {
+
+      <span class="text-emerald-400">"Content-Type"</span>:
+        <span class="text-emerald-400">"application/json"</span>
+
+    },
+
+    body:
+      JSON.stringify(user)
+
+  }
+)
+  .then(
+    response =&gt;
+      response.json()
+  )
+  .then((data) =&gt; {
+
+    console.log(data);
+
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- JSON stringify -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            JSON.stringify()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            JavaScript object ko JSON text me convert karne ke liye
+            <code class="text-blue-400">JSON.stringify()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mt-5 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>
+};
+
+<span class="text-blue-400">const</span> json =
+  JSON.stringify(user);
+
+console.log(json);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">{"name":"Ali"}</pre>
+          </div>
+
+        </div>
+
+        <!-- POST Async Await -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            POST With async / await
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> addUser() {
+
+  <span class="text-blue-400">const</span> user = {
+
+    name:
+      <span class="text-emerald-400">"Ali"</span>,
+
+    email:
+      <span class="text-emerald-400">"ali@gmail.com"</span>
+
+  };
+
+  <span class="text-blue-400">const</span> response =
+    <span class="text-blue-400">await</span> fetch(
+      <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users"</span>,
+      {
+
+        method:
+          <span class="text-emerald-400">"POST"</span>,
+
+        headers: {
+
+          <span class="text-emerald-400">"Content-Type"</span>:
+            <span class="text-emerald-400">"application/json"</span>
+
+        },
+
+        body:
+          JSON.stringify(user)
+
+      }
+    );
+
+  <span class="text-blue-400">const</span> data =
+    <span class="text-blue-400">await</span> response.json();
+
+  console.log(data);
+
+}
+
+addUser();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- PUT -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            PUT Request
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Existing resource ko replace/update karne ke liye PUT request use
+            ki ja sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>fetch(
+  <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users/1"</span>,
+  {
+
+    method:
+      <span class="text-emerald-400">"PUT"</span>,
+
+    headers: {
+
+      <span class="text-emerald-400">"Content-Type"</span>:
+        <span class="text-emerald-400">"application/json"</span>
+
+    },
+
+    body:
+      JSON.stringify({
+
+        name:
+          <span class="text-emerald-400">"Updated User"</span>,
+
+        email:
+          <span class="text-emerald-400">"updated@gmail.com"</span>
+
+      })
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- PATCH -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            PATCH Request
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Resource ka partial data update karne ke liye PATCH commonly use
+            hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>fetch(
+  <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users/1"</span>,
+  {
+
+    method:
+      <span class="text-emerald-400">"PATCH"</span>,
+
+    headers: {
+
+      <span class="text-emerald-400">"Content-Type"</span>:
+        <span class="text-emerald-400">"application/json"</span>
+
+    },
+
+    body:
+      JSON.stringify({
+
+        name:
+          <span class="text-emerald-400">"New Name"</span>
+
+      })
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- DELETE -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            DELETE Request
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>fetch(
+  <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users/1"</span>,
+  {
+
+    method:
+      <span class="text-emerald-400">"DELETE"</span>
+
+  }
+)
+  .then((response) =&gt; {
+
+    console.log(
+      response.status
+    );
+
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Methods Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            HTTP Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    GET
+                  </td>
+                  <td class="p-4">
+                    Data lena
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    POST
+                  </td>
+                  <td class="p-4">
+                    New data bhejna/create karna
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    PUT
+                  </td>
+                  <td class="p-4">
+                    Resource replace/update karna
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    PATCH
+                  </td>
+                  <td class="p-4">
+                    Partial update
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    DELETE
+                  </td>
+                  <td class="p-4">
+                    Resource delete karna
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Headers -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Headers
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Request ke saath extra information bhejne ke liye headers use hote
+            hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>headers: {
+
+  <span class="text-emerald-400">"Content-Type"</span>:
+    <span class="text-emerald-400">"application/json"</span>,
+
+  <span class="text-emerald-400">"Accept"</span>:
+    <span class="text-emerald-400">"application/json"</span>
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Token -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Authorization Header
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Protected API request me Bearer token bhejne ka common format:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> token =
+  localStorage.getItem(
+    <span class="text-emerald-400">"token"</span>
+  );
+
+fetch(
+  <span class="text-emerald-400">"https://example.com/api/user"</span>,
+  {
+
+    headers: {
+
+      <span class="text-emerald-400">"Accept"</span>:
+        <span class="text-emerald-400">"application/json"</span>,
+
+      <span class="text-emerald-400">"Authorization"</span>:
+        <span class="text-emerald-400">`Bearer ${token}`</span>
+
+    }
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- DOM Display -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            API Data HTML Me Show Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;div id=<span class="text-emerald-400">"users"</span>&gt;&lt;/div&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">async function</span> getUsers() {
+
+  <span class="text-blue-400">const</span> response =
+    <span class="text-blue-400">await</span> fetch(
+      <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users"</span>
+    );
+
+  <span class="text-blue-400">const</span> users =
+    <span class="text-blue-400">await</span> response.json();
+
+  <span class="text-blue-400">let</span> html = <span class="text-emerald-400">""</span>;
+
+  users.forEach((user) =&gt; {
+
+    html +=
+      <span class="text-emerald-400">`&lt;p&gt;${user.name}&lt;/p&gt;`</span>;
+
+  });
+
+  document.getElementById(
+    <span class="text-emerald-400">"users"</span>
+  ).innerHTML = html;
+
+}
+
+getUsers();
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Form Submit -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Form Data Send Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> saveUser() {
+
+  <span class="text-blue-400">const</span> user = {
+
+    name:
+      <span class="text-emerald-400">"Ali"</span>,
+
+    email:
+      <span class="text-emerald-400">"ali@gmail.com"</span>
+
+  };
+
+  <span class="text-blue-400">const</span> response =
+    <span class="text-blue-400">await</span> fetch(
+      <span class="text-emerald-400">"/api/users"</span>,
+      {
+
+        method:
+          <span class="text-emerald-400">"POST"</span>,
+
+        headers: {
+
+          <span class="text-emerald-400">"Content-Type"</span>:
+            <span class="text-emerald-400">"application/json"</span>,
+
+          <span class="text-emerald-400">"Accept"</span>:
+            <span class="text-emerald-400">"application/json"</span>
+
+        },
+
+        body:
+          JSON.stringify(user)
+
+      }
+    );
+
+  <span class="text-blue-400">const</span> data =
+    <span class="text-blue-400">await</span> response.json();
+
+  console.log(data);
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Fetch API Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">JavaScript
+
+     ↓
+
+fetch(url)
+
+     ↓
+
+HTTP Request
+
+     ↓
+
+Server / API
+
+     ↓
+
+HTTP Response
+
+     ↓
+
+Response Object
+
+     ↓
+
+response.json()
+
+     ↓
+
+JavaScript Data
+
+     ↓
+
+Display / Use Data</pre>
+          </div>
+
+        </div>
+
+        <!-- Fetch vs Axios -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Fetch vs Axios
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Fetch</th>
+                  <th class="p-4">Axios</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Browser me built-in available hai.
+                  </td>
+
+                  <td class="p-4">
+                    External library hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Install karna zaroori nahi.
+                  </td>
+
+                  <td class="p-4">
+                    Normally package install karna hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    JSON ke liye
+                    <code class="text-blue-400">response.json()</code>
+                    call karte hain.
+                  </td>
+
+                  <td class="p-4">
+                    Parsed response commonly
+                    <code class="text-blue-400">response.data</code>
+                    me milta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    HTTP error status manually check karna pad sakta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Non-2xx responses normally rejected Promise ban jate hain.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">fetch()</code>
+              HTTP request bhejne ke liye use hota hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">fetch()</code>
+              Promise return karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">response.json()</code>
+              JSON response body ko JavaScript value me parse karta hai.
+            </p>
+
+            <p>
+              4. GET request data lene ke liye use hoti hai.
+            </p>
+
+            <p>
+              5. POST new data send/create karne ke liye commonly use hota hai.
+            </p>
+
+            <p>
+              6. PUT aur PATCH data update karne ke liye use kiye ja sakte hain.
+            </p>
+
+            <p>
+              7. DELETE resource remove karne ke liye use hota hai.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">JSON.stringify()</code>
+              JavaScript data ko JSON text me convert karta hai.
+            </p>
+
+            <p>
+              9. HTTP error status ke liye
+              <code class="text-blue-400">response.ok</code>
+              check karna useful hai.
+            </p>
+
+            <p>
+              10. Fetch ko
+              <code class="text-blue-400">async / await</code>
+              aur
+              <code class="text-blue-400">try...catch</code>
+              ke saath use karna clean approach hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./AsyncAwait.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../dom/Dom.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(26);
+  </script>
+
+</body>
+</html>

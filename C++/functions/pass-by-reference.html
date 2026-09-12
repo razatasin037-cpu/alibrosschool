@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Pass By Reference - Ali Learning</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+    <main class="flex min-h-screen">
+      <div id="sidebar"></div>
+      <section
+        class="w-full lg:w-[calc(100%-300px)] px-5 sm:px-8 lg:px-12 py-8"
+      >
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-10">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">
+              C++ Pass By Reference
+            </h1>
+            <p class="text-gray-400 mt-3 text-lg">
+              Reference pass karke function se original variable ki value change
+              karna seekho.
+            </p>
+          </div>
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10 mb-10"
+          >
+            <a href="return-values.html"
+              ><button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button></a
+            >
+            <a href="pass-arrays.html"
+              ><button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next<i class="fa-solid fa-chevron-right ml-2"></i></button
+            ></a>
+          </div>
+          <div class="space-y-10">
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                What is Pass By Reference?
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Reference parameter function ko original variable ke saath kaam
+                karne deta hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">void changeValue(int &amp;num) {
+    num = 50;
+}
+
+int main() {
+    int value = 10;
+    changeValue(value);
+    cout &lt;&lt; value;
+    return 0;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">50</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Swap Two Values
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Do variables ko reference ke through pass karke unki original
+                values swap ki ja sakti hain.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">void swapNums(int &amp;x, int &amp;y) {
+    int z = x;
+    x = y;
+    y = z;
+}
+
+int main() {
+    int firstNum = 10;
+    int secondNum = 20;
+    swapNums(firstNum, secondNum);
+    cout &lt;&lt; firstNum &lt;&lt; " " &lt;&lt; secondNum;
+    return 0;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">20 10</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Pass a String by Reference
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                String ko reference ke through modify kiya ja sakta hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">void modifyStr(string &amp;str) {
+    str += " World!";
+}
+
+int main() {
+    string greeting = "Hello";
+    modifyStr(greeting);
+    cout &lt;&lt; greeting;
+    return 0;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Hello World!</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Why Use Pass By Reference?
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Jab function ko original data modify karna ho tab reference
+                useful hota hai. Large objects ki unnecessary copy bhi avoid ho
+                sakti hai.
+              </p>
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Important</h3>
+                <p class="text-gray-300 leading-7">
+                  Reference parameter declare karte waqt type ke saath
+                  <code>&amp;</code> lagaya jata hai.
+                </p>
+              </div>
+            </section>
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="return-values.html"
+                ><button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+                </button></a
+              >
+              <a href="pass-arrays.html"
+                ><button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next<i class="fa-solid fa-chevron-right ml-2"></i></button
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function")
+          document.getElementById("sidebar").innerHTML = createSidebar(14);
+      });
+    </script>
+  </body>
+</html>

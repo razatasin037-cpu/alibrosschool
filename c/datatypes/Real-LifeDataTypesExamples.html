@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Data Types Practical Examples</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Data Types Practical Examples
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="MemoryOfSize.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="ExtendedTypes.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Data Types Ka Practical Use</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Data types seekhne ke baad unka sahi jagah par istemal karna zaroori hai. Sahi data type chunte waqt teen baaton ka dhyan rakha jata hai:
+      </p>
+      <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-2">
+        <li>Value decimal wali hai ya integer (<code class="text-green-400">float/double</code> vs <code class="text-green-400">int</code>).</li>
+        <li>Memory size aur accuracy kitni chahiye.</li>
+        <li>Data text, single character, ya number hai.</li>
+      </ul>
+    </section>
+
+    <!-- Real-Life Example 1: Percentage Calculation -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Example 1: Marks & Percentage System</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Student ke total marks aur percentage calculate karne ke liye <code class="text-green-400">int</code>, <code class="text-green-400">float</code>, aur typecasting ka use:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> maxScore = <span class="text-green-400">500</span>;
+    <span class="text-green-500">int</span> userScore = <span class="text-green-400">423</span>;
+
+    <span class="text-gray-500">// Percentage float me aayegi isliye Explicit Type Conversion</span>
+    <span class="text-green-500">float</span> percentage = ((<span class="text-green-500">float</span>) userScore / maxScore) * <span class="text-green-400">100.0</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"User's Percentage is: %.2f%%\n"</span>, percentage);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">User's Percentage is: 84.60%</p>
+      </div>
+    </section>
+
+    <!-- Real-Life Example 2: E-Commerce Bill -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Example 2: Shopping Cart & Tax Invoice</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Online shopping billing system me <code class="text-green-400">int</code>, <code class="text-green-400">float</code>, aur <code class="text-green-400">char</code> sabhi types milkar kaam karte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> itemsCount = <span class="text-green-400">4</span>;
+    <span class="text-green-500">float</span> pricePerItem = <span class="text-green-400">25.50f</span>;
+    <span class="text-green-500">float</span> taxRate = <span class="text-green-400">0.05f</span>; <span class="text-gray-500">// 5% Tax</span>
+    <span class="text-green-500">char</span> currency = <span class="text-green-400">'$'</span>;
+
+    <span class="text-green-500">float</span> subTotal = itemsCount * pricePerItem;
+    <span class="text-green-500">float</span> totalTax = subTotal * taxRate;
+    <span class="text-green-500">float</span> finalBill = subTotal + totalTax;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Items Purchased: %d\n"</span>, itemsCount);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Subtotal: %c%.2f\n"</span>, currency, subTotal);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Tax Added: %c%.2f\n"</span>, currency, totalTax);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Grand Total: %c%.2f\n"</span>, currency, finalBill);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Items Purchased: 4</p>
+        <p class="text-gray-300 font-mono">Subtotal: $102.00</p>
+        <p class="text-gray-300 font-mono">Tax Added: $5.10</p>
+        <p class="text-gray-300 font-mono">Grand Total: $107.10</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Real-world problems solve karte waqt correct data types lene se calculations accurate rehti hain aur memory uselessly waste nahi hoti.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="MemoryOfSize.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="ExtendedTypes.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(8);
+  }
+</script>
+
+</body>
+</html>

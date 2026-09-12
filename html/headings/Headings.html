@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Headings</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Headings
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../attributes/attributes.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../paragraphs/Paragraphs.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Headings Kya Hoti Hain?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML Headings titles ya subtitles hote hain jinhein aap apne webpage par show karna chahte hain.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            HTML me <code>&lt;h1&gt;</code> se <code>&lt;h6&gt;</code> tak kul 6 types ki headings hoti hain. <strong>&lt;h1&gt;</strong> sabse badi aur main heading hoti hai, jabki <strong>&lt;h6&gt;</strong> sabse chhoti heading hoti hai.
+          </p>
+        </div>
+
+        <!-- Interactive Code Example Section -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <i class="fa-solid fa-code text-yellow-400 mr-2"></i> Practical Code Example
+          </h3>
+          <p class="text-gray-300 text-base mb-6">
+            Niche diye gaye HTML code ko dekhein aur uska browser preview bagal me samjhein:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code Block -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <div class="flex justify-between items-center pb-3 mb-3 border-b border-[#334155] text-xs text-gray-400">
+                <span>index.html</span>
+                <span class="text-yellow-400"><i class="fa-regular fa-copy mr-1"></i> HTML</span>
+              </div>
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+  <span class="text-yellow-400">&lt;h1&gt;</span>This is Heading 1<span class="text-yellow-400">&lt;/h1&gt;</span>
+  <span class="text-yellow-400">&lt;h2&gt;</span>This is Heading 2<span class="text-yellow-400">&lt;/h2&gt;</span>
+  <span class="text-yellow-400">&lt;h3&gt;</span>This is Heading 3<span class="text-yellow-400">&lt;/h3&gt;</span>
+  <span class="text-yellow-400">&lt;h4&gt;</span>This is Heading 4<span class="text-yellow-400">&lt;/h4&gt;</span>
+  <span class="text-yellow-400">&lt;h5&gt;</span>This is Heading 5<span class="text-yellow-400">&lt;/h5&gt;</span>
+  <span class="text-yellow-400">&lt;h6&gt;</span>This is Heading 6<span class="text-yellow-400">&lt;/h6&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+
+            <!-- Browser Result Window -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 shadow-inner flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 pb-3 mb-4 border-b border-gray-200">
+                  <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                  <span class="text-xs text-gray-400 font-sans ml-2">Browser Result Preview</span>
+                </div>
+                <div class="space-y-2 font-serif">
+                  <h1 class="text-3xl font-bold">This is Heading 1</h1>
+                  <h2 class="text-2xl font-bold">This is Heading 2</h2>
+                  <h3 class="text-xl font-bold">This is Heading 3</h3>
+                  <h4 class="text-lg font-bold">This is Heading 4</h4>
+                  <h5 class="text-base font-bold">This is Heading 5</h5>
+                  <h6 class="text-sm font-bold">This is Heading 6</h6>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-gray-200 text-xs text-gray-500 font-sans">
+                💡 Browser automatic headings se pehle aur baad me margin (space) add kar deta hai.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Heading Sizes Breakdown -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Heading Tags &amp; Unka Default Usage
+          </h3>
+
+          <div class="space-y-4 bg-[#020617] p-6 rounded-xl border border-[#334155]">
+            <div class="border-b border-[#334155] pb-3">
+              <span class="text-yellow-400 font-mono text-sm block mb-1">&lt;h1&gt; Tag:</span>
+              <h1 class="text-4xl font-extrabold text-white">Heading 1 (Main Webpage Title)</h1>
+            </div>
+
+            <div class="border-b border-[#334155] pb-3">
+              <span class="text-yellow-400 font-mono text-sm block mb-1">&lt;h2&gt; Tag:</span>
+              <h2 class="text-3xl font-bold text-white">Heading 2 (Main Sub-section)</h2>
+            </div>
+
+            <div class="border-b border-[#334155] pb-3">
+              <span class="text-yellow-400 font-mono text-sm block mb-1">&lt;h3&gt; Tag:</span>
+              <h3 class="text-2xl font-semibold text-white">Heading 3 (Sub-topic Header)</h3>
+            </div>
+
+            <div class="border-b border-[#334155] pb-3">
+              <span class="text-yellow-400 font-mono text-sm block mb-1">&lt;h4&gt; Tag:</span>
+              <h4 class="text-xl font-medium text-white">Heading 4 (Minor Sub-topic)</h4>
+            </div>
+
+            <div class="border-b border-[#334155] pb-3">
+              <span class="text-yellow-400 font-mono text-sm block mb-1">&lt;h5&gt; Tag:</span>
+              <h5 class="text-lg font-normal text-white">Heading 5 (Detail Header)</h5>
+            </div>
+
+            <div>
+              <span class="text-yellow-400 font-mono text-sm block mb-1">&lt;h6&gt; Tag:</span>
+              <h6 class="text-base font-light text-white">Heading 6 (Smallest Header)</h6>
+            </div>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Why Headings Are Important (SEO) -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Headings Kyun Zaroori Hain? (SEO &amp; Structure)
+            </h3>
+            
+            <ul class="space-y-4 text-gray-300 text-base md:text-lg">
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">1. Search Engine Optimization (SEO):</strong> Search engines (jaise Google) headings ka use karke aapke webpage ka structure aur main content samajhte hain.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">2. Better User Experience:</strong> Users poora page padhne ke bajaye headings ko dekh kar samajh jaate hain ki page par kya information hai.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">3. Only One &lt;h1&gt; Rule:</strong> Hamesha ek page par sirf <strong>ek hi &lt;h1&gt;</strong> main heading honi chahiye. Baaki sub-topics ke liye &lt;h2&gt; se &lt;h6&gt; ka use karein.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../attributes/attributes.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../paragraphs/Paragraphs.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(5);
+    </script>
+  </body>
+</html>

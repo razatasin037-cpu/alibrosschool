@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Sessions - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Sessions
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Cookies.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Filters.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Managing Server-Side User State
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Session ka use user information (jaise login state, user ID) ko multiple pages par store aur access karne ke liye hota hai. Cookies ke opposite, session data client computer ke bajaye server par secure tarike se store hota hai.
+          </p>
+        </div>
+
+        <!-- Syntax Rule Box -->
+        <div class="mt-8 bg-blue-950/40 border border-blue-500/50 rounded-2xl p-6 flex items-start space-x-4">
+          <i class="fa-solid fa-circle-info text-blue-400 text-2xl mt-1"></i>
+          <div>
+            <h4 class="text-xl font-bold text-blue-400 mb-1">Important Rule</h4>
+            <p class="text-gray-300 text-base">
+              <code class="text-yellow-300">session_start()</code> function hamesha aapke script ke sabse pehle tag <strong class="text-white">&lt;?php</strong> ke turant baad call hona chahiye, kisi bhi HTML print hone se pehle.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: Start and Set Session Variables -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Start a PHP Session & Set Variables
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Session start karne ke baad aap <code class="text-yellow-300">$_SESSION</code> superglobal array me variables set kar sakte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-[#94a3b8]">// Always start the session first</span>
+<span class="text-green-400">session_start</span>();
+<span class="text-green-400">?&gt;</span>
+<span class="text-green-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+<span class="text-green-400">&lt;?php</span>
+<span class="text-[#94a3b8]">// Set session variables</span>
+<span class="text-green-400">$_SESSION</span>[<span class="text-yellow-300">"favcolor"</span>] = <span class="text-yellow-300">"green"</span>;
+<span class="text-green-400">$_SESSION</span>[<span class="text-yellow-300">"favanimal"</span>] = <span class="text-yellow-300">"cat"</span>;
+<span class="text-green-400">echo</span> <span class="text-yellow-300">"Session variables are set."</span>;
+<span class="text-green-400">?&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: Read Session Variables -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Get / Read PHP Session Variable Values
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Kisi dusre page par (same domain me) session values ko read karne ke liye fir se <code class="text-yellow-300">session_start()</code> call karna hoga:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">session_start</span>();
+<span class="text-green-400">?&gt;</span>
+<span class="text-green-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+<span class="text-green-400">&lt;?php</span>
+<span class="text-[#94a3b8]">// Accessing variables set on another page</span>
+<span class="text-green-400">echo</span> <span class="text-yellow-300">"Favorite color is "</span> . <span class="text-green-400">$_SESSION</span>[<span class="text-yellow-300">"favcolor"</span>] . <span class="text-yellow-300">".&lt;br&gt;"</span>;
+<span class="text-green-400">echo</span> <span class="text-yellow-300">"Favorite animal is "</span> . <span class="text-green-400">$_SESSION</span>[<span class="text-yellow-300">"favanimal"</span>] . <span class="text-yellow-300">"."</span>;
+<span class="text-green-400">?&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 3: Destroy PHP Session -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Modify and Destroy a PHP Session
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Session variables ki value change karne ke liye bas key ko overwrite kar dein. Complete session remove (logout) karne ke liye <code class="text-yellow-300">session_unset()</code> aur <code class="text-yellow-300">session_destroy()</code> ka use hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">session_start</span>();
+<span class="text-green-400">?&gt;</span>
+<span class="text-green-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+<span class="text-green-400">&lt;?php</span>
+<span class="text-[#94a3b8]">// Remove all session variables</span>
+<span class="text-green-400">session_unset</span>();
+
+<span class="text-[#94a3b8]">// Destroy the session completely</span>
+<span class="text-green-400">session_destroy</span>();
+
+<span class="text-green-400">echo</span> <span class="text-yellow-300">"All session variables are removed, and the session is destroyed."</span>;
+<span class="text-green-400">?&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Cookies.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Filters.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(21);
+    </script>
+  </body>
+</html>

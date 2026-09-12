@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Introduction - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- PAGE TITLE -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          CSS Introduction
+        </h1>
+
+        <!-- TOP NAVIGATION -->
+        <div class="flex justify-between items-center">
+          <a href="/totureal/totureal.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Home
+            </button>
+          </a>
+
+          <a href="/css/intro/intro.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <!-- CONTENT -->
+        <section class="max-w-6xl mx-auto py-10">
+          <!-- CSS KYA HAI -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            CSS Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS ka full form
+            <span class="text-[#4d6fff] font-bold">
+              Cascading Style Sheets
+            </span>
+            hai. Simple words mein, CSS ka use HTML webpage ko
+            <span class="text-white font-bold"> design aur style </span>
+            karne ke liye kiya jata hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            HTML webpage ka structure banata hai, jabki CSS decide karta hai ki
+            wo webpage
+            <span class="text-white font-bold"> dikhega kaisa </span>. CSS ki
+            madad se hum colors, fonts, spacing, borders, backgrounds, layouts,
+            buttons, cards, animations aur responsive design bana sakte hain.
+          </p>
+
+          <!-- EASY EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10 shadow-xl"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-5">Easy Example</h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Agar HTML ek ghar ka structure hai, to CSS us ghar ka
+              <span class="text-[#4d6fff] font-bold">
+                paint, decoration, furniture aur design
+              </span>
+              hai.
+            </p>
+          </div>
+
+          <!-- CSS USE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            CSS Ka Use Kyon Karte Hain?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar hum sirf HTML ka use karein, to webpage basic aur simple
+            dikhega. CSS ka use karke hum us webpage ko attractive, professional
+            aur user-friendly bana sakte hain.
+          </p>
+
+          <!-- CSS FEATURES CARD -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-8 sm:p-10 shadow-xl mb-8"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-6">
+              CSS Se Hum Kya-Kya Kar Sakte Hain?
+            </h3>
+
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>Text ka color change kar sakte hain.</li>
+
+              <li>Background color aur background image laga sakte hain.</li>
+
+              <li>Font ka size aur style change kar sakte hain.</li>
+
+              <li>Buttons ko attractive bana sakte hain.</li>
+
+              <li>Cards aur boxes create kar sakte hain.</li>
+
+              <li>Website ka complete layout design kar sakte hain.</li>
+
+              <li>Mobile responsive website bana sakte hain.</li>
+
+              <li>Animation aur transition add kar sakte hain.</li>
+            </ul>
+          </div>
+
+          <!-- FIRST CSS EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Pehla CSS Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Chalo ek simple example se samajhte hain. Neeche hum
+            <span class="text-[#4d6fff] font-bold"> h1 </span>
+            heading ka color blue aur text ko center kar rahe hain.
+          </p>
+
+          <!-- CODE CARD -->
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-6 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- OUTPUT -->
+          <div
+            class="bg-[#0f172a]/80 border border-gray-700 rounded-xl p-5 mb-6"
+          >
+            <h4 class="text-xl font-bold text-[#4d6fff] mb-3">Output</h4>
+
+            <p class="text-gray-300 text-lg">
+              Heading blue color mein hogi aur page ke center mein dikhayi degi.
+            </p>
+          </div>
+
+          <!-- CSS SYNTAX -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            CSS Syntax Samjho
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS mein ek rule ke andar generally
+            <span class="text-[#4d6fff] font-bold"> selector </span>,
+
+            <span class="text-[#4d6fff] font-bold"> property </span>
+
+            aur
+
+            <span class="text-[#4d6fff] font-bold"> value </span>
+
+            hoti hai.
+          </p>
+
+          <!-- SYNTAX CODE -->
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">selector</span> {
+  <span class="text-[#60a5fa]">property</span>: <span class="text-[#4ade80]">value</span>;
+}</code></pre>
+          </div>
+
+          <!-- SELECTOR PROPERTY VALUE -->
+          <div class="grid md:grid-cols-3 gap-5">
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold text-[#4d6fff] mb-4">Selector</h3>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Selector batata hai ki CSS kis HTML element par apply hogi.
+              </p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold text-[#4d6fff] mb-4">Property</h3>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Property batati hai ki element mein kya change karna hai.
+              </p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold text-[#4d6fff] mb-4">Value</h3>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Value batati hai ki property ki actual setting kya hogi.
+              </p>
+            </div>
+          </div>
+
+          <!-- HTML CSS EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            HTML + CSS Ka Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab ek complete example dekhte hain. Ismein hum HTML ke andar heading
+            aur paragraph banayenge aur CSS ke through unko style karenge.
+          </p>
+
+          <!-- HTML CSS CODE -->
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-6 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">&lt;!DOCTYPE html&gt;</span>
+<span class="text-[#60a5fa]">&lt;html&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;head&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;style&gt;</span>
+
+<span class="text-[#60a5fa]">body</span> {
+  <span class="text-[#60a5fa]">background-color</span>: <span class="text-[#4ade80]">#020617</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">white</span>;
+  <span class="text-[#60a5fa]">font-family</span>: <span class="text-[#4ade80]">Arial, sans-serif</span>;
+}
+
+<span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#4d6fff</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+}
+
+<span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#cbd5e1</span>;
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">20px</span>;
+  <span class="text-[#60a5fa]">line-height</span>: <span class="text-[#4ade80]">1.7</span>;
+}
+
+<span class="text-[#60a5fa]">&lt;/style&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/head&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;body&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;h1&gt;</span>
+  <span class="text-[#4ade80]">My CSS Website</span>
+<span class="text-[#60a5fa]">&lt;/h1&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;p&gt;</span>
+  <span class="text-[#4ade80]">Main CSS seekh raha hoon.</span>
+<span class="text-[#60a5fa]">&lt;/p&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/body&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/html&gt;</span></code></pre>
+          </div>
+
+          <!-- OUTPUT -->
+          <div
+            class="bg-[#0f172a]/80 border border-gray-700 rounded-xl p-5 mb-8"
+          >
+            <h4 class="text-xl font-bold text-[#4d6fff] mb-3">Output</h4>
+
+            <p class="text-gray-300 text-lg leading-8">
+              Page ka background dark hoga.
+              <br />
+              Heading blue aur center mein hogi.
+              <br />
+              Paragraph light gray color mein readable spacing ke saath dikhega.
+            </p>
+          </div>
+
+          <!-- REAL LIFE EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Real-Life CSS Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Real website mein CSS ka use sirf text ka color change karne tak
+            limited nahi hai. Hum CSS se complete UI components bana sakte hain.
+            Jaise ek course card:
+          </p>
+
+          <!-- COURSE CARD CODE -->
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-6 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">&lt;div</span> <span class="text-[#60a5fa]">class</span>=<span class="text-[#4ade80]">"course-card"</span><span class="text-[#60a5fa]">&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;h2&gt;</span>
+    <span class="text-[#4ade80]">CSS Course</span>
+  <span class="text-[#60a5fa]">&lt;/h2&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;p&gt;</span>
+    <span class="text-[#4ade80]">CSS ko basic se advanced level tak seekho.</span>
+  <span class="text-[#60a5fa]">&lt;/p&gt;</span>
+
+  <span class="text-[#60a5fa]">&lt;button&gt;</span>
+    <span class="text-[#4ade80]">Start Learning</span>
+  <span class="text-[#60a5fa]">&lt;/button&gt;</span>
+
+<span class="text-[#60a5fa]">&lt;/div&gt;</span>
+
+
+<span class="text-[#60a5fa]">&lt;style&gt;</span>
+
+<span class="text-[#60a5fa]">.course-card</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">350px</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">30px</span>;
+  <span class="text-[#60a5fa]">background</span>: <span class="text-[#4ade80]">#111827</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">white</span>;
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">1px solid #334155</span>;
+  <span class="text-[#60a5fa]">border-radius</span>: <span class="text-[#4ade80]">24px</span>;
+  <span class="text-[#60a5fa]">box-shadow</span>: <span class="text-[#4ade80]">0 15px 35px rgba(0,0,0,.3)</span>;
+}
+
+<span class="text-[#60a5fa]">.course-card h2</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#4d6fff</span>;
+  <span class="text-[#60a5fa]">margin-bottom</span>: <span class="text-[#4ade80]">12px</span>;
+}
+
+<span class="text-[#60a5fa]">.course-card p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#cbd5e1</span>;
+  <span class="text-[#60a5fa]">line-height</span>: <span class="text-[#4ade80]">1.7</span>;
+}
+
+<span class="text-[#60a5fa]">.course-card button</span> {
+  <span class="text-[#60a5fa]">margin-top</span>: <span class="text-[#4ade80]">15px</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">13px 22px</span>;
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">none</span>;
+  <span class="text-[#60a5fa]">border-radius</span>: <span class="text-[#4ade80]">10px</span>;
+  <span class="text-[#60a5fa]">background</span>: <span class="text-[#4ade80]">#3158ff</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">white</span>;
+  <span class="text-[#60a5fa]">cursor</span>: <span class="text-[#4ade80]">pointer</span>;
+}
+
+<span class="text-[#60a5fa]">.course-card button:hover</span> {
+  <span class="text-[#60a5fa]">background</span>: <span class="text-[#4ade80]">#1d4ed8</span>;
+}
+
+<span class="text-[#60a5fa]">&lt;/style&gt;</span></code></pre>
+          </div>
+
+          <!-- OUTPUT -->
+          <div
+            class="bg-[#0f172a]/80 border border-gray-700 rounded-xl p-5 mb-8"
+          >
+            <h4 class="text-xl font-bold text-[#4d6fff] mb-3">Output</h4>
+
+            <p class="text-gray-300 text-lg leading-8">
+              Ek dark course card banega.
+              <br />
+              Card ke corners rounded honge.
+              <br />
+              Heading blue hogi.
+              <br />
+              Description light gray hogi.
+              <br />
+              Neeche blue "Start Learning" button hoga.
+              <br />
+              Button par mouse le jaane par uska color change hoga.
+            </p>
+          </div>
+
+          <!-- LEARNING ORDER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            CSS Seekhne Ka Sahi Order
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS ko achhe se seekhne ke liye topics ko step-by-step follow karna
+            better hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-8 sm:p-10 shadow-xl"
+          >
+            <ol
+              class="list-decimal pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>CSS Introduction</li>
+              <li>CSS Syntax</li>
+              <li>CSS Selectors</li>
+              <li>CSS Colors</li>
+              <li>CSS Backgrounds</li>
+              <li>CSS Borders</li>
+              <li>Margins aur Padding</li>
+              <li>Box Model</li>
+              <li>Display aur Position</li>
+              <li>Flexbox</li>
+              <li>CSS Grid</li>
+              <li>Responsive Design</li>
+              <li>Transitions aur Animations</li>
+            </ol>
+          </div>
+
+          <!-- IMPORTANT -->
+          <div
+            class="mt-12 bg-[#0f172a] border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 shadow-xl"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                CSS ka full form
+                <span class="text-[#4d6fff] font-bold">
+                  Cascading Style Sheets
+                </span>
+                hai.
+              </li>
+
+              <li>HTML structure banata hai aur CSS usko design karta hai.</li>
+
+              <li>
+                CSS mein selector, property aur value important parts hain.
+              </li>
+
+              <li>
+                CSS se colors, fonts, spacing aur complete layouts design kiye
+                ja sakte hain.
+              </li>
+
+              <li>
+                Professional websites ke liye CSS ka strong understanding bahut
+                important hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../home/css-tutorial.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="/css/intro/intro.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(1);
+      });
+    </script>
+  </body>
+</html>

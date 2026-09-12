@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Do While Loop - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Do...While Loop
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./WhileLoop.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./ForLoop.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Do...While Loop Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            <code class="text-green-400">do...while</code> loop ek <strong>Exit-Controlled Loop</strong> hai. Iska matlab hai ki condition sabse aakhri me check hoti hai, na ki shuruat me.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Kyunki condition aakhri me check hoti hai, isliye yeh loop <strong>kam se kam ek baar zarur execute hota hai</strong>, chahe condition shuruat me hi FALSE kyun na ho.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. Basic Syntax & How It Works -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              1. Basic Syntax &amp; Execution
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Iska syntax pehle code block execute karta hai (<code class="text-green-400">do</code>) aur aakhir me condition check karta hai (<code class="text-green-400">while</code>). Dhyan rakhein ki while condition ke aakhir me semicolon <code class="text-green-400">;</code> zaroori hai.
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$i</span> = <span class="text-white">1</span>; <span class="text-[#94a3b8]">// Initialization</span>
+
+  <span class="text-green-400">do</span> {
+      <span class="text-green-400">echo</span> <span class="text-white">"Number: $i &lt;br&gt;"</span>;
+      <span class="text-green-400">$i</span>++; <span class="text-[#94a3b8]">// Increment</span>
+  } <span class="text-green-400">while</span> (<span class="text-green-400">$i</span> &lt;= <span class="text-white">5</span>); <span class="text-[#94a3b8]">// Condition check (Semicolon mandatory hai)</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Difference Proof: Execution When Condition is FALSE -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              2. Key Difference: Guaranteed 1st Execution
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Yahan dekhein ki <code class="text-green-400">$i = 10</code> hai jo condition <code class="text-green-400">$i &lt;= 5</code> ko pehli hi baar me FALSE bana deta hai. Phir bhi code ek baar execute hoga:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$i</span> = <span class="text-white">10</span>; <span class="text-[#94a3b8]">// Value condition se badi hai</span>
+
+  <span class="text-green-400">do</span> {
+      <span class="text-[#94a3b8]">// Yeh line 1 baar print hogi kyunki condition end me check hoti hai</span>
+      <span class="text-green-400">echo</span> <span class="text-white">"Yeh kam se kam ek baar chalega! Value: $i &lt;br&gt;"</span>;
+      <span class="text-green-400">$i</span>++;
+  } <span class="text-green-400">while</span> (<span class="text-green-400">$i</span> &lt;= <span class="text-white">5</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Comparison Table: While vs Do-While -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Differences: <code class="text-green-400">while</code> vs <code class="text-green-400">do...while</code>
+            </h3>
+
+            <table class="w-full text-left border-collapse min-w-[500px]">
+              <thead>
+                <tr class="border-b border-[#334155] text-green-400">
+                  <th class="p-3 font-bold">Feature</th>
+                  <th class="p-3 font-bold">while Loop</th>
+                  <th class="p-3 font-bold">do...while Loop</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300 divide-y divide-[#334155]">
+                <tr>
+                  <td class="p-3 font-semibold text-white">Control Type</td>
+                  <td class="p-3">Entry-Controlled (Pehle check)</td>
+                  <td class="p-3">Exit-Controlled (Aakhir me check)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-white">Minimum Iteration</td>
+                  <td class="p-3">0 (Aapka loop 0 baar bhi chal sakta hai)</td>
+                  <td class="p-3">1 (Kam se kam 1 baar zarur chalega)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-white">Semicolon Syntax</td>
+                  <td class="p-3">Condition ke baad `;` nahi lagta</td>
+                  <td class="p-3">Condition ke aakhir me `;` compulsory hai</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 4. Practical Real-World Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              4. Practical Example: Dice Rolling Simulation
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Real-world scenario jahan hume dice ko <strong>kam se kam 1 baar roll</strong> karna hi hota hai jab tak 6 na aa jaye:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$rollCount</span> = <span class="text-white">0</span>;
+
+  <span class="text-green-400">do</span> {
+      <span class="text-[#94a3b8]">// Random number generate karein (1 se 6)</span>
+      <span class="text-green-400">$dice</span> = <span class="text-green-400">rand</span>(<span class="text-white">1</span>, <span class="text-white">6</span>);
+      <span class="text-green-400">$rollCount</span>++;
+      <span class="text-green-400">echo</span> <span class="text-white">"Roll #$rollCount: Rolled a $dice &lt;br&gt;"</span>;
+  } <span class="text-green-400">while</span> (<span class="text-green-400">$dice</span> != <span class="text-white">6</span>);
+
+  <span class="text-green-400">echo</span> <span class="text-white">"&lt;strong&gt;Success! Total Rolls: $rollCount&lt;/strong&gt;"</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Danger/Risk Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-red-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-red-400">
+          Syntax Tip &amp; Common Errors
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Common mistake: <code class="text-green-400">do...while</code> me <code class="text-green-400">while($condition);</code> ke aakhir wala <strong>semicolon</strong> bhool jana syntax error paida karta hai.
+            </p>
+            <div class="bg-[#1e293b] p-4 rounded-xl font-mono text-sm text-red-400 border border-red-500/20 mb-4">
+              do {<br />
+              &nbsp;&nbsp;echo "Hello";<br />
+              } while ($x &lt;= 5) // ❌ Error: Semicolon missing at the end!
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./WhileLoop.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./ForLoop.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(16);
+    </script>
+  </body>
+</html>

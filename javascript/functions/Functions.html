@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Functions - Tutorial</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5"
+      >
+        JavaScript Functions
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/numbers/BigInt.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Parameters.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Function Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Function ek reusable block of code hota hai jo kisi
+          specific task ko perform karta hai.
+          <br><br>
+          Ek baar function bana kar usse zarurat ke hisaab se baar-baar call
+          kar sakte hain. Isse same code ko repeat karne ki zarurat nahi padti.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Function Syntax
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> functionName() {
+  // code
+}</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Function banane ke liye
+            <code class="text-blue-400">function</code>
+            keyword use kiya jata hai. Uske baad function ka naam aur
+            <code class="text-emerald-400">()</code>
+            likhte hain.
+          </p>
+
+        </div>
+
+        <!-- Simple Example -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Function Example
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Neeche ek simple function banaya gaya hai jo console me message
+            print karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> greet() {
+  console.log(<span class="text-emerald-400">"Hello JavaScript"</span>);
+}
+
+greet();</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello JavaScript</pre>
+          </div>
+
+        </div>
+
+        <!-- How it works -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Function Kaise Kaam Karta Hai?
+          </h3>
+
+          <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+
+            <p>
+              <code class="text-blue-400">function</code>
+              → Function declare karne ka keyword hai.
+            </p>
+
+            <p>
+              <code class="text-emerald-400">greet</code>
+              → Function ka naam hai.
+            </p>
+
+            <p>
+              <code class="text-emerald-400">()</code>
+              → Function ke parameters yahan likhe jate hain.
+            </p>
+
+            <p>
+              <code class="text-emerald-400">{ }</code>
+              → Function ka code block hota hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">greet();</code>
+              → Function ko execute ya call karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Declare vs Call -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Function Declare Aur Call
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sirf function banane se uska code execute nahi hota. Function ko
+            execute karne ke liye usse call karna padta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// Function Declaration</span>
+
+<span class="text-blue-400">function</span> message() {
+  console.log(<span class="text-emerald-400">"Welcome"</span>);
+}
+
+
+<span class="text-gray-400">// Function Call</span>
+
+message();</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Welcome</pre>
+          </div>
+
+        </div>
+
+        <!-- Reusable -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Ko Baar-Baar Call Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function reusable hota hai. Ek function ko multiple times call kar
+            sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> hello() {
+  console.log(<span class="text-emerald-400">"Hello"</span>);
+}
+
+hello();
+hello();
+hello();</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello
+Hello
+Hello</pre>
+          </div>
+
+        </div>
+
+        <!-- Calculation -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function With Calculation
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function ke andar calculations bhi kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> add() {
+
+  <span class="text-blue-400">let</span> a = <span class="text-emerald-400">10</span>;
+  <span class="text-blue-400">let</span> b = <span class="text-emerald-400">20</span>;
+
+  console.log(a + b);
+}
+
+add();</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Parameters Preview -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function With Parameters
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function ko dynamic banane ke liye parameters use kar sakte hain.
+            Parameters ke baare me next lesson me detail se padhenge.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> greet(name) {
+  console.log(<span class="text-emerald-400">"Hello "</span> + name);
+}
+
+greet(<span class="text-emerald-400">"Ali"</span>);
+greet(<span class="text-emerald-400">"Ahmed"</span>);</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello Ali
+Hello Ahmed</pre>
+          </div>
+
+        </div>
+
+        <!-- Return Preview -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function With Return
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">return</code>
+            keyword function se value wapas bhejne ke liye use hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> add(a, b) {
+  <span class="text-blue-400">return</span> a + b;
+}
+
+<span class="text-blue-400">let</span> result = add(<span class="text-emerald-400">10</span>, <span class="text-emerald-400">20</span>);
+
+console.log(result);</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Function Benefits -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Functions Kyu Use Karte Hain?
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Same code ko baar-baar likhne ki zarurat nahi padti.
+            </p>
+
+            <p>
+              2. Code reusable ho jata hai.
+            </p>
+
+            <p>
+              3. Large program ko small tasks me divide kar sakte hain.
+            </p>
+
+            <p>
+              4. Code ko samajhna aur maintain karna easy hota hai.
+            </p>
+
+            <p>
+              5. Parameters ki help se function ko dynamic bana sakte hain.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">function</code>
+              keyword se normal function declare kiya ja sakta hai.
+            </p>
+
+            <p>
+              2. Function ka naam meaningful rakhna chahiye.
+            </p>
+
+            <p>
+              3. Function ke andar ka code tab execute hota hai jab function
+              call hota hai.
+            </p>
+
+            <p>
+              4. Function ko multiple times call kiya ja sakta hai.
+            </p>
+
+            <p>
+              5. Function parameters ke through values receive kar sakta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">return</code>
+              se function result wapas de sakta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/numbers/BigInt.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Parameters.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // JS Functions -> JS Functions
+    document.getElementById("sidebar").innerHTML = createSidebar(10);
+  </script>
+
+</body>
+</html>
+

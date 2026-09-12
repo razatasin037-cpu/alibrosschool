@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Access PHP Arrays - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          Access PHP Arrays
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./IndexedArrays.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./UpdateArrayItems.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Array Elements Ko Access Kaise Karein?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me array ke elements ko access karne ke liye unke <strong class="text-white">Index Number</strong> ya <strong class="text-white">Named Key</strong> ka use kiya jata hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Aap Square Brackets <code class="text-green-400">[ ]</code> syntax, functions ya loops ka istemaal karke single aur multidimensional array values ko extract kar sakte hain.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. Accessing Indexed Arrays -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Accessing Indexed Array Elements
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Indexed array ke elements 0-based index number se access hote hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$cars</span> = [<span class="text-white">"Volvo"</span>, <span class="text-white">"BMW"</span>, <span class="text-white">"Toyota"</span>];
+
+  <span class="text-[#94a3b8]">// Index 0 (Pehla item)</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$cars</span>[<span class="text-white">0</span>]; <span class="text-[#94a3b8]">// Output: Volvo</span>
+
+  <span class="text-[#94a3b8]">// Index 2 (Teesra item)</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$cars</span>[<span class="text-white">2</span>]; <span class="text-[#94a3b8]">// Output: Toyota</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Accessing Associative Arrays -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Accessing Associative Array Elements
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Associative array me values unki Key ke naam se access ki jati hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$user</span> = [
+      <span class="text-white">"username"</span> =&gt; <span class="text-white">"john_doe"</span>,
+      <span class="text-white">"email"</span> =&gt; <span class="text-white">"john@example.com"</span>,
+      <span class="text-white">"age"</span> =&gt; <span class="text-white">25</span>
+  ];
+
+  <span class="text-[#94a3b8]">// Key ka naam brackets me likhein</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$user</span>[<span class="text-white">"username"</span>]; <span class="text-[#94a3b8]">// Output: john_doe</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$user</span>[<span class="text-white">"email"</span>];    <span class="text-[#94a3b8]">// Output: john@example.com</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Accessing Multidimensional Arrays -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Accessing Nested / Multidimensional Arrays
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Multidimensional array me sub-arrays ko access karne ke liye multiple brackets <code class="text-green-400">[ ][ ]</code> ka use hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$employees</span> = [
+      [<span class="text-white">"name"</span> =&gt; <span class="text-white">"Amit"</span>, <span class="text-white">"role"</span> =&gt; <span class="text-white">"Developer"</span>],
+      [<span class="text-white">"name"</span> =&gt; <span class="text-white">"Priya"</span>, <span class="text-white">"role"</span> =&gt; <span class="text-white">"Designer"</span>]
+  ];
+
+  <span class="text-[#94a3b8]">// Pehle employee ka name</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$employees</span>[<span class="text-white">0</span>][<span class="text-white">"name"</span>]; <span class="text-[#94a3b8]">// Output: Amit</span>
+
+  <span class="text-[#94a3b8]">// Dusre employee ka role</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$employees</span>[<span class="text-white">1</span>][<span class="text-white">"role"</span>]; <span class="text-[#94a3b8]">// Output: Designer</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 4. Checking if Key Exists Before Accessing -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4. Safe Accessing (<code class="text-green-400">isset()</code> &amp; Null Coalescing)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Error se bachne ke liye access karne se pehle check karein ki key exist karti hai ya nahi:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$data</span> = [<span class="text-white">"status"</span> =&gt; <span class="text-white">"active"</span>];
+
+  <span class="text-[#94a3b8]">// Method 1: Using isset()</span>
+  <span class="text-green-400">if</span> (<span class="text-green-400">isset</span>(<span class="text-green-400">$data</span>[<span class="text-white">"status"</span>])) {
+      <span class="text-green-400">echo</span> <span class="text-green-400">$data</span>[<span class="text-white">"status"</span>];
+  }
+
+  <span class="text-[#94a3b8]">// Method 2: Null Coalescing Operator (PHP 7+)</span>
+  <span class="text-green-400">$role</span> = <span class="text-green-400">$data</span>[<span class="text-white">"role"</span>] ?? <span class="text-white">"Guest"</span>; <span class="text-[#94a3b8]">// Role nahi mila toh "Guest" return karega</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$role</span>; <span class="text-[#94a3b8]">// Output: Guest</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Warning Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-yellow-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-yellow-400">
+              <span>⚠️</span> Warning: Undefined Array Key
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Jab aap kisi non-existing key ya index ko access karte hain, toh PHP Warning throw karta hai. Hamesha Null Coalescing Operator <code class="text-green-400">??</code> ka use karke fallback value set karein.
+            </p>
+            <div class="bg-[#1e293b] p-4 rounded-xl font-mono text-sm text-yellow-400 border border-yellow-500/20">
+              $age = $user["age"] ?? 0; // 👈 Safe access method
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./IndexedArrays.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./UpdateArrayItems.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(18);
+    </script>
+  </body>
+</html>

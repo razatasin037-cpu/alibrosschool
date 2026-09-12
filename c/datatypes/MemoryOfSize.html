@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C The sizeof Operator</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C The sizeof Operator
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="DecimalDataType.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Real-LifeDataTypesExamples.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">sizeof Operator Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <code class="text-cyan-400 font-bold">sizeof</code> ek compile-time unary operator hai jo kisi data type, variable, ya object ka memory size (in **bytes**) calculate karke return karta hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        Alag-alag computer architecture (32-bit vs 64-bit systems) par data types ka memory size alag ho sakta hai, isliye programmatically memory exact check karne ke liye <code class="text-cyan-400">sizeof</code> ka use hota hai.
+      </p>
+    </section>
+
+    <!-- Syntax Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">sizeof Operator Ka Syntax</h2>
+      
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-8">
+<pre><code><span class="text-gray-500">// Data Type ke sath:</span>
+<span class="text-purple-400">sizeof</span>(<span class="text-green-400">dataType</span>);
+
+<span class="text-gray-500">// Variable ke sath:</span>
+<span class="text-purple-400">sizeof</span>(<span class="text-white">variableName</span>);</code></pre>
+      </div>
+
+      <div class="bg-black/50 border border-[#3158ff]/40 rounded-2xl p-6">
+        <p class="text-xl text-cyan-300 font-semibold mb-2">💡 Format Specifier Note:</p>
+        <p class="text-xl text-gray-300 leading-9">
+          <code class="text-purple-400">sizeof</code> operator ek <code class="text-green-400">size_t</code> (unsigned integer type) value return karta hai. Isko print karne ke liye standard format specifier <code class="text-yellow-300 font-bold">%lu</code> (long unsigned) ya <code class="text-yellow-300 font-bold">%zu</code> ka istemal kiya jata hai.
+        </p>
+      </div>
+    </section>
+
+    <!-- Basic Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Basic Types Size Example</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Neeche diye gaye code se aap sabhi basic data types ke actual memory size check kar sakte hain:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myInt;
+    <span class="text-green-500">float</span> myFloat;
+    <span class="text-green-500">double</span> myDouble;
+    <span class="text-green-500">char</span> myChar;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Size of int: %lu bytes\n"</span>, <span class="text-purple-400">sizeof</span>(myInt));
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Size of float: %lu bytes\n"</span>, <span class="text-purple-400">sizeof</span>(myFloat));
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Size of double: %lu bytes\n"</span>, <span class="text-purple-400">sizeof</span>(myDouble));
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Size of char: %lu bytes\n"</span>, <span class="text-purple-400">sizeof</span>(myChar));
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output (64-bit Architecture):</p>
+        <p class="text-gray-300 font-mono">Size of int: 4 bytes</p>
+        <p class="text-gray-300 font-mono">Size of float: 4 bytes</p>
+        <p class="text-gray-300 font-mono">Size of double: 8 bytes</p>
+        <p class="text-gray-300 font-mono">Size of char: 1 byte</p>
+      </div>
+    </section>
+
+    <!-- Advanced Use Case: Array Length -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Array Count Calculate Karna</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <code class="text-cyan-400">sizeof</code> ka sabse bada real-world advantage hai kisi **Array ke elements ka total length** calculate karna:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myNumbers[] = {<span class="text-green-400">10</span>, <span class="text-green-400">25</span>, <span class="text-green-400">50</span>, <span class="text-green-400">75</span>, <span class="text-green-400">100</span>};
+
+    <span class="text-gray-500">// Array Size Formula: Total Bytes / Byte size of one element</span>
+    <span class="text-green-500">int</span> length = <span class="text-purple-400">sizeof</span>(myNumbers) / <span class="text-purple-400">sizeof</span>(myNumbers[<span class="text-green-400">0</span>]);
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Total Bytes of Array: %lu\n"</span>, <span class="text-purple-400">sizeof</span>(myNumbers));
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Number of Elements: %d\n"</span>, length);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Total Bytes of Array: 20</p>
+        <p class="text-gray-300 font-mono">Number of Elements: 5</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        <code class="text-yellow-300 font-bold">sizeof</code> operator memory management, dynamic memory allocation (<code class="text-cyan-300 font-bold">malloc</code>), aur cross-platform coding me sabse critical role play karta hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="DecimalDataType.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Real-LifeDataTypesExamples.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(8);
+  }
+</script>
+
+</body>
+</html>

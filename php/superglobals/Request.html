@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP $_REQUEST Superglobal - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP $_REQUEST
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Server.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Post.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            $_REQUEST Superglobal Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            <strong class="text-white">$_REQUEST</strong> ek PHP superglobal array variable hai jo default taur par <strong class="text-white">$_GET</strong>, <strong class="text-white">$_POST</strong>, aur <strong class="text-white">$_COOKIE</strong> ke contents ko combine karke hold karta hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Jab aapko farak nahi padta ki user ne data URL parameter (GET) se bheja hai ya Form submission (POST) se, tab aap single array `<code class="text-green-400">$_REQUEST</code>` se use access kar sakte hain.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Key Features -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Key Concepts &amp; Order Priority
+            </h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
+              <li><strong>Combined Array:</strong> Ye GET query string, POST body data, aur Cookies teeno ka mix hota hai.</li>
+              <li><strong>Precedence/Order (GPC):</strong> By default PHP config (`php.ini`) me order <strong>GET &gt; POST &gt; COOKIE</strong> hota hai. Agar same key teenon me ho, toh last wali value (COOKIE ya POST) previous value ko overwrite kar deti hai.</li>
+            </ul>
+          </div>
+
+          <!-- 1. Practical Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Receiving Form &amp; URL Data
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Chahe request GET method se aaye ya POST se, <code class="text-green-400">$_REQUEST</code> dono scenarios me work karega:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Example: URL is index.php?fname=Rahul or Form sent fname via POST</span>
+  <span class="text-green-400">if</span> (<span class="text-green-400">$_SERVER</span>[<span class="text-white">"REQUEST_METHOD"</span>] == <span class="text-white">"POST"</span> || <span class="text-green-400">isset</span>(<span class="text-green-400">$_GET</span>[<span class="text-white">'fname'</span>])) {
+      
+      <span class="text-[#94a3b8]">// Safely collect input using $_REQUEST</span>
+      <span class="text-green-400">$name</span> = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$_REQUEST</span>[<span class="text-white">'fname'</span>] ?? <span class="text-white">''</span>);
+      
+      <span class="text-green-400">if</span> (<span class="text-green-400">empty</span>(<span class="text-green-400">$name</span>)) {
+          <span class="text-green-400">echo</span> <span class="text-white">"Name is empty!"</span>;
+      } <span class="text-green-400">else</span> {
+          <span class="text-green-400">echo</span> <span class="text-white">"Hello, "</span> . <span class="text-green-400">$name</span>;
+      }
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. HTML Form Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. HTML Form Setup for <code class="text-green-400">$_REQUEST</code>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              HTML form jisme PHP same file me submission receive karti hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;!-- HTML Form --&gt;</span>
+<span class="text-green-400">&lt;form</span> <span class="text-white">method</span>=<span class="text-yellow-300">"post"</span> <span class="text-white">action</span>=<span class="text-yellow-300">"&lt;?php echo htmlspecialchars($_SERVER['PHP_SELF']);?&gt;"</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;label</span> <span class="text-white">class</span>=<span class="text-yellow-300">"text-white"</span><span class="text-green-400">&gt;</span>Name:<span class="text-green-400">&lt;/label&gt;</span>
+  <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"text"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"fname"</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;button</span> <span class="text-white">type</span>=<span class="text-yellow-300">"submit"</span><span class="text-green-400">&gt;</span>Submit<span class="text-green-400">&lt;/button&gt;</span>
+<span class="text-green-400">&lt;/form&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Warning Box / Best Practices -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-yellow-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-yellow-400">
+              <span>⚠️</span> Developer Tip: When NOT to use $_REQUEST
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Industry standards me <code class="text-green-400">$_REQUEST</code> ke bajaye explicit variables (<code class="text-green-400">$_GET</code> ya <code class="text-green-400">$_POST</code>) ka use recommend kiya jata hai.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-300">
+              <strong>Kyun?</strong> Kyunki agar user bilkul same key URL parameter me pass kar de aur Form POST data me bhi bhej de, toh values overwrite ho sakti hain jisse application unexpected behavior generate kar sakti hai (CSRF / Parameter Tampering vulnerability).
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Server.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Post.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(19);
+    </script>
+  </body>
+</html>

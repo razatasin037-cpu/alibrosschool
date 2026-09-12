@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Grouping Selectors - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <!-- TITLE -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          CSS Grouping Selectors
+        </h1>
+
+        <!-- TOP BUTTONS -->
+        <div class="flex justify-between items-center">
+          <a href="../selectors/selectors.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+          </a>
+
+          <a href="../how-to/how-to.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <!-- CONTENT -->
+        <section class="max-w-6xl mx-auto py-10">
+          <!-- INTRO -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            <i class="fa-solid fa-object-group text-[#4d6fff] mr-3"></i>
+            Grouping Selectors Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS mein kabhi-kabhi humein ek hi styling ko
+            <span class="text-[#4d6fff] font-bold">
+              multiple HTML elements
+            </span>
+            par apply karna hota hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Agar hum har element ke liye alag-alag CSS rule likhen, to code
+            unnecessarily bada ho sakta hai. Is problem ko solve karne ke liye
+            hum
+            <span class="text-white font-bold"> grouping selectors </span>
+            ka use karte hain.
+          </p>
+
+          <!-- BASIC IDEA -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-6">
+              <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+              Simple Idea
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Agar
+              <span class="text-[#60a5fa] font-mono">h1</span>,
+              <span class="text-[#60a5fa] font-mono">h2</span>
+              aur
+              <span class="text-[#60a5fa] font-mono">p</span>
+              tino ka color same rakhna hai, to tino selectors ko comma
+              <span class="text-[#4ade80] font-bold">,</span>
+              se separate karke ek hi rule mein likh sakte hain.
+            </p>
+          </div>
+
+          <!-- WITHOUT GROUPING -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-copy text-[#4d6fff] mr-3"></i>
+            Grouping Ke Bina CSS
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Pehle dekhte hain ki agar grouping na karein to code kaisa dikhega.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+}
+
+<span class="text-[#60a5fa]">h2</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+}
+
+<span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+}</code></pre>
+          </div>
+
+          <div
+            class="bg-[#0f172a]/80 border border-gray-700 rounded-xl p-6 mb-12"
+          >
+            <h4 class="text-xl font-bold text-[#4d6fff] mb-4">Problem</h4>
+
+            <p class="text-gray-300 text-lg leading-8">
+              Yahan same
+              <span class="text-[#60a5fa]">color</span>
+              property aur same
+              <span class="text-[#4ade80]">blue</span>
+              value teen baar likhni pad rahi hai.
+            </p>
+          </div>
+
+          <!-- WITH GROUPING -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-layer-group text-[#4d6fff] mr-3"></i>
+            Grouping Ke Saath CSS
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab hum tino selectors ko comma se separate karke ek hi CSS rule mein
+            likhenge.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">h1, h2, p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+}</code></pre>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-9 shadow-xl mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-5">
+              <i class="fa-solid fa-check-circle text-green-400 mr-2"></i>
+              Ab Kya Hua?
+            </h3>
+
+            <p class="text-gray-300 text-lg sm:text-xl leading-8">
+              Ab
+              <span class="text-[#60a5fa]">h1</span>,
+              <span class="text-[#60a5fa]">h2</span>
+              aur
+              <span class="text-[#60a5fa]">p</span>
+              tino par ek hi CSS rule apply hoga.
+            </p>
+
+            <p class="text-gray-400 text-lg leading-8 mt-4">
+              Isse code chhota, clean aur maintain karna easy ho jata hai.
+            </p>
+          </div>
+
+          <!-- COMMA -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-ellipsis text-[#4d6fff] mr-3"></i>
+            Comma ( , ) Ka Use
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Grouping selectors mein comma
+            <span class="text-[#4ade80] font-bold">,</span>
+            sabse important part hai.
+          </p>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+            Comma CSS ko batata hai ki hum multiple independent selectors ko ek
+            hi rule ke andar style karna chahte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-10 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">h1</span>,
+<span class="text-[#60a5fa]">h2</span>,
+<span class="text-[#60a5fa]">h3</span> {
+  <span class="text-[#60a5fa]">font-family</span>: <span class="text-[#4ade80]">Arial</span>;
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">white</span>;
+}</code></pre>
+          </div>
+
+          <!-- MULTIPLE PROPERTIES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-sliders text-[#4d6fff] mr-3"></i>
+            Grouping Mein Multiple Properties
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Grouping selector ke andar hum sirf ek property nahi, balki multiple
+            properties bhi add kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">h1, h2, p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#4d6fff</span>;
+  <span class="text-[#60a5fa]">font-family</span>: <span class="text-[#4ade80]">Arial</span>;
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+}</code></pre>
+          </div>
+
+          <!-- CLASS GROUPING -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-tags text-[#4d6fff] mr-3"></i>
+            Class Selectors Ko Group Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Sirf HTML elements hi nahi, hum multiple class selectors ko bhi
+            group kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">.title, .heading, .description</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">white</span>;
+}</code></pre>
+          </div>
+
+          <!-- ID + ELEMENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-code-merge text-[#4d6fff] mr-3"></i>
+            Different Selectors Ko Group Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Grouping ka use karte waqt different types ke selectors ko bhi ek
+            saath use kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">h1, #main-title, .special</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#4d6fff</span>;
+  <span class="text-[#60a5fa]">font-weight</span>: <span class="text-[#4ade80]">bold</span>;
+}</code></pre>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5 mb-12">
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+            >
+              <i class="fa-solid fa-heading text-[#4d6fff] text-3xl mb-5"></i>
+
+              <h3 class="text-xl font-bold mb-3">Element</h3>
+
+              <p class="text-gray-400 text-lg">h1</p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+            >
+              <i class="fa-solid fa-hashtag text-[#4d6fff] text-3xl mb-5"></i>
+
+              <h3 class="text-xl font-bold mb-3">ID</h3>
+
+              <p class="text-gray-400 text-lg">#main-title</p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-xl"
+            >
+              <i class="fa-solid fa-circle text-[#4d6fff] text-3xl mb-5"></i>
+
+              <h3 class="text-xl font-bold mb-3">Class</h3>
+
+              <p class="text-gray-400 text-lg">.special</p>
+            </div>
+          </div>
+
+          <!-- REAL LIFE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-store text-[#4d6fff] mr-3"></i>
+            Real-Life Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Maan lo tum ek website bana rahe ho jisme heading, sub-heading aur
+            paragraph ka text center mein hona chahiye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+          >
+            <pre
+              class="text-[16px] sm:text-[17px] leading-8"
+            ><code><span class="text-[#60a5fa]">h1, h2, p</span> {
+  <span class="text-[#60a5fa]">text-align</span>: <span class="text-[#4ade80]">center</span>;
+}
+
+<span class="text-[#60a5fa]">h1, h2</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#4d6fff</span>;
+}
+
+<span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">#cbd5e1</span>;
+}</code></pre>
+          </div>
+
+          <!-- ADVANTAGES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-gauge-high text-[#4d6fff] mr-3"></i>
+            Grouping Selectors Ke Fayde
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <i class="fa-solid fa-code text-[#4d6fff] text-3xl mb-5"></i>
+
+              <h3 class="text-2xl font-bold mb-4">Code Chhota</h3>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Same CSS rules ko baar-baar likhne ki zarurat nahi padti.
+              </p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <i class="fa-solid fa-broom text-[#4d6fff] text-3xl mb-5"></i>
+
+              <h3 class="text-2xl font-bold mb-4">Clean Code</h3>
+
+              <p class="text-gray-300 text-lg leading-8">
+                CSS zyada clean aur readable rehti hai.
+              </p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <i
+                class="fa-solid fa-pen-to-square text-[#4d6fff] text-3xl mb-5"
+              ></i>
+
+              <h3 class="text-2xl font-bold mb-4">Easy Changes</h3>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Ek jagah change karke multiple selectors ki styling update ki ja
+                sakti hai.
+              </p>
+            </div>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 shadow-xl"
+            >
+              <i class="fa-solid fa-bolt text-[#4d6fff] text-3xl mb-5"></i>
+
+              <h3 class="text-2xl font-bold mb-4">Less Repetition</h3>
+
+              <p class="text-gray-300 text-lg leading-8">
+                Repeated CSS declarations kam ho jati hain.
+              </p>
+            </div>
+          </div>
+
+          <!-- IMPORTANT -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-[#4d6fff] mr-3"></i>
+              Important Points
+            </h3>
+
+            <ul
+              class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Multiple selectors ko comma
+                <span class="text-[#4ade80] font-bold">,</span>
+                se separate kar sakte hain.
+              </li>
+
+              <li>
+                Grouped selectors ek hi CSS declaration block share karte hain.
+              </li>
+
+              <li>
+                Element, class aur ID selectors ko bhi group kiya ja sakta hai.
+              </li>
+
+              <li>Grouping se CSS code short aur maintainable hota hai.</li>
+
+              <li>Same styling wale elements ke liye grouping useful hai.</li>
+            </ul>
+          </div>
+
+          <!-- QUICK SUMMARY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+            Quick Summary
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+          >
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                <p class="text-lg sm:text-xl text-gray-300">
+                  <span class="text-[#60a5fa] font-mono"> h1, h2, p </span>
+                  → tino selectors ko ek saath style karega.
+                </p>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                <p class="text-lg sm:text-xl text-gray-300">
+                  Comma
+                  <span class="text-[#4ade80] font-bold"> , </span>
+                  grouping ke liye use hota hai.
+                </p>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                <p class="text-lg sm:text-xl text-gray-300">
+                  Grouping repeated CSS ko reduce karta hai.
+                </p>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                <p class="text-lg sm:text-xl text-gray-300">
+                  Isse code clean aur easy to maintain hota hai.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM BUTTONS -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../selectors/selectors.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../how-to/how-to.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(4);
+      });
+    </script>
+  </body>
+</html>

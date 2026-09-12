@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Website Layout</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Website Layout
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Website Layout ka matlab hai website ke different parts ko page
+            par proper position aur structure dena. Ek normal website mein
+            header, navigation bar, main content, sidebar aur footer jaise
+            multiple sections hote hain. CSS ki help se hum decide karte hain ki
+            ye sections screen par kahan appear honge, kitni width lenge, kitni
+            height hogi aur ek doosre ke saath kaise align honge. Is chapter
+            mein hum website layout banane ke different approaches ko simple
+            Hinglish mein samjhenge.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../accessibility/accessibility.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../rounded-corners/rounded-corners.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- Introduction -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            Website Layout Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Website layout website ke overall structure ko define karta hai. Jab
+            hum kisi website ko browser mein open karte hain, to page par
+            content randomly place nahi hota. Usually page ko different sections
+            mein divide kiya jata hai. Jaise sabse upar header ho sakta hai,
+            uske neeche navigation bar, beech mein main content aur sidebar, aur
+            sabse neeche footer.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS ka kaam in sections ko visually arrange karna hota hai. Hum
+            width, height, margin, padding, position, display, flexbox, grid aur
+            responsive rules ka use karke complete layout create kar sakte hain.
+            Modern websites mein especially Flexbox aur CSS Grid ka use bahut
+            common hai.
+          </p>
+
+          <!-- Basic Structure -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sitemap text-blue-400 mr-2"></i>
+            Basic Website Structure
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek basic website ko hum kuch major sections mein divide kar sakte
+            hain. Header mein website ka naam ya branding hoti hai, navigation
+            mein links hote hain, main section mein actual content hota hai,
+            sidebar mein additional information ho sakti hai aur footer mein
+            copyright ya useful links diye ja sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Basic HTML Layout
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;header&gt;</span>Website Header<span class="text-blue-400">&lt;/header&gt;</span>
+
+<span class="text-blue-400">&lt;nav&gt;</span>
+  Home
+  About
+  Contact
+<span class="text-blue-400">&lt;/nav&gt;</span>
+
+<span class="text-blue-400">&lt;main&gt;</span>
+
+  <span class="text-blue-400">&lt;section&gt;</span>
+    Main Content
+  <span class="text-blue-400">&lt;/section&gt;</span>
+
+  <span class="text-blue-400">&lt;aside&gt;</span>
+    Sidebar
+  <span class="text-blue-400">&lt;/aside&gt;</span>
+
+<span class="text-blue-400">&lt;/main&gt;</span>
+
+<span class="text-blue-400">&lt;footer&gt;</span>Website Footer<span class="text-blue-400">&lt;/footer&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Is structure ko CSS ke through style karke hum ek complete website
+            layout bana sakte hain. HTML structure content ko define karta hai,
+            jabki CSS decide karta hai ki woh content screen par kis tarah
+            arrange hoga.
+          </p>
+
+          <!-- Header -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-heading text-blue-400 mr-2"></i>
+            1. Header Layout
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Header website ka top section hota hai. Ismein normally logo,
+            website name, search box ya user-related controls ho sakte hain.
+            Header ko simple block layout ke saath bhi banaya ja sakta hai aur
+            Flexbox ka use karke multiple elements ko ek line mein arrange bhi
+            kiya ja sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar header mein logo left side aur buttons right side rakhne hain,
+            to Flexbox kaafi useful hota hai. Isse hume manually margins ya
+            positioning calculate karne ki zarurat kam padti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Header Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">header</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">space-between</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">#1e293b</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Yahan <span class="text-blue-400">display: flex</span> header ke
+            children ko flexible layout deta hai.
+            <span class="text-blue-400">justify-content: space-between</span>
+            first element ko left aur last element ko right side push karta hai,
+            jabki
+            <span class="text-blue-400">align-items: center</span> vertically
+            center alignment provide karta hai.
+          </p>
+
+          <!-- Navigation -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-bars text-blue-400 mr-2"></i>
+            2. Navigation Bar
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Navigation bar website ke important pages ke links provide karta
+            hai. Jaise Home, About, Services aur Contact. Navigation ko
+            horizontal ya vertical dono tarah se design kiya ja sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Modern websites mein navigation links ko horizontal line mein
+            arrange karne ke liye Flexbox commonly use hota hai. Isse links ke
+            beech spacing maintain karna easy hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Navigation Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">nav</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">25px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">15px</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">#0f172a</span>;
+}
+
+<span class="text-blue-400">nav a</span> {
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            <span class="text-blue-400">gap</span> property navigation links ke
+            beech consistent space create karti hai. Is approach ka benefit ye
+            hai ki agar links ki count change bhi ho jaye, layout ko manually
+            update karne ki zarurat nahi padti.
+          </p>
+
+          <!-- Main Content Sidebar -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-columns text-blue-400 mr-2"></i>
+            3. Main Content aur Sidebar
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Website ka central area usually main content aur sidebar mein divide
+            hota hai. Main content ko zyada width di jaati hai kyunki usmein
+            primary information hoti hai, jabki sidebar comparatively narrow
+            hota hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is type ke two-column layout ke liye Flexbox ya CSS Grid dono use
+            kiye ja sakte hain. Simple layout ke liye Flexbox convenient hai,
+            jabki complex rows aur columns ke liye Grid better choice ho sakta
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Two Column Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.content</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">30px</span>;
+}
+
+<span class="text-blue-400">.main</span> {
+  <span class="text-blue-400">flex</span>: <span class="text-green-400">3</span>;
+}
+
+<span class="text-blue-400">.sidebar</span> {
+  <span class="text-blue-400">flex</span>: <span class="text-green-400">1</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Yahan main area ko <span class="text-blue-400">flex: 3</span> aur
+            sidebar ko <span class="text-blue-400">flex: 1</span> diya gaya hai.
+            Iska matlab available space ko roughly 3:1 ratio mein divide kiya
+            jayega. Is tarah ka layout blogs, documentation websites aur admin
+            dashboards mein commonly dekha ja sakta hai.
+          </p>
+
+          <!-- CSS Grid -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table-cells text-blue-400 mr-2"></i>
+            4. CSS Grid Se Website Layout
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS Grid website layout ke liye powerful two-dimensional system hai.
+            Ismein hum rows aur columns dono ko control kar sakte hain. Agar
+            website mein header, sidebar, content aur footer ko clearly define
+            karna ho, to Grid kaafi clean solution provide karta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Grid mein
+            <span class="text-blue-400">grid-template-columns</span> se columns
+            aur <span class="text-blue-400">grid-template-areas</span> se layout
+            ke logical areas define kiye ja sakte hain. Isse CSS ko read aur
+            maintain karna easy hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Grid Layout Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.page</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">220px 1fr</span>;
+  <span class="text-blue-400">grid-template-areas</span>:
+    <span class="text-green-400">"header header"
+    "sidebar main"
+    "footer footer"</span>;
+}
+
+<span class="text-blue-400">header</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">header</span>;
+}
+
+<span class="text-blue-400">aside</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">sidebar</span>;
+}
+
+<span class="text-blue-400">main</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">main</span>;
+}
+
+<span class="text-blue-400">footer</span> {
+  <span class="text-blue-400">grid-area</span>: <span class="text-green-400">footer</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Is example mein page ko two columns aur three logical rows mein
+            divide kiya gaya hai. Header aur footer dono columns ko cover karte
+            hain, jabki middle row mein sidebar aur main content side-by-side
+            hain.
+          </p>
+
+          <!-- Width -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            5. Width aur Height Ka Use
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Layout banate waqt width aur height important role play karte hain.
+            Agar kisi section ko fixed width de di jaye, to woh different
+            screens par problematic ho sakta hai. Isliye website layouts mein
+            relative units aur flexible sizing ka use karna useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Flexible Width Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">90%</span>;
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">1200px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">auto</span>;
+}
+
+<span class="text-blue-400">.content</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            <span class="text-blue-400">max-width</span> ka use content ko
+            unnecessarily bahut wide hone se rokta hai. Large desktop screen par
+            bhi text ek comfortable reading width ke andar reh sakta hai.
+            <span class="text-blue-400">margin: auto</span> container ko
+            horizontally center kar deta hai.
+          </p>
+
+          <!-- Box Model -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-square text-blue-400 mr-2"></i>
+            6. Margin, Padding aur Box Model
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Website layout mein sirf elements ko left ya right rakhna enough
+            nahi hota. Elements ke andar aur bahar spacing bhi important hoti
+            hai. Padding element ke content aur border ke beech space create
+            karti hai, jabki margin element ke bahar space create karti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Spacing Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">25px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #334155</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Agar padding aur margin ko clearly understand nahi kiya gaya, to
+            layout mein unwanted gaps ya elements ke overlap jaise problems aa
+            sakti hain. Isliye website layout design karte waqt box model ko
+            samajhna bahut important hai.
+          </p>
+
+          <!-- Position -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-location-dot text-blue-400 mr-2"></i>
+            7. Position Property
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS ki <span class="text-blue-400">position</span> property bhi
+            layout control karne mein useful hai. Iske through element ko normal
+            document flow mein, relative position par, parent ke according
+            absolute position par ya viewport ke according fixed position par
+            rakha ja sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Lekin complete website layout ke liye har jagah absolute positioning
+            use karna achha approach nahi hai. Modern layouts ke liye Flexbox
+            aur Grid generally zyada flexible aur maintainable hote hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Position Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">position</span>: <span class="text-green-400">relative</span>;
+  <span class="text-blue-400">top</span>: <span class="text-green-400">10px</span>;
+  <span class="text-blue-400">left</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Responsive -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            8. Responsive Website Layout
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Aaj ke time mein website ko sirf desktop ke liye banana enough nahi
+            hai. Users mobile phones, tablets, laptops aur large monitors sabhi
+            devices use karte hain. Isliye layout ko different screen sizes par
+            properly adjust hona chahiye.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Responsive layout mein columns mobile screen par stack ho sakte
+            hain. Example ke liye desktop par main content aur sidebar
+            side-by-side ho sakte hain, lekin mobile par sidebar ko main content
+            ke neeche show kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Responsive Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.layout</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">768px</span>) {
+  <span class="text-blue-400">.layout</span> {
+    <span class="text-blue-400">flex-direction</span>: <span class="text-green-400">column</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Media query ke through hum specific screen width par layout ke rules
+            change kar sakte hain. Yahan 768px ya usse chhoti screen par columns
+            vertical ho jaate hain. Isi concept ki wajah se ek hi website mobile
+            aur desktop dono par usable ban sakti hai.
+          </p>
+
+          <!-- Header Main Footer Complete -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-globe text-blue-400 mr-2"></i>
+            9. Complete Website Layout Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab ek complete example dekhte hain jisme header, navigation, main
+            content, sidebar aur footer ko combine kiya gaya hai. Ye structure
+            ek basic real-world website ke liye starting point ki tarah use kiya
+            ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Complete Layout CSS
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">* </span>{
+  <span class="text-blue-400">box-sizing</span>: <span class="text-green-400">border-box</span>;
+}
+
+<span class="text-blue-400">body</span> {
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">0</span>;
+  <span class="text-blue-400">font-family</span>: <span class="text-green-400">Arial, sans-serif</span>;
+}
+
+<span class="text-blue-400">header</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">text-align</span>: <span class="text-green-400">center</span>;
+}
+
+<span class="text-blue-400">nav</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">justify-content</span>: <span class="text-green-400">center</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">25px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">15px</span>;
+}
+
+<span class="text-blue-400">.layout</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">30px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">30px</span>;
+}
+
+<span class="text-blue-400">main</span> {
+  <span class="text-blue-400">flex</span>: <span class="text-green-400">3</span>;
+}
+
+<span class="text-blue-400">aside</span> {
+  <span class="text-blue-400">flex</span>: <span class="text-green-400">1</span>;
+}
+
+<span class="text-blue-400">footer</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">text-align</span>: <span class="text-green-400">center</span>;
+}
+
+<span class="text-blue-400">@media</span> (<span class="text-blue-400">max-width</span>: <span class="text-green-400">768px</span>) {
+  <span class="text-blue-400">.layout</span> {
+    <span class="text-blue-400">flex-direction</span>: <span class="text-green-400">column</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Is complete example mein desktop par main content aur sidebar
+            horizontal arrangement mein hain. Mobile screen par media query ki
+            wajah se dono sections vertical ho jaate hain. Isi tarah ke
+            combinations ko customize karke blog, portfolio, documentation,
+            e-commerce aur dashboard layouts banaye ja sakte hain.
+          </p>
+
+          <!-- Best Practices -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+            10. Website Layout Banane Ki Best Practices
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Layout ke liye unnecessary absolute positioning se bachna
+                chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Modern two-dimensional layouts ke liye CSS Grid aur
+                one-dimensional alignment ke liye Flexbox use karna useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Fixed widths ki jagah flexible widths aur max-width ka use
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Mobile screens ke liye responsive rules zaroor test karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Margin aur padding ko clearly manage karein taaki unnecessary
+                spacing na aaye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Layout ko logical sections mein divide karein taaki CSS maintain
+                karna easy rahe.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Common Mistakes -->
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Beginners website layout banate waqt kuch common mistakes karte
+            hain. Sabse common problem hoti hai har element ko fixed width aur
+            fixed position dena. Aisa layout ek screen par sahi dikhta hai lekin
+            doosri screen par break ho sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Dusri common mistake hai mobile layout ko ignore karna. Agar desktop
+            par do columns hain, to zaroori nahi ki mobile par bhi wahi
+            arrangement maintain kiya jaye. Mobile par columns ko stack karna
+            zyada readable aur usable ho sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Ek aur problem unnecessary CSS duplication hai. Same spacing, width
+            ya alignment ke liye baar-baar different rules likhne ke bajay
+            reusable classes banana better approach hota hai.
+          </p>
+
+          <!-- Important -->
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Website layout page ke different sections ko organized structure
+                deta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Header, navigation, main content, sidebar aur footer common
+                website sections hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Flexbox one-dimensional layouts aur alignment ke liye useful
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS Grid rows aur columns dono ko control karne ke liye powerful
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Margin aur padding spacing control karte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive layout ke liye media queries ka use kiya ja sakta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Fixed positioning ka excessive use responsive layouts ko
+                difficult bana sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Layout ko mobile, tablet aur desktop screen sizes par test karna
+                chahiye.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Summary -->
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Website Layout ka main purpose website ke different elements
+              ko proper structure aur position dena hai. Header, navigation,
+              main content, sidebar aur footer jaise sections ko CSS ke through
+              arrange kiya ja sakta hai. Flexbox simple one-dimensional layouts
+              ke liye aur CSS Grid complex rows aur columns ke liye useful hai.
+              Margin, padding, width, height aur position layout ko fine-tune
+              karne mein help karte hain. Sabse important baat ye hai ki website
+              layout responsive hona chahiye, taaki mobile se lekar large
+              desktop screen tak content properly readable aur usable rahe.
+            </p>
+          </div>
+
+          <!-- Bottom Navigation -->
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../accessibility/accessibility.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../rounded-corners/rounded-corners.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(46);
+      });
+    </script>
+  </body>
+</html>

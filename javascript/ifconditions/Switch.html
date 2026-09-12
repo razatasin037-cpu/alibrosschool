@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>JavaScript Switch Statement - Tutorial</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom JS -->
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+
+        <!-- Heading -->
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          JavaScript Switch
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Ternary.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Booleans.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2
+            class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white"
+          >
+            Switch Statement Kya Hai?
+          </h2>
+
+          <p
+            class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4"
+          >
+            JavaScript me
+            <code class="text-blue-400">switch</code>
+            statement ka use ek value ko multiple possible values ke saath
+            compare karne ke liye hota hai.
+          </p>
+
+          <p
+            class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed"
+          >
+            Jab bahut saare
+            <code class="text-blue-400">else if</code>
+            conditions ho, tab kuch situations me
+            <code class="text-blue-400">switch</code>
+            code ko simple aur readable bana sakta hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Syntax -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Switch Statement Syntax
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">switch</span> (expression) {
+
+  <span class="text-blue-400">case</span> value1:
+    <span class="text-gray-500">// code</span>
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> value2:
+    <span class="text-gray-500">// code</span>
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">default</span>:
+    <span class="text-gray-500">// default code</span>
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Parts -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+              Switch Ke Important Parts
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+
+                <thead>
+                  <tr class="border-b border-[#334155] text-blue-400">
+                    <th class="p-4 text-lg">Keyword</th>
+                    <th class="p-4 text-lg">Use</th>
+                  </tr>
+                </thead>
+
+                <tbody
+                  class="divide-y divide-[#334155] text-gray-300 text-sm md:text-base"
+                >
+
+                  <tr>
+                    <td class="p-4 font-mono text-emerald-400 font-bold">
+                      switch
+                    </td>
+                    <td class="p-4">
+                      Value ya expression ko check karta hai.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono text-emerald-400 font-bold">
+                      case
+                    </td>
+                    <td class="p-4">
+                      Possible value define karta hai.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono text-emerald-400 font-bold">
+                      break
+                    </td>
+                    <td class="p-4">
+                      Match hone ke baad switch ko stop karta hai.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono text-emerald-400 font-bold">
+                      default
+                    </td>
+                    <td class="p-4">
+                      Koi case match na ho to default code chalata hai.
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Basic Example -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Basic Switch Example
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> number = <span class="text-emerald-400">2</span>;
+
+<span class="text-blue-400">switch</span> (number) {
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">1</span>:
+    console.log(<span class="text-emerald-400">"One"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">2</span>:
+    console.log(<span class="text-emerald-400">"Two"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">3</span>:
+    console.log(<span class="text-emerald-400">"Three"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">default</span>:
+    console.log(<span class="text-emerald-400">"Invalid Number"</span>);
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">Two</pre>
+            </div>
+          </div>
+
+          <!-- How it works -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Switch Kaise Kaam Karta Hai?
+            </h3>
+
+            <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+
+              <p>
+                1.
+                <code class="text-blue-400">switch(number)</code>
+                ke andar wali value li jati hai.
+              </p>
+
+              <p>
+                2. JavaScript har
+                <code class="text-blue-400">case</code>
+                ke saath value compare karta hai.
+              </p>
+
+              <p>
+                3. Match milne par us case ka code execute hota hai.
+              </p>
+
+              <p>
+                4.
+                <code class="text-blue-400">break</code>
+                switch statement ko wahi stop kar deta hai.
+              </p>
+
+              <p>
+                5. Agar koi bhi case match nahi karta to
+                <code class="text-blue-400">default</code>
+                execute hota hai.
+              </p>
+
+            </div>
+          </div>
+
+          <!-- Day Example -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Week Day Example
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> day = <span class="text-emerald-400">3</span>;
+
+<span class="text-blue-400">switch</span> (day) {
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">1</span>:
+    console.log(<span class="text-emerald-400">"Monday"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">2</span>:
+    console.log(<span class="text-emerald-400">"Tuesday"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">3</span>:
+    console.log(<span class="text-emerald-400">"Wednesday"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">4</span>:
+    console.log(<span class="text-emerald-400">"Thursday"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">5</span>:
+    console.log(<span class="text-emerald-400">"Friday"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">6</span>:
+    console.log(<span class="text-emerald-400">"Saturday"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">7</span>:
+    console.log(<span class="text-emerald-400">"Sunday"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">default</span>:
+    console.log(<span class="text-emerald-400">"Invalid Day"</span>);
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">Wednesday</pre>
+            </div>
+          </div>
+
+          <!-- String Example -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              String Value With Switch
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> role = <span class="text-emerald-400">"admin"</span>;
+
+<span class="text-blue-400">switch</span> (role) {
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">"admin"</span>:
+    console.log(<span class="text-emerald-400">"Welcome Admin"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">"user"</span>:
+    console.log(<span class="text-emerald-400">"Welcome User"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">"manager"</span>:
+    console.log(<span class="text-emerald-400">"Welcome Manager"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">default</span>:
+    console.log(<span class="text-emerald-400">"Unknown Role"</span>);
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">Welcome Admin</pre>
+            </div>
+          </div>
+
+          <!-- Default -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Default Case
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Agar kisi bhi
+              <code class="text-blue-400">case</code>
+              ke saath value match nahi hoti to
+              <code class="text-blue-400">default</code>
+              block execute hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> color = <span class="text-emerald-400">"black"</span>;
+
+<span class="text-blue-400">switch</span> (color) {
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">"red"</span>:
+    console.log(<span class="text-emerald-400">"Red Color"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">"blue"</span>:
+    console.log(<span class="text-emerald-400">"Blue Color"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">default</span>:
+    console.log(<span class="text-emerald-400">"Color Not Found"</span>);
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">Color Not Found</pre>
+            </div>
+          </div>
+
+          <!-- Break -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Break Ka Kya Kaam Hai?
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-blue-400">break</code>
+              matching case execute hone ke baad switch ko stop karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> value = <span class="text-emerald-400">1</span>;
+
+<span class="text-blue-400">switch</span> (value) {
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">1</span>:
+    console.log(<span class="text-emerald-400">"One"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">2</span>:
+    console.log(<span class="text-emerald-400">"Two"</span>);
+    <span class="text-blue-400">break</span>;
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">One</pre>
+            </div>
+          </div>
+
+          <!-- Without Break -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Break Na Lagaye To Kya Hoga?
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Agar
+              <code class="text-blue-400">break</code>
+              nahi lagate, to matching case ke baad ke cases bhi execute ho
+              sakte hain. Isse fall-through kehte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> number = <span class="text-emerald-400">1</span>;
+
+<span class="text-blue-400">switch</span> (number) {
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">1</span>:
+    console.log(<span class="text-emerald-400">"One"</span>);
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">2</span>:
+    console.log(<span class="text-emerald-400">"Two"</span>);
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">3</span>:
+    console.log(<span class="text-emerald-400">"Three"</span>);
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">One
+Two
+Three</pre>
+            </div>
+          </div>
+
+          <!-- Multiple Cases -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Multiple Cases Same Result
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Multiple cases ko same code ke saath use kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> day = <span class="text-emerald-400">7</span>;
+
+<span class="text-blue-400">switch</span> (day) {
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">1</span>:
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">2</span>:
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">3</span>:
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">4</span>:
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">5</span>:
+    console.log(<span class="text-emerald-400">"Weekday"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">6</span>:
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">7</span>:
+    console.log(<span class="text-emerald-400">"Weekend"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">default</span>:
+    console.log(<span class="text-emerald-400">"Invalid Day"</span>);
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">Weekend</pre>
+            </div>
+          </div>
+
+          <!-- Marks Example -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Grade Example
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Switch exact values compare karta hai. Isliye range based marks
+              ke liye pehle grade calculate karke switch use kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> grade = <span class="text-emerald-400">"B"</span>;
+
+<span class="text-blue-400">switch</span> (grade) {
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">"A"</span>:
+    console.log(<span class="text-emerald-400">"Excellent"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">"B"</span>:
+    console.log(<span class="text-emerald-400">"Very Good"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">case</span> <span class="text-emerald-400">"C"</span>:
+    console.log(<span class="text-emerald-400">"Good"</span>);
+    <span class="text-blue-400">break</span>;
+
+  <span class="text-blue-400">default</span>:
+    console.log(<span class="text-emerald-400">"Invalid Grade"</span>);
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">Very Good</pre>
+            </div>
+          </div>
+
+          <!-- If Else vs Switch -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+              If Else vs Switch
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+
+                <thead>
+                  <tr class="border-b border-[#334155] text-blue-400">
+                    <th class="p-4 text-lg">If Else</th>
+                    <th class="p-4 text-lg">Switch</th>
+                  </tr>
+                </thead>
+
+                <tbody
+                  class="divide-y divide-[#334155] text-gray-300 text-sm md:text-base"
+                >
+                  <tr>
+                    <td class="p-4">
+                      Complex conditions ke liye useful.
+                    </td>
+
+                    <td class="p-4">
+                      Ek value ke multiple exact cases ke liye useful.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4">
+                      Range check easily kar sakta hai.
+                    </td>
+
+                    <td class="p-4">
+                      Normally exact values match karta hai.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4">
+                      <code class="text-emerald-400">
+                        age >= 18
+                      </code>
+                      jaisi conditions ke liye better.
+                    </td>
+
+                    <td class="p-4">
+                      <code class="text-emerald-400">
+                        role === "admin"
+                      </code>
+                      jaisi multiple fixed values ke liye useful.
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+
+          <!-- Important Points -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Important Points
+            </h3>
+
+            <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+
+              <p>
+                1.
+                <code class="text-blue-400">switch</code>
+                ek expression ki value check karta hai.
+              </p>
+
+              <p>
+                2.
+                <code class="text-blue-400">case</code>
+                possible values define karta hai.
+              </p>
+
+              <p>
+                3.
+                <code class="text-blue-400">break</code>
+                matching case ke baad execution ko stop karta hai.
+              </p>
+
+              <p>
+                4.
+                <code class="text-blue-400">default</code>
+                tab chalta hai jab koi case match nahi karta.
+              </p>
+
+              <p>
+                5. Switch comparison strict comparison ke jaisa behave karta
+                hai, isliye value aur type match honi chahiye.
+              </p>
+
+              <p>
+                6. Range based conditions ke liye generally
+                <code class="text-blue-400">if...else</code>
+                zyada simple hota hai.
+              </p>
+
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+
+          <a
+            href="./Ternary.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Booleans.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script>
+      // JS If Conditions -> JS Switch
+      document.getElementById("sidebar").innerHTML = createSidebar(6);
+    </script>
+
+  </body>
+</html>
+

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Variable Names</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Variable Names (Identifiers)
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="MultipleVariable.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Real-Life-Examples.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Variable Identifiers Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C Language me sabhi variables ko pehchan'ne ke liye ek unique naam dena zaroori hota hai. In unique names ko **Identifiers** kaha jata hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        Variable ka naam chhota (jaise <strong>x</strong> aur <strong>y</strong>) ho sakta hai, par zyaada descriptive names (jaise <strong>age</strong>, <strong>totalSum</strong>, <strong>studentName</strong>) use karna best practice mani jati hai.
+      </p>
+    </section>
+
+    <!-- Naming Rules Table -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Variable Naming Rules (Niyam)</h2>
+
+      <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-4">
+        <li>
+          Variable names me **letters** (A-Z, a-z), **digits** (0-9), aur **underscores** (_) ho sakte hain.
+        </li>
+        <li>
+          Name hamesha ek **letter** ya **underscore** (_) se shuru hona chahiye (Number se shuru nahi ho sakta).
+        </li>
+        <li>
+          Names **Case-sensitive** hote hain (yani <code class="text-yellow-300">myVar</code> aur <code class="text-yellow-300">myvar</code> alag-alag variables hain).
+        </li>
+        <li>
+          Variable name me **spaces** ya **special characters** (jaise !, #, %, @, $) allowed nahi hain.
+        </li>
+        <li>
+          Reserved words ya **Keywords** (jaise <code class="text-green-400">int</code>, <code class="text-green-400">float</code>, <code class="text-green-400">return</code>) ko variable name ke taur par use nahi kar sakte.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Valid vs Invalid Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Valid & Invalid Examples</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto">
+<pre><code><span class="text-gray-500">// ✅ Sahi (Valid) Variable Names:</span>
+<span class="text-green-500">int</span> mySpeed = <span class="text-green-400">80</span>;
+<span class="text-green-500">int</span> _total_marks = <span class="text-green-400">95</span>;
+<span class="text-green-500">int</span> student1 = <span class="text-green-400">100</span>;
+
+<span class="text-gray-500">// ❌ Galat (Invalid) Variable Names:</span>
+<span class="text-red-500">int 1student = 100;</span>   <span class="text-gray-500">// Galat: Digits se start nahi ho sakta</span>
+<span class="text-red-500">int my Speed = 80;</span>    <span class="text-gray-500">// Galat: Spaces allowed nahi hain</span>
+<span class="text-red-500">int int = 10;</span>         <span class="text-gray-500">// Galat: 'int' ek keyword hai</span>
+<span class="text-red-500">int total$ = 50;</span>      <span class="text-gray-500">// Galat: '$' special character allowed nahi hai</span></code></pre>
+      </div>
+    </section>
+
+    <!-- Camel Case Best Practice -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Camel Case Best Practice</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab variable name me ek se zyaada words hon, to **camelCase** naming convention follow karna standard practice mana jata hai. Isme pehla word lowercase me hota hai aur baaki saare aane wale words ka pehla letter capital hota hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto">
+<pre><code><span class="text-green-500">int</span> studentAge = <span class="text-green-400">20</span>;
+<span class="text-green-500">float</span> totalAccountBalance = <span class="text-green-400">1500.50</span>;
+<span class="text-green-500">char</span> userFirstLetter = <span class="text-green-400">'A'</span>;</code></pre>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Variable names hamesha meaningful hone chahiye, digits se shuru nahi hone chahiye, case-sensitive hote hain, aur inme kisi bhi reserved keyword ka istemal nahi hona chahiye.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="MultipleVariable.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Real-Life-Examples.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(6);
+  }
+</script>
+
+</body>
+</html>

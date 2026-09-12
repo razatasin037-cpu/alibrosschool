@@ -1,0 +1,434 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ Comments - Ali Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Path Checks: Ensure all scripts exist in correct folder path -->
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+    <!-- Fixed layout: shrink-0 added for sidebar -->
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar container with defined width -->
+      <aside
+        class="w-full md:w-[320px] shrink-0 min-h-full"
+        id="sidebar"
+      ></aside>
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ declare Variables
+        </h1>
+        <!-- Top Navigation -->
+        <div class="flex justify-between items-center">
+          <a href="/C++/comments/comments.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+          </a>
+          <a href="/C++/varibale/multiplevariables.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+        <hr class="mt-12 border-white/10" />
+        <section class="max-w-6xl mx-auto py-10">
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                C++ Variables
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Variables ko aap ek container ki tarah samajh sakte hain, jisme
+                hum data ya values ko store karte hain. C++ mein alag-alag type
+                ka data store karne ke liye alag-alag variable types ka use hota
+                hai.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int age = 20;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Common Variable Types
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                C++ mein requirement ke according different data types ke
+                variables bana sakte hain.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int myNum = 10;
+double price = 19.99;
+char grade = &#x27;A&#x27;;
+string name = &quot;Ali Learning&quot;;
+bool isStudent = true;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Variable Declare Kaise Karein?
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Variable banane ke liye pehle data type, phir variable ka naam
+                aur uske baad value likhte hain.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int myNum = 15;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Value Baad Mein Bhi De Sakte Hain
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Variable create karte waqt value dena zaroori nahi hai. Aap
+                pehle variable declare kar sakte hain aur baad mein usmein value
+                assign kar sakte hain.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int myNum;
+myNum = 15;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Variable Ki Value Change Karna
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Agar kisi existing variable ko nayi value assign karte hain, to
+                purani value overwrite ho jaati hai.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int myNum = 15;
+myNum = 20;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Different Types Ke Variables
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Ek program mein hum requirement ke according different data
+                types ke variables bana sakte hain.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int myNum = 5;
+double myDecimal = 19.99;
+char myLetter = &#x27;A&#x27;;
+string myText = &quot;Ali Learning&quot;;
+bool myBool = true;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Variable Ko Display Karna
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Variable ki value screen par dikhane ke liye cout aur <<
+                operator ka use karte hain.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int myNum = 15;
+cout &lt;&lt; myNum;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Text Aur Variables Ko Saath Mein Display Karna
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Hum text aur alag-alag variables ko ek hi cout statement mein
+                combine kar sakte hain.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int age = 20;
+cout &lt;&lt; &quot;My age is &quot; &lt;&lt; age;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Variables Ko Add Karna
+              </h3>
+            </div>
+            <div class="p-6 sm:p-8">
+              <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+                Do numeric variables ko add karne ke liye + operator ka use kar
+                sakte hain.
+              </p>
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl overflow-hidden"
+              >
+                <div class="px-5 py-3 bg-[#1e293b] text-sm text-gray-400">
+                  C++ Example
+                </div>
+                <pre
+                  class="p-5 overflow-x-auto text-green-400 text-base sm:text-lg leading-relaxed"
+                ><code>int x = 5;
+int y = 10;
+cout &lt;&lt; x + y;</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important -->
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                Single-line comment ke liye
+                <span class="text-[#4d6fff] font-bold">//</span>
+                use hota hai.
+              </li>
+              <li>
+                Multi-line comment ke liye
+                <span class="text-[#4d6fff] font-bold">/* */</span>
+                use hota hai.
+              </li>
+              <li>Comments ko compiler ignore karta hai.</li>
+              <li>Comments code ko samajhne mein help karte hain.</li>
+              <li>
+                Comments ka use code ko temporarily disable karne ke liye bhi
+                kiya ja sakta hai.
+              </li>
+            </ul>
+          </div>
+          <!-- Bottom Navigation -->
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="/C++/comments/comments.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+            <a href="/C++/varibale/multiplevariables.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+    <!-- Code Cards -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* Sidebar Injection check */
+        const sidebarEl = document.getElementById("sidebar");
+        if (sidebarEl && typeof createSidebar === "function") {
+          sidebarEl.innerHTML = createSidebar(4);
+        } else {
+          console.error(
+            "Sidebar container target mismatch or createSidebar function missing in ../js/sidebar.js",
+          );
+        }
+
+        /* Basic Comment */
+        if (document.getElementById("basicCommentCard")) {
+          document.getElementById("basicCommentCard").innerHTML =
+            createCodeCard(
+              "Basic Comment",
+              `// This is a comment\n\ncout << "Hello World!";`,
+            );
+        }
+
+        /* Single-line Comment */
+        if (document.getElementById("singleCommentCard")) {
+          document.getElementById("singleCommentCard").innerHTML =
+            createCodeCard(
+              "Single-line Comment",
+              `// This is a single-line comment\ncout << "Hello World!";`,
+            );
+        }
+
+        /* Comment Before Code */
+        if (document.getElementById("commentBeforeCodeCard")) {
+          document.getElementById("commentBeforeCodeCard").innerHTML =
+            createCodeCard(
+              "Comment Before Code",
+              `// Print a message\ncout << "Hello World!";`,
+            );
+        }
+
+        /* Comment After Code */
+        if (document.getElementById("commentAfterCodeCard")) {
+          document.getElementById("commentAfterCodeCard").innerHTML =
+            createCodeCard(
+              "Comment After Code",
+              `cout << "Hello World!"; // Print Hello World`,
+            );
+        }
+
+        /* Multi-line Comment */
+        if (document.getElementById("multiCommentCard")) {
+          document.getElementById("multiCommentCard").innerHTML =
+            createCodeCard(
+              "Multi-line Comment",
+              `/*\n  This is a multi-line comment.\n  It can contain multiple lines.\n*/\n\ncout << "Hello World!";`,
+            );
+        }
+
+        /* Multi-line Example */
+        if (document.getElementById("multiCommentExampleCard")) {
+          document.getElementById("multiCommentExampleCard").innerHTML =
+            createCodeCard(
+              "Multi-line Comment Example",
+              `/*\n  The following code\n  prints a message\n  on the screen.\n*/\n\ncout << "Hello World!";`,
+            );
+        }
+
+        /* Disable Code */
+        if (document.getElementById("disableCodeCard")) {
+          document.getElementById("disableCodeCard").innerHTML = createCodeCard(
+            "Temporarily Disable Code",
+            `cout << "Hello World!";\n\n// cout << "This code is disabled";`,
+          );
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(10);
+        }
+      });
+    </script>
+  </body>
+</html>

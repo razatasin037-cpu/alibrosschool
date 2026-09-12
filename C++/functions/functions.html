@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ Functions - Ali Learning</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+    <main class="flex min-h-screen">
+      <div id="sidebar"></div>
+      <section
+        class="w-full lg:w-[calc(100%-300px)] px-5 sm:px-8 lg:px-12 py-8"
+      >
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-10">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">
+              C++ Functions
+            </h1>
+            <p class="text-gray-400 mt-3 text-lg">
+              Functions code ko reusable blocks mein organize karte hain.
+              Function create, declare aur call karna seekho.
+            </p>
+          </div>
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10 mb-10"
+          >
+            <a href="../pointers/pointers-arrays.html"
+              ><button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button></a
+            >
+            <a href="parameters.html"
+              ><button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next<i class="fa-solid fa-chevron-right ml-2"></i></button
+            ></a>
+          </div>
+          <div class="space-y-10">
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                What is a Function?
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Function C++ code ka ek block hota hai jo ek specific task
+                perform karta hai. Function tab execute hota hai jab usse call
+                kiya jata hai.
+              </p>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Functions ka main benefit code reuse hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">void myFunction() {
+    cout &lt;&lt; "Hello World!";
+}
+
+int main() {
+    myFunction();
+    return 0;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Hello World!</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Create a Function
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Function banane ke liye return type, function name aur
+                parentheses <code>()</code> likhe jate hain. Function body curly
+                braces ke andar hoti hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">void myFunction() {
+    cout &lt;&lt; "I just got executed!";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Call a Function
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Function ko run karne ke liye function name ke baad
+                <code>()</code> ke saath call karna padta hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">void myFunction() {
+    cout &lt;&lt; "Hello World!";
+}
+
+int main() {
+    myFunction();
+    return 0;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Hello World!</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Call a Function Multiple Times
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Ek function ko multiple times call kiya ja sakta hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">void myFunction() {
+    cout &lt;&lt; "Hello!\n";
+}
+
+int main() {
+    myFunction();
+    myFunction();
+    myFunction();
+    return 0;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Hello!
+Hello!
+Hello!</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Function Declaration and Definition
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Agar function ko main() ke baad define karna ho, to pehle
+                function declaration likh sakte ho.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">void myFunction();
+
+int main() {
+    myFunction();
+    return 0;
+}
+
+void myFunction() {
+    cout &lt;&lt; "Hello!";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Hello!</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Functions with Parameters
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Parameters ke through function ko data pass kiya ja sakta hai.
+              </p>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div
+                  class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+                >
+                  <h3 class="text-xl font-semibold">Example</h3>
+                  <span class="text-sm text-gray-400">C++</span>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">void greet(string name) {
+    cout &lt;&lt; "Hello " &lt;&lt; name;
+}
+
+int main() {
+    greet("Tasin");
+    return 0;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6"
+              >
+                <div class="bg-[#1e293b] px-6 py-4">
+                  <h3 class="text-xl font-semibold">Output</h3>
+                </div>
+                <div class="p-6">
+                  <div
+                    class="bg-[#020617] border border-gray-800 rounded-xl p-5"
+                  >
+                    <pre><code class="text-green-400 text-base sm:text-lg">Hello Tasin</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+                Why Use Functions?
+              </h2>
+              <p class="text-gray-300 text-lg leading-8 mb-5">
+                Functions repeated code ko avoid karte hain aur program ko small
+                reusable blocks mein organize karte hain.
+              </p>
+              <div
+                class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 mb-8"
+              >
+                <h3 class="text-xl font-semibold mb-3">Important</h3>
+                <p class="text-gray-300 leading-7">
+                  Functions code ko read, test aur maintain karna easier bana
+                  sakte hain.
+                </p>
+              </div>
+            </section>
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../pointers/pointers-arrays.html"
+                ><button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+                </button></a
+              >
+              <a href="parameters.html"
+                ><button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next<i class="fa-solid fa-chevron-right ml-2"></i></button
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function")
+          document.getElementById("sidebar").innerHTML = createSidebar(14);
+      });
+    </script>
+  </body>
+</html>

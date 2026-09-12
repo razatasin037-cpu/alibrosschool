@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript DOM Elements - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript DOM Elements
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./DOM.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./HTML.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          DOM Elements Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          HTML page ke elements jaise
+          <code class="text-blue-400">&lt;h1&gt;</code>,
+          <code class="text-blue-400">&lt;p&gt;</code>,
+          <code class="text-blue-400">&lt;button&gt;</code>
+          aur
+          <code class="text-blue-400">&lt;input&gt;</code>
+          ko JavaScript DOM ke through access aur modify kiya ja sakta hai.
+          <br><br>
+          Element access karne ke liye JavaScript me multiple DOM methods
+          available hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Main Methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Element Selection Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    getElementById()
+                  </td>
+                  <td class="p-4">
+                    ID se ek element select karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    getElementsByClassName()
+                  </td>
+                  <td class="p-4">
+                    Class name se elements select karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    getElementsByTagName()
+                  </td>
+                  <td class="p-4">
+                    Tag name se elements select karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    querySelector()
+                  </td>
+                  <td class="p-4">
+                    Pehla matching CSS selector element deta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    querySelectorAll()
+                  </td>
+                  <td class="p-4">
+                    Sab matching CSS selector elements deta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- getElementById -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            getElementById()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Kisi element ko uske
+            <code class="text-blue-400">id</code>
+            se select karne ke liye use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h1 id=<span class="text-emerald-400">"title"</span>&gt;
+  Hello
+&lt;/h1&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+console.log(title);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Change element -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Selected Element Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+title.textContent =
+  <span class="text-emerald-400">"JavaScript DOM"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Class name -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            getElementsByClassName()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Same class wale multiple elements ko select karne ke liye use hota
+            hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;p class=<span class="text-emerald-400">"item"</span>&gt;Apple&lt;/p&gt;
+&lt;p class=<span class="text-emerald-400">"item"</span>&gt;Mango&lt;/p&gt;
+&lt;p class=<span class="text-emerald-400">"item"</span>&gt;Banana&lt;/p&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> items =
+  document.getElementsByClassName(
+    <span class="text-emerald-400">"item"</span>
+  );
+
+console.log(items);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- HTMLCollection -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            HTMLCollection
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">getElementsByClassName()</code>
+            aur
+            <code class="text-blue-400">getElementsByTagName()</code>
+            normally HTMLCollection return karte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> items =
+  document.getElementsByClassName(
+    <span class="text-emerald-400">"item"</span>
+  );
+
+console.log(
+  items[<span class="text-emerald-400">0</span>]
+);
+
+console.log(
+  items.length
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Loop HTMLCollection -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            HTMLCollection Par Loop
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> items =
+  document.getElementsByClassName(
+    <span class="text-emerald-400">"item"</span>
+  );
+
+<span class="text-blue-400">for</span> (
+  <span class="text-blue-400">let</span> i = <span class="text-emerald-400">0</span>;
+  i &lt; items.length;
+  i++
+) {
+
+  console.log(
+    items[i].textContent
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Tag name -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            getElementsByTagName()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            HTML tag name ke according elements select karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> paragraphs =
+  document.getElementsByTagName(
+    <span class="text-emerald-400">"p"</span>
+  );
+
+console.log(
+  paragraphs
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- querySelector -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            querySelector()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            CSS selector use karke first matching element select karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> heading =
+  document.querySelector(
+    <span class="text-emerald-400">".heading"</span>
+  );
+
+console.log(heading);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- query selector ID -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            querySelector() With ID
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.querySelector(
+    <span class="text-emerald-400">"#title"</span>
+  );</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            ID selector ke liye
+            <code class="text-blue-400">#</code>
+            use hota hai.
+          </p>
+
+        </div>
+
+        <!-- Query selector advanced -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            CSS Selectors Use Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// Class</span>
+document.querySelector(
+  <span class="text-emerald-400">".box"</span>
+);
+
+<span class="text-gray-400">// ID</span>
+document.querySelector(
+  <span class="text-emerald-400">"#title"</span>
+);
+
+<span class="text-gray-400">// Tag</span>
+document.querySelector(
+  <span class="text-emerald-400">"p"</span>
+);
+
+<span class="text-gray-400">// Nested selector</span>
+document.querySelector(
+  <span class="text-emerald-400">".card h2"</span>
+);
+
+<span class="text-gray-400">// Attribute selector</span>
+document.querySelector(
+  <span class="text-emerald-400">'input[type="email"]'</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- querySelectorAll -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            querySelectorAll()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sab matching elements select karta hai aur normally
+            <code class="text-blue-400">NodeList</code>
+            return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> items =
+  document.querySelectorAll(
+    <span class="text-emerald-400">".item"</span>
+  );
+
+console.log(items);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- NodeList Loop -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            NodeList Par forEach()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> items =
+  document.querySelectorAll(
+    <span class="text-emerald-400">".item"</span>
+  );
+
+items.forEach((item) =&gt; {
+
+  console.log(
+    item.textContent
+  );
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- First Match -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            querySelector() Sirf First Match Deta Hai
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;p class=<span class="text-emerald-400">"text"</span>&gt;First&lt;/p&gt;
+&lt;p class=<span class="text-emerald-400">"text"</span>&gt;Second&lt;/p&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> item =
+  document.querySelector(
+    <span class="text-emerald-400">".text"</span>
+  );
+
+console.log(
+  item.textContent
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">First</pre>
+          </div>
+
+        </div>
+
+        <!-- Parent select children -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Parent Ke Andar Element Select Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;div id=<span class="text-emerald-400">"card"</span>&gt;
+
+  &lt;h2&gt;Product&lt;/h2&gt;
+
+  &lt;p&gt;Laptop&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> card =
+  document.getElementById(
+    <span class="text-emerald-400">"card"</span>
+  );
+
+<span class="text-blue-400">const</span> heading =
+  card.querySelector(
+    <span class="text-emerald-400">"h2"</span>
+  );
+
+console.log(
+  heading.textContent
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Change multiple -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Elements Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> items =
+  document.querySelectorAll(
+    <span class="text-emerald-400">".item"</span>
+  );
+
+items.forEach((item) =&gt; {
+
+  item.style.color =
+    <span class="text-emerald-400">"blue"</span>;
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Find input -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Input Element Select Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;input
+  type=<span class="text-emerald-400">"text"</span>
+  id=<span class="text-emerald-400">"username"</span>
+  value=<span class="text-emerald-400">"Ali"</span>
+&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> input =
+  document.getElementById(
+    <span class="text-emerald-400">"username"</span>
+  );
+
+console.log(
+  input.value
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Find form -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Form Element Select Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;form id=<span class="text-emerald-400">"loginForm"</span>&gt;
+
+  &lt;input type=<span class="text-emerald-400">"email"</span>&gt;
+
+&lt;/form&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> form =
+  document.getElementById(
+    <span class="text-emerald-400">"loginForm"</span>
+  );
+
+console.log(form);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Null -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Element Na Mile To Kya Hota Hai?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar
+            <code class="text-blue-400">getElementById()</code>
+            ya
+            <code class="text-blue-400">querySelector()</code>
+            ko matching element nahi milta, result
+            <code class="text-emerald-400">null</code>
+            hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> element =
+  document.getElementById(
+    <span class="text-emerald-400">"unknown"</span>
+  );
+
+console.log(element);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">null</pre>
+          </div>
+
+        </div>
+
+        <!-- Safe access -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Element Milne Ke Baad Check Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+<span class="text-blue-400">if</span> (title) {
+
+  title.textContent =
+    <span class="text-emerald-400">"Hello DOM"</span>;
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Comparison -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Selection Methods Comparison
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Returns</th>
+                  <th class="p-4">Selector</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">getElementById()</td>
+                  <td class="p-4">Single element / null</td>
+                  <td class="p-4">ID</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">getElementsByClassName()</td>
+                  <td class="p-4">HTMLCollection</td>
+                  <td class="p-4">Class name</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">getElementsByTagName()</td>
+                  <td class="p-4">HTMLCollection</td>
+                  <td class="p-4">Tag name</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">querySelector()</td>
+                  <td class="p-4">First matching element / null</td>
+                  <td class="p-4">CSS selector</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">querySelectorAll()</td>
+                  <td class="p-4">NodeList</td>
+                  <td class="p-4">CSS selector</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Practical -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h2 id=<span class="text-emerald-400">"heading"</span>&gt;
+  Original Heading
+&lt;/h2&gt;
+
+&lt;p class=<span class="text-emerald-400">"text"</span>&gt;
+  Paragraph 1
+&lt;/p&gt;
+
+&lt;p class=<span class="text-emerald-400">"text"</span>&gt;
+  Paragraph 2
+&lt;/p&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> heading =
+  document.getElementById(
+    <span class="text-emerald-400">"heading"</span>
+  );
+
+heading.textContent =
+  <span class="text-emerald-400">"New Heading"</span>;
+
+<span class="text-blue-400">const</span> paragraphs =
+  document.querySelectorAll(
+    <span class="text-emerald-400">".text"</span>
+  );
+
+paragraphs.forEach((paragraph) =&gt; {
+
+  paragraph.style.fontSize =
+    <span class="text-emerald-400">"20px"</span>;
+
+});
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">getElementById()</code>
+              ID se single element select karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">getElementsByClassName()</code>
+              class name ke according elements select karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">getElementsByTagName()</code>
+              tag name ke according elements select karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">querySelector()</code>
+              first matching CSS selector element deta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">querySelectorAll()</code>
+              sab matching elements ka NodeList deta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">querySelectorAll()</code>
+              ke result par
+              <code class="text-blue-400">forEach()</code>
+              commonly use kar sakte hain.
+            </p>
+
+            <p>
+              7. Element na mile to
+              <code class="text-blue-400">getElementById()</code>
+              aur
+              <code class="text-blue-400">querySelector()</code>
+              null return kar sakte hain.
+            </p>
+
+            <p>
+              8. CSS selectors ki flexibility ke wajah se
+              <code class="text-blue-400">querySelector()</code>
+              aur
+              <code class="text-blue-400">querySelectorAll()</code>
+              bahut useful hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./DOM.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./HTML.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(27);
+  </script>
+
+</body>
+</html>

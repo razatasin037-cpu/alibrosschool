@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Inheritance</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Inheritance
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Inheritance ek important concept hai jisme ek HTML element ki
+            kuch CSS properties uske child elements tak automatically pahunch
+            jaati hain. Is concept ki wajah se hume har child element ke liye
+            same CSS property baar-baar likhne ki zarurat nahi padti.
+            Inheritance ko samajhna clean, reusable aur maintainable CSS likhne
+            ke liye bahut important hai.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../units/units.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../specificity/specificity.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS INHERITANCE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code-branch text-blue-400 mr-2"></i>
+            CSS Inheritance Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Inheritance ka simple meaning hai
+            <strong
+              >parent element ki CSS property ka child element tak inherit
+              hona</strong
+            >. HTML mein elements ek parent-child relationship mein ho sakte
+            hain. Agar parent element par koi inheritable CSS property apply ki
+            gayi hai, to browser us property ko child elements par bhi apply kar
+            sakta hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Example ke liye agar ek <strong>div</strong> ke andar multiple
+            paragraphs hain aur hum div ka text color set kar dete hain, to
+            paragraphs generally wahi color inherit kar sakte hain. Isse CSS
+            code chhota aur easy to manage ho jata hai.
+          </p>
+
+          <!-- BASIC EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Inheritance Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}
+
+<span class="text-blue-400">p</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">18px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Yahan body ka color child elements ko inherit ho sakta hai. Lekin
+            har CSS property inherit nahi hoti. Ye baat CSS Inheritance mein
+            sabse important concepts mein se ek hai.
+          </p>
+
+          <!-- PARENT CHILD -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sitemap text-blue-400 mr-2"></i>
+            Parent aur Child Elements
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Inheritance ko samajhne ke liye parent aur child relationship
+            samajhna zaroori hai. Agar ek element ke andar doosra element hai,
+            to outer element parent aur inner element child ho sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                HTML Structure
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;div&gt;</span>
+  <span class="text-blue-400">&lt;h2&gt;</span>Heading<span class="text-blue-400">&lt;/h2&gt;</span>
+  <span class="text-blue-400">&lt;p&gt;</span>Paragraph<span class="text-blue-400">&lt;/p&gt;</span>
+<span class="text-blue-400">&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10">
+            Is example mein div parent hai aur h2 aur p uske children hain. Agar
+            div par koi inheritable property set ki jaati hai, to uska effect
+            child elements par aa sakta hai.
+          </p>
+
+          <!-- COLOR INHERITANCE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-palette text-blue-400 mr-2"></i>
+            1. Color Inheritance
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>color</strong> ek common inheritable property hai. Agar
+            parent element ka text color define kiya gaya hai, to child elements
+            normally us color ko inherit kar sakte hain jab tak child par alag
+            color explicitly define na kiya gaya ho.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Color Inheritance Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#60a5fa</span>;
+}
+
+<span class="text-blue-400">.container p</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">18px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10">
+            Agar paragraph ke liye alag color define nahi kiya gaya, to
+            paragraph parent container ka color use kar sakta hai.
+          </p>
+
+          <!-- FONT INHERITANCE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-font text-blue-400 mr-2"></i>
+            2. Font Properties ki Inheritance
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Font se related kai properties inherit hoti hain. Jaise
+            <strong>font-family</strong>, <strong>font-size</strong>,
+            <strong>font-style</strong> aur <strong>font-weight</strong>
+            context ke according child elements ko inherited value de sakti
+            hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Font Inheritance Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">font-family</span>: <span class="text-green-400">Arial, sans-serif</span>;
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">18px</span>;
+}
+
+<span class="text-blue-400">.article p</span> {
+  <span class="text-blue-400">line-height</span>: <span class="text-green-400">1.7</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- INHERIT KEYWORD -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-down text-blue-400 mr-2"></i>
+            3. inherit Keyword
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS ka <strong>inherit</strong> keyword explicitly browser ko batata
+            hai ki property ki value parent element se inherit ki jaye. Ye tab
+            useful hota hai jab hum kisi property ko child element par
+            specifically inherited rakhna chahte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                inherit Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.parent</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#38bdf8</span>;
+}
+
+<span class="text-blue-400">.child</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">inherit</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- INITIAL -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-rotate-left text-blue-400 mr-2"></i>
+            4. initial Keyword
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>initial</strong> keyword kisi CSS property ko uski initial
+            value par reset karne ke liye use hota hai. Ye inheritance ko
+            continue karne ke bajay property ko CSS specification ki initial
+            value par le ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                initial Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}
+
+<span class="text-blue-400">.child</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">initial</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- UNSET -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sliders text-blue-400 mr-2"></i>
+            5. unset Keyword
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>unset</strong> ek special CSS value hai jo property ke
+            inheritance behavior ke according decide karta hai ki property ko
+            inherit karna hai ya initial value par reset karna hai. Agar
+            property naturally inherit hoti hai, to unset inheritance behave
+            karta hai. Agar property inherit nahi hoti, to initial behavior use
+            hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                unset Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.parent</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">blue</span>;
+}
+
+<span class="text-blue-400">.child</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">unset</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- REVERT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-rotate text-blue-400 mr-2"></i>
+            6. revert Keyword
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>revert</strong> keyword CSS cascade mein applied author
+            styling ko previous origin ke behavior ki taraf revert kar sakta
+            hai. Ye advanced CSS situations mein useful hota hai, especially jab
+            browser ya user-agent styles ko restore karna ho.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                revert Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">all</span>: <span class="text-green-400">revert</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- NON INHERITED -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-ban text-blue-400 mr-2"></i>
+            7. Har CSS Property Inherit Nahi Hoti
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ye inheritance ka sabse important rule hai. CSS ki har property
+            automatically inherit nahi hoti. Kuch properties naturally inherit
+            hoti hain aur kuch properties nahi hoti. Isliye agar parent par
+            <strong>margin</strong> ya <strong>padding</strong> set kiya gaya
+            hai, to automatically ye assume nahi karna chahiye ki child ko same
+            margin ya padding mil jayega.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Common Inherited
+              </h3>
+
+              <ul class="space-y-3 text-lg text-gray-300">
+                <li>color</li>
+                <li>font-family</li>
+                <li>font-size</li>
+                <li>font-style</li>
+                <li>font-weight</li>
+                <li>line-height</li>
+                <li>text-align</li>
+              </ul>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Commonly Not Inherited
+              </h3>
+
+              <ul class="space-y-3 text-lg text-gray-300">
+                <li>margin</li>
+                <li>padding</li>
+                <li>border</li>
+                <li>width</li>
+                <li>height</li>
+                <li>background</li>
+                <li>display</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- OVERRIDE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-pen-to-square text-blue-400 mr-2"></i>
+            8. Child Inherited Value ko Override Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Agar child element par same property ki value explicitly define kar
+            di jaye, to child ki own declaration inherited value ko override kar
+            sakti hai. Isse hum parent ke common styling ko maintain karte hue
+            specific child ko different bana sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Override Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.parent</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}
+
+<span class="text-blue-400">.parent p</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#60a5fa</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- INHERITANCE CHAIN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-link text-blue-400 mr-2"></i>
+            9. Multiple Levels of Inheritance
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Inheritance ek hi level tak limited nahi hoti. Agar parent se child
+            ko koi value inherit hoti hai aur child ke andar bhi grandchild
+            element hai, to inherited value further descend bhi kar sakti hai,
+            jab tak beech mein kisi element par alag value define na ho.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Inheritance Chain
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">font-family</span>: <span class="text-green-400">Arial, sans-serif</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#e2e8f0</span>;
+}
+
+<span class="text-blue-400">main</span> {
+  <span class="text-blue-400">line-height</span>: <span class="text-green-400">1.7</span>;
+}
+
+<span class="text-blue-400">article</span> {
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">70ch</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ALL PROPERTY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+            10. all Property aur Inheritance
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS ka <strong>all</strong> shorthand property ek element ki almost
+            sabhi CSS properties ko ek saath control karne ke liye use kiya ja
+            sakta hai. Iske saath inherit, initial, unset aur revert jaise
+            global values use ki ja sakti hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                all: inherit Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.child</span> {
+  <span class="text-blue-400">all</span>: <span class="text-green-400">inherit</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- PRACTICAL EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+            11. Practical Inheritance Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Real website mein inheritance ka use common typography aur text
+            styling ko parent container par define karne ke liye kiya ja sakta
+            hai. Isse har heading aur paragraph ke liye same font-family ya text
+            color baar-baar likhne ki need kam ho jaati hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Complete Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.website</span> {
+  <span class="text-blue-400">font-family</span>: <span class="text-green-400">Arial, sans-serif</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#e2e8f0</span>;
+  <span class="text-blue-400">line-height</span>: <span class="text-green-400">1.6</span>;
+}
+
+<span class="text-blue-400">.website h1</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">40px</span>;
+}
+
+<span class="text-blue-400">.website p</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">18px</span>;
+}
+
+<span class="text-blue-400">.website a</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#38bdf8</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- USE CASES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+            CSS Inheritance ka Practical Use
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-font text-blue-400 mr-2"></i>
+                Typography
+              </h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Parent container par font-family aur text color define karke
+                child text elements ko consistent styling di ja sakti hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-palette text-blue-400 mr-2"></i>
+                Theme Styling
+              </h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Common text color aur font properties ko parent level par
+                maintain karna easy hota hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Less CSS
+              </h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Repeated declarations ko reduce karke CSS ko cleaner aur
+                maintainable banaya ja sakta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-sitemap text-blue-400 mr-2"></i>
+                Consistent Design
+              </h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Related content ke andar common styling automatically maintain
+                karne mein inheritance helpful hoti hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Ye assume karna ki har CSS property automatically inherit hoti
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                margin aur padding jaise properties ko inheritance samajhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                inherit aur initial keywords ka purpose confuse karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Child element par explicitly defined value ko ignore karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Deeply nested elements mein inherited styles ka source check na
+                karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Common typography properties ko parent containers par define
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Har property ko inherit hone wali property samajhne se pehle
+                check karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Specific child styling ke liye explicit CSS declaration use
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                inherit, initial, unset aur revert ka purpose clearly samjhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Browser DevTools se inherited styles inspect karna practice
+                karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS inheritance parent element se child element tak values pass
+                karne ka concept hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Har CSS property inherit nahi hoti.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                color aur kai font-related properties commonly inherit hoti
+                hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                margin, padding aur border jaise properties normally inherit
+                nahi hoti.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                inherit keyword explicitly parent value use karne ke liye
+                helpful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                initial property ko uski initial value par reset karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                unset property ke inheritance behavior ke according kaam karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Child element ki explicit declaration inherited value ko
+                override kar sakti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Inheritance CSS repetition ko reduce karke code ko cleaner bana
+                sakti hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Inheritance ka matlab hai ki parent element ki kuch CSS
+              properties child elements tak automatically pass ho sakti hain. Is
+              concept ki wajah se same styling ko multiple elements par
+              baar-baar likhne ki zarurat kam ho jaati hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Inheritance mein sabse important baat ye hai ki har CSS property
+              inherit nahi hoti. <strong>color</strong>, font-related properties
+              aur kuch text properties commonly inherit hoti hain, jabki
+              <strong>margin</strong>, <strong>padding</strong> aur
+              <strong>border</strong> jaise properties normally inherit nahi
+              hoti. <strong>inherit</strong>, <strong>initial</strong>,
+              <strong>unset</strong> aur <strong>revert</strong> jaise keywords
+              inheritance ko control karne mein useful hain.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../units/units.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../specificity/specificity.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(41);
+      });
+    </script>
+  </body>
+</html>

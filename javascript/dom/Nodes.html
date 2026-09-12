@@ -1,0 +1,1161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript DOM Nodes - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript DOM Nodes
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Navigation.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../browser/Browser.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          DOM Node Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          DOM me HTML document ke different parts ko nodes ke roop me
+          represent kiya jata hai.
+          <br><br>
+          HTML element, text, comments aur document khud bhi nodes ho sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Node Tree -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Node Tree
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">Document
+
+   ↓
+
+HTML Element
+
+ ├── HEAD Element
+ │
+ └── BODY Element
+
+      ├── H1 Element
+      │    └── Text Node
+      │
+      ├── P Element
+      │    └── Text Node
+      │
+      └── Comment Node</pre>
+          </div>
+
+        </div>
+
+        <!-- Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple HTML Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h1&gt;
+  Hello JavaScript
+&lt;/h1&gt;</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Is example me
+            <code class="text-blue-400">&lt;h1&gt;</code>
+            ek Element Node hai aur
+            <code class="text-emerald-400">Hello JavaScript</code>
+            uska Text Node hai.
+          </p>
+
+        </div>
+
+        <!-- Node Types -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Common Node Types
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Node Type</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Document Node
+                  </td>
+                  <td class="p-4">
+                    Complete HTML document.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Element Node
+                  </td>
+                  <td class="p-4">
+                    HTML tags jaise div, p, h1.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Text Node
+                  </td>
+                  <td class="p-4">
+                    Element ke andar ka text.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Comment Node
+                  </td>
+                  <td class="p-4">
+                    HTML comments.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- nodeType -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            nodeType
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Kisi node ka type check karne ke liye
+            <code class="text-blue-400">nodeType</code>
+            property use hoti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+console.log(
+  title.nodeType
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">1</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Element Node ka
+            <code class="text-blue-400">nodeType</code>
+            value
+            <code class="text-emerald-400">1</code>
+            hota hai.
+          </p>
+
+        </div>
+
+        <!-- Node Type Values -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important nodeType Values
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Value</th>
+                  <th class="p-4">Node</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">1</td>
+                  <td class="p-4">Element Node</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">3</td>
+                  <td class="p-4">Text Node</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">8</td>
+                  <td class="p-4">Comment Node</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">9</td>
+                  <td class="p-4">Document Node</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- nodeName -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            nodeName
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Node ka naam check karne ke liye
+            <code class="text-blue-400">nodeName</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+console.log(
+  title.nodeName
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">H1</pre>
+          </div>
+
+        </div>
+
+        <!-- nodeValue -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            nodeValue
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Text Node ya Comment Node ki value read/change karne ke liye
+            <code class="text-blue-400">nodeValue</code>
+            use ho sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h1 id=<span class="text-emerald-400">"title"</span>&gt;
+  Hello
+&lt;/h1&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+<span class="text-blue-400">const</span> textNode =
+  title.firstChild;
+
+console.log(
+  textNode.nodeValue
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- createElement -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            createElement()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            New Element Node create karne ke liye
+            <code class="text-blue-400">document.createElement()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> paragraph =
+  document.createElement(
+    <span class="text-emerald-400">"p"</span>
+  );
+
+paragraph.textContent =
+  <span class="text-emerald-400">"Hello DOM"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- createTextNode -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            createTextNode()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Text Node explicitly create karne ke liye
+            <code class="text-blue-400">createTextNode()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> paragraph =
+  document.createElement(
+    <span class="text-emerald-400">"p"</span>
+  );
+
+<span class="text-blue-400">const</span> text =
+  document.createTextNode(
+    <span class="text-emerald-400">"Hello JavaScript"</span>
+  );
+
+paragraph.appendChild(
+  text
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- appendChild -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            appendChild()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Existing node ke end me new child node add karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> list =
+  document.getElementById(
+    <span class="text-emerald-400">"list"</span>
+  );
+
+<span class="text-blue-400">const</span> item =
+  document.createElement(
+    <span class="text-emerald-400">"li"</span>
+  );
+
+item.textContent =
+  <span class="text-emerald-400">"Mango"</span>;
+
+list.appendChild(
+  item
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- append -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            append()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Nodes ke saath direct text bhi append kar sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.append(
+  <span class="text-emerald-400">"Hello "</span>,
+  paragraph
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- prepend -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            prepend()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Content ko element ke start me add karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> list =
+  document.getElementById(
+    <span class="text-emerald-400">"list"</span>
+  );
+
+<span class="text-blue-400">const</span> item =
+  document.createElement(
+    <span class="text-emerald-400">"li"</span>
+  );
+
+item.textContent =
+  <span class="text-emerald-400">"First Item"</span>;
+
+list.prepend(
+  item
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- before after -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            before() Aur after()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+<span class="text-blue-400">const</span> heading =
+  document.createElement(
+    <span class="text-emerald-400">"h2"</span>
+  );
+
+heading.textContent =
+  <span class="text-emerald-400">"Heading"</span>;
+
+box.before(
+  heading
+);
+
+box.after(
+  <span class="text-emerald-400">"After Box"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- remove -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            remove()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Element ko DOM se remove karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> message =
+  document.getElementById(
+    <span class="text-emerald-400">"message"</span>
+  );
+
+message.remove();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- removeChild -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            removeChild()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> parent =
+  document.getElementById(
+    <span class="text-emerald-400">"parent"</span>
+  );
+
+<span class="text-blue-400">const</span> child =
+  document.getElementById(
+    <span class="text-emerald-400">"child"</span>
+  );
+
+parent.removeChild(
+  child
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- replaceChild -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            replaceChild()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Old child node ko new node se replace karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> parent =
+  document.getElementById(
+    <span class="text-emerald-400">"parent"</span>
+  );
+
+<span class="text-blue-400">const</span> oldItem =
+  document.getElementById(
+    <span class="text-emerald-400">"old"</span>
+  );
+
+<span class="text-blue-400">const</span> newItem =
+  document.createElement(
+    <span class="text-emerald-400">"p"</span>
+  );
+
+newItem.textContent =
+  <span class="text-emerald-400">"New Item"</span>;
+
+parent.replaceChild(
+  newItem,
+  oldItem
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- replaceWith -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            replaceWith()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> oldItem =
+  document.getElementById(
+    <span class="text-emerald-400">"old"</span>
+  );
+
+<span class="text-blue-400">const</span> newItem =
+  document.createElement(
+    <span class="text-emerald-400">"h2"</span>
+  );
+
+newItem.textContent =
+  <span class="text-emerald-400">"New Heading"</span>;
+
+oldItem.replaceWith(
+  newItem
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- cloneNode -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            cloneNode()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Existing node ki copy create karne ke liye
+            <code class="text-blue-400">cloneNode()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> card =
+  document.querySelector(
+    <span class="text-emerald-400">".card"</span>
+  );
+
+<span class="text-blue-400">const</span> copy =
+  card.cloneNode(
+    <span class="text-purple-400">true</span>
+  );
+
+document.body.append(
+  copy
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            <code class="text-blue-400">true</code>
+            dene par child nodes bhi clone hote hain.
+          </p>
+
+        </div>
+
+        <!-- hasChildNodes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            hasChildNodes()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+console.log(
+  box.hasChildNodes()
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- isSameNode -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            isSameNode()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Check karta hai ki dono references exactly same node ko point karte
+            hain ya nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> a =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+<span class="text-blue-400">const</span> b =
+  document.querySelector(
+    <span class="text-emerald-400">"#box"</span>
+  );
+
+console.log(
+  a.isSameNode(b)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+
+        </div>
+
+        <!-- NodeList -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            NodeList
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Kuch DOM methods/properties multiple nodes ka
+            <code class="text-blue-400">NodeList</code>
+            return karte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> items =
+  document.querySelectorAll(
+    <span class="text-emerald-400">".item"</span>
+  );
+
+items.forEach((item) =&gt; {
+
+  console.log(item);
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Dynamic list -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Example: Dynamic List
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;input
+  type=<span class="text-emerald-400">"text"</span>
+  id=<span class="text-emerald-400">"itemInput"</span>
+&gt;
+
+&lt;button id=<span class="text-emerald-400">"addBtn"</span>&gt;
+  Add Item
+&lt;/button&gt;
+
+&lt;ul id=<span class="text-emerald-400">"list"</span>&gt;&lt;/ul&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> input =
+  document.getElementById(
+    <span class="text-emerald-400">"itemInput"</span>
+  );
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"addBtn"</span>
+  );
+
+<span class="text-blue-400">const</span> list =
+  document.getElementById(
+    <span class="text-emerald-400">"list"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    <span class="text-blue-400">if</span> (
+      input.value.trim() ===
+      <span class="text-emerald-400">""</span>
+    ) {
+      <span class="text-blue-400">return</span>;
+    }
+
+    <span class="text-blue-400">const</span> item =
+      document.createElement(
+        <span class="text-emerald-400">"li"</span>
+      );
+
+    item.textContent =
+      input.value;
+
+    list.appendChild(
+      item
+    );
+
+    input.value =
+      <span class="text-emerald-400">""</span>;
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Dynamic delete -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Create Aur Delete Node
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> item =
+  document.createElement(
+    <span class="text-emerald-400">"li"</span>
+  );
+
+<span class="text-blue-400">const</span> text =
+  document.createTextNode(
+    <span class="text-emerald-400">"JavaScript"</span>
+  );
+
+<span class="text-blue-400">const</span> button =
+  document.createElement(
+    <span class="text-emerald-400">"button"</span>
+  );
+
+button.textContent =
+  <span class="text-emerald-400">"Delete"</span>;
+
+item.append(
+  text,
+  button
+);
+
+list.append(
+  item
+);
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    item.remove();
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Node vs Element -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Node vs Element
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Node</th>
+                  <th class="p-4">Element</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    DOM ka generic building block.
+                  </td>
+                  <td class="p-4">
+                    Specific HTML tag node.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Element, text aur comment node ho sakta hai.
+                  </td>
+                  <td class="p-4">
+                    HTML elements jaise div, h1, p.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Har Node Element nahi hota.
+                  </td>
+                  <td class="p-4">
+                    Har Element ek Node hota hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Node Methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Nodes Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method / Property</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    nodeType
+                  </td>
+                  <td class="p-4">
+                    Node type check
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    nodeName
+                  </td>
+                  <td class="p-4">
+                    Node name
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    nodeValue
+                  </td>
+                  <td class="p-4">
+                    Node value
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    createElement()
+                  </td>
+                  <td class="p-4">
+                    Element Node create
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    createTextNode()
+                  </td>
+                  <td class="p-4">
+                    Text Node create
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    appendChild()
+                  </td>
+                  <td class="p-4">
+                    Child node append
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    append()
+                  </td>
+                  <td class="p-4">
+                    Nodes/text append
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    prepend()
+                  </td>
+                  <td class="p-4">
+                    Start me add
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    remove()
+                  </td>
+                  <td class="p-4">
+                    Node remove
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    replaceWith()
+                  </td>
+                  <td class="p-4">
+                    Node replace
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    cloneNode()
+                  </td>
+                  <td class="p-4">
+                    Node clone
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    hasChildNodes()
+                  </td>
+                  <td class="p-4">
+                    Child node check
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. DOM ke almost har part ko node ke form me represent kiya jata
+              hai.
+            </p>
+
+            <p>
+              2. Element, Text, Comment aur Document common node types hain.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">nodeType</code>
+              node ka type batata hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">nodeName</code>
+              node ka naam deta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">createElement()</code>
+              new HTML element create karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">createTextNode()</code>
+              text node create karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">appendChild()</code>
+              aur
+              <code class="text-blue-400">append()</code>
+              nodes add karte hain.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">remove()</code>
+              node ko DOM se hata deta hai.
+            </p>
+
+            <p>
+              9.
+              <code class="text-blue-400">replaceWith()</code>
+              aur
+              <code class="text-blue-400">replaceChild()</code>
+              nodes replace karne ke liye use hote hain.
+            </p>
+
+            <p>
+              10.
+              <code class="text-blue-400">cloneNode()</code>
+              existing node ki copy create karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Navigation.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../browser/Browser.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(27);
+  </script>
+
+</body>
+</html>

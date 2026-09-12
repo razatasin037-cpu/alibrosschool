@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Number Reference - Tutorial</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5"
+      >
+        JavaScript Number Reference
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Properties.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Bitwise.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Number Reference Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript Number Reference ek quick guide hai jisme important
+          Number methods aur properties ko ek hi jagah par dekha ja sakta hai.
+          <br><br>
+          Is reference ki help se aap jaldi check kar sakte ho ki kisi Number
+          method ya property ka use kya hai aur uska syntax kaise likha jata hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Basic Syntax -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Number Basic Syntax
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> number = <span class="text-emerald-400">100</span>;
+
+console.log(number);</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">100</pre>
+          </div>
+
+        </div>
+
+        <!-- Number Methods -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Number Methods Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Example</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toString()</td>
+                  <td class="p-4">Number ko String me convert karta hai.</td>
+                  <td class="p-4 font-mono">num.toString()</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toFixed()</td>
+                  <td class="p-4">Decimal places fix karta hai.</td>
+                  <td class="p-4 font-mono">num.toFixed(2)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toPrecision()</td>
+                  <td class="p-4">Total significant digits set karta hai.</td>
+                  <td class="p-4 font-mono">num.toPrecision(4)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toExponential()</td>
+                  <td class="p-4">Number ko exponential notation me convert karta hai.</td>
+                  <td class="p-4 font-mono">num.toExponential(2)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">valueOf()</td>
+                  <td class="p-4">Primitive Number value return karta hai.</td>
+                  <td class="p-4 font-mono">num.valueOf()</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Static Methods -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Number Static Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Example</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number()</td>
+                  <td class="p-4">Value ko Number me convert karta hai.</td>
+                  <td class="p-4 font-mono">Number("100")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.parseInt()</td>
+                  <td class="p-4">String ko integer me parse karta hai.</td>
+                  <td class="p-4 font-mono">Number.parseInt("100px")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.parseFloat()</td>
+                  <td class="p-4">String ko decimal Number me parse karta hai.</td>
+                  <td class="p-4 font-mono">Number.parseFloat("10.5kg")</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.isInteger()</td>
+                  <td class="p-4">Integer hai ya nahi check karta hai.</td>
+                  <td class="p-4 font-mono">Number.isInteger(10)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.isNaN()</td>
+                  <td class="p-4">Value NaN hai ya nahi check karta hai.</td>
+                  <td class="p-4 font-mono">Number.isNaN(NaN)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.isFinite()</td>
+                  <td class="p-4">Finite Number check karta hai.</td>
+                  <td class="p-4 font-mono">Number.isFinite(100)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.isSafeInteger()</td>
+                  <td class="p-4">Safe integer range check karta hai.</td>
+                  <td class="p-4 font-mono">Number.isSafeInteger(100)</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Properties -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Number Properties Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.EPSILON</td>
+                  <td class="p-4">
+                    1 aur next representable floating-point value ke difference ko show karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.MAX_VALUE</td>
+                  <td class="p-4">
+                    Largest finite Number value.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.MIN_VALUE</td>
+                  <td class="p-4">
+                    Zero se greater smallest positive Number value.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number.MAX_SAFE_INTEGER
+                  </td>
+                  <td class="p-4">
+                    Largest safely representable integer.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number.MIN_SAFE_INTEGER
+                  </td>
+                  <td class="p-4">
+                    Smallest safely representable integer.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number.POSITIVE_INFINITY
+                  </td>
+                  <td class="p-4">
+                    Positive Infinity.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number.NEGATIVE_INFINITY
+                  </td>
+                  <td class="p-4">
+                    Negative Infinity.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number.NaN
+                  </td>
+                  <td class="p-4">
+                    Not a Number value.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Quick Example -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Quick Number Example
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> num = <span class="text-emerald-400">123.456</span>;
+
+console.log(num.toFixed(<span class="text-emerald-400">2</span>));
+
+console.log(num.toString());
+
+console.log(Number.isInteger(num));
+
+console.log(Number.MAX_SAFE_INTEGER);</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">123.46
+123.456
+false
+9007199254740991</pre>
+          </div>
+
+        </div>
+
+        <!-- Quick Difference -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Number Conversion Difference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Function</th>
+                  <th class="p-4">Input</th>
+                  <th class="p-4">Result</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number()
+                  </td>
+                  <td class="p-4 font-mono">"100"</td>
+                  <td class="p-4 font-mono">100</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number()
+                  </td>
+                  <td class="p-4 font-mono">"100px"</td>
+                  <td class="p-4 font-mono text-red-400">NaN</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    parseInt()
+                  </td>
+                  <td class="p-4 font-mono">"100px"</td>
+                  <td class="p-4 font-mono">100</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    parseFloat()
+                  </td>
+                  <td class="p-4 font-mono">"10.5kg"</td>
+                  <td class="p-4 font-mono">10.5</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Number instance methods ko
+              <code class="text-blue-400">number.method()</code>
+              se use karte hain.
+            </p>
+
+            <p>
+              2. Static methods ko
+              <code class="text-blue-400">Number.method()</code>
+              se use karte hain.
+            </p>
+
+            <p>
+              3. Number properties ke saath
+              <code class="text-blue-400">()</code>
+              nahi lagta.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">Number()</code>
+              complete value ko Number me convert karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">parseInt()</code>
+              aur
+              <code class="text-blue-400">parseFloat()</code>
+              String ke starting numeric part ko parse kar sakte hain.
+            </p>
+
+            <p>
+              6. Safe integer limit se bade exact integer ke liye
+              <code class="text-blue-400">BigInt</code>
+              use karna useful hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Properties.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Bitwise.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // JS Numbers -> Number Reference
+    document.getElementById("sidebar").innerHTML = createSidebar(9);
+  </script>
+
+</body>
+</html>

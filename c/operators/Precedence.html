@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Operator Precedence & Associativity</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Operator Precedence & Associativity 
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Logical.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../ifElse/If.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Precedence Aur Associativity Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab ek expression me ek se zyada operators (jaise <code class="text-yellow-300 font-bold">+</code>, <code class="text-yellow-300 font-bold">*</code>, <code class="text-yellow-300 font-bold">==</code>) hote hain, tab C compiler tay karta hai ki pehle kaun sa part solve hoga.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-2xl text-green-400 font-bold mb-3">1. Operator Precedence (Priority)</p>
+          <p class="text-lg text-gray-300 leading-8">
+            Yeh batata hai ki kis operator ki <strong>Priority high</strong> hai. Higher priority wala operator pehle solve hota hai (Jaise maths me BODMAS rule me Multiplication <code class="text-yellow-300">*</code> pehle aur Addition <code class="text-yellow-300">+</code> baad me).
+          </p>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-2xl text-cyan-400 font-bold mb-3">2. Operator Associativity (Direction)</p>
+          <p class="text-lg text-gray-300 leading-8">
+            Jab do operators ki <strong>Priority Same</strong> ho (jaise <code class="text-yellow-300">*</code> aur <code class="text-yellow-300">/</code>), tab Associativity batati hai ki expression <strong>Left-to-Right (L-&gt;R)</strong> solve hoga ya <strong>Right-to-Left (R-&gt;L)</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Operator Precedence Table (Highest to Lowest)</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-yellow-400">Rank</th>
+              <th class="py-4 px-6 text-green-400">Operators</th>
+              <th class="py-4 px-6">Description</th>
+              <th class="py-4 px-6 text-cyan-300">Associativity</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr class="bg-green-950/20">
+              <td class="py-4 px-6 font-bold text-yellow-400">1 (Highest)</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">() [] . -&gt;</td>
+              <td class="py-4 px-6">Parentheses, Array Subscript, Structure Member</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">2</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">++ -- + - ! ~ (type) sizeof &amp; *</td>
+              <td class="py-4 px-6">Unary operators, Logical NOT, Bitwise NOT, Cast, Address-of, Pointer Dereference</td>
+              <td class="py-4 px-6 font-mono text-pink-400 font-bold">Right-to-Left</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">3</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">* / %</td>
+              <td class="py-4 px-6">Multiplicative (Multiply, Divide, Modulus)</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">4</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">+ -</td>
+              <td class="py-4 px-6">Additive (Addition, Subtraction)</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">5</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">&lt;&lt; &gt;&gt;</td>
+              <td class="py-4 px-6">Bitwise Shift Left and Right</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">6</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">&lt; &lt;= &gt; &gt;=</td>
+              <td class="py-4 px-6">Relational Comparison Operators</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">7</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">== !=</td>
+              <td class="py-4 px-6">Equality Operators (Equal / Not Equal)</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">8</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">&amp;</td>
+              <td class="py-4 px-6">Bitwise AND</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">9</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">^</td>
+              <td class="py-4 px-6">Bitwise XOR</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">10</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">|</td>
+              <td class="py-4 px-6">Bitwise OR</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">11</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">&amp;&amp;</td>
+              <td class="py-4 px-6">Logical AND</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">12</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">||</td>
+              <td class="py-4 px-6">Logical OR</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">13</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">?:</td>
+              <td class="py-4 px-6">Ternary Conditional Operator</td>
+              <td class="py-4 px-6 font-mono text-pink-400 font-bold">Right-to-Left</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-yellow-400">14</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">= += -= *= /= %= &lt;&lt;= &gt;&gt;= &amp;= ^= |=</td>
+              <td class="py-4 px-6">Assignment Operators</td>
+              <td class="py-4 px-6 font-mono text-pink-400 font-bold">Right-to-Left</td>
+            </tr>
+            <tr class="bg-red-950/20">
+              <td class="py-4 px-6 font-bold text-yellow-400">15 (Lowest)</td>
+              <td class="py-4 px-6 font-mono text-green-400 text-2xl font-bold">,</td>
+              <td class="py-4 px-6">Comma Operator</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">Left-to-Right</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Pro Tip Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Golden Rule: Parentheses <code class="text-yellow-300">()</code> ka Use Karein! </h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Aapko poori table yaad rakhne ki zarurat nahi hai! Agar aapko order control karna ho ya code ko clean banana ho, toh **Parentheses <code class="text-yellow-300 font-bold">()</code>** ka use karein kyunki inki precedence sabse highest hoti hai.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-red-500/50 p-6 rounded-2xl">
+          <p class="text-xl text-red-400 font-bold mb-2">❌ Confusing &amp; Bug Prone</p>
+          <div class="bg-black p-3 rounded-lg text-gray-300 font-mono text-lg">int result = x + y * z &gt;&gt; 2 &amp; mask;</div>
+          <p class="text-sm text-gray-400 mt-2">Samajhna mushkil hai ki pehle kya evaluate hoga.</p>
+        </div>
+
+        <div class="bg-black/60 border border-green-500/50 p-6 rounded-2xl">
+          <p class="text-xl text-green-400 font-bold mb-2">✅ Clean &amp; Explicit</p>
+          <div class="bg-black p-3 rounded-lg text-gray-300 font-mono text-lg">int result = ((x + (y * z)) &gt;&gt; 2) &amp; mask;</div>
+          <p class="text-sm text-gray-400 mt-2">Clearly dikhta hai ki execution flow kya hai.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Example -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Evaluation Step-by-Step</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> a = <span class="text-green-400">10</span>, b = <span class="text-green-400">20</span>, c = <span class="text-green-400">30</span>, d = <span class="text-green-400">40</span>;
+    <span class="text-green-500">int</span> res1, res2;
+
+    <span class="text-gray-500">// Example 1: * has higher precedence than +</span>
+    <span class="text-gray-500">// Evaluates as: 10 + (20 * 30) = 10 + 600 = 610</span>
+    res1 = a + b * c;
+
+    <span class="text-gray-500">// Example 2: () forces + to execute first</span>
+    <span class="text-gray-500">// Evaluates as: (10 + 20) * 30 = 30 * 30 = 900</span>
+    res2 = (a + b) * c;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"a + b * c = %d\n"</span>, res1);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"(a + b) * c = %d\n"</span>, res2);
+
+    <span class="text-gray-500">// Example 3: Associativity for / and * (Left-to-Right)</span>
+    <span class="text-gray-500">// Evaluates as: (100 / 10) * 2 = 10 * 2 = 20</span>
+    <span class="text-green-500">int</span> res3 = <span class="text-green-400">100</span> / <span class="text-green-400">10</span> * <span class="text-green-400">2</span>;
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"100 / 10 * 2 = %d\n"</span>, res3);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">a + b * c = 610</p>
+        <p class="text-gray-300 font-mono">(a + b) * c = 900</p>
+        <p class="text-gray-300 font-mono">100 / 10 * 2 = 20</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Precedence decides <strong>kaun sa operator pehle chalega</strong>, aur Associativity decides <strong>kis direction se evaluation hoga</strong> agar precedence same ho. Unnecessary bugs se bachne ke liye hamesha parentheses <code class="text-yellow-300 font-bold">()</code> ka use karein.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Logical.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../ifElse/If.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(12);
+  }
+</script>
+
+</body>
+</html>

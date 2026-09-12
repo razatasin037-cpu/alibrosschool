@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Errors - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- NAVBAR -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+      <div id="sidebar"></div>
+
+      <!-- MAIN CONTENT -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Errors
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../comments/comments.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../colors/colors.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRODUCTION -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i
+                class="fa-solid fa-triangle-exclamation text-[#4d6fff] mr-3"
+              ></i>
+              CSS Errors Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS code likhte waqt agar syntax, property, value ya selector mein
+              mistake ho jaye to CSS expected tarike se work nahi karti.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              CSS errors ko identify karke correct karna debugging ka important
+              part hai.
+            </p>
+
+            <!-- COMMON ERRORS -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-list-check text-[#4d6fff] mr-3"></i>
+                Common CSS Errors
+              </h3>
+
+              <div class="grid md:grid-cols-2 gap-5">
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i class="fa-solid fa-code text-[#4d6fff] text-3xl mb-5"></i>
+
+                  <h4 class="text-xl font-bold mb-3">Syntax Error</h4>
+
+                  <p class="text-gray-300 text-lg leading-8">
+                    CSS rule ka syntax galat hone par browser us rule ko
+                    properly read nahi kar pata.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-wand-magic-sparkles text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+
+                  <h4 class="text-xl font-bold mb-3">Wrong Property</h4>
+
+                  <p class="text-gray-300 text-lg leading-8">
+                    Agar property ka naam galat likha gaya ho to browser us
+                    property ko apply nahi karega.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-circle-xmark text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+
+                  <h4 class="text-xl font-bold mb-3">Wrong Value</h4>
+
+                  <p class="text-gray-300 text-lg leading-8">
+                    Property ke saath invalid value dene par styling expected
+                    tarike se work nahi karegi.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-link-slash text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+
+                  <h4 class="text-xl font-bold mb-3">CSS File Not Linked</h4>
+
+                  <p class="text-gray-300 text-lg leading-8">
+                    External CSS file HTML se properly connected na ho to CSS
+                    load nahi hogi.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SYNTAX ERROR -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              1. Syntax Error
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS syntax mein brackets, colon ya semicolon galat hone par
+              problem aa sakti hai.
+            </p>
+
+            <!-- WRONG CODE -->
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Wrong Example
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">30px</span>;
+}</code></pre>
+            </div>
+
+            <!-- CORRECT CODE -->
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Correct Example
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">30px</span>;
+}</code></pre>
+            </div>
+
+            <!-- WRONG PROPERTY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-wrench text-[#4d6fff] mr-3"></i>
+              2. Wrong Property Name
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS property ka exact naam use karna zaroori hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Wrong
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">text-colour</span>: <span class="text-[#4ade80]">red</span>;
+}</code></pre>
+            </div>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Correct
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">red</span>;
+}</code></pre>
+            </div>
+
+            <!-- WRONG VALUE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-sliders text-[#4d6fff] mr-3"></i>
+              3. Wrong Value
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Har CSS property ke liye valid values ka use karna chahiye.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-7 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Wrong
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">big</span>;
+}</code></pre>
+            </div>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <h3 class="text-2xl font-bold mb-5">
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Correct
+              </h3>
+
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">30px</span>;
+}</code></pre>
+            </div>
+
+            <!-- MISSING SEMICOLON -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ellipsis text-[#4d6fff] mr-3"></i>
+              4. Missing Semicolon
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS declarations ko normally semicolon
+              <b>;</b>
+              se end kiya jata hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+  <span class="text-[#60a5fa]">margin</span>: <span class="text-[#4ade80]">20px</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">10px</span>;
+}</code></pre>
+            </div>
+
+            <!-- MISSING BRACE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-brackets-curly text-[#4d6fff] mr-3"></i>
+              5. Missing Curly Bracket
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS rule ko close karne ke liye closing curly bracket
+              <b>}</b>
+              zaroori hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">h1</span> {
+  <span class="text-[#60a5fa]">color</span>: <span class="text-[#4ade80]">blue</span>;
+  <span class="text-[#60a5fa]">font-size</span>: <span class="text-[#4ade80]">30px</span>;
+}</code></pre>
+            </div>
+
+            <!-- CSS NOT WORKING -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-bug text-[#4d6fff] mr-3"></i>
+              CSS Work Nahi Kar Rahi Ho To?
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  Check karo CSS file HTML se properly linked hai ya nahi.
+                </li>
+
+                <li>Selector ka naam check karo.</li>
+
+                <li>Property ka spelling check karo.</li>
+
+                <li>Property ki value valid hai ya nahi check karo.</li>
+
+                <li>
+                  Curly brackets <b>{ }</b> properly close hain ya nahi check
+                  karo.
+                </li>
+
+                <li>Semicolon <b>;</b> missing to nahi hai check karo.</li>
+
+                <li>
+                  Browser Developer Tools ke Console aur Styles panel ko check
+                  karo.
+                </li>
+              </ul>
+            </div>
+
+            <!-- DEVTOOLS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-screwdriver-wrench text-[#4d6fff] mr-3"></i>
+              Browser Developer Tools
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Browser ke Developer Tools se hum check kar sakte hain ki CSS kis
+              element par apply ho rahi hai aur kis rule ko browser ignore kar
+              raha hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <div class="space-y-6">
+                <div class="flex gap-4 items-start">
+                  <i
+                    class="fa-solid fa-mouse-pointer text-[#4d6fff] text-2xl mt-1"
+                  ></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Element par right-click karke
+                    <b>Inspect</b>
+                    select kar sakte ho.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-code text-[#4d6fff] text-2xl mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Styles panel mein applied CSS rules dekhi ja sakti hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-bug text-[#4d6fff] text-2xl mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Galat ya overridden CSS rule ko identify kiya ja sakta hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>CSS mein spelling mistakes check karo.</li>
+
+                <li>Property aur value ko carefully check karo.</li>
+
+                <li>Curly brackets properly close karo.</li>
+
+                <li>CSS declarations ke end mein semicolon use karo.</li>
+
+                <li>External CSS file ka path check karo.</li>
+
+                <li>Developer Tools debugging mein bahut useful hain.</li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Errors Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    CSS error ka main reason syntax ya incorrect CSS rule ho
+                    sakta hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Property aur value ko carefully check karna chahiye.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Brackets aur semicolons ka correct use important hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    External CSS use kar rahe ho to file path aur link check
+                    karo.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Developer Tools se CSS problems ko easily debug kiya ja
+                    sakta hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../comments/comments.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../colors/colors.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(7);
+      });
+    </script>
+  </body>
+</html>

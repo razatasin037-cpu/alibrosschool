@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP $_GET Superglobal - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP $_GET
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Post.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../forms/FormHandling.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            $_GET Superglobal Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            <strong class="text-white">$_GET</strong> ek PHP superglobal associative array variable hai jiska use URL query string ke zariye bheje gaye data ko collect karne ke liye kiya jata hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Jab bhi aap kisi URL me key-value pairs (`?name=Rahul&age=25`) dekhte hain ya HTML Form ko `method="GET"` ke sath submit karte hain, toh PHP un values ko auto-populate karke <strong class="text-white">$_GET</strong> array me store kar leta hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Key Features & Limit -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Key Features &amp; Limitations
+            </h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
+              <li><strong>URL Visibility:</strong> Data browser address bar me sabko dikhta hai, isiliye ise bookmark kiya ja sakta hai.</li>
+              <li><strong>Size Limit:</strong> URL length restriction hone ki wajah se aap max ~2000 characters (2KB) tak ka data hi bhej sakte hain.</li>
+              <li><strong>Non-Sensitive Data Only:</strong> Search queries, pagination, aur filter tags ke liye ideal hai; sensitive data (Passwords, Cards) ke liye <strong class="text-white">strictly avoid</strong> karein.</li>
+            </ul>
+          </div>
+
+          <!-- 1. Reading URL Parameters -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Reading URL Query Parameters
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Maan lijiye user is URL par visit karta hai: <code class="text-green-400">profile.php?user=John&amp;role=admin</code>
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Safely check and retrieve URL parameters</span>
+  <span class="text-green-400">$username</span> = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$_GET</span>[<span class="text-white">'user'</span>] ?? <span class="text-white">'Guest'</span>);
+  <span class="text-green-400">$role</span>     = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$_GET</span>[<span class="text-white">'role'</span>] ?? <span class="text-white">'Subscriber'</span>);
+
+  <span class="text-green-400">echo</span> <span class="text-white">"Welcome, "</span> . <span class="text-green-400">$username</span> . <span class="text-white">"! Your role is: "</span> . <span class="text-green-400">$role</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. HTML Form GET Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. HTML Search Form using <code class="text-green-400">method="GET"</code>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Search forms ke liye standard industry practice GET method use karna hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;!-- Search Form Example --&gt;</span>
+<span class="text-green-400">&lt;form</span> <span class="text-white">method</span>=<span class="text-yellow-300">"GET"</span> <span class="text-white">action</span>=<span class="text-yellow-300">"search.php"</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"text"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"query"</span> <span class="text-white">placeholder</span>=<span class="text-yellow-300">"Search products..."</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;button</span> <span class="text-white">type</span>=<span class="text-yellow-300">"submit"</span><span class="text-green-400">&gt;</span>Search<span class="text-green-400">&lt;/button&gt;</span>
+<span class="text-green-400">&lt;/form&gt;</span>
+
+<span class="text-[#94a3b8]">&lt;!-- Inside search.php --&gt;</span>
+<span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">if</span> (<span class="text-green-400">isset</span>(<span class="text-green-400">$_GET</span>[<span class="text-white">'query'</span>])) {
+      <span class="text-green-400">$search_term</span> = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$_GET</span>[<span class="text-white">'query'</span>]);
+      <span class="text-green-400">echo</span> <span class="text-white">"Search Results for: "</span> . <span class="text-green-400">$search_term</span>;
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Security Caution Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-red-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-red-400">
+              <span>⚠️</span> Security Warning: Never Trust $_GET Data Directly
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Kyunki URL ko koi bhi user manually edit kar sakta hai, <code class="text-green-400">$_GET</code> parameters Cross-Site Scripting (XSS) aur SQL Injection ke liye highly vulnerable hote hain.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-300">
+              - Screen par print karte waqt <code class="text-green-400">htmlspecialchars()</code> ka istemal karein.<br>
+              - Numeric IDs (e.g. `product.php?id=5`) ke liye <code class="text-green-400">filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT)</code> se integer validation zaroor karein.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Post.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../forms/FormHandling.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(19);
+    </script>
+  </body>
+</html>

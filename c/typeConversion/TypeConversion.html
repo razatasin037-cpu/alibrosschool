@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Type Conversion - Implicit & Explicit Casting</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Type Conversion (Type Casting)
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="../datatypes/ExtendedTypes.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../Constants/Constants.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Type Conversion Kya Hai?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab ek variable ke data type ko doosre data type me convert kiya jata hai, toh us process ko **Type Conversion** ya **Type Casting** kehte hain.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        C language me Type Conversion do tareeqon se hota hai:
+      </p>
+      <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-2 mt-4">
+        <li><strong class="text-yellow-300">Implicit Conversion (Automatic):</strong> Compiler ise khud kar deta hai.</li>
+        <li><strong class="text-cyan-300">Explicit Conversion (Manual):</strong> Programmer ise forcibly code likh kar karta hai.</li>
+      </ul>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Implicit vs Explicit Conversion</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Feature</th>
+              <th class="py-4 px-6 text-yellow-300">Implicit Conversion</th>
+              <th class="py-4 px-6 text-cyan-400">Explicit Conversion</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold text-white">Execution</td>
+              <td class="py-4 px-6">Automatic (by Compiler)</td>
+              <td class="py-4 px-6">Manual (by Programmer)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-white">Data Loss Risk</td>
+              <td class="py-4 px-6 text-green-400">No (Promotes to larger type)</td>
+              <td class="py-4 px-6 text-red-400">Yes (Possible data truncation)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-white">Syntax Required</td>
+              <td class="py-4 px-6">None</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">(dataType) expression</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Implicit Conversion Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">1. Implicit Type Conversion (Automatic)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab chote data type ko bade data type me assign kiya jata hai, toh C compiler bina kisi data loss ke automatic type upgrade kar deta hai. Isko **Type Promotion** bhi kehte hain:
+      </p>
+
+      <div class="bg-black/60 border border-gray-700 rounded-2xl p-6 mb-8 text-center text-xl font-mono text-green-400">
+        bool ➔ char ➔ short int ➔ int ➔ unsigned int ➔ long ➔ float ➔ double
+      </div>
+
+      <!-- Implicit Code Example -->
+      <h3 class="text-2xl font-bold text-yellow-300 mb-4">Implicit Example:</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myInt = <span class="text-green-400">9</span>;
+    <span class="text-green-500">double</span> myDouble = myInt; <span class="text-gray-500">// Automatic conversion: int to double</span>
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Integer: %d\n"</span>, myInt);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Double: %lf\n"</span>, myDouble);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Integer: 9</p>
+        <p class="text-gray-300 font-mono">Double: 9.000000</p>
+      </div>
+    </section>
+
+    <!-- Explicit Conversion Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">2. Explicit Type Conversion (Type Casting)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Jab kisi value ko forcibly doosre data type me convert karna ho, toh value ke aage brackets me type specify karte hain: <code class="text-cyan-400 font-bold">(type) value</code>.
+      </p>
+
+      <div class="bg-black/50 border border-[#3158ff]/40 rounded-2xl p-6 mb-8">
+        <p class="text-xl text-red-400 font-semibold mb-2">⚠️ Warning (Data Loss):</p>
+        <p class="text-xl text-gray-300 leading-9">
+          Jab aap floating-point value ko <code class="text-green-400">int</code> me convert karte hain, toh decimal ke baad ke sare digits ignore (truncate) ho jate hain.
+        </p>
+      </div>
+
+      <!-- Explicit Code Example 1 -->
+      <h3 class="text-2xl font-bold text-yellow-300 mb-4">Example 1: Truncation (Decimal Loss)</h3>
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">float</span> pi = <span class="text-green-400">3.99f</span>;
+    <span class="text-green-500">int</span> intPi = (<span class="text-green-500">int</span>) pi; <span class="text-gray-500">// Manual casting: float to int</span>
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Float Value: %.2f\n"</span>, pi);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Cast to Int: %d\n"</span>, intPi);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 mb-10">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Float Value: 3.99</p>
+        <p class="text-gray-300 font-mono">Cast to Int: 3</p>
+      </div>
+
+      <!-- Explicit Code Example 2: Real Life Division -->
+      <h3 class="text-2xl font-bold text-yellow-300 mb-4">Example 2: Division Accuracy Fix</h3>
+      <p class="text-xl text-gray-300 leading-10 mb-4">
+        Do integers ko divide karne par integer division hota hai. Exact result ke liye type casting zaroori hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> num1 = <span class="text-green-400">5</span>;
+    <span class="text-green-500">int</span> num2 = <span class="text-green-400">2</span>;
+
+    <span class="text-gray-500">// Without Casting: 5 / 2 = 2 (Incorrect)</span>
+    <span class="text-green-500">float</span> wrongResult = num1 / num2;
+
+    <span class="text-gray-500">// With Explicit Casting: 5 / 2 = 2.50 (Correct)</span>
+    <span class="text-green-500">float</span> correctResult = (<span class="text-green-500">float</span>) num1 / num2;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Without Casting: %.2f\n"</span>, wrongResult);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"With Casting: %.2f\n"</span>, correctResult);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Without Casting: 2.00</p>
+        <p class="text-gray-300 font-mono">With Casting: 2.50</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Calculations me accuracy preserve karne ke liye <code class="text-yellow-300 font-bold">Explicit Casting</code> ka use karein, especially jab do integers ko divide karke decimal result lana ho.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="../datatypes/ExtendedTypes.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../Constants/Constants.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(9);
+  }
+</script>
+
+</body>
+</html>

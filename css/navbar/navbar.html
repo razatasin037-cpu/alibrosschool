@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Navigation Bar</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Navigation Bar
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Navigation Bar website ka ek important part hota hai. Navigation
+            bar ki help se users website ke different pages ya sections par
+            easily ja sakte hain. CSS ka use karke hum navigation links ko
+            horizontal, vertical, responsive aur attractive bana sakte hain.
+          </p>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../opacity/opacity.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../dropdowns/dropdowns.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS NAVIGATION BAR -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-bars text-blue-400 mr-2"></i>
+              CSS Navigation Bar Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Navigation Bar ek aisa section hota hai jisme website ke important
+              links diye jate hain. Jaise Home, About, Services, Contact, Login
+              aur Products. User in links par click karke website ke different
+              pages par navigate kar sakta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              HTML navigation bar ka basic structure provide karta hai, jabki
+              CSS us structure ko design karta hai. CSS ki help se hum links ko
+              ek line mein arrange kar sakte hain, background color de sakte
+              hain, padding aur spacing add kar sakte hain aur hover effects
+              create kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Modern websites mein navigation bar usually website ke top par
+              hota hai. Lekin requirement ke according ise sidebar, vertical
+              menu ya responsive mobile menu ke form mein bhi design kiya ja
+              sakta hai.
+            </p>
+          </section>
+
+          <!-- BASIC HTML STRUCTURE -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+              Basic Navigation Bar Structure
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Navigation bar banane ke liye hum generally ek
+              <span class="text-blue-400 font-semibold">nav</span> element ke
+              andar unordered list aur list items ka use kar sakte hain. Har
+              list item ke andar ek anchor link hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;nav&gt;</span>
+  <span class="text-blue-400">&lt;ul&gt;</span>
+    <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Home<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>About<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Services<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Contact<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;/ul&gt;</span>
+<span class="text-blue-400">&lt;/nav&gt;</span></code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Yahan <span class="text-blue-400">nav</span> navigation area ko
+              represent karta hai. <span class="text-blue-400">ul</span> links
+              ki list banata hai aur
+              <span class="text-blue-400">a</span> element actual clickable
+              navigation link provide karta hai.
+            </p>
+          </section>
+
+          <!-- REMOVE LIST STYLING -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-list text-blue-400 mr-2"></i>
+              List Styling Remove Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              By default unordered list mein bullets appear hote hain.
+              Navigation bar mein normally bullets ki zarurat nahi hoti, isliye
+              hum
+              <span class="text-blue-400">list-style-type: none</span> ka use
+              karke bullets remove kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">ul</span> {
+  <span class="text-blue-400">list-style-type</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">0</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">0</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Is CSS ke baad list ke default bullets remove ho jayenge aur
+              navigation bar clean appearance ke saath start hoga.
+            </p>
+          </section>
+
+          <!-- HORIZONTAL NAVBAR -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+              Horizontal Navigation Bar
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Most websites mein navigation links horizontal form mein dikhte
+              hain. Iska matlab Home, About, Services aur Contact jaise links ek
+              hi line mein side-by-side appear karte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Iske liye hum list items ko
+              <span class="text-blue-400">display: inline</span> ya
+              <span class="text-blue-400">display: inline-block</span> de sakte
+              hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">li</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+}
+
+<span class="text-blue-400">li a</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">15px 20px</span>;
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">none</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- NAVBAR BACKGROUND -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-palette text-blue-400 mr-2"></i>
+              Navigation Bar Ka Background
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Navigation bar ko visually separate dikhane ke liye hum background
+              color ka use kar sakte hain. Dark, light ya brand-specific color
+              navigation ko website ke overall design ke saath match kar sakta
+              hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">ul</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#1e293b</span>;
+}
+
+<span class="text-blue-400">a</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- NAVIGATION LINKS -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-link text-blue-400 mr-2"></i>
+              Navigation Links Ko Style Karna
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Navigation bar ka main purpose clickable links provide karna hai.
+              Isliye anchor element ko proper padding, color aur text-decoration
+              dena important hota hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Default anchor links generally underline ke saath appear hote
+              hain. Navigation bar mein hum
+              <span class="text-blue-400">text-decoration: none</span> use karke
+              underline remove kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">a</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">15px 20px</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- HOVER EFFECT -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+              Navigation Bar Mein Hover Effect
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Navigation bar ko interactive banane ke liye hover effect bahut
+              useful hota hai. Jab user kisi link par mouse le jata hai, tab
+              background color ya text color change kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">a</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">15px 20px</span>;
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">none</span>;
+}
+
+<span class="text-blue-400">a:hover</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#334155</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Ab jab user link ke upar mouse move karega, us link ka background
+              change ho jayega. Isse user ko clear visual feedback milta hai.
+            </p>
+          </section>
+
+          <!-- ACTIVE LINK -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-location-dot text-blue-400 mr-2"></i>
+              Active Navigation Link
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Navigation bar mein user ko ye pata chalna chahiye ki wo currently
+              website ke kis page par hai. Iske liye active link ko different
+              background ya text color diya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">.active</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#2563eb</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Jis link par <span class="text-blue-400">active</span> class lagi
+              hogi, wo baaki navigation links se visually different dikhega.
+            </p>
+          </section>
+
+          <!-- VERTICAL NAVBAR -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+              Vertical Navigation Bar
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Har navigation bar horizontal hona zaroori nahi hai. Sidebar ya
+              dashboard jaisi websites mein links vertical direction mein
+              arrange kiye ja sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Vertical navigation ke liye list items ko block-level layout mein
+              rakha ja sakta hai. Har link alag line mein appear karega.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">ul</span> {
+  <span class="text-blue-400">list-style-type</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">0</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">0</span>;
+  <span class="text-blue-400">width</span>: <span class="text-green-400">200px</span>;
+}
+
+<span class="text-blue-400">li a</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">15px</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- COMPLETE NAVBAR -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-wand-magic-sparkles text-blue-400 mr-2"></i>
+              Complete CSS Navigation Bar Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Ab ek complete navigation bar banate hain jisme HTML structure,
+              background color, horizontal links, padding aur hover effect sab
+              ek saath use kiya gaya hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Complete Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;nav&gt;</span>
+  <span class="text-blue-400">&lt;ul&gt;</span>
+    <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Home<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>About<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Services<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"#"</span><span class="text-blue-400">&gt;</span>Contact<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;/ul&gt;</span>
+<span class="text-blue-400">&lt;/nav&gt;</span>
+
+<span class="text-blue-400">ul</span> {
+  <span class="text-blue-400">list-style-type</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">0</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">0</span>;
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#1e293b</span>;
+}
+
+<span class="text-blue-400">li</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+}
+
+<span class="text-blue-400">li a</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">16px 20px</span>;
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">none</span>;
+}
+
+<span class="text-blue-400">li a:hover</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#334155</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- RESPONSIVE -->
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              <i
+                class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"
+              ></i>
+              Responsive Navigation Bar
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              Modern websites ko desktop ke saath mobile devices par bhi
+              properly work karna chahiye. Agar navigation mein bahut saare
+              links hain, to mobile screen par sabhi links ek hi line mein fit
+              nahi honge.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              CSS media queries ki help se hum screen size ke according
+              navigation ka layout change kar sakte hain. Desktop par links
+              horizontal aur smaller screen par vertical ho sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-2xl font-bold">
+                  <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                  Responsive Example
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">li</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">inline-block</span>;
+}
+
+<span class="text-blue-400">@media</span> (max-width: <span class="text-green-400">600px</span>) {
+
+  <span class="text-blue-400">li</span> {
+    <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+  }
+
+  <span class="text-blue-400">li a</span> {
+    <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  }
+
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Navigation bar website ke different pages aur sections ke links
+                provide karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                HTML navigation ka structure banata hai aur CSS usko style karta
+                hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                list-style-type: none se default list bullets remove kiye ja
+                sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                display: inline-block se navigation links ko horizontal arrange
+                kiya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                text-decoration: none se links ki default underline remove ki ja
+                sakti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                :hover pseudo-class se navigation links par hover effects create
+                kiye ja sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Active page ko different styling dekar user ko current location
+                batayi ja sakti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive navigation ke liye media queries ka use kiya ja sakta
+                hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Navigation Bar website ke navigation links ko organized aur
+              attractive way mein display karne ke liye use hota hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              Navigation bar mein hum list styling remove karke links ko
+              horizontal ya vertical layout mein arrange kar sakte hain.
+              Background color, padding, text color aur hover effects navigation
+              ko better appearance dete hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Real-world websites mein responsive navigation bahut important
+              hai, kyunki navigation desktop, tablet aur mobile sabhi screen
+              sizes par properly usable hona chahiye.
+            </p>
+          </div>
+
+          <!-- BOTTOM BUTTONS -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../opacity/opacity.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../dropdowns/dropdowns.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(33);
+      });
+    </script>
+  </body>
+</html>

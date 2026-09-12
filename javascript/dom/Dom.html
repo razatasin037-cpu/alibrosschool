@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript HTML DOM - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript HTML DOM
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/async/Fetch.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Elements.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          DOM Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          DOM ka full form
+          <code class="text-blue-400">Document Object Model</code>
+          hai.
+          <br><br>
+          Browser HTML page ko objects ke tree ke form me represent karta hai.
+          JavaScript DOM ki help se HTML elements ko select, change, create,
+          delete aur events handle kar sakta hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Simple Meaning -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Meaning
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            HTML page browser me load hone ke baad JavaScript ke liye ek
+            object structure ban jata hai. Isi object structure ko DOM kehte
+            hain.
+          </p>
+
+        </div>
+
+        <!-- DOM Tree -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Tree
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">Document
+
+   ↓
+
+HTML
+
+ ├── HEAD
+ │    └── TITLE
+ │
+ └── BODY
+      ├── H1
+      ├── P
+      └── BUTTON</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            HTML ke har element ko DOM me ek node ke roop me represent kiya
+            jata hai.
+          </p>
+
+        </div>
+
+        <!-- HTML Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            HTML Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h1 id=<span class="text-emerald-400">"title"</span>&gt;
+  Hello JavaScript
+&lt;/h1&gt;
+
+&lt;p&gt;
+  Welcome to DOM
+&lt;/p&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- document object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            document Object
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            JavaScript me current HTML document ko access karne ke liye
+            <code class="text-blue-400">document</code>
+            object use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  document
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Select -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Element Select Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            ID ke through element select karne ke liye
+            <code class="text-blue-400">getElementById()</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+console.log(title);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Change HTML -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            HTML Content Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>document.getElementById(
+  <span class="text-emerald-400">"title"</span>
+).innerHTML =
+  <span class="text-emerald-400">"Hello DOM"</span>;</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Isse selected element ka HTML content change ho jayega.
+          </p>
+
+        </div>
+
+        <!-- textContent -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            textContent
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sirf text change karne ke liye
+            <code class="text-blue-400">textContent</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+title.textContent =
+  <span class="text-emerald-400">"New Heading"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- CSS -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            CSS Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+title.style.color =
+  <span class="text-emerald-400">"blue"</span>;
+
+title.style.fontSize =
+  <span class="text-emerald-400">"40px"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Attribute -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Attribute Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> image =
+  document.getElementById(
+    <span class="text-emerald-400">"photo"</span>
+  );
+
+image.src =
+  <span class="text-emerald-400">"image2.jpg"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Query selector -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            querySelector()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            CSS selector ke through pehla matching element select karne ke liye
+            <code class="text-blue-400">querySelector()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> heading =
+  document.querySelector(
+    <span class="text-emerald-400">".heading"</span>
+  );
+
+console.log(heading);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- querySelectorAll -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            querySelectorAll()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sab matching elements select karne ke liye
+            <code class="text-blue-400">querySelectorAll()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> items =
+  document.querySelectorAll(
+    <span class="text-emerald-400">".item"</span>
+  );
+
+items.forEach((item) =&gt; {
+
+  console.log(item);
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Event -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            DOM Events
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            User click, input, submit ya keyboard action kare to JavaScript
+            event handle kar sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Button Clicked"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Create Element -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            New Element Create Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> paragraph =
+  document.createElement(
+    <span class="text-emerald-400">"p"</span>
+  );
+
+paragraph.textContent =
+  <span class="text-emerald-400">"New Paragraph"</span>;
+
+document.body.appendChild(
+  paragraph
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Remove -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Element Remove Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> element =
+  document.getElementById(
+    <span class="text-emerald-400">"message"</span>
+  );
+
+element.remove();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- ClassList -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            classList
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            CSS classes ko add, remove ya toggle karne ke liye
+            <code class="text-blue-400">classList</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.classList.add(
+  <span class="text-emerald-400">"active"</span>
+);
+
+box.classList.remove(
+  <span class="text-emerald-400">"hidden"</span>
+);
+
+box.classList.toggle(
+  <span class="text-emerald-400">"dark"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Complete Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Complete DOM Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h1 id=<span class="text-emerald-400">"title"</span>&gt;
+  Hello
+&lt;/h1&gt;
+
+&lt;button id=<span class="text-emerald-400">"btn"</span>&gt;
+  Change Text
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    title.textContent =
+      <span class="text-emerald-400">"Hello JavaScript DOM"</span>;
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- DOM Common Methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Common DOM Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method / Property</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    getElementById()
+                  </td>
+                  <td class="p-4">
+                    ID se element select karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    querySelector()
+                  </td>
+                  <td class="p-4">
+                    Pehla matching CSS selector element select karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    querySelectorAll()
+                  </td>
+                  <td class="p-4">
+                    Sab matching elements select karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    innerHTML
+                  </td>
+                  <td class="p-4">
+                    HTML content read/change karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    textContent
+                  </td>
+                  <td class="p-4">
+                    Text content read/change karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    createElement()
+                  </td>
+                  <td class="p-4">
+                    New element create karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    appendChild()
+                  </td>
+                  <td class="p-4">
+                    Child element add karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    addEventListener()
+                  </td>
+                  <td class="p-4">
+                    Event listener attach karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">HTML Page
+
+    ↓
+
+Browser Creates DOM
+
+    ↓
+
+JavaScript
+
+    ↓
+
+Select Element
+
+    ↓
+
+Read / Change Content
+
+    ↓
+
+Change CSS / Attribute
+
+    ↓
+
+Handle Events
+
+    ↓
+
+Update Page</pre>
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. DOM ka full form Document Object Model hai.
+            </p>
+
+            <p>
+              2. Browser HTML document ko DOM tree me convert karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">document</code>
+              current HTML document ko represent karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">getElementById()</code>
+              ID se element select karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">querySelector()</code>
+              CSS selector ke through element select karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">innerHTML</code>
+              aur
+              <code class="text-blue-400">textContent</code>
+              content change karne ke liye use hote hain.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">style</code>
+              aur
+              <code class="text-blue-400">classList</code>
+              se element ki styling change kar sakte hain.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">addEventListener()</code>
+              user events handle karta hai.
+            </p>
+
+            <p>
+              9.
+              <code class="text-blue-400">createElement()</code>
+              se dynamically new HTML element create kar sakte hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/async/Fetch.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Elements.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(27);
+  </script>
+
+</body>
+</html>

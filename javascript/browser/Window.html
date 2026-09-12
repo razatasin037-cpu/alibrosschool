@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Window Object - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Window Object
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Browser.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Screen.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Window Object Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          Browser JavaScript me
+          <code class="text-blue-400">window</code>
+          top-level global object hota hai.
+          <br><br>
+          Browser ki window, document, timers, URL, storage aur bahut se browser
+          features window object ke through available hote hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Basic -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window Object Access Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Global -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window Global Object Hai
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser me kai global APIs ko
+            <code class="text-blue-400">window.</code>
+            likhe bina bhi use kar sakte hain.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+              <h4 class="font-bold text-xl mb-4 text-blue-400">
+                With window
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code>window.alert(
+  <span class="text-emerald-400">"Hello"</span>
+);</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+              <h4 class="font-bold text-xl mb-4 text-blue-400">
+                Without window
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code>alert(
+  <span class="text-emerald-400">"Hello"</span>
+);</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- document -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.document
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Current HTML document
+            <code class="text-blue-400">window.document</code>
+            se access hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.document
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Normally hum short form me sirf
+            <code class="text-blue-400">document</code>
+            likhte hain.
+          </p>
+
+        </div>
+
+        <!-- inner width -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            innerWidth
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Browser viewport ki width pixels me deta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.innerWidth
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- inner height -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            innerHeight
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.innerHeight
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- outer -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            outerWidth Aur outerHeight
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser window ke outer dimensions ki information dete hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.outerWidth
+);
+
+console.log(
+  window.outerHeight
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- resize -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Window Resize Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.addEventListener(
+  <span class="text-emerald-400">"resize"</span>,
+  () =&gt; {
+
+    console.log(
+      window.innerWidth
+    );
+
+    console.log(
+      window.innerHeight
+    );
+
+  }
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Responsive JavaScript logic me resize event useful ho sakta hai.
+          </p>
+
+        </div>
+
+        <!-- scroll x y -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            scrollX Aur scrollY
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Page kitna horizontally aur vertically scroll hua hai:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.scrollX
+);
+
+console.log(
+  window.scrollY
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Scroll event -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Scroll Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.addEventListener(
+  <span class="text-emerald-400">"scroll"</span>,
+  () =&gt; {
+
+    console.log(
+      window.scrollY
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- scrollTo -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.scrollTo()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.scrollTo(
+  <span class="text-emerald-400">0</span>,
+  <span class="text-emerald-400">500</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- smooth -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Smooth Scroll
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.scrollTo({
+
+  top:
+    <span class="text-emerald-400">500</span>,
+
+  behavior:
+    <span class="text-emerald-400">"smooth"</span>
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- scrollBy -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.scrollBy()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Current position se relative amount scroll karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.scrollBy(
+  <span class="text-emerald-400">0</span>,
+  <span class="text-emerald-400">200</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- alert -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.alert()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.alert(
+  <span class="text-emerald-400">"Welcome"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- confirm -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.confirm()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> answer =
+  window.confirm(
+    <span class="text-emerald-400">"Delete item?"</span>
+  );
+
+<span class="text-blue-400">if</span> (answer) {
+
+  console.log(
+    <span class="text-emerald-400">"Delete confirmed"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- prompt -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.prompt()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> name =
+  window.prompt(
+    <span class="text-emerald-400">"Enter your name"</span>,
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+console.log(name);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- setTimeout -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.setTimeout()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> timeoutId =
+  window.setTimeout(
+    () =&gt; {
+
+      console.log(
+        <span class="text-emerald-400">"Hello"</span>
+      );
+
+    },
+    <span class="text-emerald-400">2000</span>
+  );</code></pre>
+          </div>
+
+        </div>
+
+        <!-- clear timeout -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            clearTimeout()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>clearTimeout(
+  timeoutId
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- interval -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.setInterval()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> intervalId =
+  window.setInterval(
+    () =&gt; {
+
+      console.log(
+        <span class="text-emerald-400">"Running"</span>
+      );
+
+    },
+    <span class="text-emerald-400">1000</span>
+  );</code></pre>
+          </div>
+
+        </div>
+
+        <!-- clear interval -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            clearInterval()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>clearInterval(
+  intervalId
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- open -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.open()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            New browsing context open karne ke liye use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> newWindow =
+  window.open(
+    <span class="text-emerald-400">"https://example.com"</span>,
+    <span class="text-emerald-400">"_blank"</span>
+  );</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Browser popup blocking rules apply ho sakte hain.
+          </p>
+
+        </div>
+
+        <!-- close -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.close()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>newWindow.close();</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Browsers security rules ki wajah se scripts generally arbitrary
+            tabs ko close nahi kar sakti; script-opened windows ke saath ye
+            useful hota hai.
+          </p>
+
+        </div>
+
+        <!-- print -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.print()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Browser ka print dialog open karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.print();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- location -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.location
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.location.href
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- history -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.history
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.history.back();
+
+window.history.forward();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- navigator -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.navigator
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.navigator.language
+);
+
+console.log(
+  window.navigator.onLine
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- localStorage -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.localStorage
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.localStorage.setItem(
+  <span class="text-emerald-400">"theme"</span>,
+  <span class="text-emerald-400">"dark"</span>
+);
+
+console.log(
+  window.localStorage.getItem(
+    <span class="text-emerald-400">"theme"</span>
+  )
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- load -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Window load Event
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Page aur dependent resources load hone ke baad
+            <code class="text-blue-400">load</code>
+            event fire hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.addEventListener(
+  <span class="text-emerald-400">"load"</span>,
+  () =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Page Loaded"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- DOMContentLoaded -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            DOMContentLoaded
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Initial HTML parse hone aur DOM ready hone par
+            <code class="text-blue-400">DOMContentLoaded</code>
+            event fire hota hai; images jaise resources ka wait zaroori nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>document.addEventListener(
+  <span class="text-emerald-400">"DOMContentLoaded"</span>,
+  () =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"DOM Ready"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- load comparison -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            load vs DOMContentLoaded
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">DOMContentLoaded</th>
+                  <th class="p-4">load</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    DOM parse hone ke baad.
+                  </td>
+
+                  <td class="p-4">
+                    Page resources load hone ke baad.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Usually earlier fire hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Usually later fire hota hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Practical -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Example: Back To Top
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;button id=<span class="text-emerald-400">"topBtn"</span>&gt;
+  Back To Top
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"topBtn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    window.scrollTo({
+
+      top:
+        <span class="text-emerald-400">0</span>,
+
+      behavior:
+        <span class="text-emerald-400">"smooth"</span>
+
+    });
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Quick Ref -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Window Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property / Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    innerWidth
+                  </td>
+                  <td class="p-4">
+                    Viewport width
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    innerHeight
+                  </td>
+                  <td class="p-4">
+                    Viewport height
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    scrollX
+                  </td>
+                  <td class="p-4">
+                    Horizontal scroll
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    scrollY
+                  </td>
+                  <td class="p-4">
+                    Vertical scroll
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    scrollTo()
+                  </td>
+                  <td class="p-4">
+                    Specific position scroll
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    open()
+                  </td>
+                  <td class="p-4">
+                    New window/tab request
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    print()
+                  </td>
+                  <td class="p-4">
+                    Print dialog
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setTimeout()
+                  </td>
+                  <td class="p-4">
+                    Delayed execution
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setInterval()
+                  </td>
+                  <td class="p-4">
+                    Repeated execution
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">window</code>
+              browser JavaScript ka global object hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">innerWidth</code>
+              aur
+              <code class="text-blue-400">innerHeight</code>
+              viewport dimensions dete hain.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">scrollX</code>
+              aur
+              <code class="text-blue-400">scrollY</code>
+              current scroll position dete hain.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">scrollTo()</code>
+              page ko given position tak scroll karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">alert()</code>,
+              <code class="text-blue-400">confirm()</code>
+              aur
+              <code class="text-blue-400">prompt()</code>
+              browser dialogs provide karte hain.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">setTimeout()</code>
+              delayed execution aur
+              <code class="text-blue-400">setInterval()</code>
+              repeated execution ke liye use hota hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">window.location</code>,
+              <code class="text-blue-400">window.history</code>
+              aur
+              <code class="text-blue-400">window.navigator</code>
+              browser functionality expose karte hain.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">resize</code>,
+              <code class="text-blue-400">scroll</code>
+              aur
+              <code class="text-blue-400">load</code>
+              important window events hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Browser.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Screen.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(28);
+  </script>
+
+</body>
+</html>

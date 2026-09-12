@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Math Properties - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Math Properties
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./MathMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Random.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Math Properties Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript
+          <code class="text-blue-400">Math</code>
+          object me kuch built-in mathematical constants available hote hain.
+          <br><br>
+          Inhe Math Properties kehte hain, jaise
+          <code class="text-blue-400">Math.PI</code>,
+          <code class="text-blue-400">Math.E</code>
+          aur
+          <code class="text-blue-400">Math.SQRT2</code>.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Properties Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Important Math Properties
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property</th>
+                  <th class="p-4">Value</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.PI</td>
+                  <td class="p-4">3.141592653589793</td>
+                  <td class="p-4">Pi value</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.E</td>
+                  <td class="p-4">2.718281828459045</td>
+                  <td class="p-4">Euler's number</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.SQRT2</td>
+                  <td class="p-4">1.4142135623730951</td>
+                  <td class="p-4">Square root of 2</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.SQRT1_2</td>
+                  <td class="p-4">0.7071067811865476</td>
+                  <td class="p-4">Square root of 1/2</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.LN2</td>
+                  <td class="p-4">0.6931471805599453</td>
+                  <td class="p-4">Natural log of 2</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.LN10</td>
+                  <td class="p-4">2.302585092994046</td>
+                  <td class="p-4">Natural log of 10</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.LOG2E</td>
+                  <td class="p-4">1.4426950408889634</td>
+                  <td class="p-4">Base-2 logarithm of E</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.LOG10E</td>
+                  <td class="p-4">0.4342944819032518</td>
+                  <td class="p-4">Base-10 logarithm of E</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Math.PI -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.PI
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Math.PI</code>
+            Pi ki value return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.PI
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">3.141592653589793</pre>
+          </div>
+
+        </div>
+
+        <!-- Circle Area -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Circle Area With Math.PI
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Circle area formula:
+            <code class="text-blue-400">π × r²</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> radius =
+  <span class="text-emerald-400">5</span>;
+
+<span class="text-blue-400">const</span> area =
+  Math.PI * radius * radius;
+
+console.log(area);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">78.53981633974483</pre>
+          </div>
+
+        </div>
+
+        <!-- Math.E -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.E
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Math.E</code>
+            Euler's number return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.E
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">2.718281828459045</pre>
+          </div>
+
+        </div>
+
+        <!-- SQRT2 -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.SQRT2
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Math.SQRT2</code>
+            2 ka square root return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.SQRT2
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">1.4142135623730951</pre>
+          </div>
+
+        </div>
+
+        <!-- SQRT1_2 -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.SQRT1_2
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Ye
+            <code class="text-blue-400">1/2</code>
+            ka square root return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.SQRT1_2
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">0.7071067811865476</pre>
+          </div>
+
+        </div>
+
+        <!-- LN2 -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.LN2
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Math.LN2</code>
+            2 ka natural logarithm return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.LN2
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">0.6931471805599453</pre>
+          </div>
+
+        </div>
+
+        <!-- LN10 -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.LN10
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Math.LN10</code>
+            10 ka natural logarithm return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.LN10
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">2.302585092994046</pre>
+          </div>
+
+        </div>
+
+        <!-- LOG2E -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.LOG2E
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Math.LOG2E</code>
+            Euler's number ka base-2 logarithm return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.LOG2E
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">1.4426950408889634</pre>
+          </div>
+
+        </div>
+
+        <!-- LOG10E -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.LOG10E
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Math.LOG10E</code>
+            Euler's number ka base-10 logarithm return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.LOG10E
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">0.4342944819032518</pre>
+          </div>
+
+        </div>
+
+        <!-- All Properties Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            All Math Properties Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Math.PI);
+console.log(Math.E);
+console.log(Math.SQRT2);
+console.log(Math.SQRT1_2);
+console.log(Math.LN2);
+console.log(Math.LN10);
+console.log(Math.LOG2E);
+console.log(Math.LOG10E);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Property vs Method -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Math Property vs Math Method
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property</th>
+                  <th class="p-4">Method</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Fixed mathematical value hoti hai.
+                  </td>
+
+                  <td class="p-4">
+                    Calculation perform karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Math.PI
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    Math.round(4.5)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Parentheses nahi lagte.
+                  </td>
+
+                  <td class="p-4">
+                    Parentheses
+                    <code class="text-blue-400">()</code>
+                    lagte hain.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Mistake -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Common Mistake
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Math Property ko method ki tarah call mat karo.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// Correct</span>
+console.log(Math.PI);
+
+<span class="text-gray-400">// Wrong</span>
+console.log(Math.PI());</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">Math.PI</code>
+              Pi ki value deta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">Math.E</code>
+              Euler's number deta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">Math.SQRT2</code>
+              square root of 2 deta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">Math.SQRT1_2</code>
+              square root of 1/2 deta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">Math.LN2</code>
+              aur
+              <code class="text-blue-400">Math.LN10</code>
+              natural logarithm constants hain.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">Math.LOG2E</code>
+              aur
+              <code class="text-blue-400">Math.LOG10E</code>
+              logarithm constants hain.
+            </p>
+
+            <p>
+              7. Math properties fixed values hoti hain, isliye unke saath
+              <code class="text-blue-400">()</code>
+              nahi lagaya jata.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./MathMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Random.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(19);
+  </script>
+
+</body>
+</html>

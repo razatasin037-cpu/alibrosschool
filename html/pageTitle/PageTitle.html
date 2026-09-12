@@ -1,0 +1,304 @@
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>HTML Page Title - Complete Tutorial</title>
+        <!-- Tailwind CSS Dynamic Integration -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../../js/insert.js"></script>
+        <script src="../js/sidebar.js"></script>
+    </head>
+    <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+        <!-- Navbar Container -->
+        <nav id="navbar"></nav>
+
+        <!-- Main Content Area -->
+        <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar Navigation Container -->
+        <div id="sidebar"></div>
+
+        <!-- Main Tutorial Section -->
+        <section
+            class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300"
+        >
+            <!-- Page Main Heading -->
+            <h1
+            class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight"
+            >
+            HTML Page Title
+            </h1>
+
+            <!-- Top Page Navigation (Previous / Next Buttons) -->
+            <div class="flex justify-between mt-10 items-center mb-10">
+            <a
+                href="../favicon/Favicon.html"
+                class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg"
+            >
+                ❮ Previous
+            </a>
+
+            <a
+                href="../tables/Tables.html"
+                class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg"
+            >
+                Next ❯
+            </a>
+            </div>
+
+            <!-- Banner / Introductory Card -->
+            <div
+            class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl"
+            >
+            <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+                HTML Page Title Guide
+            </h2>
+            <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+                <strong>HTML Page Title</strong> (ya <code>&lt;title&gt;</code> tag) browser ki tab bar me web page ka naam dikhane ke liye use hota hai.
+            </p>
+            <p class="text-[18px] md:text-[21px] text-[#94a3b8] leading-relaxed">
+                Ye Search Engine Optimization (SEO), browser bookmarks, aur user experience (UX) ke liye web page ka sabse important element hota hai.
+            </p>
+            </div>
+
+            <!-- SECTION 1: Basic Syntax & Implementation -->
+            <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                1. Page Title Kaise Add Karein?
+            </h3>
+            <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+                Page Title ko add karne ke liye HTML ke <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;head&gt;</code> section ke andar <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;title&gt;</code> tag ka use kiya jata hai.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Code View -->
+                <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+                <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;!-- Page Title Tag --&gt;
+    <span class="text-yellow-400">&lt;title&gt;My Official Website - Home Page&lt;/title&gt;</span>
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;Welcome to my website!&lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code></pre>
+                </div>
+                
+                <!-- Visual Explanation Box -->
+                <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+                <!-- Mock Browser Tab Preview -->
+                <div class="bg-[#0f172a] rounded-t-xl p-4 border-b border-gray-700 flex items-center gap-3">
+                    <div class="bg-[#1e293b] text-sm px-4 py-2 rounded-t-lg flex items-center gap-3 border-t-2 border-blue-500 text-gray-200 font-medium">
+                    <span class="w-3 h-3 rounded-full bg-blue-400"></span>
+                    <span>My Official Website - Home Page</span>
+                    </div>
+                </div>
+                <p class="text-sm md:text-base text-gray-400 mt-6 text-center">
+                    💡 Browser tab me jo text sabse upar dikhta hai, wahi <strong>&lt;title&gt;</strong> tag hota hai.
+                </p>
+                </div>
+            </div>
+            </div>
+
+            <!-- SECTION 2: Why is Page Title Important? -->
+            <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                2. Page Title Kyu Zaroori Hai?
+            </h3>
+            <p class="text-gray-300 text-base md:text-lg mb-8">
+                Aapki website par accha Title tag hone ke mukhya fayde:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- SEO Advantage -->
+                <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-between">
+                <div>
+                    <div class="inline-block px-4 py-1.5 bg-blue-600/30 text-blue-400 font-bold text-sm rounded-lg mb-4">
+                    SEO Value
+                    </div>
+                    <h4 class="text-white font-bold text-xl mb-3">Google Ranking</h4>
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed">Search engines (Google, Bing) aapke page ke title se hi topic ko samajhte hain aur results me dikhate hain.</p>
+                </div>
+                </div>
+
+                <!-- User Experience -->
+                <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-between">
+                <div>
+                    <div class="inline-block px-4 py-1.5 bg-green-600/30 text-green-400 font-bold text-sm rounded-lg mb-4">
+                    UX / Usability
+                    </div>
+                    <h4 class="text-white font-bold text-xl mb-3">Tab Navigation</h4>
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed">Multiple open tabs me se user bina page khole samajh sakta hai ki tab kis baare me hai.</p>
+                </div>
+                </div>
+
+                <!-- Bookmarking -->
+                <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-between">
+                <div>
+                    <div class="inline-block px-4 py-1.5 bg-purple-600/30 text-purple-400 font-bold text-sm rounded-lg mb-4">
+                    Bookmarks
+                    </div>
+                    <h4 class="text-white font-bold text-xl mb-3">Easy Bookmarking</h4>
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed">Jab user page ko bookmark karta hai, toh yahi title default bookmark name ban jata hai.</p>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- SECTION 3: Reference Table -->
+            <div id="table-section" class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl overflow-x-auto">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                3. Title Best Practices Reference
+            </h3>
+
+            <table class="w-full text-left border-collapse min-w-[700px]">
+                <thead>
+                <tr class="border-b-2 border-[#334155] text-gray-300 text-base md:text-lg">
+                    <th class="py-4 px-5">Rule Parameter</th>
+                    <th class="py-4 px-5">Recommended Value</th>
+                    <th class="py-4 px-5">Description</th>
+                </tr>
+                </thead>
+                <tbody class="text-base md:text-lg text-gray-200 divide-y divide-[#334155]/60">
+                <tr>
+                    <td class="py-4 px-5 font-bold text-cyan-400">Title Length</td>
+                    <td class="py-4 px-5 font-mono text-yellow-400">50 - 60 Characters</td>
+                    <td class="py-4 px-5">Google search result me text cut hone se bachata hai.</td>
+                </tr>
+                <tr>
+                    <td class="py-4 px-5 font-bold text-cyan-400">Keyword Placement</td>
+                    <td class="py-4 px-5 font-mono text-yellow-400">Primary Keyword First</td>
+                    <td class="py-4 px-5">Main target word ko title ke shuruat me rakhein.</td>
+                </tr>
+                <tr>
+                    <td class="py-4 px-5 font-bold text-cyan-400">Brand Name</td>
+                    <td class="py-4 px-5 font-mono text-yellow-400">At the End (| Brand)</td>
+                    <td class="py-4 px-5">Title ke end me pipe (<code>|</code>) ya dash (<code>-</code>) laga kar brand name likhein.</td>
+                </tr>
+                <tr>
+                    <td class="py-4 px-5 font-bold text-cyan-400">Uniqueness</td>
+                    <td class="py-4 px-5 font-mono text-yellow-400">1 Unique Title Per Page</td>
+                    <td class="py-4 px-5">Website ke har page ka title alag aur specific hona chahiye.</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+
+            <!-- SECTION 4: Real-World Examples & Practice Cases -->
+            <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                4. Real-World Title Tag Examples
+            </h3>
+            <p class="text-gray-300 text-base md:text-xl mb-8 leading-relaxed">
+                Alag-alag type ke web pages ke liye title likhne ke SEO-friendly aur standard examples:
+            </p>
+
+            <div class="grid grid-cols-1 gap-8">
+                <!-- Example 1: E-commerce Product Page -->
+                <div class="bg-[#020617] p-8 md:p-10 rounded-2xl border border-[#334155] shadow-lg">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+                    <span class="text-sm md:text-base font-bold text-blue-400 bg-blue-600/20 px-4 py-2 rounded-xl">
+                    E-Commerce Title
+                    </span>
+                    <span class="text-sm md:text-base text-gray-400 font-mono">Product Page</span>
+                </div>
+                <h4 class="text-white font-bold text-2xl md:text-3xl mb-3">
+                    Product Specific Title
+                </h4>
+                <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                    Product page me product ka naam, key specs aur brand name shamil karein:
+                </p>
+                <div class="bg-[#0f172a] p-6 rounded-2xl font-mono text-base md:text-lg overflow-x-auto border border-gray-800">
+                    <pre class="text-gray-300 leading-relaxed"><code>&lt;title&gt;<span class="text-yellow-400">Buy Wireless Headphones Noise Cancelling | TechStore</span>&lt;/title&gt;</code></pre>
+                </div>
+                </div>
+
+                <!-- Example 2: Blog Article Page -->
+                <div class="bg-[#020617] p-8 md:p-10 rounded-2xl border border-[#334155] shadow-lg">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+                    <span class="text-sm md:text-base font-bold text-purple-400 bg-purple-600/20 px-4 py-2 rounded-xl">
+                    Blog / Article Title
+                    </span>
+                    <span class="text-sm md:text-base text-gray-400 font-mono">Content Page</span>
+                </div>
+                <h4 class="text-white font-bold text-2xl md:text-3xl mb-3">
+                    Informational Blog Post Title
+                </h4>
+                <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                    Blog post ka title lagatar clickable aur catchy hona chahiye:
+                </p>
+                <div class="bg-[#0f172a] p-6 rounded-2xl font-mono text-base md:text-lg overflow-x-auto border border-gray-800">
+                    <pre class="text-gray-300 leading-relaxed"><code>&lt;title&gt;<span class="text-yellow-400">10 Easy Ways to Learn HTML Fast - Beginner Guide</span>&lt;/title&gt;</code></pre>
+                </div>
+                </div>
+
+                <!-- Example 3: Home Page Title -->
+                <div class="bg-[#020617] p-8 md:p-10 rounded-2xl border border-[#334155] shadow-lg">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+                    <span class="text-sm md:text-base font-bold text-green-400 bg-green-600/20 px-4 py-2 rounded-xl">
+                    Homepage Title
+                    </span>
+                    <span class="text-sm md:text-base text-gray-400 font-mono">Main Portal</span>
+                </div>
+                <h4 class="text-white font-bold text-2xl md:text-3xl mb-3">
+                    Main Brand Homepage
+                </h4>
+                <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                    Home page title me Brand Name aur Primary Business Domain hona zaroori hai:
+                </p>
+                <div class="bg-[#0f172a] p-6 rounded-2xl font-mono text-base md:text-lg overflow-x-auto border border-gray-800">
+                    <pre class="text-gray-300 leading-relaxed"><code>&lt;title&gt;<span class="text-yellow-400">CodeLearn - Online Coding Tutorials &amp; Free Courses</span>&lt;/title&gt;</code></pre>
+                </div>
+                </div>
+
+                <!-- Example 4: Service / Contact Page -->
+                <div class="bg-[#020617] p-8 md:p-10 rounded-2xl border border-[#334155] shadow-lg">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+                    <span class="text-sm md:text-base font-bold text-amber-400 bg-amber-600/20 px-4 py-2 rounded-xl">
+                    Utility Page
+                    </span>
+                    <span class="text-sm md:text-base text-gray-400 font-mono">Contact &amp; Support</span>
+                </div>
+                <h4 class="text-white font-bold text-2xl md:text-3xl mb-3">
+                    Contact &amp; Support Page Title
+                </h4>
+                <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                    Simple aur direct title user ko sahi page tak turant pahunchane me help karta hai:
+                </p>
+                <div class="bg-[#0f172a] p-6 rounded-2xl font-mono text-base md:text-lg overflow-x-auto border border-gray-800">
+                    <pre class="text-gray-300 leading-relaxed"><code>&lt;title&gt;<span class="text-yellow-400">Contact Us - Customer Support &amp; Help Center</span>&lt;/title&gt;</code></pre>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Bottom Page Navigation (Previous / Next Buttons) -->
+            <div class="flex justify-between mt-12 items-center mb-10">
+            <a
+                href="../favicon/Favicon.html"
+                class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg"
+            >
+                ❮ Previous
+            </a>
+
+            <a
+                href="../tables/Tables.html"
+                class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg"
+            >
+                Next ❯
+            </a>
+            </div>
+        </section>
+        </main>
+
+        <!-- Footer Container -->
+        <footer id="footer"></footer>
+
+ 
+       <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(16);
+    </script>
+    </body>
+    </html>

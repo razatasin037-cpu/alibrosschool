@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Tutorials</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+<style>
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden">
+<!-- Navbar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar -->
+<div id="sidebar"></div>
+<!-- Content -->
+<section class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300">
+<!-- Title -->
+<h1 class="text-[52px] font-bold mb-12 mt-10">C++ Getting Started</h1>
+<!-- Top Buttons -->
+<div class="flex justify-between items-center">
+<a href="../intro/intro.html">
+<button class="rounded-xl px-8 py-5 text-xl md:text-2xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="../syntax/syntax.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-10 py-5 text-xl md:text-2xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-14 border-white/10"/>
+<!-- Main Content -->
+<section class="max-w-7xl mx-auto px-5 md:px-10 py-10">
+<h1 class="text-4xl md:text-6xl font-normal text-white">
+            Get Started With C++
+          </h1>
+<p class="mt-14 text-xl md:text-2xl text-gray-300 leading-relaxed">
+            Ali Learning par aap bina kuch install kiye C++ ko try kar sakte
+            hain.
+          </p>
+<p class="mt-10 text-xl md:text-2xl text-gray-300 leading-relaxed">
+            Hamara Online C++ Editor seedha aapke browser mein chalta hai aur
+            code ke saath-saath uska result bhi dikhata hai.
+          </p>
+</section>
+<!-- Code Card -->
+<div id="codeCards"></div>
+<!-- Install C++ -->
+<section class="max-w-7xl mx-auto px-5 md:px-10 py-12 border-b border-slate-700">
+<h1 class="text-4xl md:text-6xl font-normal text-white">
+            Install C++
+          </h1>
+<p class="mt-12 text-xl md:text-2xl text-white/50 leading-relaxed">
+            Agar aap apne computer par C++ chalana chahte hain, to aapko do
+            cheezon ki zarurat hogi:
+          </p>
+<ul class="list-disc pl-8 md:pl-14 mt-10 space-y-5 text-xl md:text-2xl text-white/50">
+<li>
+              Ek
+              <span class="text-white font-medium"> Text Editor </span>, jaise
+              Notepad, jisme aap C++ code likh sakte hain.
+            </li>
+<li>
+              Ek
+              <span class="text-white font-medium"> Compiler </span>, jaise GCC,
+              jo C++ code ko computer ki samajh mein aane wali language mein
+              convert karta hai.
+            </li>
+</ul>
+<p class="mt-12 text-xl md:text-2xl text-white/50 leading-relaxed">
+            Bahut saare Text Editors aur Compilers available hain. Agle steps
+            mein hum aapko ek
+            <span class="italic font-semibold text-white"> IDE </span>
+            use karna sikhayenge, jisme dono cheezein shamil hoti hain.
+          </p>
+</section>
+<hr class="border-gray-700 my-16"/>
+<!-- Quick Start -->
+<section class="max-w-7xl mx-auto px-5 md:px-10 py-10">
+<p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Chaliye apni pehli C++ file banate hain.
+          </p>
+<p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Sabse pehle Codeblocks open kijiye aur
+            <span class="text-white font-semibold">
+              File &gt; New &gt; Empty File
+            </span>
+            par jaiye.
+          </p>
+<p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            Ab neeche diya gaya C++ code likhiye aur file ko
+            <span class="text-[#4d6fff] font-semibold">
+              myfirstprogram.cpp
+            </span>
+            ke naam se save kijiye.
+            <span class="text-white font-semibold">
+              (File &gt; Save File As)
+            </span>
+</p>
+</section>
+<!-- Quick Start Card -->
+<div id="quickstartCard"></div>
+<!-- CodeBlocks Example -->
+<section class="max-w-7xl mx-auto px-5 md:px-10 py-12">
+<p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Codeblocks mein ye kuch is tarah dikhna chahiye:
+          </p>
+<div class="bg-white/[0.04] border border-white/[0.08] rounded-3xl p-4 sm:p-6 backdrop-blur-xl shadow-[0_0_30px_rgba(77,111,255,0.08)] overflow-hidden">
+<img alt="CodeBlocks C++ Example" class="w-full rounded-2xl border border-white/10 object-contain" src="https://www.w3schools.com/cpp/codeblocks2020.png"/>
+</div>
+<p class="mt-10 text-xl md:text-2xl text-gray-300 leading-relaxed">
+            Ab program ko run karne ke liye
+            <span class="text-white font-bold"> Build &gt; Build and Run </span>
+            par click karein.
+          </p>
+<p class="mt-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+            Program run hone ke baad result kuch is tarah dikhai dega:
+          </p>
+<!-- Output -->
+<div class="mt-8 bg-[#020617] border border-white/[0.08] border-l-4 border-l-[#4d6fff] rounded-2xl p-6 sm:p-8 shadow-[0_0_25px_rgba(77,111,255,0.08)] overflow-x-auto">
+<pre class="text-green-400 text-base sm:text-lg leading-8 font-mono">
+Hello World!
+Process returned 0 (0x0) execution time : 0.011 s
+Press any key to continue.</pre>
+</div>
+<!-- Congratulations -->
+<div class="mt-10 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl px-6 py-5">
+<p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+<span class="text-white font-bold"> Congratulations! </span>
+              Aapne ab apna pehla C++ program successfully likh aur run kar liya
+              hai.
+            </p>
+</div>
+<!-- Bottom Buttons -->
+<div class="flex justify-between items-center mt-14 pt-8 border-t border-white/10">
+<a href="../intro/intro.html">
+<button class="rounded-xl px-8 py-5 text-xl md:text-2xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="../syntax/syntax.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-10 py-5 text-xl md:text-2xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- JavaScript -->
+<script src="./js/examplecard.js"></script>
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(2);
+        }
+
+        if (typeof createCppQuickstartCard === "function") {
+          document.getElementById("quickstartCard").innerHTML =
+            createCppQuickstartCard();
+        }
+      });
+    </script>
+</body>
+</html>

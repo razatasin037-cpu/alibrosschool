@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Date Set Methods - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Date Set Methods
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./GetMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../arrays/Arrays.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Date Set Methods Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript Date Set Methods ka use existing Date object ke year,
+          month, date, hours, minutes, seconds aur milliseconds ko change karne
+          ke liye kiya jata hai.
+          <br><br>
+          Jaise
+          <code class="text-blue-400">setFullYear()</code>,
+          <code class="text-blue-400">setMonth()</code>,
+          <code class="text-blue-400">setDate()</code>
+          aur
+          <code class="text-blue-400">setHours()</code>.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Methods Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Date Set Methods List
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">setFullYear()</td>
+                  <td class="p-4">Year change karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">setMonth()</td>
+                  <td class="p-4">Month change karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">setDate()</td>
+                  <td class="p-4">Month ka date change karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">setHours()</td>
+                  <td class="p-4">Hours change karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">setMinutes()</td>
+                  <td class="p-4">Minutes change karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">setSeconds()</td>
+                  <td class="p-4">Seconds change karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setMilliseconds()
+                  </td>
+                  <td class="p-4">Milliseconds change karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">setTime()</td>
+                  <td class="p-4">
+                    Unix epoch se milliseconds ke through complete date/time set
+                    karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- setFullYear -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setFullYear()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">setFullYear()</code>
+            Date object ka year change karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+date.setFullYear(<span class="text-emerald-400">2030</span>);
+
+console.log(date.getFullYear());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">2030</pre>
+          </div>
+
+        </div>
+
+        <!-- setMonth -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setMonth()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">setMonth()</code>
+            Date object ka month change karta hai.
+            Month number
+            <code class="text-blue-400">0 - 11</code>
+            hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+date.setMonth(<span class="text-emerald-400">11</span>);
+
+console.log(date.getMonth());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">11</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            <code class="text-blue-400">11</code>
+            ka matlab December hai.
+          </p>
+
+        </div>
+
+        <!-- setDate -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setDate()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">setDate()</code>
+            month ke andar date number change karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+date.setDate(<span class="text-emerald-400">20</span>);
+
+console.log(date.getDate());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">20</pre>
+          </div>
+
+        </div>
+
+        <!-- Add Days -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Date Me Days Add Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">getDate()</code>
+            aur
+            <code class="text-blue-400">setDate()</code>
+            ko combine karke date me days add kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+date.setDate(
+  date.getDate() + <span class="text-emerald-400">5</span>
+);
+
+console.log(date.toDateString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Tue Sep 15 2026</pre>
+          </div>
+
+        </div>
+
+        <!-- setHours -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setHours()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Hours ko 0 se 23 ke range me set kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date();
+
+date.setHours(<span class="text-emerald-400">18</span>);
+
+console.log(date.getHours());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">18</pre>
+          </div>
+
+        </div>
+
+        <!-- setMinutes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setMinutes()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date();
+
+date.setMinutes(<span class="text-emerald-400">45</span>);
+
+console.log(date.getMinutes());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">45</pre>
+          </div>
+
+        </div>
+
+        <!-- setSeconds -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setSeconds()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date();
+
+date.setSeconds(<span class="text-emerald-400">30</span>);
+
+console.log(date.getSeconds());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- setMilliseconds -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setMilliseconds()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date();
+
+date.setMilliseconds(<span class="text-emerald-400">500</span>);
+
+console.log(date.getMilliseconds());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">500</pre>
+          </div>
+
+        </div>
+
+        <!-- setTime -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setTime()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">setTime()</code>
+            milliseconds timestamp se complete Date object ka time change karta
+            hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date();
+
+date.setTime(<span class="text-emerald-400">0</span>);
+
+console.log(date.toISOString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">1970-01-01T00:00:00.000Z</pre>
+          </div>
+
+        </div>
+
+        <!-- Multiple values -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setFullYear() With Month and Date
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">setFullYear()</code>
+            me year ke saath month aur date bhi pass kiye ja sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date();
+
+date.setFullYear(
+  <span class="text-emerald-400">2030</span>,
+  <span class="text-emerald-400">11</span>,
+  <span class="text-emerald-400">25</span>
+);
+
+console.log(date.toDateString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Example Output:</p>
+
+<pre class="text-emerald-400 font-mono">Wed Dec 25 2030</pre>
+          </div>
+
+        </div>
+
+        <!-- Overflow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Date Automatically Adjust Hoti Hai
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar date ya month normal range se bahar chala jaye, JavaScript Date
+            automatically next ya previous month/year me adjust kar sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">30</span>
+  );
+
+date.setDate(<span class="text-emerald-400">35</span>);
+
+console.log(date.toDateString());</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            September ke day 35 ko JavaScript October ki corresponding date me
+            adjust kar dega.
+          </p>
+
+        </div>
+
+        <!-- UTC Methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            UTC Set Methods
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            UTC timezone ke according date modify karne ke liye UTC set methods
+            use kiye ja sakte hain.
+          </p>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setUTCFullYear()
+                  </td>
+                  <td class="p-4">UTC year set karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setUTCMonth()
+                  </td>
+                  <td class="p-4">UTC month set karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setUTCDate()
+                  </td>
+                  <td class="p-4">UTC date set karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setUTCHours()
+                  </td>
+                  <td class="p-4">UTC hours set karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setUTCMinutes()
+                  </td>
+                  <td class="p-4">UTC minutes set karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setUTCSeconds()
+                  </td>
+                  <td class="p-4">UTC seconds set karta hai.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Get vs Set -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Get Methods vs Set Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Get Method</th>
+                  <th class="p-4">Set Method</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    getFullYear()
+                  </td>
+                  <td class="p-4 font-mono">
+                    setFullYear()
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Value read karta hai.
+                  </td>
+                  <td class="p-4">
+                    Value change karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    date.getMonth()
+                  </td>
+                  <td class="p-4 font-mono">
+                    date.setMonth(11)
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">setFullYear()</code>
+              year change karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">setMonth()</code>
+              me month 0 se 11 tak hota hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">setDate()</code>
+              month ka date change karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">setHours()</code>,
+              <code class="text-blue-400">setMinutes()</code>
+              aur
+              <code class="text-blue-400">setSeconds()</code>
+              time change karte hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">setTime()</code>
+              timestamp milliseconds se complete date/time set karta hai.
+            </p>
+
+            <p>
+              6. Range se bahar value dene par Date object automatic adjustment
+              kar sakta hai.
+            </p>
+
+            <p>
+              7. UTC date change karne ke liye
+              <code class="text-blue-400">setUTC...</code>
+              methods available hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./GetMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../arrays/Arrays.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(14);
+  </script>
+
+</body>
+</html>

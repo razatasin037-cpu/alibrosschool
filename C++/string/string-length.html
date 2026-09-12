@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ String Length - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<div class="flex-shrink-0" id="sidebar"></div>
+<section class="flex-1 w-full px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ String Length
+        </h1>
+<div class="flex justify-between items-center">
+<a href="numbers-strings.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="access-strings.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            String Ki Length Kaise Nikalein?
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein kisi string ki length (characters ki ginti) nikalne ke liye
+            hum
+            <span class="text-[#4d6fff] font-bold">length()</span> ya
+            <span class="text-[#4d6fff] font-bold">size()</span> function ka use
+            karte hain.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Dono functions bilkul ek hi tarah kaam karte hain aur aap apni
+            pasand ke hisab se kisi ka bhi use kar sakte hain.
+          </p>
+<!-- Standard Static HTML Card 1 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">length() Function Example</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+cout &lt;&lt; "Length: " &lt;&lt; txt.length(); // Output: 26</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            length() vs size()
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Aapko
+            <span class="text-[#4d6fff] font-bold">length()</span> aur
+            <span class="text-[#4d6fff] font-bold">size()</span> mein koi farq
+            nahi milega. Dono function exact same result dete hain.
+          </p>
+<!-- Standard Static HTML Card 2 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">size() Function Example</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+cout &lt;&lt; "Length: " &lt;&lt; txt.size(); // Output: 26</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+            Spaces Aur Special Characters
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Length count karte waqt C++ **spaces** aur **special characters** ko
+            bhi count karta hai.
+          </p>
+<!-- Standard Static HTML Card 3 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Spaces Count Example</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">string greeting = "Hello World!";
+cout &lt;&lt; greeting.length(); // Output: 12 (Space aur '!' bhi count hoga)</code></pre>
+  </div>
+</div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">Example</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Neeche poora program diya gaya hai jisme string length nikal kar
+            print ki gayi hai.
+          </p>
+<!-- Standard Static HTML Card 4 -->
+<div class="bg-[#0b132b] border border-white/10 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1c2541] px-6 py-4 flex justify-between items-center border-b border-white/10">
+<span class="text-xl font-semibold text-[#4d6fff]">Complete Program</span>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl my-8">
+  <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-semibold text-white">Example</h3>
+    <span class="text-sm text-gray-400">C++</span>
+  </div>
+  <div class="p-6 overflow-x-auto">
+    <pre class="text-green-400 text-base sm:text-lg leading-relaxed" class="text-green-400 text-base sm:text-lg leading-relaxed"><code class="text-green-400">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+    string fullName = "Ali Learning";
+
+    // length() ka use
+    cout &lt;&lt; "Length using length(): " &lt;&lt; fullName.length() &lt;&lt; endl;
+
+    // size() ka use
+    cout &lt;&lt; "Length using size(): " &lt;&lt; fullName.size() &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+  </div>
+</div>
+</div>
+<div class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important Points</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>
+                String ki length jaan-ne ke liye
+                <span class="text-[#4d6fff] font-bold">.length()</span>
+                ya
+                <span class="text-[#4d6fff] font-bold">.size()</span>
+                dono mein se kisi ka bhi use kar sakte hain.
+              </li>
+<li>
+                Dono functions bilkul alias (same) hain, inke output mein koi
+                differece nahi hota.
+              </li>
+<li>
+                Spaces, numbers, aur special symbols (`!`, `@`, `#`) sabhi
+                characters ke roop mein count hote hain.
+              </li>
+</ul>
+</div>
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="numbers-strings.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="access-strings.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarElem = document.getElementById("sidebar");
+        if (sidebarElem && typeof createSidebar === "function") {
+          sidebarElem.innerHTML = createSidebar("C++ Tutorial");
+        }
+      });
+    </script>
+</body>
+</html>

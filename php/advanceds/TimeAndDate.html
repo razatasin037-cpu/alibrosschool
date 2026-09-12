@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Date and Time - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Date and Time
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../forms/FormComplete.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Include.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            PHP Date and Time Functions
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            PHP me dates aur times ko handle karne ke liye bohot se built-in functions hote hain. Niche main functions ki detail di gayi hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Overview Card -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Core Date & Time Functions
+            </h3>
+            <ul class="list-disc pl-6 text-gray-300 text-base md:text-lg space-y-2">
+              <li><code class="text-yellow-300 font-mono">date()</code> - Formats a local date and/or time.</li>
+              <li><code class="text-yellow-300 font-mono">time()</code> - Returns the current time as a Unix timestamp.</li>
+              <li><code class="text-yellow-300 font-mono">mktime()</code> - Returns the Unix timestamp for a specific date.</li>
+              <li><code class="text-yellow-300 font-mono">strtotime()</code> - Converts an English textual datetime string into a Unix timestamp.</li>
+              <li><code class="text-yellow-300 font-mono">date_default_timezone_set()</code> - Sets the default timezone to be used.</li>
+              <li><code class="text-yellow-300 font-mono">date_default_timezone_get()</code> - Gets the current default timezone.</li>
+            </ul>
+          </div>
+
+          <!-- Section 1: date() and time() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. The date() and time() Functions
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-yellow-300">time()</code> current timestamp (seconds since Jan 1 1970) return karta hai, jabki <code class="text-yellow-300">date()</code> us timestamp ko readable format me badalta hai.
+            </p>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Formatting dates</span>
+  <span class="text-green-400">echo</span> <span class="text-white">"Today is "</span> . <span class="text-green-400">date</span>(<span class="text-yellow-300">"Y/m/d"</span>) . <span class="text-white">"&lt;br&gt;"</span>;
+  <span class="text-green-400">echo</span> <span class="text-white">"Day: "</span> . <span class="text-green-400">date</span>(<span class="text-yellow-300">"l"</span>) . <span class="text-white">"&lt;br&gt;"</span>;
+
+  <span class="text-[#94a3b8]">// Current Unix timestamp</span>
+  <span class="text-green-400">echo</span> <span class="text-white">"Current Timestamp: "</span> . <span class="text-green-400">time</span>();
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: Timezone Management -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Managing Timezones
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Aap <code class="text-yellow-300">date_default_timezone_get()</code> se current timezone check kar sakte hain aur <code class="text-yellow-300">date_default_timezone_set()</code> se nayi timezone set kar sakte hain.
+            </p>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Get default timezone</span>
+  <span class="text-green-400">echo</span> <span class="text-white">"Default Timezone: "</span> . <span class="text-green-400">date_default_timezone_get</span>() . <span class="text-white">"&lt;br&gt;"</span>;
+
+  <span class="text-[#94a3b8]">// Set timezone to Asia/Kolkata</span>
+  <span class="text-green-400">date_default_timezone_set</span>(<span class="text-yellow-300">"Asia/Kolkata"</span>);
+  <span class="text-green-400">echo</span> <span class="text-white">"Indian Time: "</span> . <span class="text-green-400">date</span>(<span class="text-yellow-300">"h:i:s a"</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 3: mktime() Function -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Create Date with mktime()
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-yellow-300">mktime(hour, minute, second, month, day, year)</code> function specific date aur time ka Unix timestamp generate karta hai.
+            </p>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// mktime(hour, minute, second, month, day, year)</span>
+  <span class="text-green-400">$d</span> = <span class="text-green-400">mktime</span>(<span class="text-yellow-300">11</span>, <span class="text-yellow-300">14</span>, <span class="text-yellow-300">54</span>, <span class="text-yellow-300">8</span>, <span class="text-yellow-300">12</span>, <span class="text-yellow-300">2024</span>);
+  <span class="text-green-400">echo</span> <span class="text-white">"Created date is "</span> . <span class="text-green-400">date</span>(<span class="text-yellow-300">"Y-m-d h:i:sa"</span>, <span class="text-green-400">$d</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 4: strtotime() Function -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4. Create Date from String with strtotime()
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-yellow-300">strtotime()</code> human-readable English text (jaise "tomorrow", "next Sunday") ko timestamp me convert kar deta hai.
+            </p>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Convert string to timestamp</span>
+  <span class="text-green-400">$d1</span> = <span class="text-green-400">strtotime</span>(<span class="text-yellow-300">"10:30pm April 15 2024"</span>);
+  <span class="text-green-400">echo</span> <span class="text-[#94a3b8]">"Created date: "</span> . <span class="text-green-400">date</span>(<span class="text-yellow-300">"Y-m-d h:i:sa"</span>, <span class="text-green-400">$d1</span>) . <span class="text-white">"&lt;br&gt;"</span>;
+
+  <span class="text-green-400">$d2</span> = <span class="text-green-400">strtotime</span>(<span class="text-yellow-300">"tomorrow"</span>);
+  <span class="text-green-400">echo</span> <span class="text-white">"Tomorrow: "</span> . <span class="text-green-400">date</span>(<span class="text-yellow-300">"Y-m-d"</span>, <span class="text-green-400">$d2</span>) . <span class="text-white">"&lt;br&gt;"</span>;
+
+  <span class="text-green-400">$d3</span> = <span class="text-green-400">strtotime</span>(<span class="text-yellow-300">"+3 months"</span>);
+  <span class="text-green-400">echo</span> <span class="text-white">"3 Months Later: "</span> . <span class="text-green-400">date</span>(<span class="text-yellow-300">"Y-m-d"</span>, <span class="text-green-400">$d3</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../forms/FormComplete.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Include.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(21);
+    </script>
+  </body>
+</html>

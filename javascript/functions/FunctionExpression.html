@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Function Expression - Tutorial</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Function Expression
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Arguments.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./ArrowFunction.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Function Expression Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Function Expression ek aisa function hota hai jise
+          kisi variable ke andar store kiya jata hai.
+          <br><br>
+          Function Expression me function ko pehle create karke
+          <code class="text-blue-400">const</code>,
+          <code class="text-blue-400">let</code>
+          ya kabhi-kabhi
+          <code class="text-blue-400">var</code>
+          variable me assign kiya jata hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Function Expression Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> functionName = <span class="text-blue-400">function</span>() {
+  // code
+};</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Basic Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Function Expression Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> greet = <span class="text-blue-400">function</span>() {
+  console.log(<span class="text-emerald-400">"Hello JavaScript"</span>);
+};
+
+greet();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello JavaScript</pre>
+          </div>
+
+        </div>
+
+        <!-- Explanation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Example Kaise Kaam Kar Raha Hai?
+          </h3>
+
+          <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+
+            <p>
+              <code class="text-blue-400">const greet</code>
+              → Ek variable create kiya gaya hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">function()</code>
+              → Anonymous function create karta hai.
+            </p>
+
+            <p>
+              Function ko
+              <code class="text-blue-400">greet</code>
+              variable ke andar store kiya gaya hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">greet()</code>
+              → Stored function ko call karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Anonymous -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Anonymous Function
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function Expression me function ka apna naam na ho to use
+            Anonymous Function kehte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> message = <span class="text-blue-400">function</span>() {
+  console.log(<span class="text-emerald-400">"Welcome"</span>);
+};
+
+message();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Welcome</pre>
+          </div>
+
+        </div>
+
+        <!-- Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Expression With Parameters
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add = <span class="text-blue-400">function</span>(a, b) {
+  console.log(a + b);
+};
+
+add(<span class="text-emerald-400">10</span>, <span class="text-emerald-400">20</span>);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Return -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Expression With Return
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> multiply = <span class="text-blue-400">function</span>(a, b) {
+  <span class="text-blue-400">return</span> a * b;
+};
+
+<span class="text-blue-400">let</span> result = multiply(
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">4</span>
+);
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">20</pre>
+          </div>
+
+        </div>
+
+        <!-- Declaration vs Expression -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Function Declaration vs Function Expression
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Function Declaration</th>
+                  <th class="p-4">Function Expression</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Direct function declare hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Function variable me assign hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    function add() {}
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    const add = function() {};
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Function declaration hoisting support karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Variable declaration rules par depend karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Hoisting -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Expression Aur Hoisting
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">const</code>
+            ya
+            <code class="text-blue-400">let</code>
+            me stored Function Expression ko declaration se pehle call nahi
+            karna chahiye.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// Wrong order</span>
+
+greet();
+
+<span class="text-blue-400">const</span> greet = <span class="text-blue-400">function</span>() {
+  console.log(<span class="text-emerald-400">"Hello"</span>);
+};</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Result:</p>
+
+<pre class="text-red-400 font-mono">ReferenceError</pre>
+          </div>
+
+        </div>
+
+        <!-- Correct -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Correct Way
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> greet = <span class="text-blue-400">function</span>() {
+  console.log(<span class="text-emerald-400">"Hello"</span>);
+};
+
+greet();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello</pre>
+          </div>
+
+        </div>
+
+        <!-- Function as Value -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Ko Value Ki Tarah Store Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            JavaScript me functions values ki tarah variables me store kiye ja
+            sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add = <span class="text-blue-400">function</span>(a, b) {
+  <span class="text-blue-400">return</span> a + b;
+};
+
+<span class="text-blue-400">const</span> myFunction = add;
+
+console.log(
+  myFunction(
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">20</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Named Expression -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Named Function Expression
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function Expression ke andar function ko naam bhi diya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> greet = <span class="text-blue-400">function</span> showMessage() {
+  console.log(<span class="text-emerald-400">"Hello JavaScript"</span>);
+};
+
+greet();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello JavaScript</pre>
+          </div>
+
+        </div>
+
+        <!-- Arrow Preview -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Expression vs Arrow Function
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-4">
+            Function Expression:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add = <span class="text-blue-400">function</span>(a, b) {
+  <span class="text-blue-400">return</span> a + b;
+};</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-6 mb-4">
+            Arrow Function:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add = (a, b) =&gt; {
+  <span class="text-blue-400">return</span> a + b;
+};</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Function Expression me function ko variable me store kiya jata
+              hai.
+            </p>
+
+            <p>
+              2. Anonymous Function ka apna function name nahi hota.
+            </p>
+
+            <p>
+              3. Function Expression parameters aur return dono use kar sakta
+              hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">const</code>
+              me stored Function Expression ko assignment se pehle call nahi
+              kar sakte.
+            </p>
+
+            <p>
+              5. JavaScript me function ko value ki tarah variable me store kiya
+              ja sakta hai.
+            </p>
+
+            <p>
+              6. Arrow Function bhi commonly variable me store kiya jata hai,
+              lekin uska syntax aur kuch behavior different hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Arguments.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./ArrowFunction.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    // JS Functions -> Function Expression
+    document.getElementById("sidebar").innerHTML = createSidebar(10);
+  </script>
+
+</body>
+</html>

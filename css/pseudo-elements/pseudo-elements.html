@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Pseudo-Elements</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- ================= TITLE ================= -->
+
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Pseudo-Elements
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Pseudo-Elements ka use kisi HTML element ke
+            <span class="text-[#4d6fff] font-bold"> specific part </span>
+            ko style karne ke liye kiya jata hai. Iski madad se hum element ke
+            first letter, first line, before content, after content aur
+            selection jaise parts ko directly style kar sakte hain.
+          </p>
+
+          <!-- ================= TOP BUTTONS ================= -->
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../pseudo-classes/pseudo-classes.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../opacity/opacity.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- ================= INTRODUCTION ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-7">
+              <i class="fa-solid fa-code text-blue-400 mr-3"></i>
+              CSS Pseudo-Elements Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              Pseudo-Element CSS ka ek special feature hai jiske through hum
+              kisi HTML element ke complete element ko style karne ke bajay uske
+              <span class="text-white font-bold"> kisi particular part </span>
+              ko style kar sakte hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              For example, agar ek paragraph ke sirf first letter ko bada aur
+              different color ka banana hai, to hum
+              <span class="text-[#4d6fff] font-bold"> ::first-letter </span>
+              pseudo-element ka use kar sakte hain. Isi tarah paragraph ki sirf
+              first line ko style karne ke liye
+              <span class="text-[#4d6fff] font-bold"> ::first-line </span>
+              use hota hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Pseudo-elements ka use decorative content add karne ke liye bhi
+              kiya jata hai. Iske liye
+              <span class="text-[#4d6fff] font-bold"> ::before </span>
+              aur
+              <span class="text-[#4d6fff] font-bold"> ::after </span>
+              sabse useful pseudo-elements hain. Inki help se hum HTML mein
+              extra element add kiye bina visual content create kar sakte hain.
+            </p>
+          </section>
+
+          <!-- ================= SYNTAX ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              Pseudo-Element Syntax
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Modern CSS mein pseudo-elements ko generally
+              <span class="text-white font-bold"> double colon :: </span>
+              ke saath likha jata hai. Double colon browser ko batata hai ki hum
+              element ke kisi special part ko target kar rahe hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl sm:text-2xl font-bold">
+                  <i class="fa-solid fa-terminal text-blue-400 mr-2"></i>
+                  Basic Syntax
+                </h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">selector::pseudo-element</span> {
+  <span class="text-blue-400">property</span>: <span class="text-green-400">value</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= FIRST LETTER ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              1. ::first-letter
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold"> ::first-letter </span>
+              pseudo-element ka use kisi text ke sirf
+              <span class="text-white font-bold"> first letter </span>
+              ko style karne ke liye hota hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Iska use normally articles, blogs, magazines aur newspaper-style
+              designs mein kiya jata hai. Aap first letter ko bada, bold ya
+              different color ka bana sakte ho. Isse paragraph ka starting part
+              visually attractive lagta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">First Letter Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">p::first-letter</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">40px</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">bold</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#4d6fff</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= FIRST LINE ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">2. ::first-line</h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold"> ::first-line </span>
+              pseudo-element ka use paragraph ya kisi text element ki visible
+              <span class="text-white font-bold"> first line </span>
+              ko style karne ke liye hota hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Important baat ye hai ki first line screen size ke according
+              change ho sakti hai. Desktop par first line mein zyada words aa
+              sakte hain, jabki mobile screen par wahi line chhoti ho jayegi.
+              Isliye responsive design mein iska behavior automatically adjust
+              hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">First Line Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">p::first-line</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#4d6fff</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">bold</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= BEFORE ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">3. ::before</h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold"> ::before </span>
+              pseudo-element ka use kisi element ke content se
+              <span class="text-white font-bold"> pehle </span>
+              generated content add karne ke liye hota hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Ye decorative icons, quotation marks, bullets, labels aur
+              different visual effects banane mein useful hai. Iska sabse
+              important part
+              <span class="text-[#4d6fff] font-bold"> content </span>
+              property hai. Agar generated text ya character add karna hai to
+              normally content property specify karni padti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Before Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">h2::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">"★ "</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">gold</span>;
+}</code></pre>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mt-7">
+              Is example mein heading ke text se pehle star symbol automatically
+              add ho jayega.
+            </p>
+          </section>
+
+          <!-- ================= AFTER ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">4. ::after</h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold"> ::after </span>
+              pseudo-element
+              <span class="text-white font-bold"> ::before </span>
+              ke opposite kaam karta hai. Ye kisi element ke content ke baad
+              generated content add karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              ::after ka use decorative lines, icons, badges, quotation marks
+              aur hover effects mein bahut hota hai. Web design mein kai baar ek
+              extra HTML element banane ki zarurat nahi padti kyunki ::after se
+              hi visual element create kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">After Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">h2::after</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">" ✓"</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#4ade80</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= SELECTION ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">5. ::selection</h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold"> ::selection </span>
+              pseudo-element ka use tab hota hai jab user webpage ke text ko
+              mouse se select karta hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Default browser selection color ko customize karne ke liye iska
+              use kiya ja sakta hai. Aap selected text ka background aur text
+              color change kar sakte ho.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Selection Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">::selection</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#254ccb</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= MARKER ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">6. ::marker</h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+            >
+              <span class="text-[#4d6fff] font-bold"> ::marker </span>
+              pseudo-element ka use list items ke marker ko style karne ke liye
+              kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Normal unordered list mein bullet aur ordered list mein number
+              marker hota hai. ::marker ki help se hum marker ka color aur kuch
+              supported text properties change kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Marker Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">li::marker</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#4d6fff</span>;
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">24px</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= BEFORE AFTER PRACTICAL ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-laptop-code text-blue-400 mr-3"></i>
+              Practical Before & After Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Ab ek practical example dekhte hain jahan
+              <span class="text-[#4d6fff] font-bold"> ::before </span>
+              aur
+              <span class="text-[#4d6fff] font-bold"> ::after </span>
+              dono ka use kiya gaya hai. Ye type ka design headings, cards aur
+              section titles mein commonly use kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <div class="bg-[#1e293b] p-5">
+                <h3 class="text-xl font-bold">Complete Example</h3>
+              </div>
+
+              <div class="p-6 overflow-x-auto">
+                <pre
+                  class="text-lg leading-relaxed"
+                ><code><span class="text-blue-400">&lt;h2&gt;</span>Learn CSS<span class="text-blue-400">&lt;/h2&gt;</span>
+
+<span class="text-blue-400">h2::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">"★ "</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">gold</span>;
+}
+
+<span class="text-blue-400">h2::after</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">" →"</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#4d6fff</span>;
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= PSEUDO ELEMENT VS PSEUDO CLASS ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              Pseudo-Class vs Pseudo-Element
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Pseudo-class aur pseudo-element naam mein similar lagte hain,
+              lekin dono ka kaam different hai. Pseudo-class generally element
+              ki state ya condition ko target karta hai, jabki pseudo-element
+              element ke kisi specific part ko target karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden"
+            >
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-lg">
+                  <thead class="bg-[#1e293b]">
+                    <tr>
+                      <th class="px-6 py-5">Feature</th>
+
+                      <th class="px-6 py-5">Pseudo-Class</th>
+
+                      <th class="px-6 py-5">Pseudo-Element</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="text-gray-300">
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5">Purpose</td>
+
+                      <td class="px-6 py-5">State ya condition</td>
+
+                      <td class="px-6 py-5">Element ka specific part</td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5">Example</td>
+
+                      <td class="px-6 py-5 text-blue-400">:hover</td>
+
+                      <td class="px-6 py-5 text-blue-400">::before</td>
+                    </tr>
+
+                    <tr class="border-t border-gray-800">
+                      <td class="px-6 py-5">Syntax</td>
+
+                      <td class="px-6 py-5">Single colon</td>
+
+                      <td class="px-6 py-5">Double colon</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= COMMON USES ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              Pseudo-Elements Kahan Use Hote Hain?
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-9"
+            >
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>Paragraph ke first letter ko stylish banane ke liye.</li>
+
+                <li>Paragraph ki first line ko highlight karne ke liye.</li>
+
+                <li>
+                  Heading ke before ya after decorative content add karne ke
+                  liye.
+                </li>
+
+                <li>
+                  Buttons aur links mein icons ya visual effects add karne ke
+                  liye.
+                </li>
+
+                <li>Lists ke bullets ya numbers ko customize karne ke liye.</li>
+
+                <li>Selected text ka appearance customize karne ke liye.</li>
+
+                <li>
+                  Extra HTML elements create kiye bina decorative design banane
+                  ke liye.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ================= COMMON MISTAKES ================= -->
+
+          <section class="mb-14">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i
+                class="fa-solid fa-triangle-exclamation text-blue-400 mr-3"
+              ></i>
+              Common Mistakes
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-9"
+            >
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  ::before aur ::after mein
+                  <span class="text-blue-400 font-bold"> content </span>
+                  property ko bhool jana.
+                </li>
+
+                <li>Pseudo-class aur pseudo-element ko same samajhna.</li>
+
+                <li>
+                  ::first-letter ko poore paragraph par apply hone wala selector
+                  samajhna.
+                </li>
+
+                <li>
+                  Decorative content ke liye unnecessary extra HTML elements
+                  banana.
+                </li>
+
+                <li>
+                  ::before aur ::after ko use karte waqt positioning aur layout
+                  ko properly manage na karna.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ================= IMPORTANT POINTS ================= -->
+
+          <section class="mb-14">
+            <div
+              class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold mb-6">
+                <i class="fa-solid fa-circle-info text-blue-400 mr-3"></i>
+                Important Points
+              </h2>
+
+              <ul
+                class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  Pseudo-elements ko modern CSS mein generally double colon
+                  <span class="text-blue-400 font-bold"> :: </span>
+                  ke saath likha jata hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold"> ::first-letter </span>
+                  sirf first letter ko target karta hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold"> ::first-line </span>
+                  text ki first line ko target karta hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold"> ::before </span>
+                  element ke content se pehle generated content add karta hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold"> ::after </span>
+                  element ke content ke baad generated content add karta hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold"> ::selection </span>
+                  selected text ko style karne ke liye use hota hai.
+                </li>
+
+                <li>
+                  <span class="text-blue-400 font-bold"> ::marker </span>
+                  list markers ko style karne ke liye useful hai.
+                </li>
+
+                <li>
+                  ::before aur ::after ke saath generated content ke liye
+                  content property important hoti hai.
+                </li>
+
+                <li>
+                  Pseudo-elements website ke visual design ko improve karne ke
+                  liye bahut useful hain.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ================= SUMMARY ================= -->
+
+          <section class="mb-10">
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                <i class="fa-solid fa-book-open text-blue-400 mr-3"></i>
+                Summary
+              </h2>
+
+              <p
+                class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-7"
+              >
+                CSS Pseudo-Elements ka use HTML elements ke specific parts ko
+                style karne aur decorative content create karne ke liye hota
+                hai. Ye webpage ke design ko bina unnecessary HTML elements add
+                kiye improve karne mein help karte hain.
+              </p>
+
+              <p
+                class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+              >
+                Sabse important pseudo-elements mein
+                <span class="text-[#4d6fff] font-bold">
+                  ::first-letter, ::first-line, ::before, ::after, ::selection
+                  aur ::marker
+                </span>
+                aate hain. In concepts ko properly samajhne ke baad aap
+                headings, paragraphs, lists, buttons aur cards ko aur zyada
+                professional tarike se design kar sakte ho.
+              </p>
+            </div>
+          </section>
+
+          <!-- ================= BOTTOM BUTTONS ================= -->
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../pseudo-classes/pseudo-classes.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../opacity/opacity.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(31);
+      });
+    </script>
+  </body>
+</html>

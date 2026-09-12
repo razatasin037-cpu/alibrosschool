@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Accessibility</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Accessibility
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Accessibility ka matlab website ke visual design ko aisa banana
+            hai ki maximum users content ko easily read, understand aur use kar
+            saken. Isme readable text, sufficient color contrast, visible focus
+            states, responsive layout, scalable fonts aur motion ko carefully
+            handle karna important hai. Accessibility sirf visual appearance ka
+            topic nahi hai, balki HTML structure, interaction aur user
+            experience ke saath milkar kaam karta hai.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../optimization/optimization.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../layout/layout.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT IS ACCESSIBILITY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-universal-access text-blue-400 mr-2"></i>
+            CSS Accessibility Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Web accessibility ka goal ye hai ki website ko different abilities,
+            devices aur interaction methods wale users use kar saken. CSS isme
+            important role play karti hai kyunki colors, spacing, typography,
+            focus indicators, responsive layout aur animations directly user
+            experience ko affect karte hain.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Accessibility-friendly CSS ka matlab ye nahi ki website ka design
+            boring hona chahiye. Proper contrast, clear hierarchy, readable
+            typography aur predictable interactions ke through website
+            attractive bhi ho sakti hai aur accessible bhi.
+          </p>
+
+          <!-- BASIC EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Accessibility Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">18px</span>;
+  <span class="text-blue-400">line-height</span>: <span class="text-green-400">1.6</span>;
+}
+
+<span class="text-blue-400">a:focus-visible</span> {
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">3px solid #60a5fa</span>;
+  <span class="text-blue-400">outline-offset</span>: <span class="text-green-400">3px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- TEXT READABILITY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-font text-blue-400 mr-2"></i>
+            1. Readable Text Use Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Accessibility ke liye text ka readable hona bahut important hai.
+            Bahut chhota font, extremely thin font-weight, tight line-height ya
+            difficult typography users ke liye content read karna hard bana
+            sakti hai. Body text ke liye comfortable font size aur sufficient
+            line-height rakhna useful practice hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Readable Typography
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">font-family</span>: <span class="text-green-400">Arial, sans-serif</span>;
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">18px</span>;
+  <span class="text-blue-400">line-height</span>: <span class="text-green-400">1.6</span>;
+}
+
+<span class="text-blue-400">p</span> {
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">70ch</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Comfortable line-height aur reasonable line length se long
+            paragraphs ko scan aur read karna easier hota hai.
+          </p>
+
+          <!-- COLOR CONTRAST -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle-half-stroke text-blue-400 mr-2"></i>
+            2. Color Contrast
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Text aur background ke beech sufficient contrast hona chahiye.
+            Low-contrast text especially visually impaired users ke liye
+            difficult ho sakta hai. Accessibility ke liye sirf beautiful color
+            combination choose karna enough nahi hai; readability bhi check
+            karni chahiye.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Poor Contrast
+              </h3>
+
+              <div class="bg-gray-300 text-gray-400 rounded-xl p-5 text-lg">
+                Difficult to read text
+              </div>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Better Contrast
+              </h3>
+
+              <div class="bg-[#020617] text-white rounded-xl p-5 text-lg">
+                Easier to read text
+              </div>
+            </div>
+          </div>
+
+          <!-- COLOR ONLY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-palette text-blue-400 mr-2"></i>
+            3. Sirf Color Se Information Na Dein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Kisi important information ko sirf color ke through communicate
+            karna avoid karein. Example ke liye agar error ko sirf red color se
+            indicate kiya gaya hai, to kuch users ke liye difference identify
+            karna difficult ho sakta hai. Text, icon ya other visual indicator
+            bhi provide karna better hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Better Error Message
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.error</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#dc2626</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">600</span>;
+}
+
+<span class="text-blue-400">.error::before</span> {
+  <span class="text-blue-400">content</span>: <span class="text-green-400">"Error: "</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- FOCUS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-crosshairs text-blue-400 mr-2"></i>
+            4. Keyboard Focus Visible Rakhein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Keyboard users ke liye focus indicator bahut important hai. Jab user
+            Tab key se links, buttons ya form controls ke beech move karta hai,
+            to usse clearly dikhna chahiye ki current focus kis element par hai.
+            Focus outline ko bina replacement provide kiye remove nahi karna
+            chahiye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Focus Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">button:focus-visible</span> {
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">3px solid #60a5fa</span>;
+  <span class="text-blue-400">outline-offset</span>: <span class="text-green-400">3px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- HOVER VS FOCUS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+            5. Hover ke Saath Focus bhi Handle Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Sirf <strong>:hover</strong> state design karna enough nahi hai.
+            Mouse users hover state dekh sakte hain, lekin keyboard users
+            generally focus state ke through navigation karte hain. Isliye
+            interactive elements ke liye focus styling bhi define karna useful
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Hover and Focus
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.button:hover</span> {
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">translateY(-2px)</span>;
+}
+
+<span class="text-blue-400">.button:focus-visible</span> {
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">3px solid #60a5fa</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LINK VISIBILITY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-link text-blue-400 mr-2"></i>
+            6. Links ko Clearly Visible Rakhein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Links ko surrounding normal text se clearly distinguish karna
+            important hai. Sirf subtle color difference par depend karne ke
+            bajay underline ya another clear visual treatment use kiya ja sakta
+            hai, especially important content links ke liye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Accessible Link Style
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">a</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#60a5fa</span>;
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">underline</span>;
+}
+
+<span class="text-blue-400">a:hover</span> {
+  <span class="text-blue-400">text-decoration-thickness</span>: <span class="text-green-400">2px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- FORM CONTROLS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-keyboard text-blue-400 mr-2"></i>
+            7. Form Controls ko Accessible Banayein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Form inputs ke liye clear borders, labels, focus indicators aur
+            sufficient size important hain. Input ka visual design aisa hona
+            chahiye ki user easily identify kar sake ki field editable hai aur
+            current focus kahan hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Accessible Input Style
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid #64748b</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">8px</span>;
+}
+
+<span class="text-blue-400">input:focus</span> {
+  <span class="text-blue-400">border-color</span>: <span class="text-green-400">#60a5fa</span>;
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">3px solid #60a5fa</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- DISABLED -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-lock text-blue-400 mr-2"></i>
+            8. Disabled Elements ko Clearly Show Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Disabled controls ka appearance different ho sakta hai, lekin
+            disabled state ko sirf extremely low contrast ke through indicate
+            karna avoid karna chahiye. User ko clearly samajh aana chahiye ki
+            control currently available nahi hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Disabled Style
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">button:disabled</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.6</span>;
+  <span class="text-blue-400">cursor</span>: <span class="text-green-400">not-allowed</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- FONT SCALING -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-text-height text-blue-400 mr-2"></i>
+            9. Text ko Scale Hone Dein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Users apne browser ya operating system mein text size increase kar
+            sakte hain. Layout ko itna rigid nahi banana chahiye ki text enlarge
+            hone par content cut ya overlap ho jaye. Flexible units aur flexible
+            containers accessibility ke liye useful ho sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Flexible Text
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">html</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">100%</span>;
+}
+
+<span class="text-blue-400">body</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">1rem</span>;
+}
+
+<span class="text-blue-400">h1</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">clamp(2rem, 5vw, 4rem)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- RESPONSIVE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            10. Responsive Accessibility
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Accessibility desktop tak limited nahi hai. Website ko mobile,
+            tablet aur different screen sizes par bhi usable hona chahiye. Fixed
+            widths aur content clipping ko avoid karke flexible layouts create
+            karna better hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Responsive Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.content</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">min(90%, 900px)</span>;
+  <span class="text-blue-400">margin-inline</span>: <span class="text-green-400">auto</span>;
+}
+
+<span class="text-blue-400">.grid</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">grid</span>;
+  <span class="text-blue-400">grid-template-columns</span>: <span class="text-green-400">repeat(auto-fit, minmax(250px, 1fr))</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- REDUCED MOTION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-person-walking text-blue-400 mr-2"></i>
+            11. Reduced Motion Support
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Kuch users operating system mein reduced motion preference enable
+            karte hain. CSS ki <strong>prefers-reduced-motion</strong> media
+            query ke through animations aur transitions ko reduce ya disable
+            kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Reduced Motion Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">transition</span>: <span class="text-green-400">transform 0.3s ease</span>;
+}
+
+<span class="text-blue-400">@media (prefers-reduced-motion: reduce)</span> {
+  <span class="text-blue-400">.card</span> {
+    <span class="text-blue-400">transition</span>: <span class="text-green-400">none</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- TEXT ALIGNMENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-align-left text-blue-400 mr-2"></i>
+            12. Text Alignment aur Readability
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Long-form content ke liye readable text alignment aur line length
+            important hai. Har paragraph ko center align karna visually stylish
+            lag sakta hai, lekin long text ke liye left-aligned text generally
+            scan aur read karna easier hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Readable Content
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">70ch</span>;
+  <span class="text-blue-400">text-align</span>: <span class="text-green-400">left</span>;
+  <span class="text-blue-400">line-height</span>: <span class="text-green-400">1.7</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- TOUCH TARGETS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+            13. Buttons aur Touch Targets
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Mobile users ke liye buttons aur interactive controls bahut chhote
+            nahi hone chahiye. Sufficient padding aur spacing se controls ko
+            touch karna easier hota hai. Saath hi adjacent buttons ke beech
+            enough space rakhna accidental clicks ko reduce kar sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Accessible Button
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 20px</span>;
+  <span class="text-blue-400">min-height</span>: <span class="text-green-400">44px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">8px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- HIDDEN CONTENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-eye-slash text-blue-400 mr-2"></i>
+            14. Content ko Galat Tarike Se Hide Na Karein
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS mein <strong>display: none</strong>, visibility aur visually
+            hidden techniques ka behavior different hota hai. Accessibility
+            requirements ke according content hide karte waqt carefully decide
+            karein ki content visual users, keyboard users ya assistive
+            technologies ke liye available rehna chahiye ya nahi.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                display: none
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.hidden</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">none</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- SEMANTIC HTML -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            15. CSS ke Saath Semantic HTML bhi Important Hai
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Accessibility sirf CSS se solve nahi hoti. Proper semantic HTML
+            elements jaise headings, buttons, links, labels, nav aur main
+            structure ka use bhi important hai. CSS ko semantic structure ko
+            hide ya confuse karne ke bajay uske upar styling layer ke roop mein
+            use karna better hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Semantic Structure
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;main&gt;</span>
+  <span class="text-blue-400">&lt;h1&gt;</span>Website Title<span class="text-blue-400">&lt;/h1&gt;</span>
+
+  <span class="text-blue-400">&lt;button&gt;</span>
+    Submit
+  <span class="text-blue-400">&lt;/button&gt;</span>
+<span class="text-blue-400">&lt;/main&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- COMPLETE EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+            16. Complete Accessible CSS Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ab ek complete example dekhte hain jisme readable typography,
+            contrast, focus state, responsive width aur reduced-motion support
+            ko ek saath use kiya gaya hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Complete Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">body</span> {
+  <span class="text-blue-400">font-family</span>: <span class="text-green-400">Arial, sans-serif</span>;
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">1rem</span>;
+  <span class="text-blue-400">line-height</span>: <span class="text-green-400">1.6</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#e2e8f0</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">#020617</span>;
+}
+
+<span class="text-blue-400">.content</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">min(90%, 900px)</span>;
+  <span class="text-blue-400">margin-inline</span>: <span class="text-green-400">auto</span>;
+}
+
+<span class="text-blue-400">a</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">#60a5fa</span>;
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">underline</span>;
+}
+
+<span class="text-blue-400">button:focus-visible,
+a:focus-visible,
+input:focus-visible</span> {
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">3px solid #60a5fa</span>;
+  <span class="text-blue-400">outline-offset</span>: <span class="text-green-400">3px</span>;
+}
+
+<span class="text-blue-400">@media (prefers-reduced-motion: reduce)</span> {
+  <span class="text-blue-400">*</span> {
+    <span class="text-blue-400">scroll-behavior</span>: <span class="text-green-400">auto</span>;
+    <span class="text-blue-400">animation-duration</span>: <span class="text-green-400">0.01ms</span>;
+    <span class="text-blue-400">transition-duration</span>: <span class="text-green-400">0.01ms</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ACCESSIBILITY CHECKLIST -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+            Accessibility Checklist
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Text aur background ke beech sufficient contrast rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Body text ko comfortably readable rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Keyboard focus ko visible rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Sirf color ke through important information communicate na
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Links ko clearly distinguish karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Form controls ko clear borders aur focus states dein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Mobile aur desktop dono layouts test karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Reduced-motion preference ko consider karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Semantic HTML ke saath CSS use karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Bahut low-contrast text use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                outline: none use karke focus indicator remove kar dena.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Sirf color ke through error ya success state dikhana.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Text ke liye overly small fixed font sizes use karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Mobile screen par fixed-width layout banana.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Har interaction ke liye sirf hover state define karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Excessive animation bina reduced-motion support ke use karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Design se pehle accessibility ko project requirement ka part
+                samjhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Color palette ka contrast test karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Keyboard navigation ke saath interface test karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Focus indicators ko clearly visible rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Flexible layouts aur scalable typography use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Reduced-motion preference ko respect karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS ke saath proper semantic HTML bhi maintain karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Accessibility ka goal website ko maximum users ke liye usable
+                banana hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Text readable size aur comfortable line-height mein hona
+                chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Text aur background ke beech sufficient contrast hona chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Information ko sirf color ke through communicate nahi karna
+                chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Keyboard users ke liye focus indicators visible hone chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Hover ke saath focus state ko bhi consider karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive layout different screen sizes par usable hona
+                chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                prefers-reduced-motion users ki motion preference ko respect kar
+                sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Form controls aur buttons ke touch areas comfortable hone
+                chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS accessibility ka replacement semantic HTML aur proper
+                structure nahi hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Accessibility ka main purpose website ke visual aur
+              interactive experience ko zyada usable banana hai. Readable
+              typography, sufficient color contrast, visible focus states, clear
+              links, accessible form controls aur responsive layouts iske
+              important parts hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Accessibility ko sirf CSS property samajhna sahi nahi hai.
+              Semantic HTML, keyboard navigation, meaningful content structure
+              aur user preferences bhi equally important hain. CSS ke through
+              hum contrast, focus, typography, responsive behavior aur motion ko
+              better handle karke overall accessible experience create kar sakte
+              hain.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../optimization/optimization.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../layout/layout.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(45);
+      });
+    </script>
+  </body>
+</html>

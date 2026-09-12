@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Try Catch - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Try Catch
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Errors.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Throw.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Try Catch Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">try...catch</code>
+          ka use errors ko handle karne ke liye hota hai.
+          <br><br>
+          Agar
+          <code class="text-blue-400">try</code>
+          block ke andar error aata hai, to program completely stop hone ke
+          bajaye
+          <code class="text-blue-400">catch</code>
+          block execute hota hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Try Catch Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  <span class="text-gray-400">// Code</span>
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  <span class="text-gray-400">// Error handling</span>
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Normal Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Without Try Catch
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Agar error ko handle nahi karenge to JavaScript execution
+            wahi ruk sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>console.log(user);
+
+console.log(
+  <span class="text-emerald-400">"Program Running"</span>
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">ReferenceError:
+user is not defined</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Basic -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Try Catch Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(user);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    <span class="text-emerald-400">"Error aa gaya"</span>
+  );
+
+}
+
+console.log(
+  <span class="text-emerald-400">"Program Running"</span>
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+            <p class="font-bold mb-2">
+              Output:
+            </p>
+
+<pre class="text-emerald-400 font-mono">Error aa gaya
+Program Running</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Working -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Try Catch Kaise Kaam Karta Hai?
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. JavaScript pehle
+              <code class="text-blue-400">try</code>
+              block run karta hai.
+            </p>
+
+            <p>
+              2. Agar koi error nahi hai to
+              <code class="text-blue-400">catch</code>
+              block skip ho jata hai.
+            </p>
+
+            <p>
+              3. Agar
+              <code class="text-blue-400">try</code>
+              ke andar error aata hai to remaining try code skip ho jata hai.
+            </p>
+
+            <p>
+              4. Uske baad
+              <code class="text-blue-400">catch</code>
+              block execute hota hai.
+            </p>
+
+            <p>
+              5. Catch ke baad program ka next code continue ho sakta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- No Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Jab Error Nahi Aata
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">const</span> name =
+    <span class="text-emerald-400">"Ali"</span>;
+
+  console.log(name);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    <span class="text-emerald-400">"Error"</span>
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Error object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Catch Error Object
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Catch ke andar milne wala
+            <code class="text-blue-400">error</code>
+            object error ki complete information rakhta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(student);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(error);
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- error.name -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            error.name
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            <code class="text-blue-400">error.name</code>
+            error ka type batata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(student);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.name
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">ReferenceError</pre>
+
+          </div>
+
+        </div>
+
+        <!-- error.message -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            error.message
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            <code class="text-blue-400">error.message</code>
+            actual error message provide karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(student);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">student is not defined</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Both -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Error Name Aur Message
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(user);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    <span class="text-emerald-400">"Name:"</span>,
+    error.name
+  );
+
+  console.log(
+    <span class="text-emerald-400">"Message:"</span>,
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Name: ReferenceError
+Message: user is not defined</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Different Type -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            TypeError Handle Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">const</span> number =
+    <span class="text-emerald-400">10</span>;
+
+  number.toUpperCase();
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.name
+  );
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">TypeError
+number.toUpperCase is not a function</pre>
+
+          </div>
+
+        </div>
+
+        <!-- JSON -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            JSON Parse Error Handle Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Invalid JSON ko parse karte waqt error aa sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> data =
+  <span class="text-emerald-400">'{"name":"Ali",}'</span>;
+
+<span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">const</span> user =
+    JSON.parse(data);
+
+  console.log(user);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    <span class="text-emerald-400">"Invalid JSON"</span>
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Invalid JSON</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Function -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Try Catch Inside Function
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> calculate() {
+
+  <span class="text-blue-400">try</span> {
+
+    console.log(total);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      <span class="text-emerald-400">"Calculation Error"</span>
+    );
+
+  }
+
+}
+
+calculate();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Calculation Error</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Nested Try Catch -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Nested Try Catch
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Ek
+            <code class="text-blue-400">try...catch</code>
+            ke andar dusra try catch bhi use kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Outer Try"</span>
+  );
+
+  <span class="text-blue-400">try</span> {
+
+    console.log(user);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      <span class="text-emerald-400">"Inner Error"</span>
+    );
+
+  }
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    <span class="text-emerald-400">"Outer Error"</span>
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Outer Try
+Inner Error</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Async -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Try Catch With Async Await
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Async/await ke saath API errors handle karne ke liye
+            try catch bahut commonly use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getUsers() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> fetch(
+        <span class="text-emerald-400">
+          "https://example.com/users"
+        </span>
+      );
+
+    <span class="text-blue-400">const</span> data =
+      <span class="text-blue-400">await</span> response.json();
+
+    console.log(data);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  }
+
+}
+
+getUsers();</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Fetch important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Fetch Response Check
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Fetch me
+            <code class="text-blue-400">404</code>
+            ya
+            <code class="text-blue-400">500</code>
+            response automatically catch me nahi jata. Isliye
+            <code class="text-blue-400">response.ok</code>
+            check karna useful hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getProduct() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> fetch(
+        <span class="text-emerald-400">
+          "https://example.com/product/1"
+        </span>
+      );
+
+    <span class="text-blue-400">if</span> (!response.ok) {
+
+      <span class="text-blue-400">throw new</span> Error(
+        <span class="text-emerald-400">
+          "Product not found"
+        </span>
+      );
+
+    }
+
+    <span class="text-blue-400">const</span> data =
+      <span class="text-blue-400">await</span> response.json();
+
+    console.log(data);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  }
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Real Login -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Project Login Example
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Login API call me bhi
+            <code class="text-blue-400">try...catch</code>
+            commonly use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> login() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> LoginUser({
+        email:
+          <span class="text-emerald-400">"admin@gmail.com"</span>,
+
+        password:
+          <span class="text-emerald-400">"12345678"</span>
+      });
+
+    console.log(
+      response.data
+    );
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  }
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Axios -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Axios Error Handling
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">const</span> response =
+    <span class="text-blue-400">await</span> axios.get(
+      <span class="text-emerald-400">
+        "/api/products"
+      </span>
+    );
+
+  console.log(
+    response.data
+  );
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.response?.data?.message
+    || error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Optional catch -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Catch Without Error Parameter
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Agar error object ki zarurat nahi hai to
+            <code class="text-blue-400">catch</code>
+            me parameter dena compulsory nahi hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(user);
+
+} <span class="text-blue-400">catch</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Something went wrong"</span>
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Something went wrong</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Summary table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Try Catch Summary
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Part
+                  </th>
+
+                  <th class="p-4">
+                    Work
+                  </th>
+
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    try
+                  </td>
+
+                  <td class="p-4">
+                    Risky code execute karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    catch
+                  </td>
+
+                  <td class="p-4">
+                    Error ko handle karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    error
+                  </td>
+
+                  <td class="p-4">
+                    Error ki information rakhta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    error.name
+                  </td>
+
+                  <td class="p-4">
+                    Error type batata hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    error.message
+                  </td>
+
+                  <td class="p-4">
+                    Error ka message batata hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">try</code>
+              ke andar wo code likhte hain jahan error aa sakta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">catch</code>
+              error ko handle karta hai.
+            </p>
+
+            <p>
+              3. Error nahi aaya to catch execute nahi hota.
+            </p>
+
+            <p>
+              4. Error aane ke baad try block ka remaining code skip ho jata hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">error.name</code>
+              error ka type deta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">error.message</code>
+              error ka message deta hai.
+            </p>
+
+            <p>
+              7. JSON parsing me try catch useful hai.
+            </p>
+
+            <p>
+              8. Async/await aur API calls ke saath try catch bahut important hai.
+            </p>
+
+            <p>
+              9. React aur Axios projects me API errors handle karne ke liye
+              try catch commonly use hota hai.
+            </p>
+
+            <p>
+              10. Custom errors banane ke liye
+              <code class="text-blue-400">throw</code>
+              use kiya jata hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Errors.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Throw.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(21);
+  </script>
+
+</body>
+
+</html>

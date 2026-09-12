@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Tutorials</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navigation Bar -->
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <!-- PHP Tutorial Section -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Tutorial
+        </h1>
+
+        <!-- Top Navigation Buttons -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="/aillearing.html"
+            class="bg-white text-black md:px-8 md:py-4 px-2 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Home
+          </a>
+
+          <a
+            href="../intro/intro.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Learn PHP Hinglish Hero Banner -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[30px]">
+            PHP Programming Sikho
+          </h2>
+
+          <p class="text-[20px] md:text-[23px] text-[#cbd5e1] mb-[30px] leading-relaxed">
+            PHP (Hypertext Preprocessor) ek popular server-side scripting language hai jo dynamic aur interactive web pages banane ke liye use hoti hai.
+          </p>
+
+          <p class="text-[20px] md:text-[23px] text-[#cbd5e1] leading-relaxed">
+            PHP ka use web development, CMS (jaise WordPress), backend APIs aur databases (jaise MySQL) ko integrate karne ke liye kiya jata hai.
+          </p>
+        </div>
+
+        <!-- ====================== HINGLISH SECTION ====================== -->
+        <section class="mt-24 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl">
+          <h1 class="text-[25px] md:text-[40px] font-bold mb-10 pt-10">
+            Examples Ke Sath PHP Sikho
+          </h1>
+
+          <p class="text-gray-300 text-xl mb-10 leading-10">
+            PHP web backend development ke liye ek open-source aur beginner-friendly language hai. Yeh dynamic content handle karne, database connectivity, sessions aur user authentication ko handle karne me bahut efficient hai. Is tutorial me aap PHP ko fundamental concepts se lekar advanced backend functions tak practical examples aur coding practice ke sath seekhenge.
+          </p>
+
+          <!-- Static Pure HTML PHP Code Examples Container -->
+          <div id="codeCards" class="my-8 space-y-8">
+            
+            <!-- Card 1 -->
+            <div class="bg-[#1e293b] rounded-2xl p-6 border border-[#334155] shadow-lg">
+              <h3 class="text-2xl font-bold text-white mb-3">1. Basic Syntax & Output (Hello World)</h3>
+              <p class="text-gray-300 text-lg mb-4">PHP code <code class="bg-[#0f172a] px-2 py-1 rounded text-green-400">&lt;?php ... ?&gt;</code> tags ke andar likha jata hai. Output show karne ke liye <code class="bg-[#0f172a] px-2 py-1 rounded text-green-400">echo</code> statement ka use hota hai.</p>
+              <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#1e293b]">
+                <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-white">// Basic PHP Script</span>
+  <span class="text-green-400">echo</span> <span class="text-white">"Hello, World!"</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-[#1e293b] rounded-2xl p-6 border border-[#334155] shadow-lg">
+              <h3 class="text-2xl font-bold text-white mb-3">2. Variables aur Data Types</h3>
+              <p class="text-gray-300 text-lg mb-4">PHP me variables create karne ke liye <code class="bg-[#0f172a] px-2 py-1 rounded text-green-400">$</code> sign ka use hota hai. Variables dynamically typed hote hain.</p>
+              <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#1e293b]">
+                <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$name</span> = <span class="text-white">"Rahul"</span>; <span class="text-white">// String</span>
+  <span class="text-green-400">$age</span> = <span class="text-white">22</span>;       <span class="text-white">// Integer</span>
+  <span class="text-green-400">$price</span> = <span class="text-white">99.99</span>;  <span class="text-white">// Float</span>
+  <span class="text-green-400">$isStudent</span> = <span class="text-green-400">true</span>; <span class="text-white">// Boolean</span>
+
+  <span class="text-green-400">echo</span> <span class="text-white">"Name: "</span> . <span class="text-green-400">$name</span> . <span class="text-white">"&lt;br&gt;"</span>;
+  <span class="text-green-400">echo</span> <span class="text-white">"Age: "</span> . <span class="text-green-400">$age</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-[#1e293b] rounded-2xl p-6 border border-[#334155] shadow-lg">
+              <h3 class="text-2xl font-bold text-white mb-3">3. Form Handling ($_POST Superglobal)</h3>
+              <p class="text-gray-300 text-lg mb-4">HTML Form ka data backend PHP script me <code class="bg-[#0f172a] px-2 py-1 rounded text-green-400">$_POST</code> array ka use karke read kiya jata hai.</p>
+              <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#1e293b]">
+                <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+<span class="text-green-400">if</span> (<span class="text-green-400">$_SERVER</span>[<span class="text-white">"REQUEST_METHOD"</span>] == <span class="text-white">"POST"</span>) {
+    <span class="text-green-400">$username</span> = <span class="text-green-400">htmlspecialchars</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">'username'</span>]);
+    <span class="text-green-400">echo</span> <span class="text-white">"Welcome, "</span> . <span class="text-green-400">$username</span>;
+}
+<span class="text-green-400">?&gt;</span></code></pre>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-[#1e293b] rounded-2xl p-6 border border-[#334155] shadow-lg">
+              <h3 class="text-2xl font-bold text-white mb-3">4. Database Connection (MySQLi)</h3>
+              <p class="text-gray-300 text-lg mb-4">PHP ko MySQL database se connect karne ke liye <code class="bg-[#0f172a] px-2 py-1 rounded text-green-400">mysqli_connect()</code> function ka use kiya jata hai.</p>
+              <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#1e293b]">
+                <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$servername</span> = <span class="text-white">"localhost"</span>;
+  <span class="text-green-400">$username</span> = <span class="text-white">"root"</span>;
+  <span class="text-green-400">$password</span> = <span class="text-white">""</span>;
+  <span class="text-green-400">$dbname</span> = <span class="text-white">"myDB"</span>;
+
+  <span class="text-white">// Create Connection</span>
+  <span class="text-green-400">$conn</span> = <span class="text-green-400">mysqli_connect</span>(<span class="text-green-400">$servername</span>, <span class="text-green-400">$username</span>, <span class="text-green-400">$password</span>, <span class="text-green-400">$dbname</span>);
+
+  <span class="text-white">// Check Connection</span>
+  <span class="text-green-400">if</span> (!<span class="text-green-400">$conn</span>) {
+    <span class="text-green-400">die</span>(<span class="text-white">"Connection failed: "</span> . <span class="text-green-400">mysqli_connect_error</span>());
+  }
+  <span class="text-green-400">echo</span> <span class="text-white">"Connected successfully!"</span>;
+<span class="text-green-400">?&gt;</span></code></pre>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Note -->
+          <div class="mt-10 bg-[#2d3521] text-[#e9f1c7] rounded-3xl p-10">
+            <h2 class="text-3xl font-bold mb-6">📝 Note</h2>
+
+            <p class="text-xl leading-10 mb-8">
+              Hum recommend karte hain ki tutorial ko left menu ke sequence ke hisaab se padhein. Pehle basic syntax, variables aur forms ko samjhein, uske baad database connections par jaayein.
+            </p>
+
+            <p class="text-xl leading-10">
+              Har PHP code ko Local Server (jaise XAMPP ya WAMP) par test aur run karein. Jitni zyada backend practice karenge, utna behtar logic develop hoga.
+            </p>
+          </div>
+
+          <!-- Extended PHP References Section -->
+          <div class="max-w-6xl w-full pt-10">
+            <h1 class="text-4xl font-bold text-white mb-4">
+              PHP Reference Manual
+            </h1>
+
+            <p class="text-lg text-gray-300 mb-8">
+              Yahan aap PHP ke standard functions, superglobals, security features aur built-in modules ke baare me seekh sakte hain.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                PHP Overview & Syntax
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                Superglobals ($_GET, $_POST)
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                Array Functions
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                String Functions
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                Math Functions
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                MySQLi & PDO Database
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                Sessions & Cookies
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                File Handling & Uploads
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                OOPs (Classes & Objects)
+              </button>
+
+              <!-- Additional PHP Reference Items -->
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                Form Validation & Sanitization
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                JSON Functions (json_encode)
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                Exception & Error Handling
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                Date & Time Functions
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                Filter Functions (filter_var)
+              </button>
+
+              <button class="bg-gray-200 hover:bg-blue-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition text-center shadow-md">
+                REST API Integration / cURL
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation Buttons -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="/aillearing.html"
+            class="bg-white text-black md:px-8 md:py-4 px-2 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Home
+          </a>
+
+          <a
+            href="../intro/intro.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Scripts -->
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>JavaScript Logical Operators - Tutorial</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom JS -->
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+
+        <!-- Heading -->
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          JavaScript Logical Operators
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Booleans.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../loops/Loops.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2
+            class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white"
+          >
+            Logical Operators Kya Hain?
+          </h2>
+
+          <p
+            class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4"
+          >
+            JavaScript me Logical Operators ka use ek ya multiple conditions ko
+            combine aur check karne ke liye hota hai.
+          </p>
+
+          <p
+            class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed"
+          >
+            JavaScript ke main logical operators hain:
+            <code class="text-blue-400">&&</code>,
+            <code class="text-blue-400">||</code>
+            aur
+            <code class="text-blue-400">!</code>.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Operator Table -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+              List of Logical Operators
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+
+                <thead>
+                  <tr class="border-b border-[#334155] text-blue-400">
+                    <th class="p-4 text-lg">Operator</th>
+                    <th class="p-4 text-lg">Name</th>
+                    <th class="p-4 text-lg">Meaning</th>
+                  </tr>
+                </thead>
+
+                <tbody
+                  class="divide-y divide-[#334155] text-gray-300 text-sm md:text-base"
+                >
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-emerald-400">
+                      &&
+                    </td>
+                    <td class="p-4 font-semibold text-white">
+                      Logical AND
+                    </td>
+                    <td class="p-4">
+                      Dono conditions true honi chahiye.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-emerald-400">
+                      ||
+                    </td>
+                    <td class="p-4 font-semibold text-white">
+                      Logical OR
+                    </td>
+                    <td class="p-4">
+                      Koi ek condition true ho to result true hota hai.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono font-bold text-emerald-400">
+                      !
+                    </td>
+                    <td class="p-4 font-semibold text-white">
+                      Logical NOT
+                    </td>
+                    <td class="p-4">
+                      Boolean result ko reverse karta hai.
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+
+          <!-- AND -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Logical AND (&&)
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-blue-400">&&</code>
+              operator tab
+              <code class="text-emerald-400">true</code>
+              return karta hai jab dono conditions true hon.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> age = <span class="text-emerald-400">20</span>;
+<span class="text-blue-400">let</span> hasId = <span class="text-emerald-400">true</span>;
+
+<span class="text-blue-400">if</span> (age >= <span class="text-emerald-400">18</span> && hasId === <span class="text-emerald-400">true</span>) {
+  console.log(<span class="text-emerald-400">"Entry Allowed"</span>);
+} <span class="text-blue-400">else</span> {
+  console.log(<span class="text-emerald-400">"Entry Not Allowed"</span>);
+}</code></pre>
+            </div>
+
+            <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <p class="font-bold text-white mb-2">Output:</p>
+              <pre class="text-emerald-400 font-mono">Entry Allowed</pre>
+            </div>
+          </div>
+
+          <!-- AND Truth Table -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+              AND Truth Table
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+
+                <thead>
+                  <tr class="border-b border-[#334155] text-blue-400">
+                    <th class="p-4">Condition 1</th>
+                    <th class="p-4">Condition 2</th>
+                    <th class="p-4">Result</th>
+                  </tr>
+                </thead>
+
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                  <tr>
+                    <td class="p-4 text-emerald-400">true</td>
+                    <td class="p-4 text-emerald-400">true</td>
+                    <td class="p-4 text-emerald-400">true</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 text-emerald-400">true</td>
+                    <td class="p-4 text-red-400">false</td>
+                    <td class="p-4 text-red-400">false</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 text-red-400">false</td>
+                    <td class="p-4 text-emerald-400">true</td>
+                    <td class="p-4 text-red-400">false</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 text-red-400">false</td>
+                    <td class="p-4 text-red-400">false</td>
+                    <td class="p-4 text-red-400">false</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- OR -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Logical OR (||)
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-blue-400">||</code>
+              operator me agar koi ek condition bhi true ho, to result true
+              hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> isAdmin = <span class="text-red-400">false</span>;
+<span class="text-blue-400">let</span> isManager = <span class="text-emerald-400">true</span>;
+
+<span class="text-blue-400">if</span> (isAdmin || isManager) {
+  console.log(<span class="text-emerald-400">"Access Allowed"</span>);
+} <span class="text-blue-400">else</span> {
+  console.log(<span class="text-emerald-400">"Access Denied"</span>);
+}</code></pre>
+            </div>
+
+            <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <p class="font-bold text-white mb-2">Output:</p>
+              <pre class="text-emerald-400 font-mono">Access Allowed</pre>
+            </div>
+          </div>
+
+          <!-- OR Truth Table -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+              OR Truth Table
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+
+                <thead>
+                  <tr class="border-b border-[#334155] text-blue-400">
+                    <th class="p-4">Condition 1</th>
+                    <th class="p-4">Condition 2</th>
+                    <th class="p-4">Result</th>
+                  </tr>
+                </thead>
+
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                  <tr>
+                    <td class="p-4 text-emerald-400">true</td>
+                    <td class="p-4 text-emerald-400">true</td>
+                    <td class="p-4 text-emerald-400">true</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 text-emerald-400">true</td>
+                    <td class="p-4 text-red-400">false</td>
+                    <td class="p-4 text-emerald-400">true</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 text-red-400">false</td>
+                    <td class="p-4 text-emerald-400">true</td>
+                    <td class="p-4 text-emerald-400">true</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 text-red-400">false</td>
+                    <td class="p-4 text-red-400">false</td>
+                    <td class="p-4 text-red-400">false</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- NOT -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Logical NOT (!)
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-blue-400">!</code>
+              operator Boolean value ko reverse kar deta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> isLoggedIn = <span class="text-emerald-400">true</span>;
+
+console.log(!isLoggedIn);</code></pre>
+            </div>
+
+            <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <p class="font-bold text-white mb-2">Output:</p>
+              <pre class="text-red-400 font-mono">false</pre>
+            </div>
+          </div>
+
+          <!-- NOT Table -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+              NOT Truth Table
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-[#334155] text-blue-400">
+                    <th class="p-4">Value</th>
+                    <th class="p-4">!Value</th>
+                  </tr>
+                </thead>
+
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="p-4 text-emerald-400">true</td>
+                    <td class="p-4 text-red-400">false</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 text-red-400">false</td>
+                    <td class="p-4 text-emerald-400">true</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Login Example -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Login Example With &&
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> email = <span class="text-emerald-400">"admin@gmail.com"</span>;
+<span class="text-blue-400">let</span> password = <span class="text-emerald-400">"12345"</span>;
+
+<span class="text-blue-400">if</span> (
+  email === <span class="text-emerald-400">"admin@gmail.com"</span> &&
+  password === <span class="text-emerald-400">"12345"</span>
+) {
+  console.log(<span class="text-emerald-400">"Login Successful"</span>);
+} <span class="text-blue-400">else</span> {
+  console.log(<span class="text-emerald-400">"Invalid Login"</span>);
+}</code></pre>
+            </div>
+
+            <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <p class="font-bold text-white mb-2">Output:</p>
+              <pre class="text-emerald-400 font-mono">Login Successful</pre>
+            </div>
+          </div>
+
+          <!-- Marks Example -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Marks Range Example
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-blue-400">&&</code>
+              ka use range check karne me bhi hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> marks = <span class="text-emerald-400">75</span>;
+
+<span class="text-blue-400">if</span> (marks >= <span class="text-emerald-400">60</span> && marks <= <span class="text-emerald-400">79</span>) {
+  console.log(<span class="text-emerald-400">"Grade B"</span>);
+}</code></pre>
+            </div>
+
+            <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <p class="font-bold text-white mb-2">Output:</p>
+              <pre class="text-emerald-400 font-mono">Grade B</pre>
+            </div>
+          </div>
+
+          <!-- OR Example -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Multiple Roles With ||
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> role = <span class="text-emerald-400">"manager"</span>;
+
+<span class="text-blue-400">if</span> (role === <span class="text-emerald-400">"admin"</span> || role === <span class="text-emerald-400">"manager"</span>) {
+  console.log(<span class="text-emerald-400">"Dashboard Access"</span>);
+} <span class="text-blue-400">else</span> {
+  console.log(<span class="text-emerald-400">"Access Denied"</span>);
+}</code></pre>
+            </div>
+
+            <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <p class="font-bold text-white mb-2">Output:</p>
+              <pre class="text-emerald-400 font-mono">Dashboard Access</pre>
+            </div>
+          </div>
+
+          <!-- NOT Example -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              NOT With If Statement
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> isBlocked = <span class="text-red-400">false</span>;
+
+<span class="text-blue-400">if</span> (!isBlocked) {
+  console.log(<span class="text-emerald-400">"User Can Login"</span>);
+}</code></pre>
+            </div>
+
+            <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <p class="font-bold text-white mb-2">Output:</p>
+              <pre class="text-emerald-400 font-mono">User Can Login</pre>
+            </div>
+
+            <p class="text-gray-400 mt-4">
+              Yahan
+              <code class="text-blue-400">isBlocked</code>
+              false hai. Isliye
+              <code class="text-blue-400">!isBlocked</code>
+              true ban jata hai.
+            </p>
+          </div>
+
+          <!-- Combination -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              && aur || Ek Saath
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> age = <span class="text-emerald-400">20</span>;
+<span class="text-blue-400">let</span> hasId = <span class="text-emerald-400">true</span>;
+<span class="text-blue-400">let</span> specialPermission = <span class="text-red-400">false</span>;
+
+<span class="text-blue-400">if</span> (
+  (age >= <span class="text-emerald-400">18</span> && hasId) ||
+  specialPermission
+) {
+  console.log(<span class="text-emerald-400">"Entry Allowed"</span>);
+} <span class="text-blue-400">else</span> {
+  console.log(<span class="text-emerald-400">"Entry Denied"</span>);
+}</code></pre>
+            </div>
+
+            <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <p class="font-bold text-white mb-2">Output:</p>
+              <pre class="text-emerald-400 font-mono">Entry Allowed</pre>
+            </div>
+          </div>
+
+          <!-- Direct Boolean -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Direct Logical Results
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code>console.log(<span class="text-emerald-400">true</span> && <span class="text-emerald-400">true</span>);
+console.log(<span class="text-emerald-400">true</span> && <span class="text-red-400">false</span>);
+
+console.log(<span class="text-emerald-400">true</span> || <span class="text-red-400">false</span>);
+console.log(<span class="text-red-400">false</span> || <span class="text-red-400">false</span>);
+
+console.log(!<span class="text-emerald-400">true</span>);
+console.log(!<span class="text-red-400">false</span>);</code></pre>
+            </div>
+
+            <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="font-mono"><span class="text-emerald-400">true</span>
+<span class="text-red-400">false</span>
+<span class="text-emerald-400">true</span>
+<span class="text-red-400">false</span>
+<span class="text-red-400">false</span>
+<span class="text-emerald-400">true</span></pre>
+            </div>
+          </div>
+
+          <!-- Simple Understanding -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+              Easy Way To Remember
+            </h3>
+
+            <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+
+              <p>
+                <code class="text-blue-400">&&</code>
+                = <strong class="text-white">AND</strong> = dono true chahiye.
+              </p>
+
+              <p>
+                <code class="text-blue-400">||</code>
+                = <strong class="text-white">OR</strong> = koi ek true chalega.
+              </p>
+
+              <p>
+                <code class="text-blue-400">!</code>
+                = <strong class="text-white">NOT</strong> = result ulta kar do.
+              </p>
+
+            </div>
+          </div>
+
+          <!-- Important -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Important Points
+            </h3>
+
+            <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+
+              <p>
+                1.
+                <code class="text-blue-400">&&</code>
+                me sabhi conditions true honi chahiye.
+              </p>
+
+              <p>
+                2.
+                <code class="text-blue-400">||</code>
+                me kam se kam ek condition true honi chahiye.
+              </p>
+
+              <p>
+                3.
+                <code class="text-blue-400">!</code>
+                true ko false aur false ko true karta hai.
+              </p>
+
+              <p>
+                4. Logical operators ka use mostly
+                <code class="text-blue-400">if</code>,
+                <code class="text-blue-400">if...else</code>
+                aur ternary conditions me hota hai.
+              </p>
+
+              <p>
+                5. Complex conditions me brackets
+                <code class="text-blue-400">( )</code>
+                use karna code ko clear banata hai.
+              </p>
+
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+
+          <a
+            href="./Booleans.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../loops/Loops.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script>
+      // JS If Conditions -> JS Logical
+      document.getElementById("sidebar").innerHTML = createSidebar(6);
+    </script>
+
+  </body>
+</html>
+

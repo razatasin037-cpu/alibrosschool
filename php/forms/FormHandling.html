@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Form Handling - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Form Handling
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../superglobals/Get.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FormValidation.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Form Handling Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me Form Handling ka matlab HTML forms se user ka input (Jaise Name, Email, Password) capture karna aur use server-side process karna hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            PHP do superglobals <strong class="text-white">$_GET</strong> aur <strong class="text-white">$_POST</strong> ka istemal karke form submit hone par data collect karti hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- GET vs POST Comparison -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              GET vs POST Method
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400">
+                    <th class="p-3">Feature</th>
+                    <th class="p-3">GET Method</th>
+                    <th class="p-3">POST Method</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-semibold text-white">Data Visibility</td>
+                    <td class="p-3">URL me visible rehta hai</td>
+                    <td class="p-3">HTTP body me hidden rehta hai</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-semibold text-white">Security</td>
+                    <td class="p-3">Less secure (Sensitive data ke liye nahi hai)</td>
+                    <td class="p-3">More secure (Passwords/Cards ke liye best)</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-semibold text-white">Data Limit</td>
+                    <td class="p-3">Max ~2000 characters</td>
+                    <td class="p-3">No limit (File uploads allowed)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Use Case</td>
+                    <td class="p-3">Search forms, Bookmarks</td>
+                    <td class="p-3">Login, Registration, Contact Forms</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 1. POST Form Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Basic POST Form Example
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Niche ek standard HTML form aur PHP processing script hai jo same page par hi submit hoti hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;!-- HTML Form --&gt;</span>
+<span class="text-green-400">&lt;form</span> <span class="text-white">method</span>=<span class="text-yellow-300">"POST"</span> <span class="text-white">action</span>=<span class="text-yellow-300">"&lt;?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?&gt;"</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;label&gt;</span>Name:<span class="text-green-400">&lt;/label&gt;</span>
+  <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"text"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"username"</span> <span class="text-white">required</span><span class="text-green-400">&gt;</span>
+  
+  <span class="text-green-400">&lt;label&gt;</span>Email:<span class="text-green-400">&lt;/label&gt;</span>
+  <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"email"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"email"</span> <span class="text-white">required</span><span class="text-green-400">&gt;</span>
+
+  <span class="text-green-400">&lt;button</span> <span class="text-white">type</span>=<span class="text-yellow-300">"submit"</span><span class="text-green-400">&gt;</span>Submit<span class="text-green-400">&lt;/button&gt;</span>
+<span class="text-green-400">&lt;/form&gt;</span>
+
+<span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Processing form input on submit</span>
+  <span class="text-green-400">if</span> (<span class="text-green-400">$_SERVER</span>[<span class="text-white">"REQUEST_METHOD"</span>] === <span class="text-white">"POST"</span>) {
+      <span class="text-green-400">$name</span> = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">'username'</span>] ?? <span class="text-white">''</span>);
+      <span class="text-green-400">$email</span> = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">'email'</span>] ?? <span class="text-white">''</span>);
+
+      <span class="text-green-400">echo</span> <span class="text-white">"Welcome, "</span> . <span class="text-green-400">$name</span> . <span class="text-white">"&lt;br&gt;"</span>;
+      <span class="text-green-400">echo</span> <span class="text-white">"Your Email: "</span> . <span class="text-green-400">$email</span>;
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Security Alert Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-red-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-red-400">
+              <span>🛡️</span> Security Rule: Always Sanitize Form Input
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Users ke dwara submit kiye gaye data par kabhi trust na karein. Malicious users HTML script/JavaScript code inject kar sakte hain (Cross-Site Scripting - XSS).
+            </p>
+            <p class="text-lg leading-relaxed text-gray-300">
+              Hamesha <code class="text-green-400">htmlspecialchars()</code> function ka use karein taaki `<` aur `>` jaise characters safely HTML entities (<code>&amp;lt;</code> aur <code>&amp;gt;</code>) me convert ho sakein.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../superglobals/Get.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FormValidation.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(20);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Responsive Web Design - Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <h1 class="text-[48px] sm:text-[60px] md:text-[60px] font-extrabold text-white mb-6 mt-0 tracking-tight flex items-center gap-4">
+          HTML Responsive Design & Form Syntax
+        </h1>
+
+        <!-- Navigation Buttons Top -->
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="../layout/Layout.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="../forms/Forms.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+
+        <!-- Banner / Hero Card -->
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            Responsive Web Design Kya Hai?
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            Responsive Web Design (RWD) ka matlab hai website ko is tarah se design karna ki woh sabhi devices (Mobile, Tablet, Laptop, aur Desktop) par bina kisi issue ke automatically fit ho jaye. Iske liye HTML Viewport, Responsive Images, aur Fluid Layouts ka upyog hota hai.
+          </p>
+        </div>
+
+        <!-- Section: 3 Main Factors -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Responsive Design Ke 3 Main Factors
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-blue-400 mb-2 flex items-center gap-2">
+                <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i> Viewport Meta Tag
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Browser screen ki width aur scale ko user ke device screen size ke anusar match karne ke liye use hota hai.
+              </p>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-emerald-400 mb-2 flex items-center gap-2">
+                <i data-lucide="grid" class="w-5 h-5 text-emerald-400"></i> Fluid Layouts
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Fixed pixel values (<code>px</code>) ki jagah percentage (<code>%</code>), Flexbox, ya CSS breakpoints ka use karna.
+              </p>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-amber-400 mb-2 flex items-center gap-2">
+                <i data-lucide="image" class="w-5 h-5 text-amber-400"></i> Responsive Images
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Image size ko automatically contain/scale karne ke liye CSS max-width ya HTML5 <code>&lt;picture&gt;</code> tag ka upyog karna.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW SECTION 1: HTML Form Syntax Breakdown -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="flex items-center gap-3 text-3xl md:text-4xl font-bold text-white">
+              <i data-lucide="code-2" class="h-8 w-8 text-cyan-400"></i>
+              HTML Form Syntax Structure
+            </h3>
+            <span class="rounded-lg border border-cyan-500/30 bg-cyan-500/20 px-3 py-1 text-xs font-mono text-cyan-400">
+              Form Basics
+            </span>
+          </div>
+          <p class="mb-6 text-lg text-slate-300 leading-relaxed">
+            Form hamesha <code>&lt;form&gt;</code> opening tag se start hota hai aur <code>&lt;/form&gt;</code> closing tag par khatam hota hai. Inke andar hum user se input lene ke liye alag-alag controls placement karte hain:
+          </p>
+
+          <div class="rounded-xl border border-slate-700 bg-[#020617] p-6 font-mono text-sm md:text-base">
+            <pre class="overflow-x-auto text-cyan-300"><code><span class="text-emerald-400">&lt;!-- 1. Form Tag with Attributes --&gt;</span>
+&lt;<span class="text-blue-400">form</span> <span class="text-yellow-300">action</span>=<span class="text-amber-300">"/submit-data.php"</span> <span class="text-yellow-300">method</span>=<span class="text-amber-300">"POST"</span>&gt;
+
+  <span class="text-emerald-400">&lt;!-- 2. Input Fields with Labels --&gt;</span>
+  &lt;<span class="text-blue-400">label</span> <span class="text-yellow-300">for</span>=<span class="text-amber-300">"username"</span>&gt;Username:&lt;/<span class="text-blue-400">label</span>&gt;
+  &lt;<span class="text-blue-400">input</span> <span class="text-yellow-300">type</span>=<span class="text-amber-300">"text"</span> <span class="text-yellow-300">id</span>=<span class="text-amber-300">"username"</span> <span class="text-yellow-300">name</span>=<span class="text-amber-300">"username"</span> <span class="text-yellow-300">placeholder</span>=<span class="text-amber-300">"Enter name"</span>&gt;
+
+  &lt;<span class="text-blue-400">label</span> <span class="text-yellow-300">for</span>=<span class="text-amber-300">"email"</span>&gt;Email:&lt;/<span class="text-blue-400">label</span>&gt;
+  &lt;<span class="text-blue-400">input</span> <span class="text-yellow-300">type</span>=<span class="text-amber-300">"email"</span> <span class="text-yellow-300">id</span>=<span class="text-amber-300">"email"</span> <span class="text-yellow-300">name</span>=<span class="text-amber-300">"user_email"</span>&gt;
+
+  <span class="text-emerald-400">&lt;!-- 3. Submit Button --&gt;</span>
+  &lt;<span class="text-blue-400">button</span> <span class="text-yellow-300">type</span>=<span class="text-amber-300">"submit"</span>&gt;Submit Form&lt;/<span class="text-blue-400">button</span>&gt;
+
+&lt;/<span class="text-blue-400">form</span>&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- NEW SECTION 2: Form Syntax Elements Breakdown Table -->
+        <div class="mt-10 rounded-3xl border border-slate-700 bg-[#1e293b] p-8 md:p-10 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between">
+            <h3 class="flex items-center gap-3 text-3xl md:text-4xl font-bold text-white">
+              <i data-lucide="layers" class="h-8 w-8 text-cyan-400"></i>
+              Form Syntax Components
+            </h3>
+            <span class="rounded-lg border border-cyan-500/30 bg-cyan-500/20 px-3 py-1 text-xs font-mono text-cyan-400">
+              Tag Reference
+            </span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse text-left">
+              <thead>
+                <tr class="border-b border-slate-700 bg-slate-950 text-cyan-400 font-mono">
+                  <th class="p-4">Syntax Element</th>
+                  <th class="p-4">Type / Tag</th>
+                  <th class="p-4">Description</th>
+                </tr>
+              </thead>
+              <tbody class="font-mono divide-y divide-slate-700 text-sm md:text-base">
+                <tr>
+                  <td class="p-4 font-bold text-yellow-300">&lt;form&gt;</td>
+                  <td class="p-4 text-emerald-400">Container Tag</td>
+                  <td class="p-4 text-slate-300 font-sans">Yeh main wrapper container hai jiske andar saare input fields aate hain.</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-yellow-300">action="..."</td>
+                  <td class="p-4 text-emerald-400">Attribute</td>
+                  <td class="p-4 text-slate-300 font-sans">Batata hai ki form submit hone par data kis URL/Server File par jayega.</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-yellow-300">method="POST/GET"</td>
+                  <td class="p-4 text-emerald-400">Attribute</td>
+                  <td class="p-4 text-slate-300 font-sans">HTTP method specify karta hai (Secure data ke liye POST, general search ke liye GET).</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-yellow-300">&lt;input&gt;</td>
+                  <td class="p-4 text-emerald-400">Self-Closing Tag</td>
+                  <td class="p-4 text-slate-300 font-sans">User se text, password, email, ya date entry lene ke liye use hota hai.</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-yellow-300">&lt;/form&gt;</td>
+                  <td class="p-4 text-emerald-400">Closing Tag</td>
+                  <td class="p-4 text-slate-300 font-sans">Yeh batata hai ki form area yahan par khatam ho gaya hai.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section: Live Responsive Grid Demo -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
+              <i data-lucide="monitor-smartphone" class="w-8 h-8 text-cyan-400"></i>
+              Live Responsive Grid Demo
+            </h3>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-mono rounded-lg border border-cyan-500/30">Interactive Layout</span>
+          </div>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            Browser window ka size badal kar dekhein! Yeh cards mobile me 1 column, tablet me 2 columns, aur desktop me 4 columns ban jate hain:
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+            <div class="bg-blue-600/20 border border-blue-500/40 p-5 rounded-xl text-center font-mono">
+              <span class="text-blue-400 font-bold block text-lg mb-1">Card 1</span>
+              <span class="text-xs text-gray-400">100% width on Mobile</span>
+            </div>
+            <div class="bg-emerald-600/20 border border-emerald-500/40 p-5 rounded-xl text-center font-mono">
+              <span class="text-emerald-400 font-bold block text-lg mb-1">Card 2</span>
+              <span class="text-xs text-gray-400">50% width on Tablet</span>
+            </div>
+            <div class="bg-purple-600/20 border border-purple-500/40 p-5 rounded-xl text-center font-mono">
+              <span class="text-purple-400 font-bold block text-lg mb-1">Card 3</span>
+              <span class="text-xs text-gray-400">25% width on Desktop</span>
+            </div>
+            <div class="bg-amber-600/20 border border-amber-500/40 p-5 rounded-xl text-center font-mono">
+              <span class="text-amber-400 font-bold block text-lg mb-1">Card 4</span>
+              <span class="text-xs text-gray-400">Auto Responsive Grid</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Standard CSS Media Queries Table -->
+        <div class="mt-10 rounded-3xl border border-slate-700 bg-slate-800 p-8 shadow-xl">
+          <div class="mb-6 flex items-center justify-between">
+            <h3 class="flex items-center gap-3 text-3xl font-bold text-white">
+              <i data-lucide="list" class="h-8 w-8 text-cyan-400"></i>
+              Standard CSS Media Query Breakpoints
+            </h3>
+            <span class="rounded-lg border border-cyan-500/30 bg-cyan-500/20 px-3 py-1 text-xs text-cyan-400">
+              CSS Reference
+            </span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse text-left">
+              <thead>
+                <tr class="border-b border-slate-700 bg-slate-950 text-blue-400 font-mono">
+                  <th class="p-4">CSS Media Query Rule</th>
+                  <th class="p-4">Minimum Width (px)</th>
+                  <th class="p-4">Target Device</th>
+                </tr>
+              </thead>
+              <tbody class="font-mono divide-y divide-slate-700">
+                <tr>
+                  <td class="p-4 font-bold text-cyan-400">@media (min-width: 480px)</td>
+                  <td class="p-4 text-slate-300">480px</td>
+                  <td class="p-4 text-emerald-400">Mobile Landscape</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-cyan-400">@media (min-width: 768px)</td>
+                  <td class="p-4 text-slate-300">768px</td>
+                  <td class="p-4 text-emerald-400">Tablets & Small Laptops</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-cyan-400">@media (min-width: 1024px)</td>
+                  <td class="p-4 text-slate-300">1024px</td>
+                  <td class="p-4 text-emerald-400">Laptops & Desktops</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-cyan-400">@media (min-width: 1200px)</td>
+                  <td class="p-4 text-slate-300">1200px</td>
+                  <td class="p-4 text-emerald-400">Large Desktop Screens</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section: Responsive Examples Code -->
+        <div class="mt-10 rounded-3xl border border-slate-700 bg-slate-800 p-8 shadow-xl">
+          <div class="mb-4 flex items-center justify-between">
+            <h3 class="flex items-center gap-3 text-3xl font-bold text-white">
+              <i data-lucide="code-2" class="h-8 w-8 text-blue-400"></i>
+              Responsive HTML & CSS Code Examples
+            </h3>
+            <span class="rounded-lg border border-blue-500/30 bg-blue-500/20 px-3 py-1 text-xs text-blue-400">
+              Code Block
+            </span>
+          </div>
+          <p class="mb-6 text-lg text-slate-300">
+            Responsive Web Page ke essential Standard CSS codes:
+          </p>
+
+          <div class="rounded-xl border border-slate-700 bg-slate-950 p-6">
+            <pre class="overflow-x-auto rounded-lg bg-slate-900/90 p-4 font-mono text-slate-300"><code>&lt;!-- 1. Viewport Meta Tag (Mandatory inside &lt;head&gt;) --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;!-- 2. Standard CSS Media Queries Layout --&gt;
+&lt;style&gt;
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile (Default) */
+    gap: 16px;
+  }
+
+  /* Tablet Screens */
+  @media (min-width: 768px) {
+    .card-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Desktop Screens */
+  @media (min-width: 1024px) {
+    .card-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+&lt;/style&gt;
+
+&lt;!-- 3. HTML5 Responsive Image using &lt;picture&gt; Tag --&gt;
+&lt;picture&gt;
+  &lt;source media="(min-width: 1024px)" srcset="large-banner.jpg"&gt;
+  &lt;source media="(min-width: 768px)" srcset="tablet-banner.jpg"&gt;
+  &lt;img src="mobile-banner.jpg" alt="Responsive Banner" style="width: 100%; height: auto;"&gt;
+&lt;/picture&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Section: Best Practices -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Responsive Design Best Practices
+          </h3>
+
+          <ul class="space-y-4 text-gray-300 text-base md:text-lg">
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-green-400 font-bold text-xl">✓</span>
+              <span><strong>Mobile-First Approach:</strong> Pehle mobile screen size ke hisab se style karein, fir media queries (<code>md:</code>, <code>lg:</code>) se bade screen rules add karein.</span>
+            </li>
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-green-400 font-bold text-xl">✓</span>
+              <span><strong>Fluid Images:</strong> Hamesha CSS me <code>max-width: 100%; height: auto;</code> ka use karein taaki images wrapper card se bahar na niklein.</span>
+            </li>
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-red-400 font-bold text-xl">✕</span>
+              <span><strong>Avoid Fixed Widths:</strong> Container ya layout elements me fixed <code>width: 1200px</code> dene se bachein; isse horizontal scrollbar aane lagti hai.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Navigation Buttons Bottom -->
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="../layout/Layout.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="../forms/Forms.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(29);
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

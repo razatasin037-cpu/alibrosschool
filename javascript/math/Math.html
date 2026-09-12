@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Math - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Math
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/iterations/ForOf.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./MathMethods.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          JavaScript Math Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">Math</code>
+          ek built-in object hai jiska use mathematical calculations ke liye
+          kiya jata hai.
+          <br><br>
+          Iski help se rounding, square root, power, minimum, maximum aur random
+          numbers jaise operations kar sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Important Concept -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math Object Kaise Use Hota Hai?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Math ko use karne ke liye
+            <code class="text-blue-400">new Math()</code>
+            nahi likhte.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// Correct</span>
+Math.round(<span class="text-emerald-400">4.6</span>);
+
+<span class="text-gray-400">// Wrong</span>
+<span class="text-blue-400">new</span> Math();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Common Methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Common Math Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.round()</td>
+                  <td class="p-4">Nearest integer return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.floor()</td>
+                  <td class="p-4">Neeche wale integer par round karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.ceil()</td>
+                  <td class="p-4">Upar wale integer par round karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.trunc()</td>
+                  <td class="p-4">Decimal part remove karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.sqrt()</td>
+                  <td class="p-4">Square root return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.pow()</td>
+                  <td class="p-4">Power calculate karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.min()</td>
+                  <td class="p-4">Smallest value deta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.max()</td>
+                  <td class="p-4">Largest value deta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Math.random()</td>
+                  <td class="p-4">Random number generate karta hai.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- round -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.round()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Decimal number ko nearest integer me round karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.round(<span class="text-emerald-400">4.6</span>)
+);
+
+console.log(
+  Math.round(<span class="text-emerald-400">4.4</span>)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">5
+4</pre>
+          </div>
+
+        </div>
+
+        <!-- floor -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.floor()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Number ko nearest lower integer ki taraf round karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.floor(<span class="text-emerald-400">4.9</span>)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">4</pre>
+          </div>
+
+        </div>
+
+        <!-- ceil -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.ceil()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Number ko nearest upper integer ki taraf round karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.ceil(<span class="text-emerald-400">4.1</span>)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">5</pre>
+          </div>
+
+        </div>
+
+        <!-- trunc -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.trunc()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Decimal portion ko remove karke integer part return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.trunc(<span class="text-emerald-400">8.75</span>)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">8</pre>
+          </div>
+
+        </div>
+
+        <!-- sqrt -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.sqrt()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Number ka square root return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.sqrt(<span class="text-emerald-400">64</span>)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">8</pre>
+          </div>
+
+        </div>
+
+        <!-- pow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.pow()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Number ki power calculate karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.pow(
+    <span class="text-emerald-400">2</span>,
+    <span class="text-emerald-400">3</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Meaning:</p>
+<pre class="text-emerald-400 font-mono">2 × 2 × 2 = 8</pre>
+          </div>
+
+        </div>
+
+        <!-- min -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.min()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.min(
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">5</span>,
+    <span class="text-emerald-400">30</span>,
+    <span class="text-emerald-400">2</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">2</pre>
+          </div>
+
+        </div>
+
+        <!-- max -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.max()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.max(
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">5</span>,
+    <span class="text-emerald-400">30</span>,
+    <span class="text-emerald-400">2</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Array min max -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array Se Min Aur Max
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Array ke numbers ke saath spread operator
+            <code class="text-blue-400">...</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">50</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">80</span>
+];
+
+console.log(
+  Math.min(...numbers)
+);
+
+console.log(
+  Math.max(...numbers)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">10
+80</pre>
+          </div>
+
+        </div>
+
+        <!-- random -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.random()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Math.random()</code>
+            0 inclusive se 1 exclusive ke beech random decimal number return
+            karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.random()
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Example Output:</p>
+<pre class="text-emerald-400 font-mono">0.5837291</pre>
+          </div>
+
+        </div>
+
+        <!-- Random 0-9 -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Random Integer 0 Se 9
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> number =
+  Math.floor(
+    Math.random() * <span class="text-emerald-400">10</span>
+  );
+
+console.log(number);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Possible Output:</p>
+<pre class="text-emerald-400 font-mono">0 to 9</pre>
+          </div>
+
+        </div>
+
+        <!-- Random 1-10 -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Random Integer 1 Se 10
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> number =
+  Math.floor(
+    Math.random() * <span class="text-emerald-400">10</span>
+  ) + <span class="text-emerald-400">1</span>;
+
+console.log(number);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Possible Output:</p>
+<pre class="text-emerald-400 font-mono">1 to 10</pre>
+          </div>
+
+        </div>
+
+        <!-- abs -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.abs()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Negative number ka positive absolute value return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  Math.abs(<span class="text-emerald-400">-25</span>)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">25</pre>
+          </div>
+
+        </div>
+
+        <!-- sign -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.sign()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Number positive, negative ya zero hai ye identify karne me help
+            karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Math.sign(<span class="text-emerald-400">10</span>));
+console.log(Math.sign(<span class="text-emerald-400">-10</span>));
+console.log(Math.sign(<span class="text-emerald-400">0</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">1
+-1
+0</pre>
+          </div>
+
+        </div>
+
+        <!-- Properties Intro -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math Properties
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Math object me kuch useful constant properties bhi available hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Math.PI);
+console.log(Math.E);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">3.141592653589793
+2.718281828459045</pre>
+          </div>
+
+        </div>
+
+        <!-- Quick Difference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            round() vs floor() vs ceil() vs trunc()
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Math Value</th>
+                  <th class="p-4">Result</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">round()</td>
+                  <td class="p-4">4.6</td>
+                  <td class="p-4">5</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">floor()</td>
+                  <td class="p-4">4.9</td>
+                  <td class="p-4">4</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">ceil()</td>
+                  <td class="p-4">4.1</td>
+                  <td class="p-4">5</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">trunc()</td>
+                  <td class="p-4">4.9</td>
+                  <td class="p-4">4</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">Math</code>
+              JavaScript ka built-in object hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">new Math()</code>
+              use nahi karte.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">Math.round()</code>
+              nearest integer deta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">Math.floor()</code>
+              lower integer aur
+              <code class="text-blue-400">Math.ceil()</code>
+              upper integer deta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">Math.sqrt()</code>
+              square root calculate karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">Math.min()</code>
+              aur
+              <code class="text-blue-400">Math.max()</code>
+              minimum aur maximum values dete hain.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">Math.random()</code>
+              random decimal value deta hai.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">Math.PI</code>
+              aur
+              <code class="text-blue-400">Math.E</code>
+              Math properties hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/iterations/ForOf.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./MathMethods.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(19);
+  </script>
+
+</body>
+</html>

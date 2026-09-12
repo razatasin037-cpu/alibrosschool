@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Errors - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Errors
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="../datatypes/Destructuring.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./TryCatch.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          JavaScript Error Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me jab code sahi tarah execute nahi ho pata hai,
+          tab JavaScript ek error show karta hai.
+          <br><br>
+          Error hume batata hai ki code me kis jagah ya kis type ki
+          problem hui hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Simple Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Error Example
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Agar hum aise variable ko access karein jo define nahi hai,
+            JavaScript error dega.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>console.log(userName);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+            <p class="font-bold mb-2">
+              Error:
+            </p>
+
+<pre class="text-red-400 font-mono">ReferenceError:
+userName is not defined</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- Why Errors Occur -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            JavaScript Me Error Kyu Aata Hai?
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Variable define nahi kiya ho.
+            </p>
+
+            <p>
+              2. Syntax galat ho.
+            </p>
+
+            <p>
+              3. Galat data type par method use ki ho.
+            </p>
+
+            <p>
+              4. Function available na ho.
+            </p>
+
+            <p>
+              5. Object ki missing property access ki ho.
+            </p>
+
+            <p>
+              6. API ya server response me problem ho.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Types Heading -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Common JavaScript Errors
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            JavaScript me different situations ke according different
+            types ke errors milte hain.
+          </p>
+
+        </div>
+
+
+        <!-- Syntax Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            1. SyntaxError
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Jab JavaScript code ka syntax galat hota hai tab
+            <code class="text-blue-400">SyntaxError</code>
+            aata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> name =
+  <span class="text-emerald-400">"Ali"</span>
+
+console.log(name;</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">SyntaxError</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- Reference Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            2. ReferenceError
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Jab hum kisi aise variable ko use karte hain jo define nahi
+            hua hai tab
+            <code class="text-blue-400">ReferenceError</code>
+            aata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>console.log(age);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">ReferenceError:
+age is not defined</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- Type Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            3. TypeError
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Jab kisi value ke saath aisa operation kiya jaye jo uske
+            data type ke liye valid nahi hai tab
+            <code class="text-blue-400">TypeError</code>
+            mil sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> number =
+  <span class="text-emerald-400">10</span>;
+
+number.toUpperCase();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">TypeError:
+number.toUpperCase is not a function</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- Range Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            4. RangeError
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Jab koi value JavaScript ki allowed range ke bahar hoti hai
+            tab
+            <code class="text-blue-400">RangeError</code>
+            aa sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> number =
+  <span class="text-emerald-400">10</span>;
+
+console.log(
+  number.toFixed(<span class="text-emerald-400">101</span>)
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">RangeError</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- URI Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            5. URIError
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Invalid URI ko encode ya decode karte waqt
+            <code class="text-blue-400">URIError</code>
+            aa sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>decodeURIComponent(
+  <span class="text-emerald-400">"%E0%A4%A"</span>
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">URIError:
+URI malformed</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- Error Object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            JavaScript Error Object
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            JavaScript me
+            <code class="text-blue-400">Error</code>
+            object ka use custom error information create karne ke liye
+            bhi kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> error =
+  <span class="text-blue-400">new</span> Error(
+    <span class="text-emerald-400">"Something went wrong"</span>
+  );
+
+console.log(error.name);
+
+console.log(error.message);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+            <p class="font-bold mb-2">
+              Output:
+            </p>
+
+<pre class="text-emerald-400 font-mono">Error
+Something went wrong</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- name property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            error.name
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            <code class="text-blue-400">name</code>
+            property error ka type batati hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(user);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(error.name);
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">ReferenceError</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- message -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            error.message
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            <code class="text-blue-400">message</code>
+            property error ke baare me message provide karti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(student);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(error.message);
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">student is not defined</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- Runtime -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Runtime Error
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Runtime error wo error hai jo JavaScript program execute
+            hote waqt aata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = <span class="text-blue-400">null</span>;
+
+console.log(
+  user.name
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">TypeError</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- Logical Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Logical Error
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Logical error me JavaScript koi error message nahi deta,
+            lekin program ka output galat aa jata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> price =
+  <span class="text-emerald-400">100</span>;
+
+<span class="text-blue-400">const</span> quantity =
+  <span class="text-emerald-400">5</span>;
+
+<span class="text-gray-400">// Wrong logic</span>
+
+<span class="text-blue-400">const</span> total =
+  price + quantity;
+
+console.log(total);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+            <p class="font-bold mb-2">
+              Wrong Output:
+            </p>
+
+<pre class="text-red-400 font-mono">105</pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Yahan correct calculation
+            <code class="text-blue-400">price * quantity</code>
+            honi chahiye thi.
+          </p>
+
+        </div>
+
+
+        <!-- Correct Logic -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Logical Error Fix
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> price =
+  <span class="text-emerald-400">100</span>;
+
+<span class="text-blue-400">const</span> quantity =
+  <span class="text-emerald-400">5</span>;
+
+<span class="text-blue-400">const</span> total =
+  price * quantity;
+
+console.log(total);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">500</pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- Error Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Common Error Types
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Error
+                  </th>
+
+                  <th class="p-4">
+                    Meaning
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    SyntaxError
+                  </td>
+
+                  <td class="p-4">
+                    JavaScript syntax galat hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    ReferenceError
+                  </td>
+
+                  <td class="p-4">
+                    Variable ya reference available nahi hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    TypeError
+                  </td>
+
+                  <td class="p-4">
+                    Value ke type ke saath invalid operation hua hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    RangeError
+                  </td>
+
+                  <td class="p-4">
+                    Value valid range ke bahar hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    URIError
+                  </td>
+
+                  <td class="p-4">
+                    URI encode/decode karte waqt problem hui hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+
+        <!-- Real Project -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Project Example
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            API se data fetch karte waqt bhi error aa sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getUsers() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> fetch(
+        <span class="text-emerald-400">
+          "https://example.com/users"
+        </span>
+      );
+
+    <span class="text-blue-400">const</span> data =
+      <span class="text-blue-400">await</span> response.json();
+
+    console.log(data);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  }
+
+}
+
+getUsers();</code></pre>
+
+          </div>
+
+        </div>
+
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. JavaScript error code me problem ko show karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">SyntaxError</code>
+              syntax mistake ki wajah se aata hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">ReferenceError</code>
+              undefined variable access karne par aa sakta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">TypeError</code>
+              invalid data type operation par aa sakta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">RangeError</code>
+              invalid range ki wajah se aa sakta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">error.name</code>
+              error ka type batata hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">error.message</code>
+              error ka message batata hai.
+            </p>
+
+            <p>
+              8. Logical error me program run ho sakta hai lekin output
+              galat aa sakta hai.
+            </p>
+
+            <p>
+              9.
+              <code class="text-blue-400">try...catch</code>
+              se runtime errors ko handle kiya ja sakta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="../datatypes/Destructuring.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./TryCatch.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(21);
+  </script>
+
+</body>
+
+</html>

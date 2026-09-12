@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Screen Object - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Screen Object
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Window.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Location.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Screen Object Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">screen</code>
+          object user ke display screen ke baare me information provide karta hai.
+          <br><br>
+          Isse screen width, height, available size, color depth aur pixel depth
+          jaise values mil sakti hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Basic Screen -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            screen Object Access Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Width -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            screen.width
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            User ki screen ki total width pixels me deta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen.width
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Height -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            screen.height
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Screen ki total height pixels me return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen.height
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Width Height Together -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Screen Size Check Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> width =
+  screen.width;
+
+<span class="text-blue-400">const</span> height =
+  screen.height;
+
+console.log(
+  <span class="text-emerald-400">"Width:"</span>,
+  width
+);
+
+console.log(
+  <span class="text-emerald-400">"Height:"</span>,
+  height
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- available width -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            screen.availWidth
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Screen ki available width deta hai. Operating system ke reserved UI
+            areas ki wajah se ye total width se different ho sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen.availWidth
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- available height -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            screen.availHeight
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen.availHeight
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- total vs available -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Total Size vs Available Size
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.width
+                  </td>
+                  <td class="p-4">
+                    Total screen width
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.height
+                  </td>
+                  <td class="p-4">
+                    Total screen height
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.availWidth
+                  </td>
+                  <td class="p-4">
+                    Available screen width
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.availHeight
+                  </td>
+                  <td class="p-4">
+                    Available screen height
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Color Depth -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            screen.colorDepth
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Color depth ki information bits per pixel me provide karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen.colorDepth
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Pixel Depth -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            screen.pixelDepth
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Screen ki pixel color depth ki information deta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen.pixelDepth
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Orientation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            screen.orientation
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Supported browsers me screen orientation information access ki ja
+            sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen.orientation
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Orientation Type -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Orientation Type
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">if</span> (
+  screen.orientation
+) {
+
+  console.log(
+    screen.orientation.type
+  );
+
+}</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Possible values browser/device ke according portrait ya landscape
+            orientation indicate kar sakti hain.
+          </p>
+
+        </div>
+
+        <!-- Orientation Angle -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Orientation Angle
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">if</span> (
+  screen.orientation
+) {
+
+  console.log(
+    screen.orientation.angle
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- screen vs window -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            screen.width vs window.innerWidth
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Dono alag information dete hain.
+          </p>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">screen.width</th>
+                  <th class="p-4">window.innerWidth</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Physical/logical display screen width.
+                  </td>
+
+                  <td class="p-4">
+                    Browser viewport width.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Browser resize karne par normally same reh sakta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Browser viewport resize hone par change hota hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Screen Aur Window Compare Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  <span class="text-emerald-400">"Screen Width:"</span>,
+  screen.width
+);
+
+console.log(
+  <span class="text-emerald-400">"Viewport Width:"</span>,
+  window.innerWidth
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Basic Device Check -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Screen Width Ke According Condition
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">if</span> (
+  screen.width &lt;=
+  <span class="text-emerald-400">768</span>
+) {
+
+  console.log(
+    <span class="text-emerald-400">"Small Screen"</span>
+  );
+
+} <span class="text-blue-400">else</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Large Screen"</span>
+  );
+
+}</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Responsive layout ke liye CSS media queries usually better choice
+            hote hain. JavaScript check tab useful hai jab behavior change
+            karna ho.
+          </p>
+
+        </div>
+
+        <!-- Match Media -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Better Responsive Check: matchMedia()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> mobile =
+  window.matchMedia(
+    <span class="text-emerald-400">"(max-width: 768px)"</span>
+  );
+
+<span class="text-blue-400">if</span> (mobile.matches) {
+
+  console.log(
+    <span class="text-emerald-400">"Mobile Layout"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Media Event -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Media Query Change Detect Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> media =
+  window.matchMedia(
+    <span class="text-emerald-400">"(max-width: 768px)"</span>
+  );
+
+media.addEventListener(
+  <span class="text-emerald-400">"change"</span>,
+  (event) =&gt; {
+
+    <span class="text-blue-400">if</span> (
+      event.matches
+    ) {
+
+      console.log(
+        <span class="text-emerald-400">"Now Small Screen"</span>
+      );
+
+    } <span class="text-blue-400">else</span> {
+
+      console.log(
+        <span class="text-emerald-400">"Now Large Screen"</span>
+      );
+
+    }
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- DPR -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            devicePixelRatio
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Ye
+            <code class="text-blue-400">window</code>
+            property hai, lekin screen/display context me useful hoti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.devicePixelRatio
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Display Info -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Complete Screen Information
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log({
+  width:
+    screen.width,
+
+  height:
+    screen.height,
+
+  availableWidth:
+    screen.availWidth,
+
+  availableHeight:
+    screen.availHeight,
+
+  colorDepth:
+    screen.colorDepth,
+
+  pixelDepth:
+    screen.pixelDepth
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- DOM Display -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Screen Information HTML Me Show Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;div id=<span class="text-emerald-400">"screenInfo"</span>&gt;&lt;/div&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> output =
+  document.getElementById(
+    <span class="text-emerald-400">"screenInfo"</span>
+  );
+
+output.innerHTML = <span class="text-emerald-400">`
+  &lt;p&gt;Width: ${screen.width}px&lt;/p&gt;
+  &lt;p&gt;Height: ${screen.height}px&lt;/p&gt;
+  &lt;p&gt;Available Width: ${screen.availWidth}px&lt;/p&gt;
+  &lt;p&gt;Available Height: ${screen.availHeight}px&lt;/p&gt;
+  &lt;p&gt;Color Depth: ${screen.colorDepth}&lt;/p&gt;
+`</span>;
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Quick Ref -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Screen Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.width
+                  </td>
+                  <td class="p-4">
+                    Total screen width
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.height
+                  </td>
+                  <td class="p-4">
+                    Total screen height
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.availWidth
+                  </td>
+                  <td class="p-4">
+                    Available width
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.availHeight
+                  </td>
+                  <td class="p-4">
+                    Available height
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.colorDepth
+                  </td>
+                  <td class="p-4">
+                    Color depth
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.pixelDepth
+                  </td>
+                  <td class="p-4">
+                    Pixel depth
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen.orientation
+                  </td>
+                  <td class="p-4">
+                    Screen orientation info
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">screen</code>
+              display information provide karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">screen.width</code>
+              aur
+              <code class="text-blue-400">screen.height</code>
+              total screen dimensions dete hain.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">availWidth</code>
+              aur
+              <code class="text-blue-400">availHeight</code>
+              available screen area ki information dete hain.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">colorDepth</code>
+              aur
+              <code class="text-blue-400">pixelDepth</code>
+              display color information dete hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">screen.width</code>
+              aur
+              <code class="text-blue-400">window.innerWidth</code>
+              same cheez nahi hain.
+            </p>
+
+            <p>
+              6. Responsive CSS ke liye media queries use karna better hai.
+            </p>
+
+            <p>
+              7. JavaScript responsive behavior ke liye
+              <code class="text-blue-400">matchMedia()</code>
+              useful hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Window.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Location.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(28);
+  </script>
+
+</body>
+</html>

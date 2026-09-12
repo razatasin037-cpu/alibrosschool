@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Lists - Complete Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <h1 class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight">
+          HTML Lists
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="../tables/TableColspan.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./UnorderedLists.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            Introduction to HTML Lists
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            HTML Lists ka use web pages par related items ko structured aur organized tarike se group karne ke liye kiya jata hai.
+          </p>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Types of HTML Lists
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            HTML me mukhya roop se 3 tarah ki lists hoti hain:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="./UnorderedLists.html" class="block bg-[#020617] p-6 rounded-2xl border border-[#334155] hover:border-[#3158ff] transition-all duration-300 group">
+              <span class="inline-block px-3 py-1 bg-blue-600/20 text-blue-400 font-mono text-sm rounded-md mb-3">&lt;ul&gt;</span>
+              <h4 class="text-xl font-bold text-white group-hover:text-[#3158ff] transition">Unordered List</h4>
+              <p class="text-gray-400 text-sm mt-2">Bullet points ke roop me items dikhane ke liye.</p>
+            </a>
+
+            <a href="./OrderedLists.html" class="block bg-[#020617] p-6 rounded-2xl border border-[#334155] hover:border-[#3158ff] transition-all duration-300 group">
+              <span class="inline-block px-3 py-1 bg-green-600/20 text-green-400 font-mono text-sm rounded-md mb-3">&lt;ol&gt;</span>
+              <h4 class="text-xl font-bold text-white group-hover:text-[#3158ff] transition">Ordered List</h4>
+              <p class="text-gray-400 text-sm mt-2">Numbers ya Letters ke sequence me items dikhane ke liye.</p>
+            </a>
+
+            <a href="./OtherLists.html" class="block bg-[#020617] p-6 rounded-2xl border border-[#334155] hover:border-[#3158ff] transition-all duration-300 group">
+              <span class="inline-block px-3 py-1 bg-purple-600/20 text-purple-400 font-mono text-sm rounded-md mb-3">&lt;dl&gt;</span>
+              <h4 class="text-xl font-bold text-white group-hover:text-[#3158ff] transition">Description List</h4>
+              <p class="text-gray-400 text-sm mt-2">Terms aur unki definitions ko align karne ke liye.</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Lists Visual Example
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Unordered aur Ordered lists ka default visual behavior layout:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-blue-400 mb-4 border-b border-slate-800 pb-2">
+                An Unordered HTML List:
+              </h4>
+              <ul class="list-disc list-inside space-y-2 text-gray-300 text-lg">
+                <li>Item</li>
+                <li>Item</li>
+                <li>Item</li>
+                <li>Item</li>
+              </ul>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-green-400 mb-4 border-b border-slate-800 pb-2">
+                An Ordered HTML List:
+              </h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-300 text-lg">
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+                <li>Fourth item</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Basic List Structure Example
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            Har list item ko <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;li&gt;</code> (List Item) tag ke andar rakha jata hai:
+          </p>
+
+          <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-slate-500">&lt;!-- List Items Example --&gt;</span>
+<span class="text-blue-400">&lt;ul&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>HTML5<span class="text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>CSS3<span class="text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-400">&lt;li&gt;</span>JavaScript<span class="text-blue-400">&lt;/li&gt;</span>
+<span class="text-blue-400">&lt;/ul&gt;</span></code></pre>
+          </div>
+        </div>
+
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="../tables/TableColspan.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./UnorderedLists.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(18);
+    </script>
+  </body>
+</html>

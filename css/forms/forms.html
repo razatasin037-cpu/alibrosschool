@@ -1,0 +1,1176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Forms</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Forms
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Forms ka use HTML forms ko attractive, readable aur
+            user-friendly banane ke liye kiya jata hai. HTML form structure
+            provide karta hai, jabki CSS us form ke input fields, labels,
+            buttons, textarea, select box aur overall layout ko design karta
+            hai. Is page par hum basic form styling se lekar focus effects,
+            input types, buttons, responsive forms aur ek complete professional
+            form tak step-by-step samjhenge.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../attribute-selectors/attribute-selectors.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../counters/counters.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- INTRODUCTION -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-file-signature text-blue-400 mr-2"></i>
+            CSS Form Styling Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            HTML mein form banane ke liye hum
+            <span class="text-blue-400">&lt;form&gt;</span>,
+            <span class="text-blue-400">&lt;label&gt;</span>,
+            <span class="text-blue-400">&lt;input&gt;</span>,
+            <span class="text-blue-400">&lt;textarea&gt;</span>,
+            <span class="text-blue-400">&lt;select&gt;</span> aur
+            <span class="text-blue-400">&lt;button&gt;</span> jaise elements use
+            karte hain. Default browser styling usually simple hoti hai. CSS ki
+            help se hum in elements ka size, spacing, border, color, background,
+            font aur interaction states control kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4">
+              <i class="fa-solid fa-lightbulb text-yellow-400 mr-2"></i>
+              Form Styling Ka Main Goal
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Achha form sirf beautiful nahi hona chahiye. User ko clearly pata
+              chalna chahiye ki kis field mein kya information enter karni hai,
+              kaunsi field required hai, focus kahan hai aur submit action kaise
+              karna hai. Isliye CSS form design mein visual appearance ke saath
+              usability aur responsive layout ka bhi dhyan rakha jata hai.
+            </p>
+          </div>
+
+          <!-- BASIC FORM -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            1. Basic Form Structure
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Sabse pehle ek simple HTML form create karte hain. Form ke andar
+            label aur input fields rakhna common approach hai. Label user ko
+            batata hai ki input field mein kis type ki information deni hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic HTML Form
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;form&gt;</span>
+
+  <span class="text-blue-400">&lt;label</span> <span class="text-blue-400">for</span>=<span class="text-green-400">"name"</span><span class="text-blue-400">&gt;</span>
+    Name
+  <span class="text-blue-400">&lt;/label&gt;</span>
+
+  <span class="text-blue-400">&lt;input</span>
+    <span class="text-blue-400">type</span>=<span class="text-green-400">"text"</span>
+    <span class="text-blue-400">id</span>=<span class="text-green-400">"name"</span>
+    <span class="text-blue-400">name</span>=<span class="text-green-400">"name"</span>
+  <span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;button</span> <span class="text-blue-400">type</span>=<span class="text-green-400">"submit"</span><span class="text-blue-400">&gt;</span>
+    Submit
+  <span class="text-blue-400">&lt;/button&gt;</span>
+
+<span class="text-blue-400">&lt;/form&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- INPUT WIDTH -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            2. Input Fields Ki Width Set Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Form ka input bahut chhota hoga to user ko type karne mein
+            uncomfortable feel ho sakta hai. Isliye input ki width ko
+            appropriate size dena important hai. Desktop layout mein fixed ya
+            maximum width useful ho sakti hai, jabki responsive form mein
+            percentage ya
+            <span class="text-blue-400">width: 100%</span> commonly use hota
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Input Width Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">box-sizing</span>: <span class="text-green-400">border-box</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            <span class="text-blue-400">width: 100%</span> input ko apne parent
+            container ki available width lene deta hai.
+            <span class="text-blue-400">box-sizing: border-box</span> use karne
+            se padding aur border ko declared width ke andar include kiya jata
+            hai.
+          </p>
+
+          <!-- PADDING -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+            3. Input Mein Padding
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Padding input ke andar text aur border ke beech space create karta
+            hai. Agar padding bahut kam ho to field cramped lag sakti hai.
+            Suitable padding se form ko comfortable aur clean appearance milti
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Padding Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">14px 16px</span>;
+}
+
+<span class="text-blue-400">textarea</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">14px 16px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- BORDER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-border-all text-blue-400 mr-2"></i>
+            4. Form Fields Mein Border
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Border input field ke edges ko define karta hai. CSS se border ka
+            thickness, style aur color control kiya ja sakta hai. Modern forms
+            mein subtle border use karne se fields clean dikhte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Border Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input</span>,
+<span class="text-blue-400">textarea</span>,
+<span class="text-blue-400">select</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #64748b</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">8px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- BORDER RADIUS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-circle text-blue-400 mr-2"></i>
+            5. Border Radius Se Rounded Fields
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">border-radius</span> input aur button ke
+            corners ko rounded banata hai. Chhota radius professional form mein
+            subtle effect deta hai, jabki large radius pill-style controls
+            create kar sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Rounded Form Fields
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px</span>;
+}
+
+<span class="text-blue-400">button</span> {
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- LABELS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-tag text-blue-400 mr-2"></i>
+            6. Labels Ko Style Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Label form ka important part hai kyunki ye user ko field ka purpose
+            samjhata hai. Labels ko readable font size, font weight aur spacing
+            dene se form ko scan karna easy hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Label Styling
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">label</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+  <span class="text-blue-400">margin-bottom</span>: <span class="text-green-400">8px</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">600</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- MARGIN -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            7. Form Fields Ke Beech Spacing
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Har field ke beech enough vertical spacing hona chahiye. Agar fields
+            bilkul chipke hue honge to form difficult to read lagega. Margin ka
+            use karke individual form groups ke beech consistent space create
+            kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Spacing Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.form-group</span> {
+  <span class="text-blue-400">margin-bottom</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">label</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+  <span class="text-blue-400">margin-bottom</span>: <span class="text-green-400">8px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- INPUT TYPES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list text-blue-400 mr-2"></i>
+            8. Different Input Types Ko Style Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            HTML mein input ke different types hote hain. Attribute selectors ki
+            help se hum specific input type ko target kar sakte hain. Ye
+            approach tab useful hoti hai jab text field aur submit button ko
+            different design dena ho.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Input Type Selectors
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input[type="text"]</span>,
+<span class="text-blue-400">input[type="email"]</span>,
+<span class="text-blue-400">input[type="password"]</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #64748b</span>;
+}
+
+<span class="text-blue-400">input[type="submit"]</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- FOCUS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-crosshairs text-blue-400 mr-2"></i>
+            9. :focus Se Active Input Highlight Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Jab user kisi input field par click karta hai ya keyboard se us
+            field par focus karta hai, to
+            <span class="text-blue-400">:focus</span> pseudo-class active hoti
+            hai. Focus styling user ko clearly batati hai ki currently kaunsi
+            field active hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Focus Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input:focus</span> {
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">border-color</span>: <span class="text-green-400">#4d6fff</span>;
+  <span class="text-blue-400">box-shadow</span>: <span class="text-green-400">0 0 0 3px rgba(77,111,255,0.2)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl font-bold mb-3">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Focus Ka Important Point
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Focus indicator ko remove karte waqt alternative visible focus
+              state zaroor provide karein. Keyboard users ke liye focus
+              indicator navigation ka important part hai.
+            </p>
+          </div>
+
+          <!-- TEXTAREA -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-align-left text-blue-400 mr-2"></i>
+            10. Textarea Styling
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Long message, address ya feedback ke liye
+            <span class="text-blue-400">&lt;textarea&gt;</span> use hota hai.
+            Textarea ko bhi input fields ki tarah padding, border, width aur
+            radius diya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Textarea Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">textarea</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">min-height</span>: <span class="text-green-400">140px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">14px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #64748b</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px</span>;
+  <span class="text-blue-400">resize</span>: <span class="text-green-400">vertical</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- SELECT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-caret-down text-blue-400 mr-2"></i>
+            11. Select Dropdown Styling
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">&lt;select&gt;</span> element user ko
+            predefined options mein se choice select karne deta hai. Isko input
+            fields ke saath same dimensions aur spacing dene se form consistent
+            dikhta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Select Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">select</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #64748b</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px</span>;
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- BUTTON -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-hand-pointer text-blue-400 mr-2"></i>
+            12. Submit Button Styling
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Submit button form ka main action represent karta hai. Button ko
+            input fields se visually different rakhna useful hota hai taaki user
+            ko clear call-to-action mile. Padding, background color, border,
+            radius aur cursor jaise properties button styling mein commonly use
+            hoti hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Button Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">button</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">14px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">10px</span>;
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#254ccb</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">cursor</span>: <span class="text-green-400">pointer</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- HOVER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mouse-pointer text-blue-400 mr-2"></i>
+            13. Button Hover Effect
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">:hover</span> pseudo-class ka use button
+            ke hover state ko style karne ke liye hota hai. Jab mouse button ke
+            upar jata hai, background ya other visual property change karke user
+            ko feedback diya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Hover Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">button:hover</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#304cd6</span>;
+}
+
+<span class="text-blue-400">button:active</span> {
+  <span class="text-blue-400">transform</span>: <span class="text-green-400">scale(0.98)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- CHECKBOX RADIO -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-square-check text-blue-400 mr-2"></i>
+            14. Checkbox Aur Radio Buttons
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Checkbox multiple selections ke liye aur radio buttons generally ek
+            group mein single choice ke liye use hote hain. In controls ko style
+            karte waqt unhe normal text inputs jaisa width dena zaroori nahi
+            hota.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Checkbox / Radio Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input[type="checkbox"]</span>,
+<span class="text-blue-400">input[type="radio"]</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">auto</span>;
+  <span class="text-blue-400">margin-right</span>: <span class="text-green-400">8px</span>;
+}
+
+<span class="text-blue-400">.choice</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">flex</span>;
+  <span class="text-blue-400">align-items</span>: <span class="text-green-400">center</span>;
+  <span class="text-blue-400">gap</span>: <span class="text-green-400">8px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- FIELDSET -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-object-group text-blue-400 mr-2"></i>
+            15. Fieldset Aur Legend
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Large forms mein related fields ko group karne ke liye
+            <span class="text-blue-400">&lt;fieldset&gt;</span> aur
+            <span class="text-blue-400">&lt;legend&gt;</span> useful hote hain.
+            CSS se fieldset ka border, padding aur legend ki typography
+            customize ki ja sakti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Fieldset Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">fieldset</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #475569</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">12px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">legend</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">0 8px</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">600</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- FORM CONTAINER -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-window-maximize text-blue-400 mr-2"></i>
+            16. Form Container Design
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Form ko ek container ke andar rakhne se uska visual boundary clear
+            hota hai. Background, padding, border-radius aur shadow ka
+            combination ek clean card-style form create kar sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Form Card
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.form-container</span> {
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">600px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">40px auto</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">30px</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">white</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">16px</span>;
+  <span class="text-blue-400">box-shadow</span>: <span class="text-green-400">0 10px 30px rgba(0,0,0,0.12)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COMPLETE FORM -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-flask text-blue-400 mr-2"></i>
+            17. Complete Styled Form
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ab hum ek complete form banate hain jisme labels, text input, email
+            input, select, textarea, checkbox aur submit button use kiya gaya
+            hai. Is example mein form spacing aur focus state bhi include ki
+            gayi hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Complete HTML + CSS
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;form</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"contact-form"</span><span class="text-blue-400">&gt;</span>
+
+  <span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"form-group"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-blue-400">&lt;label</span> <span class="text-blue-400">for</span>=<span class="text-green-400">"name"</span><span class="text-blue-400">&gt;</span>Name<span class="text-blue-400">&lt;/label&gt;</span>
+    <span class="text-blue-400">&lt;input</span> <span class="text-blue-400">type</span>=<span class="text-green-400">"text"</span> <span class="text-blue-400">id</span>=<span class="text-green-400">"name"</span> <span class="text-blue-400">required</span><span class="text-blue-400">&gt;</span>
+  <span class="text-blue-400">&lt;/div&gt;</span>
+
+  <span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"form-group"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-blue-400">&lt;label</span> <span class="text-blue-400">for</span>=<span class="text-green-400">"email"</span><span class="text-blue-400">&gt;</span>Email<span class="text-blue-400">&lt;/label&gt;</span>
+    <span class="text-blue-400">&lt;input</span> <span class="text-blue-400">type</span>=<span class="text-green-400">"email"</span> <span class="text-blue-400">id</span>=<span class="text-green-400">"email"</span> <span class="text-blue-400">required</span><span class="text-blue-400">&gt;</span>
+  <span class="text-blue-400">&lt;/div&gt;</span>
+
+  <span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"form-group"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-blue-400">&lt;label</span> <span class="text-blue-400">for</span>=<span class="text-green-400">"country"</span><span class="text-blue-400">&gt;</span>Country<span class="text-blue-400">&lt;/label&gt;</span>
+
+    <span class="text-blue-400">&lt;select</span> <span class="text-blue-400">id</span>=<span class="text-green-400">"country"</span><span class="text-blue-400">&gt;</span>
+      <span class="text-blue-400">&lt;option&gt;</span>India<span class="text-blue-400">&lt;/option&gt;</span>
+      <span class="text-blue-400">&lt;option&gt;</span>Japan<span class="text-blue-400">&lt;/option&gt;</span>
+      <span class="text-blue-400">&lt;option&gt;</span>Germany<span class="text-blue-400">&lt;/option&gt;</span>
+    <span class="text-blue-400">&lt;/select&gt;</span>
+  <span class="text-blue-400">&lt;/div&gt;</span>
+
+  <span class="text-blue-400">&lt;div</span> <span class="text-blue-400">class</span>=<span class="text-green-400">"form-group"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-blue-400">&lt;label</span> <span class="text-blue-400">for</span>=<span class="text-green-400">"message"</span><span class="text-blue-400">&gt;</span>Message<span class="text-blue-400">&lt;/label&gt;</span>
+    <span class="text-blue-400">&lt;textarea</span> <span class="text-blue-400">id</span>=<span class="text-green-400">"message"</span><span class="text-blue-400">&gt;&lt;/textarea&gt;</span>
+  <span class="text-blue-400">&lt;/div&gt;</span>
+
+  <span class="text-blue-400">&lt;button</span> <span class="text-blue-400">type</span>=<span class="text-green-400">"submit"</span><span class="text-blue-400">&gt;</span>
+    Send Message
+  <span class="text-blue-400">&lt;/button&gt;</span>
+
+<span class="text-blue-400">&lt;/form&gt;</span>
+
+
+<span class="text-blue-400">.contact-form</span> {
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">600px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">auto</span>;
+}
+
+<span class="text-blue-400">.form-group</span> {
+  <span class="text-blue-400">margin-bottom</span>: <span class="text-green-400">20px</span>;
+}
+
+<span class="text-blue-400">label</span> {
+  <span class="text-blue-400">display</span>: <span class="text-green-400">block</span>;
+  <span class="text-blue-400">margin-bottom</span>: <span class="text-green-400">8px</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">600</span>;
+}
+
+<span class="text-blue-400">input</span>,
+<span class="text-blue-400">select</span>,
+<span class="text-blue-400">textarea</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">box-sizing</span>: <span class="text-green-400">border-box</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">12px 14px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">1px solid #64748b</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">8px</span>;
+}
+
+<span class="text-blue-400">textarea</span> {
+  <span class="text-blue-400">min-height</span>: <span class="text-green-400">140px</span>;
+  <span class="text-blue-400">resize</span>: <span class="text-green-400">vertical</span>;
+}
+
+<span class="text-blue-400">input:focus</span>,
+<span class="text-blue-400">select:focus</span>,
+<span class="text-blue-400">textarea:focus</span> {
+  <span class="text-blue-400">outline</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">border-color</span>: <span class="text-green-400">#4d6fff</span>;
+}
+
+<span class="text-blue-400">button</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">14px</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">none</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">8px</span>;
+  <span class="text-blue-400">background</span>: <span class="text-green-400">#254ccb</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- RESPONSIVE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            18. Responsive Form
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Form ko mobile, tablet aur desktop sabhi screens par properly work
+            karna chahiye. Fixed width ko avoid karke max-width, percentage
+            width aur media queries ka use kiya ja sakta hai. Small screens par
+            fields ko generally full width rakhna easy aur readable hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Responsive Form Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.form-container</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">90%</span>;
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">600px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">auto</span>;
+}
+
+<span class="text-blue-400">@media (max-width: 600px)</span> {
+  <span class="text-blue-400">.form-container</span> {
+    <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+    <span class="text-blue-400">padding</span>: <span class="text-green-400">15px</span>;
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ACCESSIBILITY -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-universal-access text-blue-400 mr-2"></i>
+            19. Form Accessibility
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Form design mein accessibility ko ignore nahi karna chahiye. Har
+            important input ke saath meaningful label hona chahiye. Label ke
+            <span class="text-blue-400">for</span> attribute ko input ke
+            <span class="text-blue-400">id</span> se connect karne se
+            relationship clear hota hai. Keyboard users ke liye visible focus
+            state bhi important hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Accessible Label Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;label</span> <span class="text-blue-400">for</span>=<span class="text-green-400">"email"</span><span class="text-blue-400">&gt;</span>
+  Email Address
+<span class="text-blue-400">&lt;/label&gt;</span>
+
+<span class="text-blue-400">&lt;input</span>
+  <span class="text-blue-400">type</span>=<span class="text-green-400">"email"</span>
+  <span class="text-blue-400">id</span>=<span class="text-green-400">"email"</span>
+  <span class="text-blue-400">name</span>=<span class="text-green-400">"email"</span>
+  <span class="text-blue-400">required</span>
+<span class="text-blue-400">&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+            ></i>
+            Common Mistakes
+          </h2>
+
+          <div class="space-y-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                1. Input Ki Width Fixed Rakhna
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Bahut large fixed width mobile screen par horizontal overflow
+                create kar sakti hai. Responsive forms mein percentage width ya
+                max-width approach better hoti hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">2. Labels Ko Ignore Karna</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Sirf placeholder par depend karna good form design nahi hai.
+                Proper label field ka purpose clearly communicate karta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                3. Focus State Remove Kar Dena
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Agar <span class="text-blue-400">outline: none</span> use kiya
+                hai to alternative visible focus state dena important hai, warna
+                keyboard users ko current field identify karna difficult ho
+                sakta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                4. Button Aur Input Ko Confuse Karna
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Submit button ko clear visual hierarchy deni chahiye. Button ko
+                normal text input jaisa design karne se primary action less
+                noticeable ho sakta hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-star text-yellow-400 mr-2"></i>
+            Form Design Best Practices
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-ruler-horizontal text-blue-400 mr-2"></i>
+                Consistent Spacing
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Labels, fields aur sections ke beech consistent spacing form ko
+                organized rakhti hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-eye text-blue-400 mr-2"></i>
+                Clear Visual Hierarchy
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Heading, labels, inputs aur primary button ko visually
+                distinguishable rakhein.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-keyboard text-green-400 mr-2"></i>
+                Keyboard Friendly
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Focus states visible rakhein aur form controls keyboard se
+                usable hone chahiye.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-mobile-screen text-purple-400 mr-2"></i>
+                Responsive Layout
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Form ko different screen sizes par test karein aur unnecessary
+                horizontal scrolling avoid karein.
+              </p>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS form ke visual design ko control karta hai, jabki HTML form
+                ka structure provide karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Input, textarea aur select ko generally consistent width,
+                padding aur border styling deni chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">box-sizing: border-box</span>
+                responsive sizing ko predictable banane mein useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">:focus</span> state user ko active
+                form field identify karne mein help karti hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Labels ko inputs ke saath properly associate karna accessibility
+                ke liye important hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Submit button ko clear visual hierarchy aur useful hover state
+                deni chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Mobile screens ke liye responsive width aur spacing ka dhyan
+                rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Form ko real browser mein different screen sizes aur keyboard
+                navigation ke saath test karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Forms ka main purpose HTML form controls ko clean, readable,
+              attractive aur responsive banana hai. Hum CSS ke through input
+              fields, labels, textarea, select boxes aur buttons ki width,
+              padding, margin, border, radius, background aur typography control
+              kar sakte hain. <span class="text-blue-400">:focus</span> aur
+              <span class="text-blue-400">:hover</span> jaise states user
+              interaction ko clear banate hain. Attribute selectors se different
+              input types ko individually style kiya ja sakta hai, aur media
+              queries ki help se form ko mobile-friendly banaya ja sakta hai. Ek
+              achha CSS form visually attractive hone ke saath accessible aur
+              easy-to-use bhi hona chahiye.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../attribute-selectors/attribute-selectors.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../counters/counters.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(38);
+      });
+    </script>
+  </body>
+</html>

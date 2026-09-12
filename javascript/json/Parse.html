@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JSON Parse - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JSON Parse
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./JSON.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Stringify.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          JSON.parse() Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">JSON.parse()</code>
+          ka use valid JSON string ko JavaScript value me convert karne ke liye
+          hota hai.
+          <br><br>
+          Usually JSON string ko object ya array me convert karke uske data ko
+          access karne ke liye iska use kiya jata hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            JSON.parse() Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>JSON.parse(jsonString);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Basic -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+  <span class="text-emerald-400">
+    '{"name":"Ali","age":20}'
+  </span>;
+
+<span class="text-blue-400">const</span> user =
+  JSON.parse(json);
+
+console.log(user);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">{
+  name: "Ali",
+  age: 20
+}</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Access property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Parsed Object Ki Property Access Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+  <span class="text-emerald-400">
+    '{"name":"Ali","age":20}'
+  </span>;
+
+<span class="text-blue-400">const</span> user =
+  JSON.parse(json);
+
+console.log(
+  user.name
+);
+
+console.log(
+  user.age
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali
+20</pre>
+
+          </div>
+
+        </div>
+
+        <!-- typeof -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Parse Se Pehle Aur Baad Me typeof
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+  <span class="text-emerald-400">
+    '{"name":"Ali"}'
+  </span>;
+
+console.log(
+  <span class="text-blue-400">typeof</span> json
+);
+
+<span class="text-blue-400">const</span> user =
+  JSON.parse(json);
+
+console.log(
+  <span class="text-blue-400">typeof</span> user
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">string
+object</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Array parse -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            JSON Array Parse Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+  <span class="text-emerald-400">
+    '["HTML","CSS","JavaScript"]'
+  </span>;
+
+<span class="text-blue-400">const</span> skills =
+  JSON.parse(json);
+
+console.log(skills);
+
+console.log(
+  skills[0]
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">["HTML", "CSS", "JavaScript"]
+
+HTML</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Array object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array Of Objects Parse Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+  <span class="text-emerald-400">
+    '[{"id":1,"name":"Ali"},{"id":2,"name":"Ahmed"}]'
+  </span>;
+
+<span class="text-blue-400">const</span> users =
+  JSON.parse(json);
+
+console.log(
+  users[0].name
+);
+
+console.log(
+  users[1].name
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali
+Ahmed</pre>
+
+          </div>
+
+        </div>
+
+        <!-- map -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Parsed Array Par map()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+  <span class="text-emerald-400">
+    '[{"name":"Ali"},{"name":"Ahmed"}]'
+  </span>;
+
+<span class="text-blue-400">const</span> users =
+  JSON.parse(json);
+
+users.map((user) =&gt; {
+
+  console.log(
+    user.name
+  );
+
+});</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali
+Ahmed</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Nested -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Nested JSON Parse
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+<span class="text-emerald-400">`{
+  "name": "Ali",
+  "address": {
+    "city": "Ranchi",
+    "state": "Jharkhand"
+  }
+}`</span>;
+
+<span class="text-blue-400">const</span> user =
+  JSON.parse(json);
+
+console.log(
+  user.address.city
+);
+
+console.log(
+  user.address.state
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ranchi
+Jharkhand</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Different Values -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            JSON.parse() Different Values
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  JSON.parse(<span class="text-emerald-400">"100"</span>)
+);
+
+console.log(
+  JSON.parse(<span class="text-emerald-400">"true"</span>)
+);
+
+console.log(
+  JSON.parse(<span class="text-emerald-400">"null"</span>)
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">100
+true
+null</pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            JSON sirf object hi nahi, valid JSON primitive values ko bhi parse
+            kar sakta hai.
+          </p>
+
+        </div>
+
+        <!-- Invalid JSON -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Invalid JSON Parse
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Invalid JSON ko parse karne par
+            <code class="text-blue-400">SyntaxError</code>
+            aata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+  <span class="text-emerald-400">
+    '{"name":"Ali",}'
+  </span>;
+
+<span class="text-blue-400">const</span> user =
+  JSON.parse(json);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">SyntaxError</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Try catch -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            JSON.parse() With Try Catch
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Unknown JSON data parse karte waqt
+            <code class="text-blue-400">try...catch</code>
+            use karna helpful hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+  <span class="text-emerald-400">
+    '{"name":"Ali",}'
+  </span>;
+
+<span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">const</span> user =
+    JSON.parse(json);
+
+  console.log(user);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    <span class="text-emerald-400">
+      "Invalid JSON"
+    </span>
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Invalid JSON</pre>
+
+          </div>
+
+        </div>
+
+        <!-- error message -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Parse Error Message Check Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  JSON.parse(
+    <span class="text-emerald-400">
+      '{"name":"Ali",}'
+    </span>
+  );
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.name
+  );
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Error message browser ke according thoda different ho sakta hai,
+            lekin error type generally
+            <code class="text-blue-400">SyntaxError</code>
+            hota hai.
+          </p>
+
+        </div>
+
+        <!-- localStorage -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage Se JSON Parse Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            localStorage se object retrieve karne ke baad us string ko
+            <code class="text-blue-400">JSON.parse()</code>
+            karna padta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>localStorage.setItem(
+  <span class="text-emerald-400">"user"</span>,
+  <span class="text-emerald-400">
+    '{"name":"Ali","age":20}'
+  </span>
+);
+
+<span class="text-blue-400">const</span> storedUser =
+  localStorage.getItem(
+    <span class="text-emerald-400">"user"</span>
+  );
+
+<span class="text-blue-400">const</span> user =
+  JSON.parse(storedUser);
+
+console.log(
+  user.name
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali</pre>
+
+          </div>
+
+        </div>
+
+        <!-- null issue -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage Data Check Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Data use karne se pehle check karna useful hai ki value actually
+            available hai ya nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> storedUser =
+  localStorage.getItem(
+    <span class="text-emerald-400">"user"</span>
+  );
+
+<span class="text-blue-400">if</span> (storedUser) {
+
+  <span class="text-blue-400">const</span> user =
+    JSON.parse(storedUser);
+
+  console.log(
+    user
+  );
+
+} <span class="text-blue-400">else</span> {
+
+  console.log(
+    <span class="text-emerald-400">
+      "User not found"
+    </span>
+  );
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- API Concept -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            API Response Aur JSON Parsing
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            APIs commonly JSON response bhejti hain. Fetch API me
+            <code class="text-blue-400">response.json()</code>
+            response body ko read karke parsed JavaScript value return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getUsers() {
+
+  <span class="text-blue-400">const</span> response =
+    <span class="text-blue-400">await</span> fetch(
+      <span class="text-emerald-400">
+        "/api/users"
+      </span>
+    );
+
+  <span class="text-blue-400">const</span> data =
+    <span class="text-blue-400">await</span> response.json();
+
+  console.log(data);
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- response json -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            response.json() vs JSON.parse()
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Method
+                  </th>
+
+                  <th class="p-4">
+                    Use
+                  </th>
+
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+
+                  <td class="p-4 font-mono">
+                    JSON.parse()
+                  </td>
+
+                  <td class="p-4">
+                    Existing JSON string ko JavaScript value me convert karta hai.
+                  </td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="p-4 font-mono">
+                    response.json()
+                  </td>
+
+                  <td class="p-4">
+                    Fetch response body ko read aur JSON ke roop me parse karta hai.
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Laravel Response -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Laravel + JavaScript Example
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Laravel API maan lo ye JSON response return karti hai:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>{
+  <span class="text-emerald-400">"success"</span>: <span class="text-blue-400">true</span>,
+  <span class="text-emerald-400">"user"</span>: {
+    <span class="text-emerald-400">"id"</span>: <span class="text-blue-400">1</span>,
+    <span class="text-emerald-400">"name"</span>: <span class="text-emerald-400">"Ali"</span>
+  }
+}</code></pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 mb-5">
+            JavaScript me:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> response =
+  <span class="text-blue-400">await</span> fetch(
+    <span class="text-emerald-400">
+      "/api/user"
+    </span>
+  );
+
+<span class="text-blue-400">const</span> data =
+  <span class="text-blue-400">await</span> response.json();
+
+console.log(
+  data.user.name
+);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Reviver -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            JSON.parse() Reviver
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">JSON.parse()</code>
+            ka optional second parameter
+            <code class="text-blue-400">reviver</code>
+            parsed values ko transform karne ke liye use kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> json =
+  <span class="text-emerald-400">
+    '{"price":500}'
+  </span>;
+
+<span class="text-blue-400">const</span> product =
+  JSON.parse(
+    json,
+    (key, value) =&gt; {
+
+      <span class="text-blue-400">if</span> (
+        key ===
+        <span class="text-emerald-400">"price"</span>
+      ) {
+
+        <span class="text-blue-400">return</span>
+          value * 2;
+
+      }
+
+      <span class="text-blue-400">return</span> value;
+
+    }
+  );
+
+console.log(
+  product.price
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">1000</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            JSON.parse() Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base text-gray-300">JSON String
+
+'{"name":"Ali"}'
+
+       ↓
+
+   JSON.parse()
+
+       ↓
+
+JavaScript Object
+
+{ name: "Ali" }
+
+       ↓
+
+user.name
+
+       ↓
+
+"Ali"</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Common Mistakes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Common Mistakes
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Invalid JSON string ko parse karna.
+            </p>
+
+            <p>
+              2. JSON object keys me double quotes use nahi karna.
+            </p>
+
+            <p>
+              3. Trailing comma rakhna.
+            </p>
+
+            <p>
+              4. Already JavaScript object par unnecessary
+              <code class="text-blue-400">JSON.parse()</code>
+              lagana.
+            </p>
+
+            <p>
+              5. External JSON parse karte waqt error handling nahi karna.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Wrong vs Correct -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Wrong vs Correct
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Wrong
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base text-red-400"><code>JSON.parse(
+  '{name:"Ali"}'
+);</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Correct
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code>JSON.parse(
+  <span class="text-emerald-400">
+    '{"name":"Ali"}'
+  </span>
+);</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">JSON.parse()</code>
+              valid JSON string ko JavaScript value me convert karta hai.
+            </p>
+
+            <p>
+              2. JSON object string parse hone ke baad JavaScript object ban
+              jata hai.
+            </p>
+
+            <p>
+              3. JSON array string parse hone ke baad JavaScript array ban
+              jata hai.
+            </p>
+
+            <p>
+              4. Invalid JSON parse karne par
+              <code class="text-blue-400">SyntaxError</code>
+              aata hai.
+            </p>
+
+            <p>
+              5. Unknown JSON parse karte waqt
+              <code class="text-blue-400">try...catch</code>
+              useful hota hai.
+            </p>
+
+            <p>
+              6. Parsed object ki properties dot notation se access kar sakte hain.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">JSON.parse()</code>
+              localStorage data ke saath commonly use hota hai.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">response.json()</code>
+              aur
+              <code class="text-blue-400">JSON.parse()</code>
+              related hain, lekin same method nahi hain.
+            </p>
+
+            <p>
+              9.
+              <code class="text-blue-400">reviver</code>
+              se parsing ke time values transform ki ja sakti hain.
+            </p>
+
+            <p>
+              10. Object ko JSON string me convert karne ke liye
+              <code class="text-blue-400">JSON.stringify()</code>
+              use hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./JSON.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Stringify.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(23);
+  </script>
+
+</body>
+
+</html>

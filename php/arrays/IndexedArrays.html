@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Indexed Arrays - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Indexed Arrays
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./arrays.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./AccessArrays.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Indexed Array Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            <strong class="text-white">Indexed Array</strong> PHP me sabse aam array type hai, jisme har element ka ek <strong class="text-white">numeric index</strong> hota hai. Index hamesha <code class="text-green-400">0</code> se shuru hota hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Aap isme strings, numbers, floats ya mix data types ko ek hi variable ke andar order list ki tarah store kar sakte hain.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. Creating Indexed Arrays -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Creating an Indexed Array
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              PHP me array banane ke do tarike hain: Short bracket syntax <code class="text-green-400">[]</code> ya fir <code class="text-green-400">array()</code> function:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Method 1: Short Syntax (Recommended)</span>
+  <span class="text-green-400">$cars</span> = [<span class="text-white">"BMW"</span>, <span class="text-white">"Audi"</span>, <span class="text-white">"Mercedes"</span>];
+
+  <span class="text-[#94a3b8]">// Method 2: Traditional array() function</span>
+  <span class="text-green-400">$fruits</span> = <span class="text-green-400">array</span>(<span class="text-white">"Apple"</span>, <span class="text-white">"Banana"</span>, <span class="text-white">"Mango"</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Accessing Elements -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Accessing &amp; Modifying Elements
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Elements ko unke Index Number se access ya update kiya jata hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$bikes</span> = [<span class="text-white">"Yamaha"</span>, <span class="text-white">"Honda"</span>, <span class="text-white">"Suzuki"</span>];
+
+  <span class="text-[#94a3b8]">// Accessing values</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$bikes</span>[<span class="text-white">0</span>]; <span class="text-[#94a3b8]">// Output: Yamaha</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$bikes</span>[<span class="text-white">2</span>]; <span class="text-[#94a3b8]">// Output: Suzuki</span>
+
+  <span class="text-[#94a3b8]">// Modifying a value</span>
+  <span class="text-green-400">$bikes</span>[<span class="text-white">1</span>] = <span class="text-white">"Royal Enfield"</span>; <span class="text-[#94a3b8]">// Honda replace ho jayega</span>
+
+  <span class="text-[#94a3b8]">// Adding a new element at the end</span>
+  <span class="text-green-400">$bikes</span>[] = <span class="text-white">"KTM"</span>; <span class="text-[#94a3b8]">// Index 3 par add hoga</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Looping through Indexed Array -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Looping Through an Indexed Array
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Array ke sabhi items par iterate karne ke liye aap <code class="text-green-400">foreach</code> loop ya <code class="text-green-400">count()</code> ke sath <code class="text-green-400">for</code> loop use kar sakte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$languages</span> = [<span class="text-white">"PHP"</span>, <span class="text-white">"JavaScript"</span>, <span class="text-white">"Python"</span>, <span class="text-white">"C++"</span>];
+
+  <span class="text-[#94a3b8]">// Method 1: Using Foreach Loop</span>
+  <span class="text-green-400">foreach</span> (<span class="text-green-400">$languages</span> <span class="text-green-400">as</span> <span class="text-green-400">$lang</span>) {
+      <span class="text-green-400">echo</span> <span class="text-white">"Language: $lang &lt;br&gt;"</span>;
+  }
+
+  <span class="text-[#94a3b8]">// Method 2: Using For Loop and count()</span>
+  <span class="text-green-400">$arrLength</span> = <span class="text-green-400">count</span>(<span class="text-green-400">$languages</span>);
+  <span class="text-green-400">for</span> (<span class="text-green-400">$i</span> = <span class="text-white">0</span>; <span class="text-green-400">$i</span> &lt; <span class="text-green-400">$arrLength</span>; <span class="text-green-400">$i</span>++) {
+      <span class="text-green-400">echo</span> <span class="text-white">"Index $i : "</span> . <span class="text-green-400">$languages</span>[<span class="text-green-400">$i</span>] . <span class="text-white">"&lt;br&gt;"</span>;
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Common Pitfall / Warning Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-yellow-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-yellow-400">
+              <span>⚠️</span> Common Pitfall: Undefined Array Key
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Yadi aap kisi aise index ko access karne ki koshish karte hain jo exist nahi karta (jaise 3 elements wale array me Index 5), toh PHP ek <strong class="text-white">Warning: Undefined array key</strong> error show karega.
+            </p>
+            <div class="bg-[#1e293b] p-4 rounded-xl font-mono text-sm text-yellow-400 border border-yellow-500/20">
+              $items = ["A", "B"];<br />
+              echo $items[5]; // ❌ Error: Index 5 does not exist!
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./arrays.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./AccessArrays.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(18);
+    </script>
+  </body>
+</html>

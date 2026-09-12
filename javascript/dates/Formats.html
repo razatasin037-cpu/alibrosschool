@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Date Formats - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Date Formats
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Dates.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./GetMethods.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Intro -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Date Formats Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Date ko different formats me create aur display kiya
+          ja sakta hai.
+          <br><br>
+          Sabse common aur reliable format ISO format hota hai, jaise
+          <code class="text-blue-400">YYYY-MM-DD</code>.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Common Formats -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Common Date Formats
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Format</th>
+                  <th class="p-4">Example</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    YYYY-MM-DD
+                  </td>
+                  <td class="p-4 font-mono">2026-09-10</td>
+                  <td class="p-4">ISO date format</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    YYYY-MM-DDTHH:mm:ssZ
+                  </td>
+                  <td class="p-4 font-mono">
+                    2026-09-10T10:30:00Z
+                  </td>
+                  <td class="p-4">ISO date and time</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Month DD, YYYY
+                  </td>
+                  <td class="p-4 font-mono">
+                    September 10, 2026
+                  </td>
+                  <td class="p-4">Readable date string</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- ISO -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            ISO Date Format
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            ISO format date likhne ka standard format hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">"2026-09-10"</span>
+  );
+
+console.log(date);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Format:</p>
+
+<pre class="text-emerald-400 font-mono">YYYY-MM-DD</pre>
+          </div>
+
+        </div>
+
+        <!-- ISO Full -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            ISO Date With Time
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">"2026-09-10T10:30:00Z"</span>
+  );
+
+console.log(date.toISOString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">2026-09-10T10:30:00.000Z</pre>
+          </div>
+
+        </div>
+
+        <!-- T and Z -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            T Aur Z Ka Meaning
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              <code class="text-blue-400">T</code>
+              date aur time ko separate karta hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">Z</code>
+              UTC timezone ko represent karta hai.
+            </p>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="font-mono text-emerald-400">2026-09-10T10:30:00Z</pre>
+          </div>
+
+        </div>
+
+        <!-- Date only -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Date Only Format
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">"2026-09-10"</span>
+  );
+
+console.log(date.toDateString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Example Output:</p>
+
+<pre class="text-emerald-400 font-mono">Thu Sep 10 2026</pre>
+          </div>
+
+        </div>
+
+        <!-- Readable -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Readable Date String
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">"September 10, 2026"</span>
+  );
+
+console.log(date.toDateString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Example Output:</p>
+
+<pre class="text-emerald-400 font-mono">Thu Sep 10 2026</pre>
+          </div>
+
+        </div>
+
+        <!-- Numeric Constructor -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Numeric Date Format
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Date ko numbers ke through bhi create kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+console.log(date.toDateString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Thu Sep 10 2026</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Yahan
+            <code class="text-blue-400">8</code>
+            ka matlab September hai, kyunki numeric constructor me month
+            zero-based hota hai.
+          </p>
+
+        </div>
+
+        <!-- toString -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toString()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">toString()</code>
+            Date object ko readable date-time String me convert karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+console.log(date.toString());</code></pre>
+          </div>
+
+        </div>
+
+        <!-- toDateString -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toDateString()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sirf readable date portion return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+console.log(date.toDateString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Thu Sep 10 2026</pre>
+          </div>
+
+        </div>
+
+        <!-- toTimeString -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toTimeString()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Date object ke time portion ko String me return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date();
+
+console.log(date.toTimeString());</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Locale Date -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toLocaleDateString()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Date ko locale-friendly format me display karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+console.log(
+  date.toLocaleDateString(
+    <span class="text-emerald-400">"en-IN"</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">10/9/2026</pre>
+          </div>
+
+        </div>
+
+        <!-- Locale Custom -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Custom Date Format
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">toLocaleDateString()</code>
+            ke options se custom readable format bana sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+<span class="text-blue-400">const</span> options = {
+  day: <span class="text-emerald-400">"numeric"</span>,
+  month: <span class="text-emerald-400">"long"</span>,
+  year: <span class="text-emerald-400">"numeric"</span>
+};
+
+console.log(
+  date.toLocaleDateString(
+    <span class="text-emerald-400">"en-IN"</span>,
+    options
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">10 September 2026</pre>
+          </div>
+
+        </div>
+
+        <!-- Locale time -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toLocaleTimeString()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Time ko locale ke according readable form me show karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date();
+
+console.log(
+  date.toLocaleTimeString(
+    <span class="text-emerald-400">"en-IN"</span>
+  )
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Reference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Date Formatting Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Result</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toString()
+                  </td>
+                  <td class="p-4">
+                    Date + time readable String
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toDateString()
+                  </td>
+                  <td class="p-4">
+                    Date portion
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toTimeString()
+                  </td>
+                  <td class="p-4">
+                    Time portion
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toISOString()
+                  </td>
+                  <td class="p-4">
+                    ISO UTC format
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toLocaleDateString()
+                  </td>
+                  <td class="p-4">
+                    Locale date
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    toLocaleTimeString()
+                  </td>
+                  <td class="p-4">
+                    Locale time
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. ISO format:
+              <code class="text-blue-400">YYYY-MM-DD</code>.
+            </p>
+
+            <p>
+              2. ISO date-time me
+              <code class="text-blue-400">T</code>
+              date aur time ko separate karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">Z</code>
+              UTC ko represent karta hai.
+            </p>
+
+            <p>
+              4. Numeric Date constructor me months
+              <code class="text-blue-400">0 - 11</code>
+              hote hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">toISOString()</code>
+              standard UTC format return karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">toLocaleDateString()</code>
+              user-friendly date formatting ke liye useful hai.
+            </p>
+
+            <p>
+              7. Non-standard date Strings browser ke hisaab se differently
+              parse ho sakti hain, isliye predictable input ke liye ISO format
+              prefer karo.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Dates.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./GetMethods.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(14);
+  </script>
+
+</body>
+</html>

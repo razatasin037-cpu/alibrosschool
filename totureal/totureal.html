@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Learning Platform</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Arial", "Helvetica", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="../js/insert.js"></script>
+  </head>
+  <body
+    class="min-h-screen bg-[#020617] text-white font-sans overflow-x-hidden selection:bg-[#4d6fff]/30"
+  >
+    <nav id="navbar"></nav>
+    <main>
+      <section
+        class="relative min-h-screen mt-20 flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-gradient-to-b from-[#020617] via-[#081225] to-[#020617]"
+      >
+        <div
+          class="absolute top-[-10%] left-[-10%] w-[350px] h-[350px] bg-[#4d6fff]/25 rounded-full filter blur-[120px] pointer-events-none"
+        ></div>
+        <div
+          class="absolute bottom-[-10%] right-[-10%] w-[350px] h-[350px] bg-[#5aaa6f]/15 rounded-full filter blur-[120px] pointer-events-none"
+        ></div>
+
+        <div
+          class="relative z-10 max-w-5xl w-full text-center flex flex-col items-center"
+        >
+          <span
+            class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] text-[#4d6fff] text-sm sm:text-base font-semibold backdrop-blur-md shadow-[0_0_20px_rgba(77,111,255,0.15)] mb-8 transition-transform hover:scale-105 cursor-pointer"
+          >
+            🚀 Learn Modern Development
+          </span>
+
+          <h1
+            class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] mb-6 max-w-4xl"
+          >
+            Explore
+            <span
+              class="text-[#4d6fff] drop-shadow-[0_0_35px_rgba(77,111,255,0.6)]"
+              >1200+ Free</span
+            >
+          
+            <span
+              class="text-[#4d6fff] drop-shadow-[0_0_35px_rgba(77,111,255,0.6)]"
+              >Tutorials</span
+            >
+          </h1>
+
+          <p
+            class="text-gray-400 text-lg sm:text-xl md:text-2xl font-normal leading-relaxed max-w-3xl mb-12"
+          >
+            Learn programming, web development, AI, data science, and modern
+            technologies with beginner to advanced roadmaps.
+          </p>
+
+          <div
+            class="flex flex-wrap justify-center gap-4 sm:gap-6 w-full max-w-4xl mb-16"
+          >
+            <div
+              class="flex items-center gap-4 min-w-[240px] sm:flex-1 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 sm:p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#4d6fff] hover:shadow-[0_0_30px_rgba(77,111,255,0.25)]"
+            >
+              <div
+                class="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-[#4d6fff]/30 to-[#1e61d4] flex items-center justify-center shadow-[0_0_15px_rgba(77,111,255,0.3)]"
+              >
+                <i class="fa-solid fa-book-open text-xl text-white"></i>
+              </div>
+              <div class="text-left">
+                <h3 class="text-2xl sm:text-3xl font-black tracking-tight">
+                  1,200+
+                </h3>
+                <p class="text-gray-400 text-sm sm:text-base">Tutorials</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 min-w-[240px] sm:flex-1 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 sm:p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#4d6fff] hover:shadow-[0_0_30px_rgba(77,111,255,0.25)]"
+            >
+              <div
+                class="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-[#4d6fff]/30 to-[#1e61d4] flex items-center justify-center shadow-[0_0_15px_rgba(77,111,255,0.3)]"
+              >
+                <i class="fa-solid fa-layer-group text-xl text-white"></i>
+              </div>
+              <div class="text-left">
+                <h3 class="text-2xl sm:text-3xl font-black tracking-tight">
+                  28
+                </h3>
+                <p class="text-gray-400 text-sm sm:text-base">Categories</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 min-w-[240px] sm:flex-1 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 sm:p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#4d6fff] hover:shadow-[0_0_30px_rgba(77,111,255,0.25)]"
+            >
+              <div
+                class="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-[#4d6fff]/30 to-[#1e61d4] flex items-center justify-center shadow-[0_0_15px_rgba(77,111,255,0.3)]"
+              >
+                <i class="fa-solid fa-gift text-xl text-white"></i>
+              </div>
+              <div class="text-left">
+                <h3 class="text-2xl sm:text-3xl font-black tracking-tight">
+                  100%
+                </h3>
+                <p class="text-gray-400 text-sm sm:text-base">Free Access</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full max-w-4xl bg-white/[0.04] border border-white/[0.08] rounded-2xl md:rounded-full p-2.5 flex flex-col md:flex-row items-center gap-3 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,0.35)] transition-all duration-300 hover:border-[#4d6fff]/60 hover:shadow-[0_0_35px_rgba(77,111,255,0.2)]"
+          >
+            <div class="flex items-center w-full px-4 gap-3">
+              <i
+                class="fa-solid fa-magnifying-glass text-blue-400 text-lg shrink-0"
+              ></i>
+              <input
+                type="text"
+                placeholder="Search tutorials, e.g. HTML, React, AI, Python, Machine Learning..."
+                class="w-full bg-transparent border-none outline-none text-white placeholder-gray-500 text-base sm:text-lg py-2"
+              />
+            </div>
+            <button
+              class="w-full md:w-auto shrink-0 bg-gradient-to-r from-blue-300 to-[#0a5ae4] hover:from-blue-400 hover:to-blue-600 text-white font-bold px-8 py-3.5 rounded-xl md:rounded-full flex items-center justify-center gap-2 tracking-wide shadow-[0_4px_15px_rgba(10,90,228,0.3)] transition-all duration-300 hover:scale-[1.03]"
+            >
+              Explore <span class="text-xl">→</span>
+            </button>
+          </div>
+
+          <div
+            class="flex flex-wrap items-center justify-center gap-2 mt-6 text-sm sm:text-base text-gray-400"
+          >
+            <span class="mr-2">Popular:</span>
+            <a
+              href="/html/home/Home.html"
+              class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
+              >HTML</a
+            >
+            <a
+              href="/css/home/css-tutorial.html"
+              class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
+              >CSS</a
+            >
+              <a
+              href="/c/home/home.html"
+              class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
+              >C</a
+            >
+              <a
+              href="/C++/home/c++tutoreal.html"
+              class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
+              >C++</a
+            >
+            <a
+              href="/javascript/home/Home.html"
+              class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
+              >JavaScript</a
+            >
+          
+            <a
+              href="/php/home/home.html"
+              class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
+              >PHP</a
+            >
+            <a
+              href="#"
+              class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
+              >Python</a
+            >
+            <a
+              href="#"
+              class="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] hover:bg-[#4d6fff] hover:text-white transition-all duration-200"
+              >AI</a
+            >
+          </div>
+        </div>
+      </section>
+<!-- Trending Tutorials -->
+      <section class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+  <div class="flex items-center gap-4 mb-10">
+    <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
+      Trending Tutorials
+    </h2>
+
+    <span
+      class="px-4 py-1 rounded-full bg-[#0d33cb] text-white text-xs sm:text-sm font-bold tracking-wider uppercase"
+    >
+      Popular
+    </span>
+
+    <div class="h-[1px] bg-white/10 flex-1"></div>
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  >
+
+ <!--HTML-->
+    <a href="/html/home/Home.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#1</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center font-bold text-orange-500 text-lg"
+      >
+        5
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">HTML</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Web Dev</p>
+      </div>
+    </a>
+
+    <!--CSS-->
+    <a href="/css/index.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#2</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-lg"
+      >
+        3
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">CSS</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Web Dev</p>
+      </div>
+    </a>
+
+
+
+    <!--C-->
+    <a href="/c/home/home.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#3</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-sm"
+      >
+        C
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">C</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Programming</p>
+      </div>
+    </a>
+
+    <!--C++-->
+    <a href="/C++/home/c++tutoreal.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#4</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-sm"
+      >
+        C++
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">C++</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Programming</p>
+      </div>
+    </a>
+
+    <!--JavaScript-->
+    <a href="/javascript/home/Home.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#5</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center font-bold text-yellow-500 text-lg"
+      >
+        JS
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">JavaScript</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Programming</p>
+      </div>
+    </a>
+
+    <!--SQL-->
+    <a href="/sql/index.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#6</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center font-bold text-blue-400 text-sm"
+      >
+        SQL
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">SQL</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Databases</p>
+      </div>
+    </a>
+
+   
+    <!--PHP-->
+    <a href="/php/home/home.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#7</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center font-bold text-indigo-400 text-xs"
+      >
+        PHP
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">PHP</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Backend</p>
+      </div>
+    </a>
+
+    <!--MySQL-->
+    <a href="/mysql/index.html"
+      class="relative group bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex items-center gap-4 backdrop-blur-md hover:border-[#4d6fff] hover:shadow-[0_0_20px_rgba(77,111,255,0.2)] transition-all duration-300 hover:-translate-y-1"
+    >
+      <span
+        class="absolute top-2 right-4 text-white/15 font-black text-xl tracking-tighter"
+        >#8</span
+      >
+      <div
+        class="w-12 h-12 shrink-0 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center font-bold text-amber-400 text-xs text-center"
+      >
+        MySQL
+      </div>
+      <div>
+        <h3 class="font-extrabold text-lg text-white">MySQL</h3>
+        <p class="text-gray-400 text-xs sm:text-sm">Databases</p>
+      </div>
+    </a>
+  </div>
+</section>
+<!--Learning Paths-->
+      <section class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-12">
+  <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
+    Learning Paths
+  </h2>
+
+  <span
+    class="w-fit px-4 py-1 rounded-full bg-[#0633e6] text-white text-xs sm:text-sm font-bold tracking-wider uppercase"
+  >
+    Guided
+  </span>
+
+  <div class="hidden sm:block h-[1px] bg-white/10 flex-1"></div>
+</div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="group bg-white/[0.03] border border-white/[0.08] border-l-4 border-l-[#5aaa6f] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(90,170,111,0.1)]"
+          >
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-4">
+                <h3
+                  class="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug"
+                >
+                  Full-Stack Web Developer
+                </h3>
+                <span
+                  class="px-2.5 py-1 text-xs font-bold rounded-full bg-[#5aaa6f]/10 text-[#5aaa6f] whitespace-nowrap"
+                  >Beginner</span
+                >
+              </div>
+              <p
+                class="text-gray-400 text-sm sm:text-base mb-6 leading-relaxed"
+              >
+                Build complete web apps from front-end to back-end.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >1 HTML</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >2 CSS</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >3 JavaScript</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >4 React</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >5 Node.js</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >6 MongoDB</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="group bg-white/[0.03] border border-white/[0.08] border-l-4 border-l-[#ff9f43] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(255,159,67,0.1)]"
+          >
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-4">
+                <h3
+                  class="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug"
+                >
+                  Data Science & ML
+                </h3>
+                <span
+                  class="px-2.5 py-1 text-xs font-bold rounded-full bg-[#ff9f43]/10 text-[#ff9f43] whitespace-nowrap"
+                  >Intermediate</span
+                >
+              </div>
+              <p
+                class="text-gray-400 text-sm sm:text-base mb-6 leading-relaxed"
+              >
+                Master data analysis, visualization and machine learning.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >1 Python</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >2 NumPy</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >3 Pandas</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >4 Matplotlib</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >5 Scikit</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >6 TensorFlow</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="group bg-white/[0.03] border border-white/[0.08] border-l-4 border-l-[#4d6fff] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(77,111,255,0.1)]"
+          >
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-4">
+                <h3
+                  class="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug"
+                >
+                  DevOps Engineer
+                </h3>
+                <span
+                  class="px-2.5 py-1 text-xs font-bold rounded-full bg-[#ff9f43]/10 text-[#ff9f43] whitespace-nowrap"
+                  >Intermediate</span
+                >
+              </div>
+              <p
+                class="text-gray-400 text-sm sm:text-base mb-6 leading-relaxed"
+              >
+                Learn CI/CD, containers, orchestration and cloud platform
+                systems.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >1 Linux</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >2 Git</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >3 Docker</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >4 K8s</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >5 Jenkins</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >6 AWS</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="group bg-white/[0.03] border border-white/[0.08] border-l-4 border-l-[#ff9f43] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(255,159,67,0.1)]"
+          >
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-4">
+                <h3
+                  class="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug"
+                >
+                  Mobile App Developer
+                </h3>
+                <span
+                  class="px-2.5 py-1 text-xs font-bold rounded-full bg-[#5aaa6f]/10 text-[#5aaa6f] whitespace-nowrap"
+                  >Beginner</span
+                >
+              </div>
+              <p
+                class="text-gray-400 text-sm sm:text-base mb-6 leading-relaxed"
+              >
+                Build cross-platform modern native mobile apps with Flutter &
+                more.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >1 Dart</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >2 Flutter</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >3 Android</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >4 Kotlin</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center col-span-2 truncate"
+                >5 Firebase</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="group bg-white/[0.03] border border-white/[0.08] border-l-4 border-l-[#e056fd] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(224,86,253,0.1)]"
+          >
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-4">
+                <h3
+                  class="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug"
+                >
+                  AI & Generative AI
+                </h3>
+                <span
+                  class="px-2.5 py-1 text-xs font-bold rounded-full bg-[#e056fd]/10 text-[#e056fd] whitespace-nowrap"
+                  >Advanced</span
+                >
+              </div>
+              <p
+                class="text-gray-400 text-sm sm:text-base mb-6 leading-relaxed"
+              >
+                Explore deep learning, architectures, LLMs and generative tools.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >1 Python</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >2 ML</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >3 PyTorch</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >4 Gen AI</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center col-span-2 truncate"
+                >5 Prompts</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="group bg-white/[0.03] border border-white/[0.08] border-l-4 border-l-[#ff6b6b] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(255,107,107,0.1)]"
+          >
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-4">
+                <h3
+                  class="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug"
+                >
+                  Cybersecurity Analyst
+                </h3>
+                <span
+                  class="px-2.5 py-1 text-xs font-bold rounded-full bg-[#ff9f43]/10 text-[#ff9f43] whitespace-nowrap"
+                  >Intermediate</span
+                >
+              </div>
+              <p
+                class="text-gray-400 text-sm sm:text-base mb-6 leading-relaxed"
+              >
+                Security fundamentals, infrastructure protection, and ethical
+                testing.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >1 Security</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >2 Network</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >3 Hacking</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >4 Kali</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center col-span-2 truncate"
+                >5 Pen Test</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="group bg-white/[0.03] border border-white/[0.08] border-l-4 border-l-[#48dbfb] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(72,219,251,0.1)]"
+          >
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-4">
+                <h3
+                  class="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug"
+                >
+                  Cloud & AWS Engineer
+                </h3>
+                <span
+                  class="px-2.5 py-1 text-xs font-bold rounded-full bg-[#ff9f43]/10 text-[#ff9f43] whitespace-nowrap"
+                  >Intermediate</span
+                >
+              </div>
+              <p
+                class="text-gray-400 text-sm sm:text-base mb-6 leading-relaxed"
+              >
+                Cloud architecture, structural systems, serverless execution &
+                micro-deployments.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >1 Cloud</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >2 AWS</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >3 Lambda</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >4 Docker</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center col-span-2 truncate"
+                >5 Azure</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="group bg-white/[0.03] border border-white/[0.08] border-l-4 border-l-[#8e5c42] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(142,92,66,0.1)]"
+          >
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-4">
+                <h3
+                  class="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug"
+                >
+                  Java Backend Developer
+                </h3>
+                <span
+                  class="px-2.5 py-1 text-xs font-bold rounded-full bg-[#5aaa6f]/10 text-[#5aaa6f] whitespace-nowrap"
+                  >Beginner</span
+                >
+              </div>
+              <p
+                class="text-gray-400 text-sm sm:text-base mb-6 leading-relaxed"
+              >
+                Enterprise application design architecture with Spring,
+                Hibernate, and data engines.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >1 Java</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >2 JDBC</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >3 Hibernate</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >4 Spring</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >5 Boot</span
+              >
+              <span
+                class="px-2 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center truncate"
+                >6 Maven</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+
+    
+  </body>
+</html>

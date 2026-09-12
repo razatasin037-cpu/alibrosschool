@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Images - Complete Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <!-- Page Main Heading -->
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Images
+        </h1>
+
+        <!-- Top Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../links/Links.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./ImageMap.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Banner / Introductory Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Images Complete Guide
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML me images insert karne ke liye <strong>&lt;img&gt;</strong> tag ka upayog kiya jata hai. Ye ek <strong>self-closing tag</strong> hota hai jisme closing tag nahi hota.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Image display karne ke liye sabse zaroori attributes <code class="text-yellow-400">src</code> (Source path) aur <code class="text-yellow-400">alt</code> (Alternate text) hain.
+          </p>
+        </div>
+
+        <!-- SECTION 1: Basic Image Tag -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            1. Basic Image Tag Syntax
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Basic image tag me <code class="text-yellow-400">src</code> attribute image ka path define karta hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;img <span class="text-yellow-400">src="nature.jpg" alt="Nature View"</span> /&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+              <img 
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop" 
+                alt="Nature View" 
+                class="rounded-lg max-h-40 object-cover shadow"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Alt Attribute (Accessibility & SEO) -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            2. Alt Attribute (Fallback Text)
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Agar image load nahi hoti (slow network ya wrong path), to <code class="text-yellow-400">alt</code> text screen par show hota hai. Ye SEO aur Accessibility ke liye mandatory hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-gray-500">&lt;!-- Broken Image Path Example --&gt;</span>
+&lt;img <span class="text-yellow-400">src="wrong_path.jpg" alt="Sample Profile Picture"</span> /&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center p-4">
+              <img 
+                src="wrong_path.jpg" 
+                alt="Sample Profile Picture" 
+                class="text-red-500 font-semibold text-sm border border-dashed border-red-400 p-3 rounded"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Image Width & Height -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            3. Image Width & Height Attributes
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Image ke size ko control karne ke liye <code class="text-yellow-400">width</code> aur <code class="text-yellow-400">height</code> attributes ka use kiya jata hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;img 
+  <span class="text-yellow-400">src="laptop.jpg"</span> 
+  <span class="text-yellow-400">alt="Laptop"</span> 
+  <span class="text-yellow-400">width="150"</span> 
+  <span class="text-yellow-400">height="100"</span> 
+/&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+              <img 
+                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&auto=format&fit=crop" 
+                alt="Laptop" 
+                width="150"
+                height="100"
+                class="rounded shadow object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: Image as a Link -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            4. Image as a Clickable Link
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Image ko clickable banane ke liye use <code class="text-yellow-400">&lt;a&gt;</code> tag ke andar wrap karein.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;a <span class="text-yellow-400">href="https://wikimedia.org" target="_blank"</span>&gt;
+  &lt;img <span class="text-yellow-400">src="logo.png" alt="Wikimedia Logo"</span> /&gt;
+&lt;/a&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+              <a href="https://commons.wikimedia.org" target="_blank" class="hover:opacity-75 transition">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
+                  alt="Google Logo" 
+                  class="h-10 w-auto object-contain" 
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 5: Responsive Images with CSS -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            5. Responsive Image (CSS Styling)
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            <code class="text-yellow-400">max-width: 100%</code> aur <code class="text-yellow-400">height: auto</code> ka use karke image ko sabhi screen sizes par responsive banaya jata hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;img 
+  <span class="text-yellow-400">src="city.jpg"</span> 
+  <span class="text-yellow-400">alt="City Skyline"</span> 
+  <span class="text-yellow-400">style="max-width:100%; height:auto;"</span> 
+/&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+              <img 
+                src="https://images.unsplash.com/photo-1477959858617-67f30ac4ce71?w=500&auto=format&fit=crop" 
+                alt="City Skyline" 
+                class="max-w-full h-auto max-h-48 rounded shadow object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: Figure and Figcaption -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            6. Figure & Figcaption Tag
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Image ke sath caption (description) dikhane ke liye Semantic HTML <code class="text-yellow-400">&lt;figure&gt;</code> aur <code class="text-yellow-400">&lt;figcaption&gt;</code> tags ka upayog hota hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;figure&gt;
+  &lt;img <span class="text-yellow-400">src="mountains.jpg" alt="Mountains"</span> /&gt;
+  &lt;figcaption&gt;<span class="text-yellow-400">Fig.1 - Beautiful Mountain View.</span>&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+              <figure class="text-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&auto=format&fit=crop" 
+                  alt="Mountains" 
+                  class="rounded max-h-36 object-cover shadow mx-auto"
+                />
+                <figcaption class="text-xs text-gray-600 mt-2 italic font-semibold">
+                  Fig.1 - Beautiful Mountain View.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 7: Image Formats Reference Table -->
+        <div id="table-section" class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            7. Common HTML Image Formats
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#334155] text-gray-400 text-sm">
+                <th class="py-3 px-4">Format</th>
+                <th class="py-3 px-4">Extension</th>
+                <th class="py-3 px-4">Best Use Case</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-200 divide-y divide-[#334155]/50">
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">JPEG / JPG</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">.jpg / .jpeg</td>
+                <td class="py-3 px-4">High-quality photographs and complex scenes.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">PNG</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">.png</td>
+                <td class="py-3 px-4">Images with transparent background and sharp edges.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">SVG</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">.svg</td>
+                <td class="py-3 px-4">Vector graphics, icons, and scalable logos.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">WebP</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">.webp</td>
+                <td class="py-3 px-4">Modern web format with high compression and fast load speed.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">GIF</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">.gif</td>
+                <td class="py-3 px-4">Simple animated graphics.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Bottom Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../links/Links.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./ImageMap.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(14);
+    </script>
+  </body>
+</html>

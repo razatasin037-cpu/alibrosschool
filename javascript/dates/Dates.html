@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Dates - Tutorial</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Dates
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/scope/GlobalScope.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Formats.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          JavaScript Date Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">Date</code>
+          object ka use date aur time ke saath kaam karne ke liye kiya jata hai.
+          <br><br>
+          Iski help se hum current date, current time, year, month, day,
+          hours, minutes aur seconds ko get ya change kar sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Date Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date = <span class="text-blue-400">new</span> Date();</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg leading-relaxed mt-5">
+            <code class="text-blue-400">new Date()</code>
+            ek naya JavaScript Date object create karta hai.
+          </p>
+
+        </div>
+
+        <!-- Current Date -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Current Date and Time
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Bina argument ke
+            <code class="text-blue-400">new Date()</code>
+            current date aur time ka Date object banata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date = <span class="text-blue-400">new</span> Date();
+
+console.log(date);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Example Output:</p>
+
+<pre class="text-emerald-400 font-mono">Thu Sep 10 2026 13:18:00 GMT+0530</pre>
+          </div>
+
+          <p class="text-gray-400 mt-4">
+            Note: Exact output device ke current date, time aur timezone par
+            depend karega.
+          </p>
+
+        </div>
+
+        <!-- Specific Date -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Specific Date Create Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Hum year, month aur day dekar specific Date object create kar sakte
+            hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>
+  );
+
+console.log(date);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Date:</p>
+
+<pre class="text-emerald-400 font-mono">September 10, 2026</pre>
+          </div>
+
+        </div>
+
+        <!-- Important Month -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Important: JavaScript Months
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Numeric Date constructor me JavaScript months
+            <code class="text-blue-400">0</code>
+            se start hote hain.
+          </p>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Month</th>
+                  <th class="p-4">Number</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">January</td>
+                  <td class="p-4 font-mono text-emerald-400">0</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">February</td>
+                  <td class="p-4 font-mono text-emerald-400">1</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">March</td>
+                  <td class="p-4 font-mono text-emerald-400">2</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">...</td>
+                  <td class="p-4">...</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">September</td>
+                  <td class="p-4 font-mono text-emerald-400">8</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">December</td>
+                  <td class="p-4 font-mono text-emerald-400">11</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Full Date -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Date With Time
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Date constructor me year, month, day ke saath hours, minutes,
+            seconds aur milliseconds bhi diye ja sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">2026</span>,
+    <span class="text-emerald-400">8</span>,
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">30</span>,
+    <span class="text-emerald-400">0</span>
+  );
+
+console.log(date);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Meaning:</p>
+
+<pre class="text-emerald-400 font-mono">10 September 2026, 10:30:00</pre>
+          </div>
+
+        </div>
+
+        <!-- Constructor Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Date Constructor Parameters
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">new</span> Date(
+  year,
+  month,
+  day,
+  hours,
+  minutes,
+  seconds,
+  milliseconds
+);</code></pre>
+          </div>
+
+          <div class="overflow-x-auto mt-6">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Parameter</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">year</td>
+                  <td class="p-4">Year</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">month</td>
+                  <td class="p-4">Month (0 - 11)</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">day</td>
+                  <td class="p-4">Day of month</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">hours</td>
+                  <td class="p-4">Hours</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">minutes</td>
+                  <td class="p-4">Minutes</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">seconds</td>
+                  <td class="p-4">Seconds</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">milliseconds</td>
+                  <td class="p-4">Milliseconds</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Date String -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Create Date From String
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Date String se bhi Date object create kiya ja sakta hai. Standard
+            ISO-style format use karna better hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">"2026-09-10"</span>
+  );
+
+console.log(date);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Milliseconds -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Date From Milliseconds
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            JavaScript Date ko milliseconds value se bhi create kiya ja sakta
+            hai. Ye milliseconds
+            <strong class="text-white">1 January 1970, 00:00:00 UTC</strong>
+            se count kiye jate hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">0</span>
+  );
+
+console.log(date);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg leading-relaxed mt-5">
+            <code class="text-blue-400">0</code>
+            Unix epoch ko represent karta hai. Console ka displayed time
+            timezone ke according differ kar sakta hai.
+          </p>
+
+        </div>
+
+        <!-- Date.now -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Date.now()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Date.now()</code>
+            current time ko Unix epoch se milliseconds ke form me return karta
+            hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> time = Date.now();
+
+console.log(time);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Example Output:</p>
+
+<pre class="text-emerald-400 font-mono">1789026480000</pre>
+          </div>
+
+          <p class="text-gray-400 mt-4">
+            Number har time change hota rahega.
+          </p>
+
+        </div>
+
+        <!-- getTime -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            getTime()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">getTime()</code>
+            Date object ka timestamp milliseconds me return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date = <span class="text-blue-400">new</span> Date();
+
+console.log(date.getTime());</code></pre>
+          </div>
+
+        </div>
+
+        <!-- toDateString -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toDateString()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">toDateString()</code>
+            Date object ke date portion ko readable string me convert karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">"2026-09-10"</span>
+  );
+
+console.log(date.toDateString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Example Output:</p>
+
+<pre class="text-emerald-400 font-mono">Thu Sep 10 2026</pre>
+          </div>
+
+        </div>
+
+        <!-- toISOString -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toISOString()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">toISOString()</code>
+            date ko standard ISO format me UTC time ke saath return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date =
+  <span class="text-blue-400">new</span> Date(
+    <span class="text-emerald-400">"2026-09-10"</span>
+  );
+
+console.log(date.toISOString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">2026-09-10T00:00:00.000Z</pre>
+          </div>
+
+        </div>
+
+        <!-- Date is Object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Date Is An Object
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> date = <span class="text-blue-400">new</span> Date();
+
+console.log(<span class="text-blue-400">typeof</span> date);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">object</pre>
+          </div>
+
+        </div>
+
+        <!-- Ways -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Common Ways To Create Dates
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Code</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    new Date()
+                  </td>
+                  <td class="p-4">
+                    Current date and time
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    new Date("2026-09-10")
+                  </td>
+                  <td class="p-4">
+                    Date string se Date object
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    new Date(2026, 8, 10)
+                  </td>
+                  <td class="p-4">
+                    Year, month aur day se date
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    new Date(0)
+                  </td>
+                  <td class="p-4">
+                    Milliseconds from Unix epoch
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">new Date()</code>
+              Date object create karta hai.
+            </p>
+
+            <p>
+              2. Bina arguments ke
+              <code class="text-blue-400">new Date()</code>
+              current date aur time leta hai.
+            </p>
+
+            <p>
+              3. Numeric constructor me January
+              <code class="text-blue-400">0</code>
+              aur December
+              <code class="text-blue-400">11</code>
+              hota hai.
+            </p>
+
+            <p>
+              4. Date object me date ke saath time bhi store hota hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">Date.now()</code>
+              current timestamp milliseconds me deta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">getTime()</code>
+              Date object ka timestamp return karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">toISOString()</code>
+              standard UTC ISO date-time string deta hai.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">typeof new Date()</code>
+              ka result
+              <code class="text-emerald-400">"object"</code>
+              hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/scope/GlobalScope.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Formats.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(14);
+  </script>
+
+</body>
+</html>

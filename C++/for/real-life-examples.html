@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ For Loop Real-Life Examples - Ali Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ For Loop Real-Life Examples
+        </h1>
+        <div class="flex justify-between items-center">
+          <a href="foreach-loop.html"
+            ><button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+            </button></a
+          >
+          <a href="/C++/break/break-continue.html"
+            ><button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+          ></a>
+        </div>
+        <hr class="mt-12 border-white/10" />
+        <section class="max-w-6xl mx-auto py-10">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Real Life Examples
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            For loop ka practical use counting, filtering values, repeated
+            calculations aur multiplication tables jaise real programs mein hota
+            hai.
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-6">
+            Count by Tens
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is example mein 0 se 100 tak numbers 10 ke gap mein print kiye ja
+            rahe hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Count by Tens</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">for (int i = 0; i <= 100; i += 10) {
+    cout << i << "\n";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-6">
+            Even Numbers
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is example mein 0 se 10 ke beech sirf even values print hoti hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Even Numbers</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">for (int i = 0; i <= 10; i = i + 2) {
+    cout << i << "\n";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-6">Odd Numbers</h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is example mein odd numbers print kiye ja rahe hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Odd Numbers</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">for (int i = 1; i <= 10; i = i + 2) {
+    cout << i << "\n";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-6">Powers of 2</h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Har iteration mein value double hoti hai, isliye 2 ki powers 512 tak
+            print hoti hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Powers of 2</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">for (int i = 2; i <= 512; i *= 2) {
+    cout << i << "\n";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-6">
+            Multiplication Table
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Specified number 2 ka multiplication table 1 se 10 tak print hota
+            hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Multiplication Table</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">int number = 2;
+
+for (int i = 1; i <= 10; i++) {
+    cout << number << " x " << i
+         << " = " << number * i << "\n";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mt-12"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Summary</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>For loop known number of repetitions ke liye useful hai.</li>
+              <li>Nested loops loop ke andar loop allow karte hain.</li>
+              <li>
+                Foreach loop arrays ke elements ko easily traverse karta hai.
+              </li>
+              <li>
+                Real-life programs mein for loops counting aur repeated
+                calculations ke liye commonly use hote hain.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="foreach-loop.html"
+              ><button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button></a
+            >
+            <a href="/C++/break/break-continue.html"
+              ><button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+            ></a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(8);
+        }
+      });
+    </script>
+  </body>
+</html>

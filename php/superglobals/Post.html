@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP $_POST Superglobal - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP $_POST
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Request.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Get.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            $_POST Superglobal Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            <strong class="text-white">$_POST</strong> ek PHP superglobal associative array variable hai jiska use HTTP POST method se bheje gaye HTML Form data ko receive karne ke liye kiya jata hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            POST method data ko URL ke andar show nahi karta (wo HTTP request body ke andar hidden bheja jata hai), isiliye sensitive data jaise <strong class="text-white">Passwords, Passcodes, aur Credit Card details</strong> bhejne ke liye ye sabse secure tareeqa hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Key Features Table -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Key Features &amp; Advantages
+            </h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
+              <li><strong>Secure Transfer:</strong> Data URL query string me visible nahi hota (browser history me save nahi hota).</li>
+              <li><strong>No Size Limits:</strong> GET method ki tarah URL length limit (2000 chars) nahi hoti, aap large files aur large texts bhi bhej sakte hain.</li>
+              <li><strong>File Upload Support:</strong> Multipart data (images, PDFs) upload karne ke liye mandatory method hai.</li>
+            </ul>
+          </div>
+
+          <!-- 1. HTML Form + PHP Processing -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. HTML Form Handling with $_POST
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Niche dekhiye kaise HTML form `method="POST"` ka use karke sensitive credentials PHP backend par bhejta hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;!-- Login Form Example --&gt;</span>
+<span class="text-green-400">&lt;form</span> <span class="text-white">method</span>=<span class="text-yellow-300">"POST"</span> <span class="text-white">action</span>=<span class="text-yellow-300">"&lt;?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?&gt;"</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;label&gt;</span>Email:<span class="text-green-400">&lt;/label&gt;</span>
+  <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"email"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"user_email"</span> <span class="text-white">required</span><span class="text-green-400">&gt;</span>
+  
+  <span class="text-green-400">&lt;label&gt;</span>Password:<span class="text-green-400">&lt;/label&gt;</span>
+  <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"password"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"user_pass"</span> <span class="text-white">required</span><span class="text-green-400">&gt;</span>
+
+  <span class="text-green-400">&lt;button</span> <span class="text-white">type</span>=<span class="text-yellow-300">"submit"</span><span class="text-green-400">&gt;</span>Login<span class="text-green-400">&lt;/button&gt;</span>
+<span class="text-green-400">&lt;/form&gt;</span>
+
+<span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// PHP Script to Process $_POST Data</span>
+  <span class="text-green-400">if</span> (<span class="text-green-400">$_SERVER</span>[<span class="text-white">"REQUEST_METHOD"</span>] === <span class="text-white">"POST"</span>) {
+      
+      <span class="text-[#94a3b8]">// Safely receive values using input name attributes as key</span>
+      <span class="text-green-400">$email</span> = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">'user_email'</span>] ?? <span class="text-white">''</span>);
+      <span class="text-green-400">$password</span> = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">'user_pass'</span>] ?? <span class="text-white">''</span>);
+
+      <span class="text-green-400">echo</span> <span class="text-white">"Logged in as: "</span> . <span class="text-green-400">$email</span>;
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Checking Existance & Validation -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Checking Fields with <code class="text-green-400">isset()</code> &amp; <code class="text-green-400">empty()</code>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Undefined Array Key warnings se bachne ke liye data access karne se pehle checking zaroori hoti hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">if</span> (<span class="text-green-400">isset</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">'username'</span>]) &amp;&amp; !<span class="text-green-400">empty</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">'username'</span>])) {
+      <span class="text-green-400">$username</span> = <span class="text-green-400">$_POST</span>[<span class="text-white">'username'</span>];
+      <span class="text-green-400">echo</span> <span class="text-white">"Hello, "</span> . <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$username</span>);
+  } <span class="text-green-400">else</span> {
+      <span class="text-green-400">echo</span> <span class="text-white">"Please provide a valid username."</span>;
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Pro Tip / Security Warning Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-green-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-green-400">
+              <span>💡</span> Best Practice: Sanitation &amp; Security
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Chahe data HTTP Body (POST) me hi kyu na aa raha ho, direct client inputs par blind trust mat karein!
+            </p>
+            <p class="text-lg leading-relaxed text-gray-300">
+              1. Output screen par print karte waqt hamesha <code class="text-green-400">htmlspecialchars()</code> ka use karein (XSS Protection).<br>
+              2. Database queries me $POST variables directly inject karne ki jagah hamesha <strong>PDO / Prepared Statements</strong> ka hi use karein (SQL Injection Protection).
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Request.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Get.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(19);
+    </script>
+  </body>
+</html>

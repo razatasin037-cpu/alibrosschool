@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript forEach - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript forEach()
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Iterations.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Map.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Intro -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          forEach() Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">forEach()</code>
+          Array ke har element par ek callback function execute karta hai.
+          <br><br>
+          Iska use tab hota hai jab hume Array ke har item par koi action
+          perform karna ho, jaise console me print karna ya DOM me data show
+          karna.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            forEach() Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>array.forEach((value, index, array) =&gt; {
+  // code
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Simple Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple forEach() Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+fruits.forEach((fruit) =&gt; {
+  console.log(fruit);
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Apple
+Mango
+Banana</pre>
+          </div>
+
+        </div>
+
+        <!-- Value -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Current Value
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Callback ka first parameter current Array element hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+];
+
+numbers.forEach((number) =&gt; {
+  console.log(number);
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">10
+20
+30</pre>
+          </div>
+
+        </div>
+
+        <!-- Index -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Value Aur Index
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Callback ka second parameter current element ka index hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+fruits.forEach((fruit, index) =&gt; {
+  console.log(index, fruit);
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">0 Apple
+1 Mango
+2 Banana</pre>
+          </div>
+
+        </div>
+
+        <!-- Third Parameter -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Third Parameter: Array
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Callback ka third parameter original Array ko represent karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>
+];
+
+numbers.forEach(
+  (value, index, array) =&gt; {
+
+    console.log(value);
+    console.log(index);
+    console.log(array);
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Normal Function -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            forEach() With Normal Function
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">2</span>,
+  <span class="text-emerald-400">3</span>
+];
+
+numbers.forEach(
+  <span class="text-blue-400">function</span>(number) {
+    console.log(number);
+  }
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">1
+2
+3</pre>
+          </div>
+
+        </div>
+
+        <!-- Named Function -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            forEach() With Named Function
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+];
+
+<span class="text-blue-400">function</span> showNumber(number) {
+  console.log(number);
+}
+
+numbers.forEach(showNumber);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">10
+20
+30</pre>
+          </div>
+
+        </div>
+
+        <!-- Calculation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Calculation With forEach()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+];
+
+<span class="text-blue-400">let</span> total = <span class="text-emerald-400">0</span>;
+
+numbers.forEach((number) =&gt; {
+  total = total + number;
+});
+
+console.log(total);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">60</pre>
+          </div>
+
+        </div>
+
+        <!-- Object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            forEach() With Array of Objects
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> students = [
+  {
+    id: <span class="text-emerald-400">1</span>,
+    name: <span class="text-emerald-400">"Ali"</span>
+  },
+  {
+    id: <span class="text-emerald-400">2</span>,
+    name: <span class="text-emerald-400">"Rahul"</span>
+  }
+];
+
+students.forEach((student) =&gt; {
+  console.log(student.name);
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Ali
+Rahul</pre>
+          </div>
+
+        </div>
+
+        <!-- HTML -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            forEach() Se HTML Display
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;ul id=<span class="text-emerald-400">"list"</span>&gt;&lt;/ul&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+<span class="text-blue-400">let</span> html = <span class="text-emerald-400">""</span>;
+
+fruits.forEach((fruit) =&gt; {
+  html += <span class="text-emerald-400">`&lt;li&gt;${fruit}&lt;/li&gt;`</span>;
+});
+
+document.getElementById(
+  <span class="text-emerald-400">"list"</span>
+).innerHTML = html;
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Return -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            forEach() Kya Return Karta Hai?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">forEach()</code>
+            ka return value
+            <code class="text-emerald-400">undefined</code>
+            hota hai. Ye new Array create nahi karta.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">2</span>,
+  <span class="text-emerald-400">3</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.forEach((number) =&gt; {
+    <span class="text-blue-400">return</span> number * <span class="text-emerald-400">2</span>;
+  });
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">undefined</pre>
+          </div>
+
+        </div>
+
+        <!-- forEach vs map -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            forEach() vs map()
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">forEach()</th>
+                  <th class="p-4">map()</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Har item par action perform karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Har item ko transform karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    New Array return nahi karta.
+                  </td>
+
+                  <td class="p-4">
+                    New Array return karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    undefined
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    [...]
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">forEach()</code>
+              Array ke har element par callback run karta hai.
+            </p>
+
+            <p>
+              2. Callback ka first parameter current
+              <code class="text-blue-400">value</code>
+              hota hai.
+            </p>
+
+            <p>
+              3. Second parameter current
+              <code class="text-blue-400">index</code>
+              hota hai.
+            </p>
+
+            <p>
+              4. Third parameter original
+              <code class="text-blue-400">array</code>
+              hota hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">forEach()</code>
+              new Array return nahi karta.
+            </p>
+
+            <p>
+              6. Iska return value
+              <code class="text-blue-400">undefined</code>
+              hota hai.
+            </p>
+
+            <p>
+              7. Data ko transform karke new Array chahiye to
+              <code class="text-blue-400">map()</code>
+              better hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Iterations.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Map.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(18);
+  </script>
+
+</body>
+</html>

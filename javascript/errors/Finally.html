@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Finally - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Finally
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Throw.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../debugging/Debugging.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Finally Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">finally</code>
+          block ka use aisa code run karne ke liye hota hai jo error aaye ya na
+          aaye, dono condition me execute hona chahiye.
+          <br><br>
+          Ye usually
+          <code class="text-blue-400">try...catch</code>
+          ke saath use hota hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Finally Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  <span class="text-gray-400">// Code</span>
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  <span class="text-gray-400">// Error handle</span>
+
+} <span class="text-blue-400">finally</span> {
+
+  <span class="text-gray-400">// Always execute</span>
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Basic Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Finally Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Try block"</span>
+  );
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    <span class="text-emerald-400">"Catch block"</span>
+  );
+
+} <span class="text-blue-400">finally</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Finally block"</span>
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+            <p class="font-bold mb-2">
+              Output:
+            </p>
+
+<pre class="text-emerald-400 font-mono">Try block
+Finally block</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Error Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Error Ke Saath Finally
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(user);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    <span class="text-emerald-400">"Error handled"</span>
+  );
+
+} <span class="text-blue-400">finally</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Finally executed"</span>
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Error handled
+Finally executed</pre>
+
+          </div>
+
+        </div>
+
+        <!-- No Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Error Na Ho Tab Bhi Finally
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">const</span> name =
+    <span class="text-emerald-400">"Ali"</span>;
+
+  console.log(name);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.message
+  );
+
+} <span class="text-blue-400">finally</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Done"</span>
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali
+Done</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Try Catch Finally Ka Flow
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Sabse pehle
+              <code class="text-blue-400">try</code>
+              block execute hota hai.
+            </p>
+
+            <p>
+              2. Error nahi aaya to
+              <code class="text-blue-400">catch</code>
+              skip ho jata hai.
+            </p>
+
+            <p>
+              3. Error aaya to
+              <code class="text-blue-400">catch</code>
+              execute hota hai.
+            </p>
+
+            <p>
+              4. Dono cases ke baad
+              <code class="text-blue-400">finally</code>
+              execute hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Simple Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base text-gray-300">try
+ ↓
+Error?
+
+No  ──────────────┐
+                  ↓
+Yes → catch → finally
+                  ↑
+No Error ─────────┘</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Try Finally -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Try With Finally
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            <code class="text-blue-400">finally</code>
+            ko catch ke bina bhi use kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Working..."</span>
+  );
+
+} <span class="text-blue-400">finally</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Finished"</span>
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Working...
+Finished</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Function -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Finally Inside Function
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> getUser() {
+
+  <span class="text-blue-400">try</span> {
+
+    console.log(
+      <span class="text-emerald-400">"Getting user..."</span>
+    );
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  } <span class="text-blue-400">finally</span> {
+
+    console.log(
+      <span class="text-emerald-400">"Request completed"</span>
+    );
+
+  }
+
+}
+
+getUser();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Getting user...
+Request completed</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Return Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Finally With Return
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function ke
+            <code class="text-blue-400">try</code>
+            block me return hone par bhi finally pehle execute hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> test() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">"Hello"</span>;
+
+  } <span class="text-blue-400">finally</span> {
+
+    console.log(
+      <span class="text-emerald-400">"Finally executed"</span>
+    );
+
+  }
+
+}
+
+console.log(
+  test()
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Finally executed
+Hello</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Warning return -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Finally Me Return Se Bachna Chahiye
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar finally ke andar bhi
+            <code class="text-blue-400">return</code>
+            likh diya jaye, to wo try ya catch ke return ko override kar sakta
+            hai. Isliye generally finally me return avoid karna better hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> test() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">"Try"</span>;
+
+  } <span class="text-blue-400">finally</span> {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">"Finally"</span>;
+
+  }
+
+}
+
+console.log(
+  test()
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Finally</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Loading -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Loading State Example
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Real projects me finally ka common use loading ko
+            <code class="text-blue-400">false</code>
+            karne ke liye hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> loading =
+  <span class="text-blue-400">true</span>;
+
+<span class="text-blue-400">try</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Fetching data..."</span>
+  );
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.message
+  );
+
+} <span class="text-blue-400">finally</span> {
+
+  loading =
+    <span class="text-blue-400">false</span>;
+
+}
+
+console.log(loading);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Fetching data...
+false</pre>
+
+          </div>
+
+        </div>
+
+        <!-- API Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            API Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getProducts() {
+
+  <span class="text-blue-400">try</span> {
+
+    console.log(
+      <span class="text-emerald-400">"Loading started"</span>
+    );
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> fetch(
+        <span class="text-emerald-400">
+          "https://example.com/products"
+        </span>
+      );
+
+    <span class="text-blue-400">if</span> (!response.ok) {
+
+      <span class="text-blue-400">throw new</span> Error(
+        <span class="text-emerald-400">
+          "Failed to fetch products"
+        </span>
+      );
+
+    }
+
+    <span class="text-blue-400">const</span> data =
+      <span class="text-blue-400">await</span> response.json();
+
+    console.log(data);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  } <span class="text-blue-400">finally</span> {
+
+    console.log(
+      <span class="text-emerald-400">"Loading stopped"</span>
+    );
+
+  }
+
+}
+
+getProducts();</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- React -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            React Me Finally
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            React me API call ke baad loading state reset karne ke liye
+            finally useful hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> getProducts =
+  <span class="text-blue-400">async</span> () =&gt; {
+
+  setLoading(
+    <span class="text-blue-400">true</span>
+  );
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> axios.get(
+        <span class="text-emerald-400">
+          "/api/products"
+        </span>
+      );
+
+    setProducts(
+      response.data
+    );
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  } <span class="text-blue-400">finally</span> {
+
+    setLoading(
+      <span class="text-blue-400">false</span>
+    );
+
+  }
+
+};</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Why useful -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Finally Kab Use Karein?
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Loading state reset karne ke liye.
+            </p>
+
+            <p>
+              2. API request complete hone ke baad cleanup karne ke liye.
+            </p>
+
+            <p>
+              3. File ya connection close karne jaise cleanup work ke liye.
+            </p>
+
+            <p>
+              4. Temporary state ko reset karne ke liye.
+            </p>
+
+            <p>
+              5. Aisa code chalane ke liye jo success aur error dono me run
+              hona chahiye.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Comparison -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Try vs Catch vs Finally
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Block
+                  </th>
+
+                  <th class="p-4">
+                    Work
+                  </th>
+
+                  <th class="p-4">
+                    Kab Run Hota Hai?
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+
+                  <td class="p-4 font-mono">
+                    try
+                  </td>
+
+                  <td class="p-4">
+                    Main risky code
+                  </td>
+
+                  <td class="p-4">
+                    Sabse pehle
+                  </td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="p-4 font-mono">
+                    catch
+                  </td>
+
+                  <td class="p-4">
+                    Error handle karta hai
+                  </td>
+
+                  <td class="p-4">
+                    Jab error aaye
+                  </td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="p-4 font-mono">
+                    finally
+                  </td>
+
+                  <td class="p-4">
+                    Cleanup/final work
+                  </td>
+
+                  <td class="p-4">
+                    Error aaye ya na aaye
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Complete Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Complete Try Catch Finally Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> divide(
+  a,
+  b
+) {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">if</span> (b === 0) {
+
+      <span class="text-blue-400">throw new</span> Error(
+        <span class="text-emerald-400">
+          "Cannot divide by zero"
+        </span>
+      );
+
+    }
+
+    console.log(
+      a / b
+    );
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  } <span class="text-blue-400">finally</span> {
+
+    console.log(
+      <span class="text-emerald-400">
+        "Calculation completed"
+      </span>
+    );
+
+  }
+
+}
+
+divide(
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">0</span>
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Cannot divide by zero
+Calculation completed</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">finally</code>
+              success aur error dono cases me execute hota hai.
+            </p>
+
+            <p>
+              2. Finally ko commonly
+              <code class="text-blue-400">try...catch</code>
+              ke saath use kiya jata hai.
+            </p>
+
+            <p>
+              3. Error nahi aaye tab bhi finally execute hota hai.
+            </p>
+
+            <p>
+              4. Error aaye aur catch execute ho tab bhi finally execute hota hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">try...finally</code>
+              catch ke bina bhi valid hai.
+            </p>
+
+            <p>
+              6. Finally loading state reset karne me bahut useful hai.
+            </p>
+
+            <p>
+              7. Cleanup code ke liye finally ek common choice hai.
+            </p>
+
+            <p>
+              8. Finally ke andar unnecessary
+              <code class="text-blue-400">return</code>
+              avoid karna chahiye.
+            </p>
+
+            <p>
+              9. API aur React projects me loading ko false karne ke liye
+              finally commonly use hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Throw.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../debugging/Debugging.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(21);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Styles - Detailed Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Styles
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../paragraphs/Paragraphs.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../formatting/formatting.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Style Attribute Kya Hota Hai?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML elements ka look (Color, Size, Font, Alignment) change karne ke liye <strong>style</strong> attribute ka use kiya jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Isse hum <strong>Inline CSS</strong> kehte hain. Iska basic syntax hota hai:
+            <code class="bg-[#020617] px-3 py-1 rounded text-yellow-400 font-mono text-sm inline-block mt-2">
+              &lt;tagname style="property: value;"&gt;
+            </code>
+          </p>
+        </div>
+
+        <!-- Syntax Breakdown Card -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <i class="fa-solid fa-code text-yellow-400 mr-2"></i> Style Attribute Syntax Breakdown
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+              <h4 class="text-lg font-bold text-blue-400 mb-2">Property (Gundharm)</h4>
+              <p class="text-gray-300 text-sm">
+                Ye CSS ki specific property hoti hai jise aap change karna chahte hain, jaise <code>color</code>, <code>font-size</code>, ya <code>background-color</code>.
+              </p>
+            </div>
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+              <h4 class="text-lg font-bold text-emerald-400 mb-2">Value (Maan)</h4>
+              <p class="text-gray-300 text-sm">
+                Ye us property ki value hoti hai jo aap apply karte hain, jaise <code>red</code>, <code>20px</code>, ya <code>center</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Examples Section -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <i class="fa-solid fa-paint-roller text-purple-400 mr-2"></i> Practical Style Examples
+          </h3>
+          <p class="text-gray-300 text-base mb-6">
+            Niche alag-alag CSS properties ke saath HTML style attribute ka use dekhein:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code Block -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <div class="flex justify-between items-center pb-3 mb-3 border-b border-[#334155] text-xs text-gray-400">
+                <span>index.html</span>
+                <span class="text-yellow-400"><i class="fa-regular fa-copy mr-1"></i> HTML</span>
+              </div>
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-gray-500">&lt;!-- Text Color --&gt;</span>
+&lt;p <span class="text-yellow-400">style="color: red;"</span>&gt;Lal text&lt;/p&gt;
+
+<span class="text-gray-500">&lt;!-- Background Color --&gt;</span>
+&lt;p <span class="text-yellow-400">style="background-color: yellow;"</span>&gt;Background Yellow&lt;/p&gt;
+
+<span class="text-gray-500">&lt;!-- Font Size --&gt;</span>
+&lt;p <span class="text-yellow-400">style="font-size: 25px;"</span>&gt;Bada Text&lt;/p&gt;
+
+<span class="text-gray-500">&lt;!-- Text Align --&gt;</span>
+&lt;p <span class="text-yellow-400">style="text-align: center;"</span>&gt;Center Text&lt;/p&gt;</code></pre>
+            </div>
+
+            <!-- Browser Result Window -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 shadow-inner flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 pb-3 mb-4 border-b border-gray-200">
+                  <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                  <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                  <span class="text-xs text-gray-400 font-sans ml-2">Browser Result Preview</span>
+                </div>
+                <div class="space-y-3 font-sans">
+                  <p style="color: red;" class="p-1">Lal text</p>
+                  <p style="background-color: yellow; color: black;" class="p-1 rounded">Background Yellow</p>
+                  <p style="font-size: 25px;" class="p-1 font-bold">Bada Text</p>
+                  <p style="text-align: center;" class="p-1 bg-gray-100 rounded">Center Text</p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-gray-200 text-xs text-gray-500 font-sans">
+                💡 Har property ke baad semicolon (<code>;</code>) lagana zaroori hota hai.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Style Studio -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            <i class="fa-solid fa-sliders text-emerald-400 mr-2"></i> Interactive Style Studio
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Styling options change karein aur live result dekhein:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Controls -->
+            <div class="space-y-4 bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+              <div>
+                <label class="block text-xs text-gray-400 mb-1">Text Color</label>
+                <input type="color" id="textColor" value="#3158ff" class="w-full h-10 rounded cursor-pointer bg-transparent">
+              </div>
+
+              <div>
+                <label class="block text-xs text-gray-400 mb-1">Background Color</label>
+                <input type="color" id="bgColor" value="#f1f5f9" class="w-full h-10 rounded cursor-pointer bg-transparent">
+              </div>
+
+              <div>
+                <label class="block text-xs text-gray-400 mb-1">Font Size (<span id="sizeVal">24</span>px)</label>
+                <input type="range" id="fontSize" min="14" max="48" value="24" class="w-full">
+              </div>
+
+              <div>
+                <label class="block text-xs text-gray-400 mb-1">Text Align</label>
+                <select id="textAlign" class="w-full bg-[#020617] border border-[#334155] rounded p-2 text-sm text-white">
+                  <option value="left">Left</option>
+                  <option value="center" selected>Center</option>
+                  <option value="right">Right</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Preview & Generated Code -->
+            <div class="md:col-span-2 space-y-4 flex flex-col justify-between">
+              <div id="previewBox" class="p-8 rounded-xl border border-gray-300 bg-white text-black transition-all flex items-center justify-center min-h-[160px]">
+                <p id="previewText" class="font-sans font-medium">Is Text Par Live Styles Apply Ho Rahe Hain!</p>
+              </div>
+
+              <div class="bg-[#020617] p-4 rounded-xl border border-[#334155] font-mono text-xs text-emerald-400">
+                <span class="text-gray-500 block mb-1 font-sans">// Generated HTML Code:</span>
+                <code id="generatedCode">&lt;p style="..."&gt;Text&lt;/p&gt;</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Table -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            Common Style Properties Reference
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#334155] text-gray-400 text-sm">
+                <th class="py-3 px-4">Property</th>
+                <th class="py-3 px-4">Description</th>
+                <th class="py-3 px-4">Example Value</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-200 divide-y divide-[#334155]/50">
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">color</td>
+                <td class="py-3 px-4">Text ka color set karne ke liye.</td>
+                <td class="py-3 px-4 font-mono text-xs text-gray-400">red, #ff0000, rgb(255,0,0)</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">background-color</td>
+                <td class="py-3 px-4">Element ka background color set karta hai.</td>
+                <td class="py-3 px-4 font-mono text-xs text-gray-400">blue, #0000ff</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">font-family</td>
+                <td class="py-3 px-4">Text ka font style (font face) badalne ke liye.</td>
+                <td class="py-3 px-4 font-mono text-xs text-gray-400">Arial, Verdana, sans-serif</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">font-size</td>
+                <td class="py-3 px-4">Text ki sizing control karta hai.</td>
+                <td class="py-3 px-4 font-mono text-xs text-gray-400">16px, 120%, 1.5rem</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400 font-bold">text-align</td>
+                <td class="py-3 px-4">Text ki horizontal positioning align karta hai.</td>
+                <td class="py-3 px-4 font-mono text-xs text-gray-400">left, center, right, justify</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <i class="fa-solid fa-lightbulb text-amber-400 mr-2"></i> Best Practices (Dhyan Rakhne Yagya Baatein)
+          </h3>
+          <ul class="space-y-3 text-gray-300 text-sm md:text-base">
+            <li class="flex items-start">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+              <span><strong>Quick testing ke liye inline styles best hain:</strong> Chote testing ya single element ke liye <code>style=""</code> attribute upyogi hai.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+              <span><strong>Large projects ke liye CSS file use karein:</strong> Badi websites me hamesha External CSS (<code>style.css</code>) ka use karein taaki code clean aur maintainable rahe.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3"></i>
+              <span><strong>Multiple styles ko semicolon se alag karein:</strong> Hamesha har CSS property ke baad <code>;</code> zaroor lagayein (Jaise: <code>style="color: red; font-size: 20px;"</code>).</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../paragraphs/Paragraphs.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../formatting/formatting.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(7);
+
+      // Interactive Style Studio Logic
+      const textColor = document.getElementById("textColor");
+      const bgColor = document.getElementById("bgColor");
+      const fontSize = document.getElementById("fontSize");
+      const textAlign = document.getElementById("textAlign");
+      const sizeVal = document.getElementById("sizeVal");
+      const previewBox = document.getElementById("previewBox");
+      const previewText = document.getElementById("previewText");
+      const generatedCode = document.getElementById("generatedCode");
+
+      function updateStyles() {
+        const color = textColor.value;
+        const bg = bgColor.value;
+        const size = fontSize.value + "px";
+        const align = textAlign.value;
+
+        sizeVal.textContent = fontSize.value;
+
+        previewBox.style.backgroundColor = bg;
+        previewText.style.color = color;
+        previewText.style.fontSize = size;
+        previewBox.style.justifyContent = align === "left" ? "flex-start" : align === "right" ? "flex-end" : "center";
+        previewText.style.textAlign = align;
+
+        const inlineCss = `color: ${color}; background-color: ${bg}; font-size: ${size}; text-align: ${align};`;
+        generatedCode.textContent = `<p style="${inlineCss}">Is Text Par Live Styles Apply Ho Rahe Hain!</p>`;
+      }
+
+      textColor.addEventListener("input", updateStyles);
+      bgColor.addEventListener("input", updateStyles);
+      fontSize.addEventListener("input", updateStyles);
+      textAlign.addEventListener("change", updateStyles);
+
+      window.addEventListener("DOMContentLoaded", updateStyles);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Array Iteration - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Array Iteration
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Sort.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Const.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Array Iteration Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Array Iteration ka matlab hai Array ke elements par
+          ek-ek karke kaam karna.
+          <br><br>
+          Iske liye
+          <code class="text-blue-400">forEach()</code>,
+          <code class="text-blue-400">map()</code>,
+          <code class="text-blue-400">filter()</code>,
+          <code class="text-blue-400">reduce()</code>,
+          <code class="text-blue-400">some()</code>
+          aur
+          <code class="text-blue-400">every()</code>
+          jaise methods use hote hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Methods Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Important Iteration Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">forEach()</td>
+                  <td class="p-4">Har element par function run karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">map()</td>
+                  <td class="p-4">Har element ko transform karke new Array deta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">filter()</td>
+                  <td class="p-4">Condition match karne wale elements ka new Array deta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">reduce()</td>
+                  <td class="p-4">Array ko ek single value me reduce karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">some()</td>
+                  <td class="p-4">Check karta hai koi ek element condition match karta hai ya nahi.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">every()</td>
+                  <td class="p-4">Check karta hai sab elements condition match karte hain ya nahi.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- forEach -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            forEach()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">forEach()</code>
+            Array ke har element ke liye callback function run karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+fruits.forEach((fruit) =&gt; {
+  console.log(fruit);
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Apple
+Mango
+Banana</pre>
+          </div>
+
+        </div>
+
+        <!-- map -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            map()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">map()</code>
+            har element ko process karke ek new Array return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">2</span>,
+  <span class="text-emerald-400">3</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.map((number) =&gt; {
+    <span class="text-blue-400">return</span> number * <span class="text-emerald-400">2</span>;
+  });
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">[2, 4, 6]</pre>
+          </div>
+
+        </div>
+
+        <!-- map short -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            map() Short Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">2</span>,
+  <span class="text-emerald-400">3</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.map(
+    number =&gt; number * <span class="text-emerald-400">2</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">[2, 4, 6]</pre>
+          </div>
+
+        </div>
+
+        <!-- filter -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            filter()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">filter()</code>
+            condition true karne wale elements ka new Array return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">12</span>,
+  <span class="text-emerald-400">18</span>,
+  <span class="text-emerald-400">3</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.filter(
+    number =&gt; number &gt; <span class="text-emerald-400">10</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">[12, 18]</pre>
+          </div>
+
+        </div>
+
+        <!-- reduce -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            reduce()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">reduce()</code>
+            Array ke elements ko process karke ek single value return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+];
+
+<span class="text-blue-400">const</span> total =
+  numbers.reduce(
+    (sum, number) =&gt; sum + number,
+    <span class="text-emerald-400">0</span>
+  );
+
+console.log(total);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">60</pre>
+          </div>
+
+        </div>
+
+        <!-- reduce explain -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            reduce() Kaise Kaam Karta Hai?
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>numbers.reduce(
+  (sum, number) =&gt; sum + number,
+  <span class="text-emerald-400">0</span>
+);</code></pre>
+          </div>
+
+          <div class="space-y-4 text-gray-300 text-lg mt-5">
+
+            <p>
+              <code class="text-blue-400">sum</code>
+              accumulator hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">number</code>
+              current Array element hai.
+            </p>
+
+            <p>
+              Last
+              <code class="text-blue-400">0</code>
+              initial value hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- some -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            some()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">some()</code>
+            agar kam se kam ek element condition match karta hai to
+            <code class="text-emerald-400">true</code>
+            return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> ages = [
+  <span class="text-emerald-400">12</span>,
+  <span class="text-emerald-400">15</span>,
+  <span class="text-emerald-400">20</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  ages.some(
+    age =&gt; age &gt;= <span class="text-emerald-400">18</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+
+        </div>
+
+        <!-- every -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            every()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">every()</code>
+            tabhi
+            <code class="text-emerald-400">true</code>
+            return karta hai jab sabhi elements condition match karein.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> ages = [
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">25</span>,
+  <span class="text-emerald-400">30</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  ages.every(
+    age =&gt; age &gt;= <span class="text-emerald-400">18</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+
+        </div>
+
+        <!-- Object Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array of Objects With map()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> students = [
+  {
+    id: <span class="text-emerald-400">1</span>,
+    name: <span class="text-emerald-400">"Ali"</span>
+  },
+  {
+    id: <span class="text-emerald-400">2</span>,
+    name: <span class="text-emerald-400">"Rahul"</span>
+  }
+];
+
+<span class="text-blue-400">const</span> names =
+  students.map(
+    student =&gt; student.name
+  );
+
+console.log(names);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">["Ali", "Rahul"]</pre>
+          </div>
+
+        </div>
+
+        <!-- filter objects -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array of Objects With filter()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> products = [
+  {
+    name: <span class="text-emerald-400">"Keyboard"</span>,
+    price: <span class="text-emerald-400">500</span>
+  },
+  {
+    name: <span class="text-emerald-400">"Mouse"</span>,
+    price: <span class="text-emerald-400">300</span>
+  },
+  {
+    name: <span class="text-emerald-400">"Monitor"</span>,
+    price: <span class="text-emerald-400">8000</span>
+  }
+];
+
+<span class="text-blue-400">const</span> result =
+  products.filter(
+    product =&gt; product.price &gt; <span class="text-emerald-400">400</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Difference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            forEach vs map vs filter
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Main Use</th>
+                  <th class="p-4">New Array?</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">forEach()</td>
+                  <td class="p-4">Har item par action</td>
+                  <td class="p-4">No</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">map()</td>
+                  <td class="p-4">Transform elements</td>
+                  <td class="p-4">Yes</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">filter()</td>
+                  <td class="p-4">Matching elements select karna</td>
+                  <td class="p-4">Yes</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">forEach()</code>
+              har element par callback run karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">map()</code>
+              same length ka new transformed Array generally return karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">filter()</code>
+              matching elements ka new Array return karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">reduce()</code>
+              multiple values ko ek result me combine kar sakta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">some()</code>
+              kisi ek match par true ho sakta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">every()</code>
+              sab elements match hone par true deta hai.
+            </p>
+
+            <p>
+              7. React me
+              <code class="text-blue-400">map()</code>
+              list render karne ke liye bahut commonly use hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Sort.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Const.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(15);
+  </script>
+
+</body>
+</html>

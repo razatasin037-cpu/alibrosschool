@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Extended Data Types - Modifiers & Fixed-Width Types</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Extended Data Types & Modifiers
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Real-LifeDataTypesExamples.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../typeConversion/TypeConversion.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Extended Data Types Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C me basic data types (`int`, `char`, `float`) ki range ya memory size ko modify karne ke liye **Type Modifiers** ka use kiya jata hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        In modifiers ki madad se hum memory allocation optimize kar sakte hain, negative numbers ko ignore karke positive range double kar sakte hain, ya phir extra large numbers store kar sakte hain.
+      </p>
+    </section>
+
+    <!-- Modifiers Categories -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Type Modifiers Overview</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Size Modifiers</h3>
+          <ul class="list-disc ml-6 text-xl text-gray-300 space-y-2">
+            <li><code class="text-green-400 font-bold">short</code>: Memory requirement kam karta hai (2 Bytes).</li>
+            <li><code class="text-green-400 font-bold">long</code>: Higher range deta hai (4 ya 8 Bytes).</li>
+            <li><code class="text-green-400 font-bold">long long</code>: Extremely large values ke liye (8 Bytes).</li>
+          </ul>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">Sign Modifiers</h3>
+          <ul class="list-disc ml-6 text-xl text-gray-300 space-y-2">
+            <li><code class="text-green-400 font-bold">signed</code>: Positive aur Negative dono values support karta hai (Default).</li>
+            <li><code class="text-green-400 font-bold">unsigned</code>: Sirf Positive values (Only Zero & Positive), range double ho jati hai.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Table -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Extended Integer Types Table</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Data Type</th>
+              <th class="py-4 px-6">Bytes</th>
+              <th class="py-4 px-6">Format Specifier</th>
+              <th class="py-4 px-6">Approximate Range</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">short int</td>
+              <td class="py-4 px-6 text-yellow-300">2</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%hd</td>
+              <td class="py-4 px-6 text-gray-300">-32,768 to 32,767</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">unsigned short int</td>
+              <td class="py-4 px-6 text-yellow-300">2</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%hu</td>
+              <td class="py-4 px-6 text-gray-300">0 to 65,535</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">unsigned int</td>
+              <td class="py-4 px-6 text-yellow-300">4</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%u</td>
+              <td class="py-4 px-6 text-gray-300">0 to 4,294,967,295</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">long int</td>
+              <td class="py-4 px-6 text-yellow-300">4 / 8</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%ld</td>
+              <td class="py-4 px-6 text-gray-300">-2 × 10⁹ to 2 × 10⁹</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">long long int</td>
+              <td class="py-4 px-6 text-yellow-300">8</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%lld</td>
+              <td class="py-4 px-6 text-gray-300">-9 × 10¹⁸ to 9 × 10¹⁸</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">unsigned long long int</td>
+              <td class="py-4 px-6 text-yellow-300">8</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%llu</td>
+              <td class="py-4 px-6 text-gray-300">0 to 18 × 10¹⁸</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Using Extended Types</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// Large population/distance values ke liye long long</span>
+    <span class="text-green-500">long long int</span> worldPopulation = <span class="text-green-400">8000000000LL</span>;
+
+    <span class="text-gray-500">// Positives only - Unsigned int</span>
+    <span class="text-green-500">unsigned int</span> accountBalance = <span class="text-green-400">50000U</span>;
+
+    <span class="text-gray-500">// Small memory range - Short int</span>
+    <span class="text-green-500">short int</span> age = <span class="text-green-400">25</span>;
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"World Population: %lld\n"</span>, worldPopulation);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Account Balance: %u\n"</span>, accountBalance);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Age: %hd\n"</span>, age);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">World Population: 8000000000</p>
+        <p class="text-gray-300 font-mono">Account Balance: 50000</p>
+        <p class="text-gray-300 font-mono">Age: 25</p>
+      </div>
+    </section>
+
+    <!-- Modern Fixed-Width Types (C99 stdint.h) -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Modern Fixed-Width Integers (&lt;stdint.h&gt;)</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C99 standard me exact bit size guarantees ke liye <code class="text-yellow-300">&lt;stdint.h&gt;</code> header file introduce kiya gaya tha. Isse Har System/OS par size hamesha fixed rehta hai:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl text-green-400 font-mono mb-2">int8_t / uint8_t</p>
+          <p class="text-gray-300 text-lg">Exact 8-bits (1 Byte)</p>
+        </div>
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl text-green-400 font-mono mb-2">int16_t / uint16_t</p>
+          <p class="text-gray-300 text-lg">Exact 16-bits (2 Bytes)</p>
+        </div>
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl text-green-400 font-mono mb-2">int32_t / uint32_t</p>
+          <p class="text-gray-300 text-lg">Exact 32-bits (4 Bytes)</p>
+        </div>
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl text-green-400 font-mono mb-2">int64_t / uint64_t</p>
+          <p class="text-gray-300 text-lg">Exact 64-bits (8 Bytes)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Jab exact size aur memory constraints matter karti ho (jaise Embedded systems ya cross-platform game development), tab modifiers aur <code class="text-yellow-300 font-bold">&lt;stdint.h&gt;</code> types ka code safety ke liye use kiya jata hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Real-LifeDataTypesExamples.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="../typeConversion/TypeConversion.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(8);
+  }
+</script>
+
+</body>
+</html>

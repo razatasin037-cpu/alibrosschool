@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Array Sort - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Array Sort
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./ArraysSearch.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Iteration.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Array Sorting Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Array Sorting ka use Array ke elements ko kisi order me
+          arrange karne ke liye kiya jata hai.
+          <br><br>
+          Strings ko alphabetical order me aur numbers ko ascending ya
+          descending order me arrange kiya ja sakta hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Quick Methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Array Sort Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">sort()</td>
+                  <td class="p-4">
+                    Array elements ko sort karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">reverse()</td>
+                  <td class="p-4">
+                    Array ka current order reverse karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toSorted()</td>
+                  <td class="p-4">
+                    Sorted new Array return karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toReversed()</td>
+                  <td class="p-4">
+                    Reversed new Array return karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- sort strings -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            sort()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">sort()</code>
+            Array ke elements ko default string comparison ke according sort
+            karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+fruits.sort();
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">["Apple", "Banana", "Mango"]</pre>
+          </div>
+
+        </div>
+
+        <!-- reverse -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            reverse()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">reverse()</code>
+            Array ke existing order ko reverse karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Banana"</span>,
+  <span class="text-emerald-400">"Mango"</span>
+];
+
+fruits.reverse();
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">["Mango", "Banana", "Apple"]</pre>
+          </div>
+
+        </div>
+
+        <!-- alphabetical descending -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Alphabetical Descending Sort
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+fruits.sort();
+fruits.reverse();
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">["Mango", "Banana", "Apple"]</pre>
+          </div>
+
+        </div>
+
+        <!-- Number Problem -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number Sorting Problem
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Normal
+            <code class="text-blue-400">sort()</code>
+            numbers ko numeric value ki jagah strings ki tarah compare karta
+            hai. Isliye direct numeric sorting galat result de sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">40</span>,
+  <span class="text-emerald-400">100</span>,
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">25</span>
+];
+
+numbers.sort();
+
+console.log(numbers);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">[1, 100, 25, 40, 5]</pre>
+          </div>
+
+        </div>
+
+        <!-- Numeric Ascending -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Numeric Ascending Sort
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Numbers ko smallest se largest sort karne ke liye compare function
+            use karte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">40</span>,
+  <span class="text-emerald-400">100</span>,
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">25</span>
+];
+
+numbers.sort((a, b) =&gt; a - b);
+
+console.log(numbers);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">[1, 5, 25, 40, 100]</pre>
+          </div>
+
+        </div>
+
+        <!-- Numeric Desc -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Numeric Descending Sort
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Largest se smallest sort karne ke liye
+            <code class="text-blue-400">b - a</code>
+            use karte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">40</span>,
+  <span class="text-emerald-400">100</span>,
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">25</span>
+];
+
+numbers.sort((a, b) =&gt; b - a);
+
+console.log(numbers);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">[100, 40, 25, 5, 1]</pre>
+          </div>
+
+        </div>
+
+        <!-- Compare Function -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Compare Function Kaise Kaam Karta Hai?
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>numbers.sort((a, b) =&gt; a - b);</code></pre>
+          </div>
+
+          <div class="space-y-4 text-gray-300 text-lg mt-5">
+
+            <p>
+              Agar result negative hai → <code class="text-blue-400">a</code>
+              pehle aata hai.
+            </p>
+
+            <p>
+              Agar result positive hai → <code class="text-blue-400">b</code>
+              pehle aata hai.
+            </p>
+
+            <p>
+              Agar result
+              <code class="text-blue-400">0</code>
+              hai → relative order change karna zaroori nahi.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Min Max -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Smallest Aur Largest Number
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">40</span>,
+  <span class="text-emerald-400">100</span>,
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">5</span>
+];
+
+numbers.sort((a, b) =&gt; a - b);
+
+console.log(numbers[<span class="text-emerald-400">0</span>]);
+
+console.log(
+  numbers[numbers.length - <span class="text-emerald-400">1</span>]
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">1
+100</pre>
+          </div>
+
+        </div>
+
+        <!-- Better Min Max -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Math.min() Aur Math.max()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sirf minimum ya maximum value chahiye to poora Array sort karna
+            zaroori nahi hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">40</span>,
+  <span class="text-emerald-400">100</span>,
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">5</span>
+];
+
+console.log(
+  Math.min(...numbers)
+);
+
+console.log(
+  Math.max(...numbers)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">1
+100</pre>
+          </div>
+
+        </div>
+
+        <!-- Objects sort -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Sort Array of Objects
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Objects ko kisi property ke according sort kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> students = [
+  {
+    name: <span class="text-emerald-400">"Ali"</span>,
+    age: <span class="text-emerald-400">22</span>
+  },
+  {
+    name: <span class="text-emerald-400">"Rahul"</span>,
+    age: <span class="text-emerald-400">18</span>
+  },
+  {
+    name: <span class="text-emerald-400">"Aman"</span>,
+    age: <span class="text-emerald-400">20</span>
+  }
+];
+
+students.sort((a, b) =&gt; a.age - b.age);
+
+console.log(students);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Order:</p>
+
+<pre class="text-emerald-400 font-mono">Rahul - 18
+Aman - 20
+Ali - 22</pre>
+          </div>
+
+        </div>
+
+        <!-- Sort Object names -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Sort Objects By Name
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> students = [
+  { name: <span class="text-emerald-400">"Rahul"</span> },
+  { name: <span class="text-emerald-400">"Ali"</span> },
+  { name: <span class="text-emerald-400">"Aman"</span> }
+];
+
+students.sort((a, b) =&gt;
+  a.name.localeCompare(b.name)
+);
+
+console.log(students);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Order:</p>
+
+<pre class="text-emerald-400 font-mono">Ali
+Aman
+Rahul</pre>
+          </div>
+
+        </div>
+
+        <!-- toSorted -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toSorted()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">toSorted()</code>
+            sorted new Array return karta hai aur original Array ko change nahi
+            karta.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">30</span>,
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>
+];
+
+<span class="text-blue-400">const</span> sorted =
+  numbers.toSorted((a, b) =&gt; a - b);
+
+console.log(sorted);
+console.log(numbers);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">[10, 20, 30]
+[30, 10, 20]</pre>
+          </div>
+
+        </div>
+
+        <!-- toReversed -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toReversed()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">toReversed()</code>
+            reverse order me new Array return karta hai aur original Array ko
+            modify nahi karta.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">2</span>,
+  <span class="text-emerald-400">3</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.toReversed();
+
+console.log(result);
+console.log(numbers);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">[3, 2, 1]
+[1, 2, 3]</pre>
+          </div>
+
+        </div>
+
+        <!-- Difference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            sort() vs toSorted()
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">sort()</th>
+                  <th class="p-4">toSorted()</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Original Array modify karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Original Array modify nahi karta.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Same Array ko sorted order me change karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    New sorted Array return karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">sort()</code>
+              default me values ko strings ki tarah compare karta hai.
+            </p>
+
+            <p>
+              2. Number ascending sort ke liye
+              <code class="text-blue-400">(a, b) =&gt; a - b</code>
+              use karo.
+            </p>
+
+            <p>
+              3. Number descending sort ke liye
+              <code class="text-blue-400">(a, b) =&gt; b - a</code>
+              use karo.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">reverse()</code>
+              current Array ka order reverse karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">sort()</code>
+              aur
+              <code class="text-blue-400">reverse()</code>
+              original Array ko modify karte hain.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">toSorted()</code>
+              aur
+              <code class="text-blue-400">toReversed()</code>
+              new Array return karte hain.
+            </p>
+
+            <p>
+              7. Array of Objects ko property ke according custom compare
+              function se sort kar sakte hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./ArraysSearch.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Iteration.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(15);
+  </script>
+
+</body>
+</html>

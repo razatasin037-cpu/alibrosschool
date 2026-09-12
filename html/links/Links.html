@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Links - Complete Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <!-- Page Main Heading -->
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Links
+        </h1>
+
+        <!-- Top Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../css/Css.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../images/Images.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Banner / Introductory Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Links (Hyperlinks) Complete Guide
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML me links ko <strong>Hyperlinks</strong> kaha jata hai. Unka upayog external web pages, internal sections, files, image click redirect, phone numbers aur email setup ke liye kiya jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Link banane ke liye HTML me <code class="text-yellow-400">&lt;a&gt;</code> (Anchor Tag) ka upayog hota hai aur destination path <code class="text-yellow-400">href</code> attribute ke andar define kiya jata hai.
+          </p>
+        </div>
+
+        <!-- SECTION 1: Basic Text Link -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            1. Basic Text Link
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Ye sabse simple hyperlink style hai jisme default browser window me URL open hota hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;a <span class="text-yellow-400">href="https://www.google.com"</span>&gt;
+  Visit Google
+&lt;/a&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+              <a href="https://www.google.com" target="_blank" class="text-blue-600 underline font-semibold text-lg hover:text-blue-800">
+                Visit Google
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Open Link in New Tab -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            2. Open Link in New Tab
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            <code class="text-yellow-400">target="_blank"</code> ka use page ko naye tab me open karne ke liye hota hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;a <span class="text-yellow-400">href="https://www.wikipedia.org" target="_blank"</span>&gt;
+  Open Wikipedia in New Tab
+&lt;/a&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+              <a href="https://www.wikipedia.org" target="_blank" class="inline-flex items-center space-x-2 text-purple-600 underline font-semibold text-lg">
+                <span>Open Wikipedia in New Tab</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Absolute vs Relative Path Links -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            3. Absolute vs Relative Path Links
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Full web address (Absolute) vs Local project file address (Relative).
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-gray-500">&lt;!-- Absolute Link --&gt;</span>
+&lt;a <span class="text-yellow-400">href="https://www.google.com"</span>&gt;Google&lt;/a&gt;
+
+<span class="text-gray-500">&lt;!-- Relative Link --&gt;</span>
+&lt;a <span class="text-yellow-400">href="./HTML_CSS.html"</span>&gt;CSS Tutorial&lt;/a&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex flex-col items-center justify-center space-y-3">
+              <a href="https://www.google.com" target="_blank" class="text-blue-600 underline font-semibold">Absolute: Google Website</a>
+              <a href="./HTML_CSS.html" class="text-emerald-600 underline font-semibold">Relative: HTML CSS Page</a>
+            </div>
+          </div>
+        </div>
+
+   
+        <!-- SECTION 4: Image Link -->
+<div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+  <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+    4. Image Link
+  </h3>
+  <p class="text-gray-300 text-sm md:text-base mb-6">
+    Image ke andar <code class="text-yellow-400">&lt;a&gt;</code> tag wrapper lagakar image ko clickable banaya ja sakta hai.
+  </p>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Code View -->
+    <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+      <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;a <span class="text-yellow-400">href="https://www.google.com" target="_blank"</span>&gt;
+  &lt;img <span class="text-yellow-400">src="logo.png" alt="Google Logo"</span> /&gt;
+&lt;/a&gt;</code></pre>
+    </div>
+    
+    <!-- Live Preview -->
+    <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+      <a href="https://www.google.com" target="_blank" class="inline-block border-2 border-blue-500 p-2 rounded-lg hover:opacity-80 transition">
+        <!-- Direct Wikimedia SVG Link (No CORS issues) -->
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
+          alt="Google Logo" 
+          class="h-10 w-auto object-contain" 
+        />
+      </a>
+    </div>
+  </div>
+</div>
+
+        <!-- SECTION 5: Section Bookmark Link (#) -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            5. Section Bookmark Link (#)
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Same page ke kisi specific element tak direct scroll karne ke liye <code class="text-yellow-400">href="#id_name"</code> ka use hota hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-gray-500">&lt;!-- Target Link --&gt;</span>
+&lt;a <span class="text-yellow-400">href="#table-section"</span>&gt;Go to Reference Table&lt;/a&gt;
+
+<span class="text-gray-500">&lt;!-- Target Element --&gt;</span>
+&lt;div <span class="text-yellow-400">id="table-section"</span>&gt;Table Content...&lt;/div&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+              <a href="#table-section" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition">
+                Jump to Table Below ↓
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: Button Link -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            6. Button Link
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            JS onclick ya custom CSS button layout ka use karke link create karna.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;button <span class="text-yellow-400">onclick="location.href='https://google.com'"</span>&gt;
+  Click Me
+&lt;/button&gt;</code></pre>
+            </div>
+            <!-- Live Preview -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex items-center justify-center">
+              <button onclick="window.open('https://google.com', '_blank')" class="bg-cyan-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-cyan-700 transition">
+                Interactive Link Button
+              </button>
+            </div>
+          </div>
+        </div>
+
+  
+      <!-- SECTION 7: Mail, Call & Download Links -->
+<div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+  <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+    7. Mail, Call & Download Links
+  </h3>
+  <p class="text-gray-300 text-sm md:text-base mb-6">
+    Directly email client open karna, call start karna ya file download initiation trigger karna.
+  </p>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Code View -->
+    <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+      <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-gray-500">&lt;!-- Email Link --&gt;</span>
+&lt;a <span class="text-yellow-400">href="mailto:test@example.com"</span>&gt;Send Mail&lt;/a&gt;
+
+<span class="text-gray-500">&lt;!-- Phone Call --&gt;</span>
+&lt;a <span class="text-yellow-400">href="tel:+1234567890"</span>&gt;Call Us&lt;/a&gt;
+
+<span class="text-gray-500">&lt;!-- Download Link --&gt;</span>
+&lt;a <span class="text-yellow-400">href="file.pdf" download</span>&gt;Download PDF&lt;/a&gt;</code></pre>
+    </div>
+    
+    <!-- Live Preview Buttons with Icons -->
+    <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <!-- Mail Button -->
+      <a href="mailto:test@example.com" class="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-amber-600 transition">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+        </svg>
+        Mail
+      </a>
+
+      <!-- Call Button -->
+      <a href="tel:+1234567890" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-blue-700 transition">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+        </svg>
+        Call
+      </a>
+
+      <!-- Download Button -->
+      <a href="#" download class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-green-700 transition">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+        Download
+      </a>
+    </div>
+  </div>
+</div>
+
+        <!-- Target Attribute Reference Table Section -->
+        <div id="table-section" class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            All Target Attribute Values Reference
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#334155] text-gray-400 text-sm">
+                <th class="py-3 px-4">Target Attribute</th>
+                <th class="py-3 px-4">Behavior / Description</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-200 divide-y divide-[#334155]/50">
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400">_self</td>
+                <td class="py-3 px-4">Document ko same window/tab me open karta hai (Default).</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400">_blank</td>
+                <td class="py-3 px-4">Document ko ek new window ya tab me open karta hai.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400">_parent</td>
+                <td class="py-3 px-4">Document ko parent frame me open karta hai.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-yellow-400">_top</td>
+                <td class="py-3 px-4">Document ko full body window me open karta hai.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Bottom Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../css/Css.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../images/Images.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(13);
+    </script>
+  </body>
+</html>

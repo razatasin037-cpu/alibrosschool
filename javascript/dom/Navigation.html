@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript DOM Navigation - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript DOM Navigation
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Forms.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Nodes.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          DOM Navigation Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          DOM Navigation ka matlab hai ek HTML element se uske parent,
+          children aur sibling elements tak move karna.
+          <br><br>
+          Iske liye properties jaise
+          <code class="text-blue-400">parentElement</code>,
+          <code class="text-blue-400">children</code>,
+          <code class="text-blue-400">firstElementChild</code>,
+          <code class="text-blue-400">nextElementSibling</code>
+          etc. use hote hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- DOM Tree -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Family Structure
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">Parent
+
+  ├── Child 1
+  ├── Child 2
+  └── Child 3</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Ek element ka parent ho sakta hai, uske child elements ho sakte
+            hain aur same parent wale elements siblings hote hain.
+          </p>
+
+        </div>
+
+        <!-- Example HTML -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Example HTML
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;div id=<span class="text-emerald-400">"parent"</span>&gt;
+
+  &lt;h2&gt;Heading&lt;/h2&gt;
+
+  &lt;p id=<span class="text-emerald-400">"text"</span>&gt;
+    Paragraph
+  &lt;/p&gt;
+
+  &lt;button&gt;
+    Click
+  &lt;/button&gt;
+
+&lt;/div&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- parentElement -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            parentElement
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Current element ka parent HTML element access karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> text =
+  document.getElementById(
+    <span class="text-emerald-400">"text"</span>
+  );
+
+console.log(
+  text.parentElement
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- parentNode -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            parentNode
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            <code class="text-blue-400">parentNode</code>
+            current node ka parent node return karta hai.
+            <br><br>
+            Element navigation ke liye commonly
+            <code class="text-blue-400">parentElement</code>
+            use karna easy hota hai.
+          </p>
+
+        </div>
+
+        <!-- children -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            children
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Element ke child HTML elements ka collection return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> parent =
+  document.getElementById(
+    <span class="text-emerald-400">"parent"</span>
+  );
+
+console.log(
+  parent.children
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- childNodes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            childNodes
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">childNodes</code>
+            sab child nodes return karta hai, including text nodes aur comments.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  parent.childNodes
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- children vs childNodes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            children vs childNodes
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">children</th>
+                  <th class="p-4">childNodes</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Sirf element nodes.
+                  </td>
+                  <td class="p-4">
+                    Elements + text + comments.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    HTMLCollection return karta hai.
+                  </td>
+                  <td class="p-4">
+                    NodeList return karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- firstElementChild -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            firstElementChild
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> parent =
+  document.getElementById(
+    <span class="text-emerald-400">"parent"</span>
+  );
+
+console.log(
+  parent.firstElementChild
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Parent ka first child element return karta hai.
+          </p>
+
+        </div>
+
+        <!-- lastElementChild -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            lastElementChild
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  parent.lastElementChild
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Last child element return karta hai.
+          </p>
+
+        </div>
+
+        <!-- firstChild -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            firstChild
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  parent.firstChild
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            First node return karta hai. HTML formatting ki wajah se ye text
+            node bhi ho sakta hai.
+          </p>
+
+        </div>
+
+        <!-- lastChild -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            lastChild
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  parent.lastChild
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- next sibling -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            nextElementSibling
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Current element ke next sibling element ko access karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> text =
+  document.getElementById(
+    <span class="text-emerald-400">"text"</span>
+  );
+
+console.log(
+  text.nextElementSibling
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- previous -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            previousElementSibling
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  text.previousElementSibling
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- sibling nodes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            nextSibling / previousSibling
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Ye properties element ke bajay any node return kar sakti hain,
+            including text nodes.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  text.nextSibling
+);
+
+console.log(
+  text.previousSibling
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- children index -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Specific Child Access Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> parent =
+  document.getElementById(
+    <span class="text-emerald-400">"parent"</span>
+  );
+
+console.log(
+  parent.children[<span class="text-emerald-400">0</span>]
+);
+
+console.log(
+  parent.children[<span class="text-emerald-400">1</span>]
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- child count -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            childElementCount
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Element ke kitne child elements hain:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  parent.childElementCount
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- closest -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            closest()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Current element se upward search karke nearest matching ancestor
+            element find karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;div class=<span class="text-emerald-400">"card"</span>&gt;
+
+  &lt;div&gt;
+
+    &lt;button id=<span class="text-emerald-400">"btn"</span>&gt;
+      Delete
+    &lt;/button&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+<span class="text-blue-400">const</span> card =
+  button.closest(
+    <span class="text-emerald-400">".card"</span>
+  );
+
+console.log(card);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- matches -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            matches()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Check karta hai ki element given CSS selector se match karta hai ya
+            nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> button =
+  document.querySelector(
+    <span class="text-emerald-400">".btn"</span>
+  );
+
+console.log(
+  button.matches(
+    <span class="text-emerald-400">".btn"</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+
+        </div>
+
+        <!-- contains -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            contains()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Check karta hai ki ek node dusre node ke andar hai ya nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> parent =
+  document.getElementById(
+    <span class="text-emerald-400">"parent"</span>
+  );
+
+<span class="text-blue-400">const</span> text =
+  document.getElementById(
+    <span class="text-emerald-400">"text"</span>
+  );
+
+console.log(
+  parent.contains(text)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+
+        </div>
+
+        <!-- loop children -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Children Par Loop
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> parent =
+  document.getElementById(
+    <span class="text-emerald-400">"parent"</span>
+  );
+
+<span class="text-blue-400">for</span> (
+  <span class="text-blue-400">const</span> child
+  <span class="text-blue-400">of</span> parent.children
+) {
+
+  console.log(
+    child
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Practical Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Example: Delete Card
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;div class=<span class="text-emerald-400">"card"</span>&gt;
+
+  &lt;h2&gt;
+    Product
+  &lt;/h2&gt;
+
+  &lt;p&gt;
+    Laptop
+  &lt;/p&gt;
+
+  &lt;button class=<span class="text-emerald-400">"delete"</span>&gt;
+    Delete
+  &lt;/button&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> button =
+  document.querySelector(
+    <span class="text-emerald-400">".delete"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    <span class="text-blue-400">const</span> card =
+      button.closest(
+        <span class="text-emerald-400">".card"</span>
+      );
+
+    card.remove();
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Navigation Diagram -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Navigation Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">          Parent
+             ↑
+             |
+      parentElement
+
+             |
+             ↓
+
+Previous ← Element → Next
+Sibling             Sibling
+
+             |
+             ↓
+
+          Children
+
+     ┌───────┼───────┐
+     ↓       ↓       ↓
+
+  Child 1  Child 2  Child 3</pre>
+          </div>
+
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Navigation Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property / Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    parentElement
+                  </td>
+                  <td class="p-4">
+                    Parent element
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    children
+                  </td>
+                  <td class="p-4">
+                    Child elements
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    childNodes
+                  </td>
+                  <td class="p-4">
+                    All child nodes
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    firstElementChild
+                  </td>
+                  <td class="p-4">
+                    First child element
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    lastElementChild
+                  </td>
+                  <td class="p-4">
+                    Last child element
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    nextElementSibling
+                  </td>
+                  <td class="p-4">
+                    Next sibling element
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    previousElementSibling
+                  </td>
+                  <td class="p-4">
+                    Previous sibling element
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    closest()
+                  </td>
+                  <td class="p-4">
+                    Nearest matching ancestor
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    matches()
+                  </td>
+                  <td class="p-4">
+                    Selector match check
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    contains()
+                  </td>
+                  <td class="p-4">
+                    Descendant check
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">parentElement</code>
+              parent HTML element ko access karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">children</code>
+              sirf child elements deta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">childNodes</code>
+              text aur comment nodes ko bhi include kar sakta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">firstElementChild</code>
+              aur
+              <code class="text-blue-400">lastElementChild</code>
+              first/last child element dete hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">nextElementSibling</code>
+              aur
+              <code class="text-blue-400">previousElementSibling</code>
+              sibling elements access karte hain.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">closest()</code>
+              nearest matching ancestor find karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">matches()</code>
+              selector match check karta hai.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">contains()</code>
+              check karta hai ki element ke andar koi node maujood hai ya nahi.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Forms.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Nodes.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(27);
+  </script>
+
+</body>
+</html>

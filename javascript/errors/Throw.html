@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Throw - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Throw
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./TryCatch.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Finally.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Throw Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">throw</code>
+          statement ka use manually custom error generate karne ke liye hota hai.
+          <br><br>
+          Jab hamari koi condition invalid ho, tab hum khud error throw kar
+          sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Throw Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">throw</span> value;</code></pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Recommended way:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mt-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">throw new</span> Error(
+  <span class="text-emerald-400">"Custom error message"</span>
+);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Basic Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Throw Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">throw new</span> Error(
+  <span class="text-emerald-400">"Something went wrong"</span>
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">Error:
+Something went wrong</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Throw with condition -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Condition Ke Saath Throw
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> age =
+  <span class="text-emerald-400">15</span>;
+
+<span class="text-blue-400">if</span> (age &lt; 18) {
+
+  <span class="text-blue-400">throw new</span> Error(
+    <span class="text-emerald-400">
+      "Age must be 18 or above"
+    </span>
+  );
+
+}
+
+console.log(
+  <span class="text-emerald-400">"Access Allowed"</span>
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">Error:
+Age must be 18 or above</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Throw with try catch -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Throw With Try Catch
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Usually
+            <code class="text-blue-400">throw</code>
+            ko
+            <code class="text-blue-400">try...catch</code>
+            ke saath use kiya jata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">const</span> age =
+    <span class="text-emerald-400">15</span>;
+
+  <span class="text-blue-400">if</span> (age &lt; 18) {
+
+    <span class="text-blue-400">throw new</span> Error(
+      <span class="text-emerald-400">
+        "You are under 18"
+      </span>
+    );
+
+  }
+
+  console.log(
+    <span class="text-emerald-400">"Access Allowed"</span>
+  );
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">You are under 18</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Input Validation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Input Validation Example
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Form validation me
+            <code class="text-blue-400">throw</code>
+            useful ho sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> registerUser(
+  name
+) {
+
+  <span class="text-blue-400">if</span> (!name) {
+
+    <span class="text-blue-400">throw new</span> Error(
+      <span class="text-emerald-400">
+        "Name is required"
+      </span>
+    );
+
+  }
+
+  console.log(
+    <span class="text-emerald-400">
+      "Registration successful"
+    </span>
+  );
+
+}
+
+<span class="text-blue-400">try</span> {
+
+  registerUser(<span class="text-emerald-400">""</span>);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Name is required</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Email Validation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Email Validation Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> login(
+  email
+) {
+
+  <span class="text-blue-400">if</span> (!email) {
+
+    <span class="text-blue-400">throw new</span> Error(
+      <span class="text-emerald-400">
+        "Email is required"
+      </span>
+    );
+
+  }
+
+  console.log(
+    <span class="text-emerald-400">
+      "Login process started"
+    </span>
+  );
+
+}
+
+<span class="text-blue-400">try</span> {
+
+  login(<span class="text-emerald-400">""</span>);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Email is required</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Number validation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number Validation
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> calculate(
+  number
+) {
+
+  <span class="text-blue-400">if</span> (
+    <span class="text-blue-400">typeof</span> number !==
+    <span class="text-emerald-400">"number"</span>
+  ) {
+
+    <span class="text-blue-400">throw new</span> Error(
+      <span class="text-emerald-400">
+        "Value must be a number"
+      </span>
+    );
+
+  }
+
+  <span class="text-blue-400">return</span> number * 2;
+
+}
+
+<span class="text-blue-400">try</span> {
+
+  console.log(
+    calculate(
+      <span class="text-emerald-400">"10"</span>
+    )
+  );
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Value must be a number</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple validations -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Validation
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> createUser(
+  name,
+  age
+) {
+
+  <span class="text-blue-400">if</span> (!name) {
+
+    <span class="text-blue-400">throw new</span> Error(
+      <span class="text-emerald-400">
+        "Name is required"
+      </span>
+    );
+
+  }
+
+  <span class="text-blue-400">if</span> (age &lt; 18) {
+
+    <span class="text-blue-400">throw new</span> Error(
+      <span class="text-emerald-400">
+        "Age must be 18 or above"
+      </span>
+    );
+
+  }
+
+  <span class="text-blue-400">return</span>
+    <span class="text-emerald-400">
+      "User created"
+    </span>;
+
+}
+
+<span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">const</span> result =
+    createUser(
+      <span class="text-emerald-400">"Ali"</span>,
+      <span class="text-emerald-400">16</span>
+    );
+
+  console.log(result);
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Age must be 18 or above</pre>
+
+          </div>
+
+        </div>
+
+        <!-- throw string -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Throw String
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            JavaScript me string bhi throw ki ja sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">throw</span>
+    <span class="text-emerald-400">
+      "Invalid value"
+    </span>;
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(error);
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Invalid value</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Recommended -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Recommended Way
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sirf string throw karne ke bajaye
+            <code class="text-blue-400">new Error()</code>
+            use karna better hota hai, kyunki isme
+            <code class="text-blue-400">name</code>,
+            <code class="text-blue-400">message</code>
+            aur stack information mil sakti hai.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Avoid
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">throw</span>
+  <span class="text-emerald-400">"Invalid user"</span>;</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Better
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">throw new</span> Error(
+  <span class="text-emerald-400">"Invalid user"</span>
+);</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Error properties -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Custom Error Name And Message
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">try</span> {
+
+  <span class="text-blue-400">throw new</span> Error(
+    <span class="text-emerald-400">
+      "Product not found"
+    </span>
+  );
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.name
+  );
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Error
+Product not found</pre>
+
+          </div>
+
+        </div>
+
+        <!-- API Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            API Example
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            API response successful nahi ho to custom error throw kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getUsers() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> fetch(
+        <span class="text-emerald-400">
+          "https://example.com/users"
+        </span>
+      );
+
+    <span class="text-blue-400">if</span> (!response.ok) {
+
+      <span class="text-blue-400">throw new</span> Error(
+        <span class="text-emerald-400">
+          "Failed to fetch users"
+        </span>
+      );
+
+    }
+
+    <span class="text-blue-400">const</span> data =
+      <span class="text-blue-400">await</span> response.json();
+
+    console.log(data);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  }
+
+}
+
+getUsers();</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Product example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Project Product Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> buyProduct(
+  product
+) {
+
+  <span class="text-blue-400">if</span> (!product) {
+
+    <span class="text-blue-400">throw new</span> Error(
+      <span class="text-emerald-400">
+        "Product not found"
+      </span>
+    );
+
+  }
+
+  <span class="text-blue-400">if</span> (
+    product.stock &lt;= 0
+  ) {
+
+    <span class="text-blue-400">throw new</span> Error(
+      <span class="text-emerald-400">
+        "Product is out of stock"
+      </span>
+    );
+
+  }
+
+  <span class="text-blue-400">return</span>
+    <span class="text-emerald-400">
+      "Product purchased"
+    </span>;
+
+}
+
+<span class="text-blue-400">const</span> product = {
+  name:
+    <span class="text-emerald-400">"Laptop"</span>,
+
+  stock:
+    <span class="text-emerald-400">0</span>
+};
+
+<span class="text-blue-400">try</span> {
+
+  console.log(
+    buyProduct(product)
+  );
+
+} <span class="text-blue-400">catch</span> (error) {
+
+  console.log(
+    error.message
+  );
+
+}</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Product is out of stock</pre>
+
+          </div>
+
+        </div>
+
+        <!-- How works -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Throw Kaise Kaam Karta Hai?
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. JavaScript code normally execute hota hai.
+            </p>
+
+            <p>
+              2. Jab
+              <code class="text-blue-400">throw</code>
+              execute hota hai, current code execution wahi stop ho jata hai.
+            </p>
+
+            <p>
+              3. Agar throw
+              <code class="text-blue-400">try</code>
+              ke andar hai to control
+              <code class="text-blue-400">catch</code>
+              me chala jata hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">catch</code>
+              error ko receive aur handle karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">throw</code>
+              manually error generate karta hai.
+            </p>
+
+            <p>
+              2. Custom validation me throw bahut useful hota hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">throw new Error()</code>
+              recommended way hai.
+            </p>
+
+            <p>
+              4. Throw execute hote hi current code ka remaining part skip ho
+              jata hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">try...catch</code>
+              ke saath throw ko easily handle kiya ja sakta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">error.message</code>
+              custom message ko access karta hai.
+            </p>
+
+            <p>
+              7. Form validation me custom errors throw kiye ja sakte hain.
+            </p>
+
+            <p>
+              8. API response fail hone par bhi custom error throw kar sakte hain.
+            </p>
+
+            <p>
+              9. Business rules jaise
+              <code class="text-blue-400">out of stock</code>
+              ko bhi throw ke through handle kiya ja sakta hai.
+            </p>
+
+            <p>
+              10. Next topic me
+              <code class="text-blue-400">finally</code>
+              samjhenge, jo error aaye ya na aaye dono cases me execute hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./TryCatch.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Finally.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(21);
+  </script>
+
+</body>
+
+</html>

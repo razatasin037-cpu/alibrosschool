@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Import - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Import
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Export.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../async/Async.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Import Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">import</code>
+          keyword ka use kisi dusri module file se exported variable,
+          function ya class ko current file me use karne ke liye hota hai.
+          <br><br>
+          Import tabhi kaam karega jab dusri file me value
+          <code class="text-blue-400">export</code>
+          ki gayi ho.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Basic Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Import Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> {
+  item
+} <span class="text-blue-400">from</span> <span class="text-emerald-400">"./file.js"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Named Import -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Named Import
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Named export ko import karne ke liye curly braces
+            <code class="text-blue-400">{ }</code>
+            use hote hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> {
+  add
+} <span class="text-blue-400">from</span> <span class="text-emerald-400">"./math.js"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Multiple Import -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Named Imports
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> {
+  add,
+  subtract,
+  multiply
+} <span class="text-blue-400">from</span> <span class="text-emerald-400">"./math.js"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Use Imported Function -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Imported Function Use Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-4">
+            <code class="text-blue-400">math.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export const</span> add =
+  (a, b) =&gt; a + b;</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-7 mb-4">
+            <code class="text-blue-400">app.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> {
+  add
+} <span class="text-blue-400">from</span> <span class="text-emerald-400">"./math.js"</span>;
+
+console.log(
+  add(
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">20</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Default Import -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Default Import
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Default export ko import karte waqt curly braces nahi lagte.
+          </p>
+
+          <p class="text-gray-300 text-lg mb-4">
+            <code class="text-blue-400">user.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export default function</span> greet() {
+
+  <span class="text-blue-400">return</span>
+    <span class="text-emerald-400">"Hello User"</span>;
+
+}</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-7 mb-4">
+            <code class="text-blue-400">app.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> greet
+<span class="text-blue-400">from</span> <span class="text-emerald-400">"./user.js"</span>;
+
+console.log(
+  greet()
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Hello User</pre>
+          </div>
+
+        </div>
+
+        <!-- Default Rename -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Default Import Ka Naam Change Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Default import ko apni file me kisi bhi valid variable name se
+            import kar sakte ho.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> showMessage
+<span class="text-blue-400">from</span> <span class="text-emerald-400">"./user.js"</span>;
+
+console.log(
+  showMessage()
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Rename Named Import -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Named Import Rename With as
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> {
+  add <span class="text-blue-400">as</span> sum
+} <span class="text-blue-400">from</span> <span class="text-emerald-400">"./math.js"</span>;
+
+console.log(
+  sum(
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">5</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">15</pre>
+          </div>
+
+        </div>
+
+        <!-- Import All -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Import All Named Exports
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Saare named exports ko ek namespace object me import karne ke liye
+            <code class="text-blue-400">* as</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> * <span class="text-blue-400">as</span> MathUtils
+<span class="text-blue-400">from</span> <span class="text-emerald-400">"./math.js"</span>;
+
+console.log(
+  MathUtils.add(
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">5</span>
+  )
+);
+
+console.log(
+  MathUtils.subtract(
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">5</span>
+  )
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Named + Default -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Default + Named Import Together
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-4">
+            Agar ek module default aur named exports dono deta hai:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> appName, {
+  version,
+  author
+} <span class="text-blue-400">from</span> <span class="text-emerald-400">"./config.js"</span>;
+
+console.log(appName);
+console.log(version);
+console.log(author);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Class Import -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Class Import
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-4">
+            <code class="text-blue-400">User.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+}</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-7 mb-4">
+            <code class="text-blue-400">app.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> {
+  User
+} <span class="text-blue-400">from</span> <span class="text-emerald-400">"./User.js"</span>;
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+console.log(
+  user.name
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Relative Paths -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Import File Paths
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Path</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    ./math.js
+                  </td>
+                  <td class="p-4">
+                    Current folder
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    ../math.js
+                  </td>
+                  <td class="p-4">
+                    Parent folder
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    ./utils/math.js
+                  </td>
+                  <td class="p-4">
+                    Current folder ke andar utils folder
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Folder Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Folder Structure Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">project/
+
+├── index.html
+├── app.js
+
+└── modules/
+    └── calculator.js</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Agar
+            <code class="text-blue-400">app.js</code>
+            root folder me hai:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mt-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> {
+  add
+} <span class="text-blue-400">from</span>
+  <span class="text-emerald-400">"./modules/calculator.js"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- HTML Setup -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            HTML Me Import Use Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Browser me ES Modules ke liye
+            <code class="text-blue-400">type="module"</code>
+            zaroor use karo.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;script
+  type=<span class="text-emerald-400">"module"</span>
+  src=<span class="text-emerald-400">"./app.js"</span>
+&gt;&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Complete Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Complete Import Example
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-4">
+            <code class="text-blue-400">calculator.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export const</span> add =
+  (a, b) =&gt; a + b;
+
+<span class="text-blue-400">export const</span> subtract =
+  (a, b) =&gt; a - b;
+
+<span class="text-blue-400">export const</span> multiply =
+  (a, b) =&gt; a * b;</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-7 mb-4">
+            <code class="text-blue-400">app.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> {
+  add,
+  subtract,
+  multiply
+} <span class="text-blue-400">from</span>
+  <span class="text-emerald-400">"./calculator.js"</span>;
+
+console.log(
+  add(<span class="text-emerald-400">20</span>, <span class="text-emerald-400">10</span>)
+);
+
+console.log(
+  subtract(<span class="text-emerald-400">20</span>, <span class="text-emerald-400">10</span>)
+);
+
+console.log(
+  multiply(<span class="text-emerald-400">20</span>, <span class="text-emerald-400">10</span>)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">30
+10
+200</pre>
+          </div>
+
+        </div>
+
+        <!-- Import vs Export Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Import vs Export
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Export</th>
+                  <th class="p-4">Import</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Value ko module se bahar available karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Exported value ko current module me lata hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    export { add }
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    import { add } from "./math.js"
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Source file me hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Jahan value use karni ho wahan hota hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Common Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Common Mistake
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Named export ko default import ki tarah import nahi karna chahiye.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Wrong
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// math.js</span>
+
+<span class="text-blue-400">export const</span> add =
+  (a, b) =&gt; a + b;
+
+<span class="text-gray-400">// app.js</span>
+
+<span class="text-blue-400">import</span> add
+<span class="text-blue-400">from</span> <span class="text-emerald-400">"./math.js"</span>;</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Correct
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">import</span> {
+  add
+} <span class="text-blue-400">from</span> <span class="text-emerald-400">"./math.js"</span>;</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Module Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Import Ka Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">math.js
+
+export const add = (a, b) => a + b;
+
+          ↓
+
+Export Available
+
+          ↓
+
+app.js
+
+import { add } from "./math.js";
+
+          ↓
+
+Use Imported Function
+
+add(10, 20)
+
+          ↓
+
+30</pre>
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">import</code>
+              dusri module file ki exported value ko current file me lata hai.
+            </p>
+
+            <p>
+              2. Named imports me
+              <code class="text-blue-400">{ }</code>
+              use hote hain.
+            </p>
+
+            <p>
+              3. Default import me curly braces nahi lagte.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">as</code>
+              se named import rename kar sakte hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">import * as Name</code>
+              se saare named exports ek namespace object me milte hain.
+            </p>
+
+            <p>
+              6. Relative paths me
+              <code class="text-blue-400">./</code>
+              current folder aur
+              <code class="text-blue-400">../</code>
+              parent folder ko represent karta hai.
+            </p>
+
+            <p>
+              7. Browser me ES Modules ke liye
+              <code class="text-blue-400">type="module"</code>
+              use karna hota hai.
+            </p>
+
+            <p>
+              8. Export aur import se code reusable aur organized banta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Export.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../async/Async.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(25);
+  </script>
+
+</body>
+</html>

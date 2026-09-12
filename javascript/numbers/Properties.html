@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Number Properties - Tutorial</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5"
+      >
+        JavaScript Number Properties
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./NumbersMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./NumbersReference.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Number Properties Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Number Properties predefined values hoti hain jo
+          JavaScript ke Number system ke limits aur special numeric values ko
+          represent karti hain.
+          <br><br>
+          In properties ko directly
+          <code class="text-blue-400">Number.propertyName</code>
+          ke through access kiya jata hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Properties Table -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Number Properties List
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.EPSILON</td>
+                  <td class="p-4">
+                    1 aur next representable floating-point number ke beech ka
+                    difference.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.MAX_VALUE</td>
+                  <td class="p-4">
+                    Sabse bada finite Number value.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.MIN_VALUE</td>
+                  <td class="p-4">
+                    Zero se bada sabse chhota positive Number value.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number.MAX_SAFE_INTEGER
+                  </td>
+                  <td class="p-4">
+                    Sabse bada safely representable integer.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number.MIN_SAFE_INTEGER
+                  </td>
+                  <td class="p-4">
+                    Sabse chhota safely representable integer.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number.POSITIVE_INFINITY
+                  </td>
+                  <td class="p-4">
+                    Positive Infinity ko represent karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Number.NEGATIVE_INFINITY
+                  </td>
+                  <td class="p-4">
+                    Negative Infinity ko represent karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.NaN</td>
+                  <td class="p-4">
+                    Not a Number value ko represent karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Syntax -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Number Property Syntax
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>Number.propertyName</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Number properties ko function ki tarah call nahi karte, isliye
+            inke saath
+            <code class="text-blue-400">()</code>
+            nahi lagta.
+          </p>
+
+        </div>
+
+        <!-- EPSILON -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.EPSILON
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Floating-point calculations me bahut small difference ko represent
+            karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.EPSILON);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">2.220446049250313e-16</pre>
+          </div>
+
+        </div>
+
+        <!-- MAX VALUE -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.MAX_VALUE
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            JavaScript Number type ka largest finite value return karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.MAX_VALUE);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">1.7976931348623157e+308</pre>
+          </div>
+
+        </div>
+
+        <!-- MIN VALUE -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.MIN_VALUE
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Zero se greater sabse small positive Number value return karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.MIN_VALUE);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">5e-324</pre>
+          </div>
+
+        </div>
+
+        <!-- MAX SAFE INTEGER -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.MAX_SAFE_INTEGER
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            JavaScript me safely represent kiya jane wala largest integer hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.MAX_SAFE_INTEGER);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">9007199254740991</pre>
+          </div>
+
+        </div>
+
+        <!-- MIN SAFE INTEGER -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.MIN_SAFE_INTEGER
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            JavaScript me safely represent kiya jane wala smallest integer hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.MIN_SAFE_INTEGER);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">-9007199254740991</pre>
+          </div>
+
+        </div>
+
+        <!-- Positive Infinity -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.POSITIVE_INFINITY
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.POSITIVE_INFINITY);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Infinity</pre>
+          </div>
+
+        </div>
+
+        <!-- Negative Infinity -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.NEGATIVE_INFINITY
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.NEGATIVE_INFINITY);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">-Infinity</pre>
+          </div>
+
+        </div>
+
+        <!-- NaN -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.NaN
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Invalid numeric result ko represent karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.NaN);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">NaN</pre>
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Number properties ko
+              <code class="text-blue-400">Number.property</code>
+              syntax se access karte hain.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">MAX_SAFE_INTEGER</code>
+              aur
+              <code class="text-blue-400">MIN_SAFE_INTEGER</code>
+              safe integer limits batate hain.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">MIN_VALUE</code>
+              sabse negative number nahi hai; ye zero ke closest positive
+              representable number ko show karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">NaN</code>
+              invalid numeric result ko represent karta hai.
+            </p>
+
+            <p>
+              5. Safe integer range se bahut bade exact integers ke liye
+              <code class="text-blue-400">BigInt</code>
+              useful hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./NumbersMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./NumbersReference.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // JS Numbers -> Number Properties
+    document.getElementById("sidebar").innerHTML = createSidebar(9);
+  </script>
+
+</body>
+</html>

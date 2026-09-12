@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Async Await - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Async / Await
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Promises.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Fetch.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          async / await Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">async</code>
+          aur
+          <code class="text-blue-400">await</code>
+          Promise based asynchronous code ko simple aur readable banane ke
+          liye use hote hain.
+          <br><br>
+          <code class="text-blue-400">async</code>
+          function Promise return karta hai aur
+          <code class="text-blue-400">await</code>
+          Promise ke result ka wait karta hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- async syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            async Function Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> functionName() {
+
+  <span class="text-gray-400">// code</span>
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Basic Async -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic async Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> greet() {
+
+  <span class="text-blue-400">return</span>
+    <span class="text-emerald-400">"Hello"</span>;
+
+}
+
+greet().then((result) =&gt; {
+
+  console.log(result);
+
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Hello</pre>
+          </div>
+
+        </div>
+
+        <!-- async returns Promise -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            async Function Promise Return Karta Hai
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getNumber() {
+
+  <span class="text-blue-400">return</span> <span class="text-emerald-400">100</span>;
+
+}
+
+console.log(
+  getNumber()
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Direct
+            <code class="text-blue-400">100</code>
+            nahi, Promise object milta hai.
+          </p>
+
+        </div>
+
+        <!-- Await Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            await Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> result =
+  <span class="text-blue-400">await</span> promise;</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Commonly
+            <code class="text-blue-400">await</code>
+            ko async function ke andar use kiya jata hai.
+          </p>
+
+        </div>
+
+        <!-- Simple await -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple await Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> getData() {
+
+  <span class="text-blue-400">return</span> Promise.resolve(
+    <span class="text-emerald-400">"Data Loaded"</span>
+  );
+
+}
+
+<span class="text-blue-400">async function</span> showData() {
+
+  <span class="text-blue-400">const</span> result =
+    <span class="text-blue-400">await</span> getData();
+
+  console.log(result);
+
+}
+
+showData();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Data Loaded</pre>
+          </div>
+
+        </div>
+
+        <!-- Timeout Promise -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            async / await With setTimeout
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> loadData() {
+
+  <span class="text-blue-400">return new</span> Promise(
+    (resolve) =&gt; {
+
+      setTimeout(() =&gt; {
+
+        resolve(
+          <span class="text-emerald-400">"Data Loaded"</span>
+        );
+
+      }, <span class="text-emerald-400">2000</span>);
+
+    }
+  );
+
+}
+
+<span class="text-blue-400">async function</span> showData() {
+
+  console.log(
+    <span class="text-emerald-400">"Loading..."</span>
+  );
+
+  <span class="text-blue-400">const</span> data =
+    <span class="text-blue-400">await</span> loadData();
+
+  console.log(data);
+
+}
+
+showData();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Loading...
+Data Loaded</pre>
+          </div>
+
+        </div>
+
+        <!-- Promise then vs await -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Promise then() vs async / await
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4 text-blue-400">
+                Promise
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code>getData()
+  .then((data) =&gt; {
+
+    console.log(data);
+
+  })
+  .catch((error) =&gt; {
+
+    console.log(error);
+
+  });</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4 text-blue-400">
+                async / await
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> load() {
+
+  <span class="text-blue-400">const</span> data =
+    <span class="text-blue-400">await</span> getData();
+
+  console.log(data);
+
+}</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple awaits -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple await
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getData() {
+
+  <span class="text-blue-400">const</span> user =
+    <span class="text-blue-400">await</span> getUser();
+
+  <span class="text-blue-400">const</span> orders =
+    <span class="text-blue-400">await</span> getOrders(
+      user.id
+    );
+
+  <span class="text-blue-400">const</span> payment =
+    <span class="text-blue-400">await</span> getPayment(
+      orders[<span class="text-emerald-400">0</span>].id
+    );
+
+  console.log(payment);
+
+}</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Is code ko top-to-bottom padhna easy hai, isi wajah se
+            async/await kaafi readable hota hai.
+          </p>
+
+        </div>
+
+        <!-- try catch -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            try...catch With async / await
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Rejected Promise ya thrown error ko handle karne ke liye
+            <code class="text-blue-400">try...catch</code>
+            use karte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getData() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> result =
+      <span class="text-blue-400">await</span> Promise.resolve(
+        <span class="text-emerald-400">"Success"</span>
+      );
+
+    console.log(result);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(error);
+
+  }
+
+}
+
+getData();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Rejected Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Rejected Promise Handle Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> login() {
+
+  <span class="text-blue-400">return</span> Promise.reject(
+    <span class="text-emerald-400">"Invalid Login"</span>
+  );
+
+}
+
+<span class="text-blue-400">async function</span> handleLogin() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> result =
+      <span class="text-blue-400">await</span> login();
+
+    console.log(result);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(error);
+
+  }
+
+}
+
+handleLogin();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Invalid Login</pre>
+          </div>
+
+        </div>
+
+        <!-- finally -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            try...catch...finally
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> loadData() {
+
+  <span class="text-blue-400">try</span> {
+
+    console.log(
+      <span class="text-emerald-400">"Loading"</span>
+    );
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(error);
+
+  } <span class="text-blue-400">finally</span> {
+
+    console.log(
+      <span class="text-emerald-400">"Finished"</span>
+    );
+
+  }
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Fetch -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Fetch API With async / await
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getUsers() {
+
+  <span class="text-blue-400">const</span> response =
+    <span class="text-blue-400">await</span> fetch(
+      <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users"</span>
+    );
+
+  <span class="text-blue-400">const</span> users =
+    <span class="text-blue-400">await</span> response.json();
+
+  console.log(users);
+
+}
+
+getUsers();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- response ok -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Fetch Error Check
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> getUsers() {
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> fetch(
+        <span class="text-emerald-400">"https://jsonplaceholder.typicode.com/users"</span>
+      );
+
+    <span class="text-blue-400">if</span> (!response.ok) {
+
+      <span class="text-blue-400">throw new</span> Error(
+        <span class="text-emerald-400">"Request failed"</span>
+      );
+
+    }
+
+    <span class="text-blue-400">const</span> data =
+      <span class="text-blue-400">await</span> response.json();
+
+    console.log(data);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  }
+
+}
+
+getUsers();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Async Arrow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Async Arrow Function
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> getData =
+  <span class="text-blue-400">async</span> () =&gt; {
+
+    <span class="text-blue-400">const</span> result =
+      <span class="text-blue-400">await</span> Promise.resolve(
+        <span class="text-emerald-400">"Hello"</span>
+      );
+
+    console.log(result);
+
+  };
+
+getData();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Sequential vs parallel -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Sequential await
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar second task ko first task ka result chahiye, sequential
+            <code class="text-blue-400">await</code>
+            useful hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">await</span> getUser();
+
+<span class="text-blue-400">const</span> orders =
+  <span class="text-blue-400">await</span> getOrders(
+    user.id
+  );</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Promise All -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Parallel Tasks With Promise.all()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Independent Promises ko parallel start karke ek saath wait karne ke
+            liye
+            <code class="text-blue-400">Promise.all()</code>
+            useful hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> loadData() {
+
+  <span class="text-blue-400">const</span> [
+    users,
+    products
+  ] = <span class="text-blue-400">await</span> Promise.all([
+    getUsers(),
+    getProducts()
+  ]);
+
+  console.log(users);
+  console.log(products);
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Return -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Return Value From async Function
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> calculate() {
+
+  <span class="text-blue-400">const</span> result =
+    <span class="text-emerald-400">10</span> + <span class="text-emerald-400">20</span>;
+
+  <span class="text-blue-400">return</span> result;
+
+}
+
+calculate().then((result) =&gt; {
+
+  console.log(result);
+
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            async / await Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">Create async Function
+
+        ↓
+
+Start Async Task
+
+        ↓
+
+await Promise
+
+        ↓
+
+Promise Settles
+
+    ↙         ↘
+
+Resolve      Reject
+
+   ↓           ↓
+
+Result       catch()
+
+        ↓
+
+Continue Code</pre>
+          </div>
+
+        </div>
+
+        <!-- Promise vs async await -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Promise vs async / await
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Promise</th>
+                  <th class="p-4">async / await</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    <code class="text-blue-400">then()</code>
+                    aur
+                    <code class="text-blue-400">catch()</code>
+                    use karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    <code class="text-blue-400">await</code>
+                    aur
+                    <code class="text-blue-400">try...catch</code>
+                    use karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Chaining style.
+                  </td>
+
+                  <td class="p-4">
+                    Synchronous-looking style.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Promise directly handle karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Promise ke upar hi built hota hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">async</code>
+              function hamesha Promise return karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">await</code>
+              Promise ke settle hone ka result wait karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">await</code>
+              commonly async function ke andar use hota hai.
+            </p>
+
+            <p>
+              4. Error handling ke liye
+              <code class="text-blue-400">try...catch</code>
+              use karte hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">finally</code>
+              success aur error dono ke baad run ho sakta hai.
+            </p>
+
+            <p>
+              6. API requests ke saath async/await bahut commonly use hota hai.
+            </p>
+
+            <p>
+              7. Independent async tasks ko parallel handle karne ke liye
+              <code class="text-blue-400">Promise.all()</code>
+              useful hai.
+            </p>
+
+            <p>
+              8. Async/await Promises ka replacement nahi hai; ye Promise-based
+              code ko likhne ka cleaner syntax hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Promises.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Fetch.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(26);
+  </script>
+
+</body>
+</html>

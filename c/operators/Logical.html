@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Logical Operators</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Logical Operators 
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="Comparison.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Precedence.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Logical Operators Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        **Logical Operators** ka use multiple conditions ya expressions ko combine karne ke liye kiya jata hai.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        Inka result hamesha boolean hota hai: <strong class="text-green-400">1 (True)</strong> ya <strong class="text-red-400">0 (False)</strong>.
+      </p>
+    </section>
+
+    <!-- Table Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">List of Logical Operators</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Operator</th>
+              <th class="py-4 px-6">Name</th>
+              <th class="py-4 px-6">Description</th>
+              <th class="py-4 px-6 text-yellow-300">Example (a = 1, b = 0)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">&amp;&amp;</td>
+              <td class="py-4 px-6 text-white font-bold">Logical AND</td>
+              <td class="py-4 px-6">Result <b>1</b> hota hai agar **dono** conditions True hon</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">a &amp;&amp; b ➔ 0</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">||</td>
+              <td class="py-4 px-6 text-white font-bold">Logical OR</td>
+              <td class="py-4 px-6">Result <b>1</b> hota hai agar **kam se kam ek** condition True ho</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">a || b ➔ 1</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold font-mono text-green-400 text-2xl">!</td>
+              <td class="py-4 px-6 text-white font-bold">Logical NOT</td>
+              <td class="py-4 px-6">Condition ko reverse (invert) karta hai (True ➔ False, False ➔ True)</td>
+              <td class="py-4 px-6 font-mono text-cyan-300">!a ➔ 0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Short-Circuit Evaluation -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Short-Circuit Evaluation ⚡</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C language me logical operators **Left to Right** evaluate hote hain aur agar pehli condition se result pehle hi confirm ho jaye toh agli condition execute nahi hoti:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl text-yellow-300 font-bold mb-2">AND (&amp;&amp;) Short-Circuit</p>
+          <p class="text-gray-300 text-lg leading-8">
+            Agar pehli condition <strong class="text-red-400">False (0)</strong> hai, toh doosri check nahi hoti kyunki result overall False hi hoga.
+          </p>
+        </div>
+
+        <div class="bg-black/60 border border-gray-700 p-6 rounded-2xl">
+          <p class="text-xl text-cyan-300 font-bold mb-2">OR (||) Short-Circuit</p>
+          <p class="text-gray-300 text-lg leading-8">
+            Agar pehli condition <strong class="text-green-400">True (1)</strong> hai, toh doosri check nahi hoti kyunki result overall True hi hona hai.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Code Example: Logical Operators</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> age = <span class="text-green-400">22</span>;
+    <span class="text-green-500">int</span> hasLicense = <span class="text-green-400">1</span>; <span class="text-gray-500">// 1 = True</span>
+
+    <span class="text-gray-500">// Logical AND</span>
+    <span class="text-purple-400">if</span> (age &gt;= <span class="text-green-400">18</span> &amp;&amp; hasLicense) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Drive kar sakte hain!\n"</span>);
+    }
+
+    <span class="text-gray-500">// Logical OR</span>
+    <span class="text-green-500">int</span> isWeekend = <span class="text-green-400">0</span>;
+    <span class="text-green-500">int</span> isHoliday = <span class="text-green-400">1</span>;
+    <span class="text-purple-400">if</span> (isWeekend || isHoliday) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Aaj chutti hai!\n"</span>);
+    }
+
+    <span class="text-gray-500">// Logical NOT</span>
+    <span class="text-green-500">int</span> isLoggedIn = <span class="text-green-400">0</span>;
+    <span class="text-purple-400">if</span> (!isLoggedIn) {
+        <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Please pehle login karein.\n"</span>);
+    }
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4">
+        <p class="text-yellow-400 font-mono">Output:</p>
+        <p class="text-gray-300 font-mono">Drive kar sakte hain!</p>
+        <p class="text-gray-300 font-mono">Aaj chutti hai!</p>
+        <p class="text-gray-300 font-mono">Please pehle login karein.</p>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Logical operators ka mostly use Complex conditions (jaise validation checks) likhne me `if-else` block ke andar hota hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="Comparison.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Precedence.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(12);
+  }
+</script>
+
+</body>
+</html>

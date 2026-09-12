@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JSON Stringify - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JSON Stringify
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Parse.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../classes/Classes.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          JSON.stringify() Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">JSON.stringify()</code>
+          ka use JavaScript value ko JSON string me convert karne ke liye hota hai.
+          <br><br>
+          Ye mainly object ya array ko API, localStorage ya kisi aur system me
+          string format me bhejne ya save karne ke kaam aata hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            JSON.stringify() Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>JSON.stringify(value);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Basic Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-blue-400">20</span>
+};
+
+<span class="text-blue-400">const</span> json =
+  JSON.stringify(user);
+
+console.log(json);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">{"name":"Ali","age":20}</pre>
+
+          </div>
+
+        </div>
+
+        <!-- typeof -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Stringify Se Pehle Aur Baad Me typeof
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>
+};
+
+console.log(
+  <span class="text-blue-400">typeof</span> user
+);
+
+<span class="text-blue-400">const</span> json =
+  JSON.stringify(user);
+
+console.log(
+  <span class="text-blue-400">typeof</span> json
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">object
+string</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Array -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array Ko JSON String Me Convert Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> skills = [
+  <span class="text-emerald-400">"HTML"</span>,
+  <span class="text-emerald-400">"CSS"</span>,
+  <span class="text-emerald-400">"JavaScript"</span>
+];
+
+<span class="text-blue-400">const</span> json =
+  JSON.stringify(skills);
+
+console.log(json);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">["HTML","CSS","JavaScript"]</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Array Objects -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array Of Objects Stringify
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> users = [
+  {
+    id: <span class="text-blue-400">1</span>,
+    name: <span class="text-emerald-400">"Ali"</span>
+  },
+  {
+    id: <span class="text-blue-400">2</span>,
+    name: <span class="text-emerald-400">"Ahmed"</span>
+  }
+];
+
+<span class="text-blue-400">const</span> json =
+  JSON.stringify(users);
+
+console.log(json);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">[{"id":1,"name":"Ali"},{"id":2,"name":"Ahmed"}]</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Nested -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Nested Object Stringify
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  address: {
+    city: <span class="text-emerald-400">"Ranchi"</span>,
+    state: <span class="text-emerald-400">"Jharkhand"</span>
+  }
+};
+
+<span class="text-blue-400">const</span> json =
+  JSON.stringify(user);
+
+console.log(json);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Pretty JSON -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Pretty JSON
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Third parameter use karke JSON output ko readable format me show
+            kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-blue-400">20</span>
+};
+
+<span class="text-blue-400">const</span> json =
+  JSON.stringify(
+    user,
+    <span class="text-blue-400">null</span>,
+    <span class="text-blue-400">2</span>
+  );
+
+console.log(json);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">{
+  "name": "Ali",
+  "age": 20
+}</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            JSON.stringify() Parameters
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code>JSON.stringify(
+  value,
+  replacer,
+  space
+);</code></pre>
+
+          </div>
+
+          <div class="overflow-x-auto mt-5">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Parameter</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">value</td>
+                  <td class="p-4">
+                    Jo value JSON string me convert karni hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">replacer</td>
+                  <td class="p-4">
+                    Properties filter ya transform kar sakta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">space</td>
+                  <td class="p-4">
+                    Pretty formatting ke liye indentation deta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Replacer Array -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Replacer Array
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Sirf selected properties ko JSON me include karne ke liye replacer
+            array use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-blue-400">20</span>,
+  city: <span class="text-emerald-400">"Ranchi"</span>
+};
+
+<span class="text-blue-400">const</span> json =
+  JSON.stringify(
+    user,
+    [<span class="text-emerald-400">"name"</span>, <span class="text-emerald-400">"city"</span>]
+  );
+
+console.log(json);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">{"name":"Ali","city":"Ranchi"}</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Replacer Function -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Replacer Function
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> product = {
+  name: <span class="text-emerald-400">"Laptop"</span>,
+  price: <span class="text-blue-400">50000</span>
+};
+
+<span class="text-blue-400">const</span> json =
+  JSON.stringify(
+    product,
+    (key, value) =&gt; {
+
+      <span class="text-blue-400">if</span> (
+        key ===
+        <span class="text-emerald-400">"price"</span>
+      ) {
+
+        <span class="text-blue-400">return</span>
+          value + <span class="text-blue-400">1000</span>;
+
+      }
+
+      <span class="text-blue-400">return</span> value;
+
+    }
+  );
+
+console.log(json);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">{"name":"Laptop","price":51000}</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Undefined -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            undefined Property
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Object ke andar
+            <code class="text-blue-400">undefined</code>
+            property JSON string me omit ho jati hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-blue-400">undefined</span>
+};
+
+console.log(
+  JSON.stringify(user)
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">{"name":"Ali"}</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Function Property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Property
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Object ki function property bhi normal JSON output me include nahi
+            hoti.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+
+  greet: <span class="text-blue-400">function</span>() {
+    console.log(
+      <span class="text-emerald-400">"Hello"</span>
+    );
+  }
+};
+
+console.log(
+  JSON.stringify(user)
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">{"name":"Ali"}</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Date -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Date Object Stringify
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+
+  createdAt:
+    <span class="text-blue-400">new</span> Date(
+      <span class="text-emerald-400">
+        "2026-01-01"
+      </span>
+    )
+};
+
+console.log(
+  JSON.stringify(user)
+);</code></pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Date JSON me normally ISO format ki string ban jati hai.
+          </p>
+
+        </div>
+
+        <!-- localStorage -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage Me Object Save Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            localStorage me object directly save nahi karna chahiye.
+            Pehle use JSON string me convert karte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  id: <span class="text-blue-400">1</span>,
+  name: <span class="text-emerald-400">"Ali"</span>,
+  email:
+    <span class="text-emerald-400">
+      "ali@gmail.com"
+    </span>
+};
+
+localStorage.setItem(
+  <span class="text-emerald-400">"user"</span>,
+  JSON.stringify(user)
+);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- localStorage read -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage Complete Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-blue-400">20</span>
+};
+
+<span class="text-gray-400">// Object to JSON string</span>
+
+localStorage.setItem(
+  <span class="text-emerald-400">"user"</span>,
+  JSON.stringify(user)
+);
+
+
+<span class="text-gray-400">// Get JSON string</span>
+
+<span class="text-blue-400">const</span> stored =
+  localStorage.getItem(
+    <span class="text-emerald-400">"user"</span>
+  );
+
+
+<span class="text-gray-400">// JSON string to object</span>
+
+<span class="text-blue-400">const</span> savedUser =
+  JSON.parse(stored);
+
+console.log(
+  savedUser.name
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali</pre>
+
+          </div>
+
+        </div>
+
+        <!-- API POST -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Fetch POST Request Me JSON.stringify()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Fetch API se JSON data POST karte waqt
+            <code class="text-blue-400">JSON.stringify()</code>
+            commonly use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  email:
+    <span class="text-emerald-400">
+      "ali@gmail.com"
+    </span>
+};
+
+fetch(
+  <span class="text-emerald-400">"/api/users"</span>,
+  {
+
+    method:
+      <span class="text-emerald-400">"POST"</span>,
+
+    headers: {
+      <span class="text-emerald-400">
+        "Content-Type"
+      </span>:
+      <span class="text-emerald-400">
+        "application/json"
+      </span>
+    },
+
+    body:
+      JSON.stringify(user)
+
+  }
+);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Fetch Complete -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Complete API POST Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> createUser() {
+
+  <span class="text-blue-400">const</span> user = {
+    name: <span class="text-emerald-400">"Ali"</span>,
+    email:
+      <span class="text-emerald-400">
+        "ali@gmail.com"
+      </span>
+  };
+
+  <span class="text-blue-400">try</span> {
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> fetch(
+        <span class="text-emerald-400">
+          "/api/users"
+        </span>,
+        {
+
+          method:
+            <span class="text-emerald-400">
+              "POST"
+            </span>,
+
+          headers: {
+            <span class="text-emerald-400">
+              "Content-Type"
+            </span>:
+            <span class="text-emerald-400">
+              "application/json"
+            </span>
+          },
+
+          body:
+            JSON.stringify(user)
+
+        }
+      );
+
+    <span class="text-blue-400">const</span> data =
+      <span class="text-blue-400">await</span> response.json();
+
+    console.log(data);
+
+  } <span class="text-blue-400">catch</span> (error) {
+
+    console.log(
+      error.message
+    );
+
+  }
+
+}
+
+createUser();</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Axios -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Axios Me JSON.stringify()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Axios normally JavaScript object ko automatically JSON format me
+            handle kar leta hai. Isliye normal Axios POST request me manually
+            stringify karna usually zaroori nahi hota.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  email:
+    <span class="text-emerald-400">
+      "ali@gmail.com"
+    </span>
+};
+
+<span class="text-blue-400">const</span> response =
+  <span class="text-blue-400">await</span> axios.post(
+    <span class="text-emerald-400">
+      "/api/users"
+    </span>,
+    user
+  );
+
+console.log(
+  response.data
+);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- React localStorage -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            React Login Example
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Login response ka user object localStorage me save karte waqt
+            stringify commonly use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> response =
+  <span class="text-blue-400">await</span> LoginUser(
+    formData
+  );
+
+localStorage.setItem(
+  <span class="text-emerald-400">"token"</span>,
+  response.data.token
+);
+
+localStorage.setItem(
+  <span class="text-emerald-400">"user"</span>,
+  JSON.stringify(
+    response.data.user
+  )
+);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Parse + stringify -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            JSON.parse() vs JSON.stringify()
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Method
+                  </th>
+
+                  <th class="p-4">
+                    Conversion
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+
+                  <td class="p-4 font-mono">
+                    JSON.parse()
+                  </td>
+
+                  <td class="p-4">
+                    JSON String → JavaScript Value
+                  </td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="p-4 font-mono">
+                    JSON.stringify()
+                  </td>
+
+                  <td class="p-4">
+                    JavaScript Value → JSON String
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            JSON.stringify() Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base text-gray-300">JavaScript Object
+
+{ name: "Ali" }
+
+       ↓
+
+ JSON.stringify()
+
+       ↓
+
+JSON String
+
+'{"name":"Ali"}'
+
+       ↓
+
+API / localStorage</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Common mistakes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Common Mistakes
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Object ko localStorage me directly store karna.
+            </p>
+
+            <p>
+              2. Fetch POST request me object ko directly
+              <code class="text-blue-400">body</code>
+              me dena jab JSON body expected ho.
+            </p>
+
+            <p>
+              3. Stringify ke baad object properties directly access karna.
+            </p>
+
+            <p>
+              4. Functions aur undefined properties ko JSON me preserve hone ki
+              expectation rakhna.
+            </p>
+
+            <p>
+              5. Circular object ko directly stringify karna.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Circular -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Circular Reference Error
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Agar object khud ko reference kare, normal
+            <code class="text-blue-400">JSON.stringify()</code>
+            error de sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Ali"</span>
+};
+
+user.self = user;
+
+JSON.stringify(user);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-red-400 font-mono">TypeError:
+Converting circular structure to JSON</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">JSON.stringify()</code>
+              JavaScript value ko JSON string me convert karta hai.
+            </p>
+
+            <p>
+              2. Object stringify hone ke baad uska type string hota hai.
+            </p>
+
+            <p>
+              3. Arrays ko bhi JSON string me convert kiya ja sakta hai.
+            </p>
+
+            <p>
+              4. Pretty JSON ke liye third parameter me indentation de sakte hain.
+            </p>
+
+            <p>
+              5. Replacer se selected properties include ya values transform ki
+              ja sakti hain.
+            </p>
+
+            <p>
+              6. Object ki undefined aur function properties generally JSON output
+              me omit ho jati hain.
+            </p>
+
+            <p>
+              7. localStorage me objects save karne se pehle stringify karna
+              useful hai.
+            </p>
+
+            <p>
+              8. Fetch API me JSON body send karte waqt
+              <code class="text-blue-400">JSON.stringify()</code>
+              commonly use hota hai.
+            </p>
+
+            <p>
+              9. Axios normal object data ko automatically JSON me serialize kar
+              sakta hai.
+            </p>
+
+            <p>
+              10.
+              <code class="text-blue-400">JSON.parse()</code>
+              stringify ka opposite conversion karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Parse.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../classes/Classes.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(23);
+  </script>
+
+</body>
+
+</html>

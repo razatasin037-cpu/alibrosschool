@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>JavaScript Booleans - Tutorial</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom JS -->
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+
+        <!-- Heading -->
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          JavaScript Booleans
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Switch.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Logical.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2
+            class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white"
+          >
+            Boolean Kya Hai?
+          </h2>
+
+          <p
+            class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4"
+          >
+            JavaScript me Boolean ek data type hai jisme sirf do values hoti
+            hain:
+            <code class="text-emerald-400">true</code>
+            aur
+            <code class="text-red-400">false</code>.
+          </p>
+
+          <p
+            class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed"
+          >
+            Boolean values ka use mostly conditions, comparisons aur decision
+            making me hota hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Boolean Values -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Boolean Values
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Boolean me sirf do possible values hoti hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> isLoggedIn = <span class="text-emerald-400">true</span>;
+
+<span class="text-blue-400">let</span> isAdmin = <span class="text-red-400">false</span>;
+
+console.log(isLoggedIn);
+console.log(isAdmin);</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="font-mono"><span class="text-emerald-400">true</span>
+<span class="text-red-400">false</span></pre>
+            </div>
+          </div>
+
+          <!-- Typeof -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Boolean Data Type
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-blue-400">typeof</code>
+              operator se Boolean ka data type check kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> status = <span class="text-emerald-400">true</span>;
+
+console.log(<span class="text-blue-400">typeof</span> status);</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">boolean</pre>
+            </div>
+          </div>
+
+          <!-- Comparison -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Comparison Se Boolean Result
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Comparison operators ka result hamesha
+              <code class="text-emerald-400">true</code>
+              ya
+              <code class="text-red-400">false</code>
+              hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> a = <span class="text-emerald-400">10</span>;
+<span class="text-blue-400">let</span> b = <span class="text-emerald-400">20</span>;
+
+console.log(a < b);
+console.log(a > b);
+console.log(a === <span class="text-emerald-400">10</span>);</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="font-mono"><span class="text-emerald-400">true</span>
+<span class="text-red-400">false</span>
+<span class="text-emerald-400">true</span></pre>
+            </div>
+          </div>
+
+          <!-- Boolean Function -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Boolean() Function
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              JavaScript ka
+              <code class="text-blue-400">Boolean()</code>
+              function kisi value ko Boolean me convert karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code>console.log(Boolean(<span class="text-emerald-400">10</span>));
+
+console.log(Boolean(<span class="text-emerald-400">"Hello"</span>));
+
+console.log(Boolean(<span class="text-emerald-400">0</span>));
+
+console.log(Boolean(<span class="text-emerald-400">""</span>));</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="font-mono"><span class="text-emerald-400">true</span>
+<span class="text-emerald-400">true</span>
+<span class="text-red-400">false</span>
+<span class="text-red-400">false</span></pre>
+            </div>
+          </div>
+
+          <!-- Truthy -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Truthy Values
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              JavaScript me kuch values Boolean
+              <code class="text-emerald-400">true</code>
+              ki tarah behave karti hain. Inhe
+              <strong class="text-white">Truthy Values</strong>
+              kehte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code>Boolean(<span class="text-emerald-400">1</span>);
+Boolean(<span class="text-emerald-400">100</span>);
+Boolean(<span class="text-emerald-400">-10</span>);
+Boolean(<span class="text-emerald-400">"Hello"</span>);
+Boolean(<span class="text-emerald-400">"false"</span>);
+Boolean([]);
+Boolean({});</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Result:</p>
+
+              <pre class="text-emerald-400 font-mono">All are true</pre>
+            </div>
+          </div>
+
+          <!-- Falsy -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Falsy Values
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Kuch values Boolean
+              <code class="text-red-400">false</code>
+              ki tarah behave karti hain. Inhe
+              <strong class="text-white">Falsy Values</strong>
+              kehte hain.
+            </p>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+
+                <thead>
+                  <tr class="border-b border-[#334155] text-blue-400">
+                    <th class="p-4 text-lg">Value</th>
+                    <th class="p-4 text-lg">Boolean Result</th>
+                  </tr>
+                </thead>
+
+                <tbody
+                  class="divide-y divide-[#334155] text-gray-300 text-sm md:text-base"
+                >
+                  <tr>
+                    <td class="p-4 font-mono">false</td>
+                    <td class="p-4 text-red-400 font-mono">false</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono">0</td>
+                    <td class="p-4 text-red-400 font-mono">false</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono">-0</td>
+                    <td class="p-4 text-red-400 font-mono">false</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono">""</td>
+                    <td class="p-4 text-red-400 font-mono">false</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono">null</td>
+                    <td class="p-4 text-red-400 font-mono">false</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono">undefined</td>
+                    <td class="p-4 text-red-400 font-mono">false</td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-4 font-mono">NaN</td>
+                    <td class="p-4 text-red-400 font-mono">false</td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+
+          <!-- Falsy Code -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Falsy Values Example
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code>console.log(Boolean(<span class="text-emerald-400">0</span>));
+console.log(Boolean(<span class="text-emerald-400">""</span>));
+console.log(Boolean(<span class="text-blue-400">null</span>));
+console.log(Boolean(<span class="text-blue-400">undefined</span>));
+console.log(Boolean(<span class="text-blue-400">NaN</span>));</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-red-400 font-mono">false
+false
+false
+false
+false</pre>
+            </div>
+          </div>
+
+          <!-- Boolean With If -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Boolean With If Statement
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Boolean variable ko directly
+              <code class="text-blue-400">if</code>
+              condition me use kar sakte hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> isLoggedIn = <span class="text-emerald-400">true</span>;
+
+<span class="text-blue-400">if</span> (isLoggedIn) {
+  console.log(<span class="text-emerald-400">"Welcome User"</span>);
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">Welcome User</pre>
+            </div>
+          </div>
+
+          <!-- If Else -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Boolean With If Else
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> hasPermission = <span class="text-red-400">false</span>;
+
+<span class="text-blue-400">if</span> (hasPermission) {
+  console.log(<span class="text-emerald-400">"Access Allowed"</span>);
+} <span class="text-blue-400">else</span> {
+  console.log(<span class="text-emerald-400">"Access Denied"</span>);
+}</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">Access Denied</pre>
+            </div>
+          </div>
+
+          <!-- Boolean Comparison -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Real Life Example
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Maan lo student ke marks ke basis par pass status Boolean me
+              store karna hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> marks = <span class="text-emerald-400">65</span>;
+
+<span class="text-blue-400">let</span> isPassed = marks >= <span class="text-emerald-400">40</span>;
+
+console.log(isPassed);</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-emerald-400 font-mono">true</pre>
+            </div>
+
+            <p class="text-gray-400 mt-4">
+              Yahan
+              <code class="text-blue-400">marks >= 40</code>
+              ka result directly Boolean value
+              <code class="text-emerald-400">true</code>
+              me store ho raha hai.
+            </p>
+          </div>
+
+          <!-- Negation -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Boolean Ko Reverse Karna
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Logical NOT operator
+              <code class="text-blue-400">!</code>
+              Boolean value ko reverse karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> isOnline = <span class="text-emerald-400">true</span>;
+
+console.log(!isOnline);</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="text-red-400 font-mono">false</pre>
+            </div>
+          </div>
+
+          <!-- Double NOT -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Double NOT !!
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Double NOT
+              <code class="text-blue-400">!!</code>
+              ka use bhi value ko Boolean me convert karne ke liye kiya ja
+              sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+            >
+              <pre class="font-mono text-sm sm:text-base"><code>console.log(!!<span class="text-emerald-400">"Hello"</span>);
+
+console.log(!!<span class="text-emerald-400">0</span>);</code></pre>
+            </div>
+
+            <div
+              class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+            >
+              <p class="font-bold text-white mb-2">Output:</p>
+
+              <pre class="font-mono"><span class="text-emerald-400">true</span>
+<span class="text-red-400">false</span></pre>
+            </div>
+          </div>
+
+          <!-- Important -->
+          <div
+            class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff] shadow-lg"
+          >
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Important Points
+            </h3>
+
+            <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+
+              <p>
+                1. Boolean me sirf
+                <code class="text-emerald-400">true</code>
+                aur
+                <code class="text-red-400">false</code>
+                values hoti hain.
+              </p>
+
+              <p>
+                2. Comparison operators Boolean result return karte hain.
+              </p>
+
+              <p>
+                3.
+                <code class="text-blue-400">Boolean()</code>
+                kisi value ko Boolean me convert karta hai.
+              </p>
+
+              <p>
+                4.
+                <code class="text-blue-400">0</code>,
+                empty string,
+                <code class="text-blue-400">null</code>,
+                <code class="text-blue-400">undefined</code>
+                aur
+                <code class="text-blue-400">NaN</code>
+                falsy values hain.
+              </p>
+
+              <p>
+                5. Non-empty strings, non-zero numbers, arrays aur objects
+                truthy hote hain.
+              </p>
+
+              <p>
+                6.
+                <code class="text-blue-400">!</code>
+                Boolean value ko reverse karta hai.
+              </p>
+
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+
+          <a
+            href="./Switch.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Logical.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script>
+      // JS If Conditions -> JS Booleans
+      document.getElementById("sidebar").innerHTML = createSidebar(6);
+    </script>
+
+  </body>
+</html>
+

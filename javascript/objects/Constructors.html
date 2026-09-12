@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Object Constructors - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Object Constructors
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Display.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../scope/Scope.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Object Constructor Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Object Constructor ek function hota hai jiska use
+          same structure wale multiple objects create karne ke liye kiya jata hai.
+          <br><br>
+          Constructor Function ko generally capital letter se start kiya jata hai
+          aur object create karne ke liye
+          <code class="text-blue-400">new</code>
+          keyword use hota hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Constructor Function Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> ObjectName(value1, value2) {
+
+  <span class="text-blue-400">this</span>.property1 = value1;
+  <span class="text-blue-400">this</span>.property2 = value2;
+
+}
+
+<span class="text-blue-400">const</span> obj =
+  <span class="text-blue-400">new</span> ObjectName(value1, value2);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Simple Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Constructor Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> Student(name, age) {
+
+  <span class="text-blue-400">this</span>.name = name;
+  <span class="text-blue-400">this</span>.age = age;
+
+}
+
+<span class="text-blue-400">const</span> student1 =
+  <span class="text-blue-400">new</span> Student(
+    <span class="text-emerald-400">"Ali"</span>,
+    <span class="text-emerald-400">20</span>
+  );
+
+console.log(student1);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Student { name: "Ali", age: 20 }</pre>
+          </div>
+
+        </div>
+
+        <!-- Explanation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Example Kaise Kaam Kar Raha Hai?
+          </h3>
+
+          <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+
+            <p>
+              <code class="text-blue-400">Student</code>
+              → Constructor Function ka naam hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">name</code>
+              aur
+              <code class="text-blue-400">age</code>
+              → Constructor ke parameters hain.
+            </p>
+
+            <p>
+              <code class="text-blue-400">this.name</code>
+              → New object ki
+              <code class="text-emerald-400">name</code>
+              property banata hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">this.age</code>
+              → New object ki
+              <code class="text-emerald-400">age</code>
+              property banata hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">new Student()</code>
+              → Constructor se naya object create karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple Objects -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Objects Create Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Constructor ka sabse bada fayda ye hai ki ek hi structure se
+            multiple objects create kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> Student(name, age) {
+
+  <span class="text-blue-400">this</span>.name = name;
+  <span class="text-blue-400">this</span>.age = age;
+
+}
+
+<span class="text-blue-400">const</span> student1 =
+  <span class="text-blue-400">new</span> Student(
+    <span class="text-emerald-400">"Ali"</span>,
+    <span class="text-emerald-400">20</span>
+  );
+
+<span class="text-blue-400">const</span> student2 =
+  <span class="text-blue-400">new</span> Student(
+    <span class="text-emerald-400">"Rahul"</span>,
+    <span class="text-emerald-400">22</span>
+  );
+
+console.log(student1.name);
+console.log(student2.name);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ali
+Rahul</pre>
+          </div>
+
+        </div>
+
+        <!-- Constructor Method -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Constructor With Method
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Constructor Function ke andar method bhi create ki ja sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> Student(name, age) {
+
+  <span class="text-blue-400">this</span>.name = name;
+  <span class="text-blue-400">this</span>.age = age;
+
+  <span class="text-blue-400">this</span>.greet = <span class="text-blue-400">function</span>() {
+    <span class="text-blue-400">return</span> <span class="text-emerald-400">"Hello "</span> + <span class="text-blue-400">this</span>.name;
+  };
+
+}
+
+<span class="text-blue-400">const</span> student1 =
+  <span class="text-blue-400">new</span> Student(
+    <span class="text-emerald-400">"Ali"</span>,
+    <span class="text-emerald-400">20</span>
+  );
+
+console.log(student1.greet());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Add Property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Property Baad Me Add Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> Student(name, age) {
+
+  <span class="text-blue-400">this</span>.name = name;
+  <span class="text-blue-400">this</span>.age = age;
+
+}
+
+<span class="text-blue-400">const</span> student1 =
+  <span class="text-blue-400">new</span> Student(
+    <span class="text-emerald-400">"Ali"</span>,
+    <span class="text-emerald-400">20</span>
+  );
+
+student1.city = <span class="text-emerald-400">"Ranchi"</span>;
+
+console.log(student1.city);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ranchi</pre>
+          </div>
+
+        </div>
+
+        <!-- Prototype Intro -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Constructor Prototype
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar same method sab objects ke liye share karni ho, to
+            <code class="text-blue-400">prototype</code>
+            use kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> Student(name) {
+  <span class="text-blue-400">this</span>.name = name;
+}
+
+Student.prototype.greet = <span class="text-blue-400">function</span>() {
+  <span class="text-blue-400">return</span> <span class="text-emerald-400">"Hello "</span> + <span class="text-blue-400">this</span>.name;
+};
+
+<span class="text-blue-400">const</span> student1 =
+  <span class="text-blue-400">new</span> Student(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+console.log(student1.greet());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- instanceof -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            instanceof Operator
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">instanceof</code>
+            check karta hai ki object kisi particular constructor se related
+            hai ya nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> Student(name) {
+  <span class="text-blue-400">this</span>.name = name;
+}
+
+<span class="text-blue-400">const</span> student1 =
+  <span class="text-blue-400">new</span> Student(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+console.log(student1 <span class="text-blue-400">instanceof</span> Student);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+
+        </div>
+
+        <!-- Literal vs Constructor -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Object Literal vs Constructor
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Object Literal</th>
+                  <th class="p-4">Constructor Function</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Single ya few objects ke liye simple hai.
+                  </td>
+
+                  <td class="p-4">
+                    Same structure ke multiple objects ke liye useful hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    const user = { name: "Ali" };
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    new Student("Ali")
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Direct object create hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Template jaisa reusable structure milta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Constructor Function same structure ke multiple objects create
+              karne ke liye useful hai.
+            </p>
+
+            <p>
+              2. Constructor ka naam commonly capital letter se start kiya jata hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">new</code>
+              keyword se constructor se object create kiya jata hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">this</code>
+              newly created object ko refer karta hai jab constructor
+              <code class="text-blue-400">new</code>
+              ke saath call hota hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">prototype</code>
+              se shared methods add ki ja sakti hain.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">instanceof</code>
+              constructor relationship check karne ke liye use hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Display.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../scope/Scope.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(12);
+  </script>
+
+</body>
+</html>

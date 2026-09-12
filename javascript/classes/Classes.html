@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Classes - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Classes
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="../json/Stringify.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Constructor.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          JavaScript Class Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">class</code>
+          ek blueprint hota hai jiske through hum multiple objects create kar
+          sakte hain.
+          <br><br>
+          Class ke andar properties aur methods define kiye ja sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Why Classes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Classes Kyu Use Karte Hain?
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Same structure ke multiple objects create karne ke liye.
+            </p>
+
+            <p>
+              2. Code ko organized rakhne ke liye.
+            </p>
+
+            <p>
+              3. Properties aur methods ko ek jagah group karne ke liye.
+            </p>
+
+            <p>
+              4. Object-Oriented Programming me reusable code banane ke liye.
+            </p>
+
+            <p>
+              5. Inheritance ke through existing class ko reuse karne ke liye.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Class Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> ClassName {
+
+  constructor() {
+
+    <span class="text-gray-400">// properties</span>
+
+  }
+
+  methodName() {
+
+    <span class="text-gray-400">// method code</span>
+
+  }
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Simple Class -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Class Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor() {
+
+    <span class="text-blue-400">this</span>.name =
+      <span class="text-emerald-400">"Ali"</span>;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user1 =
+  <span class="text-blue-400">new</span> User();
+
+console.log(
+  user1.name
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali</pre>
+
+          </div>
+
+        </div>
+
+        <!-- new keyword -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            new Keyword
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Class se object create karne ke liye
+            <code class="text-blue-400">new</code>
+            keyword use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Student {
+
+}
+
+<span class="text-blue-400">const</span> student1 =
+  <span class="text-blue-400">new</span> Student();
+
+console.log(student1);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple objects -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Objects Create Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name = name;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user1 =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+<span class="text-blue-400">const</span> user2 =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ahmed"</span>
+  );
+
+console.log(
+  user1.name
+);
+
+console.log(
+  user2.name
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali
+Ahmed</pre>
+
+          </div>
+
+        </div>
+
+        <!-- this -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            this Keyword In Class
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Class ke andar
+            <code class="text-blue-400">this</code>
+            current object ko refer karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Product {
+
+  constructor(
+    name,
+    price
+  ) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+    <span class="text-blue-400">this</span>.price =
+      price;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> product =
+  <span class="text-blue-400">new</span> Product(
+    <span class="text-emerald-400">"Laptop"</span>,
+    <span class="text-blue-400">50000</span>
+  );
+
+console.log(
+  product.name
+);
+
+console.log(
+  product.price
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Laptop
+50000</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Constructor intro -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            constructor() Kya Hai?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            <code class="text-blue-400">constructor()</code>
+            class ka special method hota hai jo object create hote hi
+            automatically execute hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mt-5 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Class Method
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Class ke andar functions ko methods kehte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+  greet() {
+
+    console.log(
+      <span class="text-emerald-400">"Hello "</span>
+      + <span class="text-blue-400">this</span>.name
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+user.greet();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Hello Ali</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Methods
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Calculator {
+
+  add(a, b) {
+
+    <span class="text-blue-400">return</span>
+      a + b;
+
+  }
+
+  multiply(a, b) {
+
+    <span class="text-blue-400">return</span>
+      a * b;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> calc =
+  <span class="text-blue-400">new</span> Calculator();
+
+console.log(
+  calc.add(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">20</span>
+  )
+);
+
+console.log(
+  calc.multiply(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">20</span>
+  )
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">30
+200</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Class vs Object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Class vs Object
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Class
+                  </th>
+
+                  <th class="p-4">
+                    Object
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+
+                  <td class="p-4">
+                    Blueprint hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Class se create hui actual value hoti hai.
+                  </td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="p-4">
+                    Structure define karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Actual data rakhta hai.
+                  </td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="p-4 font-mono">
+                    class User { }
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    new User()
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Real life -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Life Example
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Socho
+            <code class="text-blue-400">Car</code>
+            ek class hai.
+            Car ka blueprint same ho sakta hai, lekin usse multiple cars create
+            ki ja sakti hain jinka color, brand aur model different ho.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mt-5 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Car {
+
+  constructor(
+    brand,
+    color
+  ) {
+
+    <span class="text-blue-400">this</span>.brand =
+      brand;
+
+    <span class="text-blue-400">this</span>.color =
+      color;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> car1 =
+  <span class="text-blue-400">new</span> Car(
+    <span class="text-emerald-400">"Toyota"</span>,
+    <span class="text-emerald-400">"Black"</span>
+  );
+
+<span class="text-blue-400">const</span> car2 =
+  <span class="text-blue-400">new</span> Car(
+    <span class="text-emerald-400">"Honda"</span>,
+    <span class="text-emerald-400">"White"</span>
+  );
+
+console.log(
+  car1.brand
+);
+
+console.log(
+  car2.brand
+);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Product class -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Project Product Class
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Product {
+
+  constructor(
+    name,
+    price,
+    stock
+  ) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+    <span class="text-blue-400">this</span>.price =
+      price;
+
+    <span class="text-blue-400">this</span>.stock =
+      stock;
+
+  }
+
+  getTotalValue() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.price *
+      <span class="text-blue-400">this</span>.stock;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> laptop =
+  <span class="text-blue-400">new</span> Product(
+    <span class="text-emerald-400">"Laptop"</span>,
+    <span class="text-blue-400">50000</span>,
+    <span class="text-blue-400">5</span>
+  );
+
+console.log(
+  laptop.getTotalValue()
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">250000</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Student class -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Student Class Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Student {
+
+  constructor(
+    name,
+    course
+  ) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+    <span class="text-blue-400">this</span>.course =
+      course;
+
+  }
+
+  showDetails() {
+
+    console.log(
+      <span class="text-blue-400">this</span>.name +
+      <span class="text-emerald-400">" - "</span> +
+      <span class="text-blue-400">this</span>.course
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Student(
+    <span class="text-emerald-400">"Ali"</span>,
+    <span class="text-emerald-400">"JavaScript"</span>
+  );
+
+student.showDetails();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali - JavaScript</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Class Expression -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Class Expression
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Class ko variable me bhi store kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> User =
+  <span class="text-blue-400">class</span> {
+
+    constructor(name) {
+
+      <span class="text-blue-400">this</span>.name =
+        name;
+
+    }
+
+  };
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+console.log(
+  user.name
+);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Hoisting -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Class Hoisting
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function declarations ki tarah class declaration ko declaration se
+            pehle safely use nahi kar sakte.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// Wrong order</span>
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User();
+
+<span class="text-blue-400">class</span> User {
+
+}</code></pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Pehle class declare karo, uske baad object create karo.
+          </p>
+
+        </div>
+
+        <!-- Correct order -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Correct Class Order
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User();
+
+console.log(user);</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Class naming -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Class Naming
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Class names generally capital letter se start kiye jate hain.
+            Ye compulsory syntax rule nahi hai, lekin common convention hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mt-5 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// Recommended</span>
+
+<span class="text-blue-400">class</span> User {
+
+}
+
+<span class="text-blue-400">class</span> Product {
+
+}
+
+<span class="text-blue-400">class</span> Student {
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Class flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Class Ka Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base text-gray-300">Create Class
+
+class User { }
+
+      ↓
+
+Create Object
+
+new User()
+
+      ↓
+
+Object Created
+
+user1
+
+      ↓
+
+Access Property / Method
+
+user1.name
+user1.greet()</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Keywords -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Class Keywords
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Keyword
+                  </th>
+
+                  <th class="p-4">
+                    Use
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    class
+                  </td>
+
+                  <td class="p-4">
+                    Class create karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    new
+                  </td>
+
+                  <td class="p-4">
+                    Class ka object create karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    constructor
+                  </td>
+
+                  <td class="p-4">
+                    Object initialize karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    this
+                  </td>
+
+                  <td class="p-4">
+                    Current object ko refer karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    extends
+                  </td>
+
+                  <td class="p-4">
+                    Inheritance ke liye use hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    super
+                  </td>
+
+                  <td class="p-4">
+                    Parent class ke constructor/method ko access karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    static
+                  </td>
+
+                  <td class="p-4">
+                    Method ko class se directly call karne deta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Class ek blueprint hota hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">class</code>
+              keyword se class create hoti hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">new</code>
+              keyword se class ka object create hota hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">constructor()</code>
+              object create hote hi automatically run hota hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">this</code>
+              current object ko refer karta hai.
+            </p>
+
+            <p>
+              6. Ek class se multiple objects create kiye ja sakte hain.
+            </p>
+
+            <p>
+              7. Class ke andar methods define kiye ja sakte hain.
+            </p>
+
+            <p>
+              8. Classes reusable aur organized code likhne me help karti hain.
+            </p>
+
+            <p>
+              9. Class declaration ko use karne se pehle define karna chahiye.
+            </p>
+
+            <p>
+              10. Next topic me
+              <code class="text-blue-400">constructor()</code>
+              ko detail me samjhenge.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="../json/Stringify.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Constructor.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(24);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Nested Loops - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<div id="sidebar"></div>
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">C++ Nested Loops</h1>
+<div class="flex justify-between items-center">
+<a href="for-loop.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
+<a href="foreach-loop.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<section class="max-w-6xl mx-auto py-10">
+
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">Nested Loops</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+Ek loop ko doosre loop ke andar place karna <span class="text-[#4d6fff] font-bold">nested loop</span> kehlata hai.
+Inner loop, outer loop ki har iteration par execute hota hai.
+</p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10">
+<div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+<h3 class="text-xl font-semibold">Basic Nested Loop</h3><span class="text-sm text-gray-400">Example</span>
+</div>
+<div class="p-6"><div class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto">
+<pre><code class="text-green-400 text-base sm:text-lg">for (int i = 1; i <= 2; ++i) {
+    cout << "Outer: " << i << "\n";
+
+    for (int j = 1; j <= 3; ++j) {
+        cout << " Inner: " << j << "\n";
+    }
+}</code></pre>
+</div></div></div>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+Yahan outer loop 2 baar aur inner loop har outer iteration mein 3 baar execute hota hai,
+isliye inner statement total <span class="text-[#4d6fff] font-bold">2 × 3 = 6</span> baar execute hota hai.
+</p>
+<h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">Multiplication Table Example</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+Nested loops tables, matrices aur multi-dimensional data ke saath kaam karne mein useful hote hain.
+</p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10">
+<div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between">
+<h3 class="text-xl font-semibold">Multiplication Table 1 to 3</h3><span class="text-sm text-gray-400">Example</span>
+</div>
+<div class="p-6"><div class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto">
+<pre><code class="text-green-400 text-base sm:text-lg">for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        cout << i * j << " ";
+    }
+    cout << "\n";
+}</code></pre>
+</div></div></div>
+<div class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-4">Output</h3>
+<pre class="text-green-400 text-lg">1 2 3
+2 4 6
+3 6 9</pre>
+</div>
+
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="for-loop.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
+<a href="foreach-loop.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
+</div>
+</section>
+</section>
+</main>
+<footer id="footer"></footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(8);
+  }
+});
+</script>
+</body>
+</html>

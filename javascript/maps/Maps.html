@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Maps - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Maps
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/sets/SetMethod.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./MapMethods.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Map Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Map ek collection hai jo data ko
+          <code class="text-blue-400">key → value</code>
+          pairs me store karta hai.
+          <br><br>
+          Object ki tarah Map bhi key-value data store karta hai, lekin Map me
+          key String ke alawa Number, Object ya kisi aur value type ki bhi ho
+          sakti hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Map Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> myMap =
+  <span class="text-blue-400">new</span> Map();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Basic Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Map Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map();
+
+student.set(
+  <span class="text-emerald-400">"name"</span>,
+  <span class="text-emerald-400">"Ali"</span>
+);
+
+student.set(
+  <span class="text-emerald-400">"age"</span>,
+  <span class="text-emerald-400">20</span>
+);
+
+console.log(student);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Example Output:</p>
+
+<pre class="text-emerald-400 font-mono">Map(2) {
+  "name" => "Ali",
+  "age" => 20
+}</pre>
+          </div>
+
+        </div>
+
+        <!-- Create with values -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Map With Initial Values
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Map create karte waqt Array of key-value pairs pass kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map([
+    [
+      <span class="text-emerald-400">"name"</span>,
+      <span class="text-emerald-400">"Ali"</span>
+    ],
+    [
+      <span class="text-emerald-400">"age"</span>,
+      <span class="text-emerald-400">20</span>
+    ],
+    [
+      <span class="text-emerald-400">"course"</span>,
+      <span class="text-emerald-400">"JavaScript"</span>
+    ]
+  ]);
+
+console.log(student);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- set -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            set()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">set()</code>
+            Map me new key-value pair add karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> Map();
+
+user.set(
+  <span class="text-emerald-400">"name"</span>,
+  <span class="text-emerald-400">"Rahul"</span>
+);
+
+console.log(user);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- get -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            get()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">get()</code>
+            key ke through Map ki value return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map();
+
+student.set(
+  <span class="text-emerald-400">"name"</span>,
+  <span class="text-emerald-400">"Ali"</span>
+);
+
+console.log(
+  student.get(
+    <span class="text-emerald-400">"name"</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Update -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Existing Value Update Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Same key par dobara
+            <code class="text-blue-400">set()</code>
+            karne par existing value update ho jati hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map();
+
+student.set(
+  <span class="text-emerald-400">"age"</span>,
+  <span class="text-emerald-400">20</span>
+);
+
+student.set(
+  <span class="text-emerald-400">"age"</span>,
+  <span class="text-emerald-400">21</span>
+);
+
+console.log(
+  student.get(
+    <span class="text-emerald-400">"age"</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">21</pre>
+          </div>
+
+        </div>
+
+        <!-- has -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            has()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">has()</code>
+            check karta hai ki given key Map me exist karti hai ya nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map([
+    [
+      <span class="text-emerald-400">"name"</span>,
+      <span class="text-emerald-400">"Ali"</span>
+    ]
+  ]);
+
+console.log(
+  student.has(
+    <span class="text-emerald-400">"name"</span>
+  )
+);
+
+console.log(
+  student.has(
+    <span class="text-emerald-400">"age"</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">true
+false</pre>
+          </div>
+
+        </div>
+
+        <!-- size -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            size Property
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">size</code>
+            Map ke total entries ki count return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map([
+    [<span class="text-emerald-400">"name"</span>, <span class="text-emerald-400">"Ali"</span>],
+    [<span class="text-emerald-400">"age"</span>, <span class="text-emerald-400">20</span>],
+    [<span class="text-emerald-400">"city"</span>, <span class="text-emerald-400">"Ranchi"</span>]
+  ]);
+
+console.log(student.size);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">3</pre>
+          </div>
+
+        </div>
+
+        <!-- Number key -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number As Map Key
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> students =
+  <span class="text-blue-400">new</span> Map();
+
+students.set(
+  <span class="text-emerald-400">101</span>,
+  <span class="text-emerald-400">"Ali"</span>
+);
+
+students.set(
+  <span class="text-emerald-400">102</span>,
+  <span class="text-emerald-400">"Rahul"</span>
+);
+
+console.log(
+  students.get(
+    <span class="text-emerald-400">101</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Object key -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Object As Map Key
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Map ki key ek Object bhi ho sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  id: <span class="text-emerald-400">1</span>
+};
+
+<span class="text-blue-400">const</span> data =
+  <span class="text-blue-400">new</span> Map();
+
+data.set(
+  user,
+  <span class="text-emerald-400">"Admin"</span>
+);
+
+console.log(
+  data.get(user)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Admin</pre>
+          </div>
+
+        </div>
+
+        <!-- delete -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            delete()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map([
+    [<span class="text-emerald-400">"name"</span>, <span class="text-emerald-400">"Ali"</span>],
+    [<span class="text-emerald-400">"age"</span>, <span class="text-emerald-400">20</span>]
+  ]);
+
+student.delete(
+  <span class="text-emerald-400">"age"</span>
+);
+
+console.log(student);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Result:</p>
+<pre class="text-emerald-400 font-mono">Map(1) {"name" => "Ali"}</pre>
+          </div>
+
+        </div>
+
+        <!-- clear -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            clear()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">clear()</code>
+            Map ki saari entries remove karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map([
+    [<span class="text-emerald-400">"name"</span>, <span class="text-emerald-400">"Ali"</span>],
+    [<span class="text-emerald-400">"age"</span>, <span class="text-emerald-400">20</span>]
+  ]);
+
+student.clear();
+
+console.log(student.size);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">0</pre>
+          </div>
+
+        </div>
+
+        <!-- Loop -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Loop Through Map
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map([
+    [<span class="text-emerald-400">"name"</span>, <span class="text-emerald-400">"Ali"</span>],
+    [<span class="text-emerald-400">"age"</span>, <span class="text-emerald-400">20</span>],
+    [<span class="text-emerald-400">"city"</span>, <span class="text-emerald-400">"Ranchi"</span>]
+  ]);
+
+<span class="text-blue-400">for</span> (
+  <span class="text-blue-400">const</span> [key, value]
+  <span class="text-blue-400">of</span>
+  student
+) {
+  console.log(key, value);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">name Ali
+age 20
+city Ranchi</pre>
+          </div>
+
+        </div>
+
+        <!-- forEach -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Map forEach()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student =
+  <span class="text-blue-400">new</span> Map([
+    [<span class="text-emerald-400">"name"</span>, <span class="text-emerald-400">"Ali"</span>],
+    [<span class="text-emerald-400">"age"</span>, <span class="text-emerald-400">20</span>]
+  ]);
+
+student.forEach(
+  (value, key) =&gt; {
+    console.log(key, value);
+  }
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">name Ali
+age 20</pre>
+          </div>
+
+        </div>
+
+        <!-- Object vs Map -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Object vs Map
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Object</th>
+                  <th class="p-4">Map</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Keys mainly String ya Symbol hoti hain.
+                  </td>
+
+                  <td class="p-4">
+                    Keys kisi bhi value type ki ho sakti hain.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    user.name
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    map.get("name")
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Property add assignment se.
+                  </td>
+
+                  <td class="p-4">
+                    Entry add
+                    <code class="text-blue-400">set()</code>
+                    se.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Property count ke liye extra method chahiye.
+                  </td>
+
+                  <td class="p-4">
+                    <code class="text-blue-400">size</code>
+                    directly available hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Set vs Map -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Set vs Map
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Set</th>
+                  <th class="p-4">Map</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Unique values store karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Key-value pairs store karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    set.add(value)
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    map.set(key, value)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    set.has(value)
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    map.has(key)
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">new Map()</code>
+              se Map create hota hai.
+            </p>
+
+            <p>
+              2. Map data ko
+              <code class="text-blue-400">key → value</code>
+              pairs me store karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">set()</code>
+              entry add ya update karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">get()</code>
+              key ki value return karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">has()</code>
+              key available hai ya nahi check karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">delete()</code>
+              specific entry remove karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">clear()</code>
+              complete Map empty karta hai.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">size</code>
+              Map ki total entries ki count deta hai.
+            </p>
+
+            <p>
+              9. Map me Object, Number aur String sab keys ban sakte hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/sets/SetMethod.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./MapMethods.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(17);
+  </script>
+
+</body>
+</html>

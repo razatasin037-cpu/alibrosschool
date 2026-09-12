@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Units</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Units
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Units ka use kisi element ki size, spacing, width, height,
+            font-size, margin, padding aur doosri properties ki measurement
+            define karne ke liye hota hai. CSS mein different situations ke
+            according different units use ki ja sakti hain. Agar aap responsive
+            website banana chahte hain, to CSS units ko samajhna bahut important
+            hai.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../counters/counters.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../inheritance/inheritance.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT ARE CSS UNITS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-ruler-combined text-blue-400 mr-2"></i>
+            CSS Units Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS Unit ek measurement system hai jiske through hum browser ko
+            batate hain ki kisi element ka size kitna hona chahiye. Jaise agar
+            hum kisi box ki width 200px rakhte hain, to <strong>px</strong> ek
+            CSS unit hai. Isi tarah percentage, em, rem, vw aur vh bhi CSS units
+            hain.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            CSS units ko mainly do categories mein divide kiya jata hai:
+            <strong>absolute units</strong> aur <strong>relative units</strong>.
+            Absolute units generally fixed measurement represent karti hain,
+            jabki relative units kisi parent element, root element ya viewport
+            ke according apna size calculate karti hain.
+          </p>
+
+          <!-- BASIC EXAMPLE -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Basic Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">300px</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">150px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- ABSOLUTE UNITS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-lock text-blue-400 mr-2"></i>
+            1. Absolute CSS Units
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Absolute units generally ek fixed measurement ko represent karti
+            hain. Inka size normally parent element ya viewport ke size ke
+            according directly change nahi hota. Print-based layouts mein kuch
+            absolute units useful ho sakti hain, lekin normal web development
+            mein
+            <strong>px</strong> sabse commonly used absolute unit hai.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-5">
+              Common Absolute Units
+            </h3>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>px</strong> - pixels
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>pt</strong> - points
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>pc</strong> - picas
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>cm</strong> - centimeters
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>mm</strong> - millimeters
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>in</strong> - inches
+              </li>
+            </ul>
+          </div>
+
+          <!-- PX -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-square text-blue-400 mr-2"></i>
+            2. Pixels (px)
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>px</strong> CSS mein sabse popular units mein se ek hai.
+            Iska use width, height, padding, margin, border aur font-size jaise
+            properties mein bahut commonly kiya jata hai. Jab aapko kisi element
+            ka size relatively predictable rakhna ho, tab px useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                px Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">300px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">18px</span>;
+  <span class="text-blue-400">border-radius</span>: <span class="text-green-400">12px</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10">
+            Yahan card ki width 300px, padding 20px aur text ka size 18px hai.
+            Fixed-size UI elements mein px kaafi useful hota hai.
+          </p>
+
+          <!-- RELATIVE UNITS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-2"></i>
+            3. Relative CSS Units
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Relative units kisi doosre reference ke according calculate hoti
+            hain. Ye reference parent element, root element, viewport ya kisi
+            doosri measurement par depend kar sakta hai. Responsive web design
+            mein relative units bahut important hoti hain.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-5">
+              Important Relative Units
+            </h3>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>%</strong> - parent/reference size ke according
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>em</strong> - current/parent font-size ke relative
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>rem</strong> - root font-size ke relative
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>vw</strong> - viewport width ke relative
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>vh</strong> - viewport height ke relative
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>vmin</strong> - viewport ki smaller dimension ke
+                relative
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>vmax</strong> - viewport ki larger dimension ke relative
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <strong>ch</strong> - character width ke relative
+              </li>
+            </ul>
+          </div>
+
+          <!-- PERCENTAGE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-percent text-blue-400 mr-2"></i>
+            4. Percentage (%)
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Percentage unit ka size generally kisi containing element ke
+            reference par calculate hota hai. Agar parent ki width 800px hai aur
+            child ki width 50% hai, to child ki width approximately 400px hogi.
+            Isliye percentage responsive layouts ke liye useful hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Percentage Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">800px</span>;
+}
+
+<span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">50%</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10">
+            Is example mein box parent container ki width ka aadha hissa lega.
+            Parent resize hone par percentage-based child bhi resize ho sakta
+            hai.
+          </p>
+
+          <!-- EM -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-font text-blue-400 mr-2"></i>
+            5. em Unit
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>em</strong> unit font-size ke relative kaam karti hai. Iska
+            behavior nested elements mein carefully samajhna zaroori hai, kyunki
+            ek element ka font-size uske inherited ya parent font-size se
+            influence ho sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                em Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.box</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">20px</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">2em</span>;
+}
+
+<span class="text-blue-400">.title</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">1.5em</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10">
+            em ka use scalable components banane mein useful ho sakta hai, lekin
+            deeply nested elements mein values compound hone ki wajah se
+            calculation confusing ho sakti hai.
+          </p>
+
+          <!-- REM -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-text-height text-blue-400 mr-2"></i>
+            6. rem Unit
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>rem</strong> ka matlab root em hai. Ye normally document ke
+            root element, yani <strong>html</strong> ke font-size ko reference
+            karta hai. Is wajah se rem typography aur spacing ko consistent
+            rakhne ke liye bahut useful hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                rem Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">html</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">16px</span>;
+}
+
+<span class="text-blue-400">h1</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">2rem</span>;
+}
+
+<span class="text-blue-400">p</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">1rem</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10">
+            Agar root font-size 16px hai, to 1rem roughly 16px ke equivalent
+            hoga aur 2rem roughly 32px ke equivalent hoga. Isse typography ko
+            predictable scale mein maintain karna easy hota hai.
+          </p>
+
+          <!-- EM VS REM -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-scale-balanced text-blue-400 mr-2"></i>
+            7. em vs rem
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            em aur rem dono relative units hain, lekin inka reference different
+            hota hai. em current context ya parent font-size se influence ho
+            sakta hai, jabki rem root element ke font-size ko reference karta
+            hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Comparison Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.em-box</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">2em</span>;
+}
+
+<span class="text-blue-400">.rem-box</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">2rem</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- VW -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-desktop text-blue-400 mr-2"></i>
+            8. vw Unit
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>vw</strong> ka full form viewport width hai. 1vw viewport
+            width ka 1 percent represent karta hai. Is unit ka use viewport ke
+            size ke according elements ko scale karne ke liye kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                vw Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.hero-title</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">5vw</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- VH -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrows-up-down text-blue-400 mr-2"></i>
+            9. vh Unit
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>vh</strong> ka full form viewport height hai. 1vh viewport
+            height ka 1 percent represent karta hai. Full-screen sections aur
+            hero sections mein vh ka use common hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                vh Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.hero</span> {
+  <span class="text-blue-400">min-height</span>: <span class="text-green-400">100vh</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- VMIN VMAX -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-expand text-blue-400 mr-2"></i>
+            10. vmin aur vmax
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>vmin</strong> viewport ki width aur height mein se smaller
+            dimension ko reference karta hai. <strong>vmax</strong> larger
+            dimension ko reference karta hai. Ye units special responsive
+            layouts aur square-like elements ke liye useful ho sakti hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                vmin / vmax Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.square</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">40vmin</span>;
+  <span class="text-blue-400">height</span>: <span class="text-green-400">40vmin</span>;
+}
+
+<span class="text-blue-400">.large-title</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">5vmax</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- CH -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-i-cursor text-blue-400 mr-2"></i>
+            11. ch Unit
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>ch</strong> unit character width ke concept par based hoti
+            hai. Iska use especially text content ki readable width limit karne
+            ke liye useful hota hai. Long paragraphs ko reasonable line length
+            dene ke liye ch kaafi helpful ho sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                ch Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">65ch</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- CALC -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-calculator text-blue-400 mr-2"></i>
+            12. CSS Units ke Saath calc()
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            CSS ka <strong>calc()</strong> function different units ko combine
+            karke calculated value create karne deta hai. Ye responsive layouts
+            mein bahut useful hai, especially jab kisi element ki width viewport
+            ke according rakhni ho aur saath mein fixed spacing subtract karni
+            ho.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                calc() Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">calc(100% - 40px)</span>;
+}
+
+<span class="text-blue-400">.content</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">calc(100vw - 300px)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- RESPONSIVE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-mobile-screen-button text-blue-400 mr-2"></i>
+            13. Responsive Design mein CSS Units
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Responsive website mein sirf fixed px values par depend karna har
+            situation mein ideal nahi hota. Percentage, rem, em, vw, vh aur
+            calc() jaise tools ko combine karke layout ko different screen sizes
+            ke liye flexible banaya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Responsive Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">.content</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">90%</span>;
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">1200px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">0 auto</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">2rem</span>;
+}
+
+<span class="text-blue-400">h1</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">clamp(2rem, 5vw, 4rem)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- CLAMP -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-sliders text-blue-400 mr-2"></i>
+            14. clamp() ke Saath Units
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            <strong>clamp()</strong> responsive sizing ke liye powerful CSS
+            function hai. Ismein minimum value, preferred value aur maximum
+            value define ki ja sakti hai. Isse text ya spacing screen ke
+            according smoothly adjust ho sakti hai, lekin ek minimum aur maximum
+            limit ke andar.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                clamp() Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">h1</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">clamp(2rem, 5vw, 4rem)</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COMPLETE EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            15. Complete CSS Units Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ab ek practical example dekhte hain jahan different CSS units ko ek
+            hi layout mein combine kiya gaya hai. Is type ka combination
+            real-world websites mein responsive cards aur content sections
+            banane ke liye useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Complete Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">* </span>{
+  <span class="text-blue-400">box-sizing</span>: <span class="text-green-400">border-box</span>;
+}
+
+<span class="text-blue-400">.container</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">90%</span>;
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">1200px</span>;
+  <span class="text-blue-400">margin</span>: <span class="text-green-400">0 auto</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">2rem</span>;
+}
+
+<span class="text-blue-400">.hero</span> {
+  <span class="text-blue-400">min-height</span>: <span class="text-green-400">70vh</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">5vw</span>;
+}
+
+<span class="text-blue-400">.hero h1</span> {
+  <span class="text-blue-400">font-size</span>: <span class="text-green-400">clamp(2rem, 6vw, 5rem)</span>;
+}
+
+<span class="text-blue-400">.article</span> {
+  <span class="text-blue-400">max-width</span>: <span class="text-green-400">65ch</span>;
+}
+
+<span class="text-blue-400">.card</span> {
+  <span class="text-blue-400">width</span>: <span class="text-green-400">100%</span>;
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">1.5rem</span>;
+  <span class="text-blue-400">margin-bottom</span>: <span class="text-green-400">1rem</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- WHEN TO USE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>
+            Kaunsi Unit Kab Use Karein?
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-ruler text-blue-400 mr-2"></i>
+                px
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Borders, small fixed UI details aur predictable measurements ke
+                liye useful.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-percent text-blue-400 mr-2"></i>
+                %
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Parent/container ke according flexible widths ke liye useful.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-font text-blue-400 mr-2"></i>
+                rem
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Consistent typography aur spacing system ke liye useful.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-desktop text-blue-400 mr-2"></i>
+                vw / vh
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Viewport-based responsive sizing aur full-screen layouts ke
+                liye.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-i-cursor text-blue-400 mr-2"></i>
+                ch
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Text ki readable line length control karne ke liye useful.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-calculator text-blue-400 mr-2"></i>
+                calc()
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Different units ko combine karke calculated responsive sizes
+                banane ke liye useful.
+              </p>
+            </div>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-triangle-exclamation text-blue-400 mr-2"></i>
+            Common Mistakes
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-10 mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Har jagah fixed px use karna aur responsive behavior ignore
+                karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                em aur rem ke difference ko samjhe bina nested elements banana.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                vw aur vh values ko excessively large rakhna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Percentage ka reference kis element se aa raha hai, ye check na
+                karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Text ko responsive banane ke liye sirf vw par depend karna.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-xmark text-red-400 mr-2"></i>
+                Different units ko bina calculation samjhe randomly mix karna.
+              </li>
+            </ul>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Layout ke according appropriate unit choose karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Typography mein rem jaise consistent units ka use consider
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive widths ke liye percentage aur max-width combine
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Viewport-based designs mein vw aur vh ka carefully use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                calc() aur clamp() se flexible but controlled sizing create
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Different screen sizes par apne layout ko test zaroor karein.
+              </li>
+            </ul>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS units measurements define karne ke liye use hoti hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                CSS units ko mainly absolute aur relative categories mein samjha
+                ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                px ek commonly used fixed-style unit hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Percentage parent/reference size ke according flexible layout
+                banane mein useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                em aur rem relative font-based units hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                vw aur vh viewport ke according sizing provide karte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                calc() multiple measurements ko combine karne mein useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                clamp() responsive sizing ko minimum aur maximum limits ke andar
+                control kar sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Responsive website ke liye unit ka selection layout ke
+                requirement ke according hona chahiye.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-5"
+            >
+              CSS Units website ke elements ki measurement define karne ka
+              fundamental part hain. <strong>px</strong> fixed-style
+              measurements ke liye, <strong>%</strong> flexible layouts ke liye,
+              <strong>em</strong> aur <strong>rem</strong> typography aur
+              scalable spacing ke liye, aur <strong>vw</strong> aur
+              <strong>vh</strong> viewport-based layouts ke liye useful hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              Responsive website banate waqt ek hi unit par depend karne ke
+              bajay requirement ke according different units ko combine karna
+              better approach hota hai. <strong>calc()</strong> aur
+              <strong>clamp()</strong> jaise functions CSS units ke saath
+              flexible aur controlled layouts create karne mein aur bhi useful
+              ho sakte hain.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../counters/counters.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../inheritance/inheritance.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(40);
+      });
+    </script>
+  </body>
+</html>

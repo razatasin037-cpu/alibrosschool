@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Superglobals - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Superglobals
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../arrays/ArrayFunctions.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Globals.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Superglobal Variables Kya Hote Hain?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me Superglobals wo built-in variables hote hain jo hamesha <strong class="text-white">Global Scope</strong> me accessible hote hain.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Inhe access karne ke liye aapko kisi function ya class ke andar `global $variable;` declare karne ki zaroorat nahi padti.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Cheat Sheet Summary Table -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              All Superglobal Variables
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400">
+                    <th class="p-3">Variable</th>
+                    <th class="p-3">Purpose / Use Case</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">$_SERVER</td>
+                    <td class="p-3">Headers, paths, and script locations ki information ke liye.</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">$_GET</td>
+                    <td class="p-3">URL parameters se bheje gaye data ko collect karne ke liye.</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">$_POST</td>
+                    <td class="p-3">HTTP POST method se bheje gaye Form data ko receive karne ke liye.</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">$_FILES</td>
+                    <td class="p-3">Uploaded files (Image, PDF, Document) ki details lene ke liye.</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">$_SESSION</td>
+                    <td class="p-3">Multiple pages par user data persist/store karne ke liye.</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">$_COOKIE</td>
+                    <td class="p-3">Client browser par saved cookie values access karne ke liye.</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">$_REQUEST</td>
+                    <td class="p-3">Combine data of $_GET, $_POST, and $_COOKIE.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-green-400">$GLOBALS</td>
+                    <td class="p-3">Global scope ke saare variables ko reference karne ke liye.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+     
+
+  
+       
+
+          <!-- Pro Tip Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-blue-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-blue-400">
+               Security Best Practice
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              Kabhi bhi <code class="text-green-400">$_GET</code> ya <code class="text-green-400">$_POST</code> se aane wale raw data par seedhe andha-dhund trust na karein! XSS aur SQL Injection attacks se bachne ke liye hamesha input sanitize karein (Jaise: <code class="text-green-400">htmlspecialchars()</code> ya <code class="text-green-400">filter_input()</code> ka use karke).
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../arrays/ArrayFunctions.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Globals.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(19);
+    </script>
+  </body>
+</html>

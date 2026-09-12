@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Browser - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Browser
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/dom/Nodes.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Window.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Browser Object Model Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript browser ke different features ko access karne ke liye
+          Browser Object Model, yani
+          <code class="text-blue-400">BOM</code>
+          use karta hai.
+          <br><br>
+          Isme
+          <code class="text-blue-400">window</code>,
+          <code class="text-blue-400">screen</code>,
+          <code class="text-blue-400">location</code>,
+          <code class="text-blue-400">history</code>,
+          <code class="text-blue-400">navigator</code>
+          aur browser storage jaise objects aate hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- BOM -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            BOM Ka Simple Meaning
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            DOM HTML document ko control karta hai, jabki BOM browser window aur
+            browser-related features ke saath kaam karne deta hai.
+          </p>
+
+        </div>
+
+        <!-- BOM Structure -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Browser Object Model Structure
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">window
+
+├── document
+├── screen
+├── location
+├── history
+├── navigator
+├── localStorage
+├── sessionStorage
+├── alert()
+├── confirm()
+├── prompt()
+├── setTimeout()
+└── setInterval()</pre>
+          </div>
+
+        </div>
+
+        <!-- Window -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window Object
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser me
+            <code class="text-blue-400">window</code>
+            global object hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Window Size -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Browser Window Size
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.innerWidth
+);
+
+console.log(
+  window.innerHeight
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Ye browser viewport ki current width aur height dete hain.
+          </p>
+
+        </div>
+
+        <!-- alert -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            alert()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Simple browser message box show karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>alert(
+  <span class="text-emerald-400">"Hello JavaScript"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- confirm -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            confirm()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            User ko OK aur Cancel options deta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> result =
+  confirm(
+    <span class="text-emerald-400">"Are you sure?"</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">true
+or
+false</pre>
+          </div>
+
+        </div>
+
+        <!-- prompt -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            prompt()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            User se simple text input lene ke liye use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> name =
+  prompt(
+    <span class="text-emerald-400">"Enter your name"</span>
+  );
+
+console.log(name);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Screen -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            screen Object
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            User ke display/screen ki information provide karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen.width
+);
+
+console.log(
+  screen.height
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- available screen -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Available Screen Size
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  screen.availWidth
+);
+
+console.log(
+  screen.availHeight
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Location -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location Object
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Current page URL ki information access aur page navigation ke liye
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.location.href
+);
+
+console.log(
+  window.location.hostname
+);
+
+console.log(
+  window.location.pathname
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Redirect -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Page Redirect Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.location.href =
+  <span class="text-emerald-400">"https://example.com"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- assign -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.assign()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>location.assign(
+  <span class="text-emerald-400">"https://example.com"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Reload -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Page Reload
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>location.reload();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- History -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history Object
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Browser session history ke saath interact karne ke liye use hota
+            hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>history.back();
+
+history.forward();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- history go -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history.go()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// One page back</span>
+history.go(
+  <span class="text-emerald-400">-1</span>
+);
+
+<span class="text-gray-400">// One page forward</span>
+history.go(
+  <span class="text-emerald-400">1</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Navigator -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator Object
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser aur environment ke baare me useful information deta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  navigator.language
+);
+
+console.log(
+  navigator.onLine
+);
+
+console.log(
+  navigator.userAgent
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Online Status -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Internet Status Check
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">if</span> (
+  navigator.onLine
+) {
+
+  console.log(
+    <span class="text-emerald-400">"Online"</span>
+  );
+
+} <span class="text-blue-400">else</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Offline"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Storage -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Browser Storage
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Browser me small amounts of key-value data store karne ke liye
+            <code class="text-blue-400">localStorage</code>
+            aur
+            <code class="text-blue-400">sessionStorage</code>
+            use kiye ja sakte hain.
+          </p>
+
+        </div>
+
+        <!-- localStorage -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>localStorage.setItem(
+  <span class="text-emerald-400">"name"</span>,
+  <span class="text-emerald-400">"Ali"</span>
+);
+
+<span class="text-blue-400">const</span> name =
+  localStorage.getItem(
+    <span class="text-emerald-400">"name"</span>
+  );
+
+console.log(name);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- sessionStorage -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            sessionStorage
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>sessionStorage.setItem(
+  <span class="text-emerald-400">"theme"</span>,
+  <span class="text-emerald-400">"dark"</span>
+);
+
+console.log(
+  sessionStorage.getItem(
+    <span class="text-emerald-400">"theme"</span>
+  )
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Timer -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setTimeout()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>setTimeout(() =&gt; {
+
+  console.log(
+    <span class="text-emerald-400">"Hello after 2 seconds"</span>
+  );
+
+}, <span class="text-emerald-400">2000</span>);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Interval -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            setInterval()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> timer =
+  setInterval(() =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Running..."</span>
+    );
+
+  }, <span class="text-emerald-400">1000</span>);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Clear timers -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            clearTimeout() Aur clearInterval()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>clearTimeout(
+  timeoutId
+);
+
+clearInterval(
+  intervalId
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- window open -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            window.open()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.open(
+  <span class="text-emerald-400">"https://example.com"</span>,
+  <span class="text-emerald-400">"_blank"</span>
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Browser popup rules ke according new tab/window open ho sakta hai.
+          </p>
+
+        </div>
+
+        <!-- DOM vs BOM -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM vs BOM
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">DOM</th>
+                  <th class="p-4">BOM</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    HTML document ke saath kaam karta hai.
+                  </td>
+                  <td class="p-4">
+                    Browser environment ke saath kaam karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    document
+                  </td>
+                  <td class="p-4 font-mono">
+                    window
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Elements create/change/remove.
+                  </td>
+                  <td class="p-4">
+                    URL, history, storage, screen etc.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Browser Objects Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Object</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    window
+                  </td>
+                  <td class="p-4">
+                    Browser global object
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    screen
+                  </td>
+                  <td class="p-4">
+                    Display information
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    location
+                  </td>
+                  <td class="p-4">
+                    Current URL / navigation
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history
+                  </td>
+                  <td class="p-4">
+                    Session history
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    navigator
+                  </td>
+                  <td class="p-4">
+                    Browser/environment info
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    localStorage
+                  </td>
+                  <td class="p-4">
+                    Persistent browser storage
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    sessionStorage
+                  </td>
+                  <td class="p-4">
+                    Session-based storage
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. BOM ka matlab Browser Object Model hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">window</code>
+              browser JavaScript ka global object hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">screen</code>
+              display information provide karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">location</code>
+              current URL aur navigation ke liye use hota hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">history</code>
+              session navigation history ke saath interact karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">navigator</code>
+              browser/environment related information provide karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">localStorage</code>
+              aur
+              <code class="text-blue-400">sessionStorage</code>
+              browser me key-value data store karte hain.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">setTimeout()</code>
+              aur
+              <code class="text-blue-400">setInterval()</code>
+              timing operations ke liye use hote hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/dom/Nodes.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Window.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(28);
+  </script>
+
+</body>
+</html>

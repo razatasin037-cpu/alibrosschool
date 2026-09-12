@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Arrow Function - Tutorial</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Arrow Function
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./FunctionExpression.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../timers/Timers.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Arrow Function Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Arrow Function function likhne ka ek short aur modern
+          syntax hai.
+          <br><br>
+          Arrow Function me normal
+          <code class="text-blue-400">function</code>
+          keyword ki jagah
+          <code class="text-blue-400">=&gt;</code>
+          arrow symbol use hota hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Arrow Function Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> functionName = () =&gt; {
+  // code
+};</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Basic Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Arrow Function Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> greet = () =&gt; {
+  console.log(<span class="text-emerald-400">"Hello JavaScript"</span>);
+};
+
+greet();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Hello JavaScript</pre>
+          </div>
+
+        </div>
+
+        <!-- Explanation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Example Kaise Kaam Kar Raha Hai?
+          </h3>
+
+          <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+
+            <p>
+              <code class="text-blue-400">const greet</code>
+              → Function ko
+              <code class="text-blue-400">greet</code>
+              variable me store kiya gaya hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">()</code>
+              → Parameters yahan likhe jate hain.
+            </p>
+
+            <p>
+              <code class="text-blue-400">=&gt;</code>
+              → Ye Arrow Function ka main symbol hai.
+            </p>
+
+            <p>
+              <code class="text-blue-400">greet()</code>
+              → Arrow Function ko call karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Normal vs Arrow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Normal Function vs Arrow Function
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-4">
+            Normal Function:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> add(a, b) {
+  <span class="text-blue-400">return</span> a + b;
+}</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-6 mb-4">
+            Arrow Function:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add = (a, b) =&gt; {
+  <span class="text-blue-400">return</span> a + b;
+};</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Arrow Function With Parameters
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add = (a, b) =&gt; {
+  console.log(a + b);
+};
+
+add(<span class="text-emerald-400">10</span>, <span class="text-emerald-400">20</span>);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- One Parameter -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Single Parameter
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sirf ek parameter ho to parentheses optional hote hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> greet = name =&gt; {
+  console.log(<span class="text-emerald-400">"Hello "</span> + name);
+};
+
+greet(<span class="text-emerald-400">"Ali"</span>);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Hello Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Implicit Return -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Short Arrow Function Return
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar Arrow Function me sirf ek expression return karna ho, to
+            curly braces aur
+            <code class="text-blue-400">return</code>
+            keyword hata sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add = (a, b) =&gt; a + b;
+
+console.log(add(<span class="text-emerald-400">10</span>, <span class="text-emerald-400">20</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Multiple Statements -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Statements
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar function me multiple statements hain, to curly braces
+            <code class="text-blue-400">{ }</code>
+            use karte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> calculate = (a, b) =&gt; {
+
+  <span class="text-blue-400">let</span> total = a + b;
+
+  <span class="text-blue-400">return</span> total;
+};
+
+console.log(calculate(<span class="text-emerald-400">5</span>, <span class="text-emerald-400">7</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">12</pre>
+          </div>
+
+        </div>
+
+        <!-- Array Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Arrow Function With Array
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Arrow Functions arrays ke methods ke saath bahut commonly use hote
+            hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> numbers = [<span class="text-emerald-400">1</span>, <span class="text-emerald-400">2</span>, <span class="text-emerald-400">3</span>];
+
+numbers.forEach((number) =&gt; {
+  console.log(number);
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">1
+2
+3</pre>
+          </div>
+
+        </div>
+
+        <!-- this Difference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Arrow Function Aur this
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Arrow Function ka apna
+            <code class="text-blue-400">this</code>
+            binding nahi hota. Ye surrounding scope se
+            <code class="text-blue-400">this</code>
+            leta hai.
+            <br><br>
+            Isliye object methods ya constructor jaise cases me normal function
+            aur arrow function ka behavior different ho sakta hai.
+          </p>
+
+        </div>
+
+        <!-- arguments -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Arrow Function Aur arguments
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Arrow Function ka apna
+            <code class="text-blue-400">arguments</code>
+            object nahi hota. Multiple unknown arguments handle karne ke liye
+            rest parameters
+            <code class="text-blue-400">...args</code>
+            use karna better hota hai.
+          </p>
+
+        </div>
+
+        <!-- Rest Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Arrow Function With Rest Parameters
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> show = (...args) =&gt; {
+  console.log(args);
+};
+
+show(
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">[10, 20, 30]</pre>
+          </div>
+
+        </div>
+
+        <!-- Difference Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Normal Function vs Arrow Function
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Normal Function</th>
+                  <th class="p-4">Arrow Function</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    <code class="text-blue-400">function</code>
+                    keyword use hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    <code class="text-blue-400">=&gt;</code>
+                    syntax use hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Syntax comparatively longer hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Syntax short aur concise hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Apna
+                    <code class="text-blue-400">arguments</code>
+                    object hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Apna
+                    <code class="text-blue-400">arguments</code>
+                    object nahi hota.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    <code class="text-blue-400">this</code>
+                    behavior call ke context par depend kar sakta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Lexical
+                    <code class="text-blue-400">this</code>
+                    use karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Arrow Function function likhne ka short syntax hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">=&gt;</code>
+              Arrow Function ka main symbol hai.
+            </p>
+
+            <p>
+              3. Single parameter me parentheses optional ho sakte hain.
+            </p>
+
+            <p>
+              4. Single expression ko directly return kiya ja sakta hai.
+            </p>
+
+            <p>
+              5. Multiple statements ke liye
+              <code class="text-blue-400">{ }</code>
+              use karte hain.
+            </p>
+
+            <p>
+              6. Arrow Function ka apna
+              <code class="text-blue-400">arguments</code>
+              object nahi hota.
+            </p>
+
+            <p>
+              7. Arrow Function ka
+              <code class="text-blue-400">this</code>
+              normal function se different behave karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./FunctionExpression.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../timers/Timers.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    // JS Functions -> Arrow Function
+    document.getElementById("sidebar").innerHTML = createSidebar(10);
+  </script>
+
+</body>
+</html>

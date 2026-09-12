@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ Switch - Ali Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Switch
+        </h1>
+
+        <div class="flex justify-between items-center">
+          <a href="../if/real-life-examplesif.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+            </button>
+          </a>
+          <a href="/C++/while/while-loop.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <section class="max-w-6xl mx-auto py-10">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ Switch Statement
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            C++ mein
+            <span class="text-[#4d6fff] font-bold">switch</span> statement ka
+            use multiple choices mein se ek option select karne ke liye kiya
+            jata hai.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Switch statement kisi expression ki value ko different
+            <span class="text-[#4d6fff] font-bold">case</span> values ke saath
+            compare karta hai.
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Syntax</h2>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Switch Syntax</h3>
+              <span class="text-sm text-gray-400">Syntax</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">switch (expression) {
+    case value1:
+        // code
+        break;
+
+    case value2:
+        // code
+        break;
+
+    default:
+        // code
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            How It Works
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Switch statement mein expression ki value ko cases ke saath compare
+            kiya jata hai. Jo case match karta hai, uska code execute hota hai.
+          </p>
+          <ul
+            class="list-disc pl-6 space-y-4 text-lg sm:text-xl md:text-2xl text-gray-300 mb-10"
+          >
+            <li>
+              <span class="text-[#4d6fff] font-bold">case</span> ek possible
+              value ko represent karta hai.
+            </li>
+            <li>
+              <span class="text-[#4d6fff] font-bold">break</span> switch ko stop
+              karne ke liye use hota hai.
+            </li>
+            <li>
+              <span class="text-[#4d6fff] font-bold">default</span> tab execute
+              hota hai jab koi case match nahi karta.
+            </li>
+          </ul>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Example</h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is example mein <span class="text-[#4d6fff] font-bold">day</span> ki
+            value ke according day ka naam display kiya ja raha hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Day Name Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int day = 3;
+
+    switch (day) {
+        case 1:
+            cout &lt;&lt; "Monday";
+            break;
+        case 2:
+            cout &lt;&lt; "Tuesday";
+            break;
+        case 3:
+            cout &lt;&lt; "Wednesday";
+            break;
+        case 4:
+            cout &lt;&lt; "Thursday";
+            break;
+        case 5:
+            cout &lt;&lt; "Friday";
+            break;
+        case 6:
+            cout &lt;&lt; "Saturday";
+            break;
+        case 7:
+            cout &lt;&lt; "Sunday";
+            break;
+        default:
+            cout &lt;&lt; "Invalid day";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            The break Keyword
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-[#4d6fff] font-bold">break</span> keyword matching
+            case execute hone ke baad switch statement se bahar nikalne ke liye
+            use hota hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Using break</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int choice = 2;
+
+    switch (choice) {
+        case 1:
+            cout &lt;&lt; "Option One";
+            break;
+        case 2:
+            cout &lt;&lt; "Option Two";
+            break;
+        case 3:
+            cout &lt;&lt; "Option Three";
+            break;
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            The default Keyword
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar kisi bhi case ki value expression se match nahi karti, to
+            <span class="text-[#4d6fff] font-bold">default</span> block execute
+            ho sakta hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Using default</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int number = 10;
+
+    switch (number) {
+        case 1:
+            cout &lt;&lt; "One";
+            break;
+        case 2:
+            cout &lt;&lt; "Two";
+            break;
+        default:
+            cout &lt;&lt; "No matching case";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Character Example
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Switch ka use character values ke saath bhi kiya ja sakta hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Character Switch</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    char grade = 'B';
+
+    switch (grade) {
+        case 'A':
+            cout &lt;&lt; "Excellent";
+            break;
+        case 'B':
+            cout &lt;&lt; "Very Good";
+            break;
+        case 'C':
+            cout &lt;&lt; "Good";
+            break;
+        default:
+            cout &lt;&lt; "Invalid grade";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Multiple Cases
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek switch statement mein jitne options ki zarurat ho, utne cases
+            define kiye ja sakte hain.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Multiple Cases Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int month = 2;
+
+    switch (month) {
+        case 1:
+            cout &lt;&lt; "January";
+            break;
+        case 2:
+            cout &lt;&lt; "February";
+            break;
+        case 3:
+            cout &lt;&lt; "March";
+            break;
+        case 4:
+            cout &lt;&lt; "April";
+            break;
+        default:
+            cout &lt;&lt; "Invalid month";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Complete Example
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Yeh complete example user ke choice ke according ek simple menu
+            option select karta hai.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Complete Switch Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int choice = 2;
+
+    switch (choice) {
+        case 1:
+            cout &lt;&lt; "You selected Home";
+            break;
+        case 2:
+            cout &lt;&lt; "You selected Profile";
+            break;
+        case 3:
+            cout &lt;&lt; "You selected Settings";
+            break;
+        default:
+            cout &lt;&lt; "Invalid choice";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-12 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>Switch multiple choices handle karne ke liye useful hai.</li>
+              <li>
+                Har option ko
+                <span class="text-[#4d6fff] font-bold">case</span> kehte hain.
+              </li>
+              <li>
+                <span class="text-[#4d6fff] font-bold">break</span> statement
+                switch ko stop karta hai.
+              </li>
+              <li>
+                <span class="text-[#4d6fff] font-bold">default</span> unmatched
+                value ke liye use hota hai.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../if/real-life-examplesif.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+            <a href="#">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(6);
+        }
+      });
+    </script>
+  </body>
+</html>

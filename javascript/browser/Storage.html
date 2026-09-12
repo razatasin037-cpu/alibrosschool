@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Browser Storage - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Browser Storage
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Navigator.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../home/Home.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Browser Storage Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me browser ke andar small amounts of data store karne ke
+          liye Web Storage API use ki ja sakti hai.
+          <br><br>
+          Iske do main types hain:
+          <code class="text-blue-400">localStorage</code>
+          aur
+          <code class="text-blue-400">sessionStorage</code>.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Types -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Browser Storage Types
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Storage</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    localStorage
+                  </td>
+                  <td class="p-4">
+                    Data browser me tab/session close hone ke baad bhi normally
+                    save rehta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    sessionStorage
+                  </td>
+                  <td class="p-4">
+                    Data current tab session ke liye store hota hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- localStorage -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            <code class="text-blue-400">localStorage</code>
+            key-value format me data store karta hai. Stored values strings ke
+            form me hoti hain.
+          </p>
+
+        </div>
+
+        <!-- setItem -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage.setItem()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Data save karne ke liye:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>localStorage.setItem(
+  <span class="text-emerald-400">"name"</span>,
+  <span class="text-emerald-400">"Ali"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- getItem -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage.getItem()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Stored value read karne ke liye:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> name =
+  localStorage.getItem(
+    <span class="text-emerald-400">"name"</span>
+  );
+
+console.log(name);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- removeItem -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage.removeItem()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Specific key remove karne ke liye:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>localStorage.removeItem(
+  <span class="text-emerald-400">"name"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- clear -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage.clear()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Current origin ka localStorage data clear karne ke liye:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>localStorage.clear();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- key -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage.key()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Given index par key name access kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> keyName =
+  localStorage.key(
+    <span class="text-emerald-400">0</span>
+  );
+
+console.log(
+  keyName
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- length -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage.length
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  localStorage.length
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Stored keys ki count return karta hai.
+          </p>
+
+        </div>
+
+        <!-- strings -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Storage Values Strings Hoti Hain
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>localStorage.setItem(
+  <span class="text-emerald-400">"age"</span>,
+  <span class="text-emerald-400">20</span>
+);
+
+<span class="text-blue-400">const</span> age =
+  localStorage.getItem(
+    <span class="text-emerald-400">"age"</span>
+  );
+
+console.log(
+  <span class="text-blue-400">typeof</span> age
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">string</pre>
+          </div>
+
+        </div>
+
+        <!-- Object problem -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Object Directly Store Nahi Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name:
+    <span class="text-emerald-400">"Ali"</span>,
+  age:
+    <span class="text-emerald-400">20</span>
+};
+
+localStorage.setItem(
+  <span class="text-emerald-400">"user"</span>,
+  user
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Object aur array ko properly store karne ke liye JSON conversion
+            use karna chahiye.
+          </p>
+
+        </div>
+
+        <!-- JSON stringify -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Object Store Karna — JSON.stringify()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+
+  name:
+    <span class="text-emerald-400">"Ali"</span>,
+
+  email:
+    <span class="text-emerald-400">"ali@gmail.com"</span>
+
+};
+
+localStorage.setItem(
+  <span class="text-emerald-400">"user"</span>,
+  JSON.stringify(user)
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Parse -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Object Read Karna — JSON.parse()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> savedUser =
+  localStorage.getItem(
+    <span class="text-emerald-400">"user"</span>
+  );
+
+<span class="text-blue-400">const</span> user =
+  JSON.parse(
+    savedUser
+  );
+
+console.log(
+  user.name
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Safe parse -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Stored Data Check Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> savedUser =
+  localStorage.getItem(
+    <span class="text-emerald-400">"user"</span>
+  );
+
+<span class="text-blue-400">if</span> (savedUser) {
+
+  <span class="text-blue-400">const</span> user =
+    JSON.parse(
+      savedUser
+    );
+
+  console.log(user);
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Array -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array Store Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> products = [
+  <span class="text-emerald-400">"Laptop"</span>,
+  <span class="text-emerald-400">"Mouse"</span>,
+  <span class="text-emerald-400">"Keyboard"</span>
+];
+
+localStorage.setItem(
+  <span class="text-emerald-400">"products"</span>,
+  JSON.stringify(
+    products
+  )
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Array get -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array Wapas Read Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> products =
+  JSON.parse(
+    localStorage.getItem(
+      <span class="text-emerald-400">"products"</span>
+    )
+  );
+
+console.log(
+  products
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- session -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            sessionStorage
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            <code class="text-blue-400">sessionStorage</code>
+            bhi localStorage jaisi API use karta hai, lekin data current tab ki
+            session se tied hota hai.
+          </p>
+
+        </div>
+
+        <!-- session set -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            sessionStorage.setItem()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>sessionStorage.setItem(
+  <span class="text-emerald-400">"page"</span>,
+  <span class="text-emerald-400">"dashboard"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- session get -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            sessionStorage.getItem()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> page =
+  sessionStorage.getItem(
+    <span class="text-emerald-400">"page"</span>
+  );
+
+console.log(page);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- session remove -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            sessionStorage.removeItem()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>sessionStorage.removeItem(
+  <span class="text-emerald-400">"page"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Compare -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            localStorage vs sessionStorage
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">localStorage</th>
+                  <th class="p-4">sessionStorage</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Data persist kar sakta hai.
+                  </td>
+                  <td class="p-4">
+                    Current tab session ke liye hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Browser/tab close ke baad bhi reh sakta hai.
+                  </td>
+                  <td class="p-4">
+                    Tab close hone par session data remove ho jata hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Same origin ke pages use kar sakte hain.
+                  </td>
+                  <td class="p-4">
+                    Same origin ke saath tab-specific session hota hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Theme practical -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Example: Theme Save Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;button id=<span class="text-emerald-400">"themeBtn"</span>&gt;
+  Change Theme
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"themeBtn"</span>
+  );
+
+<span class="text-blue-400">const</span> savedTheme =
+  localStorage.getItem(
+    <span class="text-emerald-400">"theme"</span>
+  );
+
+<span class="text-blue-400">if</span> (
+  savedTheme ===
+  <span class="text-emerald-400">"dark"</span>
+) {
+
+  document.body.classList.add(
+    <span class="text-emerald-400">"dark"</span>
+  );
+
+}
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    document.body.classList.toggle(
+      <span class="text-emerald-400">"dark"</span>
+    );
+
+    <span class="text-blue-400">const</span> theme =
+      document.body.classList.contains(
+        <span class="text-emerald-400">"dark"</span>
+      )
+        ? <span class="text-emerald-400">"dark"</span>
+        : <span class="text-emerald-400">"light"</span>;
+
+    localStorage.setItem(
+      <span class="text-emerald-400">"theme"</span>,
+      theme
+    );
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- login token conceptual -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Login Data Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>localStorage.setItem(
+  <span class="text-emerald-400">"user"</span>,
+  JSON.stringify({
+    name:
+      <span class="text-emerald-400">"Ali"</span>
+  })
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            General non-sensitive app preferences/profile display data ko store
+            karna useful ho sakta hai. Sensitive information jaise passwords
+            browser storage me store nahi karni chahiye.
+          </p>
+
+        </div>
+
+        <!-- CRUD example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Example: Todo List Save Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> todos =
+  JSON.parse(
+    localStorage.getItem(
+      <span class="text-emerald-400">"todos"</span>
+    )
+  ) || [];
+
+<span class="text-blue-400">function</span> addTodo(
+  text
+) {
+
+  todos.push({
+    id:
+      Date.now(),
+
+    text:
+      text
+  });
+
+  localStorage.setItem(
+    <span class="text-emerald-400">"todos"</span>,
+    JSON.stringify(
+      todos
+    )
+  );
+
+}
+
+addTodo(
+  <span class="text-emerald-400">"Learn JavaScript"</span>
+);
+
+console.log(
+  todos
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Delete Todo -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Stored Array Se Item Delete Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> deleteTodo(
+  id
+) {
+
+  todos =
+    todos.filter(
+      (todo) =&gt;
+        todo.id !== id
+    );
+
+  localStorage.setItem(
+    <span class="text-emerald-400">"todos"</span>,
+    JSON.stringify(
+      todos
+    )
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- storage event -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            storage Event
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Same origin ke kisi dusre browsing context me localStorage change
+            hone par
+            <code class="text-blue-400">storage</code>
+            event useful ho sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.addEventListener(
+  <span class="text-emerald-400">"storage"</span>,
+  (event) =&gt; {
+
+    console.log(
+      event.key
+    );
+
+    console.log(
+      event.oldValue
+    );
+
+    console.log(
+      event.newValue
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Loop -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            localStorage Ke Sab Keys Read Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">for</span> (
+  <span class="text-blue-400">let</span> i = <span class="text-emerald-400">0</span>;
+  i &lt; localStorage.length;
+  i++
+) {
+
+  <span class="text-blue-400">const</span> key =
+    localStorage.key(i);
+
+  <span class="text-blue-400">const</span> value =
+    localStorage.getItem(
+      key
+    );
+
+  console.log(
+    key,
+    value
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Security -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Storage Security
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              Browser storage me password, OTP ya highly sensitive personal
+              information save nahi karna chahiye.
+            </p>
+
+            <p>
+              JavaScript running on the same origin can potentially access Web
+              Storage, isliye XSS security important hai.
+            </p>
+
+            <p>
+              Storage data ko trusted database ka replacement nahi samajhna
+              chahiye.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Quick Ref -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Storage Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method / Property</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    setItem()
+                  </td>
+                  <td class="p-4">
+                    Data store/update
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    getItem()
+                  </td>
+                  <td class="p-4">
+                    Data read
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    removeItem()
+                  </td>
+                  <td class="p-4">
+                    One key delete
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    clear()
+                  </td>
+                  <td class="p-4">
+                    Storage clear
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    key()
+                  </td>
+                  <td class="p-4">
+                    Index se key read
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    length
+                  </td>
+                  <td class="p-4">
+                    Key count
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    JSON.stringify()
+                  </td>
+                  <td class="p-4">
+                    Object/array ko string banana
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    JSON.parse()
+                  </td>
+                  <td class="p-4">
+                    JSON string ko JS value banana
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">localStorage</code>
+              persistent browser storage provide karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">sessionStorage</code>
+              current tab session ke liye data store karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">setItem()</code>
+              data save karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">getItem()</code>
+              stored data read karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">removeItem()</code>
+              specific key remove karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">clear()</code>
+              storage ke sab entries remove karta hai.
+            </p>
+
+            <p>
+              7. Objects aur arrays ke liye
+              <code class="text-blue-400">JSON.stringify()</code>
+              aur
+              <code class="text-blue-400">JSON.parse()</code>
+              use karte hain.
+            </p>
+
+            <p>
+              8. Password aur sensitive secrets ko browser storage me save nahi
+              karna chahiye.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Navigator.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../home/Home.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(28);
+  </script>
+
+</body>
+</html>

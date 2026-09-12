@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Borders - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- NAVBAR -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+      <div id="sidebar"></div>
+
+      <!-- MAIN CONTENT -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Borders
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../backgrounds/backgrounds.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="/css/margins/margins.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-border-all text-[#4d6fff] mr-3"></i>
+              CSS Borders Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS border ka use kisi HTML element ke around line ya boundary
+              create karne ke liye kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              Border ka style, width, color aur corners ko CSS properties ki
+              help se customize kiya ja sakta hai.
+            </p>
+
+            <!-- BORDER PROPERTIES -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-layer-group text-[#4d6fff] mr-3"></i>
+                Main Border Properties
+              </h3>
+
+              <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-pen-ruler text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">border-style</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Border ka design ya style set karta hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-arrows-left-right text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">border-width</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Border ki thickness set karta hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-palette text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">border-color</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Border ka color set karta hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-border-top-left text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">border-radius</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Border ke corners ko rounded banata hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i class="fa-solid fa-code text-[#4d6fff] text-3xl mb-5"></i>
+                  <h4 class="text-xl font-bold mb-3">border</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Multiple border properties ko short form mein likhta hai.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-[#020617] border border-gray-800 rounded-2xl p-6"
+                >
+                  <i
+                    class="fa-solid fa-square text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-3">Individual Borders</h4>
+                  <p class="text-gray-300 text-lg leading-8">
+                    Top, right, bottom aur left border ko separately style kar
+                    sakte hain.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BORDER STYLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-pen-ruler text-[#4d6fff] mr-3"></i>
+              1. Border Style
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>border-style</b> property border ka type define karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">border-style</span>: <span class="text-[#4ade80]">solid</span>;
+}</code></pre>
+            </div>
+
+            <!-- BORDER STYLES -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mb-12">
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div
+                  class="border-4 border-solid border-blue-500 p-5 rounded-lg mb-4"
+                >
+                  Solid
+                </div>
+                <h4 class="text-xl font-bold">solid</h4>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div
+                  class="border-4 border-dashed border-blue-500 p-5 rounded-lg mb-4"
+                >
+                  Dashed
+                </div>
+                <h4 class="text-xl font-bold">dashed</h4>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div
+                  class="border-4 border-dotted border-blue-500 p-5 rounded-lg mb-4"
+                >
+                  Dotted
+                </div>
+                <h4 class="text-xl font-bold">dotted</h4>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div
+                  class="border-4 border-double border-blue-500 p-5 rounded-lg mb-4"
+                >
+                  Double
+                </div>
+                <h4 class="text-xl font-bold">double</h4>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div
+                  class="border-4 border-groove border-blue-500 p-5 rounded-lg mb-4"
+                >
+                  Groove
+                </div>
+                <h4 class="text-xl font-bold">groove</h4>
+              </div>
+
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <div
+                  class="border-4 border-ridge border-blue-500 p-5 rounded-lg mb-4"
+                >
+                  Ridge
+                </div>
+                <h4 class="text-xl font-bold">ridge</h4>
+              </div>
+            </div>
+
+            <!-- BORDER WIDTH -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-left-right text-[#4d6fff] mr-3"></i>
+              2. Border Width
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>border-width</b> property border ki thickness set karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">border-style</span>: <span class="text-[#4ade80]">solid</span>;
+  <span class="text-[#60a5fa]">border-width</span>: <span class="text-[#4ade80]">5px</span>;
+}</code></pre>
+            </div>
+
+            <!-- BORDER COLOR -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-palette text-[#4d6fff] mr-3"></i>
+              3. Border Color
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>border-color</b> property border ka color set karti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">border-style</span>: <span class="text-[#4ade80]">solid</span>;
+  <span class="text-[#60a5fa]">border-width</span>: <span class="text-[#4ade80]">3px</span>;
+  <span class="text-[#60a5fa]">border-color</span>: <span class="text-[#4ade80]">red</span>;
+}</code></pre>
+            </div>
+
+            <!-- BORDER RADIUS -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-circle text-[#4d6fff] mr-3"></i>
+              4. Border Radius
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>border-radius</b> property border ke corners ko rounded banane
+              ke liye use hoti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">3px solid blue</span>;
+  <span class="text-[#60a5fa]">border-radius</span>: <span class="text-[#4ade80]">15px</span>;
+}</code></pre>
+            </div>
+
+            <div class="bg-[#254ccb] rounded-[30px] p-8 mb-12 text-center">
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+                Rounded Border
+              </h3>
+
+              <p class="text-lg">
+                Border radius se corners smooth aur rounded ho jate hain.
+              </p>
+            </div>
+
+            <!-- INDIVIDUAL SIDES -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-square text-[#4d6fff] mr-3"></i>
+              5. Individual Borders
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Top, right, bottom aur left borders ko separately define kiya ja
+              sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">border-top</span>: <span class="text-[#4ade80]">3px solid red</span>;
+  <span class="text-[#60a5fa]">border-right</span>: <span class="text-[#4ade80]">3px solid blue</span>;
+  <span class="text-[#60a5fa]">border-bottom</span>: <span class="text-[#4ade80]">3px solid green</span>;
+  <span class="text-[#60a5fa]">border-left</span>: <span class="text-[#4ade80]">3px solid orange</span>;
+}</code></pre>
+            </div>
+
+            <!-- BORDER SIDES CARDS -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+              <div
+                class="bg-[#0f172a] rounded-2xl p-6 border-t-4 border-red-500"
+              >
+                <h4 class="text-xl font-bold">border-top</h4>
+                <p class="text-gray-400 mt-2">Top side</p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] rounded-2xl p-6 border-r-4 border-blue-500"
+              >
+                <h4 class="text-xl font-bold">border-right</h4>
+                <p class="text-gray-400 mt-2">Right side</p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] rounded-2xl p-6 border-b-4 border-green-500"
+              >
+                <h4 class="text-xl font-bold">border-bottom</h4>
+                <p class="text-gray-400 mt-2">Bottom side</p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] rounded-2xl p-6 border-l-4 border-yellow-500"
+              >
+                <h4 class="text-xl font-bold">border-left</h4>
+                <p class="text-gray-400 mt-2">Left side</p>
+              </div>
+            </div>
+
+            <!-- BORDER SHORTHAND -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              6. Border Shorthand
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>border</b> shorthand se width, style aur color ko ek hi line
+              mein define kiya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">5px solid blue</span>;
+}</code></pre>
+            </div>
+
+            <!-- DIFFERENT STYLES -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i
+                class="fa-solid fa-wand-magic-sparkles text-[#4d6fff] mr-3"
+              ></i>
+              7. Different Border Styles
+            </h2>
+
+            <div class="space-y-5 mb-12">
+              <div
+                class="bg-[#0f172a] p-6 rounded-2xl border-l-8 border-blue-500"
+              >
+                <p class="text-lg sm:text-xl">
+                  <b>solid</b> — simple continuous line
+                </p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] p-6 rounded-2xl border-l-8 border-dashed border-blue-500"
+              >
+                <p class="text-lg sm:text-xl"><b>dashed</b> — broken line</p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] p-6 rounded-2xl border-l-8 border-dotted border-blue-500"
+              >
+                <p class="text-lg sm:text-xl"><b>dotted</b> — dots wali line</p>
+              </div>
+
+              <div
+                class="bg-[#0f172a] p-6 rounded-2xl border-l-8 border-double border-blue-500"
+              >
+                <p class="text-lg sm:text-xl"><b>double</b> — double line</p>
+              </div>
+            </div>
+
+            <!-- REAL LIFE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-globe text-[#4d6fff] mr-3"></i>
+              Real-Life Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Website mein cards, buttons, input fields aur sections ko visually
+              separate karne ke liye borders ka use bahut common hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="border-2 border-blue-500 rounded-2xl p-6">
+                  <i
+                    class="fa-solid fa-id-card text-[#4d6fff] text-3xl mb-4"
+                  ></i>
+
+                  <h3 class="text-2xl font-bold mb-3">Card</h3>
+
+                  <p class="text-gray-300 text-lg">
+                    Card ke around border use kiya ja sakta hai.
+                  </p>
+                </div>
+
+                <div class="border-2 border-green-500 rounded-2xl p-6">
+                  <i
+                    class="fa-solid fa-keyboard text-green-400 text-3xl mb-4"
+                  ></i>
+
+                  <h3 class="text-2xl font-bold mb-3">Input</h3>
+
+                  <p class="text-gray-300 text-lg">
+                    Input fields ko border se clearly define kiya ja sakta hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li><b>border-style</b> border ka design set karta hai.</li>
+
+                <li><b>border-width</b> border ki thickness set karta hai.</li>
+
+                <li><b>border-color</b> border ka color set karta hai.</li>
+
+                <li><b>border-radius</b> corners ko rounded banata hai.</li>
+
+                <li>
+                  Top, right, bottom aur left borders ko separately style kar
+                  sakte hain.
+                </li>
+
+                <li>
+                  <b>border</b> shorthand se width, style aur color ek line mein
+                  likh sakte hain.
+                </li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Borders Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Borders elements ke around boundary create karte hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Border ka style, width aur color customize kiya ja sakta
+                    hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>border-radius</b> se rounded corners banaye ja sakte
+                    hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Individual sides ko separately style kiya ja sakta hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../backgrounds/backgrounds.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="/CSS/margins/margins.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(10);
+      });
+    </script>
+  </body>
+</html>

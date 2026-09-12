@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Structures & Strings</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Layout -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">
+      C Structures & Strings
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="NestedStructures.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="RealLifeExamples.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Section 1: Strings in Structures Explanation -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-8">Structure Me Strings Ka Upayog</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Structure me Jab aap <code class="text-cyan-400">char</code> array (String) declare karte hain, toh aap direct assignment operator (<code class="text-yellow-300 font-bold">=</code>) se string value assign <strong>nahi</strong> kar sakte. Iske liye C library ke <code class="text-yellow-300">strcpy()</code> function ka upayog karna padta hai.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-red-950/40 border border-red-500 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-red-400 mb-3">❌ Incorrect Method</h3>
+          <p class="text-gray-300 text-lg leading-8 mb-3">
+            Directly equal to (<code class="text-red-400 font-bold">=</code>) lagane par compiler error deta hai:
+          </p>
+          <div class="bg-black/70 p-3 rounded-xl font-mono text-sm text-red-300">
+            s1.name = "Rahul"; // Compilation Error!
+          </div>
+        </div>
+
+        <div class="bg-green-950/40 border border-green-500 p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold text-green-400 mb-3">✅ Correct Method</h3>
+          <p class="text-gray-300 text-lg leading-8 mb-3">
+            <code class="text-yellow-300 font-bold">strcpy()</code> function ka use karke value copy karein:
+          </p>
+          <div class="bg-black/70 p-3 rounded-xl font-mono text-sm text-green-300">
+            strcpy(s1.name, "Rahul"); // Works Perfectly!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Code Example for strcpy() -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-yellow-300">Code Example: strcpy() Ke Saath</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        <code class="text-yellow-300 font-bold">strcpy()</code> ko use karne ke liye header file <code class="text-cyan-400">&lt;string.h&gt;</code> ko include karna zaroori hai:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+<span class="text-gray-400">#include &lt;string.h&gt;</span> <span class="text-gray-500">// Mandatory for strcpy</span>
+
+<span class="text-purple-400">struct</span> <span class="text-yellow-300">Book</span> {
+    <span class="text-green-500">int</span> bookId;
+    <span class="text-green-500">char</span> title[<span class="text-cyan-400">50</span>];
+    <span class="text-green-500">char</span> author[<span class="text-cyan-400">30</span>];
+};
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-purple-400">struct</span> <span class="text-yellow-300">Book</span> b1;
+
+    b1.bookId = <span class="text-cyan-400">101</span>;
+
+    <span class="text-gray-500">// String Copying using strcpy</span>
+    <span class="text-cyan-400">strcpy</span>(b1.title, <span class="text-yellow-300 font-bold">"C Programming Mastery"</span>);
+    <span class="text-cyan-400">strcpy</span>(b1.author, <span class="text-yellow-300 font-bold">"Dennis Ritchie"</span>);
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Book ID: %d\n"</span>, b1.bookId);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Title: %s\n"</span>, b1.title);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Author: %s\n"</span>, b1.author);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Book ID: 101</p>
+        <p class="text-green-400">Title: C Programming Mastery</p>
+        <p class="text-green-400">Author: Dennis Ritchie</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Direct Initialization Shortcut -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-green-400">Bina strcpy() Ke String Assign Karna</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        Agar aap Structure variable ko <strong>Declaration ke time par hi initialize</strong> kar dete hain, toh aapko <code class="text-yellow-300 font-bold">strcpy()</code> ki zaroorat nahi padti:
+      </p>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto mb-6 font-mono text-gray-300 border border-gray-800">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-purple-400">struct</span> <span class="text-yellow-300">User</span> {
+    <span class="text-green-500">char</span> username[<span class="text-cyan-400">20</span>];
+    <span class="text-green-500">char</span> email[<span class="text-cyan-400">40</span>];
+};
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-gray-500">// Direct Initialization (No strcpy needed!)</span>
+    <span class="text-purple-400">struct</span> <span class="text-yellow-300">User</span> u1 = {<span class="text-yellow-300">"tech_ninja"</span>, <span class="text-yellow-300">"ninja@example.com"</span>};
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Username: %s\n"</span>, u1.username);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"Email: %s\n"</span>, u1.email);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+
+      <div class="bg-black/60 border border-gray-700 rounded-xl p-4 font-mono text-gray-300">
+        <p class="font-bold text-white mb-2 border-b border-gray-700 pb-1">Output:</p>
+        <p class="text-green-400">Username: tech_ninja</p>
+        <p class="text-green-400">Email: ninja@example.com</p>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="NestedStructures.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="RealLifeExamples.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar();
+  }
+</script>
+
+</body>
+</html>

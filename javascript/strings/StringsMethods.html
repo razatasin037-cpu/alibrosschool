@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript String Methods - Tutorial</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5"
+      >
+        JavaScript String Methods
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./StringsTemplates.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Search.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          String Methods Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me String Methods ka use String data ko modify, check,
+          search aur transform karne ke liye kiya jata hai.
+          <br><br>
+          String Methods ki help se hum text ko uppercase ya lowercase kar
+          sakte hain, extra spaces remove kar sakte hain, text ka part nikal
+          sakte hain aur String ko replace bhi kar sakte hain.
+        </p>
+
+      </div>
+
+      
+      <section class="mt-12 space-y-8">
+
+        <!-- Complete Methods Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            JavaScript String Methods List
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Niche modern JavaScript ke standard String instance methods diye gaye hain.
+            <code class="text-blue-400">length</code> ek property hai, method nahi.
+          </p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+                <tr>
+      <td class="p-4 font-mono text-emerald-400">at()</td>
+      <td class="p-4">Index se character return karta hai; negative index bhi support karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">charAt()</td>
+      <td class="p-4">Given index ka character return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">charCodeAt()</td>
+      <td class="p-4">Given index ke UTF-16 code unit ka number return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">codePointAt()</td>
+      <td class="p-4">Given index ka Unicode code point return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">concat()</td>
+      <td class="p-4">Do ya zyada strings ko join karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">endsWith()</td>
+      <td class="p-4">Check karta hai String given text par end hoti hai ya nahi.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">includes()</td>
+      <td class="p-4">Check karta hai given text String ke andar present hai ya nahi.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">indexOf()</td>
+      <td class="p-4">Text ki first position/index return karta hai; na mile to -1.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">isWellFormed()</td>
+      <td class="p-4">Check karta hai String valid UTF-16 well-formed hai ya nahi.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">lastIndexOf()</td>
+      <td class="p-4">Given text ki last occurrence ka index return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">localeCompare()</td>
+      <td class="p-4">Do strings ko locale-aware tarike se compare karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">match()</td>
+      <td class="p-4">Regular expression ke match ka result return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">matchAll()</td>
+      <td class="p-4">Regular expression ke sab matches ka iterator return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">normalize()</td>
+      <td class="p-4">Unicode text ko selected normalization form me normalize karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">padEnd()</td>
+      <td class="p-4">String ke end me characters add karke required length banata hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">padStart()</td>
+      <td class="p-4">String ke start me characters add karke required length banata hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">repeat()</td>
+      <td class="p-4">String ko given number of times repeat karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">replace()</td>
+      <td class="p-4">First matching text ko replace karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">replaceAll()</td>
+      <td class="p-4">Sab matching occurrences ko replace karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">search()</td>
+      <td class="p-4">Regex ya pattern ka first matching index return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">slice()</td>
+      <td class="p-4">Start aur end index ke beech ka String part return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">split()</td>
+      <td class="p-4">String ko separator ke basis par Array me todta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">startsWith()</td>
+      <td class="p-4">Check karta hai String given text se start hoti hai ya nahi.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">substring()</td>
+      <td class="p-4">Do indexes ke beech ka String part return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">toLocaleLowerCase()</td>
+      <td class="p-4">Locale rules ke according lowercase me convert karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">toLocaleUpperCase()</td>
+      <td class="p-4">Locale rules ke according uppercase me convert karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">toLowerCase()</td>
+      <td class="p-4">String ko lowercase me convert karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">toString()</td>
+      <td class="p-4">String value/object ko String representation me return karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">toUpperCase()</td>
+      <td class="p-4">String ko uppercase me convert karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">toWellFormed()</td>
+      <td class="p-4">Invalid lone UTF-16 surrogates ko replacement character se replace karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">trim()</td>
+      <td class="p-4">Start aur end ke whitespace ko remove karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">trimEnd()</td>
+      <td class="p-4">String ke end ka whitespace remove karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">trimStart()</td>
+      <td class="p-4">String ke start ka whitespace remove karta hai.</td>
+    </tr>
+<tr>
+      <td class="p-4 font-mono text-emerald-400">valueOf()</td>
+      <td class="p-4">String object ki primitive String value return karta hai.</td>
+    </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- General Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">String Method Syntax</h3>
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code>string.methodName();</code></pre>
+          </div>
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Pehle String ya String variable, phir dot <code class="text-blue-400">.</code>,
+            aur uske baad method ka naam likha jata hai.
+          </p>
+        </div>
+
+        
+        <!-- at() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">1. at()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Index se character return karta hai; negative index bhi support karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;JavaScript&quot;</span>;
+console.log(text.at(-1));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">t</pre>
+          </div>
+        </div>
+    
+        <!-- charAt() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">2. charAt()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Given index ka character return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;JavaScript&quot;</span>;
+console.log(text.charAt(4));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">S</pre>
+          </div>
+        </div>
+    
+        <!-- charCodeAt() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">3. charCodeAt()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Given index ke UTF-16 code unit ka number return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;ABC&quot;</span>;
+console.log(text.charCodeAt(0));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">65</pre>
+          </div>
+        </div>
+    
+        <!-- codePointAt() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">4. codePointAt()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Given index ka Unicode code point return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;A&quot;</span>;
+console.log(text.codePointAt(0));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">65</pre>
+          </div>
+        </div>
+    
+        <!-- concat() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">5. concat()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Do ya zyada strings ko join karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> a = <span class="text-emerald-400">&quot;Hello&quot;</span>;
+<span class="text-blue-400">let</span> b = <span class="text-emerald-400">&quot;JavaScript&quot;</span>;
+console.log(a.concat(<span class="text-emerald-400">&quot; &quot;</span>, b));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello JavaScript</pre>
+          </div>
+        </div>
+    
+        <!-- endsWith() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">6. endsWith()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Check karta hai String given text par end hoti hai ya nahi.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello JavaScript&quot;</span>;
+console.log(text.endsWith(<span class="text-emerald-400">&quot;JavaScript&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+        </div>
+    
+        <!-- includes() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">7. includes()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Check karta hai given text String ke andar present hai ya nahi.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello JavaScript&quot;</span>;
+console.log(text.includes(<span class="text-emerald-400">&quot;Java&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+        </div>
+    
+        <!-- indexOf() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">8. indexOf()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Text ki first position/index return karta hai; na mile to -1.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello JavaScript&quot;</span>;
+console.log(text.indexOf(<span class="text-emerald-400">&quot;Java&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">6</pre>
+          </div>
+        </div>
+    
+        <!-- isWellFormed() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">9. isWellFormed()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Check karta hai String valid UTF-16 well-formed hai ya nahi.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello&quot;</span>;
+console.log(text.isWellFormed());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+        </div>
+    
+        <!-- lastIndexOf() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">10. lastIndexOf()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Given text ki last occurrence ka index return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello Hello&quot;</span>;
+console.log(text.lastIndexOf(<span class="text-emerald-400">&quot;Hello&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">6</pre>
+          </div>
+        </div>
+    
+        <!-- localeCompare() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">11. localeCompare()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Do strings ko locale-aware tarike se compare karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code>console.log(<span class="text-emerald-400">&quot;apple&quot;</span>.localeCompare(<span class="text-emerald-400">&quot;banana&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Negative number</pre>
+          </div>
+        </div>
+    
+        <!-- match() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">12. match()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Regular expression ke match ka result return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;cat bat rat&quot;</span>;
+console.log(text.match(/bat/)[0]);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">bat</pre>
+          </div>
+        </div>
+    
+        <!-- matchAll() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">13. matchAll()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Regular expression ke sab matches ka iterator return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;a1 a2 a3&quot;</span>;
+<span class="text-blue-400">let</span> result = [...text.matchAll(/a\d/g)];
+console.log(result.map(x =&gt; x[0]));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">[&quot;a1&quot;, &quot;a2&quot;, &quot;a3&quot;]</pre>
+          </div>
+        </div>
+    
+        <!-- normalize() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">14. normalize()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Unicode text ko selected normalization form me normalize karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;\u00F1&quot;</span>;
+console.log(text.normalize(<span class="text-emerald-400">&quot;NFC&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">ñ</pre>
+          </div>
+        </div>
+    
+        <!-- padEnd() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">15. padEnd()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String ke end me characters add karke required length banata hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;5&quot;</span>;
+console.log(text.padEnd(3, <span class="text-emerald-400">&quot;0&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">500</pre>
+          </div>
+        </div>
+    
+        <!-- padStart() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">16. padStart()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String ke start me characters add karke required length banata hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;5&quot;</span>;
+console.log(text.padStart(3, <span class="text-emerald-400">&quot;0&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">005</pre>
+          </div>
+        </div>
+    
+        <!-- repeat() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">17. repeat()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String ko given number of times repeat karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hi &quot;</span>;
+console.log(text.repeat(3));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hi Hi Hi </pre>
+          </div>
+        </div>
+    
+        <!-- replace() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">18. replace()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">First matching text ko replace karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello JavaScript&quot;</span>;
+console.log(text.replace(<span class="text-emerald-400">&quot;JavaScript&quot;</span>, <span class="text-emerald-400">&quot;React&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello React</pre>
+          </div>
+        </div>
+    
+        <!-- replaceAll() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">19. replaceAll()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Sab matching occurrences ko replace karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hi Hi Hi&quot;</span>;
+console.log(text.replaceAll(<span class="text-emerald-400">&quot;Hi&quot;</span>, <span class="text-emerald-400">&quot;Hello&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello Hello Hello</pre>
+          </div>
+        </div>
+    
+        <!-- search() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">20. search()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Regex ya pattern ka first matching index return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello JavaScript&quot;</span>;
+console.log(text.search(/Java/));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">6</pre>
+          </div>
+        </div>
+    
+        <!-- slice() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">21. slice()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Start aur end index ke beech ka String part return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;JavaScript&quot;</span>;
+console.log(text.slice(0, 4));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Java</pre>
+          </div>
+        </div>
+    
+        <!-- split() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">22. split()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String ko separator ke basis par Array me todta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;HTML,CSS,JS&quot;</span>;
+console.log(text.split(<span class="text-emerald-400">&quot;,&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">[&quot;HTML&quot;, &quot;CSS&quot;, &quot;JS&quot;]</pre>
+          </div>
+        </div>
+    
+        <!-- startsWith() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">23. startsWith()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Check karta hai String given text se start hoti hai ya nahi.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello JavaScript&quot;</span>;
+console.log(text.startsWith(<span class="text-emerald-400">&quot;Hello&quot;</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+        </div>
+    
+        <!-- substring() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">24. substring()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Do indexes ke beech ka String part return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;JavaScript&quot;</span>;
+console.log(text.substring(4, 10));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Script</pre>
+          </div>
+        </div>
+    
+        <!-- toLocaleLowerCase() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">25. toLocaleLowerCase()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Locale rules ke according lowercase me convert karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;HELLO&quot;</span>;
+console.log(text.toLocaleLowerCase());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">hello</pre>
+          </div>
+        </div>
+    
+        <!-- toLocaleUpperCase() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">26. toLocaleUpperCase()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Locale rules ke according uppercase me convert karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;hello&quot;</span>;
+console.log(text.toLocaleUpperCase());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">HELLO</pre>
+          </div>
+        </div>
+    
+        <!-- toLowerCase() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">27. toLowerCase()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String ko lowercase me convert karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;JavaScript&quot;</span>;
+console.log(text.toLowerCase());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">javascript</pre>
+          </div>
+        </div>
+    
+        <!-- toString() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">28. toString()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String value/object ko String representation me return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-blue-400">new</span> String(<span class="text-emerald-400">&quot;Hello&quot;</span>);
+console.log(text.toString());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello</pre>
+          </div>
+        </div>
+    
+        <!-- toUpperCase() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">29. toUpperCase()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String ko uppercase me convert karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;JavaScript&quot;</span>;
+console.log(text.toUpperCase());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">JAVASCRIPT</pre>
+          </div>
+        </div>
+    
+        <!-- toWellFormed() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">30. toWellFormed()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Invalid lone UTF-16 surrogates ko replacement character se replace karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello&quot;</span>;
+console.log(text.toWellFormed());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello</pre>
+          </div>
+        </div>
+    
+        <!-- trim() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">31. trim()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Start aur end ke whitespace ko remove karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;   Hello   &quot;</span>;
+console.log(text.trim());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello</pre>
+          </div>
+        </div>
+    
+        <!-- trimEnd() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">32. trimEnd()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String ke end ka whitespace remove karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;Hello   &quot;</span>;
+console.log(text.trimEnd());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello</pre>
+          </div>
+        </div>
+    
+        <!-- trimStart() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">33. trimStart()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String ke start ka whitespace remove karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">&quot;   Hello&quot;</span>;
+console.log(text.trimStart());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello</pre>
+          </div>
+        </div>
+    
+        <!-- valueOf() -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">34. valueOf()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">String object ki primitive String value return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-blue-400">new</span> String(<span class="text-emerald-400">&quot;Hello&quot;</span>);
+console.log(text.valueOf());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello</pre>
+          </div>
+        </div>
+    
+
+        <!-- Static String Methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">Static String Methods</h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Ye methods kisi String variable par nahi, directly
+            <code class="text-blue-400">String</code> object par call hote hain.
+          </p>
+        </div>
+
+        
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">String.fromCharCode()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">UTF-16 code units se String banata hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code>console.log(String.fromCharCode(72, 105));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hi</pre>
+          </div>
+        </div>
+    
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">String.fromCodePoint()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Unicode code points se String banata hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code>console.log(String.fromCodePoint(9731));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">☃</pre>
+          </div>
+        </div>
+    
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">String.raw()</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">Template literal ke raw characters return karta hai.</p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+            <pre class="font-mono text-sm sm:text-base"><code>console.log(String.raw`Hello\nJS`);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold text-white mb-2">Output:</p>
+            <pre class="text-emerald-400 font-mono">Hello\nJS</pre>
+          </div>
+        </div>
+    
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">Important Points</h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+            <p>1. JavaScript Strings immutable hoti hain; methods normally new String/value return karte hain.</p>
+            <p>2. <code class="text-blue-400">length</code> property hai, method nahi.</p>
+            <p>3. Search/check ke important methods: <code class="text-blue-400">includes()</code>, <code class="text-blue-400">indexOf()</code>, <code class="text-blue-400">lastIndexOf()</code>, <code class="text-blue-400">startsWith()</code>, <code class="text-blue-400">endsWith()</code>, <code class="text-blue-400">search()</code>, <code class="text-blue-400">match()</code>, <code class="text-blue-400">matchAll()</code>.</p>
+            <p>4. Text change ke methods: <code class="text-blue-400">replace()</code>, <code class="text-blue-400">replaceAll()</code>, <code class="text-blue-400">trim()</code>, <code class="text-blue-400">padStart()</code>, <code class="text-blue-400">padEnd()</code>, <code class="text-blue-400">repeat()</code>.</p>
+            <p>5. Purane deprecated HTML wrapper String methods ko new projects me avoid karna chahiye.</p>
+          </div>
+        </div>
+
+      </section>
+
+
+      
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./StringsTemplates.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Search.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // Sidebar No. 8 -> JS String Methods
+    document.getElementById("sidebar").innerHTML = createSidebar(8);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Table Colspan & Rowspan - Complete Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <!-- Page Main Heading -->
+        <h1 class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight">
+          HTML Table Colspan & Rowspan
+        </h1>
+
+        <!-- Top Page Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="./TableColgroup.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="../lists/lists.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Introductory Card -->
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            Merging Table Cells
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            HTML me do ya usse zyada cells ko combine (merge) karne ke liye <code class="text-yellow-400">colspan</code> (horizontal merging) aur <code class="text-yellow-400">rowspan</code> (vertical merging) attributes ka use kiya jata hai.
+          </p>
+        </div>
+
+        <!-- SECTION 1: Colspan Attribute -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            1. Combining Columns (`colspan`)
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Ek cell ko multiple columns tak stretch karne ke liye <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">colspan</code> attribute ka use karein:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">&lt;table&gt;</span>
+  <span class="text-blue-400">&lt;tr&gt;</span>
+    <span class="text-blue-400">&lt;th&gt;</span>Name<span class="text-blue-400">&lt;/th&gt;</span>
+    <span class="text-blue-400">&lt;th</span> <span class="text-yellow-400">colspan="2"</span><span class="text-blue-400">&gt;</span>Phone<span class="text-blue-400">&lt;/th&gt;</span>
+  <span class="text-blue-400">&lt;/tr&gt;</span>
+  <span class="text-blue-400">&lt;tr&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>Rahul<span class="text-blue-400">&lt;/td&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>9876543210<span class="text-blue-400">&lt;/td&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>9123456789<span class="text-blue-400">&lt;/td&gt;</span>
+  <span class="text-blue-400">&lt;/tr&gt;</span>
+<span class="text-blue-400">&lt;/table&gt;</span></code></pre>
+            </div>
+
+            <!-- Visual Result Box -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Visual Result (Colspan = 2)</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse border border-slate-700 text-center">
+                  <thead>
+                    <tr class="bg-slate-800">
+                      <th class="p-3 border border-slate-700 text-yellow-400">Name</th>
+                      <th colspan="2" class="p-3 border border-slate-700 text-yellow-400">Phone</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="p-3 border border-slate-700 text-gray-300">Rahul</td>
+                      <td class="p-3 border border-slate-700 text-gray-300">9876543210</td>
+                      <td class="p-3 border border-slate-700 text-gray-300">9123456789</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Rowspan Attribute -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            2. Combining Rows (`rowspan`)
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Ek cell ko multiple rows tak vertically span karne ke liye <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">rowspan</code> attribute ka use hota hai:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">&lt;table&gt;</span>
+  <span class="text-blue-400">&lt;tr&gt;</span>
+    <span class="text-blue-400">&lt;th&gt;</span>Name<span class="text-blue-400">&lt;/th&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>Priya<span class="text-blue-400">&lt;/td&gt;</span>
+  <span class="text-blue-400">&lt;/tr&gt;</span>
+  <span class="text-blue-400">&lt;tr&gt;</span>
+    <span class="text-blue-400">&lt;th</span> <span class="text-yellow-400">rowspan="2"</span><span class="text-blue-400">&gt;</span>Phone<span class="text-blue-400">&lt;/th&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>9876543210<span class="text-blue-400">&lt;/td&gt;</span>
+  <span class="text-blue-400">&lt;/tr&gt;</span>
+  <span class="text-blue-400">&lt;tr&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>9123456789<span class="text-blue-400">&lt;/td&gt;</span>
+  <span class="text-blue-400">&lt;/tr&gt;</span>
+<span class="text-blue-400">&lt;/table&gt;</span></code></pre>
+            </div>
+
+            <!-- Visual Result Box -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Visual Result (Rowspan = 2)</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse border border-slate-700 text-center">
+                  <tbody>
+                    <tr>
+                      <th class="p-3 border border-slate-700 bg-slate-800 text-yellow-400">Name</th>
+                      <td class="p-3 border border-slate-700 text-gray-300">Priya</td>
+                    </tr>
+                    <tr>
+                      <th rowspan="2" class="p-3 border border-slate-700 bg-slate-800 text-yellow-400 align-middle">Phone</th>
+                      <td class="p-3 border border-slate-700 text-gray-300">9876543210</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border border-slate-700 text-gray-300">9123456789</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Page Navigation -->
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="./TableColgroup.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="../lists/lists.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(17);
+    </script>
+  </body>
+</html>

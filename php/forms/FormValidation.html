@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Form Validation - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Form Validation
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./FormHandling.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FormsRequired.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Form Validation Kyun Zaroori Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            Form validation ka maqsad ye confirm karna hota hai ki user ne correct aur safe data enter kiya hai pehle isse ki wo database me save ho ya process kiya jaaye.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Proper validation aapki application ko <strong class="text-white">Cross-Site Scripting (XSS)</strong> attacks aur malicious script injections se protect karti hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Key Sanitization Functions -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Essential Input Sanitization Functions
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400">
+                    <th class="p-3">Function</th>
+                    <th class="p-3">Purpose / Kaam</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">trim($data)</td>
+                    <td class="p-3">Input ke start aur end se extra whitespaces, tabs, aur newlines remove karta hai.</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">stripslashes($data)</td>
+                    <td class="p-3">Input string se backslashes (<code class="text-white">\</code>) remove karta hai.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-green-400">htmlspecialchars($data)</td>
+                    <td class="p-3">Special HTML characters (jaise <code>&lt;</code>, <code>&gt;</code>) ko HTML entities me convert karke XSS block karta hai.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 1. Sanitization Helper Function Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Custom Sanitization Helper Function
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Ek reusable custom function banakar har input field ko clean aur sanitize karna best practice maana jata hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Helper function to sanitize user inputs</span>
+  <span class="text-green-400">function</span> <span class="text-white">test_input</span>(<span class="text-green-400">$data</span>) {
+      <span class="text-green-400">$data</span> = <span class="text-green-400">trim</span>(<span class="text-green-400">$data</span>);
+      <span class="text-green-400">$data</span> = <span class="text-green-400">stripslashes</span>(<span class="text-green-400">$data</span>);
+      <span class="text-green-400">$data</span> = <span class="text-[#f87171]">htmlspecialchars</span>(<span class="text-green-400">$data</span>);
+      <span class="text-green-400">return</span> <span class="text-green-400">$data</span>;
+  }
+
+  <span class="text-[#94a3b8]">// Example variables</span>
+  <span class="text-green-400">$name</span> = <span class="text-green-400">$email</span> = <span class="text-green-400">$website</span> = <span class="text-green-400">$comment</span> = <span class="text-white">""</span>;
+
+  <span class="text-green-400">if</span> (<span class="text-green-400">$_SERVER</span>[<span class="text-white">"REQUEST_METHOD"</span>] == <span class="text-white">"POST"</span>) {
+      <span class="text-green-400">$name</span>    = <span class="text-white">test_input</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"name"</span>] ?? <span class="text-white">""</span>);
+      <span class="text-green-400">$email</span>   = <span class="text-white">test_input</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"email"</span>] ?? <span class="text-white">""</span>);
+      <span class="text-green-400">$website</span> = <span class="text-white">test_input</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"website"</span>] ?? <span class="text-white">""</span>);
+      <span class="text-green-400">$comment</span> = <span class="text-white">test_input</span>(<span class="text-green-400">$_POST</span>[<span class="text-white">"comment"</span>] ?? <span class="text-white">""</span>);
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Validated HTML Form -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Complete HTML Form Setup
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Form setup me secure action attribute (`htmlspecialchars($_SERVER["PHP_SELF"])`) ke sath sanitization integrate karna:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;!-- Form submitting to self securely --&gt;</span>
+<span class="text-green-400">&lt;form</span> <span class="text-white">method</span>=<span class="text-yellow-300">"post"</span> <span class="text-white">action</span>=<span class="text-yellow-300">"&lt;?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?&gt;"</span><span class="text-green-400">&gt;</span>
+  <span class="text-green-400">&lt;label&gt;</span>Name:<span class="text-green-400">&lt;/label&gt;</span>
+  <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"text"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"name"</span><span class="text-green-400">&gt;</span>
+  
+  <span class="text-green-400">&lt;label&gt;</span>E-mail:<span class="text-green-400">&lt;/label&gt;</span>
+  <span class="text-green-400">&lt;input</span> <span class="text-white">type</span>=<span class="text-yellow-300">"text"</span> <span class="text-white">name</span>=<span class="text-yellow-300">"email"</span><span class="text-green-400">&gt;</span>
+
+  <span class="text-green-400">&lt;button</span> <span class="text-white">type</span>=<span class="text-yellow-300">"submit"</span><span class="text-green-400">&gt;</span>Submit<span class="text-green-400">&lt;/button&gt;</span>
+<span class="text-green-400">&lt;/form&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Security Tip Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-blue-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-blue-400">
+              <span>💡</span> Pro Tip: Server-Side vs Client-Side Validation
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              HTML5 attributes (jaise <code class="text-green-400">required</code> ya <code class="text-green-400">type="email"</code>) browser-level user experience ko fast banate hain, lekin inhe browser developer tools se easily bypass kiya ja sakta hai. Isliye <strong>Server-Side PHP Validation</strong> hamesha compulsory hoti hai.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./FormHandling.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FormsRequired.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(20);
+    </script>
+  </body>
+</html>

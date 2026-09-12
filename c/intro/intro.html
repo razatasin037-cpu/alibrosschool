@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C Introduction</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+  </head>
+ <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <!-- Main Layout -->
+  <main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section class="w-full md:w-[calc(100%-320px)] p-6 md:px-16 md:py-8">
+
+      <!-- Heading -->
+      <h1 class="text-4xl mt-3 md:mt-1 md:text-6xl font-bold mb-10">
+        C Introduction
+      </h1>
+
+      <!-- Navigation Buttons -->
+      <div class="flex justify-between items-center mb-12">
+        <a
+          href="../home/home.html"
+          class="bg-white text-black md:px-8 md:py-4 px-3 py-3  rounded-xl font-bold"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../getStarted/getstarted.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold"
+        >
+          Next ❯
+        </a>
+      </div>
+
+      <!-- Introduction Card -->
+      <div class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+        <h2 class="text-4xl font-bold mb-8">
+          C Introduction
+        </h2>
+
+        <p class="text-xl text-gray-300 leading-10 mb-8">
+          C ek general-purpose programming language hai jo Dennis Ritchie ne
+          1972 me Bell Labs me develop ki thi.
+        </p>
+
+        <p class="text-xl text-gray-300 leading-10 mb-8">
+          C ka use Operating Systems, Database Systems, Embedded Systems,
+          Drivers aur Software banane ke liye hota hai.
+        </p>
+
+        <p class="text-xl text-gray-300 leading-10">
+          Agar aap programming ki strong foundation banana chahte hain to C
+          best language hai.
+        </p>
+
+      </div>
+
+      <!-- Features -->
+<section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+
+  <h2 class="text-4xl font-bold mb-8">
+    Features of C
+  </h2>
+
+  <ul class="list-disc ml-8 text-xl text-gray-300 leading-10 space-y-3">
+    <li><strong>Simple Language:</strong> C ek simple aur easy programming language hai, jise beginners bhi aasani se seekh sakte hain.</li>
+
+    <li><strong>Fast Execution:</strong> C mein likhe programs bahut fast execute hote hain kyunki ye directly machine level ke kareeb kaam karti hai.</li>
+
+    <li><strong>Portable:</strong> C ka code ek operating system se dusre operating system par thode bahut changes ke saath chal sakta hai.</li>
+
+    <li><strong>Structured Programming:</strong> C functions aur blocks ka use karti hai, jisse code ko samajhna aur maintain karna easy ho jata hai.</li>
+
+    <li><strong>Rich Library Functions:</strong> C mein bahut saare built-in library functions hote hain jo programming ko easy aur fast bana dete hain.</li>
+
+    <li><strong>Memory Management:</strong> C programmer ko memory ko manually manage karne ki facility deti hai, jisse performance improve hoti hai.</li>
+
+    <li><strong>Easy to Learn:</strong> Agar programming ki basic knowledge ho, to C language ko seekhna kaafi easy hota hai aur ye dusri languages ka base bhi hai.</li>
+  </ul>
+
+</section>
+      <!-- Example -->
+      <section class="mt-16">
+        <div id="codeCards"></div>
+      </section>
+
+      <!-- Note -->
+      <section class="mt-16">
+
+        <div class="bg-[#2d3521] rounded-[30px] p-10">
+
+          <h2 class="text-3xl font-bold mb-6">
+            📝 Note
+          </h2>
+
+          <p class="text-xl text-[#e9f1c7] leading-10">
+            Har example ko khud type karke compile aur run karein.
+            Practice hi programming seekhne ka sabse achha tareeka hai.
+          </p>
+
+        </div>
+
+      </section>
+ <!-- footer Buttons -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+        <a
+          href="../home/home.html"
+          class="bg-white text-black md:px-8 md:py-4 px-2 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../getStarted/getstarted.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(1);
+  </script>
+
+  <script src="../js/examplecard.js"></script>
+
+</body>
+  </html>

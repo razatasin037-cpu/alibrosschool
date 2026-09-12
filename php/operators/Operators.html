@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Operators - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Operators
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../constants/Constants.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../if_else/If.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Operators Kya Hote Hain?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            Operators symbols hote hain jo variables aur values par mathematical, logical, ya comparison operations perform karne ke liye use kiye jaate hain.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            PHP me operators ko principalmente **8 major categories** me divide kiya gaya hai.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. Arithmetic Operators -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              1. Arithmetic Operators
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Common mathematical operations jaise addition, subtraction, multiplication perform karne ke liye:
+            </p>
+
+            <div class="overflow-x-auto mb-4">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Operator</th>
+                    <th class="py-3 px-4">Name</th>
+                    <th class="py-3 px-4">Example</th>
+                    <th class="py-3 px-4">Result</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">+</td>
+                    <td class="py-3 px-4">Addition</td>
+                    <td class="py-3 px-4 font-mono">$x + $y</td>
+                    <td class="py-3 px-4">Sum of $x and $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">-</td>
+                    <td class="py-3 px-4">Subtraction</td>
+                    <td class="py-3 px-4 font-mono">$x - $y</td>
+                    <td class="py-3 px-4">Difference of $x and $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">*</td>
+                    <td class="py-3 px-4">Multiplication</td>
+                    <td class="py-3 px-4 font-mono">$x * $y</td>
+                    <td class="py-3 px-4">Product of $x and $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">/</td>
+                    <td class="py-3 px-4">Division</td>
+                    <td class="py-3 px-4 font-mono">$x / $y</td>
+                    <td class="py-3 px-4">Quotient of $x and $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">%</td>
+                    <td class="py-3 px-4">Modulus</td>
+                    <td class="py-3 px-4 font-mono">$x % $y</td>
+                    <td class="py-3 px-4">Remainder of $x divided by $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">**</td>
+                    <td class="py-3 px-4">Exponentiation</td>
+                    <td class="py-3 px-4 font-mono">$x ** $y</td>
+                    <td class="py-3 px-4">Result of raising $x to the $y'th power</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 2. Assignment Operators -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              2. Assignment Operators
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Variables me values assign aur modify karne ke liye:
+            </p>
+
+            <div class="overflow-x-auto mb-4">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Operator</th>
+                    <th class="py-3 px-4">Same As</th>
+                    <th class="py-3 px-4">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">x = y</td>
+                    <td class="py-3 px-4 font-mono">x = y</td>
+                    <td class="py-3 px-4">Left operand me right value store karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">x += y</td>
+                    <td class="py-3 px-4 font-mono">x = x + y</td>
+                    <td class="py-3 px-4">Value add karke assign karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">x -= y</td>
+                    <td class="py-3 px-4 font-mono">x = x - y</td>
+                    <td class="py-3 px-4">Value subtract karke assign karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">x *= y</td>
+                    <td class="py-3 px-4 font-mono">x = x * y</td>
+                    <td class="py-3 px-4">Multiply karke assign karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">x /= y</td>
+                    <td class="py-3 px-4 font-mono">x = x / y</td>
+                    <td class="py-3 px-4">Divide karke assign karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">x %= y</td>
+                    <td class="py-3 px-4 font-mono">x = x % y</td>
+                    <td class="py-3 px-4">Remainder calculate karke assign karta hai</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 3. Comparison Operators -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              3. Comparison Operators
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Do values ya variables ko compare karke Boolean result (<code class="text-green-400">true</code> or <code class="text-green-400">false</code>) dene ke liye:
+            </p>
+
+            <div class="overflow-x-auto mb-4">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Operator</th>
+                    <th class="py-3 px-4">Name</th>
+                    <th class="py-3 px-4">Example</th>
+                    <th class="py-3 px-4">Returns True If</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">==</td>
+                    <td class="py-3 px-4">Equal</td>
+                    <td class="py-3 px-4 font-mono">$x == $y</td>
+                    <td class="py-3 px-4">$x and $y are equal</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">===</td>
+                    <td class="py-3 px-4">Identical</td>
+                    <td class="py-3 px-4 font-mono">$x === $y</td>
+                    <td class="py-3 px-4">Equal AND have the same type</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">!= / &lt;&gt;</td>
+                    <td class="py-3 px-4">Not equal</td>
+                    <td class="py-3 px-4 font-mono">$x != $y</td>
+                    <td class="py-3 px-4">$x is not equal to $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">!==</td>
+                    <td class="py-3 px-4">Not identical</td>
+                    <td class="py-3 px-4 font-mono">$x !== $y</td>
+                    <td class="py-3 px-4">Not equal OR not of the same type</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">&gt;</td>
+                    <td class="py-3 px-4">Greater than</td>
+                    <td class="py-3 px-4 font-mono">$x &gt; $y</td>
+                    <td class="py-3 px-4">$x is greater than $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">&lt;</td>
+                    <td class="py-3 px-4">Less than</td>
+                    <td class="py-3 px-4 font-mono">$x &lt; $y</td>
+                    <td class="py-3 px-4">$x is less than $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">&gt;=</td>
+                    <td class="py-3 px-4">Greater than or equal to</td>
+                    <td class="py-3 px-4 font-mono">$x &gt;= $y</td>
+                    <td class="py-3 px-4">$x is greater than or equal to $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">&lt;=</td>
+                    <td class="py-3 px-4">Less than or equal to</td>
+                    <td class="py-3 px-4 font-mono">$x &lt;= $y</td>
+                    <td class="py-3 px-4">$x is less than or equal to $y</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">&lt;=&gt;</td>
+                    <td class="py-3 px-4">Spaceship</td>
+                    <td class="py-3 px-4 font-mono">$x &lt;=&gt; $y</td>
+                    <td class="py-3 px-4">Returns -1 ($x&lt;$y), 0 ($x==$y), 1 ($x&gt;$y)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 4. Increment / Decrement Operators -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              4. Increment / Decrement Operators
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Variables ki value 1 se increase ya decrease karne ke liye:
+            </p>
+
+            <div class="overflow-x-auto mb-4">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Operator</th>
+                    <th class="py-3 px-4">Name</th>
+                    <th class="py-3 px-4">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">++$x</td>
+                    <td class="py-3 px-4">Pre-increment</td>
+                    <td class="py-3 px-4">$x ko 1 se increase karta hai, fir $x return karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">$x++</td>
+                    <td class="py-3 px-4">Post-increment</td>
+                    <td class="py-3 px-4">Pehle $x return karta hai, fir 1 se increase karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">--$x</td>
+                    <td class="py-3 px-4">Pre-decrement</td>
+                    <td class="py-3 px-4">$x ko 1 se decrease karta hai, fir $x return karta hai</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">$x--</td>
+                    <td class="py-3 px-4">Post-decrement</td>
+                    <td class="py-3 px-4">Pehle $x return karta hai, fir 1 se decrease karta hai</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 5. Logical Operators -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              5. Logical Operators
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Multiple conditions ko combine karne ke liye use hote hain:
+            </p>
+
+            <div class="overflow-x-auto mb-4">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Operator</th>
+                    <th class="py-3 px-4">Name</th>
+                    <th class="py-3 px-4">Example</th>
+                    <th class="py-3 px-4">Returns True If</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">and / &amp;&amp;</td>
+                    <td class="py-3 px-4">And</td>
+                    <td class="py-3 px-4 font-mono">$x &amp;&amp; $y</td>
+                    <td class="py-3 px-4">Both $x and $y are true</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">or / ||</td>
+                    <td class="py-3 px-4">Or</td>
+                    <td class="py-3 px-4 font-mono">$x || $y</td>
+                    <td class="py-3 px-4">Either $x or $y is true</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">xor</td>
+                    <td class="py-3 px-4">Xor</td>
+                    <td class="py-3 px-4 font-mono">$x xor $y</td>
+                    <td class="py-3 px-4">Either $x or $y is true, but NOT both</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">!</td>
+                    <td class="py-3 px-4">Not</td>
+                    <td class="py-3 px-4 font-mono">!$x</td>
+                    <td class="py-3 px-4">$x is not true (inverts result)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 6. String Operators -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              6. String Operators
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              PHP me strings ko combine karne ke do specific operators hote hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Concatenation (.)</span>
+  <span class="text-green-400">$txt1</span> = <span class="text-white">"Hello "</span>;
+  <span class="text-green-400">$txt2</span> = <span class="text-white">"World!"</span>;
+  <span class="text-green-400">echo</span> <span class="text-green-400">$txt1</span> . <span class="text-green-400">$txt2</span>; <span class="text-[#94a3b8]">// Output: Hello World!</span>
+
+  <span class="text-[#94a3b8]">// Concatenation Assignment (.=)</span>
+  <span class="text-green-400">$txt1</span> .= <span class="text-green-400">$txt2</span>;
+  <span class="text-green-400">echo</span> <span class="text-green-400">$txt1</span>; <span class="text-[#94a3b8]">// Output: Hello World!</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 7. Array Operators -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              7. Array Operators
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Arrays ko combine aur compare karne ke liye:
+            </p>
+
+            <div class="overflow-x-auto mb-4">
+              <table class="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400 text-lg">
+                    <th class="py-3 px-4">Operator</th>
+                    <th class="py-3 px-4">Name</th>
+                    <th class="py-3 px-4">Example</th>
+                    <th class="py-3 px-4">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#334155] text-gray-300">
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">+</td>
+                    <td class="py-3 px-4">Union</td>
+                    <td class="py-3 px-4 font-mono">$x + $y</td>
+                    <td class="py-3 px-4">Union of $x and $y arrays</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">==</td>
+                    <td class="py-3 px-4">Equality</td>
+                    <td class="py-3 px-4 font-mono">$x == $y</td>
+                    <td class="py-3 px-4">True if same key/value pairs</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-mono text-green-400">===</td>
+                    <td class="py-3 px-4">Identity</td>
+                    <td class="py-3 px-4 font-mono">$x === $y</td>
+                    <td class="py-3 px-4">True if same key/value pairs in same order & type</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 8. Conditional / Ternary & Null Coalescing Operators -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              8. Conditional & Null Coalescing Operators
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Ternary operator <code class="text-green-400">?:</code> aur Null Coalescing <code class="text-green-400">??</code> short conditional expressions ke liye use hote hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// 1. Ternary Operator (condition ? expr1 : expr2)</span>
+  <span class="text-green-400">$status</span> = (<span class="text-white">empty</span>(<span class="text-green-400">$user</span>)) ? <span class="text-white">"anonymous"</span> : <span class="text-white">"logged in"</span>;
+
+  <span class="text-[#94a3b8]">// 2. Null Coalescing Operator (expr1 ?? expr2)</span>
+  <span class="text-[#94a3b8]">// Returns expr1 if it exists and is not NULL</span>
+  <span class="text-green-400">$user_name</span> = <span class="text-green-400">$_GET</span>[<span class="text-white">'user'</span>] ?? <span class="text-white">'Guest'</span>;
+  <span class="text-green-400">echo</span> <span class="text-green-400">$user_name</span>; <span class="text-[#94a3b8]">// Outputs $_GET['user'] or 'Guest' if NULL</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Highlight Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-green-400/30">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-green-400">
+              <span>💡</span> Pro-Tip: Spaceship Operator (<code class="text-green-400">&lt;=&gt;</code>)
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              PHP 7 me introduce hua <strong>Spaceship Operator</strong> (<code class="text-green-400">&lt;=&gt;</code>) sorting algorithms ke liye bohot useful hai. Yeh 3 results return karta hai:
+            </p>
+            <ul class="list-disc ml-6 mt-2 space-y-2 text-gray-300 font-mono">
+              <li><code class="text-green-400">1 &lt;=&gt; 2</code> : Returns <strong class="text-white">-1</strong> (Left side small hai)</li>
+              <li><code class="text-green-400">1 &lt;=&gt; 1</code> : Returns <strong class="text-white">0</strong> (Dono equal hain)</li>
+              <li><code class="text-green-400">2 &lt;=&gt; 1</code> : Returns <strong class="text-white">1</strong> (Left side big hai)</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../constants/Constants.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../if_else/If.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(13);
+    </script>
+  </body>
+</html>

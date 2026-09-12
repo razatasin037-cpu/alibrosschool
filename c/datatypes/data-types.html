@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Data Types - Introduction</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Files -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<nav id="navbar"></nav>
+
+<!-- Main Container -->
+<main class="mt-20 flex flex-col md:flex-row min-h-screen">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Content Area -->
+  <section class="flex-1 p-6 md:px-16 md:py-8">
+
+    <!-- Page Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-10">
+      C Data Types
+    </h1>
+
+    <!-- Top Navigation Buttons -->
+    <div class="flex justify-between items-center mb-12">
+      <a href="../input/UserInput.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Characterdatatype.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Data Types Kya Hain?</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-6">
+        C language me jab bhi hum koi Variable banate hain, toh hume compiler ko batana padta hai ki us variable me kis tarah ka data (number, text, decimal) store hoga. Isi ko <strong>Data Type</strong> kehte hain.
+      </p>
+      <p class="text-xl text-gray-300 leading-10">
+        Data type yeh decide karta hai ki memory me kitni space allocate hogi aur us par kon se operations perform kiye ja sakte hain.
+      </p>
+    </section>
+
+    <!-- Basic Data Types Table Section -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Basic C Data Types Overview</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xl text-gray-300 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700 text-white">
+              <th class="py-4 px-6 text-green-400">Data Type</th>
+              <th class="py-4 px-6">Memory Size</th>
+              <th class="py-4 px-6">Format Specifier</th>
+              <th class="py-4 px-6">Description</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">int</td>
+              <td class="py-4 px-6 text-yellow-300">2 or 4 bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%d</td>
+              <td class="py-4 px-6">Whole numbers store karne ke liye (e.g. 100, -50)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">float</td>
+              <td class="py-4 px-6 text-yellow-300">4 bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%f</td>
+              <td class="py-4 px-6">Single-precision fractional / decimal numbers (e.g. 3.14)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">double</td>
+              <td class="py-4 px-6 text-yellow-300">8 bytes</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%lf</td>
+              <td class="py-4 px-6">Double-precision decimal numbers (larger decimals)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-bold text-green-400">char</td>
+              <td class="py-4 px-6 text-yellow-300">1 byte</td>
+              <td class="py-4 px-6 font-mono text-cyan-400">%c</td>
+              <td class="py-4 px-6">Single character or ASCII values (e.g. 'A', 'z')</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sub-topics Menu Grid -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Data Types Sub-Topics</h2>
+      <p class="text-xl text-gray-300 leading-10 mb-8">
+        Data types ke alag-alag modules ko detail me padhne ke liye neeche diye gaye topics par click karein:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="NumericDataType.html" class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-[#3158ff] transition group">
+          <h3 class="text-2xl font-bold text-green-400 group-hover:text-blue-400 mb-2">1. Numeric Data Types ➔</h3>
+          <p class="text-gray-300">Integer numbers, signed vs unsigned, aur range ke baare me detail me janein.</p>
+        </a>
+
+        <a href="DecimalDataType.html" class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-[#3158ff] transition group">
+          <h3 class="text-2xl font-bold text-green-400 group-hover:text-blue-400 mb-2">2. Decimal Data Types ➔</h3>
+          <p class="text-gray-300">Float aur Double types me precision difference aur scientific notations.</p>
+        </a>
+
+        <a href="Characterdatatype.html" class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-[#3158ff] transition group">
+          <h3 class="text-2xl font-bold text-green-400 group-hover:text-blue-400 mb-2">3. Character Data Types ➔</h3>
+          <p class="text-gray-300">Char type, ASCII values aur escape sequences ke bare me samjhein.</p>
+        </a>
+
+        <a href="SizeofOperator.html" class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-[#3158ff] transition group">
+          <h3 class="text-2xl font-bold text-green-400 group-hover:text-blue-400 mb-2">4. The sizeof Operator ➔</h3>
+          <p class="text-gray-300">Memory size dynamically check karne ke liye sizeof operator ka use.</p>
+        </a>
+
+        <a href="DataTypesExamples.html" class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-[#3158ff] transition group">
+          <h3 class="text-2xl font-bold text-green-400 group-hover:text-blue-400 mb-2">5. Data Types Examples ➔</h3>
+          <p class="text-gray-300">Real-life programs aur calculations jaha Data Types apply hote hain.</p>
+        </a>
+
+        <a href="ExtendedTypes.html" class="bg-black/60 border border-gray-700 p-6 rounded-2xl hover:border-[#3158ff] transition group">
+          <h3 class="text-2xl font-bold text-green-400 group-hover:text-blue-400 mb-2">6. Extended Types ➔</h3>
+          <p class="text-gray-300">Short, Long, Long Long, Modifiers aur Modifiers ke combinations.</p>
+        </a>
+      </div>
+
+      <div class="mt-8">
+        <a href="DataTypesChallenge.html" class="block bg-gradient-to-r from-purple-800 to-indigo-800 border border-purple-500 p-6 rounded-2xl text-center hover:from-purple-700 hover:to-indigo-700 transition">
+          <h3 class="text-2xl font-bold text-white mb-2">🏆 C Data Types Code Challenge</h3>
+          <p class="text-gray-200">Apne knowledge ko test karne ke liye interactive coding challenge attempt karein!</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Basic Example Code -->
+    <section class="mt-16 bg-gradient-to-r from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Basic Code Example</h2>
+
+      <div class="bg-black rounded-2xl p-6 overflow-x-auto">
+<pre><code><span class="text-gray-400">#include &lt;stdio.h&gt;</span>
+
+<span class="text-green-500">int</span> main() {
+    <span class="text-green-500">int</span> myNum = <span class="text-green-400">5</span>;               <span class="text-gray-500">// Integer</span>
+    <span class="text-green-500">float</span> myFloatNum = <span class="text-green-400">5.99</span>;     <span class="text-gray-500">// Floating point number</span>
+    <span class="text-green-500">double</span> myDoubleNum = <span class="text-green-400">9.98</span>;   <span class="text-gray-500">// Double precision number</span>
+    <span class="text-green-500">char</span> myLetter = <span class="text-green-400">'D'</span>;         <span class="text-gray-500">// Character</span>
+
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%d\n"</span>, myNum);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%f\n"</span>, myFloatNum);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%lf\n"</span>, myDoubleNum);
+    <span class="text-cyan-400">printf</span>(<span class="text-yellow-300">"%c\n"</span>, myLetter);
+
+    <span class="text-purple-400">return</span> <span class="text-green-400">0</span>;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mt-16 bg-gradient-to-r from-green-700 to-blue-700 rounded-[30px] p-10 shadow-xl">
+      <h2 class="text-4xl font-bold mb-8">Summary</h2>
+      <p class="text-xl leading-10 text-gray-100">
+        Data types C programming ki foundation hain. Right data type select karne se memory optimize hoti hai aur program fast and error-free chalta hai.
+      </p>
+    </section>
+
+    <!-- Bottom Navigation Buttons -->
+    <div class="flex justify-between mt-12 mb-8">
+      <a href="../input/UserInput.html" class="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+        ❮ Previous
+      </a>
+      <a href="Characterdatatype.html" class="bg-[#3158ff] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+        Next ❯
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+  if (typeof createSidebar === "function") {
+    document.getElementById("sidebar").innerHTML = createSidebar(8);
+  }
+</script>
+
+</body>
+</html>

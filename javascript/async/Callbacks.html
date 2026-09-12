@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Callbacks - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Callbacks
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Async.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Promises.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Callback Function Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me callback ek function hota hai jo kisi dusre function
+          ko argument ke roop me pass kiya jata hai.
+          <br><br>
+          Jab main function apna kaam complete karta hai, tab callback function
+          ko execute kiya ja sakta hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Callback Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> mainFunction(callback) {
+
+  <span class="text-gray-400">// main code</span>
+
+  callback();
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Basic Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Callback Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> greet(name, callback) {
+
+  console.log(
+    <span class="text-emerald-400">"Hello "</span> + name
+  );
+
+  callback();
+
+}
+
+<span class="text-blue-400">function</span> done() {
+
+  console.log(
+    <span class="text-emerald-400">"Task Complete"</span>
+  );
+
+}
+
+greet(
+  <span class="text-emerald-400">"Ali"</span>,
+  done
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Hello Ali
+Task Complete</pre>
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Important: Function Ko Call Nahi, Pass Karna Hai
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+              <h4 class="text-xl font-bold mb-4">
+                Correct
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code>greet(
+  <span class="text-emerald-400">"Ali"</span>,
+  done
+);</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+              <h4 class="text-xl font-bold mb-4">
+                Different Meaning
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code>greet(
+  <span class="text-emerald-400">"Ali"</span>,
+  done()
+);</code></pre>
+
+            </div>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            <code class="text-blue-400">done</code>
+            function reference pass karta hai, jabki
+            <code class="text-blue-400">done()</code>
+            function ko turant execute karta hai aur uska return value pass
+            karta hai.
+          </p>
+
+        </div>
+
+        <!-- Anonymous -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Anonymous Callback
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> greet(name, callback) {
+
+  console.log(
+    <span class="text-emerald-400">"Hello "</span> + name
+  );
+
+  callback();
+
+}
+
+greet(
+  <span class="text-emerald-400">"Ali"</span>,
+  <span class="text-blue-400">function</span>() {
+
+    console.log(
+      <span class="text-emerald-400">"Welcome"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Hello Ali
+Welcome</pre>
+          </div>
+
+        </div>
+
+        <!-- Arrow Callback -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Arrow Function Callback
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> process(callback) {
+
+  callback();
+
+}
+
+process(() =&gt; {
+
+  console.log(
+    <span class="text-emerald-400">"Processing Done"</span>
+  );
+
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Processing Done</pre>
+          </div>
+
+        </div>
+
+        <!-- Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Callback With Parameters
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> calculate(
+  a,
+  b,
+  callback
+) {
+
+  <span class="text-blue-400">const</span> result =
+    a + b;
+
+  callback(result);
+
+}
+
+<span class="text-blue-400">function</span> showResult(result) {
+
+  console.log(result);
+
+}
+
+calculate(
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  showResult
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Calculator -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Calculator With Callback
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> calculate(
+  a,
+  b,
+  operation
+) {
+
+  <span class="text-blue-400">return</span> operation(a, b);
+
+}
+
+<span class="text-blue-400">function</span> add(a, b) {
+  <span class="text-blue-400">return</span> a + b;
+}
+
+<span class="text-blue-400">function</span> multiply(a, b) {
+  <span class="text-blue-400">return</span> a * b;
+}
+
+console.log(
+  calculate(
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">5</span>,
+    add
+  )
+);
+
+console.log(
+  calculate(
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">5</span>,
+    multiply
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">15
+50</pre>
+          </div>
+
+        </div>
+
+        <!-- Array forEach -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            forEach() Bhi Callback Use Karta Hai
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+fruits.forEach((fruit) =&gt; {
+
+  console.log(fruit);
+
+});</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Yahan
+            <code class="text-blue-400">(fruit) =&gt; { }</code>
+            callback function hai.
+          </p>
+
+        </div>
+
+        <!-- map Callback -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            map() Callback
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">1</span>,
+  <span class="text-emerald-400">2</span>,
+  <span class="text-emerald-400">3</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.map((number) =&gt; {
+
+    <span class="text-blue-400">return</span>
+      number * <span class="text-emerald-400">2</span>;
+
+  });
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">[2, 4, 6]</pre>
+          </div>
+
+        </div>
+
+        <!-- setTimeout -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Callback With setTimeout()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  <span class="text-emerald-400">"Start"</span>
+);
+
+setTimeout(() =&gt; {
+
+  console.log(
+    <span class="text-emerald-400">"Callback Run"</span>
+  );
+
+}, <span class="text-emerald-400">2000</span>);
+
+console.log(
+  <span class="text-emerald-400">"End"</span>
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Start
+End
+Callback Run</pre>
+          </div>
+
+        </div>
+
+        <!-- Async Callback -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Asynchronous Callback
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Callback ka use asynchronous operations ke saath bhi hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> loadData(callback) {
+
+  setTimeout(() =&gt; {
+
+    <span class="text-blue-400">const</span> data = {
+      id: <span class="text-emerald-400">1</span>,
+      name: <span class="text-emerald-400">"Ali"</span>
+    };
+
+    callback(data);
+
+  }, <span class="text-emerald-400">2000</span>);
+
+}
+
+loadData((data) =&gt; {
+
+  console.log(data);
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Success Callback -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Success Callback
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> login(
+  email,
+  callback
+) {
+
+  console.log(
+    <span class="text-emerald-400">"Checking user..."</span>
+  );
+
+  callback({
+    email: email,
+    status:
+      <span class="text-emerald-400">"success"</span>
+  });
+
+}
+
+login(
+  <span class="text-emerald-400">"ali@gmail.com"</span>,
+  (user) =&gt; {
+
+    console.log(user);
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Error First Callback -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Error-First Callback Pattern
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Node.js style callbacks me commonly pehla parameter error aur
+            second parameter result hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> divide(
+  a,
+  b,
+  callback
+) {
+
+  <span class="text-blue-400">if</span> (b === <span class="text-emerald-400">0</span>) {
+
+    callback(
+      <span class="text-emerald-400">"Cannot divide by zero"</span>,
+      <span class="text-purple-400">null</span>
+    );
+
+    <span class="text-blue-400">return</span>;
+
+  }
+
+  callback(
+    <span class="text-purple-400">null</span>,
+    a / b
+  );
+
+}
+
+divide(
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">2</span>,
+  (error, result) =&gt; {
+
+    <span class="text-blue-400">if</span> (error) {
+      console.log(error);
+      <span class="text-blue-400">return</span>;
+    }
+
+    console.log(result);
+
+  }
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">5</pre>
+          </div>
+
+        </div>
+
+        <!-- Callback Hell -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Callback Hell
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Jab multiple asynchronous callbacks ek dusre ke andar deeply nested
+            ho jate hain, code difficult to read ho sakta hai. Is situation ko
+            commonly callback hell kaha jata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>getUser((user) =&gt; {
+
+  getOrders(
+    user.id,
+    (orders) =&gt; {
+
+      getPayment(
+        orders[<span class="text-emerald-400">0</span>].id,
+        (payment) =&gt; {
+
+          console.log(payment);
+
+        }
+      );
+
+    }
+  );
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Callback Hell Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Callback Hell Flow
+          </h3>
+
+          <div class="bg-[#0f172a] p-5 rounded-xl border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">Get User
+
+    ↓
+
+Callback
+
+    ↓
+
+Get Orders
+
+    ↓
+
+Callback
+
+    ↓
+
+Get Payment
+
+    ↓
+
+Callback
+
+    ↓
+
+Result</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Isi problem ko improve karne ke liye
+            <code class="text-blue-400">Promises</code>
+            aur baad me
+            <code class="text-blue-400">async/await</code>
+            use kiye jate hain.
+          </p>
+
+        </div>
+
+        <!-- Callback vs Normal Function -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Normal Function vs Callback Function
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Normal Function</th>
+                  <th class="p-4">Callback Function</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Directly call kiya ja sakta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Dusre function ko argument me pass hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    greet()
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    process(greet)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Normal execution ke liye.
+                  </td>
+
+                  <td class="p-4">
+                    Custom behavior aur async flow me useful.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Real Project -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Project Example
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            JavaScript me event listeners bhi callback functions use karte
+            hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mt-5 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Button Clicked"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Yahan arrow function
+            <code class="text-blue-400">addEventListener()</code>
+            ka callback hai.
+          </p>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Callback ek function hota hai jo dusre function ko argument ke
+              roop me pass hota hai.
+            </p>
+
+            <p>
+              2. Callback function ko named, anonymous ya arrow function ke
+              form me likh sakte hain.
+            </p>
+
+            <p>
+              3. Callback ko parameters bhi pass kiye ja sakte hain.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">forEach()</code>,
+              <code class="text-blue-400">map()</code>
+              aur
+              <code class="text-blue-400">filter()</code>
+              callbacks use karte hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">setTimeout()</code>
+              me bhi callback diya jata hai.
+            </p>
+
+            <p>
+              6. Event listeners me callback functions bahut common hain.
+            </p>
+
+            <p>
+              7. Deeply nested callbacks se callback hell ho sakta hai.
+            </p>
+
+            <p>
+              8. Complex asynchronous code ke liye Promises aur async/await
+              zyada readable approach dete hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Async.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Promises.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(26);
+  </script>
+
+</body>
+</html>

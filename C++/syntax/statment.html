@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>C++ Statements - Ali Learning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../js/card.js"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+<style>
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<!-- Navbar -->
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<!-- Sidebar -->
+<div id="sidebar"></div>
+<!-- Content -->
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<!-- Title -->
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Statements
+        </h1>
+<!-- Top Buttons -->
+<div class="flex justify-between items-center">
+<a href="syntax.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+              Previous
+            </button>
+</a>
+<a href="../output/text.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+              Next
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+<hr class="mt-12 border-white/10"/>
+<!-- Introduction -->
+<section class="max-w-6xl mx-auto py-10">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ Statements
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ program mein statements woh instructions hoti hain jo computer
+            ko batati hain ki kya kaam karna hai.
+          </p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+            Ek simple C++ program mein multiple statements ho sakte hain, aur
+            normally har statement ke end mein semicolon
+            <span class="text-[#4d6fff] font-bold">;</span>
+            lagaya jata hai.
+          </p>
+<!-- Statement Example Card -->
+<div id="statementCard"></div>
+<!-- Explanation -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Statement ko Samjhein
+          </h2>
+<div class="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 sm:p-8 mb-6">
+<p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Upar diye gaye program mein
+              <span class="text-[#4d6fff] font-semibold"> cout </span>
+              ek statement hai. Ye screen par
+              <span class="text-white font-semibold"> Hello World! </span>
+              print karta hai.
+            </p>
+</div>
+<!-- Multiple Statements -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Multiple Statements
+          </h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            Ek C++ program mein hum ek se zyada statements likh sakte hain.
+          </p>
+<!-- Multiple Statement Card -->
+<div id="multipleStatementCard"></div>
+<!-- Semicolon -->
+<h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">Semicolon ;</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            C++ mein har statement ke end mein semicolon
+            <span class="text-[#4d6fff] font-bold">;</span>
+            lagana important hota hai.
+          </p>
+<div class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8">
+<p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Agar aap semicolon nahi lagate hain, to compiler error de sakta
+              hai.
+            </p>
+</div>
+<!-- Code Block -->
+<div class="mt-8" id="semicolonCard"></div>
+<!-- Important -->
+<div class="mt-12 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 sm:p-8">
+<h3 class="text-xl sm:text-2xl font-bold mb-5">Important</h3>
+<ul class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300">
+<li>Har statement ko properly end karein.</li>
+<li>
+                Semicolon
+                <span class="text-[#4d6fff] font-bold">;</span>
+                ko miss na karein.
+              </li>
+<li>
+                Statements ko alag-alag lines mein likhne se code readable hota
+                hai.
+              </li>
+</ul>
+</div>
+<!-- Bottom Buttons -->
+<div class="flex justify-between items-center mt-16 pt-8 border-t border-white/10">
+<a href="syntax.html">
+<button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition">
+<i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+</a>
+<a href="../output/text.html">
+<button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+</button>
+</a>
+</div>
+</section>
+</section>
+</main>
+<!-- Footer -->
+<footer id="footer"></footer>
+<!-- Card Calls -->
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createCodeCard === "function") {
+          }
+
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(5);
+        }
+      });
+    </script>
+</body>
+</html>

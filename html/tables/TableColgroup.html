@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Table Colgroup - Complete Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <!-- Page Main Heading -->
+        <h1 class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight">
+          HTML Table Colgroup
+        </h1>
+
+        <!-- Top Page Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="./TableStyling.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableColspan.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Introductory Card -->
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            Styling Entire Columns with `<colgroup>`
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            HTML me <code class="text-yellow-400">&lt;colgroup&gt;</code> aur <code class="text-yellow-400">&lt;col&gt;</code> tags ka use karke aap poori columns ko ek saath styling (jaise background color ya width) de sakte hain, bina har cell (`<td>`/`<th>`) me CSS repeat kiye.
+          </p>
+        </div>
+
+        <!-- SECTION 1: Basic Colgroup Usage -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            1. Basic Column Styling
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;colgroup&gt;</code> ko hamesha <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;table&gt;</code> ke andar aur sabhi rows ya headers se pehle rakha jata hai:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">&lt;table&gt;</span>
+  <span class="text-blue-400">&lt;colgroup&gt;</span>
+    <span class="text-blue-400">&lt;col</span> <span class="text-yellow-400">style="background-color: #1e293b"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-blue-400">&lt;col</span> <span class="text-yellow-400">style="background-color: #334155"</span><span class="text-blue-400">&gt;</span>
+  <span class="text-blue-400">&lt;/colgroup&gt;</span>
+  <span class="text-blue-400">&lt;tr&gt;</span>
+    <span class="text-blue-400">&lt;th&gt;</span>ID<span class="text-blue-400">&lt;/th&gt;</span>
+    <span class="text-blue-400">&lt;th&gt;</span>Name<span class="text-blue-400">&lt;/th&gt;</span>
+  <span class="text-blue-400">&lt;/tr&gt;</span>
+  <span class="text-blue-400">&lt;tr&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>01<span class="text-blue-400">&lt;/td&gt;</span>
+    <span class="text-blue-400">&lt;td&gt;</span>Aman<span class="text-blue-400">&lt;/td&gt;</span>
+  <span class="text-blue-400">&lt;/tr&gt;</span>
+<span class="text-blue-400">&lt;/table&gt;</span></code></pre>
+            </div>
+
+            <!-- Visual Result Box -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Visual Result</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse border border-slate-700 text-center">
+                  <colgroup>
+                    <col style="background-color: #1e293b" />
+                    <col style="background-color: #334155" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="p-3 border border-slate-700 text-yellow-400">ID</th>
+                      <th class="p-3 border border-slate-700 text-yellow-400">Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="p-3 border border-slate-700 text-gray-300">01</td>
+                      <td class="p-3 border border-slate-700 text-gray-300">Aman</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border border-slate-700 text-gray-300">02</td>
+                      <td class="p-3 border border-slate-700 text-gray-300">Rohan</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Span Attribute in Col -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            2. Multiple Columns Styling (`span`)
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Ek se zyaada columns ko ek saath style karne ke liye <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">span</code> attribute ka use hota hai:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">&lt;colgroup&gt;</span>
+  <span class="text-slate-500">&lt;!-- 1st column --&gt;</span>
+  <span class="text-blue-400">&lt;col</span> <span class="text-yellow-400">style="background-color: #1e293b"</span><span class="text-blue-400">&gt;</span> 
+  <span class="text-slate-500">&lt;!-- Next 2 columns together --&gt;</span>
+  <span class="text-blue-400">&lt;col</span> <span class="text-yellow-400">span="2" style="background-color: #3158ff"</span><span class="text-blue-400">&gt;</span> 
+<span class="text-blue-400">&lt;/colgroup&gt;</span></code></pre>
+            </div>
+
+            <!-- Visual Result Box -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Visual Result (Span = 2)</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse border border-slate-700 text-center">
+                  <colgroup>
+                    <col style="background-color: #1e293b" />
+                    <col span="2" style="background-color: #1e1b4b" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="p-3 border border-slate-700 text-yellow-400">Item</th>
+                      <th class="p-3 border border-slate-700 text-yellow-400">Qty</th>
+                      <th class="p-3 border border-slate-700 text-yellow-400">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="p-3 border border-slate-700 text-gray-300">Laptop</td>
+                      <td class="p-3 border border-slate-700 text-gray-300">1</td>
+                      <td class="p-3 border border-slate-700 text-gray-300">₹50,000</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border border-slate-700 text-gray-300">Mouse</td>
+                      <td class="p-3 border border-slate-700 text-gray-300">2</td>
+                      <td class="p-3 border border-slate-700 text-gray-300">₹1,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Page Navigation -->
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="./TableStyling.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableColspan.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(17);
+    </script>
+  </body>
+</html>

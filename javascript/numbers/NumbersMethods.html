@@ -1,0 +1,546 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Number Methods - Tutorial</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5"
+      >
+        JavaScript Number Methods
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Numbers.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Properties.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Number Methods Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Number Methods ka use numbers ko format, convert aur
+          check karne ke liye kiya jata hai.
+          <br><br>
+          In methods ki help se hum number ko String me convert kar sakte hain,
+          decimal places fix kar sakte hain, integer check kar sakte hain aur
+          invalid numeric values ko bhi detect kar sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Methods Table -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Common Number Methods
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toString()</td>
+                  <td class="p-4">Number ko String me convert karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toFixed()</td>
+                  <td class="p-4">Decimal places fix karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">toPrecision()</td>
+                  <td class="p-4">Total significant digits set karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">valueOf()</td>
+                  <td class="p-4">Primitive number value return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number()</td>
+                  <td class="p-4">Value ko Number me convert karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">parseInt()</td>
+                  <td class="p-4">String se integer number nikalta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">parseFloat()</td>
+                  <td class="p-4">String se decimal number nikalta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.isInteger()</td>
+                  <td class="p-4">Check karta hai value integer hai ya nahi.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">Number.isNaN()</td>
+                  <td class="p-4">Check karta hai value NaN hai ya nahi.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Syntax -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Number Method Syntax
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>number.methodName();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- toString -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toString()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">toString()</code>
+            Number ko String me convert karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> num = <span class="text-emerald-400">100</span>;
+
+<span class="text-blue-400">let</span> result = num.toString();
+
+console.log(result);
+console.log(<span class="text-blue-400">typeof</span> result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">100
+string</pre>
+          </div>
+
+        </div>
+
+        <!-- toFixed -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toFixed()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">toFixed()</code>
+            decimal ke baad kitne digits chahiye, wo set karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> price = <span class="text-emerald-400">99.456</span>;
+
+console.log(price.toFixed(<span class="text-emerald-400">2</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">99.46</pre>
+          </div>
+
+        </div>
+
+        <!-- toPrecision -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            toPrecision()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">toPrecision()</code>
+            total significant digits ki length set karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> num = <span class="text-emerald-400">123.456</span>;
+
+console.log(num.toPrecision(<span class="text-emerald-400">4</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">123.5</pre>
+          </div>
+
+        </div>
+
+        <!-- valueOf -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            valueOf()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">valueOf()</code>
+            Number object ki primitive numeric value return karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> num = <span class="text-emerald-400">100</span>;
+
+console.log(num.valueOf());</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">100</pre>
+          </div>
+
+        </div>
+
+        <!-- Number -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Number()</code>
+            kisi value ko Number me convert karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> value = <span class="text-emerald-400">"250"</span>;
+
+<span class="text-blue-400">let</span> result = Number(value);
+
+console.log(result);
+console.log(<span class="text-blue-400">typeof</span> result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">250
+number</pre>
+          </div>
+
+        </div>
+
+        <!-- parseInt -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            parseInt()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">parseInt()</code>
+            String se integer value parse karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> value = <span class="text-emerald-400">"150px"</span>;
+
+console.log(parseInt(value));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">150</pre>
+          </div>
+
+        </div>
+
+        <!-- parseFloat -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            parseFloat()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">parseFloat()</code>
+            String se decimal number parse karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> value = <span class="text-emerald-400">"99.50kg"</span>;
+
+console.log(parseFloat(value));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">99.5</pre>
+          </div>
+
+        </div>
+
+        <!-- isInteger -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.isInteger()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Check karta hai ki given value integer hai ya nahi.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.isInteger(<span class="text-emerald-400">100</span>));
+
+console.log(Number.isInteger(<span class="text-emerald-400">10.5</span>));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">true
+false</pre>
+          </div>
+
+        </div>
+
+        <!-- isNaN -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number.isNaN()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Check karta hai ki given value actual
+            <code class="text-blue-400">NaN</code>
+            hai ya nahi.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> result = Number(<span class="text-emerald-400">"Hello"</span>);
+
+console.log(Number.isNaN(result));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">toString()</code>
+              Number ko String me convert karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">toFixed()</code>
+              fixed decimal places return karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">Number()</code>
+              full value ko Number me convert karne ki koshish karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">parseInt()</code>
+              integer aur
+              <code class="text-blue-400">parseFloat()</code>
+              decimal value parse karne ke liye useful hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">Number.isInteger()</code>
+              Boolean result return karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">Number.isNaN()</code>
+              NaN ko check karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Numbers.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Properties.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // JS Numbers -> Number Methods
+    document.getElementById("sidebar").innerHTML = createSidebar(9);
+  </script>
+
+</body>
+</html>
+

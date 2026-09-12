@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Image Maps - Complete Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <!-- Page Main Heading -->
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Image Maps
+        </h1>
+
+        <!-- Top Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Images.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./BackgroundImages.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Banner / Introductory Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Image Maps Guide
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML Image Map ka use karke aap ek hi image ke alag-alag hisson (clickable areas) par alag-alag links set kar sakte hain.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Iske liye <code class="text-yellow-400">&lt;map&gt;</code> aur <code class="text-yellow-400">&lt;area&gt;</code> tags ko <code class="text-yellow-400">usemap</code> attribute ke sath upayog kiya jata hai.
+          </p>
+        </div>
+
+        <!-- SECTION 1: Image Map Basic Syntax -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            1. Image Map Basic Syntax
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            Image ke <code class="text-yellow-400">usemap</code> attribute ka value <code class="text-yellow-400">&lt;map&gt;</code> ke <code class="text-yellow-400">name</code> attribute se start hona chahiye (<code class="text-yellow-400">#</code> symbol ke sath).
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155] font-mono text-sm">
+              <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code>&lt;!-- Image Link to Map --&gt;
+&lt;img <span class="text-yellow-400">src="workplace.jpg" usemap="#workmap" alt="Workplace"</span> /&gt;
+
+&lt;!-- Map Definition --&gt;
+&lt;map <span class="text-yellow-400">name="workmap"</span>&gt;
+  &lt;area <span class="text-yellow-400">shape="rect" coords="34,44,270,350" href="computer.html" alt="Computer"</span> /&gt;
+  &lt;area <span class="text-yellow-400">shape="circle" coords="337,300,44" href="coffee.html" alt="Coffee"</span> /&gt;
+&lt;/map&gt;</code></pre>
+            </div>
+            <!-- Live Visual Demo -->
+            <div class="bg-white text-black p-5 rounded-xl border border-gray-300 flex flex-col items-center justify-center text-center">
+              <div class="relative max-w-xs">
+                <img 
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop" 
+                  alt="Workplace Map Preview" 
+                  class="rounded-lg shadow object-cover w-full h-48"
+                  usemap="#preview-map"
+                />
+                <map name="preview-map">
+                  <area shape="rect" coords="0,0,150,200" href="https://en.wikipedia.org/wiki/Laptop" target="_blank" alt="Laptop" title="Click to open Laptop page">
+                  <area shape="circle" coords="200,100,50" href="https://en.wikipedia.org/wiki/Coffee" target="_blank" alt="Coffee" title="Click to open Coffee page">
+                </map>
+              </div>
+              <p class="text-xs text-gray-500 mt-2 font-semibold">
+                💡 Image ke alag-alag parts par click karke dekhein (Laptop / Background).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Map Shapes & Coordinates -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            2. Types of Shapes in <code class="text-yellow-400">&lt;area&gt;</code>
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base mb-6">
+            <code class="text-yellow-400">shape</code> attribute me hum 4 alag-alag options specify kar sakte hain:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Rect -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155]">
+              <div class="inline-block px-3 py-1 bg-blue-600/30 text-blue-400 font-bold text-xs rounded mb-3">
+                shape="rect"
+              </div>
+              <h4 class="text-white font-semibold text-lg mb-2">Rectangle (Aayatakar)</h4>
+              <p class="text-gray-400 text-xs mb-3">Top-Left corner aur Bottom-Right corner ke coordinates diye jate hain.</p>
+              <code class="text-xs text-yellow-400 block bg-[#0f172a] p-2 rounded font-mono">coords="x1, y1, x2, y2"</code>
+            </div>
+
+            <!-- Circle -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155]">
+              <div class="inline-block px-3 py-1 bg-green-600/30 text-green-400 font-bold text-xs rounded mb-3">
+                shape="circle"
+              </div>
+              <h4 class="text-white font-semibold text-lg mb-2">Circle (Vrittakar)</h4>
+              <p class="text-gray-400 text-xs mb-3">Center point (x, y) aur Circle ka radius (r) specify kiya jata hai.</p>
+              <code class="text-xs text-yellow-400 block bg-[#0f172a] p-2 rounded font-mono">coords="x, y, radius"</code>
+            </div>
+
+            <!-- Poly -->
+            <div class="bg-[#020617] p-5 rounded-xl border border-[#334155]">
+              <div class="inline-block px-3 py-1 bg-purple-600/30 text-purple-400 font-bold text-xs rounded mb-3">
+                shape="poly"
+              </div>
+              <h4 class="text-white font-semibold text-lg mb-2">Polygon (Bahubhuj)</h4>
+              <p class="text-gray-400 text-xs mb-3">Kisi bhi irregular shape ke sabhi corner points ke coordinates diye jate hain.</p>
+              <code class="text-xs text-yellow-400 block bg-[#0f172a] p-2 rounded font-mono">coords="x1,y1,x2,y2,..."</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Detailed Area Attributes Reference Table -->
+        <div id="table-section" class="mt-8 bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg overflow-x-auto">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            3. &lt;area&gt; Tag Attributes Reference
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#334155] text-gray-400 text-sm">
+                <th class="py-3 px-4">Attribute</th>
+                <th class="py-3 px-4">Value</th>
+                <th class="py-3 px-4">Description</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-200 divide-y divide-[#334155]/50">
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">shape</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">rect | circle | poly | default</td>
+                <td class="py-3 px-4">Clickable region ka shape define karta hai.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">coords</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">numbers (e.g. 10,20,50,60)</td>
+                <td class="py-3 px-4">Pixel position values jo clickable area ko locate karti hain.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">href</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">URL</td>
+                <td class="py-3 px-4">Target link destination jahan pe click karne par navigate hoga.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">alt</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">text</td>
+                <td class="py-3 px-4">Area ka alternate descriptive text (SEO/Accessibility ke liye).</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-cyan-400">target</td>
+                <td class="py-3 px-4 font-mono text-yellow-400">_blank | _self</td>
+                <td class="py-3 px-4">Define karta hai ki link same tab me khulega ya naye tab me.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Bottom Page Navigation (Previous / Next Buttons) -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Images.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./BackgroundImages.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(14);
+    </script>
+  </body>
+</html>

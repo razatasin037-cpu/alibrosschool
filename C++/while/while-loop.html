@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ While Loop - Ali Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ While Loop
+        </h1>
+
+        <div class="flex justify-between items-center">
+          <a href="../switch/switch.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+            </button>
+          </a>
+          <a href="do-while.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <section class="max-w-6xl mx-auto py-10">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            C++ Loops
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Loops kisi block of code ko tab tak repeatedly execute kar sakte
+            hain jab tak specified condition
+            <span class="text-[#4d6fff] font-bold">true</span> hoti hai.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            Loops useful hote hain kyunki ye time save karte hain, repeated code
+            ko kam karte hain, errors ko reduce karte hain aur code ko zyada
+            readable banate hain.
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">C++ While Loop</h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            The <span class="text-[#4d6fff] font-bold">while</span> loop ek
+            block of code ko baar-baar execute karta hai jab tak specified
+            condition <span class="text-[#4d6fff] font-bold">true</span> hoti
+            hai.
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Syntax</h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">While Loop Syntax</h3>
+              <span class="text-sm text-gray-400">Syntax</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">while (condition) {
+    // code block to be executed
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">Example</h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Neeche example mein code loop ke andar baar-baar run hota hai, jab
+            tak variable <span class="text-[#4d6fff] font-bold">i</span> ki
+            value 5 se chhoti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Print Numbers 0 to 4</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int i = 0;
+
+    while (i &lt; 5) {
+        cout &lt;&lt; i &lt;&lt; "\n";
+        i++;
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-4">Important</h3>
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Condition mein use hone wale variable ko update karna zaroori hai.
+              Agar <span class="text-[#4d6fff] font-bold">i++</span> nahi
+              likhenge, to condition true hi reh sakti hai aur loop kabhi end
+              nahi hoga.
+            </p>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Why Use <span class="text-[#4d6fff]">i</span> in a Loop?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Simple loops mein <span class="text-[#4d6fff] font-bold">i</span> ek
+            common counter variable name hai. Ye short, traditional hai aur
+            commonly index ya iterator ko represent karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Counter Variable</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">int i = 0;
+
+while (i &lt; 3) {
+    cout &lt;&lt; "Count: " &lt;&lt; i &lt;&lt; "\n";
+    i++;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Countdown Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            While loop ka use countdown ke liye bhi kiya ja sakta hai. Yeh
+            example 3 se 1 tak count karta hai aur uske baad
+            <span class="text-[#4d6fff] font-bold">Happy New Year!!</span>
+            display karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Countdown from 3 to 1</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int countdown = 3;
+
+    while (countdown &gt; 0) {
+        cout &lt;&lt; countdown &lt;&lt; "\n";
+        countdown--;
+    }
+
+    cout &lt;&lt; "Happy New Year!!\n";
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            While Loop with a False Condition
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar <span class="text-[#4d6fff] font-bold">while</span> loop ki
+            condition starting mein hi false hai, to loop ke andar ka code ek
+            baar bhi execute nahi hota.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Is example mein <span class="text-[#4d6fff] font-bold">i</span> ki
+            starting value 10 hai aur condition
+            <span class="text-[#4d6fff] font-bold">i &lt; 5</span> false hai,
+            isliye loop ke andar ka message print nahi hoga.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">False Condition Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int i = 10;
+
+    while (i &lt; 5) {
+        cout &lt;&lt; "This will never be printed\n";
+        i++;
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-4">Remember</h3>
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Regular <span class="text-[#4d6fff] font-bold">while</span> loop
+              condition ko pehle check karta hai. Agar condition beginning mein
+              false ho, to code block skip ho jata hai.
+            </p>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Increasing the Counter
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Counter ko increase karne ke liye
+            <span class="text-[#4d6fff] font-bold">i++</span> use kar sakte
+            hain. Isse har iteration ke baad variable ki value 1 se increase
+            hoti hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Increasing with i++</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">int i = 1;
+
+while (i &lt;= 5) {
+    cout &lt;&lt; i &lt;&lt; "\n";
+    i++;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Decreasing the Counter
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Countdown ke liye counter ko decrease kiya ja sakta hai.
+            <span class="text-[#4d6fff] font-bold">i--</span> har iteration ke
+            baad value ko 1 se decrease karta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Decreasing with i--</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">int i = 5;
+
+while (i &gt; 0) {
+    cout &lt;&lt; i &lt;&lt; "\n";
+    i--;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            While Loop with User Input
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            While loop ka use user se input lene ke liye bhi kiya ja sakta hai.
+            Loop tab tak repeat ho sakta hai jab tak required condition satisfy
+            nahi hoti.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">User Input Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int number;
+
+    cout &lt;&lt; "Enter a positive number: ";
+    cin &gt;&gt; number;
+
+    while (number &lt;= 0) {
+        cout &lt;&lt; "Try again: ";
+        cin &gt;&gt; number;
+    }
+
+    cout &lt;&lt; "Valid number entered.";
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Infinite While Loop
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Agar while loop ki condition kabhi false nahi hoti, to loop
+            continuously run kar sakta hai. Isse
+            <span class="text-[#4d6fff] font-bold">infinite loop</span> kehte
+            hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Infinite Loop Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">while (true) {
+    cout &lt;&lt; "This loop keeps running.\n";
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-10"
+          >
+            <h3 class="text-xl sm:text-2xl font-bold mb-4">Warning</h3>
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              Infinite loops ka use sirf tab karein jab program ko intentionally
+              continuously run karna ho. Normal counter loops mein condition ko
+              eventually false banana important hai.
+            </p>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Example Explained
+          </h2>
+
+          <ul
+            class="list-disc pl-6 space-y-4 text-lg sm:text-xl md:text-2xl text-gray-300 mb-10"
+          >
+            <li>
+              <span class="text-[#4d6fff] font-bold">int i = 0;</span> counter
+              ki initial value set karta hai.
+            </li>
+            <li>
+              <span class="text-[#4d6fff] font-bold">while (i &lt; 5)</span>
+              check karta hai ki loop continue hona chahiye ya nahi.
+            </li>
+            <li>
+              <span class="text-[#4d6fff] font-bold">cout</span> current value
+              ko display karta hai.
+            </li>
+            <li>
+              <span class="text-[#4d6fff] font-bold">i++</span> counter ko
+              increase karta hai.
+            </li>
+            <li>
+              Jab <span class="text-[#4d6fff] font-bold">i &lt; 5</span> false
+              ho jata hai, loop stop ho jata hai.
+            </li>
+          </ul>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">Summary</h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>
+                <span class="text-[#4d6fff] font-bold">while</span> loop
+                condition true hone tak code repeat karta hai.
+              </li>
+              <li>Condition ko loop ke start mein check kiya jata hai.</li>
+              <li>
+                Counter ko update karna zaroori hai, warna infinite loop ho
+                sakta hai.
+              </li>
+              <li>
+                <span class="text-[#4d6fff] font-bold">i++</span> counter ko
+                increase karta hai.
+              </li>
+              <li>
+                <span class="text-[#4d6fff] font-bold">i--</span> counter ko
+                decrease karta hai.
+              </li>
+              <li>
+                Agar condition starting mein false hai, to while loop ek baar
+                bhi execute nahi hota.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="../switch/switch.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+            <a href="do-while.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(7);
+        }
+      });
+    </script>
+  </body>
+</html>

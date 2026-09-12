@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Table Sizes - Complete Tutorial</title>
+    <!-- Tailwind CSS Dynamic Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navbar Container -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar Navigation Container -->
+      <div id="sidebar"></div>
+
+      <!-- Main Tutorial Section -->
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <!-- Page Main Heading -->
+        <h1 class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight">
+          HTML Table Sizes
+        </h1>
+
+        <!-- Top Page Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="./TableBorders.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableHeaders.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Introductory Card -->
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            Controlling Table & Column Sizes
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            HTML tables me overall width, individual column widths, aur row heights ko control karne ke liye CSS <code class="text-yellow-400">width</code> aur <code class="text-yellow-400">height</code> properties ka use kiya jata hai.
+          </p>
+        </div>
+
+        <!-- SECTION 1: Full Width Table -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            1. Setting Table Width
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            By default table sirf content ke according space leta hai. Pure screen/container me phailane ke liye <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">width: 100%;</code> set karein:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Code View -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">table</span> {
+  <span class="text-yellow-400">width</span>: 100%;
+  <span class="text-yellow-400">border-collapse</span>: collapse;
+}
+<span class="text-blue-400">th, td</span> {
+  <span class="text-yellow-400">border</span>: 1px solid #334155;
+}</code></pre>
+            </div>
+
+            <!-- Visual Result Box -->
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Visual Result (100% Width)</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse text-left border border-slate-700">
+                  <thead>
+                    <tr class="bg-slate-800">
+                      <th class="p-3 border border-slate-700 text-yellow-400">ID</th>
+                      <th class="p-3 border border-slate-700 text-yellow-400">Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="p-3 border border-slate-700 text-gray-300">101</td>
+                      <td class="p-3 border border-slate-700 text-gray-300">Rahul Sharma</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Column Width & Row Height -->
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            2. Specific Column Width & Row Height
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Aap kisi particular column ki width (<code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;th&gt;</code> ya <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;td&gt;</code>) aur row ki height (<code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;tr&gt;</code>) define kar sakte hain:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-[#020617] p-8 rounded-2xl border border-[#334155]">
+              <span class="inline-block px-4 py-1.5 bg-blue-600/30 text-blue-400 font-bold text-sm rounded-lg mb-4">Column Sizing</span>
+              <h4 class="text-white font-bold text-xl mb-3">Custom Column Width</h4>
+              <p class="text-gray-300 text-sm mb-4">Percentage ya pixels me width set karein:</p>
+              <div class="bg-[#0f172a] p-4 rounded-xl font-mono text-sm overflow-x-auto text-gray-300">
+<pre><code>th.<span class="text-cyan-400">col-small</span> {
+  <span class="text-yellow-400">width</span>: 20%;
+}
+th.<span class="text-cyan-400">col-large</span> {
+  <span class="text-yellow-400">width</span>: 80%;
+}</code></pre>
+              </div>
+            </div>
+
+            <div class="bg-[#020617] p-8 rounded-2xl border border-[#334155]">
+              <span class="inline-block px-4 py-1.5 bg-purple-600/30 text-purple-400 font-bold text-sm rounded-lg mb-4">Row Sizing</span>
+              <h4 class="text-white font-bold text-xl mb-3">Custom Row Height</h4>
+              <p class="text-gray-300 text-sm mb-4">Row ka vertical space badhane ke liye:</p>
+              <div class="bg-[#0f172a] p-4 rounded-xl font-mono text-sm overflow-x-auto text-gray-300">
+<pre><code>tr {
+  <span class="text-yellow-400">height</span>: 60px;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Page Navigation -->
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="./TableBorders.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableHeaders.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer"></footer>
+
+    <!-- Sidebar Script Trigger -->
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(17);
+    </script>
+  </body>
+</html>

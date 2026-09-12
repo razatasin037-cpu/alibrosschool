@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Export - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Export
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Modules.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Import.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Export Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">export</code>
+          keyword ka use variable, function ya class ko dusri JavaScript file
+          me use karne ke liye available banane ke liye hota hai.
+          <br><br>
+          Export ke mainly do types hote hain:
+          <code class="text-blue-400">Named Export</code>
+          aur
+          <code class="text-blue-400">Default Export</code>.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Export Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export</span> value;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Named Export -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Named Export
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Named Export se ek file se multiple values export kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export const</span> name =
+  <span class="text-emerald-400">"Ali"</span>;
+
+<span class="text-blue-400">export const</span> age =
+  <span class="text-emerald-400">20</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Function Export -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Export
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export function</span> add(a, b) {
+
+  <span class="text-blue-400">return</span> a + b;
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Arrow Function Export -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Arrow Function Export
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export const</span> multiply =
+  (a, b) =&gt; {
+
+    <span class="text-blue-400">return</span> a * b;
+
+  };</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Class Export -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Class Export
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name = name;
+
+  }
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Export After Declaration -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Export At Bottom
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Pehle variables ya functions create karke baad me bhi export kar
+            sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add =
+  (a, b) =&gt; a + b;
+
+<span class="text-blue-400">const</span> subtract =
+  (a, b) =&gt; a - b;
+
+<span class="text-blue-400">export</span> {
+  add,
+  subtract
+};</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Multiple Named Exports -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Named Exports
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add =
+  (a, b) =&gt; a + b;
+
+<span class="text-blue-400">const</span> subtract =
+  (a, b) =&gt; a - b;
+
+<span class="text-blue-400">const</span> multiply =
+  (a, b) =&gt; a * b;
+
+<span class="text-blue-400">const</span> divide =
+  (a, b) =&gt; a / b;
+
+<span class="text-blue-400">export</span> {
+  add,
+  subtract,
+  multiply,
+  divide
+};</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Rename Export -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Export Rename With as
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">as</code>
+            keyword se export ka naam change kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add =
+  (a, b) =&gt; a + b;
+
+<span class="text-blue-400">export</span> {
+  add <span class="text-blue-400">as</span> sum
+};</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Ab dusri file me
+            <code class="text-blue-400">sum</code>
+            naam se import hoga.
+          </p>
+
+        </div>
+
+        <!-- Default Export -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Default Export
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Ek module me ek default export hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export default function</span> greet() {
+
+  <span class="text-blue-400">return</span>
+    <span class="text-emerald-400">"Hello User"</span>;
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Default Variable -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Variable As Default Export
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> appName =
+  <span class="text-emerald-400">"My App"</span>;
+
+<span class="text-blue-400">export default</span> appName;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Default Class -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Class As Default Export
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export default class</span> Product {
+
+  constructor(name, price) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+    <span class="text-blue-400">this</span>.price =
+      price;
+
+  }
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Named + Default -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Named Aur Default Export Together
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Ek file me default export ke saath multiple named exports bhi rakh
+            sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> appName =
+  <span class="text-emerald-400">"Shop App"</span>;
+
+<span class="text-blue-400">export const</span> version =
+  <span class="text-emerald-400">"1.0.0"</span>;
+
+<span class="text-blue-400">export const</span> author =
+  <span class="text-emerald-400">"Ali"</span>;
+
+<span class="text-blue-400">export default</span> appName;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Named vs Default -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Named Export vs Default Export
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Named Export</th>
+                  <th class="p-4">Default Export</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Multiple ho sakte hain.
+                  </td>
+
+                  <td class="p-4">
+                    Ek module me ek default export hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    export const add
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    export default greet
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Import me braces lagte hain.
+                  </td>
+
+                  <td class="p-4">
+                    Import me braces nahi lagte.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    import { add }
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    import greet
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Math Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Example: Calculator Module
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-4">
+            File:
+            <code class="text-blue-400">calculator.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> add =
+  (a, b) =&gt; a + b;
+
+<span class="text-blue-400">const</span> subtract =
+  (a, b) =&gt; a - b;
+
+<span class="text-blue-400">const</span> multiply =
+  (a, b) =&gt; a * b;
+
+<span class="text-blue-400">export</span> {
+  add,
+  subtract,
+  multiply
+};</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Config Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Configuration Export Example
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-4">
+            File:
+            <code class="text-blue-400">config.js</code>
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export const</span> API_URL =
+  <span class="text-emerald-400">"https://api.example.com"</span>;
+
+<span class="text-blue-400">export const</span> APP_NAME =
+  <span class="text-emerald-400">"Inventory App"</span>;
+
+<span class="text-blue-400">export const</span> VERSION =
+  <span class="text-emerald-400">"1.0.0"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Export Object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Object Export
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> config = {
+
+  appName:
+    <span class="text-emerald-400">"Inventory"</span>,
+
+  version:
+    <span class="text-emerald-400">"1.0"</span>
+
+};
+
+<span class="text-blue-400">export default</span> config;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- File Structure -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Example Folder Structure
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">project/
+
+├── index.html
+├── app.js
+
+└── modules/
+    ├── calculator.js
+    ├── user.js
+    └── config.js</pre>
+          </div>
+
+        </div>
+
+        <!-- Common Mistake -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Common Mistake
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Ek module me multiple
+            <code class="text-blue-400">default</code>
+            exports nahi rakh sakte.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Wrong
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export default</span> add;
+
+<span class="text-blue-400">export default</span> subtract;</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold mb-4">
+                Correct
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">export</span> {
+  add,
+  subtract
+};</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Export Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Export Ka Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">Create File
+
+math.js
+
+       ↓
+
+Create Function
+
+const add = (a, b) => a + b;
+
+       ↓
+
+Export
+
+export { add };
+
+       ↓
+
+Now add Can Be Imported
+
+       ↓
+
+import { add } from "./math.js";</pre>
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">export</code>
+              module ke code ko dusri files ke liye available banata hai.
+            </p>
+
+            <p>
+              2. Variables, functions aur classes export ki ja sakti hain.
+            </p>
+
+            <p>
+              3. Named exports multiple ho sakte hain.
+            </p>
+
+            <p>
+              4. Ek module me ek default export hota hai.
+            </p>
+
+            <p>
+              5. Named export ko direct declaration ke saath bhi likh sakte
+              hain.
+            </p>
+
+            <p>
+              6. Values ko end me
+              <code class="text-blue-400">export { }</code>
+              ke through bhi export kar sakte hain.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">as</code>
+              keyword se named export ka naam change kiya ja sakta hai.
+            </p>
+
+            <p>
+              8. Named export aur default export same file me saath use kiye ja
+              sakte hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Modules.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Import.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(25);
+  </script>
+
+</body>
+</html>

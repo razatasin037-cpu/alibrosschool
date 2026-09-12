@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP Introduction - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <!-- Navigation Bar -->
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <!-- PHP Intro Content Section -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP Introduction
+        </h1>
+
+        <!-- Top Navigation Buttons -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../home/home.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../install/install.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Intro Section -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            PHP Kya Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            <strong class="text-white">PHP</strong> ka full form <strong class="text-green-400">Hypertext Preprocessor</strong> hai (pehle ise <em>Personal Home Page</em> kaha jata tha). Yeh ek widely-used, open-source <strong>server-side scripting language</strong> hai jo dynamic aur interactive web applications banane ke liye design ki gayi hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Rasmus Lerdorf ne 1994 me PHP ka pehla version banaya tha. Aaj yeh modern web ka backbone hai aur worldwide millions of websites par use ho rahi hai.
+          </p>
+        </div>
+
+        <!-- ====================== MAIN DETAILS SECTION ====================== -->
+        <section class="mt-12 space-y-8">
+
+          <!-- How PHP Works Architecture Card -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+             PHP Kaise Kaam Karta Hai?
+            </h3>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              Client-side languages (HTML, CSS, JS) browser me process hoti hain, lekin PHP code bilkul alag tarike se execute hota hai:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <div class="text-2xl font-bold text-white mb-2">1. Request</div>
+                <p class="text-sm text-gray-300">User browser me URL enter karke page request karta hai.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <div class="text-2xl font-bold text-green-400 mb-2">2. Processing</div>
+                <p class="text-sm text-gray-300">Web Server PHP code ko read aur process karta hai.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <div class="text-2xl font-bold text-white mb-2">3. DB Interaction</div>
+                <p class="text-sm text-gray-300">Zaroorat padne par Database se data fetch/save karta hai.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <div class="text-2xl font-bold text-green-400 mb-2">4. Response</div>
+                <p class="text-sm text-gray-300">Final output plain HTML me convert ho kar browser ko milta hai.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Key Features Card -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-star text-green-400"></i> PHP Ki Main Features
+            </h3>
+            
+            <ul class="space-y-4 text-gray-300 text-lg">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                <span><strong class="text-white">Server-Side Execution:</strong> Browser ko sirf final output dikhta hai, source PHP code secure rehta hai.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                <span><strong class="text-white">Open Source & Free:</strong> PHP 100% free hai, aap iske kisi bhi version ko bina license cost ke use kar sakte hain.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                <span><strong class="text-white">Cross-Platform Support:</strong> Windows, Linux, Unix, macOS sabhi OS par bina kisi badlaav ke chalti hai.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                <span><strong class="text-white">Database Compatibility:</strong> MySQL, PostgreSQL, Oracle, Sybase, aur SQLite jaise sabhi major databases ko support karti hai.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                <span><strong class="text-white">High Speed & Performance:</strong> PHP 8+ me JIT (Just-In-Time) compiler ki wajah se script execution speed kafi fast hai.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                <span><strong class="text-white">Huge Ecosystem & Community:</strong> WordPress, Laravel, Symfony aur Magento jaise powerful frameworks PHP par hi bane hain.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- What Can PHP Do Card -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+               PHP Se Aap Kya Kar Sakte Hain?
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-300">
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b]">
+                <h4 class="font-bold text-green-400 mb-1">1. Dynamic Page Content</h4>
+                <p class="text-sm text-gray-300">Real-time user input ke according webpages ka content live updates karna.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b]">
+                <h4 class="font-bold text-green-400 mb-1">2. Form Data Handling</h4>
+                <p class="text-sm text-gray-300">HTML forms se data receive karna, check karna aur email ya DB me bhejna.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b]">
+                <h4 class="font-bold text-green-400 mb-1">3. File Operations</h4>
+                <p class="text-sm text-gray-300">Server par files create, open, write, update aur delete karna.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b]">
+                <h4 class="font-bold text-green-400 mb-1">4. Cookies & Sessions</h4>
+                <p class="text-sm text-gray-300">Login status, shopping cart details aur user preferences track karna.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b]">
+                <h4 class="font-bold text-green-400 mb-1">5. Database CRUD</h4>
+                <p class="text-sm text-gray-300">Database me naye records Add, Read, Update aur Delete karna.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b]">
+                <h4 class="font-bold text-green-400 mb-1">6. Security & Encryption</h4>
+                <p class="text-sm text-gray-300">Data hashing, password encryption aur user authorization implement karna.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prerequisites Section -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              PHP Sikhne Se Pehle Kya Aana Chahiye?
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              PHP seekhna shuru karne se pehle agar aapko niche diye gaye basic web technologies ki samajh hai, toh yeh aapke liye kafi helpful hoga:
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-[#0f172a] px-4 py-2 rounded-lg text-white font-semibold border border-[#334155]">HTML (Basic Syntax & Forms)</span>
+              <span class="bg-[#0f172a] px-4 py-2 rounded-lg text-green-400 font-semibold border border-[#334155]">CSS (Basic Styling)</span>
+              <span class="bg-[#0f172a] px-4 py-2 rounded-lg text-white font-semibold border border-[#334155]">JavaScript (Basic Logic - Optional)</span>
+            </div>
+          </div>
+
+          <!-- Why Use PHP & Code Anatomy Card -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Kyun PHP Use Karein? (Why PHP?)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              Duniya ki <strong>77%+ websites</strong> aaj bhi backend ke liye PHP ka use karti hain. Internet ke sabse bade platforms jaise <strong class="text-green-400">WordPress</strong>, <strong class="text-white">Wikipedia</strong>, aur early-stage <strong class="text-green-400">Facebook</strong> sabhi PHP par bane hain.
+            </p>
+
+            <!-- Code Preview Block -->
+            <h4 class="text-xl font-bold text-white mb-3">Basic PHP File Structure (<code class="text-green-400">index.php</code>)</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mb-4">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;head&gt;</span>
+  <span class="text-white">&lt;title&gt;PHP Introduction&lt;/title&gt;</span>
+<span class="text-green-400">&lt;/head&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+  <span class="text-white">&lt;h1&gt;Mera Pehla PHP Page&lt;/h1&gt;</span>
+
+  <span class="text-green-400">&lt;?php</span>
+    <span class="text-[#94a3b8]">// Simple echo statement</span>
+    <span class="text-green-400">echo</span> <span class="text-white">"Hello World! PHP sikhna bahut aasan hai."</span>;
+  <span class="text-green-400">?&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+            
+            <p class="text-sm text-gray-400">
+              * Note: PHP file ko hamesha <code class="text-green-400">.php</code> extension ke sath save kiya jata hai.
+            </p>
+          </div>
+
+          <!-- Note Block -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-green-400/30">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-green-400">
+              <span>💡</span> Requirement Notice
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              PHP scripts direct browser me execute nahi ho sakti. Iske liye aapke PC me local web server (jaise <strong class="text-white">XAMPP</strong>, <strong class="text-white">WAMP</strong> ya <strong class="text-white">LAMP</strong>) install hona zaroori hai. Agle chapter me hum step-by-step installation dekhenge.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation Buttons -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../home/home.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../install/install.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Script -->
+    <script>
+      // Sidebar Load Only (Index 1 for Introduction step)
+      document.getElementById("sidebar").innerHTML = createSidebar(1);
+    </script>
+  </body>
+</html>

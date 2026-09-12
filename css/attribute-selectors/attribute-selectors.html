@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Attribute Selectors</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            CSS Attribute Selectors
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            CSS Attribute Selectors ki help se hum HTML elements ko unke
+            attributes ke basis par select aur style kar sakte hain. Normal
+            selectors mein hum element, class ya ID ko target karte hain, lekin
+            attribute selectors mein hum check kar sakte hain ki kisi element ke
+            paas particular attribute hai, attribute ki exact value kya hai,
+            value kisi text se start hoti hai, end hoti hai ya uske andar koi
+            particular word present hai.
+          </p>
+
+          <!-- TOP NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../image-sprites/image-sprites.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../forms/forms.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <!-- WHAT ARE ATTRIBUTE SELECTORS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            CSS Attribute Selectors Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            HTML elements ke andar attributes information provide karte hain.
+            Jaise
+            <span class="text-blue-400">href</span>,
+            <span class="text-blue-400">target</span>,
+            <span class="text-blue-400">type</span>,
+            <span class="text-blue-400">title</span>,
+            <span class="text-blue-400">disabled</span> aur
+            <span class="text-blue-400">class</span>. CSS attribute selector
+            square brackets <span class="text-blue-400">[]</span> ka use karke
+            in attributes ko directly target karta hai.
+          </p>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4">
+              <i class="fa-solid fa-lightbulb text-yellow-400 mr-2"></i>
+              Basic Syntax
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-5">
+              Attribute selector ka basic syntax is tarah hota hai:
+            </p>
+
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+            >
+              <pre
+                class="text-lg"
+              ><code><span class="text-blue-400">[attribute]</span> {
+  <span class="text-blue-400">property</span>: <span class="text-green-400">value</span>;
+}</code></pre>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mt-5">
+              Square brackets ke andar attribute ka naam diya jata hai. CSS phir
+              un sabhi elements ko select karta hai jinke paas woh attribute
+              present hota hai.
+            </p>
+          </div>
+
+          <!-- HAS ATTRIBUTE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-filter text-blue-400 mr-2"></i>
+            1. Attribute Present Hai Ya Nahi
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Sabse simple attribute selector sirf attribute ke existence ko check
+            karta hai. Agar element ke paas given attribute hai, to CSS us
+            element par apply ho jayega. Ismein attribute ki value check nahi ki
+            jati.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                [attribute] Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input[type]</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid blue</span>;
+}
+
+<span class="text-blue-400">a[target]</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">lightblue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Yahan <span class="text-blue-400">input[type]</span> un input
+            elements ko select karega jinke paas
+            <span class="text-blue-400">type</span> attribute hai. Isi tarah
+            <span class="text-blue-400">a[target]</span> un links ko select
+            karega jinke paas
+            <span class="text-blue-400">target</span> attribute present hai.
+          </p>
+
+          <!-- EXACT VALUE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-equals text-blue-400 mr-2"></i>
+            2. Exact Attribute Value Select Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Kabhi-kabhi hume sirf attribute ka hona enough nahi hota. Hume
+            particular value wale elements ko select karna hota hai. Iske liye
+            <span class="text-blue-400">[attribute="value"]</span> syntax use
+            hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Exact Value Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input[type="text"]</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#f1f5f9</span>;
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid blue</span>;
+}
+
+<span class="text-blue-400">input[type="email"]</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid green</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Pehla selector sirf
+            <span class="text-blue-400">type="text"</span> wale inputs ko target
+            karega, jabki second selector sirf
+            <span class="text-blue-400">type="email"</span> wale inputs par
+            apply hoga.
+          </p>
+
+          <!-- MULTIPLE CONDITIONS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code-branch text-blue-400 mr-2"></i>
+            3. Multiple Attribute Conditions
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Ek hi element ke liye multiple attribute conditions bhi combine ki
+            ja sakti hain. Isse selection aur specific ho jata hai. Multiple
+            conditions ko same selector mein likhne par element ko sabhi
+            conditions satisfy karni hoti hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Multiple Conditions Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input[type="text"][required]</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid red</span>;
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#fff7ed</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Is example mein input ke paas
+            <span class="text-blue-400">type="text"</span> bhi hona chahiye aur
+            <span class="text-blue-400">required</span> attribute bhi. Dono
+            conditions match hone par hi style apply hoga.
+          </p>
+
+          <!-- STARTS WITH -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-right text-blue-400 mr-2"></i>
+            4. Attribute Value Kisi Text Se Start Ho
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">^=</span> operator ka use tab hota hai
+            jab hume check karna ho ki attribute ki value kisi particular text
+            se start hoti hai. Ye especially links ko unke URL pattern ke
+            according style karne mein useful hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Starts With Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">a[href^="https"]</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">green</span>;
+}
+
+<span class="text-blue-400">a[href^="http"]</span> {
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">bold</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            <span class="text-blue-400">a[href^="https"]</span> un links ko
+            select karega jinki href value
+            <span class="text-blue-400">https</span> se start hoti hai.
+          </p>
+
+          <!-- ENDS WITH -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-arrow-left text-blue-400 mr-2"></i>
+            5. Attribute Value Kisi Text Par End Ho
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">$=</span> operator ka use attribute
+            value ke ending part ko check karne ke liye hota hai. For example,
+            hum particular file type ke links ko identify kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Ends With Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">a[href$=".pdf"]</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">bold</span>;
+}
+
+<span class="text-blue-400">a[href$=".zip"]</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">purple</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Ismein <span class="text-blue-400">.pdf</span> par end hone wale
+            links ko ek style milega aur
+            <span class="text-blue-400">.zip</span> par end hone wale links ko
+            doosra style milega.
+          </p>
+
+          <!-- CONTAINS WORD -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-magnifying-glass text-blue-400 mr-2"></i>
+            6. Attribute Value Mein Word Present Ho
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">~=</span> operator attribute value ke
+            andar ek specific word ko search karta hai. Ye class-like
+            space-separated values ke saath useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-8"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Contains Word Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">[title~="important"]</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">yellow</span>;
+  <span class="text-blue-400">font-weight</span>: <span class="text-green-400">bold</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            Agar kisi element ka title attribute
+            <span class="text-blue-400">"important notice"</span> hai, to
+            <span class="text-blue-400">[title~="important"]</span> us element
+            ko match karega, kyunki
+            <span class="text-blue-400">important</span> ek separate word ke
+            roop mein present hai.
+          </p>
+
+          <!-- CONTAINS STRING -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-text-width text-blue-400 mr-2"></i>
+            7. Attribute Value Mein Text Kahin Bhi Ho
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            <span class="text-blue-400">*=</span> operator attribute ki complete
+            value ke andar given text ko kahin bhi search karta hai. Text
+            beginning, middle ya end kahin bhi ho sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Contains Text Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">a[href*="google"]</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">orange</span>;
+}
+
+<span class="text-blue-400">img[src*="logo"]</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid blue</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+            <span class="text-blue-400">a[href*="google"]</span> un links ko
+            match karega jinki href value ke andar kahin bhi
+            <span class="text-blue-400">google</span>
+            text present hai.
+          </p>
+
+          <!-- STARTS WITH SEGMENT -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-link text-blue-400 mr-2"></i>
+            8. Attribute Value Patterns Ke Saath Links Style Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Attribute selectors ka practical use navigation aur external links
+            mein bahut common hai. Hum internal links, external links aur
+            different file types ko alag-alag style de sakte hain bina extra
+            classes add kiye.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                Link Styling Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">a[href^="https"]</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">green</span>;
+}
+
+<span class="text-blue-400">a[href$=".pdf"]</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}
+
+<span class="text-blue-400">a[href*="example"]</span> {
+  <span class="text-blue-400">text-decoration</span>: <span class="text-green-400">underline</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- FORM CONTROLS -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+            9. Form Controls Ko Select Karna
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Forms mein different types ke inputs hote hain, jaise text, email,
+            password, number, checkbox aur submit. Attribute selectors ki help
+            se har type ke input ko individually target kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                Form Attribute Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input[type="text"]</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">10px</span>;
+}
+
+<span class="text-blue-400">input[type="email"]</span> {
+  <span class="text-blue-400">padding</span>: <span class="text-green-400">10px</span>;
+}
+
+<span class="text-blue-400">input[type="submit"]</span> {
+  <span class="text-blue-400">background</span>: <span class="text-green-400">blue</span>;
+  <span class="text-blue-400">color</span>: <span class="text-green-400">white</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- DISABLED / REQUIRED -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-lock text-blue-400 mr-2"></i>
+            10. disabled aur required Attributes
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Boolean attributes jaise
+            <span class="text-blue-400">disabled</span> aur
+            <span class="text-blue-400">required</span> ko bhi attribute
+            selectors se target kiya ja sakta hai. Ye forms ko visually
+            communicate karne mein useful hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+                State Styling Example
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">input[required]</span> {
+  <span class="text-blue-400">border-left</span>: <span class="text-green-400">4px solid orange</span>;
+}
+
+<span class="text-blue-400">input[disabled]</span> {
+  <span class="text-blue-400">opacity</span>: <span class="text-green-400">0.5</span>;
+  <span class="text-blue-400">cursor</span>: <span class="text-green-400">not-allowed</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- COMPLETE EXAMPLE -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-flask text-blue-400 mr-2"></i>
+            Complete Attribute Selector Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Neeche HTML aur CSS ka ek complete example hai jisme different
+            attribute selectors ko ek saath use kiya gaya hai. Is example ko
+            browser mein run karke aap selectors ka actual behavior easily
+            samajh sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>
+                HTML + CSS
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">&lt;input</span> <span class="text-blue-400">type</span>=<span class="text-green-400">"text"</span> <span class="text-blue-400">required</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-blue-400">&lt;input</span> <span class="text-blue-400">type</span>=<span class="text-green-400">"email"</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"https://example.com"</span><span class="text-blue-400">&gt;</span>
+  External Link
+<span class="text-blue-400">&lt;/a&gt;</span>
+
+<span class="text-blue-400">&lt;a</span> <span class="text-blue-400">href</span>=<span class="text-green-400">"document.pdf"</span><span class="text-blue-400">&gt;</span>
+  PDF File
+<span class="text-blue-400">&lt;/a&gt;</span>
+
+<span class="text-blue-400">input[type="text"]</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid blue</span>;
+}
+
+<span class="text-blue-400">input[type="email"]</span> {
+  <span class="text-blue-400">border</span>: <span class="text-green-400">2px solid green</span>;
+}
+
+<span class="text-blue-400">input[required]</span> {
+  <span class="text-blue-400">background-color</span>: <span class="text-green-400">#fff7ed</span>;
+}
+
+<span class="text-blue-400">a[href^="https"]</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">green</span>;
+}
+
+<span class="text-blue-400">a[href$=".pdf"]</span> {
+  <span class="text-blue-400">color</span>: <span class="text-green-400">red</span>;
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- SELECTOR CHEAT SHEET -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table-list text-blue-400 mr-2"></i>
+            Attribute Selector Cheat Sheet
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-lg">
+                <thead class="bg-[#1e293b]">
+                  <tr>
+                    <th class="p-5">Selector</th>
+                    <th class="p-5">Meaning</th>
+                  </tr>
+                </thead>
+
+                <tbody class="text-gray-300">
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 text-blue-400">[attr]</td>
+                    <td class="p-5">Attribute present hai</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 text-blue-400">[attr="value"]</td>
+                    <td class="p-5">Exact value match</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 text-blue-400">[attr~="value"]</td>
+                    <td class="p-5">Value mein complete word present hai</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 text-blue-400">[attr^="value"]</td>
+                    <td class="p-5">Value given text se start hoti hai</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 text-blue-400">[attr$="value"]</td>
+                    <td class="p-5">Value given text par end hoti hai</td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 text-blue-400">[attr*="value"]</td>
+                    <td class="p-5">
+                      Value ke andar text kahin bhi present hai
+                    </td>
+                  </tr>
+
+                  <tr class="border-t border-gray-800">
+                    <td class="p-5 text-blue-400">[attr|="value"]</td>
+                    <td class="p-5">
+                      Value exact hai ya given text se hyphen ke saath start
+                      hoti hai
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- COMMON MISTAKES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i
+              class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2"
+            ></i>
+            Common Mistakes
+          </h2>
+
+          <div class="space-y-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                1. Attribute Name Galat Likhna
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Selector mein HTML attribute ka exact naam use karna chahiye.
+                Agar attribute ka naam wrong hai, selector expected elements ko
+                match nahi karega.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                2. Exact Value Aur Contains Selector Ko Confuse Karna
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                <span class="text-blue-400">[attr="value"]</span> exact match
+                karta hai, jabki
+                <span class="text-blue-400">[attr*="value"]</span> value ke
+                andar text ko kahin bhi search karta hai. Dono ka behavior same
+                nahi hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">3. ~= Ka Wrong Use</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                <span class="text-blue-400">~=</span> complete space-separated
+                word ko match karta hai. Ye arbitrary substring search ke liye
+                nahi hai. Substring ke liye
+                <span class="text-blue-400">*=</span> use karein.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                4. Unnecessary Selectors Use Karna
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Agar simple class selector se kaam easily ho raha hai, to har
+                situation mein complex attribute selector use karna zaroori nahi
+                hai. Selector ko project ki actual requirement ke according
+                choose karein.
+              </p>
+            </div>
+          </div>
+
+          <!-- PRACTICAL USES -->
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-briefcase text-blue-400 mr-2"></i>
+            Practical Uses
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-link text-blue-400 mr-2"></i>
+                External Links
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                External URLs ko
+                <span class="text-blue-400">href^</span> selector se identify
+                karke different styling di ja sakti hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-file-pdf text-red-400 mr-2"></i>
+                File Links
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                PDF, ZIP ya other file extensions ko
+                <span class="text-blue-400">$=</span>
+                selector ke through identify kiya ja sakta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-pen-to-square text-green-400 mr-2"></i>
+                Form Fields
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Different input types aur required/disabled controls ko easily
+                style kiya ja sakta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold mb-4">
+                <i class="fa-solid fa-image text-purple-400 mr-2"></i>
+                Images
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Specific image source patterns ko target karke special styling
+                apply ki ja sakti hai.
+              </p>
+            </div>
+          </div>
+
+          <!-- IMPORTANT POINTS -->
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+              Important Points
+            </h2>
+
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Attribute selectors square brackets
+                <span class="text-blue-400">[]</span> ka use karte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">[attribute]</span> attribute ki
+                presence ko check karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">[attribute="value"]</span> exact
+                attribute value ko match karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">^=</span> beginning,
+                <span class="text-blue-400">$=</span> ending aur
+                <span class="text-blue-400">*=</span> value ke andar text ko
+                target karne ke liye use hota hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                <span class="text-blue-400">~=</span> space-separated complete
+                word ko match karta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Multiple attribute conditions ko ek selector mein combine kiya
+                ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Forms aur links mein attribute selectors ka practical use bahut
+                common hai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUMMARY -->
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              CSS Attribute Selectors ki help se HTML elements ko unke
+              attributes aur attribute values ke basis par select kiya ja sakta
+              hai. Basic
+              <span class="text-blue-400">[attribute]</span> selector attribute
+              ki presence check karta hai, jabki
+              <span class="text-blue-400">[attribute="value"]</span> exact value
+              match karta hai. <span class="text-blue-400">^=</span>,
+              <span class="text-blue-400">$=</span>,
+              <span class="text-blue-400">~=</span> aur
+              <span class="text-blue-400">*=</span> jaise operators different
+              value patterns ko target karne mein help karte hain. Ye selectors
+              especially forms, links, file types aur pattern-based UI styling
+              mein useful hain.
+            </p>
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../image-sprites/image-sprites.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../forms/forms.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(37);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ Real-Life Examples - Ali Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+          C++ Real-Life Examples
+        </h1>
+
+        <div class="flex justify-between items-center">
+          <a href="logical-operators.html">
+            <button
+              class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+            </button>
+          </a>
+          <a href="../switch/switch.html">
+            <button
+              class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+            >
+              Next <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <hr class="mt-12 border-white/10" />
+
+        <section class="max-w-6xl mx-auto py-10">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Conditions in Real-Life Programs
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Real programs mein conditions ka use decisions lene ke liye bahut
+            commonly kiya jata hai.
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            User ki age check karna, number even ya odd check karna, password
+            verify karna aur marks ke basis par result dena jaise kaamon mein
+            conditions useful hoti hain.
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">
+            Example 1: Check Age
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Kisi person ki age check karke determine kiya ja sakta hai ki woh
+            adult hai ya nahi.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">C++ Age Check Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age = 20;
+
+    if (age &gt;= 18) {
+        cout &lt;&lt; "You are an adult.";
+    } else {
+        cout &lt;&lt; "You are not an adult.";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Example 2: Even or Odd
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Modulus operator <span class="text-[#4d6fff] font-bold">%</span> ke
+            saath condition use karke check kar sakte hain ki number even hai ya
+            odd.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">C++ Even or Odd Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int number = 10;
+
+    if (number % 2 == 0) {
+        cout &lt;&lt; "Even number";
+    } else {
+        cout &lt;&lt; "Odd number";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Example 3: Positive or Negative
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Number ko zero se compare karke determine kar sakte hain ki number
+            positive, negative ya zero hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">
+                C++ Positive or Negative Example
+              </h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int number = -5;
+
+    if (number &gt; 0) {
+        cout &lt;&lt; "Positive number";
+    } else if (number &lt; 0) {
+        cout &lt;&lt; "Negative number";
+    } else {
+        cout &lt;&lt; "Zero";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Example 4: Pass or Fail
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Marks ke basis par student ka result check kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">C++ Pass or Fail Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int marks = 75;
+
+    if (marks &gt;= 40) {
+        cout &lt;&lt; "Student Passed";
+    } else {
+        cout &lt;&lt; "Student Failed";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Example 5: Login Check
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Conditions ka use login details ko verify karne jaise simple
+            decision-making tasks mein bhi kiya ja sakta hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">C++ Login Check Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string username = "admin";
+    string password = "1234";
+
+    if (username == "admin" &amp;&amp; password == "1234") {
+        cout &lt;&lt; "Login successful";
+    } else {
+        cout &lt;&lt; "Invalid username or password";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Example 6: Multiple Conditions
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Logical operators ke saath multiple conditions ko combine karke more
+            specific decisions liye ja sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">
+                C++ Multiple Conditions Example
+              </h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age = 25;
+    bool hasID = true;
+
+    if (age &gt;= 18 &amp;&amp; hasID) {
+        cout &lt;&lt; "Entry allowed";
+    } else {
+        cout &lt;&lt; "Entry denied";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">
+            Complete Real-Life Example
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Neeche ek complete example hai jisme age aur marks ke basis par
+            decision liya gaya hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-10"
+          >
+            <div
+              class="bg-[#1e293b] px-6 py-4 flex items-center justify-between"
+            >
+              <h3 class="text-xl font-semibold">Complete C++ Example</h3>
+              <span class="text-sm text-gray-400">Example</span>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age = 20;
+    int marks = 80;
+
+    if (age &gt;= 18 &amp;&amp; marks &gt;= 40) {
+        cout &lt;&lt; "Adult student and passed";
+    } else if (age &lt; 18 &amp;&amp; marks &gt;= 40) {
+        cout &lt;&lt; "Young student and passed";
+    } else {
+        cout &lt;&lt; "Student failed";
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mt-14 mb-8">Summary</h2>
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8"
+          >
+            <ul
+              class="list-disc pl-6 space-y-4 text-lg sm:text-xl text-gray-300"
+            >
+              <li>Conditions program ko decision lene mein help karti hain.</li>
+              <li>
+                <span class="text-[#4d6fff] font-bold">if</span>,
+                <span class="text-[#4d6fff] font-bold">else</span> aur
+                <span class="text-[#4d6fff] font-bold">else if</span> common
+                conditional statements hain.
+              </li>
+              <li>
+                Logical operators se multiple conditions combine ki ja sakti
+                hain.
+              </li>
+              <li>Real programs mein conditions ka use bahut common hai.</li>
+            </ul>
+          </div>
+
+          <div
+            class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+          >
+            <a href="logical-operators.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button>
+            </a>
+            <a href="../switch/switch.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(5);
+        }
+      });
+    </script>
+  </body>
+</html>

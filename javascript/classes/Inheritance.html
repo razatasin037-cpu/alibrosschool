@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Class Inheritance - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Class Inheritance
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./ClassesMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Static.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Inheritance Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me inheritance ka matlab hai ek class dusri class ki
+          properties aur methods ko reuse kar sakti hai.
+          <br><br>
+          Iske liye
+          <code class="text-blue-400">extends</code>
+          keyword use hota hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Why -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Inheritance Kyu Use Karte Hain?
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Existing code ko reuse karne ke liye.
+            </p>
+
+            <p>
+              2. Same code baar-baar likhne se bachne ke liye.
+            </p>
+
+            <p>
+              3. Parent aur child classes ke beech relationship banane ke liye.
+            </p>
+
+            <p>
+              4. Code ko organized aur maintainable rakhne ke liye.
+            </p>
+
+            <p>
+              5. Child class me extra features add karne ke liye.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Inheritance Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Parent {
+
+}
+
+<span class="text-blue-400">class</span> Child
+  <span class="text-blue-400">extends</span> Parent {
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Basic -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Inheritance Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Animal {
+
+  speak() {
+
+    console.log(
+      <span class="text-emerald-400">"Animal speaks"</span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Dog
+  <span class="text-blue-400">extends</span> Animal {
+
+}
+
+<span class="text-blue-400">const</span> dog =
+  <span class="text-blue-400">new</span> Dog();
+
+dog.speak();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Animal speaks</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Parent child -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Parent Class Aur Child Class
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Class
+                  </th>
+
+                  <th class="p-4">
+                    Meaning
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Parent Class
+                  </td>
+
+                  <td class="p-4">
+                    Jis class se properties/methods inherit hoti hain.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Child Class
+                  </td>
+
+                  <td class="p-4">
+                    Jo parent class ko extend karti hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Parent properties -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Parent Property Inherit Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  <span class="text-blue-400">new</span> Admin(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+console.log(
+  admin.name
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Parent methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Parent Method Inherit Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  login() {
+
+    console.log(
+      <span class="text-emerald-400">
+        "User logged in"
+      </span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  <span class="text-blue-400">new</span> Admin();
+
+admin.login();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">User logged in</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Child own method -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Child Class Ka Apna Method
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  login() {
+
+    console.log(
+      <span class="text-emerald-400">
+        "Login successful"
+      </span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+  deleteUser() {
+
+    console.log(
+      <span class="text-emerald-400">
+        "User deleted"
+      </span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  <span class="text-blue-400">new</span> Admin();
+
+admin.login();
+admin.deleteUser();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Login successful
+User deleted</pre>
+
+          </div>
+
+        </div>
+
+        <!-- super -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            super() Kya Hai?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Child class ke constructor me parent class ka constructor call
+            karne ke liye
+            <code class="text-blue-400">super()</code>
+            use hota hai.
+          </p>
+
+        </div>
+
+        <!-- super constructor -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            super() Constructor Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+  constructor(
+    name,
+    role
+  ) {
+
+    <span class="text-blue-400">super</span>(name);
+
+    <span class="text-blue-400">this</span>.role =
+      role;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  <span class="text-blue-400">new</span> Admin(
+    <span class="text-emerald-400">"Ali"</span>,
+    <span class="text-emerald-400">"Admin"</span>
+  );
+
+console.log(
+  admin.name
+);
+
+console.log(
+  admin.role
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali
+Admin</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Why super -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            super() Important Kyu Hai?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Derived class ke constructor me
+            <code class="text-blue-400">this</code>
+            use karne se pehle
+            <code class="text-blue-400">super()</code>
+            call karna zaroori hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mt-5 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+  constructor(
+    name,
+    role
+  ) {
+
+    <span class="text-blue-400">super</span>(name);
+
+    <span class="text-blue-400">this</span>.role =
+      role;
+
+  }
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Wrong super -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Wrong super() Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+  constructor(
+    name,
+    role
+  ) {
+
+    <span class="text-gray-400">// Wrong</span>
+
+    <span class="text-blue-400">this</span>.role =
+      role;
+
+    <span class="text-blue-400">super</span>(name);
+
+  }
+
+}</code></pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Derived constructor me
+            <code class="text-blue-400">this</code>
+            ko
+            <code class="text-blue-400">super()</code>
+            se pehle use nahi karna chahiye.
+          </p>
+
+        </div>
+
+        <!-- super method -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Parent Method Ko super Se Call Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  greet() {
+
+    console.log(
+      <span class="text-emerald-400">
+        "Hello User"
+      </span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+  greetAdmin() {
+
+    <span class="text-blue-400">super</span>.greet();
+
+    console.log(
+      <span class="text-emerald-400">
+        "Welcome Admin"
+      </span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  <span class="text-blue-400">new</span> Admin();
+
+admin.greetAdmin();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Hello User
+Welcome Admin</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Overriding -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Method Overriding
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Agar child class me parent ke same naam ka method bana diya jaye,
+            to child wala method use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  greet() {
+
+    console.log(
+      <span class="text-emerald-400">
+        "Hello User"
+      </span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+  greet() {
+
+    console.log(
+      <span class="text-emerald-400">
+        "Hello Admin"
+      </span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  <span class="text-blue-400">new</span> Admin();
+
+admin.greet();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Hello Admin</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Override + super -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Method Override + super
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  greet() {
+
+    console.log(
+      <span class="text-emerald-400">
+        "Hello User"
+      </span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+  greet() {
+
+    <span class="text-blue-400">super</span>.greet();
+
+    console.log(
+      <span class="text-emerald-400">
+        "Admin Panel Ready"
+      </span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  <span class="text-blue-400">new</span> Admin();
+
+admin.greet();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Hello User
+Admin Panel Ready</pre>
+
+          </div>
+
+        </div>
+
+        <!-- User Admin -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Project: User → Admin
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(
+    name,
+    email
+  ) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+    <span class="text-blue-400">this</span>.email =
+      email;
+
+  }
+
+  showProfile() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.name +
+      <span class="text-emerald-400">" - "</span> +
+      <span class="text-blue-400">this</span>.email;
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+  constructor(
+    name,
+    email,
+    permissions
+  ) {
+
+    <span class="text-blue-400">super</span>(
+      name,
+      email
+    );
+
+    <span class="text-blue-400">this</span>.permissions =
+      permissions;
+
+  }
+
+  showPermissions() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.permissions;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  <span class="text-blue-400">new</span> Admin(
+    <span class="text-emerald-400">"Ali"</span>,
+    <span class="text-emerald-400">
+      "ali@gmail.com"
+    </span>,
+    [
+      <span class="text-emerald-400">"create"</span>,
+      <span class="text-emerald-400">"edit"</span>,
+      <span class="text-emerald-400">"delete"</span>
+    ]
+  );
+
+console.log(
+  admin.showProfile()
+);
+
+console.log(
+  admin.showPermissions()
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali - ali@gmail.com
+["create", "edit", "delete"]</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Product inheritance -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Product → DigitalProduct Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Product {
+
+  constructor(
+    name,
+    price
+  ) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+    <span class="text-blue-400">this</span>.price =
+      price;
+
+  }
+
+  getInfo() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.name +
+      <span class="text-emerald-400">" - ₹"</span> +
+      <span class="text-blue-400">this</span>.price;
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> DigitalProduct
+  <span class="text-blue-400">extends</span> Product {
+
+  constructor(
+    name,
+    price,
+    fileSize
+  ) {
+
+    <span class="text-blue-400">super</span>(
+      name,
+      price
+    );
+
+    <span class="text-blue-400">this</span>.fileSize =
+      fileSize;
+
+  }
+
+  download() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">
+        "Downloading "
+      </span> +
+      <span class="text-blue-400">this</span>.name;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> course =
+  <span class="text-blue-400">new</span> DigitalProduct(
+    <span class="text-emerald-400">
+      "JavaScript Course"
+    </span>,
+    <span class="text-blue-400">999</span>,
+    <span class="text-emerald-400">"2GB"</span>
+  );
+
+console.log(
+  course.getInfo()
+);
+
+console.log(
+  course.download()
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">JavaScript Course - ₹999
+Downloading JavaScript Course</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple level -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multilevel Inheritance
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Person {
+
+  walk() {
+
+    console.log(
+      <span class="text-emerald-400">"Walking"</span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Employee
+  <span class="text-blue-400">extends</span> Person {
+
+  work() {
+
+    console.log(
+      <span class="text-emerald-400">"Working"</span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">class</span> Manager
+  <span class="text-blue-400">extends</span> Employee {
+
+  manage() {
+
+    console.log(
+      <span class="text-emerald-400">"Managing"</span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> manager =
+  <span class="text-blue-400">new</span> Manager();
+
+manager.walk();
+manager.work();
+manager.manage();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Walking
+Working
+Managing</pre>
+
+          </div>
+
+        </div>
+
+        <!-- instanceof -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            instanceof With Inheritance
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+}
+
+<span class="text-blue-400">class</span> Admin
+  <span class="text-blue-400">extends</span> User {
+
+}
+
+<span class="text-blue-400">const</span> admin =
+  <span class="text-blue-400">new</span> Admin();
+
+console.log(
+  admin <span class="text-blue-400">instanceof</span> Admin
+);
+
+console.log(
+  admin <span class="text-blue-400">instanceof</span> User
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">true
+true</pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Admin object child class
+            <code class="text-blue-400">Admin</code>
+            ke saath-saath parent class
+            <code class="text-blue-400">User</code>
+            ka bhi instance maana jata hai.
+          </p>
+
+        </div>
+
+        <!-- Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Inheritance Ka Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base text-gray-300">Parent Class
+
+class User {
+  login() { }
+}
+
+       ↓
+
+extends
+
+       ↓
+
+Child Class
+
+class Admin extends User {
+  deleteUser() { }
+}
+
+       ↓
+
+Create Child Object
+
+const admin = new Admin();
+
+       ↓
+
+Parent Method Available
+
+admin.login()
+
+       +
+
+Child Method Available
+
+admin.deleteUser()</pre>
+
+          </div>
+
+        </div>
+
+        <!-- extends/super -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            extends vs super
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Keyword
+                  </th>
+
+                  <th class="p-4">
+                    Use
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    extends
+                  </td>
+
+                  <td class="p-4">
+                    Child class ko parent class se inherit karata hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    super()
+                  </td>
+
+                  <td class="p-4">
+                    Parent constructor ko call karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    super.method()
+                  </td>
+
+                  <td class="p-4">
+                    Parent class ka method call karta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Inheritance existing class ke code ko reuse karne deta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">extends</code>
+              se child class parent class inherit karti hai.
+            </p>
+
+            <p>
+              3. Child object parent class ke methods use kar sakta hai.
+            </p>
+
+            <p>
+              4. Child class apne extra properties aur methods bhi rakh sakti hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">super()</code>
+              parent constructor ko call karta hai.
+            </p>
+
+            <p>
+              6. Derived constructor me
+              <code class="text-blue-400">this</code>
+              use karne se pehle
+              <code class="text-blue-400">super()</code>
+              call karna hota hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">super.method()</code>
+              parent method ko call kar sakta hai.
+            </p>
+
+            <p>
+              8. Child class parent method ko override kar sakti hai.
+            </p>
+
+            <p>
+              9. JavaScript me multilevel inheritance possible hai.
+            </p>
+
+            <p>
+              10. Next topic me
+              <code class="text-blue-400">Static Methods</code>
+              samjhenge.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./ClassesMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Static.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(24);
+  </script>
+
+</body>
+
+</html>

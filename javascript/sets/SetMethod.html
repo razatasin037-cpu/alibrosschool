@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Set Methods - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Set Methods
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Sets.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../maps/Maps.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Intro -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Set Methods Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript Set Methods ka use Set ke andar values ko add, check,
+          remove, clear aur iterate karne ke liye hota hai.
+          <br><br>
+          Important methods hain
+          <code class="text-blue-400">add()</code>,
+          <code class="text-blue-400">has()</code>,
+          <code class="text-blue-400">delete()</code>,
+          <code class="text-blue-400">clear()</code>,
+          <code class="text-blue-400">values()</code>
+          aur
+          <code class="text-blue-400">forEach()</code>.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Quick Reference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Set Methods List
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method / Property</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">add()</td>
+                  <td class="p-4">Set me new value add karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">has()</td>
+                  <td class="p-4">Value available hai ya nahi check karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">delete()</td>
+                  <td class="p-4">Specific value remove karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">clear()</td>
+                  <td class="p-4">Set ki sabhi values remove karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">values()</td>
+                  <td class="p-4">Set values ka iterator return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">keys()</td>
+                  <td class="p-4">Set values ka iterator return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">entries()</td>
+                  <td class="p-4">[value, value] pairs return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">forEach()</td>
+                  <td class="p-4">Har Set value par callback run karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">size</td>
+                  <td class="p-4">Total values ki count deta hai.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- add -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            add()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">add()</code>
+            Set me new value add karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = <span class="text-blue-400">new</span> Set();
+
+fruits.add(<span class="text-emerald-400">"Apple"</span>);
+fruits.add(<span class="text-emerald-400">"Mango"</span>);
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Set(2) {"Apple", "Mango"}</pre>
+          </div>
+
+        </div>
+
+        <!-- Chain add -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            add() Method Chaining
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">add()</code>
+            Set object ko return karta hai, isliye chaining bhi kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = <span class="text-blue-400">new</span> Set();
+
+fruits
+  .add(<span class="text-emerald-400">"Apple"</span>)
+  .add(<span class="text-emerald-400">"Mango"</span>)
+  .add(<span class="text-emerald-400">"Banana"</span>);
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Set(3) {"Apple", "Mango", "Banana"}</pre>
+          </div>
+
+        </div>
+
+        <!-- has -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            has()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">has()</code>
+            Set me value exist karti hai ya nahi check karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits =
+  <span class="text-blue-400">new</span> Set([
+    <span class="text-emerald-400">"Apple"</span>,
+    <span class="text-emerald-400">"Mango"</span>
+  ]);
+
+console.log(
+  fruits.has(<span class="text-emerald-400">"Apple"</span>)
+);
+
+console.log(
+  fruits.has(<span class="text-emerald-400">"Banana"</span>)
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">true
+false</pre>
+          </div>
+
+        </div>
+
+        <!-- delete -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            delete()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">delete()</code>
+            Set se given value remove karta hai aur boolean return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits =
+  <span class="text-blue-400">new</span> Set([
+    <span class="text-emerald-400">"Apple"</span>,
+    <span class="text-emerald-400">"Mango"</span>
+  ]);
+
+<span class="text-blue-400">const</span> result =
+  fruits.delete(
+    <span class="text-emerald-400">"Mango"</span>
+  );
+
+console.log(result);
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">true
+Set(1) {"Apple"}</pre>
+          </div>
+
+        </div>
+
+        <!-- clear -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            clear()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">clear()</code>
+            Set ki saari values remove kar deta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers =
+  <span class="text-blue-400">new</span> Set([
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">20</span>,
+    <span class="text-emerald-400">30</span>
+  ]);
+
+numbers.clear();
+
+console.log(numbers);
+console.log(numbers.size);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Set(0) {}
+0</pre>
+          </div>
+
+        </div>
+
+        <!-- size -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            size Property
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">size</code>
+            method nahi, property hai. Ye Set ke total unique values ki count
+            deta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers =
+  <span class="text-blue-400">new</span> Set([
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">20</span>,
+    <span class="text-emerald-400">30</span>
+  ]);
+
+console.log(numbers.size);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">3</pre>
+          </div>
+
+        </div>
+
+        <!-- values -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            values()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">values()</code>
+            Set ki values ka iterator return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits =
+  <span class="text-blue-400">new</span> Set([
+    <span class="text-emerald-400">"Apple"</span>,
+    <span class="text-emerald-400">"Mango"</span>,
+    <span class="text-emerald-400">"Banana"</span>
+  ]);
+
+<span class="text-blue-400">for</span> (
+  <span class="text-blue-400">const</span> fruit
+  <span class="text-blue-400">of</span>
+  fruits.values()
+) {
+  console.log(fruit);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Apple
+Mango
+Banana</pre>
+          </div>
+
+        </div>
+
+        <!-- keys -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            keys()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Set me separate keys nahi hoti. Isliye
+            <code class="text-blue-400">keys()</code>
+            bhi values ka iterator return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers =
+  <span class="text-blue-400">new</span> Set([
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">20</span>
+  ]);
+
+<span class="text-blue-400">for</span> (
+  <span class="text-blue-400">const</span> value
+  <span class="text-blue-400">of</span>
+  numbers.keys()
+) {
+  console.log(value);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">10
+20</pre>
+          </div>
+
+        </div>
+
+        <!-- entries -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            entries()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">entries()</code>
+            har value ko
+            <code class="text-blue-400">[value, value]</code>
+            pair ke form me return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits =
+  <span class="text-blue-400">new</span> Set([
+    <span class="text-emerald-400">"Apple"</span>,
+    <span class="text-emerald-400">"Mango"</span>
+  ]);
+
+<span class="text-blue-400">for</span> (
+  <span class="text-blue-400">const</span> item
+  <span class="text-blue-400">of</span>
+  fruits.entries()
+) {
+  console.log(item);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">["Apple", "Apple"]
+["Mango", "Mango"]</pre>
+          </div>
+
+        </div>
+
+        <!-- forEach -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            forEach()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">forEach()</code>
+            Set ke har value ke liye callback function execute karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers =
+  <span class="text-blue-400">new</span> Set([
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">20</span>,
+    <span class="text-emerald-400">30</span>
+  ]);
+
+numbers.forEach((value) =&gt; {
+  console.log(value);
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">10
+20
+30</pre>
+          </div>
+
+        </div>
+
+        <!-- Spread -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Set Ko Array Me Convert Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers =
+  <span class="text-blue-400">new</span> Set([
+    <span class="text-emerald-400">10</span>,
+    <span class="text-emerald-400">20</span>,
+    <span class="text-emerald-400">30</span>
+  ]);
+
+<span class="text-blue-400">const</span> array = [
+  ...numbers
+];
+
+console.log(array);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">[10, 20, 30]</pre>
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">add()</code>
+              Set me value add karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">has()</code>
+              true ya false return karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">delete()</code>
+              specific value remove karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">clear()</code>
+              poora Set empty kar deta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">size</code>
+              property total unique values ki count deti hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">values()</code>
+              aur
+              <code class="text-blue-400">keys()</code>
+              Set values iterate karne ke liye use kiye ja sakte hain.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">entries()</code>
+              <code class="text-blue-400">[value, value]</code>
+              pairs deta hai.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">forEach()</code>
+              har Set value par callback run karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Sets.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../maps/Maps.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(16);
+  </script>
+
+</body>
+</html>

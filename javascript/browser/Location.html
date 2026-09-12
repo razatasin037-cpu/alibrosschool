@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Location Object - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Location Object
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Screen.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./History.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Location Object Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">location</code>
+          object current page ke URL ke baare me information deta hai.
+          <br><br>
+          Iska use URL read karne, page redirect karne, reload karne aur URL ke
+          different parts jaise hostname, pathname aur protocol access karne ke
+          liye hota hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Basic -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location Object Access Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.location
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Short form me simply
+            <code class="text-blue-400">location</code>
+            bhi use kar sakte hain.
+          </p>
+
+        </div>
+
+        <!-- href -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.href
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Current page ka complete URL return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  location.href
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- URL example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Example URL
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">https://example.com:8080/products/list.html?id=10#details</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Ab isi URL ke different parts ko location object se samjhenge.
+          </p>
+
+        </div>
+
+        <!-- protocol -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.protocol
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  location.protocol
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">https:</pre>
+          </div>
+
+        </div>
+
+        <!-- hostname -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.hostname
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Domain / hostname return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  location.hostname
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">example.com</pre>
+          </div>
+
+        </div>
+
+        <!-- port -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.port
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  location.port
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">8080</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Agar URL default port use kar raha ho to value empty string ho sakti
+            hai.
+          </p>
+
+        </div>
+
+        <!-- host -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.host
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Hostname ke saath port ko return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  location.host
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">example.com:8080</pre>
+          </div>
+
+        </div>
+
+        <!-- pathname -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.pathname
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            URL ka path return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  location.pathname
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">/products/list.html</pre>
+          </div>
+
+        </div>
+
+        <!-- search -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.search
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            URL ka query string return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  location.search
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">?id=10</pre>
+          </div>
+
+        </div>
+
+        <!-- hash -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.hash
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            URL ka hash/fragment part return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  location.hash
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">#details</pre>
+          </div>
+
+        </div>
+
+        <!-- origin -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.origin
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Protocol + hostname + port ka combination return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  location.origin
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">https://example.com:8080</pre>
+          </div>
+
+        </div>
+
+        <!-- parts -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            URL Parts Quick View
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property</th>
+                  <th class="p-4">Example</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">href</td>
+                  <td class="p-4">Complete URL</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">protocol</td>
+                  <td class="p-4">https:</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">hostname</td>
+                  <td class="p-4">example.com</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">port</td>
+                  <td class="p-4">8080</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">pathname</td>
+                  <td class="p-4">/products/list.html</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">search</td>
+                  <td class="p-4">?id=10</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">hash</td>
+                  <td class="p-4">#details</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- href redirect -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.href Se Redirect
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>location.href =
+  <span class="text-emerald-400">"https://example.com"</span>;</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Ye current page ko new URL par navigate kar deta hai.
+          </p>
+
+        </div>
+
+        <!-- assign -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.assign()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>location.assign(
+  <span class="text-emerald-400">"https://example.com"</span>
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            New page load karta hai aur browser history me current page
+            generally available rehta hai.
+          </p>
+
+        </div>
+
+        <!-- replace -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.replace()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Current page ko new URL se replace karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>location.replace(
+  <span class="text-emerald-400">"https://example.com"</span>
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Iska main difference ye hai ki replaced page browser history me
+            normal back navigation ke liye preserve nahi hota.
+          </p>
+
+        </div>
+
+        <!-- assign vs replace -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            assign() vs replace()
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">assign()</th>
+                  <th class="p-4">replace()</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    New URL load karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Current history entry replace karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Back navigation possible ho sakti hai.
+                  </td>
+
+                  <td class="p-4">
+                    Replaced entry par normal Back se wapas nahi aate.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- reload -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            location.reload()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Current page reload karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>location.reload();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- redirect click -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Button Click Par Redirect
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;button id=<span class="text-emerald-400">"btn"</span>&gt;
+  Go To Website
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    location.href =
+      <span class="text-emerald-400">"https://example.com"</span>;
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Query Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            URL Query Parameter Read Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Example URL:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">https://example.com/product.html?id=10&name=Laptop</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 mb-5">
+            JavaScript:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> params =
+  <span class="text-blue-400">new</span> URLSearchParams(
+    location.search
+  );
+
+<span class="text-blue-400">const</span> id =
+  params.get(
+    <span class="text-emerald-400">"id"</span>
+  );
+
+<span class="text-blue-400">const</span> name =
+  params.get(
+    <span class="text-emerald-400">"name"</span>
+  );
+
+console.log(id);
+console.log(name);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">10
+Laptop</pre>
+          </div>
+
+        </div>
+
+        <!-- has -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Query Parameter Check Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> params =
+  <span class="text-blue-400">new</span> URLSearchParams(
+    location.search
+  );
+
+<span class="text-blue-400">if</span> (
+  params.has(
+    <span class="text-emerald-400">"id"</span>
+  )
+) {
+
+  console.log(
+    <span class="text-emerald-400">"ID Exists"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Hash example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Hash Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>location.hash =
+  <span class="text-emerald-400">"#contact"</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- hashchange -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            hashchange Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.addEventListener(
+  <span class="text-emerald-400">"hashchange"</span>,
+  () =&gt; {
+
+    console.log(
+      location.hash
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- practical -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Example: Product ID From URL
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Agar page URL ho:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 mb-5 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">product.html?id=15</pre>
+          </div>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> params =
+  <span class="text-blue-400">new</span> URLSearchParams(
+    location.search
+  );
+
+<span class="text-blue-400">const</span> productId =
+  params.get(
+    <span class="text-emerald-400">"id"</span>
+  );
+
+console.log(
+  <span class="text-emerald-400">"Product ID:"</span>,
+  productId
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Ye dynamic product detail pages me kaafi useful hota hai.
+          </p>
+
+        </div>
+
+        <!-- location properties -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Complete Location Information
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log({
+
+  href:
+    location.href,
+
+  origin:
+    location.origin,
+
+  protocol:
+    location.protocol,
+
+  host:
+    location.host,
+
+  hostname:
+    location.hostname,
+
+  port:
+    location.port,
+
+  pathname:
+    location.pathname,
+
+  search:
+    location.search,
+
+  hash:
+    location.hash
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- quick ref -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Location Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property / Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    href
+                  </td>
+                  <td class="p-4">
+                    Complete URL
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    origin
+                  </td>
+                  <td class="p-4">
+                    Protocol + host
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    protocol
+                  </td>
+                  <td class="p-4">
+                    http: / https:
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    hostname
+                  </td>
+                  <td class="p-4">
+                    Domain name
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    port
+                  </td>
+                  <td class="p-4">
+                    Port number
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    pathname
+                  </td>
+                  <td class="p-4">
+                    URL path
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    search
+                  </td>
+                  <td class="p-4">
+                    Query string
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    hash
+                  </td>
+                  <td class="p-4">
+                    URL fragment
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    assign()
+                  </td>
+                  <td class="p-4">
+                    Navigate to URL
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    replace()
+                  </td>
+                  <td class="p-4">
+                    Replace history entry
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    reload()
+                  </td>
+                  <td class="p-4">
+                    Reload current page
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">location</code>
+              current page URL ko represent karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">location.href</code>
+              complete URL deta hai aur navigation ke liye bhi set kiya ja
+              sakta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">hostname</code>,
+              <code class="text-blue-400">pathname</code>,
+              <code class="text-blue-400">search</code>
+              aur
+              <code class="text-blue-400">hash</code>
+              URL ke different parts dete hain.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">assign()</code>
+              new URL par navigate karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">replace()</code>
+              current history entry ko replace karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">reload()</code>
+              current page reload karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">URLSearchParams</code>
+              query parameters read aur manage karne ke liye useful hai.
+            </p>
+
+            <p>
+              8. Dynamic detail pages me URL parameters commonly use hote hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Screen.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./History.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(28);
+  </script>
+
+</body>
+</html>

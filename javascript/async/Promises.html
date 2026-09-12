@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Promises - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Promises
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Callbacks.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./AsyncAwait.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Promise Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Promise ek object hota hai jo future me complete hone
+          wale asynchronous operation ka result represent karta hai.
+          <br><br>
+          Promise successful ho sakta hai ya fail ho sakta hai. Iske result ko
+          <code class="text-blue-400">then()</code>,
+          <code class="text-blue-400">catch()</code>
+          aur
+          <code class="text-blue-400">finally()</code>
+          se handle karte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Promise Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> promise =
+  <span class="text-blue-400">new</span> Promise(
+    (resolve, reject) =&gt; {
+
+      <span class="text-gray-400">// async code</span>
+
+    }
+  );</code></pre>
+          </div>
+
+        </div>
+
+        <!-- States -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Promise States
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">State</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Pending
+                  </td>
+                  <td class="p-4">
+                    Promise abhi complete nahi hua.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Fulfilled
+                  </td>
+                  <td class="p-4">
+                    Promise successfully complete ho gaya.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Rejected
+                  </td>
+                  <td class="p-4">
+                    Promise fail ho gaya.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Basic Promise -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Promise Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> promise =
+  <span class="text-blue-400">new</span> Promise(
+    (resolve, reject) =&gt; {
+
+      <span class="text-blue-400">const</span> success =
+        <span class="text-purple-400">true</span>;
+
+      <span class="text-blue-400">if</span> (success) {
+
+        resolve(
+          <span class="text-emerald-400">"Task completed"</span>
+        );
+
+      } <span class="text-blue-400">else</span> {
+
+        reject(
+          <span class="text-emerald-400">"Task failed"</span>
+        );
+
+      }
+
+    }
+  );</code></pre>
+          </div>
+
+        </div>
+
+        <!-- then -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            then()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Promise successfully resolve hone par
+            <code class="text-blue-400">then()</code>
+            run hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>promise.then((result) =&gt; {
+
+  console.log(result);
+
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Task completed</pre>
+          </div>
+
+        </div>
+
+        <!-- catch -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            catch()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Promise reject hone par
+            <code class="text-blue-400">catch()</code>
+            error handle karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>promise.catch((error) =&gt; {
+
+  console.log(error);
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- finally -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            finally()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Promise resolve ho ya reject,
+            <code class="text-blue-400">finally()</code>
+            dono cases me run hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>promise.finally(() =&gt; {
+
+  console.log(
+    <span class="text-emerald-400">"Promise finished"</span>
+  );
+
+});</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Complete Chain -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            then() + catch() + finally()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>promise
+  .then((result) =&gt; {
+
+    console.log(result);
+
+  })
+  .catch((error) =&gt; {
+
+    console.log(error);
+
+  })
+  .finally(() =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Finished"</span>
+    );
+
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Timeout Promise -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Promise With setTimeout()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> promise =
+  <span class="text-blue-400">new</span> Promise(
+    (resolve) =&gt; {
+
+      setTimeout(() =&gt; {
+
+        resolve(
+          <span class="text-emerald-400">"Data Loaded"</span>
+        );
+
+      }, <span class="text-emerald-400">2000</span>);
+
+    }
+  );
+
+promise.then((result) =&gt; {
+  console.log(result);
+});</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Data Loaded</pre>
+          </div>
+
+        </div>
+
+        <!-- Function Promise -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Se Promise Return Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> getData() {
+
+  <span class="text-blue-400">return new</span> Promise(
+    (resolve, reject) =&gt; {
+
+      <span class="text-blue-400">const</span> dataFound =
+        <span class="text-purple-400">true</span>;
+
+      <span class="text-blue-400">if</span> (dataFound) {
+
+        resolve({
+          id: <span class="text-emerald-400">1</span>,
+          name: <span class="text-emerald-400">"Ali"</span>
+        });
+
+      } <span class="text-blue-400">else</span> {
+
+        reject(
+          <span class="text-emerald-400">"Data not found"</span>
+        );
+
+      }
+
+    }
+  );
+
+}
+
+getData()
+  .then((data) =&gt; {
+    console.log(data);
+  })
+  .catch((error) =&gt; {
+    console.log(error);
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Promise Chain -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Promise Chaining
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Ek
+            <code class="text-blue-400">then()</code>
+            se value return karke next
+            <code class="text-blue-400">then()</code>
+            me use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>Promise.resolve(<span class="text-emerald-400">10</span>)
+  .then((number) =&gt; {
+
+    <span class="text-blue-400">return</span> number * <span class="text-emerald-400">2</span>;
+
+  })
+  .then((number) =&gt; {
+
+    <span class="text-blue-400">return</span> number + <span class="text-emerald-400">5</span>;
+
+  })
+  .then((result) =&gt; {
+
+    console.log(result);
+
+  });</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">25</pre>
+          </div>
+
+        </div>
+
+        <!-- Promise.resolve -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Promise.resolve()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Already fulfilled Promise create karne ke liye
+            <code class="text-blue-400">Promise.resolve()</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>Promise.resolve(
+  <span class="text-emerald-400">"Success"</span>
+)
+  .then((result) =&gt; {
+
+    console.log(result);
+
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Promise.reject -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Promise.reject()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>Promise.reject(
+  <span class="text-emerald-400">"Something went wrong"</span>
+)
+  .catch((error) =&gt; {
+
+    console.log(error);
+
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Promise.all -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Promise.all()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Multiple Promises ko ek saath wait karne ke liye
+            <code class="text-blue-400">Promise.all()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> p1 =
+  Promise.resolve(<span class="text-emerald-400">"User"</span>);
+
+<span class="text-blue-400">const</span> p2 =
+  Promise.resolve(<span class="text-emerald-400">"Products"</span>);
+
+<span class="text-blue-400">const</span> p3 =
+  Promise.resolve(<span class="text-emerald-400">"Orders"</span>);
+
+Promise.all([
+  p1,
+  p2,
+  p3
+])
+  .then((results) =&gt; {
+
+    console.log(results);
+
+  });</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">["User", "Products", "Orders"]</pre>
+          </div>
+
+        </div>
+
+        <!-- Promise.all failure -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Promise.all() Important
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Agar
+            <code class="text-blue-400">Promise.all()</code>
+            me koi ek Promise reject ho jaye, returned Promise reject ho jata
+            hai aur us rejection ko
+            <code class="text-blue-400">catch()</code>
+            se handle kar sakte hain.
+          </p>
+
+        </div>
+
+        <!-- allSettled -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Promise.allSettled()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Sab Promises ke settle hone ka wait karta hai, chahe wo fulfilled
+            hon ya rejected.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> p1 =
+  Promise.resolve(<span class="text-emerald-400">"Success"</span>);
+
+<span class="text-blue-400">const</span> p2 =
+  Promise.reject(<span class="text-emerald-400">"Error"</span>);
+
+Promise.allSettled([
+  p1,
+  p2
+])
+  .then((results) =&gt; {
+
+    console.log(results);
+
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Race -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Promise.race()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Jo Promise sabse pehle settle hota hai,
+            <code class="text-blue-400">Promise.race()</code>
+            uska result leta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fast =
+  <span class="text-blue-400">new</span> Promise(
+    (resolve) =&gt; {
+
+      setTimeout(
+        () =&gt; resolve(
+          <span class="text-emerald-400">"Fast"</span>
+        ),
+        <span class="text-emerald-400">1000</span>
+      );
+
+    }
+  );
+
+<span class="text-blue-400">const</span> slow =
+  <span class="text-blue-400">new</span> Promise(
+    (resolve) =&gt; {
+
+      setTimeout(
+        () =&gt; resolve(
+          <span class="text-emerald-400">"Slow"</span>
+        ),
+        <span class="text-emerald-400">3000</span>
+      );
+
+    }
+  );
+
+Promise.race([
+  fast,
+  slow
+])
+  .then((result) =&gt; {
+
+    console.log(result);
+
+  });</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Fast</pre>
+          </div>
+
+        </div>
+
+        <!-- Callback vs Promise -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Callback vs Promise
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Callback</th>
+                  <th class="p-4">Promise</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Function argument me pass hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Async result represent karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Deep nesting ho sakti hai.
+                  </td>
+
+                  <td class="p-4">
+                    Chaining se code readable ho sakta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Error handling manually manage karna pad sakta hai.
+                  </td>
+
+                  <td class="p-4">
+                    <code class="text-blue-400">catch()</code>
+                    se errors handle hote hain.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Real Login Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Project Example
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Login jaise asynchronous operation ko Promise ke through represent
+            kar sakte ho.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> login(
+  email,
+  password
+) {
+
+  <span class="text-blue-400">return new</span> Promise(
+    (resolve, reject) =&gt; {
+
+      <span class="text-blue-400">if</span> (
+        email ===
+          <span class="text-emerald-400">"admin@gmail.com"</span>
+        &amp;&amp;
+        password ===
+          <span class="text-emerald-400">"1234"</span>
+      ) {
+
+        resolve(
+          <span class="text-emerald-400">"Login Successful"</span>
+        );
+
+      } <span class="text-blue-400">else</span> {
+
+        reject(
+          <span class="text-emerald-400">"Invalid Login"</span>
+        );
+
+      }
+
+    }
+  );
+
+}
+
+login(
+  <span class="text-emerald-400">"admin@gmail.com"</span>,
+  <span class="text-emerald-400">"1234"</span>
+)
+  .then((message) =&gt; {
+    console.log(message);
+  })
+  .catch((error) =&gt; {
+    console.log(error);
+  });</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Promise Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base text-gray-300">Create Promise
+
+      ↓
+
+Pending
+
+      ↓
+
+Async Task
+
+   ↙       ↘
+
+Success    Error
+
+   ↓         ↓
+
+resolve    reject
+
+   ↓         ↓
+
+then()    catch()
+
+      ↓
+
+finally()</pre>
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Promise asynchronous task ka future result represent karta hai.
+            </p>
+
+            <p>
+              2. Promise ke three main states hain:
+              Pending, Fulfilled aur Rejected.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">resolve()</code>
+              successful result deta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">reject()</code>
+              failure result deta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">then()</code>
+              fulfilled Promise ko handle karta hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">catch()</code>
+              rejection aur chain me throw hui errors handle karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">finally()</code>
+              Promise settle hone ke baad run hota hai.
+            </p>
+
+            <p>
+              8. Promise chaining se multiple async steps ko organize kiya ja
+              sakta hai.
+            </p>
+
+            <p>
+              9.
+              <code class="text-blue-400">Promise.all()</code>
+              multiple Promises ko saath handle karne ke liye useful hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Callbacks.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./AsyncAwait.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(26);
+  </script>
+
+</body>
+</html>

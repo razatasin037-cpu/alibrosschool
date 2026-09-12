@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Class Methods - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Class Methods
+      </h1>
+
+      <!-- Top Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Constructor.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Inheritance.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Class Method Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript class ke andar jo functions define kiye jaate hain,
+          unhe
+          <code class="text-blue-400">methods</code>
+          kehte hain.
+          <br><br>
+          Methods ka use object ke data ke saath koi action perform karne ke liye hota hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Class Method Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  methodName() {
+
+    <span class="text-gray-400">// method code</span>
+
+  }
+
+}</code></pre>
+
+          </div>
+
+        </div>
+
+        <!-- Basic -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic Method Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  greet() {
+
+    console.log(
+      <span class="text-emerald-400">"Hello User"</span>
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User();
+
+user.greet();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Hello User</pre>
+
+          </div>
+
+        </div>
+
+        <!-- this -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Method Me this Ka Use
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Class method ke andar
+            <code class="text-blue-400">this</code>
+            current object ki properties ko access karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+  greet() {
+
+    console.log(
+      <span class="text-emerald-400">"Hello "</span> +
+      <span class="text-blue-400">this</span>.name
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+user.greet();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Hello Ali</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Method Parameters
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Normal function ki tarah class methods bhi parameters accept kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Calculator {
+
+  add(a, b) {
+
+    console.log(
+      a + b
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> calc =
+  <span class="text-blue-400">new</span> Calculator();
+
+calc.add(
+  <span class="text-blue-400">10</span>,
+  <span class="text-blue-400">20</span>
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">30</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Return -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Method Me return
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Calculator {
+
+  multiply(a, b) {
+
+    <span class="text-blue-400">return</span>
+      a * b;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> calc =
+  <span class="text-blue-400">new</span> Calculator();
+
+<span class="text-blue-400">const</span> result =
+  calc.multiply(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">5</span>
+  );
+
+console.log(result);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">50</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple Methods -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Methods
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Calculator {
+
+  add(a, b) {
+
+    <span class="text-blue-400">return</span>
+      a + b;
+
+  }
+
+  subtract(a, b) {
+
+    <span class="text-blue-400">return</span>
+      a - b;
+
+  }
+
+  multiply(a, b) {
+
+    <span class="text-blue-400">return</span>
+      a * b;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> calc =
+  <span class="text-blue-400">new</span> Calculator();
+
+console.log(
+  calc.add(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">5</span>
+  )
+);
+
+console.log(
+  calc.subtract(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">5</span>
+  )
+);
+
+console.log(
+  calc.multiply(
+    <span class="text-blue-400">10</span>,
+    <span class="text-blue-400">5</span>
+  )
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">15
+5
+50</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Method calling another method -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Ek Method Se Dusra Method Call Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Same class ke dusre method ko
+            <code class="text-blue-400">this.methodName()</code>
+            se call kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+  getName() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.name;
+
+  }
+
+  showUser() {
+
+    console.log(
+      <span class="text-emerald-400">"User: "</span> +
+      <span class="text-blue-400">this</span>.getName()
+    );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+user.showUser();</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">User: Ali</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Change property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Method Se Property Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+  }
+
+  changeName(newName) {
+
+    <span class="text-blue-400">this</span>.name =
+      newName;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+user.changeName(
+  <span class="text-emerald-400">"Ahmed"</span>
+);
+
+console.log(
+  user.name
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ahmed</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Product Method -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Product Method Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Product {
+
+  constructor(
+    name,
+    price,
+    quantity
+  ) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+    <span class="text-blue-400">this</span>.price =
+      price;
+
+    <span class="text-blue-400">this</span>.quantity =
+      quantity;
+
+  }
+
+  getTotal() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.price *
+      <span class="text-blue-400">this</span>.quantity;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> laptop =
+  <span class="text-blue-400">new</span> Product(
+    <span class="text-emerald-400">"Laptop"</span>,
+    <span class="text-blue-400">50000</span>,
+    <span class="text-blue-400">3</span>
+  );
+
+console.log(
+  laptop.getTotal()
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">150000</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Stock Method -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Stock Update Method
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Product {
+
+  constructor(
+    name,
+    stock
+  ) {
+
+    <span class="text-blue-400">this</span>.name =
+      name;
+
+    <span class="text-blue-400">this</span>.stock =
+      stock;
+
+  }
+
+  addStock(quantity) {
+
+    <span class="text-blue-400">this</span>.stock +=
+      quantity;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> product =
+  <span class="text-blue-400">new</span> Product(
+    <span class="text-emerald-400">"Mouse"</span>,
+    <span class="text-blue-400">10</span>
+  );
+
+product.addStock(
+  <span class="text-blue-400">5</span>
+);
+
+console.log(
+  product.stock
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">15</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Stock Remove -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Stock Remove Method
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Product {
+
+  constructor(stock) {
+
+    <span class="text-blue-400">this</span>.stock =
+      stock;
+
+  }
+
+  removeStock(quantity) {
+
+    <span class="text-blue-400">if</span> (
+      quantity >
+      <span class="text-blue-400">this</span>.stock
+    ) {
+
+      <span class="text-blue-400">return</span>
+        <span class="text-emerald-400">
+          "Not enough stock"
+        </span>;
+
+    }
+
+    <span class="text-blue-400">this</span>.stock -=
+      quantity;
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">
+        "Stock updated"
+      </span>;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> product =
+  <span class="text-blue-400">new</span> Product(
+    <span class="text-blue-400">10</span>
+  );
+
+console.log(
+  product.removeStock(
+    <span class="text-blue-400">3</span>
+  )
+);
+
+console.log(
+  product.stock
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Stock updated
+7</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Getter -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Getter Method
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            <code class="text-blue-400">get</code>
+            keyword se getter method create hota hai.
+            Getter ko property ki tarah access kiya jata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(
+    firstName,
+    lastName
+  ) {
+
+    <span class="text-blue-400">this</span>.firstName =
+      firstName;
+
+    <span class="text-blue-400">this</span>.lastName =
+      lastName;
+
+  }
+
+  <span class="text-blue-400">get</span> fullName() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.firstName +
+      <span class="text-emerald-400">" "</span> +
+      <span class="text-blue-400">this</span>.lastName;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>,
+    <span class="text-emerald-400">"Khan"</span>
+  );
+
+console.log(
+  user.fullName
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ali Khan</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Setter -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Setter Method
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            <code class="text-blue-400">set</code>
+            keyword se setter method create hota hai.
+            Iska use property ki value update karne me kiya ja sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(name) {
+
+    <span class="text-blue-400">this</span>._name =
+      name;
+
+  }
+
+  <span class="text-blue-400">set</span> name(value) {
+
+    <span class="text-blue-400">this</span>._name =
+      value;
+
+  }
+
+  <span class="text-blue-400">get</span> name() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>._name;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">"Ali"</span>
+  );
+
+user.name =
+  <span class="text-emerald-400">"Ahmed"</span>;
+
+console.log(
+  user.name
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Ahmed</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Normal vs getter -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Normal Method vs Getter
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold text-blue-400 mb-4">
+                Normal Method
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code>getName() {
+
+  <span class="text-blue-400">return</span>
+    <span class="text-blue-400">this</span>.name;
+
+}
+
+user.getName();</code></pre>
+
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+              <h4 class="text-xl font-bold text-blue-400 mb-4">
+                Getter
+              </h4>
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">get</span> name() {
+
+  <span class="text-blue-400">return</span>
+    <span class="text-blue-400">this</span>._name;
+
+}
+
+user.name;</code></pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Real Cart -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Real Project Cart Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> Cart {
+
+  constructor() {
+
+    <span class="text-blue-400">this</span>.items = [];
+
+  }
+
+  addItem(product) {
+
+    <span class="text-blue-400">this</span>.items.push(
+      product
+    );
+
+  }
+
+  getTotal() {
+
+    <span class="text-blue-400">return</span>
+      <span class="text-blue-400">this</span>.items.reduce(
+        (total, item) =&gt;
+          total + item.price,
+        <span class="text-blue-400">0</span>
+      );
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> cart =
+  <span class="text-blue-400">new</span> Cart();
+
+cart.addItem({
+  name:
+    <span class="text-emerald-400">"Mouse"</span>,
+
+  price:
+    <span class="text-blue-400">500</span>
+});
+
+cart.addItem({
+  name:
+    <span class="text-emerald-400">"Keyboard"</span>,
+
+  price:
+    <span class="text-blue-400">1000</span>
+});
+
+console.log(
+  cart.getTotal()
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">1500</pre>
+
+          </div>
+
+        </div>
+
+        <!-- User login example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            User Login Method Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">class</span> User {
+
+  constructor(
+    email,
+    password
+  ) {
+
+    <span class="text-blue-400">this</span>.email =
+      email;
+
+    <span class="text-blue-400">this</span>.password =
+      password;
+
+  }
+
+  login(
+    email,
+    password
+  ) {
+
+    <span class="text-blue-400">if</span> (
+      email ===
+        <span class="text-blue-400">this</span>.email
+      &&
+      password ===
+        <span class="text-blue-400">this</span>.password
+    ) {
+
+      <span class="text-blue-400">return</span>
+        <span class="text-emerald-400">
+          "Login Successful"
+        </span>;
+
+    }
+
+    <span class="text-blue-400">return</span>
+      <span class="text-emerald-400">
+        "Invalid Credentials"
+      </span>;
+
+  }
+
+}
+
+<span class="text-blue-400">const</span> user =
+  <span class="text-blue-400">new</span> User(
+    <span class="text-emerald-400">
+      "ali@gmail.com"
+    </span>,
+    <span class="text-emerald-400">
+      "123456"
+    </span>
+  );
+
+console.log(
+  user.login(
+    <span class="text-emerald-400">
+      "ali@gmail.com"
+    </span>,
+    <span class="text-emerald-400">
+      "123456"
+    </span>
+  )
+);</code></pre>
+
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+
+<pre class="text-emerald-400 font-mono">Login Successful</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Method Flow -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Class Method Ka Simple Flow
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+
+<pre class="font-mono text-sm sm:text-base text-gray-300">Create Class
+
+class User {
+
+  greet() {
+    return "Hello";
+  }
+
+}
+
+      ↓
+
+Create Object
+
+const user =
+  new User();
+
+      ↓
+
+Call Method
+
+user.greet()
+
+      ↓
+
+Method Executes
+
+      ↓
+
+"Hello"</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Methods vs Functions -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Method vs Normal Function
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+
+                  <th class="p-4">
+                    Method
+                  </th>
+
+                  <th class="p-4">
+                    Function
+                  </th>
+
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Class ya object ke andar hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Independent bhi ho sakta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    user.greet()
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    greet()
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Object ke data ko easily access kar sakta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Data parameters ke through mil sakta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Class ke andar define kiya gaya function method kehlata hai.
+            </p>
+
+            <p>
+              2. Method ko object ke through call kiya ja sakta hai.
+            </p>
+
+            <p>
+              3. Methods parameters accept kar sakte hain.
+            </p>
+
+            <p>
+              4. Methods values return kar sakte hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">this</code>
+              se current object ki properties access hoti hain.
+            </p>
+
+            <p>
+              6. Ek class me multiple methods ho sakte hain.
+            </p>
+
+            <p>
+              7. Ek method se dusra method
+              <code class="text-blue-400">this.method()</code>
+              ke through call kiya ja sakta hai.
+            </p>
+
+            <p>
+              8.
+              <code class="text-blue-400">get</code>
+              se getter method banaya ja sakta hai.
+            </p>
+
+            <p>
+              9.
+              <code class="text-blue-400">set</code>
+              se setter method banaya ja sakta hai.
+            </p>
+
+            <p>
+              10. Next topic me
+              <code class="text-blue-400">Class Inheritance</code>
+              samjhenge.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Constructor.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Inheritance.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(24);
+  </script>
+
+</body>
+
+</html>

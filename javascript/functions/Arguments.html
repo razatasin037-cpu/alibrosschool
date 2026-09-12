@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Function Arguments - Tutorial</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Function Arguments
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Return.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./FunctionExpression.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Arguments Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Arguments wo actual values hoti hain jo function ko
+          call karte waqt parentheses
+          <code class="text-blue-400">()</code>
+          ke andar pass ki jati hain.
+          <br><br>
+          Function ke parameters in arguments ki values ko receive karte hain
+          aur function ke andar use karte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Argument Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> functionName(parameter) {
+  // code
+}
+
+functionName(argument);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Basic Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Argument Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> greet(name) {
+  console.log(<span class="text-emerald-400">"Hello "</span> + name);
+}
+
+greet(<span class="text-emerald-400">"Ali"</span>);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Hello Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Explanation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Example Kaise Kaam Kar Raha Hai?
+          </h3>
+
+          <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+
+            <p>
+              <code class="text-blue-400">name</code>
+              → Function ka parameter hai.
+            </p>
+
+            <p>
+              <code class="text-emerald-400">"Ali"</code>
+              → Function call ke time pass ki gayi argument hai.
+            </p>
+
+            <p>
+              Function execute hote waqt
+              <code class="text-blue-400">name</code>
+              ke andar
+              <code class="text-emerald-400">"Ali"</code>
+              value aa jati hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Multiple Arguments -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Arguments
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function ko ek se zyada arguments bhi pass kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> add(a, b) {
+  console.log(a + b);
+}
+
+add(<span class="text-emerald-400">10</span>, <span class="text-emerald-400">20</span>);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">30</pre>
+          </div>
+
+        </div>
+
+        <!-- Order -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Argument Order Important Hai
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Arguments ka order parameters ke order ke according hona chahiye.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> student(name, age) {
+  console.log(name);
+  console.log(age);
+}
+
+student(<span class="text-emerald-400">"Ali"</span>, <span class="text-emerald-400">20</span>);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Ali
+20</pre>
+          </div>
+
+        </div>
+
+        <!-- Different Calls -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Different Arguments Pass Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> greet(name) {
+  console.log(<span class="text-emerald-400">"Hello "</span> + name);
+}
+
+greet(<span class="text-emerald-400">"Ali"</span>);
+greet(<span class="text-emerald-400">"Rahul"</span>);
+greet(<span class="text-emerald-400">"Aman"</span>);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello Ali
+Hello Rahul
+Hello Aman</pre>
+          </div>
+
+        </div>
+
+        <!-- Missing Arguments -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Argument Missing Ho To
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar function me parameter hai lekin corresponding argument pass
+            nahi kiya gaya, to us parameter ki value
+            <code class="text-blue-400">undefined</code>
+            ho sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> show(name, age) {
+  console.log(name);
+  console.log(age);
+}
+
+show(<span class="text-emerald-400">"Ali"</span>);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ali
+undefined</pre>
+          </div>
+
+        </div>
+
+        <!-- Extra Arguments -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Extra Arguments
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            JavaScript me function call ke time defined parameters se zyada
+            arguments bhi pass kiye ja sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> show(name) {
+  console.log(name);
+}
+
+show(
+  <span class="text-emerald-400">"Ali"</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">"Delhi"</span>
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- arguments object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            arguments Object
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Normal functions ke andar JavaScript ek special
+            <code class="text-blue-400">arguments</code>
+            object provide karta hai. Isme function ko pass ki gayi arguments
+            access ki ja sakti hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> show() {
+
+  console.log(arguments[<span class="text-emerald-400">0</span>]);
+  console.log(arguments[<span class="text-emerald-400">1</span>]);
+
+}
+
+show(
+  <span class="text-emerald-400">"Ali"</span>,
+  <span class="text-emerald-400">20</span>
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ali
+20</pre>
+          </div>
+
+        </div>
+
+        <!-- arguments.length -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            arguments.length
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function ko kitni arguments pass hui hain ye
+            <code class="text-blue-400">arguments.length</code>
+            se check kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> count() {
+  console.log(arguments.length);
+}
+
+count(
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">3</pre>
+          </div>
+
+        </div>
+
+        <!-- Parameter vs Arguments -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Parameters vs Arguments
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Parameters</th>
+                  <th class="p-4">Arguments</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Function declare karte waqt define hote hain.
+                  </td>
+
+                  <td class="p-4">
+                    Function call karte waqt values pass hoti hain.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    function add(a, b)
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    add(10, 20)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    a aur b parameters hain.
+                  </td>
+
+                  <td class="p-4">
+                    10 aur 20 arguments hain.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Practical Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> total(price, quantity) {
+
+  <span class="text-blue-400">return</span> price * quantity;
+
+}
+
+console.log(
+  total(
+    <span class="text-emerald-400">500</span>,
+    <span class="text-emerald-400">3</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">1500</pre>
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Arguments function call ke time pass ki gayi actual values
+              hoti hain.
+            </p>
+
+            <p>
+              2. Parameters function declaration ke time define hote hain.
+            </p>
+
+            <p>
+              3. Multiple arguments ko comma
+              <code class="text-blue-400">,</code>
+              se separate karte hain.
+            </p>
+
+            <p>
+              4. Arguments ka order parameters ke order ke according important
+              hota hai.
+            </p>
+
+            <p>
+              5. Missing argument ki wajah se corresponding parameter
+              <code class="text-blue-400">undefined</code>
+              ho sakta hai.
+            </p>
+
+            <p>
+              6. Normal functions me
+              <code class="text-blue-400">arguments</code>
+              object available hota hai.
+            </p>
+
+            <p>
+              7. Arrow functions ka apna
+              <code class="text-blue-400">arguments</code>
+              object nahi hota.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Return.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./FunctionExpression.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    // JS Functions -> Arguments
+    document.getElementById("sidebar").innerHTML = createSidebar(10);
+  </script>
+
+</body>
+</html>

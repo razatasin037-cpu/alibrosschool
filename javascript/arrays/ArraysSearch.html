@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Array Search - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Array Search
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./ArrayMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Sort.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Array Search Methods Kya Hain?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript Array Search Methods ka use Array ke andar kisi value,
+          element ya condition ko search karne ke liye hota hai.
+          <br><br>
+          Important methods hain
+          <code class="text-blue-400">indexOf()</code>,
+          <code class="text-blue-400">lastIndexOf()</code>,
+          <code class="text-blue-400">includes()</code>,
+          <code class="text-blue-400">find()</code>
+          aur
+          <code class="text-blue-400">findIndex()</code>.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Quick Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Array Search Methods List
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">indexOf()</td>
+                  <td class="p-4">First matching element ka index return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">lastIndexOf()</td>
+                  <td class="p-4">Last matching element ka index return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">includes()</td>
+                  <td class="p-4">Value available hai ya nahi check karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">find()</td>
+                  <td class="p-4">Condition match karne wala first element return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">findIndex()</td>
+                  <td class="p-4">Condition match karne wale first element ka index return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">findLast()</td>
+                  <td class="p-4">Last matching element return karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">findLastIndex()</td>
+                  <td class="p-4">Last matching element ka index return karta hai.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- indexOf -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            indexOf()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">indexOf()</code>
+            Array me value ko search karke uska first index return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+console.log(
+  fruits.indexOf(
+    <span class="text-emerald-400">"Mango"</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">1</pre>
+          </div>
+
+        </div>
+
+        <!-- Not Found -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Value Na Mile To
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar value Array me nahi milti, to
+            <code class="text-blue-400">indexOf()</code>
+            <code class="text-emerald-400">-1</code>
+            return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>
+];
+
+console.log(
+  fruits.indexOf(
+    <span class="text-emerald-400">"Orange"</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">-1</pre>
+          </div>
+
+        </div>
+
+        <!-- lastIndexOf -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            lastIndexOf()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">lastIndexOf()</code>
+            duplicate value ka last matching index return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Apple"</span>
+];
+
+console.log(
+  fruits.lastIndexOf(
+    <span class="text-emerald-400">"Apple"</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">2</pre>
+          </div>
+
+        </div>
+
+        <!-- includes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            includes()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">includes()</code>
+            check karta hai ki value Array me exist karti hai ya nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>
+];
+
+console.log(
+  fruits.includes(
+    <span class="text-emerald-400">"Apple"</span>
+  )
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+
+        </div>
+
+        <!-- find -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            find()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">find()</code>
+            condition satisfy karne wala first element return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">12</span>,
+  <span class="text-emerald-400">18</span>,
+  <span class="text-emerald-400">25</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.find((number) =&gt; {
+    <span class="text-blue-400">return</span> number &gt; <span class="text-emerald-400">10</span>;
+  });
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">12</pre>
+          </div>
+
+        </div>
+
+        <!-- Short find -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            find() Short Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">12</span>,
+  <span class="text-emerald-400">18</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.find(
+    number =&gt; number &gt; <span class="text-emerald-400">10</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">12</pre>
+          </div>
+
+        </div>
+
+        <!-- findIndex -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            findIndex()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">findIndex()</code>
+            condition match karne wale first element ka index return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">12</span>,
+  <span class="text-emerald-400">18</span>
+];
+
+<span class="text-blue-400">const</span> index =
+  numbers.findIndex(
+    number =&gt; number &gt; <span class="text-emerald-400">10</span>
+  );
+
+console.log(index);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">1</pre>
+          </div>
+
+        </div>
+
+        <!-- Object find -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Search Object Inside Array
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">find()</code>
+            Array of Objects me bahut useful hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> students = [
+  {
+    id: <span class="text-emerald-400">1</span>,
+    name: <span class="text-emerald-400">"Ali"</span>
+  },
+  {
+    id: <span class="text-emerald-400">2</span>,
+    name: <span class="text-emerald-400">"Rahul"</span>
+  }
+];
+
+<span class="text-blue-400">const</span> student =
+  students.find(
+    item =&gt; item.id === <span class="text-emerald-400">2</span>
+  );
+
+console.log(student.name);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Rahul</pre>
+          </div>
+
+        </div>
+
+        <!-- findLast -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            findLast()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">findLast()</code>
+            Array ke end ki taraf se condition match karne wala last element
+            return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">12</span>,
+  <span class="text-emerald-400">18</span>,
+  <span class="text-emerald-400">25</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.findLast(
+    number =&gt; number &gt; <span class="text-emerald-400">10</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">25</pre>
+          </div>
+
+        </div>
+
+        <!-- findLastIndex -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            findLastIndex()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">5</span>,
+  <span class="text-emerald-400">12</span>,
+  <span class="text-emerald-400">18</span>,
+  <span class="text-emerald-400">25</span>
+];
+
+<span class="text-blue-400">const</span> index =
+  numbers.findLastIndex(
+    number =&gt; number &gt; <span class="text-emerald-400">10</span>
+  );
+
+console.log(index);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">3</pre>
+          </div>
+
+        </div>
+
+        <!-- Difference Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Search Methods Difference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Returns</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">indexOf()</td>
+                  <td class="p-4">Index ya -1</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">includes()</td>
+                  <td class="p-4">true / false</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">find()</td>
+                  <td class="p-4">Element ya undefined</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">findIndex()</td>
+                  <td class="p-4">Index ya -1</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">findLast()</td>
+                  <td class="p-4">Last matching element ya undefined</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">indexOf()</code>
+              first matching value ka index deta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">lastIndexOf()</code>
+              last matching value ka index deta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">includes()</code>
+              true ya false return karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">find()</code>
+              callback condition match karne wala first element deta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">findIndex()</code>
+              first matching element ka index deta hai.
+            </p>
+
+            <p>
+              6. Matching value na mile to
+              <code class="text-blue-400">find()</code>
+              <code class="text-emerald-400">undefined</code>
+              return karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">find()</code>
+              Array of Objects me commonly use hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./ArrayMethods.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Sort.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(15);
+  </script>
+
+</body>
+</html>

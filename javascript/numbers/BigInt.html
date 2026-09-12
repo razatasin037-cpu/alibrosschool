@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript BigInt - Tutorial</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5"
+      >
+        JavaScript BigInt
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Bitwise.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../functions/Functions.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          BigInt Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">BigInt</code>
+          ka use bahut bade integer numbers ko store karne ke liye kiya jata hai.
+          <br><br>
+          Normal JavaScript Number ki safe integer limit hoti hai.
+          Agar hume us limit se bhi bada exact integer store karna ho, to
+          <code class="text-blue-400">BigInt</code>
+          use kar sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            BigInt Syntax
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            BigInt banane ke liye number ke end me
+            <code class="text-blue-400">n</code>
+            lagaya jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> number = <span class="text-emerald-400">12345678901234567890n</span>;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Example -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            BigInt Example
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> bigNumber = <span class="text-emerald-400">9007199254740995n</span>;
+
+console.log(bigNumber);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">9007199254740995n</pre>
+          </div>
+
+        </div>
+
+        <!-- typeof -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            BigInt Data Type
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">typeof</code>
+            operator se BigInt ka data type check kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> number = <span class="text-emerald-400">100n</span>;
+
+console.log(<span class="text-blue-400">typeof</span> number);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">bigint</pre>
+          </div>
+
+        </div>
+
+        <!-- BigInt Function -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            BigInt() Function
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">BigInt()</code>
+            function se integer String ya suitable integer value ko BigInt me
+            convert kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> number = BigInt(<span class="text-emerald-400">"12345678901234567890"</span>);
+
+console.log(number);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">12345678901234567890n</pre>
+          </div>
+
+        </div>
+
+        <!-- Arithmetic -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            BigInt Arithmetic
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            BigInt ke saath addition, subtraction, multiplication aur division
+            jaise operators use kiye ja sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> a = <span class="text-emerald-400">20n</span>;
+<span class="text-blue-400">let</span> b = <span class="text-emerald-400">10n</span>;
+
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">30n
+10n
+200n
+2n</pre>
+          </div>
+
+        </div>
+
+        <!-- Division -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            BigInt Division
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            BigInt integer type hai, isliye division ka decimal part remove ho
+            jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> result = <span class="text-emerald-400">10n</span> / <span class="text-emerald-400">3n</span>;
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">3n</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg leading-relaxed mt-5">
+            Result
+            <code class="text-blue-400">3.333...</code>
+            nahi hoga. BigInt division me fractional part discard ho jata hai.
+          </p>
+
+        </div>
+
+        <!-- Number vs BigInt -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Number vs BigInt
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Number</th>
+                  <th class="p-4">BigInt</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Normal numeric calculations ke liye.
+                  </td>
+
+                  <td class="p-4">
+                    Bahut bade exact integers ke liye.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    100
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    100n
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Decimal values support karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Decimal values directly support nahi karta.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    typeof → number
+                  </td>
+
+                  <td class="p-4 font-mono">
+                    typeof → bigint
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Mixing -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Number Aur BigInt Ko Direct Mix Nahi Kar Sakte
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Arithmetic operation me Number aur BigInt ko directly mix karne par
+            error aata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> a = <span class="text-emerald-400">10n</span>;
+<span class="text-blue-400">let</span> b = <span class="text-emerald-400">5</span>;
+
+console.log(a + b);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Result:</p>
+
+<pre class="text-red-400 font-mono">TypeError</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Dono values ko same type me convert karna hoga.
+          </p>
+
+        </div>
+
+        <!-- Correct Conversion -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Correct Conversion
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> a = <span class="text-emerald-400">10n</span>;
+<span class="text-blue-400">let</span> b = <span class="text-emerald-400">5</span>;
+
+<span class="text-blue-400">let</span> result = a + BigInt(b);
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">15n</pre>
+          </div>
+
+        </div>
+
+        <!-- Comparison -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            BigInt Comparison
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(<span class="text-emerald-400">10n</span> > <span class="text-emerald-400">5n</span>);
+
+console.log(<span class="text-emerald-400">10n</span> === <span class="text-emerald-400">10n</span>);
+
+console.log(<span class="text-emerald-400">10n</span> === <span class="text-emerald-400">10</span>);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="font-mono"><span class="text-emerald-400">true</span>
+<span class="text-emerald-400">true</span>
+<span class="text-red-400">false</span></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            <code class="text-blue-400">10n</code>
+            ka type BigInt hai aur
+            <code class="text-blue-400">10</code>
+            ka type Number hai, isliye strict comparison false hai.
+          </p>
+
+        </div>
+
+        <!-- Safe Integer -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            BigInt Kab Use Kare?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Jab exact integer
+            <code class="text-blue-400">Number.MAX_SAFE_INTEGER</code>
+            ki safe range se bahar ho, tab BigInt useful hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code>console.log(Number.MAX_SAFE_INTEGER);
+
+<span class="text-blue-400">let</span> bigNumber =
+  <span class="text-emerald-400">90071992547409911234567890n</span>;
+
+console.log(bigNumber);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">9007199254740991
+90071992547409911234567890n</pre>
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. BigInt bahut bade exact integer values ke liye use hota hai.
+            </p>
+
+            <p>
+              2. BigInt literal ke end me
+              <code class="text-blue-400">n</code>
+              lagta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">typeof 100n</code>
+              ka result
+              <code class="text-emerald-400">bigint</code>
+              hota hai.
+            </p>
+
+            <p>
+              4. Number aur BigInt ko arithmetic operation me directly mix nahi
+              kar sakte.
+            </p>
+
+            <p>
+              5. BigInt decimal/fractional numbers ke liye nahi hai.
+            </p>
+
+            <p>
+              6. BigInt division ka fractional part discard ho jata hai.
+            </p>
+
+            <p>
+              7. Normal small numeric calculations ke liye Number hi use karna
+              simple hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Bitwise.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../functions/Functions.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // JS Numbers -> JS BigInt
+    document.getElementById("sidebar").innerHTML = createSidebar(9);
+  </script>
+
+</body>
+</html>
+

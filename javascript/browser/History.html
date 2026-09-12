@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript History Object - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript History Object
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Location.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Navigator.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          History Object Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">history</code>
+          object current browser tab ki session history ke saath interact karne
+          ke liye use hota hai.
+          <br><br>
+          Isse hum previous page, next page ya history me kisi relative position
+          par navigate kar sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Access -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history Object Access Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  window.history
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Short form me
+            <code class="text-blue-400">history</code>
+            directly bhi use kar sakte hain.
+          </p>
+
+        </div>
+
+        <!-- length -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history.length
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Current tab ki session history me kitni entries hain, ye batata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  history.length
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- back -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history.back()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Browser ke Back button jaisa behavior karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>history.back();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Button back -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Back Button Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;button id=<span class="text-emerald-400">"backBtn"</span>&gt;
+  Go Back
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"backBtn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    history.back();
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- forward -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history.forward()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Browser ke Forward button jaisa behavior karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>history.forward();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- forward button -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Forward Button Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;button id=<span class="text-emerald-400">"forwardBtn"</span>&gt;
+  Go Forward
+&lt;/button&gt;
+
+&lt;script&gt;
+
+document.getElementById(
+  <span class="text-emerald-400">"forwardBtn"</span>
+).addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    history.forward();
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- go -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history.go()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Session history me relative position par move karne ke liye
+            <code class="text-blue-400">history.go()</code>
+            use hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-gray-400">// One page back</span>
+history.go(
+  <span class="text-emerald-400">-1</span>
+);
+
+<span class="text-gray-400">// One page forward</span>
+history.go(
+  <span class="text-emerald-400">1</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- go examples -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            history.go() Examples
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Code</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history.go(-1)
+                  </td>
+                  <td class="p-4">
+                    One page back
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history.go(-2)
+                  </td>
+                  <td class="p-4">
+                    Two entries back
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history.go(1)
+                  </td>
+                  <td class="p-4">
+                    One page forward
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history.go(2)
+                  </td>
+                  <td class="p-4">
+                    Two entries forward
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- back equivalence -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            back() Aur go(-1)
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Ye dono generally one step backward navigate karte hain.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono"><code>history.back();</code></pre>
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono"><code>history.go(
+  <span class="text-emerald-400">-1</span>
+);</code></pre>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- forward equivalence -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            forward() Aur go(1)
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono"><code>history.forward();</code></pre>
+            </div>
+
+            <div class="bg-[#0f172a] rounded-xl p-5 border border-[#334155]">
+<pre class="font-mono"><code>history.go(
+  <span class="text-emerald-400">1</span>
+);</code></pre>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- state -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history.state
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Current history entry se associated state object ko read karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  history.state
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- pushState -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history.pushState()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser history me new entry add karta hai bina traditional full
+            page reload ke.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>history.pushState(
+  {
+    page:
+      <span class="text-emerald-400">"products"</span>
+  },
+  <span class="text-emerald-400">""</span>,
+  <span class="text-emerald-400">"/products"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- pushState Explanation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            pushState() Parameters
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Parameter</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    state
+                  </td>
+                  <td class="p-4">
+                    History entry ke saath data object.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    unused
+                  </td>
+                  <td class="p-4">
+                    Usually empty string diya jata hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono">
+                    url
+                  </td>
+                  <td class="p-4">
+                    New history entry ka URL.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- state example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            pushState() State Read Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>history.pushState(
+  {
+    id: <span class="text-emerald-400">10</span>,
+    name:
+      <span class="text-emerald-400">"Laptop"</span>
+  },
+  <span class="text-emerald-400">""</span>,
+  <span class="text-emerald-400">"?id=10"</span>
+);
+
+console.log(
+  history.state
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- replaceState -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            history.replaceState()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Current history entry ko update/replace karta hai; new history entry
+            add nahi karta.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>history.replaceState(
+  {
+    page:
+      <span class="text-emerald-400">"dashboard"</span>
+  },
+  <span class="text-emerald-400">""</span>,
+  <span class="text-emerald-400">"/dashboard"</span>
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- push vs replace -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            pushState() vs replaceState()
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">pushState()</th>
+                  <th class="p-4">replaceState()</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    New history entry add karta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Current history entry replace/update karta hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Back button se previous entry par ja sakte hain.
+                  </td>
+
+                  <td class="p-4">
+                    Extra entry create nahi hoti.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- popstate -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            popstate Event
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            User session history me navigate karta hai, jaise Back/Forward,
+            tab
+            <code class="text-blue-400">popstate</code>
+            event useful hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.addEventListener(
+  <span class="text-emerald-400">"popstate"</span>,
+  (event) =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"History Changed"</span>
+    );
+
+    console.log(
+      event.state
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Simple Router -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Client-Side Navigation Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;button id=<span class="text-emerald-400">"products"</span>&gt;
+  Products
+&lt;/button&gt;
+
+&lt;button id=<span class="text-emerald-400">"users"</span>&gt;
+  Users
+&lt;/button&gt;
+
+&lt;script&gt;
+
+document.getElementById(
+  <span class="text-emerald-400">"products"</span>
+).addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    history.pushState(
+      {
+        page:
+          <span class="text-emerald-400">"products"</span>
+      },
+      <span class="text-emerald-400">""</span>,
+      <span class="text-emerald-400">"/products"</span>
+    );
+
+  }
+);
+
+document.getElementById(
+  <span class="text-emerald-400">"users"</span>
+).addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    history.pushState(
+      {
+        page:
+          <span class="text-emerald-400">"users"</span>
+      },
+      <span class="text-emerald-400">""</span>,
+      <span class="text-emerald-400">"/users"</span>
+    );
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Practical SPA -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical SPA-Style Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;button
+  class=<span class="text-emerald-400">"nav-btn"</span>
+  data-page=<span class="text-emerald-400">"home"</span>
+&gt;
+  Home
+&lt;/button&gt;
+
+&lt;button
+  class=<span class="text-emerald-400">"nav-btn"</span>
+  data-page=<span class="text-emerald-400">"products"</span>
+&gt;
+  Products
+&lt;/button&gt;
+
+&lt;h2 id=<span class="text-emerald-400">"content"</span>&gt;
+  Home
+&lt;/h2&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> content =
+  document.getElementById(
+    <span class="text-emerald-400">"content"</span>
+  );
+
+document.querySelectorAll(
+  <span class="text-emerald-400">".nav-btn"</span>
+).forEach((button) =&gt; {
+
+  button.addEventListener(
+    <span class="text-emerald-400">"click"</span>,
+    () =&gt; {
+
+      <span class="text-blue-400">const</span> page =
+        button.dataset.page;
+
+      history.pushState(
+        {
+          page: page
+        },
+        <span class="text-emerald-400">""</span>,
+        <span class="text-emerald-400">`/${page}`</span>
+      );
+
+      content.textContent =
+        page;
+
+    }
+  );
+
+});
+
+window.addEventListener(
+  <span class="text-emerald-400">"popstate"</span>,
+  (event) =&gt; {
+
+    content.textContent =
+      event.state?.page ||
+      <span class="text-emerald-400">"Home"</span>;
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Security limitation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            History Ki Limitation
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            JavaScript browser history ki complete list ya user ke previously
+            visited websites ke URLs directly read nahi kar sakta.
+            <br><br>
+            Ye privacy aur security ke liye restricted hai.
+          </p>
+
+        </div>
+
+        <!-- Quick Ref -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            History Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property / Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history.length
+                  </td>
+                  <td class="p-4">
+                    History entry count
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history.back()
+                  </td>
+                  <td class="p-4">
+                    Previous page
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history.forward()
+                  </td>
+                  <td class="p-4">
+                    Next page
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history.go()
+                  </td>
+                  <td class="p-4">
+                    Relative history navigation
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    history.state
+                  </td>
+                  <td class="p-4">
+                    Current state object
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    pushState()
+                  </td>
+                  <td class="p-4">
+                    New history entry
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    replaceState()
+                  </td>
+                  <td class="p-4">
+                    Current history entry replace
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    popstate
+                  </td>
+                  <td class="p-4">
+                    History navigation event
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">history</code>
+              current browser tab ki session history represent karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">history.back()</code>
+              previous entry par navigate karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">history.forward()</code>
+              next entry par navigate karta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">history.go()</code>
+              relative history position par navigate karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">pushState()</code>
+              new history entry create karta hai bina traditional full reload ke.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">replaceState()</code>
+              current history entry ko update karta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">popstate</code>
+              Back/Forward navigation handle karne me useful hai.
+            </p>
+
+            <p>
+              8. History API client-side routing aur SPA navigation me useful
+              hoti hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Location.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Navigator.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(28);
+  </script>
+
+</body>
+</html>

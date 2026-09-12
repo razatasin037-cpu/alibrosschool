@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript reduce() - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript reduce()
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Filter.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./ForOf.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          reduce() Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">reduce()</code>
+          Array ke elements ko ek-ek karke process karta hai aur end me ek
+          single result return karta hai.
+          <br><br>
+          Iska use total, sum, count, object grouping aur complex calculations
+          ke liye kiya jata hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            reduce() Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> result =
+  array.reduce(
+    (accumulator, currentValue) =&gt; {
+
+      <span class="text-blue-400">return</span> accumulator + currentValue;
+
+    },
+    initialValue
+  );</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Simple Sum -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Sum Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+];
+
+<span class="text-blue-400">const</span> total =
+  numbers.reduce(
+    (sum, number) =&gt; {
+      <span class="text-blue-400">return</span> sum + number;
+    },
+    <span class="text-emerald-400">0</span>
+  );
+
+console.log(total);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">60</pre>
+          </div>
+
+        </div>
+
+        <!-- Short Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            reduce() Short Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+];
+
+<span class="text-blue-400">const</span> total =
+  numbers.reduce(
+    (sum, number) =&gt; sum + number,
+    <span class="text-emerald-400">0</span>
+  );
+
+console.log(total);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">60</pre>
+          </div>
+
+        </div>
+
+        <!-- Parameters -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            reduce() Parameters
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Parameter</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    accumulator
+                  </td>
+                  <td class="p-4">
+                    Previous calculation ka result.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    currentValue
+                  </td>
+                  <td class="p-4">
+                    Current Array element.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    currentIndex
+                  </td>
+                  <td class="p-4">
+                    Current element ka index.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    array
+                  </td>
+                  <td class="p-4">
+                    Original Array.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    initialValue
+                  </td>
+                  <td class="p-4">
+                    Accumulator ki starting value.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Step by Step -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            reduce() Step By Step
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+];
+
+numbers.reduce(
+  (sum, number) =&gt; sum + number,
+  <span class="text-emerald-400">0</span>
+);</code></pre>
+          </div>
+
+          <div class="mt-6 overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Step</th>
+                  <th class="p-4">sum</th>
+                  <th class="p-4">number</th>
+                  <th class="p-4">Result</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">1</td>
+                  <td class="p-4">0</td>
+                  <td class="p-4">10</td>
+                  <td class="p-4">10</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">2</td>
+                  <td class="p-4">10</td>
+                  <td class="p-4">20</td>
+                  <td class="p-4">30</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">3</td>
+                  <td class="p-4">30</td>
+                  <td class="p-4">30</td>
+                  <td class="p-4">60</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Multiplication -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiply All Numbers
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">2</span>,
+  <span class="text-emerald-400">3</span>,
+  <span class="text-emerald-400">4</span>
+];
+
+<span class="text-blue-400">const</span> result =
+  numbers.reduce(
+    (total, number) =&gt;
+      total * number,
+    <span class="text-emerald-400">1</span>
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">24</pre>
+          </div>
+
+        </div>
+
+        <!-- Array of Objects -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array of Objects Ka Total
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Shopping cart ya inventory project me total price calculate karne
+            ke liye
+            <code class="text-blue-400">reduce()</code>
+            useful hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> products = [
+  {
+    name: <span class="text-emerald-400">"Mouse"</span>,
+    price: <span class="text-emerald-400">500</span>
+  },
+  {
+    name: <span class="text-emerald-400">"Keyboard"</span>,
+    price: <span class="text-emerald-400">1000</span>
+  },
+  {
+    name: <span class="text-emerald-400">"Monitor"</span>,
+    price: <span class="text-emerald-400">8000</span>
+  }
+];
+
+<span class="text-blue-400">const</span> totalPrice =
+  products.reduce(
+    (total, product) =&gt;
+      total + product.price,
+    <span class="text-emerald-400">0</span>
+  );
+
+console.log(totalPrice);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">9500</pre>
+          </div>
+
+        </div>
+
+        <!-- Quantity x Price -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Price × Quantity Total
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> cart = [
+  {
+    price: <span class="text-emerald-400">500</span>,
+    qty: <span class="text-emerald-400">2</span>
+  },
+  {
+    price: <span class="text-emerald-400">1000</span>,
+    qty: <span class="text-emerald-400">3</span>
+  }
+];
+
+<span class="text-blue-400">const</span> total =
+  cart.reduce(
+    (sum, item) =&gt;
+      sum + item.price * item.qty,
+    <span class="text-emerald-400">0</span>
+  );
+
+console.log(total);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">4000</pre>
+          </div>
+
+        </div>
+
+        <!-- Maximum -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Largest Number Find Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">50</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">80</span>
+];
+
+<span class="text-blue-400">const</span> largest =
+  numbers.reduce(
+    (max, number) =&gt;
+      number &gt; max ? number : max
+  );
+
+console.log(largest);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">80</pre>
+          </div>
+
+        </div>
+
+        <!-- Count -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Values Ki Count Banana
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Banana"</span>,
+  <span class="text-emerald-400">"Apple"</span>
+];
+
+<span class="text-blue-400">const</span> count =
+  fruits.reduce(
+    (result, fruit) =&gt; {
+
+      result[fruit] =
+        (result[fruit] || <span class="text-emerald-400">0</span>) + <span class="text-emerald-400">1</span>;
+
+      <span class="text-blue-400">return</span> result;
+
+    },
+    {}
+  );
+
+console.log(count);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">{
+  Apple: 3,
+  Mango: 1,
+  Banana: 1
+}</pre>
+          </div>
+
+        </div>
+
+        <!-- Flat -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Arrays Ko Combine Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> arrays = [
+  [<span class="text-emerald-400">1</span>, <span class="text-emerald-400">2</span>],
+  [<span class="text-emerald-400">3</span>, <span class="text-emerald-400">4</span>],
+  [<span class="text-emerald-400">5</span>, <span class="text-emerald-400">6</span>]
+];
+
+<span class="text-blue-400">const</span> result =
+  arrays.reduce(
+    (all, current) =&gt;
+      all.concat(current),
+    []
+  );
+
+console.log(result);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">[1, 2, 3, 4, 5, 6]</pre>
+          </div>
+
+        </div>
+
+        <!-- With Index -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            reduce() With Index
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>,
+  <span class="text-emerald-400">30</span>
+];
+
+numbers.reduce(
+  (total, number, index) =&gt; {
+
+    console.log(
+      index,
+      number
+    );
+
+    <span class="text-blue-400">return</span> total + number;
+
+  },
+  <span class="text-emerald-400">0</span>
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">0 10
+1 20
+2 30</pre>
+          </div>
+
+        </div>
+
+        <!-- Initial Value -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            initialValue Kyu Important Hai?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Initial value dene se accumulator ki starting value clear hoti hai.
+            Sum ke liye usually
+            <code class="text-blue-400">0</code>
+            aur multiplication ke liye
+            <code class="text-blue-400">1</code>
+            use kiya jata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> numbers = [
+  <span class="text-emerald-400">10</span>,
+  <span class="text-emerald-400">20</span>
+];
+
+<span class="text-blue-400">const</span> total =
+  numbers.reduce(
+    (sum, number) =&gt;
+      sum + number,
+    <span class="text-emerald-400">100</span>
+  );
+
+console.log(total);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">130</pre>
+          </div>
+
+        </div>
+
+        <!-- reduce vs map/filter -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            reduce() vs map() vs filter()
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Method</th>
+                  <th class="p-4">Use</th>
+                  <th class="p-4">Returns</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    map()
+                  </td>
+                  <td class="p-4">
+                    Elements transform karna
+                  </td>
+                  <td class="p-4">
+                    New Array
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    filter()
+                  </td>
+                  <td class="p-4">
+                    Elements select karna
+                  </td>
+                  <td class="p-4">
+                    New Array
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    reduce()
+                  </td>
+                  <td class="p-4">
+                    Values combine / accumulate karna
+                  </td>
+                  <td class="p-4">
+                    Single accumulated result
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">reduce()</code>
+              Array ke elements ko accumulated result me convert karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">accumulator</code>
+              previous calculation ka result store karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">currentValue</code>
+              current Array element hota hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">initialValue</code>
+              accumulator ki starting value hoti hai.
+            </p>
+
+            <p>
+              5. Sum, cart total aur inventory value calculate karne me
+              <code class="text-blue-400">reduce()</code>
+              useful hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">reduce()</code>
+              sirf Number nahi, Object ya Array bhi return kar sakta hai.
+            </p>
+
+            <p>
+              7. Complex data grouping aur counting me bhi
+              <code class="text-blue-400">reduce()</code>
+              ka use hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Filter.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./ForOf.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(18);
+  </script>
+
+</body>
+</html>

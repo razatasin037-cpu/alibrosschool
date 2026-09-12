@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C++ C-Style Strings</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <style>
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background-color: #4d6fff;
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #264dff;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#020617] font-sans antialiased text-white pt-[110px] overflow-x-hidden"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-300px)] p-5 md:pt-5 md:pb-[60px] md:px-[40px] transition-all duration-300"
+      >
+        <h1 class="text-[60px] font-bold text-white mb-10 mt-10">
+          C++ C-Style Strings
+        </h1>
+
+        <div class="flex justify-between items-center mb-10">
+          <a href="user-input-strings.html" style="text-decoration: none">
+            <button
+              class="bg-white text-black border border-gray-300 rounded-xl px-8 py-4 text-2xl font-semibold hover:bg-gray-100 transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+            </button></a
+          >
+          <a href="../math/maths.html" style="text-decoration: none">
+            <button
+              class="bg-[#3d59d9] hover:bg-[#4d6fff] text-white rounded-xl px-8 py-4 text-2xl font-semibold transition"
+            >
+              Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+          ></a>
+        </div>
+
+        <hr class="border-gray-700 mb-12" />
+
+        <div>
+          <h2 class="text-[52px] font-bold text-white mb-8">
+            C-Style Strings kya hain?
+          </h2>
+          <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+            <p>
+              C++ mein C-style strings ko
+              <span class="text-white font-semibold">char</span> type ke through
+              create kiya jata hai.
+            </p>
+            <p>
+              Ismein characters ka ek
+              <span class="text-white font-semibold">array</span> banaya jata
+              hai aur usmein string store ki jati hai.
+            </p>
+            <p>
+              C-style string ka concept
+              <span class="text-white font-semibold">C language</span> se aaya
+              hai.
+            </p>
+          </div>
+          <div
+            class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">C-Style String Banana</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    char name[] = "Ali";
+    cout &lt;&lt; name;
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div>
+          <h2 class="text-5xl font-bold text-white mb-10">
+            Char Array se String Banana
+          </h2>
+          <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+            <p>
+              C-style string banane ke liye
+              <span class="text-white font-semibold">char</span> array ka use
+              kiya jata hai.
+            </p>
+            <p>Array ke andar string ke characters store hote hain.</p>
+          </div>
+          <div
+            class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Char Array Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">char city[] = "Ranchi";
+cout &lt;&lt; city;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div>
+          <h2 class="text-5xl font-bold text-white mb-10">
+            String aur C-Style String
+          </h2>
+          <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+            <p>
+              C++ mein normal
+              <span class="text-white font-semibold">string</span> type aur
+              C-style string dono use kiye ja sakte hain.
+            </p>
+            <p>
+              Normal string ke liye
+              <span class="text-white font-semibold">string</span> type use hota
+              hai, jabki C-style string ke liye
+              <span class="text-white font-semibold">char array</span> use hota
+              hai.
+            </p>
+          </div>
+          <div
+            class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Normal String vs C-Style String</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string normal = "Hello";
+    char cstyle[] = "Hello";
+
+    cout &lt;&lt; normal &lt;&lt; endl;
+    cout &lt;&lt; cstyle;
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div>
+          <h2 class="text-5xl font-bold text-white mb-10">Character Array</h2>
+          <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+            <p>C-style string actually characters ka ek array hota hai.</p>
+            <p>Isliye ise array ki tarah bhi access kiya ja sakta hai.</p>
+          </div>
+          <div
+            class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Character Array Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">char word[] = "Hello";
+
+cout &lt;&lt; word[0];
+cout &lt;&lt; word[1];</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div>
+          <h2 class="text-5xl font-bold text-white mb-10">
+            Characters ko Access Karna
+          </h2>
+          <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+            <p>
+              C-style string ke individual characters ko index number ke through
+              access kiya ja sakta hai.
+            </p>
+            <p>
+              First character ka index
+              <span class="text-white font-semibold">0</span> hota hai.
+            </p>
+          </div>
+          <div
+            class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Access Characters Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">char text[] = "Hello";
+
+cout &lt;&lt; text[0];
+cout &lt;&lt; text[4];</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div>
+          <h2 class="text-5xl font-bold text-white mb-10">
+            Character ko Change Karna
+          </h2>
+          <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+            <p>
+              C-style string ke character ko index ke through change bhi kiya ja
+              sakta hai.
+            </p>
+          </div>
+          <div
+            class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Modify Character Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">char text[] = "Hello";
+
+text[0] = 'Y';
+
+cout &lt;&lt; text;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div>
+          <h2 class="text-5xl font-bold text-white mb-10">
+            C-Style String Functions
+          </h2>
+          <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+            <p>
+              C-style strings ke saath C standard library ke kuch functions bhi
+              use kiye ja sakte hain.
+            </p>
+            <p>
+              In functions ke liye
+              <span class="text-white font-semibold">&lt;cstring&gt;</span>
+              header file commonly use ki jati hai.
+            </p>
+          </div>
+          <div
+            class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">cstring Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+int main() {
+    char text[] = "Hello";
+    cout &lt;&lt; strlen(text);
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div>
+          <h2 class="text-5xl font-bold text-white mb-10">strlen() Function</h2>
+          <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+            <p>
+              C-style string ki length check karne ke liye
+              <span class="text-white font-semibold">strlen()</span> function ka
+              use kiya ja sakta hai.
+            </p>
+          </div>
+          <div
+            class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">strlen() Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+int main() {
+    char name[] = "Ali";
+    cout &lt;&lt; "Length: " &lt;&lt; strlen(name);
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div>
+          <h2 class="text-5xl font-bold text-white mb-10">Complete Example</h2>
+          <div class="space-y-8 text-2xl text-gray-300 leading-[50px]">
+            <p>
+              Neeche ek complete example hai jisme C-style string create karke
+              usko print kiya gaya hai.
+            </p>
+          </div>
+          <div
+            class="mt-10 bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl"
+          >
+            <div class="bg-[#1e293b] px-6 py-4">
+              <h3 class="text-xl font-bold">Complete C-Style String Example</h3>
+            </div>
+            <div class="p-6">
+              <div
+                class="bg-[#020617] border border-gray-800 rounded-xl p-5 overflow-x-auto"
+              >
+                <pre><code class="text-green-400 text-base sm:text-lg leading-relaxed">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+int main() {
+    char name[] = "Ali Learning";
+
+    cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+    cout &lt;&lt; "Length: " &lt;&lt; strlen(name);
+
+    return 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div
+          class="mt-16 bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-8"
+        >
+          <h2 class="text-4xl font-bold text-white mb-8">Important</h2>
+          <ul
+            class="list-disc pl-8 space-y-5 text-2xl text-gray-300 leading-[45px]"
+          >
+            <li>
+              C-style string ko
+              <span class="text-white font-semibold">char</span> array se create
+              kiya jata hai.
+            </li>
+            <li>C-style string characters ka array hota hai.</li>
+            <li>
+              Individual characters ko index ke through access kiya ja sakta
+              hai.
+            </li>
+            <li>
+              C standard library ke string functions bhi use kiye ja sakte hain.
+            </li>
+            <li>
+              Normal <span class="text-white font-semibold">string</span> type
+              generally use karna zyada convenient hota hai.
+            </li>
+          </ul>
+        </div>
+
+        <hr class="border-gray-700 my-16" />
+
+        <div class="flex items-center justify-between mt-16 mb-10">
+          <a href="user-input-strings.html" style="text-decoration: none">
+            <button
+              class="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black text-2xl font-semibold px-10 py-5 rounded-xl transition"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+            </button></a
+          >
+          <a href="../math/maths.html" style="text-decoration: none">
+            <button
+              class="bg-[#293fbf] hover:bg-[#4d6fff] text-white text-2xl font-semibold px-10 py-5 rounded-xl transition"
+            >
+              Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof createSidebar === "function") {
+          document.getElementById("sidebar").innerHTML = createSidebar(7);
+        }
+      });
+    </script>
+  </body>
+</html>

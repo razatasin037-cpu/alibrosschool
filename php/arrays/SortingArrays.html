@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sorting Arrays - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          Sorting Arrays
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./RemoveArrayItems.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Multidimensional.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            PHP Array Sorting Functions
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me arrays ke elements ko alphabetical ya numerical order me arrange karne ke liye built-in sorting functions available hain.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            In functions ko basically teen categories me toda ja sakta hai: <strong>Indexed Array Sorting</strong>, <strong>Associative Value Sorting</strong>, aur <strong>Key-based Sorting</strong>.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Cheat Sheet Summary Table -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Quick Reference Chart
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-[#334155] text-green-400">
+                    <th class="p-3">Function</th>
+                    <th class="p-3">Order</th>
+                    <th class="p-3">Sort By</th>
+                    <th class="p-3">Maintains Keys?</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">sort()</td>
+                    <td class="p-3">Ascending (A-Z / 0-9)</td>
+                    <td class="p-3">Value</td>
+                    <td class="p-3">No (Re-indexes)</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">rsort()</td>
+                    <td class="p-3">Descending (Z-A / 9-0)</td>
+                    <td class="p-3">Value</td>
+                    <td class="p-3">No (Re-indexes)</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">asort()</td>
+                    <td class="p-3">Ascending</td>
+                    <td class="p-3">Value</td>
+                    <td class="p-3">Yes</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">arsort()</td>
+                    <td class="p-3">Descending</td>
+                    <td class="p-3">Value</td>
+                    <td class="p-3">Yes</td>
+                  </tr>
+                  <tr class="border-b border-[#334155]/50">
+                    <td class="p-3 font-mono text-green-400">ksort()</td>
+                    <td class="p-3">Ascending</td>
+                    <td class="p-3">Key</td>
+                    <td class="p-3">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-green-400">krsort()</td>
+                    <td class="p-3">Descending</td>
+                    <td class="p-3">Key</td>
+                    <td class="p-3">Yes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 1. Ascending & Descending for Indexed Arrays -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Indexed Arrays: <code class="text-green-400">sort()</code> &amp; <code class="text-green-400">rsort()</code>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">sort()</code> array ko ascending order me arrange karta hai, jabki <code class="text-green-400">rsort()</code> descending order me karta hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$fruits</span> = [<span class="text-white">"Lemon"</span>, <span class="text-white">"Orange"</span>, <span class="text-white">"Banana"</span>, <span class="text-white">"Apple"</span>];
+
+  <span class="text-[#94a3b8]">// Ascending Order (A-Z)</span>
+  <span class="text-green-400">sort</span>(<span class="text-green-400">$fruits</span>);
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$fruits</span>); <span class="text-[#94a3b8]">// Apple, Banana, Lemon, Orange</span>
+
+  <span class="text-green-400">$numbers</span> = [<span class="text-white">40</span>, <span class="text-white">10</span>, <span class="text-white">100</span>, <span class="text-white">25</span>];
+
+  <span class="text-[#94a3b8]">// Descending Order (High to Low)</span>
+  <span class="text-green-400">rsort</span>(<span class="text-green-400">$numbers</span>);
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$numbers</span>); <span class="text-[#94a3b8]">// 100, 40, 25, 10</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Value Sorting for Associative Arrays -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Value Sort with Keys Preserved: <code class="text-green-400">asort()</code> &amp; <code class="text-green-400">arsort()</code>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Associative arrays ke values ko sort karte waqt keys ki association maintains rakhne ke liye <code class="text-green-400">asort()</code> (Ascending) aur <code class="text-green-400">arsort()</code> (Descending) use hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$age</span> = [<span class="text-white">"Peter"</span> =&gt; <span class="text-[#f87171]">35</span>, <span class="text-white">"Ben"</span> =&gt; <span class="text-[#f87171]">37</span>, <span class="text-white">"Joe"</span> =&gt; <span class="text-[#f87171]">43</span>];
+
+  <span class="text-[#94a3b8]">// Value ke acc. Ascending Order</span>
+  <span class="text-green-400">asort</span>(<span class="text-green-400">$age</span>);
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$age</span>);
+
+  <span class="text-[#94a3b8]">// Value ke acc. Descending Order</span>
+  <span class="text-green-400">arsort</span>(<span class="text-green-400">$age</span>);
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$age</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Key Sorting for Associative Arrays -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Key-based Sort: <code class="text-green-400">ksort()</code> &amp; <code class="text-green-400">krsort()</code>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Jab aapko array ko values ki bajaye uski **Keys** ke according sort karna ho:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$age</span> = [<span class="text-white">"Peter"</span> =&gt; <span class="text-white">35</span>, <span class="text-white">"Ben"</span> =&gt; <span class="text-white">37</span>, <span class="text-white">"Joe"</span> =&gt; <span class="text-white">43</span>];
+
+  <span class="text-[#94a3b8]">// Keys ke acc. Ascending Order (Ben, Joe, Peter)</span>
+  <span class="text-green-400">ksort</span>(<span class="text-green-400">$age</span>);
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$age</span>);
+
+  <span class="text-[#94a3b8]">// Keys ke acc. Descending Order (Peter, Joe, Ben)</span>
+  <span class="text-green-400">krsort</span>(<span class="text-green-400">$age</span>);
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$age</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Pro Tip Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-blue-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-blue-400">
+              <span>💡</span> Important Difference
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              Hamesha yaad rakhein ki <code class="text-green-400">sort()</code> aur <code class="text-green-400">rsort()</code> associative array ki keys ko remove karke <strong class="text-white">numeric index (0, 1, 2)</strong> me convert kar dete hain. Associative arrays ke sath hamesha <code class="text-green-400">asort()</code>, <code class="text-green-400">arsort()</code>, <code class="text-green-400">ksort()</code>, ya <code class="text-green-400">krsort()</code> ka hi use karein!
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./RemoveArrayItems.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Multidimensional.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(18);
+    </script>
+  </body>
+</html>

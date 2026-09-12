@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Break Statement - Tutorial</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5"
+      >
+        JavaScript Break
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./LoopWhile.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Continue.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Break Statement Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">break</code>
+          statement ka use loop ko turant stop karne ke liye kiya jata hai.
+          <br><br>
+          Jab loop ke andar koi specific condition true ho jaye aur hume loop
+          ko aage nahi chalana ho, tab
+          <code class="text-blue-400">break</code>
+          ka use karte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Break Syntax
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">for</span> (...) {
+
+  <span class="text-blue-400">if</span> (condition) {
+    <span class="text-blue-400">break</span>;
+  }
+
+}</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Jaise hi
+            <code class="text-blue-400">break</code>
+            execute hota hai, current loop completely stop ho jata hai.
+          </p>
+
+        </div>
+
+        <!-- Example -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Break Example
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Is example me loop 1 se 10 tak chal sakta hai, lekin jab
+            <code class="text-blue-400">i</code>
+            ki value 5 hogi tab loop stop ho jayega.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">for</span> (<span class="text-blue-400">let</span> i = <span class="text-emerald-400">1</span>; i <= <span class="text-emerald-400">10</span>; i++) {
+
+  <span class="text-blue-400">if</span> (i === <span class="text-emerald-400">5</span>) {
+    <span class="text-blue-400">break</span>;
+  }
+
+  console.log(i);
+}</code></pre>
+          </div>
+
+          <!-- Output -->
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+
+            <p class="font-bold text-white mb-2">
+              Output:
+            </p>
+
+<pre class="text-emerald-400 font-mono">1
+2
+3
+4</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Explanation -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Example Kaise Kaam Kar Raha Hai?
+          </h3>
+
+          <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+
+            <p>
+              <span class="text-blue-400 font-mono">let i = 1</span>
+              → Loop 1 se start hota hai.
+            </p>
+
+            <p>
+              <span class="text-blue-400 font-mono">i &lt;= 10</span>
+              → Loop maximum 10 tak chal sakta hai.
+            </p>
+
+            <p>
+              <span class="text-blue-400 font-mono">if (i === 5)</span>
+              → Har iteration me check hota hai ki i ki value 5 hai ya nahi.
+            </p>
+
+            <p>
+              Jab
+              <code class="text-white">i = 5</code>
+              hota hai, condition true ho jati hai.
+            </p>
+
+            <p>
+              <span class="text-blue-400 font-mono">break;</span>
+              → Loop wahi par completely stop ho jata hai.
+            </p>
+
+            <p>
+              Isliye
+              <code class="text-white">5</code>
+              console me print nahi hota, kyunki
+              <code class="text-blue-400">break</code>
+              pehle execute ho gaya.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Flow Table -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Break Flow
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">i Value</th>
+                  <th class="p-4">i === 5</th>
+                  <th class="p-4">Result</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">1</td>
+                  <td class="p-4 text-red-400">false</td>
+                  <td class="p-4">Print 1</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">2</td>
+                  <td class="p-4 text-red-400">false</td>
+                  <td class="p-4">Print 2</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">3</td>
+                  <td class="p-4 text-red-400">false</td>
+                  <td class="p-4">Print 3</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">4</td>
+                  <td class="p-4 text-red-400">false</td>
+                  <td class="p-4">Print 4</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">5</td>
+                  <td class="p-4 text-emerald-400">true</td>
+                  <td class="p-4 text-red-400">Loop Stop</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">break</code>
+              loop ko completely stop karta hai.
+            </p>
+
+            <p>
+              2. Break mostly
+              <code class="text-blue-400">if</code>
+              condition ke saath use hota hai.
+            </p>
+
+            <p>
+              3. Break execute hone ke baad loop ki next iteration nahi chalti.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">break</code>
+              ko
+              <code class="text-blue-400">for</code>,
+              <code class="text-blue-400">while</code>
+              aur
+              <code class="text-blue-400">switch</code>
+              me use kiya ja sakta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./LoopWhile.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Continue.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // JS Loops -> JS Break
+    document.getElementById("sidebar").innerHTML = createSidebar(7);
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP File Handling - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP File Handling
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Include.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FileOpenRead.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Managing Files in PHP
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            File handling kisi bhi web application ka zaroori hissa hai. PHP ke paas files ko create, read, upload, write aur delete karne ke liye kaafi saare built-in functions majood hain.
+          </p>
+        </div>
+
+        <!-- Caution Alert Box -->
+        <div class="mt-8 bg-red-950/40 border border-red-500/50 rounded-2xl p-6 flex items-start space-x-4">
+          <i class="fa-solid fa-triangle-exclamation text-red-400 text-2xl mt-1"></i>
+          <div>
+            <h4 class="text-xl font-bold text-red-400 mb-1">Important Warning</h4>
+            <p class="text-gray-300 text-base">
+              Files ko edit ya delete karte waqt savdhani bartein! Galat file modify karna, accidental deletion, ya server ki storage bhar jaana jaisi galtiya ho sakti hain.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: Overview & Core Functions List -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Core File Handling Functions
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              PHP me files par alag-alag operations perform karne ke liye ye mukhya functions use hote hain:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <code class="text-yellow-300 font-bold text-lg">readfile()</code>
+                <p class="text-gray-400 text-sm mt-1">File ko read karta hai aur directly output buffer me write kar deta hai.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <code class="text-yellow-300 font-bold text-lg">fopen()</code>
+                <p class="text-gray-400 text-sm mt-1">File ko open karta hai (readfile se zyada advanced options deta hai).</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <code class="text-yellow-300 font-bold text-lg">fread()</code>
+                <p class="text-gray-400 text-sm mt-1">Open ki hui file se content ko read karta hai.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <code class="text-yellow-300 font-bold text-lg">fgets() / fgetc()</code>
+                <p class="text-gray-400 text-sm mt-1">Single line (<code class="text-blue-400">fgets</code>) ya single character (<code class="text-blue-400">fgetc</code>) read karta hai.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <code class="text-yellow-300 font-bold text-lg">feof()</code>
+                <p class="text-gray-400 text-sm mt-1">Check karta hai ki file ke End-Of-File (EOF) tak pahunch gaye hain ya nahi.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <code class="text-yellow-300 font-bold text-lg">fwrite() & fclose()</code>
+                <p class="text-gray-400 text-sm mt-1">File me write/append karta hai aur file handle ko close karta hai.</p>
+              </div>
+              <div class="bg-[#0f172a] p-4 rounded-xl border border-[#334155] md:col-span-2">
+                <code class="text-yellow-300 font-bold text-lg">unlink()</code>
+                <p class="text-gray-400 text-sm mt-1">Server se kisi file ko permanently delete kar deta hai.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: readfile() Function -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. The PHP readfile() Function
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Agar aapko bas kisi text file ko open karke uske content ko browser par output karna ho, toh <code class="text-yellow-300">readfile()</code> sabse best aur quick function hai.
+            </p>
+
+            <p class="text-gray-300 text-base mb-2">Maan lijiye server par <code class="text-yellow-300">webdictionary.txt</code> name ki file hai:</p>
+            <div class="bg-[#0f172a] rounded-xl p-4 border border-[#334155] mb-6 text-gray-300 font-mono text-sm leading-relaxed">
+              AJAX = Asynchronous JavaScript and XML<br />
+              CSS = Cascading Style Sheets<br />
+              HTML = Hyper Text Markup Language<br />
+              PHP = PHP Hypertext Preprocessor<br />
+              SQL = Structured Query Language<br />
+              SVG = Scalable Vector Graphics<br />
+              XML = EXtensible Markup Language
+            </div>
+
+            <p class="text-gray-300 text-base mb-2">Is file ko read aur output karne ke liye PHP Code:</p>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-[#94a3b8]">// Reads file, prints content, and returns total character count</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">readfile</span>(<span class="text-yellow-300">"webdictionary.txt"</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+            <p class="text-gray-400 text-sm mt-3">
+              <strong class="text-white">Note:</strong> <code class="text-yellow-300">readfile()</code> function content render karne ke saath-saath success hone par total read kiye gaye bytes (character count) bhi return karta hai.
+            </p>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Include.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./FileOpenRead.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(21);
+    </script>
+  </body>
+</html>

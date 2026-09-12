@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Table Borders - Complete Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <h1 class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight">
+          HTML Table Borders
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="./Tables.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableSizes.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            Table Borders 
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            By default, HTML tables me koi borders nahi hote. CSS ki <code class="text-yellow-400">&lt;border&gt;</code> property ka use karke aap table cells, headers, aur outer boundary par custom borders apply kar sakte hain.
+          </p>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            1. Basic CSS Border Syntax
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Table, <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;th&gt;</code>, aur <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">&lt;td&gt;</code> teeno par border lagane ke liye CSS selector ka use karein:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">table, th, td</span> {
+  <span class="text-yellow-400">border</span>: 2px solid #38bdf8;
+}</code></pre>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Visual Result (Separate Default Borders)</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left" style="border: 2px solid #38bdf8; border-spacing: 4px;">
+                  <thead>
+                    <tr>
+                      <th class="p-3 text-yellow-400" style="border: 2px solid #38bdf8;">Name</th>
+                      <th class="p-3 text-yellow-400" style="border: 2px solid #38bdf8;">Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="p-3 text-gray-300" style="border: 2px solid #38bdf8;">Aman</td>
+                      <td class="p-3 text-gray-300" style="border: 2px solid #38bdf8;">Designer</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            2. Collapsing Table Borders
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            By default, har cell ka border alag dikhta hai (double borders). Single neat border banane ke liye <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">border-collapse: collapse;</code> property ka use kiya jata hai.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">table</span> {
+  <span class="text-yellow-400">border-collapse</span>: collapse;
+  width: 100%;
+}
+<span class="text-blue-400">th, td</span> {
+  <span class="text-yellow-400">border</span>: 1px solid #64748b;
+}</code></pre>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Visual Result (Collapsed Borders)</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse text-left border border-slate-600">
+                  <thead>
+                    <tr class="bg-slate-800">
+                      <th class="p-3 border border-slate-600 text-yellow-400">Product</th>
+                      <th class="p-3 border border-slate-600 text-yellow-400">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="p-3 border border-slate-600 text-gray-300">Laptop</td>
+                      <td class="p-3 border border-slate-600 text-gray-300">₹55,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl overflow-x-auto">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            3. CSS Border Styles Reference
+          </h3>
+
+          <table class="w-full text-left border-collapse min-w-[700px]">
+            <thead>
+              <tr class="border-b-2 border-[#334155] text-gray-300 text-base md:text-lg">
+                <th class="py-4 px-5">Style Value</th>
+                <th class="py-4 px-5">CSS Example</th>
+                <th class="py-4 px-5">Description</th>
+              </tr>
+            </thead>
+            <tbody class="text-base md:text-lg text-gray-200 divide-y divide-[#334155]/60">
+              <tr>
+                <td class="py-4 px-5 font-bold font-mono text-cyan-400">solid</td>
+                <td class="py-4 px-5 font-mono text-yellow-400">border: 2px solid white;</td>
+                <td class="py-4 px-5">Continuous single line border.</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-bold font-mono text-cyan-400">dotted</td>
+                <td class="py-4 px-5 font-mono text-yellow-400">border: 2px dotted #38bdf8;</td>
+                <td class="py-4 px-5">Dots wali border line banata hai.</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-bold font-mono text-cyan-400">dashed</td>
+                <td class="py-4 px-5 font-mono text-yellow-400">border: 2px dashed #a855f7;</td>
+                <td class="py-4 px-5">Dashes (tukde-tukde) wali border line.</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-bold font-mono text-cyan-400">double</td>
+                <td class="py-4 px-5 font-mono text-yellow-400">border: 4px double #22c55e;</td>
+                <td class="py-4 px-5">Parallel double line border banata hai.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            4. Advanced Border Tricks
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-[#020617] p-8 rounded-2xl border border-[#334155]">
+              <span class="inline-block px-4 py-1.5 bg-blue-600/30 text-blue-400 font-bold text-sm rounded-lg mb-4">Horizontal Borders Only</span>
+              <h4 class="text-white font-bold text-xl mb-3">Bottom Border Style</h4>
+              <p class="text-gray-300 text-sm mb-4">Sirf rows ke niche line dene ke liye (no vertical lines):</p>
+              <div class="bg-[#0f172a] p-4 rounded-xl font-mono text-sm overflow-x-auto text-gray-300">
+<pre><code>th, td {
+  <span class="text-yellow-400">border-bottom</span>: 1px solid #334155;
+}</code></pre>
+              </div>
+            </div>
+
+            <div class="bg-[#020617] p-8 rounded-2xl border border-[#334155]">
+              <span class="inline-block px-4 py-1.5 bg-purple-600/30 text-purple-400 font-bold text-sm rounded-lg mb-4">Rounded Corners</span>
+              <h4 class="text-white font-bold text-xl mb-3">Border Radius</h4>
+              <p class="text-gray-300 text-sm mb-4">Table ke corners round karne ke liye (<code class="text-cyan-400">border-collapse: separate</code> required):</p>
+              <div class="bg-[#0f172a] p-4 rounded-xl font-mono text-sm overflow-x-auto text-gray-300">
+<pre><code>table {
+  <span class="text-yellow-400">border-radius</span>: 12px;
+  <span class="text-yellow-400">overflow</span>: hidden;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="./Tables.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableSizes.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(17);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Padding - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <!-- NAVBAR -->
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+      <div id="sidebar"></div>
+
+      <!-- MAIN CONTENT -->
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Padding
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../margin/margin.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="/css/height-width/height-width.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <!-- CONTENT -->
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRODUCTION -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-expand text-[#4d6fff] mr-3"></i>
+              CSS Padding Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS mein <b>padding</b> ka use element ke content aur uske border
+              ke beech space create karne ke liye kiya jata hai.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              Simple words mein, padding element ke <b>andar ka space</b> hota
+              hai.
+            </p>
+
+            <!-- MARGIN VS PADDING -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-circle-info text-[#4d6fff] mr-3"></i>
+                Padding vs Margin
+              </h3>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-[#020617] rounded-2xl p-6">
+                  <i
+                    class="fa-solid fa-arrows-left-right text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+
+                  <h4 class="text-xl sm:text-2xl font-bold mb-3">Margin</h4>
+
+                  <p class="text-lg text-gray-300 leading-relaxed">
+                    Element ke <b>bahar</b> space create karta hai.
+                  </p>
+                </div>
+
+                <div class="bg-[#020617] rounded-2xl p-6">
+                  <i
+                    class="fa-solid fa-expand text-[#4d6fff] text-3xl mb-5"
+                  ></i>
+
+                  <h4 class="text-xl sm:text-2xl font-bold mb-3">Padding</h4>
+
+                  <p class="text-lg text-gray-300 leading-relaxed">
+                    Element ke <b>andar</b> content ke around space create karta
+                    hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SIMPLE EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              Simple Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Neeche paragraph ke andar <b>20px</b> padding di gayi hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">p</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+            </div>
+
+            <!-- FOUR SIDES -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i
+                class="fa-solid fa-arrows-up-down-left-right text-[#4d6fff] mr-3"
+              ></i>
+              Padding Ke 4 Sides
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Padding ko chaar alag sides ke liye separately set kiya ja sakta
+              hai.
+            </p>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+              <!-- TOP -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i
+                  class="fa-solid fa-arrow-up text-[#4d6fff] text-3xl mb-5"
+                ></i>
+
+                <h4 class="text-xl font-bold mb-3">padding-top</h4>
+
+                <p class="text-gray-300 text-lg">
+                  Content ke upar andar space.
+                </p>
+              </div>
+
+              <!-- RIGHT -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i
+                  class="fa-solid fa-arrow-right text-[#4d6fff] text-3xl mb-5"
+                ></i>
+
+                <h4 class="text-xl font-bold mb-3">padding-right</h4>
+
+                <p class="text-gray-300 text-lg">
+                  Content ke right andar space.
+                </p>
+              </div>
+
+              <!-- BOTTOM -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i
+                  class="fa-solid fa-arrow-down text-[#4d6fff] text-3xl mb-5"
+                ></i>
+
+                <h4 class="text-xl font-bold mb-3">padding-bottom</h4>
+
+                <p class="text-gray-300 text-lg">
+                  Content ke neeche andar space.
+                </p>
+              </div>
+
+              <!-- LEFT -->
+              <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6">
+                <i
+                  class="fa-solid fa-arrow-left text-[#4d6fff] text-3xl mb-5"
+                ></i>
+
+                <h4 class="text-xl font-bold mb-3">padding-left</h4>
+
+                <p class="text-gray-300 text-lg">
+                  Content ke left andar space.
+                </p>
+              </div>
+            </div>
+
+            <!-- PADDING TOP -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrow-up text-[#4d6fff] mr-3"></i>
+              1. Padding Top
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>padding-top</b> content ke upar andar space create karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">padding-top</span>: <span class="text-[#4ade80]">30px</span>;
+}</code></pre>
+            </div>
+
+            <!-- PADDING RIGHT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrow-right text-[#4d6fff] mr-3"></i>
+              2. Padding Right
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>padding-right</b> content ke right side mein andar space create
+              karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">padding-right</span>: <span class="text-[#4ade80]">30px</span>;
+}</code></pre>
+            </div>
+
+            <!-- PADDING BOTTOM -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrow-down text-[#4d6fff] mr-3"></i>
+              3. Padding Bottom
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>padding-bottom</b> content ke neeche andar space create karta
+              hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">padding-bottom</span>: <span class="text-[#4ade80]">30px</span>;
+}</code></pre>
+            </div>
+
+            <!-- PADDING LEFT -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrow-left text-[#4d6fff] mr-3"></i>
+              4. Padding Left
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>padding-left</b> content ke left side mein andar space create
+              karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">padding-left</span>: <span class="text-[#4ade80]">30px</span>;
+}</code></pre>
+            </div>
+
+            <!-- SHORTHAND -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-code text-[#4d6fff] mr-3"></i>
+              Padding Shorthand
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Chaaron sides ko ek hi <b>padding</b> property se set kiya ja
+              sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">10px 20px 30px 40px</span>;
+}</code></pre>
+            </div>
+
+            <!-- VALUE ORDER -->
+            <div
+              class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl font-bold mb-6">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Values Ka Order
+              </h3>
+
+              <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-[#020617] rounded-xl p-5 text-center">
+                  <p class="text-gray-400 mb-2">1st</p>
+                  <p class="text-lg font-bold">Top</p>
+                </div>
+
+                <div class="bg-[#020617] rounded-xl p-5 text-center">
+                  <p class="text-gray-400 mb-2">2nd</p>
+                  <p class="text-lg font-bold">Right</p>
+                </div>
+
+                <div class="bg-[#020617] rounded-xl p-5 text-center">
+                  <p class="text-gray-400 mb-2">3rd</p>
+                  <p class="text-lg font-bold">Bottom</p>
+                </div>
+
+                <div class="bg-[#020617] rounded-xl p-5 text-center">
+                  <p class="text-gray-400 mb-2">4th</p>
+                  <p class="text-lg font-bold">Left</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- TWO VALUES -->
+            <h3 class="text-2xl sm:text-3xl font-bold mt-12 mb-7">
+              <i class="fa-solid fa-arrows-left-right text-[#4d6fff] mr-3"></i>
+              Two Values
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px 40px</span>;
+}</code></pre>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+              Pehla value top aur bottom ke liye, aur doosra value left aur
+              right ke liye apply hota hai.
+            </p>
+
+            <!-- THREE VALUES -->
+            <h3 class="text-2xl sm:text-3xl font-bold mt-12 mb-7">
+              <i class="fa-solid fa-list-ol text-[#4d6fff] mr-3"></i>
+              Three Values
+            </h3>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-8 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">10px 20px 30px</span>;
+}</code></pre>
+            </div>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
+              Teen values mein order hota hai:
+              <b>top, left-right, bottom</b>.
+            </p>
+
+            <!-- PADDING WITH BORDER -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-square text-[#4d6fff] mr-3"></i>
+              Padding With Border
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Padding aur border ko ek saath use karke content ko border se
+              distance diya ja sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">2px solid blue</span>;
+}</code></pre>
+            </div>
+
+            <!-- PRACTICAL EXAMPLE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-globe text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Buttons, cards aur boxes mein content ko comfortable space dene ke
+              liye padding ka bahut use hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.card</span> {
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">25px</span>;
+  <span class="text-[#60a5fa]">border</span>: <span class="text-[#4ade80]">2px solid #3158ff</span>;
+  <span class="text-[#60a5fa]">border-radius</span>: <span class="text-[#4ade80]">15px</span>;
+}</code></pre>
+            </div>
+
+            <!-- BOX SIZING -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-ruler-combined text-[#4d6fff] mr-3"></i>
+              Padding Aur Box Size
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Normal box model mein padding element ki total size ko affect kar
+              sakta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">300px</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+            </div>
+
+            <!-- BOX SIZING BORDER BOX -->
+            <h3 class="text-2xl sm:text-3xl font-bold mt-12 mb-7">
+              <i class="fa-solid fa-box text-[#4d6fff] mr-3"></i>
+              box-sizing: border-box
+            </h3>
+
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
+              <b>box-sizing: border-box</b> use karne par padding aur border
+              specified width ke andar include hote hain.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">box-sizing</span>: <span class="text-[#4ade80]">border-box</span>;
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">300px</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT POINTS -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>Padding element ke <b>andar</b> space create karta hai.</li>
+
+                <li>Padding content aur border ke beech hota hai.</li>
+
+                <li>
+                  <b>padding-top</b>, <b>padding-right</b>,
+                  <b>padding-bottom</b> aur <b>padding-left</b>
+                  separately use kiye ja sakte hain.
+                </li>
+
+                <li>
+                  <b>padding</b> shorthand se multiple sides ek saath set kiye
+                  ja sakte hain.
+                </li>
+
+                <li>Padding mein negative values use nahi ki ja sakti.</li>
+
+                <li>Padding background ke area ka part hota hai.</li>
+
+                <li>Padding element ki size ko affect kar sakta hai.</li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Padding Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Padding content aur border ke beech ka space hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Padding ki four individual side properties hoti hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Shorthand mein 1, 2, 3 ya 4 values use ki ja sakti hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Padding ka use cards, buttons aur layouts mein bahut common
+                    hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../margin/margin.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="/css/height-width/height-width.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(12);
+      });
+    </script>
+  </body>
+</html>

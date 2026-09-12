@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Editors</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          HTML Editors
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../intro/Intro.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../elements/Elements.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            HTML Code Likhne Ke Liye Editors
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML code likhne ke liye aap apne computer me simple <strong>Notepad</strong> ya professional <strong>Code Editors</strong> (jaise VS Code, Sublime Text) ka use kar sakte hain.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Professional code editors me syntax highlighting, auto-completion, aur live preview jaise features hote hain jo coding ko aasan aur fast banate hain.
+          </p>
+        </div>
+
+        <!-- Visual Image Card (FIXED: Standard img tag with direct unsplash URL) -->
+        <div class="mt-8 bg-[#1e293b] rounded-2xl p-6 border border-[#334155] shadow-lg">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+            <i class="fa-solid fa-laptop-code mr-2"></i> Professional Code Editor Interface
+          </h3>
+          <p class="text-gray-300 text-base mb-4">
+            Niche VS Code jaise modern editor ka snapshot hai, jisme syntax highlighting (colorful tags) aur line numbers clear dikhte hain:
+          </p>
+          
+          <div class="overflow-hidden rounded-xl border border-[#334155]">
+            <img 
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" 
+              alt="Visual Studio Code Editor Interface" 
+              class="w-full h-auto object-cover rounded-xl"
+            />
+          </div>
+        </div>
+
+        <!-- Popular Editors Grid -->
+        <div class="mt-8">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Popular HTML Editors
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- VS Code (FIXED Icon class) -->
+            <div class="bg-[#1e293b] border border-[#334155] hover:border-[#3158ff] rounded-2xl p-6 transition">
+              <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-2xl font-bold mb-4">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-2">VS Code</h4>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Microsoft ka free aur sabse popular editor. Isme Live Server aur Emmet extensions coding speed 10x badha dete hain.
+              </p>
+            </div>
+
+            <!-- Notepad++ -->
+            <div class="bg-[#1e293b] border border-[#334155] hover:border-green-500 rounded-2xl p-6 transition">
+              <div class="w-12 h-12 bg-green-600/20 text-green-400 rounded-xl flex items-center justify-center text-2xl font-bold mb-4">
+                <i class="fa-solid fa-file-code"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-2">Notepad++</h4>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Lightweight aur fast text editor. Beginners ke liye Notepad se thoda behtar aur use karne me aasan option.
+              </p>
+            </div>
+
+            <!-- Sublime Text -->
+            <div class="bg-[#1e293b] border border-[#334155] hover:border-orange-500 rounded-2xl p-6 transition">
+              <div class="w-12 h-12 bg-orange-600/20 text-orange-400 rounded-xl flex items-center justify-center text-2xl font-bold mb-4">
+                <i class="fa-solid fa-terminal"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-2">Sublime Text</h4>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Super-fast interface aur clean look ke sath aane wala professional editor jo multi-caret editing support karta hai.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Step-by-Step Guide: Notepad Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4 Steps: Notepad Me Pehla HTML File Kaise Banaye?
+            </h3>
+            
+            <ul class="space-y-4 text-gray-300 text-base md:text-lg">
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">Step 1: Notepad Open Karein</strong> - Windows PC me <code>Start &gt; Notepad</code> search karke open karein.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">Step 2: Code Likhne Ka Kaam</strong> - Apna basic HTML code type karein:
+                <div class="bg-[#020617] p-3 mt-2 rounded-lg font-mono text-sm text-green-400 border border-[#334155]">
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My First Heading&lt;/h1&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My first paragraph.&lt;/p&gt;<br>
+                  &nbsp;&nbsp;&lt;/body&gt;<br>
+                  &lt;/html&gt;
+                </div>
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">Step 3: File Save Karein</strong> - File menu me jaakar <code>Save As</code> karein. File name me <strong><code>index.html</code></strong> likhein aur Save as type ko <strong>All Files</strong> set karein.
+              </li>
+              <li class="bg-[#0f172a] p-4 rounded-xl border border-[#334155]">
+                <strong class="text-yellow-400">Step 4: Browser Me Open Karein</strong> - Saved file par double click karein, aapka webpage Chrome ya Edge browser me open ho jayega!
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../intro/Intro.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="../elements/Elements.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(2);
+    </script>
+  </body>
+</html>

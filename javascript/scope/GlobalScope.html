@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Global Scope - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Global Scope
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./FunctionScope.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../dates/Dates.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Global Scope Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Global Scope ka matlab hai aisa variable jo kisi
+          function ya block ke local scope ke bahar declare kiya gaya ho.
+          <br><br>
+          Global variable ko uske accessible nested functions aur blocks ke
+          andar use kiya ja sakta hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Global Scope Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> variable = <span class="text-emerald-400">"value"</span>;
+
+<span class="text-blue-400">function</span> myFunction() {
+  console.log(variable);
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Simple Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Global Scope Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> name = <span class="text-emerald-400">"Ali"</span>;
+
+console.log(name);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Inside Function -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Global Variable Inside Function
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function apne accessible outer/global scope ke variables ko use kar
+            sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> country = <span class="text-emerald-400">"India"</span>;
+
+<span class="text-blue-400">function</span> showCountry() {
+
+  console.log(country);
+
+}
+
+showCountry();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">India</pre>
+          </div>
+
+        </div>
+
+        <!-- Inside Block -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Global Variable Inside Block
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> city = <span class="text-emerald-400">"Ranchi"</span>;
+
+{
+  console.log(city);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ranchi</pre>
+          </div>
+
+        </div>
+
+        <!-- Multiple Functions -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Global Variable in Multiple Functions
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Ek global variable ko multiple functions access kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> language = <span class="text-emerald-400">"JavaScript"</span>;
+
+<span class="text-blue-400">function</span> first() {
+  console.log(language);
+}
+
+<span class="text-blue-400">function</span> second() {
+  console.log(language);
+}
+
+first();
+second();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">JavaScript
+JavaScript</pre>
+          </div>
+
+        </div>
+
+        <!-- Modify Global -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Global Variable Ko Change Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar global variable
+            <code class="text-blue-400">let</code>
+            se declare hai, to accessible inner scope uski value change kar
+            sakta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> count = <span class="text-emerald-400">1</span>;
+
+<span class="text-blue-400">function</span> update() {
+  count = <span class="text-emerald-400">2</span>;
+}
+
+update();
+
+console.log(count);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">2</pre>
+          </div>
+
+        </div>
+
+        <!-- const -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Global const Variable
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> country = <span class="text-emerald-400">"India"</span>;
+
+<span class="text-blue-400">function</span> show() {
+  console.log(country);
+}
+
+show();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">India</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Global
+            <code class="text-blue-400">const</code>
+            ko nested scope se read kiya ja sakta hai, lekin variable ko direct
+            reassignment nahi diya ja sakta.
+          </p>
+
+        </div>
+
+        <!-- Shadowing -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Global Variable Shadowing
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function ke andar same naam ka local variable banane par local
+            variable global variable ko us scope me shadow karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> name = <span class="text-emerald-400">"Ali"</span>;
+
+<span class="text-blue-400">function</span> show() {
+
+  <span class="text-blue-400">let</span> name = <span class="text-emerald-400">"Rahul"</span>;
+
+  console.log(name);
+}
+
+show();
+
+console.log(name);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Rahul
+Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Global vs Local -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Global Variable vs Local Variable
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Global Variable</th>
+                  <th class="p-4">Local Variable</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Outer/global scope me declare hota hai.
+                  </td>
+
+                  <td class="p-4">
+                    Function ya block ke andar declare hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Accessible nested scopes me use ho sakta hai.
+                  </td>
+
+                  <td class="p-4">
+                    Apne scope aur accessible nested scopes tak limited hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    let country = "India";
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    function test() { let city = "Ranchi"; }
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Why avoid many globals -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Too Many Global Variables Kyu Avoid Kare?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Bahut zyada global variables rakhne se code ke different parts same
+            data ko accidentally change kar sakte hain.
+            <br><br>
+            Isliye variables ko jitna possible ho utne limited scope me rakhna
+            code ko easier to understand aur maintain banata hai.
+          </p>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Global variable outer/global scope me declare hota hai.
+            </p>
+
+            <p>
+              2. Accessible nested functions global variable ko use kar sakte
+              hain.
+            </p>
+
+            <p>
+              3. Accessible blocks bhi outer variables ko use kar sakte hain.
+            </p>
+
+            <p>
+              4. Same naam ka local variable outer/global variable ko shadow
+              kar sakta hai.
+            </p>
+
+            <p>
+              5. Global mutable variables ko unnecessary use karna avoid karna
+              better practice hai.
+            </p>
+
+            <p>
+              6. Local scope data ko limited area me rakhta hai, jisse code
+              manage karna easy hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./FunctionScope.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../dates/Dates.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(13);
+  </script>
+
+</body>
+</html>

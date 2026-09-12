@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Array Const - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Array Const
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Iteration.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../sets/Sets.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          const Array Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Array ko
+          <code class="text-blue-400">const</code>
+          se declare karna bahut common hai.
+          <br><br>
+          <code class="text-blue-400">const</code>
+          ka matlab ye nahi hai ki Array ke elements change nahi ho sakte.
+          Iska matlab hai ki Array variable ko ek completely new Array se
+          reassign nahi kar sakte.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            const Array Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Basic -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic const Array Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>
+];
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">["Apple", "Mango"]</pre>
+          </div>
+
+        </div>
+
+        <!-- Change element -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            const Array Ka Element Change Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">const</code>
+            Array ke elements change kiye ja sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>
+];
+
+fruits[<span class="text-emerald-400">0</span>] =
+  <span class="text-emerald-400">"Orange"</span>;
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">["Orange", "Mango"]</pre>
+          </div>
+
+        </div>
+
+        <!-- Push -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            const Array Me Element Add Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>
+];
+
+fruits.push(
+  <span class="text-emerald-400">"Banana"</span>
+);
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">["Apple", "Mango", "Banana"]</pre>
+          </div>
+
+        </div>
+
+        <!-- Pop -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            const Array Se Element Remove Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+fruits.pop();
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">["Apple", "Mango"]</pre>
+          </div>
+
+        </div>
+
+        <!-- Reassign error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            const Array Ko Reassign Nahi Kar Sakte
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Same
+            <code class="text-blue-400">const</code>
+            variable ko completely new Array assign nahi kar sakte.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>,
+  <span class="text-emerald-400">"Mango"</span>
+];
+
+fruits = [
+  <span class="text-emerald-400">"Orange"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Result:</p>
+<pre class="text-red-400 font-mono">TypeError: Assignment to constant variable.</pre>
+          </div>
+
+        </div>
+
+        <!-- Important concept -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Sabse Important Concept
+          </h3>
+
+          <div class="space-y-5 text-gray-300 text-lg">
+
+            <p>
+              <code class="text-blue-400">const</code>
+              Array ke contents ko permanently lock nahi karta.
+            </p>
+
+            <p>
+              Ye variable ki Array reference ko reassign hone se rokta hai.
+            </p>
+
+          </div>
+
+          <div class="mt-6 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="font-mono"><code><span class="text-blue-400">const</span> numbers = [<span class="text-emerald-400">1</span>, <span class="text-emerald-400">2</span>, <span class="text-emerald-400">3</span>];
+
+<span class="text-gray-400">// Allowed</span>
+numbers[<span class="text-emerald-400">0</span>] = <span class="text-emerald-400">100</span>;
+numbers.push(<span class="text-emerald-400">4</span>);
+
+<span class="text-gray-400">// Not Allowed</span>
+numbers = [<span class="text-emerald-400">5</span>, <span class="text-emerald-400">6</span>];</code></pre>
+          </div>
+
+        </div>
+
+        <!-- const vs let -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            const Array vs let Array
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">const</th>
+                  <th class="p-4">let</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Array variable reassign nahi kar sakte.
+                  </td>
+
+                  <td class="p-4">
+                    Array variable reassign kar sakte hain.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Elements change kar sakte hain.
+                  </td>
+
+                  <td class="p-4">
+                    Elements change kar sakte hain.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    push/pop allowed hai.
+                  </td>
+
+                  <td class="p-4">
+                    push/pop allowed hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- let reassign -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            let Array Reassignment
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> fruits = [
+  <span class="text-emerald-400">"Apple"</span>
+];
+
+fruits = [
+  <span class="text-emerald-400">"Mango"</span>,
+  <span class="text-emerald-400">"Banana"</span>
+];
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">["Mango", "Banana"]</pre>
+          </div>
+
+        </div>
+
+        <!-- Block Scope -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            const Array Is Block Scoped
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">const</code>
+            block scoped hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>{
+  <span class="text-blue-400">const</span> fruits = [
+    <span class="text-emerald-400">"Apple"</span>,
+    <span class="text-emerald-400">"Mango"</span>
+  ];
+
+  console.log(fruits);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">["Apple", "Mango"]</pre>
+          </div>
+
+        </div>
+
+        <!-- Outside block -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Block Ke Bahar Access
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>{
+  <span class="text-blue-400">const</span> fruits = [
+    <span class="text-emerald-400">"Apple"</span>
+  ];
+}
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Result:</p>
+<pre class="text-red-400 font-mono">ReferenceError</pre>
+          </div>
+
+        </div>
+
+        <!-- Same name block -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Same Array Name in Different Blocks
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>{
+  <span class="text-blue-400">const</span> fruits = [
+    <span class="text-emerald-400">"Apple"</span>
+  ];
+
+  console.log(fruits);
+}
+
+{
+  <span class="text-blue-400">const</span> fruits = [
+    <span class="text-emerald-400">"Mango"</span>
+  ];
+
+  console.log(fruits);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">["Apple"]
+["Mango"]</pre>
+          </div>
+
+        </div>
+
+        <!-- Object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            const Array of Objects
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Array ke andar objects ho to unki properties bhi change ki ja sakti
+            hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> students = [
+  {
+    name: <span class="text-emerald-400">"Ali"</span>,
+    age: <span class="text-emerald-400">20</span>
+  }
+];
+
+students[<span class="text-emerald-400">0</span>].age =
+  <span class="text-emerald-400">21</span>;
+
+console.log(
+  students[<span class="text-emerald-400">0</span>]
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+<pre class="text-emerald-400 font-mono">{ name: "Ali", age: 21 }</pre>
+          </div>
+
+        </div>
+
+        <!-- Object.freeze -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Array Ko Freeze Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar Array ki top-level structure ko modify hone se rokna ho to
+            <code class="text-blue-400">Object.freeze()</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> fruits =
+  Object.freeze([
+    <span class="text-emerald-400">"Apple"</span>,
+    <span class="text-emerald-400">"Mango"</span>
+  ]);
+
+console.log(fruits);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Note:
+            <code class="text-blue-400">Object.freeze()</code>
+            shallow hota hai. Agar Array ke andar objects hain to nested objects
+            automatically deep freeze nahi hote.
+          </p>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Arrays ko commonly
+              <code class="text-blue-400">const</code>
+              se declare kiya jata hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">const</code>
+              Array ke elements change kiye ja sakte hain.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">push()</code>,
+              <code class="text-blue-400">pop()</code>,
+              <code class="text-blue-400">splice()</code>
+              jaise mutating methods use ho sakte hain.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">const</code>
+              Array variable ko completely new Array se reassign nahi kar sakte.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">const</code>
+              block scoped hota hai.
+            </p>
+
+            <p>
+              6. Agar reassignment zaroori ho to
+              <code class="text-blue-400">let</code>
+              use kar sakte hain.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">Object.freeze()</code>
+              top-level mutations ko restrict karne ke liye use kiya ja sakta
+              hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Iteration.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="../sets/Sets.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(15);
+  </script>
+
+</body>
+</html>

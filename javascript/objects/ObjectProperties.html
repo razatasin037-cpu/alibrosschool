@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Object Properties - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Object Properties
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Objects.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./ObjectMethods.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Intro -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Object Property Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript Object ke andar jo values store hoti hain unhe properties
+          kaha jata hai.
+          <br><br>
+          Har property ek
+          <code class="text-blue-400">key : value</code>
+          pair hoti hai. Jaise
+          <code class="text-emerald-400">name: "Ali"</code>
+          me
+          <code class="text-blue-400">name</code>
+          property name hai aur
+          <code class="text-emerald-400">"Ali"</code>
+          uski value hai.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Object Property Syntax
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> objectName = {
+  propertyName: value
+};</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Object Property Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-emerald-400">20</span>,
+  course: <span class="text-emerald-400">"JavaScript"</span>
+};
+
+console.log(student.name);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+        </div>
+
+        <!-- Dot Notation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Dot Notation
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Dot notation object property access karne ka simple tarika hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Rahul"</span>,
+  age: <span class="text-emerald-400">21</span>
+};
+
+console.log(user.name);
+console.log(user.age);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Rahul
+21</pre>
+          </div>
+
+        </div>
+
+        <!-- Bracket Notation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Bracket Notation
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Bracket notation me property name String ke form me diya jata hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> user = {
+  name: <span class="text-emerald-400">"Rahul"</span>
+};
+
+console.log(user[<span class="text-emerald-400">"name"</span>]);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Rahul</pre>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Dynamic Property Access
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar property ka naam variable ke andar store ho, to bracket
+            notation use karna useful hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-emerald-400">20</span>
+};
+
+<span class="text-blue-400">let</span> key = <span class="text-emerald-400">"age"</span>;
+
+console.log(student[key]);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">20</pre>
+          </div>
+
+        </div>
+
+        <!-- Change Property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Property Value Change Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-emerald-400">20</span>
+};
+
+student.age = <span class="text-emerald-400">21</span>;
+
+console.log(student.age);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">21</pre>
+          </div>
+
+        </div>
+
+        <!-- Add Property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            New Property Add Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student = {
+  name: <span class="text-emerald-400">"Ali"</span>
+};
+
+student.city = <span class="text-emerald-400">"Ranchi"</span>;
+
+console.log(student.city);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ranchi</pre>
+          </div>
+
+        </div>
+
+        <!-- Delete -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Property Delete Karna
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">delete</code>
+            operator se object ki property remove kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-emerald-400">20</span>
+};
+
+<span class="text-blue-400">delete</span> student.age;
+
+console.log(student);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">{ name: "Ali" }</pre>
+          </div>
+
+        </div>
+
+        <!-- Check Property -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Property Exist Karti Hai Ya Nahi?
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">in</code>
+            operator se check kar sakte hain ki property object me available
+            hai ya nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-emerald-400">20</span>
+};
+
+console.log(<span class="text-emerald-400">"name"</span> <span class="text-blue-400">in</span> student);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">true</pre>
+          </div>
+
+        </div>
+
+        <!-- Object.keys -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Object.keys()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">Object.keys()</code>
+            object ke own enumerable property names ko Array me return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-emerald-400">20</span>,
+  city: <span class="text-emerald-400">"Ranchi"</span>
+};
+
+console.log(Object.keys(student));</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">["name", "age", "city"]</pre>
+          </div>
+
+        </div>
+
+        <!-- for in -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Loop Through Object Properties
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">for...in</code>
+            loop se object properties ko access kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> student = {
+  name: <span class="text-emerald-400">"Ali"</span>,
+  age: <span class="text-emerald-400">20</span>
+};
+
+<span class="text-blue-400">for</span> (<span class="text-blue-400">let</span> key <span class="text-blue-400">in</span> student) {
+  console.log(key, student[key]);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">name Ali
+age 20</pre>
+          </div>
+
+        </div>
+
+        <!-- Dot vs Bracket -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Dot vs Bracket Notation
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Dot Notation</th>
+                  <th class="p-4">Bracket Notation</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    student.name
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    student["name"]
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Simple property names ke liye easy hai.
+                  </td>
+
+                  <td class="p-4">
+                    Dynamic property name ke liye useful hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Variable se property name directly nahi le sakta.
+                  </td>
+
+                  <td class="p-4">
+                    Variable ke through property access kar sakta hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Object property ek key aur value pair hoti hai.
+            </p>
+
+            <p>
+              2. Dot notation:
+              <code class="text-blue-400">object.property</code>
+            </p>
+
+            <p>
+              3. Bracket notation:
+              <code class="text-blue-400">object["property"]</code>
+            </p>
+
+            <p>
+              4. Dynamic property names ke liye bracket notation useful hai.
+            </p>
+
+            <p>
+              5. Object properties add, update aur delete ki ja sakti hain.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">Object.keys()</code>
+              se property names ki Array milti hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">for...in</code>
+              se object properties par loop chala sakte hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Objects.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./ObjectMethods.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(12);
+  </script>
+
+</body>
+</html>

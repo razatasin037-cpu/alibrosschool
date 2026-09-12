@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Remove Array Items - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          Remove Array Items
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./AddArrayItems.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./SortingArrays.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Array Se Items Remove Kaise Karein?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me array ke elements ko delete karne ke liye alag-alag requirements ke hisab se alag functions ka istemaal hota hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Aap <code class="text-green-400">unset()</code>, <code class="text-green-400">array_pop()</code>, <code class="text-green-400">array_shift()</code>, ya <code class="text-green-400">array_splice()</code> ka use karke array me se single ya multiple items remove kar sakte hain.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. Remove Specific Item using unset() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Specific Item Delete Karna (<code class="text-green-400">unset</code>)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Aap <code class="text-green-400">unset()</code> function ka use karke kisi specific index ya key ko delete kar sakte hain:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$cars</span> = [<span class="text-white">"Volvo"</span>, <span class="text-white">"BMW"</span>, <span class="text-white">"Toyota"</span>];
+
+  <span class="text-[#94a3b8]">// Index 1 ("BMW") ko remove karein</span>
+  <span class="text-green-400">unset</span>(<span class="text-green-400">$cars</span>[<span class="text-white">1</span>]);
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$cars</span>);
+  <span class="text-[#94a3b8]">// Note: Unset index numbers ko re-index nahi karta!</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Remove Last Item using array_pop() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Last Element Remove Karna (<code class="text-green-400">array_pop</code>)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Array ke bilkul aakhri (last) element ko remove karne ke liye:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$fruits</span> = [<span class="text-white">"Apple"</span>, <span class="text-white">"Banana"</span>, <span class="text-white">"Cherry"</span>];
+
+  <span class="text-[#94a3b8]">// Last item ("Cherry") delete hoga</span>
+  <span class="text-green-400">array_pop</span>(<span class="text-green-400">$fruits</span>);
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$fruits</span>);
+  <span class="text-[#94a3b8]">// Output: Array ( [0] =&gt; Apple [1] =&gt; Banana )</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Remove First Item using array_shift() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. First Element Remove Karna (<code class="text-green-400">array_shift</code>)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Array ke pehle (first) element ko remove karne ke liye. Yeh baaki items ko automatically re-index kar deta hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$colors</span> = [<span class="text-white">"Red"</span>, <span class="text-white">"Green"</span>, <span class="text-white">"Blue"</span>];
+
+  <span class="text-[#94a3b8]">// First item ("Red") delete hoga</span>
+  <span class="text-green-400">array_shift</span>(<span class="text-green-400">$colors</span>);
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$colors</span>);
+  <span class="text-[#94a3b8]">// Output: Array ( [0] =&gt; Green [1] =&gt; Blue )</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 4. Remove Multiple Items using array_splice() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4. Multiple Items Range Remove Karna (<code class="text-green-400">array_splice</code>)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Agar kisi specific position se continuous items delete karne hon aur array ko auto re-index bhi rakhna ho:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$numbers</span> = [<span class="text-white">10</span>, <span class="text-white">20</span>, <span class="text-white">30</span>, <span class="text-white">40</span>, <span class="text-white">50</span>];
+
+  <span class="text-[#94a3b8]">// Index 1 se start karke 2 items delete karein</span>
+  <span class="text-green-400">array_splice</span>(<span class="text-green-400">$numbers</span>, <span class="text-white">1</span>, <span class="text-white">2</span>);
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$numbers</span>);
+  <span class="text-[#94a3b8]">// Output: Array ( [0] =&gt; 10 [1] =&gt; 40 [2] =&gt; 50 )</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Warning Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-yellow-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-yellow-400">
+              <span>⚠️</span> Important Note: unset() vs array_splice()
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              <code class="text-green-400">unset()</code> use karne par index gaps rah jate hain (e.g., [0, 2] bina index 1 ke). Agar aapko array ko clean karke continuous indexes [0, 1, 2] chahiye, toh <code class="text-green-400">array_splice()</code> use karein ya unset ke baad <code class="text-green-400">array_values()</code> run karein.
+            </p>
+            <div class="bg-[#1e293b] p-4 rounded-xl font-mono text-sm text-yellow-400 border border-yellow-500/20">
+              unset($arr[1]);<br />
+              $arr = array_values($arr); // 👈 Re-indexes array back to 0, 1, 2...
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./AddArrayItems.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./SortingArrays.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(18);
+    </script>
+  </body>
+</html>

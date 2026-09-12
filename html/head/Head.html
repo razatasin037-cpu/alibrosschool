@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Head Element - Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <h1 class="text-[48px] sm:text-[60px] md:text-[65px] font-extrabold text-white mb-6 mt-0 tracking-tight flex items-center gap-4">
+          HTML Head Element
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="../filePaths/FilePaths.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="../layout/Layout.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            HTML &lt;head&gt; Element Kya Hai?
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            HTML me <span class="text-blue-400 font-mono font-bold">&lt;head&gt;</span> element document ka container hota hai jisme Metadata (webpage ke bare me data) rakha jata hai. Iske andar ka content browser screen par visible nahi hota, balki browser aur search engines (SEO) ke liye use hota hai.
+          </p>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            &lt;head&gt; Tag Ke andar Aane Wale Important Elements
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-blue-400 mb-2 flex items-center gap-2">
+                <i data-lucide="heading" class="w-5 h-5 text-blue-400"></i> &lt;title&gt;
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Browser tab me dikhne wala document ka title define karta hai aur SEO ke liye sabse important hai.
+              </p>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-emerald-400 mb-2 flex items-center gap-2">
+                <i data-lucide="tags" class="w-5 h-5 text-emerald-400"></i> &lt;meta&gt;
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Character set, page description, keywords aur viewport (responsive zoom) jaise settings define karta hai.
+              </p>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+              <h4 class="text-xl font-bold text-amber-400 mb-2 flex items-center gap-2">
+                <i data-lucide="paperclip" class="w-5 h-5 text-amber-400"></i> &lt;link&gt;
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                External stylesheet (CSS), favicon icons, aur fonts ko document se connect karne ke liye use hota hai.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
+              <i data-lucide="list" class="w-8 h-8 text-cyan-400"></i>
+              Head Child Tags Overview
+            </h3>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-mono rounded-lg border border-cyan-500/30">Quick Reference</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-[#334155] bg-[#020617] text-blue-400 font-mono text-sm">
+                  <th class="p-4 rounded-tl-xl">Tag Name</th>
+                  <th class="p-4">Kaam / Description</th>
+                  <th class="p-4 rounded-tr-xl">Example Use</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#334155] text-gray-300 text-sm md:text-base font-mono">
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">&lt;title&gt;</td>
+                  <td class="p-4 font-sans text-gray-300">Browser tab par page ka naam dikhata hai.</td>
+                  <td class="p-4 text-emerald-400">&lt;title&gt;My Website&lt;/title&gt;</td>
+                </tr>
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">&lt;meta&gt;</td>
+                  <td class="p-4 font-sans text-gray-300">SEO aur responsiveness information set karta hai.</td>
+                  <td class="p-4 text-emerald-400">&lt;meta name="viewport" ...&gt;</td>
+                </tr>
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">&lt;link&gt;</td>
+                  <td class="p-4 font-sans text-gray-300">External CSS file ya Favicon icon add karta hai.</td>
+                  <td class="p-4 text-emerald-400">&lt;link rel="stylesheet" href="style.css"&gt;</td>
+                </tr>
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">&lt;style&gt;</td>
+                  <td class="p-4 font-sans text-gray-300">Internal CSS styling likhne ke liye.</td>
+                  <td class="p-4 text-emerald-400">&lt;style&gt; body { color: red; } &lt;/style&gt;</td>
+                </tr>
+                <tr class="hover:bg-slate-800/50">
+                  <td class="p-4 text-cyan-400 font-bold">&lt;script&gt;</td>
+                  <td class="p-4 font-sans text-gray-300">JavaScript file/code load karne ke liye.</td>
+                  <td class="p-4 text-emerald-400">&lt;script src="app.js"&gt;&lt;/script&gt;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
+              <i data-lucide="code-2" class="w-8 h-8 text-blue-400"></i>
+              Complete &lt;head&gt; Structure Example
+            </h3>
+            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-mono rounded-lg border border-blue-500/30">Code Block</span>
+          </div>
+          <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+            Ek modern web application ke `<head>` tag ka standard format:
+          </p>
+
+          <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155]">
+            <pre class="font-mono text-sm md:text-base text-gray-300 overflow-x-auto p-4 bg-slate-900/90 rounded-xl leading-relaxed border border-slate-800"><code>&lt;head&gt;
+  &lt;!-- UTF-8 Character Encoding --&gt;
+  &lt;meta charset="UTF-8"&gt;
+
+  &lt;!-- Mobile Responsive Viewport Settings --&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+  &lt;!-- Webpage Title --&gt;
+  &lt;title&gt;My Awesome Website&lt;/title&gt;
+
+  &lt;!-- SEO Meta Tags --&gt;
+  &lt;meta name="description" content="Learn HTML from scratch with tutorials"&gt;
+  &lt;meta name="keywords" content="HTML, CSS, JavaScript, Web Development"&gt;
+
+  &lt;!-- External Stylesheet --&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+
+  &lt;!-- Favicon Icon --&gt;
+  &lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;
+&lt;/head&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Head Element Best Practices
+          </h3>
+
+          <ul class="space-y-4 text-gray-300 text-base md:text-lg">
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-green-400 font-bold text-xl">✓</span>
+              <span><strong>Always Include Viewport Meta:</strong> Mobile responsiveness ke liye <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> add karna mandatory hai.</span>
+            </li>
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-green-400 font-bold text-xl">✓</span>
+              <span><strong>Unique Titles for Pages:</strong> Har page ke liye unique aur descriptive <code>&lt;title&gt;</code> tag ka upyog karein.</span>
+            </li>
+            <li class="flex items-start gap-3 bg-[#020617] p-4 rounded-xl border border-[#334155]">
+              <span class="text-red-400 font-bold text-xl">✕</span>
+              <span><strong>Don't Put Visible Elements:</strong> <code>&lt;head&gt;</code> ke andar <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, ya <code>&lt;div&gt;</code> jaise visible tags mat likhein.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="../filePaths/FilePaths.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg flex items-center gap-2">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i> Previous
+          </a>
+
+          <a href="../layout/Layout.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg flex items-center gap-2">
+            Next <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(27);
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

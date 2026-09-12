@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Where To - Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          JavaScript Where To
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../intro/Intro.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮  Previous
+          </a>
+
+          <a
+            href="../output/Output.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            JavaScript Code Kahan Place Karein?
+          </h2>
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed mb-4">
+            HTML me JavaScript code ko <code>&lt;script&gt;</code> tag ke andar likha jata hai.
+          </p>
+          <p class="text-[16px] md:text-[18px] text-[#94a3b8] leading-relaxed">
+            Aap apne script tag ko HTML ke <strong class="text-blue-400">&lt;head&gt;</strong> section me, <strong class="text-emerald-400">&lt;body&gt;</strong> section me, ya fir kisi external <strong>.js file</strong> me rakh sakte hain.
+          </p>
+        </div>
+
+        <!-- Methods Overview Grid -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-blue-950/40 border border-blue-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-blue-400 mb-2">
+              <i class="fa-solid fa-heading mr-2"></i> In &lt;head&gt;
+            </h4>
+            <p class="text-gray-300 text-base">
+              Page load hone se pehle scripts initialize karne ya libraries include karne ke liye.
+            </p>
+          </div>
+
+          <div class="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-emerald-400 mb-2">
+              <i class="fa-solid fa-[#10b981] fa-code mr-2"></i> In &lt;body&gt; (Recommended)
+            </h4>
+            <p class="text-gray-300 text-base">
+              Bottom par rkhne se page ka display speed fast ho jata hai.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-600/50 rounded-2xl p-6">
+            <h4 class="text-xl font-bold text-white mb-2">
+              <i class="fa-solid fa-file-code mr-2"></i> External File
+            </h4>
+            <p class="text-gray-300 text-base">
+              Code ko clean, reusable aur maintainable rakhne ke liye alag <code>.js</code> file me.
+            </p>
+          </div>
+        </div>
+
+        <section class="mt-12 space-y-8">
+          <!-- Section 1: The <script> Tag -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. The &lt;script&gt; Tag
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              HTML document me JavaScript code daalne ke liye <code>&lt;script&gt;</code> aur <code>&lt;/script&gt;</code> tags ka use hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;script&gt;</span>
+  document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">"demo"</span>).innerHTML = <span class="text-emerald-400">"My First JavaScript"</span>;
+<span class="text-green-400">&lt;/script&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 2: JavaScript in <head> or <body> -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. JavaScript in &lt;head&gt; or &lt;body&gt;
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Aap kisi bhi HTML document me kitne bhi scripts rakh sakte hain.
+            </p>
+
+            <!-- Head Example -->
+            <h4 class="text-xl font-bold text-blue-400 mt-6 mb-2">Example: JavaScript in &lt;head&gt;</h4>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155] mb-6">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;head&gt;</span>
+  <span class="text-green-400">&lt;script&gt;</span>
+    <span class="text-blue-400">function</span> <span class="text-emerald-400">myFunction</span>() {
+      document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">"demo"</span>).innerHTML = <span class="text-emerald-400">"Paragraph changed."</span>;
+    }
+  <span class="text-green-400">&lt;/script&gt;</span>
+<span class="text-green-400">&lt;/head&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+  <span class="text-green-400">&lt;h2&gt;</span>Demo JavaScript in Head<span class="text-green-400">&lt;/h2&gt;</span>
+  <span class="text-green-400">&lt;p</span> <span class="text-blue-400">id</span>=<span class="text-emerald-400">"demo"</span><span class="text-green-400">&gt;</span>A Paragraph<span class="text-green-400">&lt;/p&gt;</span>
+  <span class="text-green-400">&lt;button</span> <span class="text-blue-400">onclick</span>=<span class="text-emerald-400">"myFunction()"</span><span class="text-green-400">&gt;</span>Try it<span class="text-green-400">&lt;/button&gt;</span>
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+
+            <!-- Body Example -->
+            <h4 class="text-xl font-bold text-emerald-400 mt-6 mb-2">Example: JavaScript in &lt;body&gt; (Best Practice)</h4>
+            <p class="text-gray-300 text-base mb-3">
+              Scripts ko <code>&lt;body&gt;</code> ke bilkul bottom me rakhna display speed badhata hai kyunki HTML parse hona pehle complete hota hai.
+            </p>
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">&lt;!DOCTYPE html&gt;</span>
+<span class="text-green-400">&lt;html&gt;</span>
+<span class="text-green-400">&lt;body&gt;</span>
+
+  <span class="text-green-400">&lt;h2&gt;</span>Demo JavaScript in Body<span class="text-green-400">&lt;/h2&gt;</span>
+  <span class="text-green-400">&lt;p</span> <span class="text-blue-400">id</span>=<span class="text-emerald-400">"demo"</span><span class="text-green-400">&gt;</span>A Paragraph<span class="text-green-400">&lt;/p&gt;</span>
+  <span class="text-green-400">&lt;button</span> <span class="text-blue-400">onclick</span>=<span class="text-emerald-400">"myFunction()"</span><span class="text-green-400">&gt;</span>Try it<span class="text-green-400">&lt;/button&gt;</span>
+
+  <span class="text-green-400">&lt;script&gt;</span>
+    <span class="text-blue-400">function</span> <span class="text-emerald-400">myFunction</span>() {
+      document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">"demo"</span>).innerHTML = <span class="text-emerald-400">"Paragraph changed."</span>;
+    }
+  <span class="text-green-400">&lt;/script&gt;</span>
+
+<span class="text-green-400">&lt;/body&gt;</span>
+<span class="text-green-400">&lt;/html&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Section 3: External JavaScript -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. External JavaScript (.js file)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Jab wahi script multiple web pages par use honi ho, toh **External JavaScript** sabse best option hota hai.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+              <!-- myScript.js -->
+              <div class="bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+                <span class="text-xs uppercase font-bold text-blue-400 tracking-wider">File: myScript.js</span>
+                <pre class="font-mono text-sm mt-2"><code><span class="text-blue-400">function</span> <span class="text-emerald-400">myFunction</span>() {
+  document.<span class="text-blue-400">getElementById</span>(<span class="text-emerald-400">"demo"</span>).innerHTML = <span class="text-emerald-400">"Paragraph changed."</span>;
+}</code></pre>
+              </div>
+
+              <!-- index.html -->
+              <div class="bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+                <span class="text-xs uppercase font-bold text-emerald-400 tracking-wider">File: index.html</span>
+                <pre class="font-mono text-sm mt-2"><code><span class="text-green-400">&lt;script</span> <span class="text-blue-400">src</span>=<span class="text-emerald-400">"myScript.js"</span><span class="text-green-400">&gt;&lt;/script&gt;</span></code></pre>
+              </div>
+            </div>
+
+            <!-- Advantages of External JS -->
+            <h4 class="text-xl font-bold text-white mt-6 mb-3">External JavaScript Ke Fayde:</h4>
+            <ul class="space-y-3 text-gray-300 text-base md:text-lg">
+              <li class="flex items-center">
+                <i class="fa-solid fa-circle-check text-emerald-400 mr-3"></i>
+                HTML aur Code (Logic) alag-alag rehte hain.
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-circle-check text-emerald-400 mr-3"></i>
+                HTML aur JavaScript files ko read aur maintain karna aasan ho jata hai.
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-circle-check text-emerald-400 mr-3"></i>
+                Cached JavaScript files se page load speed fast hoti hai.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="../intro/Intro.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮  Previous
+          </a>
+
+          <a
+            href="../output/Output.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(2);
+    </script>
+  </body>
+</html>

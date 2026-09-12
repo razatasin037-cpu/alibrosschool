@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Update Array Items - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          Update Array Items
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./AccessArrays.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./AddArrayItems.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            Array Items Ko Update Kaise Karein?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            PHP me kisi existing array element ki value badalne ke liye aap uske <strong class="text-white">Index Number</strong> ya <strong class="text-white">Key</strong> par nai value assign karte hain.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Aap direct assignment, loops (Reference <code class="text-green-400">&amp;</code>), ya array functions (<code class="text-green-400">array_splice</code>) ka use karke values ko update kar sakte hain.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- 1. Updating Indexed Array Items -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Updating Indexed Array Items
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Indexed array me specific index reference par nayi value assign karein:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$cars</span> = [<span class="text-white">"Volvo"</span>, <span class="text-white">"BMW"</span>, <span class="text-white">"Toyota"</span>];
+
+  <span class="text-[#94a3b8]">// Index 1 ("BMW") ko "Ford" se update karein</span>
+  <span class="text-green-400">$cars</span>[<span class="text-white">1</span>] = <span class="text-white">"Ford"</span>;
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$cars</span>);
+  <span class="text-[#94a3b8]">// Output: Array ( [0] =&gt; Volvo [1] =&gt; Ford [2] =&gt; Toyota )</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Updating Associative Array Items -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Updating Associative Array Items
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Associative array me desired key naam specify karke value overwrite karein:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$user</span> = [
+      <span class="text-white">"name"</span> =&gt; <span class="text-white">"Rahul"</span>,
+      <span class="text-white">"role"</span> =&gt; <span class="text-white">"Student"</span>,
+      <span class="text-white">"status"</span> =&gt; <span class="text-white">"pending"</span>
+  ];
+
+  <span class="text-[#94a3b8]">// Status aur Role update karein</span>
+  <span class="text-green-400">$user</span>[<span class="text-white">"status"</span>] = <span class="text-white">"active"</span>;
+  <span class="text-green-400">$user</span>[<span class="text-white">"role"</span>] = <span class="text-white">"Developer"</span>;
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$user</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Updating Items in a Loop (By Reference) -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. Updating All Items in a Loop (<code class="text-green-400">&amp;$item</code>)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              <code class="text-green-400">foreach</code> loop ke andar array ke original items ko direct update karne ke liye reference <code class="text-green-400">&amp;</code> symbol ka istemaal karein:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$prices</span> = [<span class="text-white">100</span>, <span class="text-white">200</span>, <span class="text-white">300</span>];
+
+  <span class="text-[#94a3b8]">// Subhi prices me 10% discount update karein</span>
+  <span class="text-green-400">foreach</span> (<span class="text-green-400">$prices</span> <span class="text-green-400">as</span> &amp;<span class="text-green-400">$price</span>) {
+      <span class="text-green-400">$price</span> = <span class="text-green-400">$price</span> * <span class="text-white">0.90</span>;
+  }
+  <span class="text-green-400">unset</span>(<span class="text-green-400">$price</span>); <span class="text-[#94a3b8]">// Reference break karein</span>
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$prices</span>);
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 4. Bulk Updating using array_splice() -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              4. Replacing Range of Items (<code class="text-green-400">array_splice</code>)
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Ek sath multiple elements ko replace karne ke liye <code class="text-green-400">array_splice()</code> function best hota hai:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$fruits</span> = [<span class="text-white">"Apple"</span>, <span class="text-white">"Banana"</span>, <span class="text-white">"Cherry"</span>, <span class="text-white">"Date"</span>];
+
+  <span class="text-[#94a3b8]">// Index 1 se 2 items ko "Kiwi" aur "Mango" se replace karein</span>
+  <span class="text-green-400">array_splice</span>(<span class="text-green-400">$fruits</span>, <span class="text-white">1</span>, <span class="text-white">2</span>, [<span class="text-white">"Kiwi"</span>, <span class="text-white">"Mango"</span>]);
+
+  <span class="text-green-400">print_r</span>(<span class="text-green-400">$fruits</span>);
+  <span class="text-[#94a3b8]">// Output: Array ( [0] =&gt; Apple [1] =&gt; Kiwi [2] =&gt; Mango [3] =&gt; Date )</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Danger/Warning Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-red-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-red-400">
+              <span>🚨</span> Important Safety Tip: Unset References
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+              Jab aap <code class="text-green-400">&amp;$value</code> reference ka use karke array items ko loop me update karte hain, toh loop khatam hone ke turant baad <code class="text-green-400">unset($value);</code> karna zaroori hai. Aisa na karne par same variable aage array ki last value corrupt kar sakta hai.
+            </p>
+            <div class="bg-[#1e293b] p-4 rounded-xl font-mono text-sm text-red-400 border border-red-500/20">
+              foreach ($list as &amp;$item) { $item = $item * 2; }<br />
+              unset($item); // 👈 Hamesha reference break karein!
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./AccessArrays.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./AddArrayItems.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(18);
+    </script>
+  </body>
+</html>

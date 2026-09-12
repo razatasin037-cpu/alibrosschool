@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Table Styling - Complete Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section class="w-full md:w-[calc(100%-320px)] p-6 md:pt-8 md:pb-[80px] md:px-[80px] transition-all duration-300">
+        
+        <h1 class="text-[48px] sm:text-[60px] md:text-[75px] font-extrabold text-white mb-6 mt-0 tracking-tight">
+          HTML Table Styling
+        </h1>
+
+        <div class="flex justify-between mt-10 items-center mb-10">
+          <a href="./TableHeaders.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableColgroup.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-[#111827] to-[#25304b] p-[35px] md:p-12 rounded-[40px] border-2 border-[#3158ff] shadow-2xl">
+          <h2 class="text-[30px] md:text-[48px] font-bold mb-[24px] text-white">
+            Styling HTML Tables with CSS
+          </h2>
+          <p class="text-[20px] md:text-[25px] text-[#cbd5e1] leading-relaxed mb-5">
+            HTML tables ko visually attractive aur readable banane ke liye CSS properties jaise <strong>Zebra Striping</strong>, <strong>Hover Effects</strong>, aur <strong>Padding</strong> ka use kiya jata hai.
+          </p>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            1. Zebra Striped Tables (`nth-child`)
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Alternate rows ko alag background color dene ke liye CSS <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">:nth-child(even)</code> ya <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">:nth-child(odd)</code> selector ka use hota hai:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">tr:nth-child(even)</span> {
+  <span class="text-yellow-400">background-color</span>: #1e293b;
+}
+<span class="text-blue-400">tr:nth-child(odd)</span> {
+  <span class="text-yellow-400">background-color</span>: #0f172a;
+}</code></pre>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Visual Result (Zebra Pattern)</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr class="bg-blue-600 text-white">
+                      <th class="p-3">User</th>
+                      <th class="p-3">Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="bg-[#0f172a]">
+                      <td class="p-3 text-gray-300">Rahul</td>
+                      <td class="p-3 text-gray-300">Developer</td>
+                    </tr>
+                    <tr class="bg-[#1e293b]">
+                      <td class="p-3 text-gray-300">Priya</td>
+                      <td class="p-3 text-gray-300">Designer</td>
+                    </tr>
+                    <tr class="bg-[#0f172a]">
+                      <td class="p-3 text-gray-300">Amit</td>
+                      <td class="p-3 text-gray-300">Manager</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            2. Hoverable Rows
+          </h3>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Jab user kisi row ke upar mouse le jaye to use highlight karne ke liye <code class="text-yellow-400 bg-[#0f172a] px-2 py-1 rounded-md">tr:hover</code> pseudo-class ka use karein:
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] font-mono text-base">
+<pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-blue-400">tr:hover</span> {
+  <span class="text-yellow-400">background-color</span>: #334155;
+  <span class="text-yellow-400">transition</span>: 0.3s;
+}</code></pre>
+            </div>
+
+            <div class="bg-[#020617] p-6 rounded-2xl border border-[#334155] flex flex-col justify-center">
+              <h4 class="text-gray-400 text-sm mb-4 font-mono text-center">Interactive Preview (Hover over rows)</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse border border-slate-700">
+                  <thead>
+                    <tr class="bg-slate-800 border-b border-slate-700">
+                      <th class="p-3 text-yellow-400">Course</th>
+                      <th class="p-3 text-yellow-400">Duration</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-800">
+                    <tr class="hover:bg-slate-800 transition-colors cursor-pointer">
+                      <td class="p-3 text-gray-300">HTML5 Full Course</td>
+                      <td class="p-3 text-gray-300">4 Hours</td>
+                    </tr>
+                    <tr class="hover:bg-slate-800 transition-colors cursor-pointer">
+                      <td class="p-3 text-gray-300">CSS3 Masterclass</td>
+                      <td class="p-3 text-gray-300">6 Hours</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-[#334155] shadow-2xl">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            3. Padding & Text Alignment
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-[#020617] p-8 rounded-2xl border border-[#334155]">
+              <span class="inline-block px-4 py-1.5 bg-blue-600/30 text-blue-400 font-bold text-sm rounded-lg mb-4">Space Control</span>
+              <h4 class="text-white font-bold text-xl mb-3">Cell Padding</h4>
+              <p class="text-gray-300 text-sm mb-4">Text aur border ke beech space dene ke liye:</p>
+              <div class="bg-[#0f172a] p-4 rounded-xl font-mono text-sm overflow-x-auto text-gray-300">
+<pre><code>th, td {
+  <span class="text-yellow-400">padding</span>: 15px;
+}</code></pre>
+              </div>
+            </div>
+
+            <div class="bg-[#020617] p-8 rounded-2xl border border-[#334155]">
+              <span class="inline-block px-4 py-1.5 bg-purple-600/30 text-purple-400 font-bold text-sm rounded-lg mb-4">Text Alignment</span>
+              <h4 class="text-white font-bold text-xl mb-3">Text Align</h4>
+              <p class="text-gray-300 text-sm mb-4">Text ko Left, Right ya Center align karne ke liye:</p>
+              <div class="bg-[#0f172a] p-4 rounded-xl font-mono text-sm overflow-x-auto text-gray-300">
+<pre><code>td {
+  <span class="text-yellow-400">text-align</span>: center;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between mt-12 items-center mb-10">
+          <a href="./TableHeaders.html" class="bg-white text-black md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-gray-200 transition shadow-lg">
+            ❮ Previous
+          </a>
+
+          <a href="./TableColgroup.html" class="bg-[#3158ff] text-white md:px-10 md:py-5 px-6 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-blue-700 transition shadow-lg">
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.getElementById("sidebar").innerHTML = createSidebar(17);
+    </script>
+  </body>
+</html>

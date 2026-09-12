@@ -1,0 +1,483 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Strings - Tutorial</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1
+        class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5"
+      >
+        JavaScript Strings
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/loops/Continue.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./StringsTemplates.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          String Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">String</code>
+          ka use text ko store karne ke liye kiya jata hai. String ke andar
+          letters, words, sentences, numbers aur special characters bhi ho
+          sakte hain.
+          <br><br>
+          String value ko hum single quotes
+          <code class="text-emerald-400">' '</code>,
+          double quotes
+          <code class="text-emerald-400">" "</code>
+          ya backticks
+          <code class="text-emerald-400">` `</code>
+          ke andar likh sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Syntax -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            String Syntax
+          </h3>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> variableName = <span class="text-emerald-400">"String Value"</span>;</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            String value ko quotes ke andar likha jata hai. Quotes ke andar
+            likha hua data JavaScript me text maana jata hai.
+          </p>
+
+        </div>
+
+        <!-- Example -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            String Example
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Is example me hum ek student ka name String ke andar store karke
+            console me print karenge.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> name = <span class="text-emerald-400">"Rahul"</span>;
+
+console.log(name);</code></pre>
+          </div>
+
+          <!-- Output -->
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+
+            <p class="font-bold text-white mb-2">
+              Output:
+            </p>
+
+<pre class="text-emerald-400 font-mono">Rahul</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Explanation -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Example Kaise Kaam Kar Raha Hai?
+          </h3>
+
+          <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+
+            <p>
+              <span class="text-blue-400 font-mono">let</span>
+              → JavaScript me variable create karne ke liye use kiya gaya hai.
+            </p>
+
+            <p>
+              <span class="text-blue-400 font-mono">name</span>
+              → Ye variable ka naam hai.
+            </p>
+
+            <p>
+              <span class="text-emerald-400 font-mono">"Rahul"</span>
+              → Ye String value hai kyunki ye quotes ke andar likhi gayi hai.
+            </p>
+
+            <p>
+              <span class="text-blue-400 font-mono">console.log(name)</span>
+              → Variable ke andar stored String ko console me print karta hai.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Quotes -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            String Quotes
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            JavaScript me String banane ke liye three types ke quotes use kar
+            sakte hain.
+          </p>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Type</th>
+                  <th class="p-4">Example</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Double Quotes
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    "Hello JavaScript"
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Single Quotes
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    'Hello JavaScript'
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Backticks
+                  </td>
+
+                  <td class="p-4 font-mono text-emerald-400">
+                    `Hello JavaScript`
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- String Length -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            String Length
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            String me kitne characters hain, ye check karne ke liye
+            <code class="text-blue-400">length</code>
+            property ka use hota hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">"Hello"</span>;
+
+console.log(text.length);</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+
+            <p class="font-bold text-white mb-2">
+              Output:
+            </p>
+
+<pre class="text-emerald-400 font-mono">5</pre>
+
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            <code class="text-emerald-400">"Hello"</code>
+            me 5 characters hain:
+            <code class="text-blue-400">H, e, l, l, o</code>.
+            Isliye output
+            <code class="text-white">5</code>
+            aata hai.
+          </p>
+
+        </div>
+
+        <!-- String Index -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            String Index
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            String ke har character ka ek index number hota hai.
+            JavaScript me index
+            <code class="text-blue-400">0</code>
+            se start hota hai.
+          </p>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-center">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Character</th>
+                  <th class="p-4">H</th>
+                  <th class="p-4">e</th>
+                  <th class="p-4">l</th>
+                  <th class="p-4">l</th>
+                  <th class="p-4">o</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-bold">Index</td>
+                  <td class="p-4">0</td>
+                  <td class="p-4">1</td>
+                  <td class="p-4">2</td>
+                  <td class="p-4">3</td>
+                  <td class="p-4">4</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <div
+            class="mt-6 bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> text = <span class="text-emerald-400">"Hello"</span>;
+
+console.log(text[<span class="text-emerald-400">0</span>]);</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+
+            <p class="font-bold text-white mb-2">
+              Output:
+            </p>
+
+<pre class="text-emerald-400 font-mono">H</pre>
+
+          </div>
+
+        </div>
+
+        <!-- typeof -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Check String Data Type
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">typeof</code>
+            operator ka use variable ka data type check karne ke liye kiya
+            jata hai.
+          </p>
+
+          <div
+            class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]"
+          >
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> name = <span class="text-emerald-400">"Rahul"</span>;
+
+console.log(<span class="text-blue-400">typeof</span> name);</code></pre>
+          </div>
+
+          <div
+            class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]"
+          >
+
+            <p class="font-bold text-white mb-2">
+              Output:
+            </p>
+
+<pre class="text-emerald-400 font-mono">string</pre>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div
+          class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]"
+        >
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. String ka use text data ko store karne ke liye hota hai.
+            </p>
+
+            <p>
+              2. String ko single quotes, double quotes ya backticks me likh
+              sakte hain.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">length</code>
+              se String ke total characters pata kar sakte hain.
+            </p>
+
+            <p>
+              4. String ka index
+              <code class="text-blue-400">0</code>
+              se start hota hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">typeof</code>
+              se String ka data type check kar sakte hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/loops/Continue.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./StringsTemplates.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script>
+    // Sidebar No. 8 -> JS Strings -> First Submenu
+    document.getElementById("sidebar").innerHTML = createSidebar(8);
+  </script>
+
+</body>
+</html>
+

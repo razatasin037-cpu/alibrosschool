@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Navigator Object - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Navigator Object
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./History.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Storage.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Navigator Object Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me
+          <code class="text-blue-400">navigator</code>
+          object browser aur device environment ke baare me information provide
+          karta hai.
+          <br><br>
+          Isse browser language, online status, user agent aur kuch device
+          capabilities check ki ja sakti hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Basic -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator Object Access Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  navigator
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- language -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.language
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Browser ki preferred language return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  navigator.language
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">en-US</pre>
+          </div>
+
+        </div>
+
+        <!-- languages -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.languages
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            User ki preferred languages ki list deta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  navigator.languages
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- online -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.onLine
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser network connection available lag rahi hai ya nahi, uska
+            boolean status deta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  navigator.onLine
+);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">true
+or
+false</pre>
+          </div>
+
+        </div>
+
+        <!-- online check -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Online / Offline Check
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">if</span> (
+  navigator.onLine
+) {
+
+  console.log(
+    <span class="text-emerald-400">"You are online"</span>
+  );
+
+} <span class="text-blue-400">else</span> {
+
+  console.log(
+    <span class="text-emerald-400">"You are offline"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- online event -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Online Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.addEventListener(
+  <span class="text-emerald-400">"online"</span>,
+  () =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Internet Connected"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- offline event -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Offline Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>window.addEventListener(
+  <span class="text-emerald-400">"offline"</span>,
+  () =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Internet Disconnected"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- userAgent -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.userAgent
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser ka user-agent string return karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  navigator.userAgent
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Browser detection ke liye sirf user-agent par depend karna reliable
+            nahi hota. Feature detection usually better approach hai.
+          </p>
+
+        </div>
+
+        <!-- platform -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.platform
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Platform related string de sakta hai, lekin modern code me exact
+            device detection ke liye is property par heavily depend nahi karna
+            chahiye.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  navigator.platform
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- cookies -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.cookieEnabled
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Cookies generally enabled hain ya nahi check karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  navigator.cookieEnabled
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- hardware concurrency -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.hardwareConcurrency
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser ko available logical processor count ka approximate value
+            provide karta hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>console.log(
+  navigator.hardwareConcurrency
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- device memory -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.deviceMemory
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Supported browsers me approximate device memory information mil
+            sakti hai. Ye har browser me available nahi hoti.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">if</span> (
+  <span class="text-emerald-400">"deviceMemory"</span>
+  <span class="text-blue-400">in</span> navigator
+) {
+
+  console.log(
+    navigator.deviceMemory
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- clipboard -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.clipboard
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Supported secure contexts me Clipboard API ke through text copy/read
+            operations ki ja sakti hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> copyText() {
+
+  <span class="text-blue-400">await</span>
+    navigator.clipboard.writeText(
+      <span class="text-emerald-400">"Hello JavaScript"</span>
+    );
+
+  console.log(
+    <span class="text-emerald-400">"Copied"</span>
+  );
+
+}
+
+copyText();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- clipboard button -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Copy Button Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;button id=<span class="text-emerald-400">"copyBtn"</span>&gt;
+  Copy
+&lt;/button&gt;
+
+&lt;script&gt;
+
+document.getElementById(
+  <span class="text-emerald-400">"copyBtn"</span>
+).addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  <span class="text-blue-400">async</span> () =&gt; {
+
+    <span class="text-blue-400">try</span> {
+
+      <span class="text-blue-400">await</span>
+        navigator.clipboard.writeText(
+          <span class="text-emerald-400">"JavaScript DOM"</span>
+        );
+
+      console.log(
+        <span class="text-emerald-400">"Text Copied"</span>
+      );
+
+    } <span class="text-blue-400">catch</span> (error) {
+
+      console.log(
+        error
+      );
+
+    }
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- geolocation intro -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.geolocation
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Supported browsers me Geolocation API user ki permission ke saath
+            location information request kar sakti hai.
+          </p>
+
+        </div>
+
+        <!-- Geolocation check -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Geolocation Support Check
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">if</span> (
+  <span class="text-emerald-400">"geolocation"</span>
+  <span class="text-blue-400">in</span> navigator
+) {
+
+  console.log(
+    <span class="text-emerald-400">"Geolocation supported"</span>
+  );
+
+} <span class="text-blue-400">else</span> {
+
+  console.log(
+    <span class="text-emerald-400">"Not supported"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- permissions -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            navigator.permissions
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Supported browsers me kuch web permissions ka status check karne ke
+            liye Permissions API available ho sakti hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">async function</span> checkPermission() {
+
+  <span class="text-blue-400">const</span> permission =
+    <span class="text-blue-400">await</span>
+      navigator.permissions.query({
+        name:
+          <span class="text-emerald-400">"geolocation"</span>
+      });
+
+  console.log(
+    permission.state
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Feature Detection -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Feature Detection
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Browser name detect karne ke bajay check karo ki required feature
+            available hai ya nahi.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">if</span> (
+  <span class="text-emerald-400">"clipboard"</span>
+  <span class="text-blue-400">in</span> navigator
+) {
+
+  console.log(
+    <span class="text-emerald-400">"Clipboard supported"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Real Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Browser Information Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;div id=<span class="text-emerald-400">"info"</span>&gt;&lt;/div&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> info =
+  document.getElementById(
+    <span class="text-emerald-400">"info"</span>
+  );
+
+info.innerHTML = <span class="text-emerald-400">`
+  &lt;p&gt;Language: ${navigator.language}&lt;/p&gt;
+  &lt;p&gt;Online: ${navigator.onLine}&lt;/p&gt;
+  &lt;p&gt;Cookies: ${navigator.cookieEnabled}&lt;/p&gt;
+  &lt;p&gt;CPU Threads: ${navigator.hardwareConcurrency}&lt;/p&gt;
+`</span>;
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Online status practical -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Live Internet Status
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;p id=<span class="text-emerald-400">"status"</span>&gt;&lt;/p&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> status =
+  document.getElementById(
+    <span class="text-emerald-400">"status"</span>
+  );
+
+<span class="text-blue-400">function</span> updateStatus() {
+
+  status.textContent =
+    navigator.onLine
+      ? <span class="text-emerald-400">"Online"</span>
+      : <span class="text-emerald-400">"Offline"</span>;
+
+}
+
+window.addEventListener(
+  <span class="text-emerald-400">"online"</span>,
+  updateStatus
+);
+
+window.addEventListener(
+  <span class="text-emerald-400">"offline"</span>,
+  updateStatus
+);
+
+updateStatus();
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Navigator Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property / API</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    navigator.language
+                  </td>
+                  <td class="p-4">
+                    Preferred language
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    navigator.languages
+                  </td>
+                  <td class="p-4">
+                    Preferred language list
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    navigator.onLine
+                  </td>
+                  <td class="p-4">
+                    Network status hint
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    navigator.userAgent
+                  </td>
+                  <td class="p-4">
+                    User-agent string
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    navigator.cookieEnabled
+                  </td>
+                  <td class="p-4">
+                    Cookie availability
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    hardwareConcurrency
+                  </td>
+                  <td class="p-4">
+                    Logical processor count
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    clipboard
+                  </td>
+                  <td class="p-4">
+                    Clipboard API
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    geolocation
+                  </td>
+                  <td class="p-4">
+                    Location API
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    permissions
+                  </td>
+                  <td class="p-4">
+                    Permission status API
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1.
+              <code class="text-blue-400">navigator</code>
+              browser/environment related APIs provide karta hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">navigator.language</code>
+              preferred browser language deta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">navigator.onLine</code>
+              browser ka online/offline status hint deta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">online</code>
+              aur
+              <code class="text-blue-400">offline</code>
+              events connection changes handle karne me useful hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">userAgent</code>
+              browser information deta hai, lekin browser detection ke liye
+              perfect reliable method nahi hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">navigator.clipboard</code>
+              Clipboard API expose kar sakta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">navigator.geolocation</code>
+              location permission-based API provide karta hai.
+            </p>
+
+            <p>
+              8. Modern JavaScript me browser detection se zyada
+              <strong>feature detection</strong>
+              use karna better hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./History.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Storage.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(28);
+  </script>
+
+</body>
+</html>

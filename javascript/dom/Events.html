@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript DOM Events - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript DOM Events
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./CSS.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Forms.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          DOM Event Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript DOM Events ka use user ke actions ko detect aur handle
+          karne ke liye hota hai.
+          <br><br>
+          Jaise button click karna, input me type karna, form submit karna,
+          mouse move karna ya keyboard key press karna.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Event Examples -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Common DOM Events
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Event</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">click</td>
+                  <td class="p-4">Element click hone par.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">dblclick</td>
+                  <td class="p-4">Double click hone par.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">input</td>
+                  <td class="p-4">Input value change hote waqt.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">change</td>
+                  <td class="p-4">Input/select value commit hone par.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">submit</td>
+                  <td class="p-4">Form submit hone par.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">mouseover</td>
+                  <td class="p-4">Mouse element ke upar aane par.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">mouseout</td>
+                  <td class="p-4">Mouse element se bahar jane par.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">keydown</td>
+                  <td class="p-4">Keyboard key press hone par.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">keyup</td>
+                  <td class="p-4">Key release hone par.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- addEventListener -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            addEventListener()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Event handler attach karne ka common aur recommended way
+            <code class="text-blue-400">addEventListener()</code>
+            hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>element.addEventListener(
+  <span class="text-emerald-400">"event"</span>,
+  callback
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Click -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Click Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;button id=<span class="text-emerald-400">"btn"</span>&gt;
+  Click Me
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Button Clicked"</span>
+    );
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Change text on click -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Click Par Text Change
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h2 id=<span class="text-emerald-400">"title"</span>&gt;
+  Old Text
+&lt;/h2&gt;
+
+&lt;button id=<span class="text-emerald-400">"btn"</span>&gt;
+  Change Text
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> title =
+  document.getElementById(
+    <span class="text-emerald-400">"title"</span>
+  );
+
+<span class="text-blue-400">const</span> button =
+  document.getElementById(
+    <span class="text-emerald-400">"btn"</span>
+  );
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    title.textContent =
+      <span class="text-emerald-400">"New Text"</span>;
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- dblclick -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            dblclick Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>button.addEventListener(
+  <span class="text-emerald-400">"dblclick"</span>,
+  () =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Double Clicked"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Mouse Events -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Mouse Events
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> box =
+  document.getElementById(
+    <span class="text-emerald-400">"box"</span>
+  );
+
+box.addEventListener(
+  <span class="text-emerald-400">"mouseover"</span>,
+  () =&gt; {
+
+    box.style.backgroundColor =
+      <span class="text-emerald-400">"blue"</span>;
+
+  }
+);
+
+box.addEventListener(
+  <span class="text-emerald-400">"mouseout"</span>,
+  () =&gt; {
+
+    box.style.backgroundColor =
+      <span class="text-emerald-400">"black"</span>;
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Input event -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            input Event
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            User input me type karta hai to
+            <code class="text-blue-400">input</code>
+            event fire hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;input
+  id=<span class="text-emerald-400">"name"</span>
+  type=<span class="text-emerald-400">"text"</span>
+&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> input =
+  document.getElementById(
+    <span class="text-emerald-400">"name"</span>
+  );
+
+input.addEventListener(
+  <span class="text-emerald-400">"input"</span>,
+  () =&gt; {
+
+    console.log(
+      input.value
+    );
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Event Object -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Event Object
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Event handler ko ek event object milta hai. Commonly ise
+            <code class="text-blue-400">event</code>
+            ya
+            <code class="text-blue-400">e</code>
+            naam dete hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>input.addEventListener(
+  <span class="text-emerald-400">"input"</span>,
+  (event) =&gt; {
+
+    console.log(
+      event.target.value
+    );
+
+  }
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            <code class="text-blue-400">event.target</code>
+            usually us element ko represent karta hai jahan se event originate
+            hua.
+          </p>
+
+        </div>
+
+        <!-- Change -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            change Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> course =
+  document.getElementById(
+    <span class="text-emerald-400">"course"</span>
+  );
+
+course.addEventListener(
+  <span class="text-emerald-400">"change"</span>,
+  (event) =&gt; {
+
+    console.log(
+      event.target.value
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Focus -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            focus Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>input.addEventListener(
+  <span class="text-emerald-400">"focus"</span>,
+  () =&gt; {
+
+    input.style.borderColor =
+      <span class="text-emerald-400">"blue"</span>;
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Blur -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            blur Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>input.addEventListener(
+  <span class="text-emerald-400">"blur"</span>,
+  () =&gt; {
+
+    console.log(
+      <span class="text-emerald-400">"Input focus lost"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Keyboard -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Keyboard Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>document.addEventListener(
+  <span class="text-emerald-400">"keydown"</span>,
+  (event) =&gt; {
+
+    console.log(
+      event.key
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Enter -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Enter Key Detect Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>input.addEventListener(
+  <span class="text-emerald-400">"keydown"</span>,
+  (event) =&gt; {
+
+    <span class="text-blue-400">if</span> (
+      event.key ===
+      <span class="text-emerald-400">"Enter"</span>
+    ) {
+
+      console.log(
+        <span class="text-emerald-400">"Enter Pressed"</span>
+      );
+
+    }
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Submit -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Form submit Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;form id=<span class="text-emerald-400">"form"</span>&gt;
+
+  &lt;input
+    id=<span class="text-emerald-400">"email"</span>
+    type=<span class="text-emerald-400">"email"</span>
+  &gt;
+
+  &lt;button&gt;
+    Submit
+  &lt;/button&gt;
+
+&lt;/form&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> form =
+  document.getElementById(
+    <span class="text-emerald-400">"form"</span>
+  );
+
+form.addEventListener(
+  <span class="text-emerald-400">"submit"</span>,
+  (event) =&gt; {
+
+    event.preventDefault();
+
+    console.log(
+      <span class="text-emerald-400">"Form Submitted"</span>
+    );
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- preventDefault -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            preventDefault()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            <code class="text-blue-400">event.preventDefault()</code>
+            browser ke default behavior ko prevent karta hai.
+            <br><br>
+            Form submit ke case me ye page reload/normal submit behavior ko
+            rokne ke liye commonly use hota hai.
+          </p>
+
+        </div>
+
+        <!-- Current Target -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            target vs currentTarget
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  (event) =&gt; {
+
+    console.log(
+      event.target
+    );
+
+    console.log(
+      event.currentTarget
+    );
+
+  }
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            <code class="text-blue-400">target</code>
+            actual originating element hota hai, jabki
+            <code class="text-blue-400">currentTarget</code>
+            wo element hota hai jiske listener ka callback currently run ho
+            raha hai.
+          </p>
+
+        </div>
+
+        <!-- Bubbling -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Event Bubbling
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Default event flow me kai events target se parent elements ki taraf
+            bubble karte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;div id=<span class="text-emerald-400">"parent"</span>&gt;
+
+  &lt;button id=<span class="text-emerald-400">"child"</span>&gt;
+    Click
+  &lt;/button&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+
+document.getElementById(
+  <span class="text-emerald-400">"child"</span>
+).addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+    console.log(
+      <span class="text-emerald-400">"Child"</span>
+    );
+  }
+);
+
+document.getElementById(
+  <span class="text-emerald-400">"parent"</span>
+).addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+    console.log(
+      <span class="text-emerald-400">"Parent"</span>
+    );
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+<pre class="text-emerald-400 font-mono">Child
+Parent</pre>
+          </div>
+
+        </div>
+
+        <!-- stop propagation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            stopPropagation()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Event ko aage propagate hone se rokne ke liye
+            <code class="text-blue-400">stopPropagation()</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>child.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  (event) =&gt; {
+
+    event.stopPropagation();
+
+    console.log(
+      <span class="text-emerald-400">"Child Only"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Event Delegation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Event Delegation
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Multiple child elements ko alag-alag listeners dene ki jagah parent
+            par ek listener lagakar bubbling ka use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;ul id=<span class="text-emerald-400">"list"</span>&gt;
+
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Mango&lt;/li&gt;
+  &lt;li&gt;Banana&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> list =
+  document.getElementById(
+    <span class="text-emerald-400">"list"</span>
+  );
+
+list.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  (event) =&gt; {
+
+    <span class="text-blue-400">if</span> (
+      event.target.tagName ===
+      <span class="text-emerald-400">"LI"</span>
+    ) {
+
+      console.log(
+        event.target.textContent
+      );
+
+    }
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- remove listener -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            removeEventListener()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> handleClick() {
+
+  console.log(
+    <span class="text-emerald-400">"Clicked"</span>
+  );
+
+}
+
+button.addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  handleClick
+);
+
+button.removeEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  handleClick
+);</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Listener remove karne ke liye same function reference dena hota
+            hai.
+          </p>
+
+        </div>
+
+        <!-- onclick -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            onclick Property
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>button.onclick = () =&gt; {
+
+  console.log(
+    <span class="text-emerald-400">"Clicked"</span>
+  );
+
+};</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Ye bhi valid hai, lekin multiple independent listeners attach
+            karne ke liye
+            <code class="text-blue-400">addEventListener()</code>
+            zyada flexible hai.
+          </p>
+
+        </div>
+
+        <!-- Complete practical -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Practical Counter Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;h2 id=<span class="text-emerald-400">"count"</span>&gt;
+  0
+&lt;/h2&gt;
+
+&lt;button id=<span class="text-emerald-400">"increase"</span>&gt;
+  Increase
+&lt;/button&gt;
+
+&lt;button id=<span class="text-emerald-400">"decrease"</span>&gt;
+  Decrease
+&lt;/button&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">let</span> count =
+  <span class="text-emerald-400">0</span>;
+
+<span class="text-blue-400">const</span> output =
+  document.getElementById(
+    <span class="text-emerald-400">"count"</span>
+  );
+
+document.getElementById(
+  <span class="text-emerald-400">"increase"</span>
+).addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    count++;
+
+    output.textContent =
+      count;
+
+  }
+);
+
+document.getElementById(
+  <span class="text-emerald-400">"decrease"</span>
+).addEventListener(
+  <span class="text-emerald-400">"click"</span>,
+  () =&gt; {
+
+    count--;
+
+    output.textContent =
+      count;
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Events Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Code</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    addEventListener()
+                  </td>
+                  <td class="p-4">Event listener add karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    removeEventListener()
+                  </td>
+                  <td class="p-4">Event listener remove karta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    event.target
+                  </td>
+                  <td class="p-4">Originating element deta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    event.currentTarget
+                  </td>
+                  <td class="p-4">Current listener element deta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    preventDefault()
+                  </td>
+                  <td class="p-4">Default browser action rokta hai.</td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    stopPropagation()
+                  </td>
+                  <td class="p-4">Event propagation rokta hai.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important Points -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. DOM events user ya browser actions ko represent karte hain.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">addEventListener()</code>
+              event handler attach karta hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">click</code>,
+              <code class="text-blue-400">input</code>,
+              <code class="text-blue-400">change</code>,
+              <code class="text-blue-400">submit</code>
+              aur keyboard events commonly use hote hain.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">event.target</code>
+              actual event target ko access karta hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">preventDefault()</code>
+              default browser behavior ko rokta hai.
+            </p>
+
+            <p>
+              6. Event bubbling me event target se ancestors ki taraf propagate
+              kar sakta hai.
+            </p>
+
+            <p>
+              7.
+              <code class="text-blue-400">stopPropagation()</code>
+              propagation ko rok sakta hai.
+            </p>
+
+            <p>
+              8. Event delegation dynamic lists aur repeated elements ke saath
+              useful technique hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./CSS.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Forms.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(27);
+  </script>
+
+</body>
+</html>

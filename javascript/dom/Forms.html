@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript DOM Forms - Tutorial</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript DOM Forms
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Events.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Navigation.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          DOM Forms Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript DOM Forms ka use form input values read karne,
+          validation karne aur form submit event handle karne ke liye hota hai.
+          <br><br>
+          Hum input, email, password, radio, checkbox, select aur textarea
+          jaise fields ko JavaScript se access kar sakte hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Basic Form -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Basic HTML Form
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;form id="userForm"&gt;
+
+  &lt;input
+    type="text"
+    id="name"
+    placeholder="Enter name"
+  &gt;
+
+  &lt;button type="submit"&gt;
+    Submit
+  &lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Select Form -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Form Select Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> form =
+  document.getElementById(
+    <span class="text-emerald-400">"userForm"</span>
+  );
+
+console.log(form);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Input Value -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Input Value Read Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> input =
+  document.getElementById(
+    <span class="text-emerald-400">"name"</span>
+  );
+
+console.log(
+  input.value
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Submit -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Form Submit Event
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> form =
+  document.getElementById(
+    <span class="text-emerald-400">"userForm"</span>
+  );
+
+form.addEventListener(
+  <span class="text-emerald-400">"submit"</span>,
+  (event) =&gt; {
+
+    event.preventDefault();
+
+    console.log(
+      <span class="text-emerald-400">"Form Submitted"</span>
+    );
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- preventDefault -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            preventDefault()
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Form submit hone par browser normally page ko reload ya navigate
+            kar sakta hai.
+            <br><br>
+            JavaScript se form handle karte waqt
+            <code class="text-blue-400">event.preventDefault()</code>
+            default submit behavior ko rokta hai.
+          </p>
+
+        </div>
+
+        <!-- Name -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Name Field Read Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;input
+  type=<span class="text-emerald-400">"text"</span>
+  id=<span class="text-emerald-400">"name"</span>
+&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> name =
+  document.getElementById(
+    <span class="text-emerald-400">"name"</span>
+  ).value;
+
+console.log(name);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Email -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Email Field
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> email =
+  document.getElementById(
+    <span class="text-emerald-400">"email"</span>
+  ).value;
+
+console.log(email);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Password -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Password Field
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> password =
+  document.getElementById(
+    <span class="text-emerald-400">"password"</span>
+  ).value;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Basic Validation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Empty Field Validation
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> name =
+  document.getElementById(
+    <span class="text-emerald-400">"name"</span>
+  ).value.trim();
+
+<span class="text-blue-400">if</span> (name === <span class="text-emerald-400">""</span>) {
+
+  console.log(
+    <span class="text-emerald-400">"Name is required"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Email Validation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Simple Email Validation
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> email =
+  document.getElementById(
+    <span class="text-emerald-400">"email"</span>
+  ).value.trim();
+
+<span class="text-blue-400">if</span> (!email.includes(
+  <span class="text-emerald-400">"@"</span>
+)) {
+
+  console.log(
+    <span class="text-emerald-400">"Invalid email"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Password Validation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Password Length Validation
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> password =
+  document.getElementById(
+    <span class="text-emerald-400">"password"</span>
+  ).value;
+
+<span class="text-blue-400">if</span> (
+  password.length &lt; <span class="text-emerald-400">6</span>
+) {
+
+  console.log(
+    <span class="text-emerald-400">"Password must be at least 6 characters"</span>
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Radio -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Radio Button Value
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;input
+  type=<span class="text-emerald-400">"radio"</span>
+  name=<span class="text-emerald-400">"gender"</span>
+  value=<span class="text-emerald-400">"Male"</span>
+&gt; Male
+
+&lt;input
+  type=<span class="text-emerald-400">"radio"</span>
+  name=<span class="text-emerald-400">"gender"</span>
+  value=<span class="text-emerald-400">"Female"</span>
+&gt; Female
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> selected =
+  document.querySelector(
+    <span class="text-emerald-400">'input[name="gender"]:checked'</span>
+  );
+
+<span class="text-blue-400">if</span> (selected) {
+
+  console.log(
+    selected.value
+  );
+
+}
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Checkbox -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Checkbox Check Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;input
+  type=<span class="text-emerald-400">"checkbox"</span>
+  id=<span class="text-emerald-400">"terms"</span>
+&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> terms =
+  document.getElementById(
+    <span class="text-emerald-400">"terms"</span>
+  );
+
+console.log(
+  terms.checked
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Multiple Checkboxes -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Multiple Checkbox Values
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> skills =
+  document.querySelectorAll(
+    <span class="text-emerald-400">'input[name="skills"]:checked'</span>
+  );
+
+<span class="text-blue-400">const</span> selectedSkills =
+  [];
+
+skills.forEach((skill) =&gt; {
+
+  selectedSkills.push(
+    skill.value
+  );
+
+});
+
+console.log(
+  selectedSkills
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Select -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Select Dropdown Value
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;select id=<span class="text-emerald-400">"course"</span>&gt;
+
+  &lt;option value=<span class="text-emerald-400">"HTML"</span>&gt;
+    HTML
+  &lt;/option&gt;
+
+  &lt;option value=<span class="text-emerald-400">"JavaScript"</span>&gt;
+    JavaScript
+  &lt;/option&gt;
+
+&lt;/select&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> course =
+  document.getElementById(
+    <span class="text-emerald-400">"course"</span>
+  ).value;
+
+console.log(course);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Textarea -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Textarea Value
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> message =
+  document.getElementById(
+    <span class="text-emerald-400">"message"</span>
+  ).value;
+
+console.log(message);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- FormData -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            FormData
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Form ke fields ko easily collect karne ke liye
+            <code class="text-blue-400">FormData</code>
+            use kar sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;form id=<span class="text-emerald-400">"userForm"</span>&gt;
+
+  &lt;input
+    name=<span class="text-emerald-400">"name"</span>
+    value=<span class="text-emerald-400">"Ali"</span>
+  &gt;
+
+  &lt;input
+    name=<span class="text-emerald-400">"email"</span>
+    value=<span class="text-emerald-400">"ali@gmail.com"</span>
+  &gt;
+
+&lt;/form&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> form =
+  document.getElementById(
+    <span class="text-emerald-400">"userForm"</span>
+  );
+
+<span class="text-blue-400">const</span> formData =
+  <span class="text-blue-400">new</span> FormData(
+    form
+  );
+
+console.log(
+  formData.get(
+    <span class="text-emerald-400">"name"</span>
+  )
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- FormData entries -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            FormData Entries
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> formData =
+  <span class="text-blue-400">new</span> FormData(
+    form
+  );
+
+<span class="text-blue-400">for</span> (
+  <span class="text-blue-400">const</span> [key, value]
+  <span class="text-blue-400">of</span> formData.entries()
+) {
+
+  console.log(
+    key,
+    value
+  );
+
+}</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Object From FormData -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            FormData To Object
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> formData =
+  <span class="text-blue-400">new</span> FormData(
+    form
+  );
+
+<span class="text-blue-400">const</span> data =
+  Object.fromEntries(
+    formData.entries()
+  );
+
+console.log(data);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Reset -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            form.reset()
+          </h3>
+
+          <p class="text-gray-300 text-lg mb-5">
+            Form fields ko reset karne ke liye:
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>form.reset();</code></pre>
+          </div>
+
+        </div>
+
+        <!-- HTML validation -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            HTML Validation Attributes
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;input
+  type=<span class="text-emerald-400">"email"</span>
+  required
+&gt;
+
+&lt;input
+  type=<span class="text-emerald-400">"password"</span>
+  minlength=<span class="text-emerald-400">"6"</span>
+  required
+&gt;</code></pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5">
+            Basic validation ke liye HTML ke
+            <code class="text-blue-400">required</code>,
+            <code class="text-blue-400">minlength</code>,
+            <code class="text-blue-400">maxlength</code>,
+            <code class="text-blue-400">min</code>,
+            <code class="text-blue-400">max</code>
+            jaise attributes bhi useful hain.
+          </p>
+
+        </div>
+
+        <!-- checkValidity -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            checkValidity()
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">const</span> email =
+  document.getElementById(
+    <span class="text-emerald-400">"email"</span>
+  );
+
+console.log(
+  email.checkValidity()
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Custom Error -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Error Message Show Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;p
+  id=<span class="text-emerald-400">"error"</span>
+&gt;&lt;/p&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> error =
+  document.getElementById(
+    <span class="text-emerald-400">"error"</span>
+  );
+
+<span class="text-blue-400">if</span> (name === <span class="text-emerald-400">""</span>) {
+
+  error.textContent =
+    <span class="text-emerald-400">"Name is required"</span>;
+
+}
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Complete Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Complete Form Validation Example
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>&lt;form id=<span class="text-emerald-400">"registerForm"</span>&gt;
+
+  &lt;input
+    type=<span class="text-emerald-400">"text"</span>
+    id=<span class="text-emerald-400">"name"</span>
+    placeholder=<span class="text-emerald-400">"Name"</span>
+  &gt;
+
+  &lt;input
+    type=<span class="text-emerald-400">"email"</span>
+    id=<span class="text-emerald-400">"email"</span>
+    placeholder=<span class="text-emerald-400">"Email"</span>
+  &gt;
+
+  &lt;input
+    type=<span class="text-emerald-400">"password"</span>
+    id=<span class="text-emerald-400">"password"</span>
+    placeholder=<span class="text-emerald-400">"Password"</span>
+  &gt;
+
+  &lt;button type=<span class="text-emerald-400">"submit"</span>&gt;
+    Register
+  &lt;/button&gt;
+
+&lt;/form&gt;
+
+&lt;p id=<span class="text-emerald-400">"message"</span>&gt;&lt;/p&gt;
+
+&lt;script&gt;
+
+<span class="text-blue-400">const</span> form =
+  document.getElementById(
+    <span class="text-emerald-400">"registerForm"</span>
+  );
+
+<span class="text-blue-400">const</span> message =
+  document.getElementById(
+    <span class="text-emerald-400">"message"</span>
+  );
+
+form.addEventListener(
+  <span class="text-emerald-400">"submit"</span>,
+  (event) =&gt; {
+
+    event.preventDefault();
+
+    <span class="text-blue-400">const</span> name =
+      document.getElementById(
+        <span class="text-emerald-400">"name"</span>
+      ).value.trim();
+
+    <span class="text-blue-400">const</span> email =
+      document.getElementById(
+        <span class="text-emerald-400">"email"</span>
+      ).value.trim();
+
+    <span class="text-blue-400">const</span> password =
+      document.getElementById(
+        <span class="text-emerald-400">"password"</span>
+      ).value;
+
+    <span class="text-blue-400">if</span> (name === <span class="text-emerald-400">""</span>) {
+
+      message.textContent =
+        <span class="text-emerald-400">"Name is required"</span>;
+
+      <span class="text-blue-400">return</span>;
+    }
+
+    <span class="text-blue-400">if</span> (!email.includes(
+      <span class="text-emerald-400">"@"</span>
+    )) {
+
+      message.textContent =
+        <span class="text-emerald-400">"Enter valid email"</span>;
+
+      <span class="text-blue-400">return</span>;
+    }
+
+    <span class="text-blue-400">if</span> (
+      password.length &lt; <span class="text-emerald-400">6</span>
+    ) {
+
+      message.textContent =
+        <span class="text-emerald-400">"Password must be at least 6 characters"</span>;
+
+      <span class="text-blue-400">return</span>;
+    }
+
+    message.textContent =
+      <span class="text-emerald-400">"Form Submitted Successfully"</span>;
+
+    form.reset();
+
+  }
+);
+
+&lt;/script&gt;</code></pre>
+          </div>
+
+        </div>
+
+        <!-- API Example -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Form Data API Ko Send Karna
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>form.addEventListener(
+  <span class="text-emerald-400">"submit"</span>,
+  <span class="text-blue-400">async</span> (event) =&gt; {
+
+    event.preventDefault();
+
+    <span class="text-blue-400">const</span> formData =
+      <span class="text-blue-400">new</span> FormData(
+        form
+      );
+
+    <span class="text-blue-400">const</span> data =
+      Object.fromEntries(
+        formData.entries()
+      );
+
+    <span class="text-blue-400">const</span> response =
+      <span class="text-blue-400">await</span> fetch(
+        <span class="text-emerald-400">"/api/users"</span>,
+        {
+
+          method:
+            <span class="text-emerald-400">"POST"</span>,
+
+          headers: {
+
+            <span class="text-emerald-400">"Content-Type"</span>:
+              <span class="text-emerald-400">"application/json"</span>
+
+          },
+
+          body:
+            JSON.stringify(data)
+
+        }
+      );
+
+    <span class="text-blue-400">const</span> result =
+      <span class="text-blue-400">await</span> response.json();
+
+    console.log(result);
+
+  }
+);</code></pre>
+          </div>
+
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            DOM Forms Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Property / Method</th>
+                  <th class="p-4">Use</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    value
+                  </td>
+                  <td class="p-4">
+                    Input value read/change
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    checked
+                  </td>
+                  <td class="p-4">
+                    Checkbox/radio status
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    submit
+                  </td>
+                  <td class="p-4">
+                    Form submit event
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    preventDefault()
+                  </td>
+                  <td class="p-4">
+                    Default form submit stop
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    FormData
+                  </td>
+                  <td class="p-4">
+                    Form fields collect
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    reset()
+                  </td>
+                  <td class="p-4">
+                    Form reset
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    checkValidity()
+                  </td>
+                  <td class="p-4">
+                    HTML validity check
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Form fields ki value
+              <code class="text-blue-400">value</code>
+              property se milti hai.
+            </p>
+
+            <p>
+              2.
+              <code class="text-blue-400">submit</code>
+              event form submit hone par fire hota hai.
+            </p>
+
+            <p>
+              3.
+              <code class="text-blue-400">preventDefault()</code>
+              default submit behavior rokta hai.
+            </p>
+
+            <p>
+              4. Checkbox aur radio ke liye
+              <code class="text-blue-400">checked</code>
+              useful hai.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">FormData</code>
+              form values collect karna easy banata hai.
+            </p>
+
+            <p>
+              6.
+              <code class="text-blue-400">form.reset()</code>
+              fields ko reset karta hai.
+            </p>
+
+            <p>
+              7. Client-side validation user experience improve karti hai, lekin
+              important data ko server side par bhi validate karna chahiye.
+            </p>
+
+            <p>
+              8. Form data ko Fetch API ke through backend API ko bhej sakte
+              hain.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="./Events.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./Navigation.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(27);
+  </script>
+
+</body>
+</html>

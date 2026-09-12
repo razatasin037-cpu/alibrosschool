@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS Display - Ali Learning</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/card.js"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <!-- TITLE -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-10">
+            CSS Display
+          </h1>
+
+          <!-- TOP BUTTONS -->
+          <div class="flex justify-between items-center">
+            <a href="../tables/tables.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+                Previous
+              </button>
+            </a>
+
+            <a href="../position/position.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <hr class="mt-12 border-white/10" />
+
+          <section class="max-w-6xl mx-auto py-10">
+            <!-- INTRO -->
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              <i class="fa-solid fa-display text-[#4d6fff] mr-3"></i>
+              CSS Display Kya Hai?
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              CSS ki <b>display</b> property decide karti hai ki HTML element
+              webpage par kis tarah behave aur appear karega.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+            >
+              Is property ki help se elements ko block, inline, flex, grid, none
+              aur doosre display modes mein set kiya ja sakta hai.
+            </p>
+
+            <!-- BLOCK -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-square text-[#4d6fff] mr-3"></i>
+              1. display: block
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>block</b> element normally poori available width leta hai aur
+              new line se start hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">span</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">block</span>;
+}</code></pre>
+            </div>
+
+            <!-- INLINE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-arrows-left-right text-[#4d6fff] mr-3"></i>
+              2. display: inline
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>inline</b> element new line se start nahi hota aur sirf
+              required width leta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">div</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">inline</span>;
+}</code></pre>
+            </div>
+
+            <!-- INLINE BLOCK -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-table-cells text-[#4d6fff] mr-3"></i>
+              3. display: inline-block
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>inline-block</b> inline ki tarah same line mein rehta hai,
+              lekin uspar width aur height set ki ja sakti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">span</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">inline-block</span>;
+  <span class="text-[#60a5fa]">width</span>: <span class="text-[#4ade80]">150px</span>;
+  <span class="text-[#60a5fa]">height</span>: <span class="text-[#4ade80]">50px</span>;
+}</code></pre>
+            </div>
+
+            <!-- NONE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-eye-slash text-[#4d6fff] mr-3"></i>
+              4. display: none
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>display: none</b> element ko page se hide kar deta hai aur uske
+              liye layout mein space bhi nahi rehta.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">none</span>;
+}</code></pre>
+            </div>
+
+            <!-- FLEX -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-grip text-[#4d6fff] mr-3"></i>
+              5. display: flex
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>display: flex</b> element ke children ko flexible layout mein
+              arrange karne ke liye use hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.container</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">flex</span>;
+}</code></pre>
+            </div>
+
+            <!-- GRID -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-table-cells-large text-[#4d6fff] mr-3"></i>
+              6. display: grid
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>display: grid</b> elements ko rows aur columns wale grid layout
+              mein arrange karne ke liye use hota hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.container</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">grid</span>;
+  <span class="text-[#60a5fa]">grid-template-columns</span>:
+    <span class="text-[#4ade80]">repeat(3, 1fr)</span>;
+}</code></pre>
+            </div>
+
+            <!-- INLINE FLEX -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-grip-lines text-[#4d6fff] mr-3"></i>
+              7. display: inline-flex
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>inline-flex</b> flex container ko inline element ki tarah
+              behave karne deta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">inline-flex</span>;
+}</code></pre>
+            </div>
+
+            <!-- INLINE GRID -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-border-none text-[#4d6fff] mr-3"></i>
+              8. display: inline-grid
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>inline-grid</b> grid container ko inline element ki tarah
+              display karta hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">inline-grid</span>;
+}</code></pre>
+            </div>
+
+            <!-- VISIBILITY DIFFERENCE -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-eye text-[#4d6fff] mr-3"></i>
+              9. display: none vs visibility: hidden
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              <b>display: none</b> element ko hide karke layout se remove kar
+              deta hai, jabki <b>visibility: hidden</b> element ko hide karta
+              hai lekin uski space retain rehti hai.
+            </p>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.box1</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">none</span>;
+}
+
+<span class="text-[#60a5fa]">.box2</span> {
+  <span class="text-[#60a5fa]">visibility</span>: <span class="text-[#4ade80]">hidden</span>;
+}</code></pre>
+            </div>
+
+            <!-- PRACTICAL -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-laptop-code text-[#4d6fff] mr-3"></i>
+              Practical Example
+            </h2>
+
+            <div
+              class="bg-[#0f172a] rounded-2xl p-6 overflow-x-auto mb-12 font-mono border border-gray-800 shadow-xl"
+            >
+              <pre
+                class="text-[16px] sm:text-[17px] leading-8"
+              ><code><span class="text-[#60a5fa]">.container</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">flex</span>;
+  <span class="text-[#60a5fa]">gap</span>: <span class="text-[#4ade80]">20px</span>;
+}
+
+<span class="text-[#60a5fa]">.card</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">block</span>;
+  <span class="text-[#60a5fa]">padding</span>: <span class="text-[#4ade80]">20px</span>;
+}
+
+<span class="text-[#60a5fa]">.hidden</span> {
+  <span class="text-[#60a5fa]">display</span>: <span class="text-[#4ade80]">none</span>;
+}</code></pre>
+            </div>
+
+            <!-- IMPORTANT -->
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+            >
+              <h3 class="text-2xl sm:text-3xl font-bold mb-7">
+                <i class="fa-solid fa-lightbulb text-[#4d6fff] mr-3"></i>
+                Important Points
+              </h3>
+
+              <ul
+                class="list-disc pl-6 space-y-5 text-lg sm:text-xl text-gray-300"
+              >
+                <li>
+                  <b>display: block</b> element ko block-level element banata
+                  hai.
+                </li>
+
+                <li>
+                  <b>display: inline</b> element ko inline-level element banata
+                  hai.
+                </li>
+
+                <li>
+                  <b>display: inline-block</b> inline behavior ke saath width
+                  aur height allow karta hai.
+                </li>
+
+                <li>
+                  <b>display: none</b> element ko layout se remove kar deta hai.
+                </li>
+
+                <li>
+                  <b>display: flex</b> flexible layouts ke liye useful hai.
+                </li>
+
+                <li>
+                  <b>display: grid</b> rows aur columns ke layout ke liye useful
+                  hai.
+                </li>
+              </ul>
+            </div>
+
+            <!-- SUMMARY -->
+            <h2 class="text-3xl sm:text-4xl font-bold mt-16 mb-8">
+              <i class="fa-solid fa-book-open text-[#4d6fff] mr-3"></i>
+              CSS Display Quick Summary
+            </h2>
+
+            <div
+              class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl"
+            >
+              <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Display property element ke layout behavior ko control karti
+                    hai.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Block, inline aur inline-block basic display values hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    Flex aur Grid modern layouts ke liye commonly use hote hain.
+                  </p>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                  <p class="text-lg sm:text-xl text-gray-300">
+                    <b>display: none</b> element ko completely hide karta hai.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM BUTTONS -->
+            <div
+              class="flex justify-between items-center mt-16 pt-8 border-t border-white/10"
+            >
+              <a href="../tables/tables.html">
+                <button
+                  class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+                >
+                  <i class="fa-solid fa-chevron-left mr-2"></i>
+                  Previous
+                </button>
+              </a>
+
+              <a href="../position/position.html">
+                <button
+                  class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+                >
+                  Next
+                  <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(22);
+      });
+    </script>
+  </body>
+</html>

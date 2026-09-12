@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP $GLOBALS Superglobal - PHP Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+    <nav id="navbar"></nav>
+
+    <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px] transition-all duration-300"
+      >
+        <h1
+          class="text-[40px] sm:text-[52px] md:text-[65px] font-bold text-white mb-5 mt-0"
+        >
+          PHP $GLOBALS
+        </h1>
+
+        <!-- Top Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Superglobals.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Server.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+
+        <!-- Hero / Intro Card -->
+        <div
+          class="mt-7 bg-gradient-to-r from-[#111827] to-[#25304b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff] shadow-xl"
+        >
+          <h2 class="text-[25px] md:text-[40px] font-bold mb-[20px] text-white">
+            $GLOBALS Kya Hota Hai?
+          </h2>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] mb-6 leading-relaxed">
+            <strong class="text-white">$GLOBALS</strong> ek built-in PHP superglobal array variable hai jo script ke sabhi <strong class="text-white">Global Scope Variables</strong> ko store karta hai.
+          </p>
+
+          <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+            Iska sabse bada fayda ye hai ki aap kisi bhi local function ya method ke andar se global variables ko bina `global` keyword declare kiye directly access aur modify kar sakte hain.
+          </p>
+        </div>
+
+        <section class="mt-12 space-y-8">
+
+          <!-- Key Features -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              Key Features
+            </h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
+              <li><strong>Associative Array:</strong> Variable ka naam key banta hai (jaise `$x` ke liye `['x']`) aur uski value associative value hoti hai.</li>
+              <li><strong>Everywhere Accessible:</strong> Script me kisi bhi jagah (Functions, Classes, Loops) se directly call ho sakta hai.</li>
+              <li><strong>Direct Mutation:</strong> Agar aap `$GLOBALS['x']` ki value badalte hain, toh original `$x` variable ki value bhi change ho jaati hai.</li>
+            </ul>
+          </div>
+
+          <!-- 1. Basic Example -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              1. Basic Access Inside Function
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Dekhiye kaise local function ke andar global scope variables ko calculate kiya gaya:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$num1</span> = <span class="text-white">50</span>;
+  <span class="text-green-400">$num2</span> = <span class="text-white">25</span>;
+
+  <span class="text-green-400">function</span> <span class="text-white">calculateSum</span>() {
+      <span class="text-[#94a3b8]">// $GLOBALS array se access karke new global variable 'result' banaya</span>
+      <span class="text-green-400">$GLOBALS</span>[<span class="text-white">'result'</span>] = <span class="text-green-400">$GLOBALS</span>[<span class="text-white">'num1'</span>] + <span class="text-green-400">$GLOBALS</span>[<span class="text-white">'num2'</span>];
+  }
+
+  <span class="text-white">calculateSum</span>();
+
+  <span class="text-[#94a3b8]">// Direct global scope me access</span>
+  <span class="text-green-400">echo</span> <span class="text-green-400">$result</span>; <span class="text-[#94a3b8]">// Output: 75</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 2. Modifying Global Variables -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              2. Modifying Global Variables
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Function ke andar se existing variable ki value update karna:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$site_title</span> = <span class="text-white">"My Blog"</span>;
+
+  <span class="text-green-400">function</span> <span class="text-white">updateTitle</span>() {
+      <span class="text-[#94a3b8]">// Original variable value change kar rahe hain</span>
+      <span class="text-green-400">$GLOBALS</span>[<span class="text-white">'site_title'</span>] = <span class="text-white">"My Awesome PHP Blog"</span>;
+  }
+
+  <span class="text-white">updateTitle</span>();
+
+  <span class="text-green-400">echo</span> <span class="text-green-400">$site_title</span>; <span class="text-[#94a3b8]">// Output: My Awesome PHP Blog</span>
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Comparison with 'global' keyword -->
+          <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155] shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              3. <code class="text-green-400">$GLOBALS</code> vs <code class="text-green-400">global</code> Keyword
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              Dono tareeqon me antar samjhein:
+            </p>
+
+            <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+              <pre class="font-mono text-sm sm:text-base"><code><span class="text-green-400">&lt;?php</span>
+  <span class="text-green-400">$a</span> = <span class="text-white">10</span>;
+
+  <span class="text-[#94a3b8]">// Method 1: Using 'global' keyword</span>
+  <span class="text-green-400">function</span> <span class="text-white">methodOne</span>() {
+      <span class="text-green-400">global</span> <span class="text-green-400">$a</span>;
+      <span class="text-green-400">echo</span> <span class="text-green-400">$a</span>;
+  }
+
+  <span class="text-[#94a3b8]">// Method 2: Using $GLOBALS array</span>
+  <span class="text-green-400">function</span> <span class="text-white">methodTwo</span>() {
+      <span class="text-green-400">echo</span> <span class="text-green-400">$GLOBALS</span>[<span class="text-white">'a'</span>];
+  }
+<span class="text-green-400">?&gt;</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Pro Tip Box -->
+          <div class="bg-[#0f172a] text-white rounded-3xl p-8 border border-blue-500/40">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3 text-blue-400">
+              <span>⚠️</span> Caution: Overusing Global State
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              Excessive global variables ka use karne se code ka logic complex ho jata hai (Spaghetti Code). Professional PHP architectures me data pass karne ke liye <strong class="text-white">Function Arguments</strong> aur <strong class="text-white">Return Values</strong> ka use better practice maana jata hai.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between mt-10 items-center mb-7">
+          <a
+            href="./Superglobals.html"
+            class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+          >
+            ❮ Previous
+          </a>
+
+          <a
+            href="./Server.html"
+            class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+          >
+            Next ❯
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+      // Sidebar Load Only
+      document.getElementById("sidebar").innerHTML = createSidebar(19);
+    </script>
+  </body>
+</html>

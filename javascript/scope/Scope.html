@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Scope - Tutorial</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom JS -->
+  <script src="../../js/insert.js"></script>
+  <script src="../js/sidebar.js"></script>
+</head>
+
+<body class="bg-[#020617] font-sans antialiased text-white overflow-x-hidden">
+
+  <nav id="navbar"></nav>
+
+  <main class="mt-20 w-full flex flex-col md:flex-row min-h-screen">
+
+    <div id="sidebar"></div>
+
+    <section
+      class="w-full md:w-[calc(100%-320px)] p-5 md:pt-5 md:pb-[60px] md:px-[60px]"
+    >
+
+      <!-- Heading -->
+      <h1 class="text-[40px] sm:text-[52px] md:text-[65px] font-bold mb-5">
+        JavaScript Scope
+      </h1>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/objects/Constructors.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./BlockScope.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+      <!-- Introduction -->
+      <div
+        class="mt-7 bg-gradient-to-r from-[#111827] to-[#1e293b] p-[30px] md:p-10 rounded-[35px] border border-[#3158ff]"
+      >
+
+        <h2 class="text-[25px] md:text-[40px] font-bold mb-5">
+          Scope Kya Hai?
+        </h2>
+
+        <p class="text-[18px] md:text-[22px] text-[#cbd5e1] leading-relaxed">
+          JavaScript me Scope decide karta hai ki koi variable code ke kis
+          part me access kiya ja sakta hai.
+          <br><br>
+          Agar koi variable kisi specific block ya function ke andar bana hai,
+          to ho sakta hai ki wo variable uske bahar access na ho sake.
+          JavaScript me mainly
+          <code class="text-blue-400">Global Scope</code>,
+          <code class="text-blue-400">Function Scope</code>
+          aur
+          <code class="text-blue-400">Block Scope</code>
+          important hote hain.
+        </p>
+
+      </div>
+
+      <section class="mt-12 space-y-8">
+
+        <!-- Types -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">
+            Types of Scope
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Scope</th>
+                  <th class="p-4">Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Global Scope
+                  </td>
+
+                  <td class="p-4">
+                    Variable code ke large/global area me accessible hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Function Scope
+                  </td>
+
+                  <td class="p-4">
+                    Variable sirf function ke andar accessible hota hai.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    Block Scope
+                  </td>
+
+                  <td class="p-4">
+                    Variable sirf curly braces { } ke block ke andar accessible
+                    hota hai.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Global Scope -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Global Scope
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function ya block ke bahar declare kiya gaya variable generally
+            global scope me hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> name = <span class="text-emerald-400">"Ali"</span>;
+
+<span class="text-blue-400">function</span> showName() {
+  console.log(name);
+}
+
+showName();
+
+console.log(name);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ali
+Ali</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Yahan
+            <code class="text-blue-400">name</code>
+            function ke bahar declare hua hai, isliye function ke andar bhi
+            access ho raha hai.
+          </p>
+
+        </div>
+
+        <!-- Function Scope -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Function Scope
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Function ke andar declare variable normally function ke bahar
+            access nahi hota.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">function</span> student() {
+
+  <span class="text-blue-400">let</span> name = <span class="text-emerald-400">"Ali"</span>;
+
+  console.log(name);
+}
+
+student();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ali</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Agar function ke bahar
+            <code class="text-blue-400">console.log(name)</code>
+            karenge, to error milega kyunki
+            <code class="text-blue-400">name</code>
+            function ke andar scoped hai.
+          </p>
+
+        </div>
+
+        <!-- Block Scope -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Block Scope
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">let</code>
+            aur
+            <code class="text-blue-400">const</code>
+            block scoped hote hain. Block ka matlab
+            <code class="text-blue-400">{ }</code>
+            ke andar ka area hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>{
+  <span class="text-blue-400">let</span> age = <span class="text-emerald-400">20</span>;
+
+  console.log(age);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">20</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Block ke bahar
+            <code class="text-blue-400">age</code>
+            access nahi kiya ja sakta.
+          </p>
+
+        </div>
+
+        <!-- Block Scope If -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Block Scope With If
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">if</span> (<span class="text-emerald-400">true</span>) {
+
+  <span class="text-blue-400">let</span> message = <span class="text-emerald-400">"Hello"</span>;
+
+  console.log(message);
+}</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Hello</pre>
+          </div>
+
+        </div>
+
+        <!-- var Scope -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            var Aur Block Scope
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            <code class="text-blue-400">var</code>
+            block scoped nahi hota. Ye function scoped hota hai.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code>{
+  <span class="text-blue-400">var</span> city = <span class="text-emerald-400">"Ranchi"</span>;
+}
+
+console.log(city);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Ranchi</pre>
+          </div>
+
+        </div>
+
+        <!-- let vs var -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            var vs let vs const Scope
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Keyword</th>
+                  <th class="p-4">Scope</th>
+                  <th class="p-4">Reassign</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    var
+                  </td>
+
+                  <td class="p-4">
+                    Function scoped
+                  </td>
+
+                  <td class="p-4">
+                    Yes
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    let
+                  </td>
+
+                  <td class="p-4">
+                    Block scoped
+                  </td>
+
+                  <td class="p-4">
+                    Yes
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4 font-mono text-emerald-400">
+                    const
+                  </td>
+
+                  <td class="p-4">
+                    Block scoped
+                  </td>
+
+                  <td class="p-4">
+                    No direct reassignment
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Same variable different scope -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Same Variable Name in Different Scope
+          </h3>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> name = <span class="text-emerald-400">"Ali"</span>;
+
+{
+  <span class="text-blue-400">let</span> name = <span class="text-emerald-400">"Rahul"</span>;
+
+  console.log(name);
+}
+
+console.log(name);</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">Rahul
+Ali</pre>
+          </div>
+
+          <p class="text-gray-300 text-lg mt-5 leading-relaxed">
+            Dono variables ka naam same hai, lekin dono different scope me hain.
+          </p>
+
+        </div>
+
+        <!-- Scope Chain -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Scope Chain
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-5">
+            Agar variable current scope me nahi milta, JavaScript outer scope me
+            us variable ko search karta hai. Is process ko Scope Chain samajh
+            sakte hain.
+          </p>
+
+          <div class="bg-[#0f172a] rounded-xl p-4 overflow-x-auto border border-[#334155]">
+<pre class="font-mono text-sm sm:text-base"><code><span class="text-blue-400">let</span> country = <span class="text-emerald-400">"India"</span>;
+
+<span class="text-blue-400">function</span> show() {
+
+  <span class="text-blue-400">let</span> state = <span class="text-emerald-400">"Jharkhand"</span>;
+
+  console.log(country);
+  console.log(state);
+}
+
+show();</code></pre>
+          </div>
+
+          <div class="mt-5 bg-[#0f172a] rounded-xl p-4 border border-[#334155]">
+            <p class="font-bold mb-2">Output:</p>
+
+<pre class="text-emerald-400 font-mono">India
+Jharkhand</pre>
+          </div>
+
+        </div>
+
+        <!-- Local Scope -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            Local Scope
+          </h3>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Function ya block ke andar limited variable ko generally local
+            variable kaha jata hai.
+            <br><br>
+            Local variables ka use code ko safer aur manageable banata hai,
+            kyunki unnecessary global variables kam hote hain.
+          </p>
+
+        </div>
+
+        <!-- Quick Table -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#334155]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Scope Quick Reference
+          </h3>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+              <thead>
+                <tr class="border-b border-[#334155] text-blue-400">
+                  <th class="p-4">Variable Location</th>
+                  <th class="p-4">Scope</th>
+                  <th class="p-4">Accessible</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-[#334155] text-gray-300">
+
+                <tr>
+                  <td class="p-4">
+                    Function ke bahar
+                  </td>
+
+                  <td class="p-4 text-emerald-400">
+                    Global
+                  </td>
+
+                  <td class="p-4">
+                    Relevant accessible scopes me
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    Function ke andar
+                  </td>
+
+                  <td class="p-4 text-emerald-400">
+                    Function
+                  </td>
+
+                  <td class="p-4">
+                    Function aur nested scopes me
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-4">
+                    { } ke andar let/const
+                  </td>
+
+                  <td class="p-4 text-emerald-400">
+                    Block
+                  </td>
+
+                  <td class="p-4">
+                    Block aur uske nested scopes me
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <!-- Important -->
+        <div class="bg-[#1e293b] rounded-2xl p-6 md:p-8 border border-[#3158ff]">
+
+          <h3 class="text-2xl md:text-3xl font-bold mb-5">
+            Important Points
+          </h3>
+
+          <div class="space-y-4 text-gray-300 text-lg">
+
+            <p>
+              1. Scope decide karta hai variable kaha accessible hoga.
+            </p>
+
+            <p>
+              2. Global variable outer/global scope me declare hota hai.
+            </p>
+
+            <p>
+              3. Function ke andar declare variable function scope me reh sakta hai.
+            </p>
+
+            <p>
+              4.
+              <code class="text-blue-400">let</code>
+              aur
+              <code class="text-blue-400">const</code>
+              block scoped hote hain.
+            </p>
+
+            <p>
+              5.
+              <code class="text-blue-400">var</code>
+              block scoped nahi, function scoped hota hai.
+            </p>
+
+            <p>
+              6. Inner scope apne accessible outer scope ke variables use kar
+              sakta hai.
+            </p>
+
+            <p>
+              7. Unnecessary global variables avoid karna generally better
+              practice hota hai.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bottom Navigation -->
+      <div class="flex justify-between mt-10 items-center mb-7">
+
+        <a
+          href="/javascript/objects/Constructors.html"
+          class="bg-white text-black md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-gray-200 transition"
+        >
+          ❮ Previous
+        </a>
+
+        <a
+          href="./BlockScope.html"
+          class="bg-[#3158ff] text-white md:px-8 md:py-4 px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition"
+        >
+          Next ❯
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    document.getElementById("sidebar").innerHTML = createSidebar(13);
+  </script>
+
+</body>
+</html>
