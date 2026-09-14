@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IN Operator - MySQL Tutorial</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<div id="sidebar"></div>
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<div class="max-w-6xl mx-auto">
+<div class="flex justify-between items-center gap-4 mb-10">
+<a href="../like/like.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
+<a href="../between/between.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
+</div>
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">IN Operator</h1>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">IN operator ke through ek column ko multiple possible values ke against compare karna. Is topic ko practical queries ke saath samajhna important hai taaki aap MySQL database mein is concept ko confidently use kar saken.</p>
+<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>IN Operator Kya Hai?</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">MySQL mein <strong>IN Operator</strong> database development ka important concept hai. Iska correct use query ko readable, predictable aur maintainable banane mein help karta hai. Syntax samajhne ke saath ye bhi samajhna zaroori hai ki result kis tarah produce hota hai aur real projects mein ise kab use karna chahiye.</p>
+<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>Basic Example</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">Neeche ek basic MySQL example diya gaya hai. Query ko apne MySQL server ya Workbench mein run karke output observe kar sakte hain.</p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-terminal text-blue-400 mr-2"></i>MySQL Query</h3></div>
+<div class="p-6 overflow-x-auto"><pre class="text-lg leading-relaxed"><code><span class="text-blue-400">SELECT</span> *
+<span class="text-blue-400">FROM</span> Students
+<span class="text-blue-400">WHERE</span> city <span class="text-blue-400">IN</span> (<span class="text-green-400">'Patna'</span>, <span class="text-green-400">'Delhi'</span>);</code></pre></div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-list-ol text-blue-400 mr-2"></i>Step-by-Step</h2>
+<div class="grid sm:grid-cols-2 gap-6 mb-12">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">1. Prepare Database</h3><p class="text-lg text-gray-300 leading-relaxed">Sabse pehle correct database select karein aur required table structure ko identify karein. Isse query ko sahi data source milta hai.</p></div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">2. Write Query</h3><p class="text-lg text-gray-300 leading-relaxed">Required SQL keywords aur table/column names ko proper syntax ke saath use karein.</p></div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">3. Execute</h3><p class="text-lg text-gray-300 leading-relaxed">Query ko MySQL server par execute karein aur returned result ya error message ko carefully check karein.</p></div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">4. Verify Result</h3><p class="text-lg text-gray-300 leading-relaxed">Result ko expected data ke saath compare karein. Complex queries mein small test dataset se verification useful hota hai.</p></div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-lightbulb text-blue-400 mr-2"></i>Another Example</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">Real projects mein isi concept ko conditions, multiple columns aur related tables ke saath combine kiya ja sakta hai. Query ko simple parts mein todkar samajhna debugging ko easy banata hai.</p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold">Practical Query</h3></div>
+<div class="p-6 overflow-x-auto"><pre class="text-lg leading-relaxed"><code><span class="text-blue-400">SELECT</span> name, age
+<span class="text-blue-400">FROM</span> Students
+<span class="text-blue-400">WHERE</span> age &gt; <span class="text-green-400">18</span>
+<span class="text-blue-400">ORDER BY</span> name;</code></pre></div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-briefcase text-blue-400 mr-2"></i>Practical Use</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12">MySQL applications mein users, products, orders, payments, inventory aur reports jaise structured information ko manage karne ke liye use hota hai. Is topic ki understanding aapko real database queries design karne aur existing queries ko read karne mein help karegi.</p>
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-circle-exclamation text-blue-400 mr-2"></i>Important Points</h2>
+<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
+<ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>SQL keywords aur identifiers ko clearly format karna readability improve karta hai.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Query ko production data par run karne se pehle test environment mein verify karna useful hai.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Large datasets ke saath query performance ko consider karein.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>UPDATE aur DELETE operations ke saath conditions ko carefully verify karein.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Application code mein user input ko parameterized queries ke through handle karein.</li>
+</ul>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>Best Practices</h2>
+<div class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12">
+<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Meaningful names aur consistent formatting use karein.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Required columns ko explicitly select karna large queries mein useful ho sakta hai.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Indexes ko query patterns ke according thoughtfully design karein.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Errors ko ignore na karein; syntax aur data assumptions verify karein.</li>
+</ul>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">IN Operator MySQL learning ka important part hai. Basic syntax ko samajhne ke baad examples ko khud execute karein, result verify karein aur different datasets ke saath practice karein. Isse aap concept ko real applications mein confidently apply kar paayenge.</p>
+</div>
+<div class="flex justify-between items-center gap-4 mt-10 mb-10">
+<a href="../like/like.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-chevron-left mr-2"></i>Previous</button></a>
+<a href="../between/between.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
+</div>
+</div>
+</section>
+</main>
+<footer id="footer"></footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebar = document.getElementById("sidebar");
+  if (typeof createSidebar === "function") {
+    sidebar.innerHTML = createSidebar(16);
+  }
+});
+</script>
+</body>
+</html>

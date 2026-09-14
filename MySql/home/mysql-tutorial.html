@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MySQL Tutorial</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../../js/insert.js"></script>
+<script src="../js/sidebar.js"></script>
+</head>
+<body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]">
+<nav id="navbar"></nav>
+<main class="w-full flex flex-col md:flex-row min-h-screen">
+<div id="sidebar"></div>
+<section class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10">
+<div class="max-w-6xl mx-auto">
+<div class="flex justify-between items-center gap-4 mb-10">
+<a href="/MySQL/home/mysql-tutorial.html"><button class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"><i class="fa-solid fa-house mr-2"></i>Home</button></a>
+<a href="../introduction/introduction.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
+</div>
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">MySQL Tutorial</h1>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">MySQL ek popular relational database management system hai jo SQL ka use karke data ko store, organize, retrieve aur manage karta hai. Is tutorial mein aap MySQL ko basic level se step-by-step practical examples ke saath seekhenge.</p>
+<div class="bg-gradient-to-br from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-8 sm:p-10 md:p-12 mb-12">
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-database text-blue-400 mr-2"></i>Learn MySQL</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">MySQL ka use websites, business applications, dashboards, e-commerce systems aur bahut saare software projects mein structured data manage karne ke liye kiya jata hai. Iske saath SQL commands use karke tables aur records par operations perform kiye ja sakte hain.</p>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">Aap is tutorial mein database banana, tables create karna, data insert aur retrieve karna, filtering, sorting, grouping, JOINs, constraints, keys, indexes, views aur security concepts seekhenge.</p>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-server text-blue-400 mr-2"></i>MySQL Kya Hai?</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">MySQL ek RDBMS hai. RDBMS ka matlab Relational Database Management System hota hai. Ismein data related tables ke form mein store hota hai. Tables ke beech relationships establish karke complex applications ka data efficiently manage kiya ja sakta hai.</p>
+<h2 class="text-3xl sm:text-4xl font-bold mb-5"><i class="fa-solid fa-code text-blue-400 mr-2"></i>Basic MySQL Example</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">Sabse pehle ek database create karke usse select kar sakte hain:</p>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12">
+<div class="bg-[#1e293b] p-5"><h3 class="text-2xl font-bold"><i class="fa-solid fa-terminal text-blue-400 mr-2"></i>Basic Query</h3></div>
+<div class="p-6 overflow-x-auto"><pre class="text-lg leading-relaxed"><code><span class="text-blue-400">CREATE DATABASE</span> school;
+<span class="text-blue-400">USE</span> school;
+
+<span class="text-blue-400">CREATE TABLE</span> Students (
+    id <span class="text-blue-400">INT PRIMARY KEY</span>,
+    name <span class="text-blue-400">VARCHAR</span>(<span class="text-green-400">100</span>),
+    age <span class="text-blue-400">INT</span>
+);
+
+<span class="text-blue-400">SELECT</span> * <span class="text-blue-400">FROM</span> Students;</code></pre></div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-list-check text-blue-400 mr-2"></i>MySQL Se Kya Kar Sakte Hain?</h2>
+<div class="grid sm:grid-cols-2 gap-6 mb-12">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">Data Management</h3><p class="text-lg text-gray-300 leading-relaxed">Records ko INSERT, SELECT, UPDATE aur DELETE commands ke through manage kar sakte hain.</p></div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">Database Design</h3><p class="text-lg text-gray-300 leading-relaxed">Databases, tables, columns, keys, constraints aur relationships define kar sakte hain.</p></div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">Data Analysis</h3><p class="text-lg text-gray-300 leading-relaxed">Aggregate functions, GROUP BY, HAVING aur JOINs se useful reports aur summaries bana sakte hain.</p></div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">Application Backend</h3><p class="text-lg text-gray-300 leading-relaxed">Web aur software applications ke users, products, orders aur other structured information ko store kar sakte hain.</p></div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-route text-blue-400 mr-2"></i>MySQL Learning Roadmap</h2>
+<div class="grid sm:grid-cols-2 gap-6 mb-12">
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">1. Basics</h3><p class="text-lg text-gray-300 leading-relaxed">Introduction, installation, Workbench, databases, tables aur data types se start karein.</p></div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">2. Queries</h3><p class="text-lg text-gray-300 leading-relaxed">INSERT, SELECT, WHERE, ORDER BY, UPDATE, DELETE, LIMIT aur DISTINCT seekhein.</p></div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">3. Advanced Queries</h3><p class="text-lg text-gray-300 leading-relaxed">LIKE, IN, BETWEEN, aliases, aggregate functions, GROUP BY aur HAVING ko practice karein.</p></div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7"><h3 class="text-2xl font-bold mb-3">4. Database Design</h3><p class="text-lg text-gray-300 leading-relaxed">JOINs, constraints, primary keys, foreign keys, indexes, views aur stored procedures samjhein.</p></div>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>Important Points</h2>
+<div class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
+<ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>MySQL relational databases ke saath kaam karta hai aur SQL commands support karta hai.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Data tables ke andar rows aur columns ke form mein organize hota hai.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Primary keys records ko uniquely identify karne mein help karti hain.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Foreign keys related tables ke beech relationships maintain karti hain.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Indexes suitable queries ko faster bana sakte hain.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Application input ke liye prepared statements aur parameterized queries use karna important hai.</li>
+</ul>
+</div>
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>Best Practices</h2>
+<div class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12">
+<ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Meaningful database, table aur column names use karein.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Data ke according appropriate data types choose karein.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>UPDATE aur DELETE queries execute karne se pehle WHERE condition verify karein.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>Frequently searched columns par indexes thoughtfully use karein.</li>
+<li><i class="fa-solid fa-check text-green-400 mr-2"></i>User input ko directly SQL query string mein concatenate na karein.</li>
+</ul>
+</div>
+<div class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12">
+<h2 class="text-3xl sm:text-4xl font-bold mb-6"><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary</h2>
+<p class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">MySQL ek powerful relational database system hai. Is tutorial ke through aap basic database setup se lekar advanced querying, JOINs, constraints, keys, indexes, views, stored procedures aur security concepts tak step-by-step learn kar sakte hain. Har topic ke examples ko khud MySQL environment mein run karke practice karna learning ko strong banata hai.</p>
+</div>
+<div class="flex justify-end items-center gap-4 mt-10 mb-10">
+<a href="../introduction/introduction.html"><button class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition">Next <i class="fa-solid fa-chevron-right ml-2"></i></button></a>
+</div>
+</div>
+</section>
+</main>
+<footer id="footer"></footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebar = document.getElementById("sidebar");
+  if (typeof createSidebar === "function") {
+    sidebar.innerHTML = createSidebar(0);
+  }
+});
+</script>
+</body>
+</html>

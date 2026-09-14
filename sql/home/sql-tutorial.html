@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>SQL Tutorial</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <div class="flex justify-between items-center gap-4 mb-10">
+            <a href="/SQL/home/sql-tutorial.html">
+              <button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-house mr-2"></i>
+                Home
+              </button>
+            </a>
+
+            <a href="../introduction/introduction.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            SQL Tutorial
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            SQL ek powerful language hai jiska use relational databases ke andar
+            data ko create, read, update aur delete karne ke liye kiya jata hai.
+            SQL ki help se hum database mein stored information ko easily
+            search, filter, sort aur manage kar sakte hain.
+          </p>
+
+          <div
+            class="bg-gradient-to-br from-[#111827] to-[#25304b] border border-[#3158ff] rounded-[30px] p-8 sm:p-10 md:p-12 mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-database text-blue-400 mr-2"></i>
+              Learn SQL
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+            >
+              SQL ka full form
+              <strong>Structured Query Language</strong> hai. Iska use databases
+              ke saath communicate karne ke liye hota hai. Agar database mein
+              bahut saara data stored hai, to SQL commands ki help se hum
+              required information ko quickly retrieve aur manipulate kar sakte
+              hain.
+            </p>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+            >
+              Is tutorial mein aap SQL ke basic concepts se lekar advanced
+              topics tak step-by-step seekhenge. Aap SELECT, WHERE, INSERT,
+              UPDATE, DELETE, JOIN, GROUP BY, HAVING, constraints, views aur SQL
+              security jaise important concepts ko practical examples ke saath
+              samjhenge.
+            </p>
+
+            <a
+              href="../introduction/introduction.html"
+              class="inline-flex items-center gap-2 bg-[#3158ff] hover:bg-[#2345dc] px-6 py-3 rounded-xl font-bold transition"
+            >
+              Start Learning SQL
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+            SQL Kya Hai?
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            SQL ek standard language hai jo relational databases ke saath kaam
+            karne ke liye use hoti hai. Database mein information generally
+            tables ke andar store hoti hai, aur SQL commands ke through hum in
+            tables ke data ke saath different operations perform kar sakte hain.
+          </p>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Example ke liye, agar ek school database mein students ki
+            information stored hai, to SQL ki help se hum kisi particular
+            student ko search kar sakte hain, students ko city ke according
+            filter kar sakte hain, new student add kar sakte hain ya existing
+            information update kar sakte hain.
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-table text-blue-400 mr-2"></i>
+            Database, Table, Row aur Column
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            SQL ko samajhne ke liye database ke basic structure ko samajhna
+            important hai. Ek database ke andar multiple tables ho sakti hain.
+            Table mein columns different types ki information ko represent karte
+            hain, jabki rows individual records ko represent karti hain.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-database text-blue-400 text-2xl mb-4"></i>
+
+              <h3 class="text-2xl font-bold mb-3">Database</h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Database ek organized collection hota hai jisme related
+                information ko store aur manage kiya jata hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-table text-blue-400 text-2xl mb-4"></i>
+
+              <h3 class="text-2xl font-bold mb-3">Table</h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Table database ke andar data ko rows aur columns ke structured
+                format mein store karti hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-bars text-blue-400 text-2xl mb-4"></i>
+
+              <h3 class="text-2xl font-bold mb-3">Row</h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Row table ke andar ek complete record ko represent karti hai,
+                jaise ek particular student ki information.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-columns text-blue-400 text-2xl mb-4"></i>
+
+              <h3 class="text-2xl font-bold mb-3">Column</h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Column ek particular type ki information ko represent karta hai,
+                jaise name, age, city ya email.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>
+            Basic SQL Example
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            SQL mein data retrieve karne ke liye sabse commonly used command
+            <strong>SELECT</strong> hai. SELECT statement ki help se hum table
+            se required columns ya complete records retrieve kar sakte hain.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-terminal text-blue-400 mr-2"></i>
+                Basic SELECT Query
+              </h3>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">SELECT</span> *
+<span class="text-blue-400">FROM</span> Students;</code></pre>
+            </div>
+          </div>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
+          >
+            Is query mein <strong>SELECT *</strong> ka matlab hai ki Students
+            table ke saare columns ko retrieve karna hai. <strong>FROM</strong>
+            keyword ke baad table ka naam diya jata hai jahan se data retrieve
+            karna hai.
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-check text-blue-400 mr-2"></i>
+            SQL Se Kya-Kya Kar Sakte Hain?
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7 sm:p-9 mb-12"
+          >
+            <ul
+              class="space-y-5 text-lg sm:text-xl text-gray-300 leading-relaxed"
+            >
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Database mein new data insert kar sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Database se required information retrieve kar sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Existing records ko update kar sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Unwanted records ko delete kar sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Data ko filter aur sort kar sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Multiple tables ko JOIN ke through combine kar sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                GROUP BY aur aggregate functions ke through reports create kar
+                sakte hain.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Tables, databases, indexes aur views create aur manage kar sakte
+                hain.
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-layer-group text-blue-400 mr-2"></i>
+            Main SQL Commands
+          </h2>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-3">SELECT</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Table se data retrieve karne ke liye SELECT statement use hota
+                hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-3">INSERT</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Table mein new records add karne ke liye INSERT INTO use hota
+                hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-3">UPDATE</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Existing records ke data ko change karne ke liye UPDATE use hota
+                hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-3">DELETE</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Table se records remove karne ke liye DELETE statement use hota
+                hai.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-3">CREATE</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                CREATE DATABASE aur CREATE TABLE jaise statements new database
+                objects banane ke liye use hote hain.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <h3 class="text-2xl font-bold mb-3">ALTER</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Existing table ke structure mein changes karne ke liye ALTER
+                TABLE use hota hai.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-route text-blue-400 mr-2"></i>
+            SQL Learning Roadmap
+          </h2>
+
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            SQL seekhte waqt concepts ko step-by-step learn karna useful hota
+            hai. Pehle basic SELECT queries aur filtering samjhein, uske baad
+            data modification, aggregate functions, JOINs aur advanced database
+            concepts ki taraf move karein.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-1 text-blue-400 text-2xl mb-4"></i>
+
+              <h3 class="text-2xl font-bold mb-3">SQL Basics</h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Introduction, syntax, SELECT, DISTINCT, WHERE, AND, OR, NOT aur
+                ORDER BY se basic querying seekhein.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-2 text-blue-400 text-2xl mb-4"></i>
+
+              <h3 class="text-2xl font-bold mb-3">Data Manipulation</h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                INSERT, UPDATE, DELETE, NULL values aur LIMIT jaise concepts ko
+                practical examples ke saath samjhein.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-3 text-blue-400 text-2xl mb-4"></i>
+
+              <h3 class="text-2xl font-bold mb-3">Advanced Queries</h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                LIKE, wildcards, IN, BETWEEN, aliases aur different types ke
+                JOINs ko practice karein.
+              </p>
+            </div>
+
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-4 text-blue-400 text-2xl mb-4"></i>
+
+              <h3 class="text-2xl font-bold mb-3">Database Design</h3>
+
+              <p class="text-lg text-gray-300 leading-relaxed">
+                GROUP BY, HAVING, CASE, constraints, primary keys, foreign keys,
+                indexes aur views jaise topics learn karein.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i>
+            Important Points
+          </h2>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <ul class="space-y-5 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                SQL ka use relational databases ke data ke saath kaam karne ke
+                liye kiya jata hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Database ke andar data generally tables mein organize hota hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                SELECT data retrieve karne ke liye sabse important basic
+                statements mein se ek hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                WHERE conditions ke through records ko filter kiya ja sakta hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                JOIN multiple related tables se data combine karne ke liye
+                useful hai.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                UPDATE aur DELETE queries ke saath WHERE condition ko carefully
+                check karna chahiye.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                SQL seekhne ke liye theory ke saath practical query practice bhi
+                important hai.
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>
+            Best Practices
+          </h2>
+
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                SQL queries ko proper indentation aur readable formatting ke
+                saath likhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Table aur column names ko meaningful rakhein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                UPDATE aur DELETE execute karne se pehle WHERE condition verify
+                karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                User input ko directly SQL query mein concatenate na karein;
+                parameterized ya prepared queries use karein.
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>
+                Large tables ke liye filtering aur indexes ko thoughtfully use
+                karein.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+              Summary
+            </h2>
+
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              SQL ek powerful language hai jo relational databases ke data ko
+              manage karne ke liye use hoti hai. SQL ki help se hum data ko
+              retrieve, insert, update aur delete kar sakte hain. Iske alawa
+              filtering, sorting, grouping, aggregate calculations, JOINs aur
+              database structure management jaise kaam bhi kiye ja sakte hain.
+              SQL ko properly seekhne ke liye basic syntax se start karke
+              gradually advanced queries aur database design concepts tak
+              practice karna best approach hai.
+            </p>
+          </div>
+
+          <div class="flex justify-end items-center gap-4 mt-10 mb-10">
+            <a href="../introduction/introduction.html">
+              <button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(1);
+      });
+    </script>
+  </body>
+</html>
