@@ -105,11 +105,7 @@ function createSidebar(activeIndex = 0) {
         { name: "Else If ", link: "/c/ifElse/ElseIf.html" },
         { name: "Short Hand If  ", link: "/c/ifElse/ShortHandIf.html" },
         { name: "Nested If ", link: "/c/ifElse/NestedIf.html" },
-<<<<<<< HEAD
         { name: "Real-Life Examples", link: "/c/ifElse/Real-Life-Example.html" }
-=======
-        { name: "Real-Life Examples", link: "/c/ifElse/Real-Life-Examples.html" }
->>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
       ]
     },
     { name: "C Switch", link: "/c/switch/Switch.html"},
