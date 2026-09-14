@@ -3,113 +3,555 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>AI Skills & References</title>
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
     <script src="../js/insert.js"></script>
   </head>
-  <body class="bg-[#060b13] text-white font-sans antialiased">
+
+  <body class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden">
     <nav id="navbar"></nav>
 
-    <hr class="border-blue-950/40 max-w-7xl mx-auto my-4" />
+    <div class="border-t border-blue-900/30"></div>
 
-    <div
-      class="min-h-screen mt-15 flex flex-col items-center justify-center p-6 md:p-12"
-    >
-      <div class="text-center max-w-2xl mb-16 space-y-4">
-        <h2
-          class="text-5xl md:text-7xl font-extrabold tracking-wide text-[#5b7bfb] drop-shadow-[0_0_25px_rgba(91,123,251,0.6)]"
-        >
-          References
-        </h2>
-        <p class="text-gray-400 text-lg md:text-xl font-normal leading-relaxed">
-          All the resources, links, and guides you need for learning and
-          development.
-        </p>
-      </div>
-
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl"
-      >
+    <main>
+      <section class="relative overflow-hidden">
         <div
-          class="bg-[#0b1021] border border-blue-950/40 rounded-3xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:border-blue-800/60 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
-        >
-          <div class="space-y-4">
-            <h3 class="text-xl font-semibold text-[#4f46e5]">HTML Reference</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Complete guide to HTML tags, attributes, and best practices.
-            </p>
-          </div>
-          <div class="pt-6">
-            <button
-              class="bg-[#4f46e5] hover:bg-[#4338ca] text-white font-medium px-6 py-2.5 rounded-full text-sm transition-all duration-200 cursor-pointer"
-            >
-              Learn More
-            </button>
-          </div>
-        </div>
+          class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl"
+        ></div>
 
         <div
-          class="bg-[#0b1021] border border-blue-950/40 rounded-3xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:border-blue-800/60 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
-        >
-          <div class="space-y-4">
-            <h3 class="text-xl font-semibold text-[#4f46e5]">CSS Reference</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              CSS properties, selectors, and tips to style your webpages
-              efficiently.
-            </p>
-          </div>
-          <div class="pt-6">
-            <button
-              class="bg-[#4f46e5] hover:bg-[#4338ca] text-white font-medium px-6 py-2.5 rounded-full text-sm transition-all duration-200 cursor-pointer"
+          class="absolute top-40 -right-40 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl"
+        ></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 md:px-10 pt-40 pb-24">
+          <div class="max-w-4xl mx-auto text-center">
+            <div
+              class="inline-flex items-center gap-2 px-5 py-2.5 mb-7 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-300 text-sm font-medium"
             >
-              Learn More
-            </button>
+              <i class="fa-solid fa-book-open"></i>
+              Developer References & Learning Resources
+            </div>
+
+            <h1
+              class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight"
+            >
+              Learn.
+              <span class="text-[#5b7bfb]">Build.</span>
+              <br class="hidden sm:block" />
+              Master.
+            </h1>
+
+            <p
+              class="mt-7 max-w-3xl mx-auto text-gray-400 text-lg md:text-xl leading-relaxed"
+            >
+              Explore structured programming references, practical
+              documentation, development guides, and carefully organized
+              learning resources designed to help you understand technology from
+              the fundamentals to advanced concepts.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href="#references"
+                class="inline-flex items-center justify-center gap-2 bg-[#3158ff] hover:bg-[#4268ff] text-white font-semibold px-7 py-4 rounded-xl transition duration-200 shadow-lg shadow-blue-900/20"
+              >
+                Explore References
+                <i class="fa-solid fa-arrow-down"></i>
+              </a>
+
+              <a
+                href="#learning-path"
+                class="inline-flex items-center justify-center gap-2 bg-[#0f172a] hover:bg-[#172033] border border-gray-800 hover:border-gray-700 text-gray-200 font-semibold px-7 py-4 rounded-xl transition duration-200"
+              >
+                <i class="fa-solid fa-route"></i>
+                Learning Path
+              </a>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-6 md:px-10 pb-20">
+        <div
+          class="bg-[#0b1220] border border-gray-800 rounded-3xl p-8 md:p-12 relative overflow-hidden"
+        >
+          <div
+            class="absolute -right-32 -top-32 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="relative max-w-4xl">
+            <div
+              class="flex items-center gap-3 text-blue-400 text-sm font-semibold uppercase tracking-[0.18em] mb-4"
+            >
+              <i class="fa-solid fa-circle-info"></i>
+              About These References
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+              Everything you need to keep learning
+            </h2>
+
+            <div
+              class="mt-6 space-y-5 text-gray-400 text-base md:text-lg leading-relaxed"
+            >
+              <p>
+                Learning programming becomes much easier when concepts are
+                organized in a clear and accessible way. These references are
+                designed to give you a reliable place to return to when you need
+                to understand a syntax rule, remember a property, review a
+                programming concept, or explore a new technology.
+              </p>
+
+              <p>
+                Instead of trying to memorize everything, you can use these
+                resources as a practical reference while writing code. Start
+                with the fundamentals, practice each concept with small
+                examples, and gradually move toward more advanced topics and
+                real-world development.
+              </p>
+
+              <p>
+                Whether you are beginning your programming journey or improving
+                your existing development skills, these references can help you
+                learn at your own pace and build a stronger technical
+                foundation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="references" class="max-w-7xl mx-auto px-6 md:px-10 pb-24">
+        <div class="max-w-3xl mb-12">
+          <p
+            class="text-blue-400 text-sm font-semibold uppercase tracking-[0.2em] mb-3"
+          >
+            Explore
+          </p>
+
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+            Programming References
+          </h2>
+
+          <p class="text-gray-400 mt-4 text-base md:text-lg leading-relaxed">
+            Choose a technology and explore structured references covering
+            important concepts, syntax, tools, and practical development
+            techniques.
+          </p>
         </div>
 
-        <div
-          class="bg-[#0b1021] border border-blue-950/40 rounded-3xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:border-blue-800/60 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
-        >
-          <div class="space-y-4">
-            <h3 class="text-xl font-semibold text-[#4f46e5]">
-              JavaScript Reference
-            </h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              All JavaScript functions, DOM manipulation, events, and ES6
-              features.
-            </p>
-          </div>
-          <div class="pt-6">
-            <button
-              class="bg-[#4f46e5] hover:bg-[#4338ca] text-white font-medium px-6 py-2.5 rounded-full text-sm transition-all duration-200 cursor-pointer"
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article
+            class="group relative overflow-hidden bg-[#0b1220] border border-gray-800 rounded-2xl p-7 min-h-[390px] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+          >
+            <div
+              class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition"
+            ></div>
+
+            <div>
+              <div
+                class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-7"
+              >
+                <i class="fa-brands fa-html5 text-orange-400 text-2xl"></i>
+              </div>
+
+              <h3 class="text-xl font-bold">HTML Reference</h3>
+
+              <p class="text-gray-400 text-sm leading-relaxed mt-4">
+                Learn the foundation of modern web pages through HTML elements,
+                attributes, semantic structure, headings, paragraphs, links,
+                images, forms, tables, lists, and other essential building
+                blocks.
+              </p>
+
+              <div class="mt-6 space-y-2 text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  HTML Elements
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  Forms & Tables
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  Semantic HTML
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="/html/Home.html"
+              class="mt-8 inline-flex items-center justify-between text-sm font-semibold text-gray-300 group-hover:text-white transition"
             >
-              Learn More
-            </button>
-          </div>
+              <span>Explore HTML</span>
+
+              <i
+                class="fa-solid fa-arrow-right text-blue-400 group-hover:translate-x-1 transition"
+              ></i>
+            </a>
+          </article>
+
+          <article
+            class="group relative overflow-hidden bg-[#0b1220] border border-gray-800 rounded-2xl p-7 min-h-[390px] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+          >
+            <div
+              class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition"
+            ></div>
+
+            <div>
+              <div
+                class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-7"
+              >
+                <i class="fa-brands fa-css3-alt text-blue-400 text-2xl"></i>
+              </div>
+
+              <h3 class="text-xl font-bold">CSS Reference</h3>
+
+              <p class="text-gray-400 text-sm leading-relaxed mt-4">
+                Understand how to design and style modern interfaces with CSS
+                properties, selectors, colors, typography, Flexbox, Grid,
+                responsive layouts, transitions, animations, transforms, and
+                advanced styling techniques.
+              </p>
+
+              <div class="mt-6 space-y-2 text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  Selectors & Properties
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  Flexbox & Grid
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  Responsive Design
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="../CSS/css-reference.html"
+              class="mt-8 inline-flex items-center justify-between text-sm font-semibold text-gray-300 group-hover:text-white transition"
+            >
+              <span>Explore CSS</span>
+
+              <i
+                class="fa-solid fa-arrow-right text-blue-400 group-hover:translate-x-1 transition"
+              ></i>
+            </a>
+          </article>
+
+          <article
+            class="group relative overflow-hidden bg-[#0b1220] border border-gray-800 rounded-2xl p-7 min-h-[390px] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+          >
+            <div
+              class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition"
+            ></div>
+
+            <div>
+              <div
+                class="w-14 h-14 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center mb-7"
+              >
+                <i class="fa-brands fa-js text-yellow-400 text-2xl"></i>
+              </div>
+
+              <h3 class="text-xl font-bold">JavaScript Reference</h3>
+
+              <p class="text-gray-400 text-sm leading-relaxed mt-4">
+                Build interactive web applications by learning JavaScript
+                variables, functions, arrays, objects, events, DOM manipulation,
+                asynchronous programming, ES6 features, and modern browser-based
+                development.
+              </p>
+
+              <div class="mt-6 space-y-2 text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  JavaScript Fundamentals
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  DOM & Events
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  Modern JavaScript
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="../JavaScript/javascript-reference.html"
+              class="mt-8 inline-flex items-center justify-between text-sm font-semibold text-gray-300 group-hover:text-white transition"
+            >
+              <span>Explore JavaScript</span>
+
+              <i
+                class="fa-solid fa-arrow-right text-blue-400 group-hover:translate-x-1 transition"
+              ></i>
+            </a>
+          </article>
+
+          <article
+            class="group relative overflow-hidden bg-[#0b1220] border border-gray-800 rounded-2xl p-7 min-h-[390px] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+          >
+            <div
+              class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition"
+            ></div>
+
+            <div>
+              <div
+                class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-7"
+              >
+                <i class="fa-solid fa-database text-blue-400 text-2xl"></i>
+              </div>
+
+              <h3 class="text-xl font-bold">MySQL Reference</h3>
+
+              <p class="text-gray-400 text-sm leading-relaxed mt-4">
+                Learn MySQL and relational database concepts through practical
+                examples covering databases, tables, SQL queries, joins,
+                constraints, keys, functions, views, and database management.
+              </p>
+
+              <div class="mt-6 space-y-2 text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  Databases & Tables
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  SQL Queries & Joins
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-400"></i>
+                  Keys & Constraints
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="../MySQL/home/mysql-tutorial.html"
+              class="mt-8 inline-flex items-center justify-between text-sm font-semibold text-gray-300 group-hover:text-white transition"
+            >
+              <span>Explore MySQL</span>
+
+              <i
+                class="fa-solid fa-arrow-right text-blue-400 group-hover:translate-x-1 transition"
+              ></i>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section id="learning-path" class="max-w-7xl mx-auto px-6 md:px-10 pb-24">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <p
+            class="text-blue-400 text-sm font-semibold uppercase tracking-[0.2em] mb-3"
+          >
+            Learning Path
+          </p>
+
+          <h2 class="text-3xl md:text-4xl font-bold">A simple way to learn</h2>
+
+          <p class="text-gray-400 mt-4 text-base md:text-lg leading-relaxed">
+            Follow a practical learning process instead of trying to understand
+            everything at once.
+          </p>
         </div>
 
-        <div
-          class="bg-[#0b1021] border border-blue-950/40 rounded-3xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:border-blue-800/60 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
-        >
-          <div class="space-y-4">
-            <h3 class="text-xl font-semibold text-[#4f46e5]">
-              Python Reference
-            </h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Python syntax, functions, libraries, and best practices.
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="bg-[#0b1220] border border-gray-800 rounded-2xl p-8 transition hover:border-blue-500/30"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg"
+            >
+              01
+            </div>
+
+            <h3 class="text-xl font-bold mt-6">Understand</h3>
+
+            <p class="text-gray-400 mt-3 leading-relaxed">
+              Start with the basic concepts and understand why a particular
+              feature exists before moving toward more advanced topics.
             </p>
           </div>
-          <div class="pt-6">
-            <button
-              class="bg-[#4f46e5] hover:bg-[#4338ca] text-white font-medium px-6 py-2.5 rounded-full text-sm transition-all duration-200 cursor-pointer"
+
+          <div
+            class="bg-[#0b1220] border border-gray-800 rounded-2xl p-8 transition hover:border-blue-500/30"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg"
             >
-              Learn More
-            </button>
+              02
+            </div>
+
+            <h3 class="text-xl font-bold mt-6">Practice</h3>
+
+            <p class="text-gray-400 mt-3 leading-relaxed">
+              Write code yourself, experiment with examples, make small changes,
+              and observe how the output changes. Practice turns theoretical
+              knowledge into practical skills.
+            </p>
+          </div>
+
+          <div
+            class="bg-[#0b1220] border border-gray-800 rounded-2xl p-8 transition hover:border-blue-500/30"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg"
+            >
+              03
+            </div>
+
+            <h3 class="text-xl font-bold mt-6">Build</h3>
+
+            <p class="text-gray-400 mt-3 leading-relaxed">
+              Apply what you have learned by creating projects. Building real
+              applications helps you connect different concepts and develop
+              problem-solving skills.
+            </p>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-6 md:px-10 pb-24">
+        <div
+          class="bg-gradient-to-br from-[#0d1729] to-[#0a1020] border border-gray-800 rounded-3xl p-8 md:p-12 relative overflow-hidden"
+        >
+          <div
+            class="absolute -right-24 -bottom-24 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="relative grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p
+                class="text-blue-400 text-sm font-semibold uppercase tracking-[0.18em] mb-4"
+              >
+                Why use references?
+              </p>
+
+              <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+                Learn faster with organized resources
+              </h2>
+
+              <p
+                class="text-gray-400 mt-5 leading-relaxed text-base md:text-lg"
+              >
+                Good documentation makes it easier to find information when you
+                need it. Instead of searching through unrelated resources, you
+                can return to organized topics and focus directly on the concept
+                you are trying to understand.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div
+                class="bg-[#020617]/70 border border-gray-800 rounded-2xl p-6"
+              >
+                <i class="fa-solid fa-layer-group text-blue-400 text-xl"></i>
+
+                <h3 class="font-semibold mt-4">Structured Topics</h3>
+
+                <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                  Concepts are organized so you can progress step by step.
+                </p>
+              </div>
+
+              <div
+                class="bg-[#020617]/70 border border-gray-800 rounded-2xl p-6"
+              >
+                <i class="fa-solid fa-code text-blue-400 text-xl"></i>
+
+                <h3 class="font-semibold mt-4">Practical Learning</h3>
+
+                <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                  Focus on concepts that can be applied while coding.
+                </p>
+              </div>
+
+              <div
+                class="bg-[#020617]/70 border border-gray-800 rounded-2xl p-6"
+              >
+                <i
+                  class="fa-solid fa-magnifying-glass text-blue-400 text-xl"
+                ></i>
+
+                <h3 class="font-semibold mt-4">Quick Reference</h3>
+
+                <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                  Quickly return to topics whenever you need a reminder.
+                </p>
+              </div>
+
+              <div
+                class="bg-[#020617]/70 border border-gray-800 rounded-2xl p-6"
+              >
+                <i class="fa-solid fa-rocket text-blue-400 text-xl"></i>
+
+                <h3 class="font-semibold mt-4">Build Projects</h3>
+
+                <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                  Turn concepts into practical applications and projects.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-6 md:px-10 pb-28">
+        <div
+          class="relative overflow-hidden bg-[#3158ff] rounded-3xl p-8 md:p-12"
+        >
+          <div
+            class="absolute -right-20 -top-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"
+          ></div>
+
+          <div
+            class="relative flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+          >
+            <div class="max-w-2xl">
+              <h2 class="text-3xl md:text-4xl font-bold">
+                Ready to start learning?
+              </h2>
+
+              <p
+                class="text-blue-100 mt-4 text-base md:text-lg leading-relaxed"
+              >
+                Choose a reference above, start with the fundamentals, practice
+                what you learn, and gradually turn your knowledge into real
+                projects.
+              </p>
+            </div>
+
+            <a
+              href="#references"
+              class="shrink-0 inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#172554] font-semibold px-7 py-4 rounded-xl transition"
+            >
+              Start Learning
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer id="footer"></footer>
   </body>
 </html>

@@ -145,7 +145,11 @@ function createSidebar(activeIndex = 0) {
     },
     {
       name: " PHP Advanced",
+<<<<<<< HEAD
       link: "/php/advanceds/TimeAndDate.html",
+=======
+      link: "/php/advanceds/Advanced.html",
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
       submenu: [
         { name: "PHP Time And Date", link: "/php/advanceds/TimeAndDate.html" },
         { name: "PHP Include", link: "/php/advanceds/Include.html" },

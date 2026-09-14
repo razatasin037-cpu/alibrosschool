@@ -38,6 +38,7 @@ function createSidebar(activeIndex = 0) {
     { name: "JS Intro", link: "/javascript/intro/Intro.html" },
     { name: "JS Where To", link: "/javascript/whereTo/WhereTo.html" },
     { name: "JS Output", link: "/javascript/output/Output.html" },
+<<<<<<< HEAD
     // syntax
     {
       name: "JS Syntax",
@@ -578,6 +579,117 @@ function createSidebar(activeIndex = 0) {
     },
 
 
+=======
+// syntax
+    { name: "JS Syntax",
+     link: "/javascript/syntax/Syntax.html",
+        submenu: [
+        {  name: "JS Syntax", link: "/javascript/syntax/Syntax.html", },
+        { name: "JS Statements", link: "/javascript/syntax/Statements.html" },
+        { name: "JS Comments ", link: "/javascript/syntax/Comments.html" },
+        { name: "JS Variables ", link:"/javascript/syntax/Variables.html"},
+        { name: "JS Let ", link:"/javascript/syntax/Let.html"},
+        { name: "JS Const ", link:"/javascript/syntax/Const.html"},
+        { name: "JS Types ", link:"/javascript/syntax/Types.html"}
+      ]
+    }, 
+          //  Operators
+     { name: "JS Operators",
+     link: "/javascript/operators/Operators.html",
+        submenu: [
+        {  name: "JS Operators", link: "/javascript/operators/Operators.html", },
+        { name: "JS Arithmetic", link: "/javascript/operators/Arithmetic.html" },
+        { name: "JS Assignment ", link: "/javascript/operators/Assignment.html" },
+        { name: "JS Comparisons", link: "/javascript/operators/Comparisons.html"},
+        { name: "JS Conditionals ", link:"/javascript/operators/Conditionals.html"}
+      ]
+    }, 
+
+    { name: "HTML Attributes", link: "/html/attributes/Attributes.html" },
+    { name: "HTML Headings", link: "/html/headings/Headings.html" },
+    { name: "HTML Paragraphs", link: "/html/paragraphs/Paragraphs.html" },
+    { name: "HTML Styles", link: "/html/styles/Styles.html" },
+    { name: "HTML Formatting", link: "/html/formatting/Formatting.html" },
+    { name: "HTML Quotation", link: "/html/quotation/Quotation.html" },
+    { name: "HTML Comments", link: "/html/comments/Comments.html"},
+    { name: "HTML Colors", link: "/html/colors/Colors.html" },
+    { name: "HTML CSS", link: "/html/css/Css.html" },
+    { name: "HTML Links", link: "/html/links/Links.html" },
+// images
+    { name: "HTML Images",
+     link: "/html/images/Images.html",
+        submenu: [
+        {  name: "Images", link: "/html/images/Images.html", },
+        { name: "Image Map", link: "/html/images/ImageMap.html" },
+        { name: "Background Images", link: "/html/images/BackgroundImages.html" },
+        { name: "The Picture Element", link:"/html/images/PictureElement.html"}
+      ]
+    },
+    //favicon
+    { name: "HTML Favicon", link: "/html/favicon/Favicon.html" },
+    // page title
+    { name: "HTML Page Title", link: "/html/pageTitle/PageTitle.html" },
+// tables
+    { name: "HTML Tables",
+     link:"/html/tables/Tables.html",
+     submenu: [
+        { name: "HTML Tables", link:"/html/tables/Tables.html" },
+        { name: "Table Borders", link: "/html/tables/TableBorders.html" },
+        { name: "Table Sizes", link: "/html/tables/TableSizes.html"},
+        { name: "Table Headers", link: "/html/tables/TableHeaders.html"},
+        { name: "Table Styling", link: "/html/tables/TableStyling.html"},
+        { name: "Table Colgroup", link: "/html/tables/TableColgroup.html"},
+        { name: "Table Colspan & Rowspan", link: "/html/tables/TableColspan.html"},
+        
+      ]
+    },
+    // list
+    {
+      name: "HTML Lists",
+      link: "/html/lists/Lists.html",
+      submenu: [
+        { name: "Lists", link: "/html/lists/Lists.html" },
+        { name: "Unordered Lists", link: "/html/lists/UnorderedLists.html" },
+        { name: "Ordered Lists", link: "/html/lists/OrderedLists.html" },
+        { name: "Other Lists", link: "/html/lists/OtherLists.html" }
+      ]
+    },
+// blobk & inline
+    { name: "HTML Block & Inline", link: "/html/blockInline/BlockInline.html" },
+// div
+    { name: "HTML Div", link: "/html/div/Div.html" },
+    // Classes
+    { name: "HTML Classes", link: "/html/classes/Classes.html" },
+    //id
+    { name: "HTML Id", link: "/html/id/Id.html" },
+    // Buttons
+    { name: "HTML Buttons", link: "/html/buttons/Buttons.html"},
+    //Iframes
+    { name: "HTML Iframes", link: "/html/iframes/Iframes.html"},
+    // JavaScrpit
+     { name: "HTML JavaScript", link: "/html/javaScript/JavaScript.html"},
+     //File Paths
+     { name: "HTML File Paths", link: "/html/filePaths/FilePaths.html"},
+     // Head
+    { name: "HTML Head ", link: "/html/head/Head.html"},
+    // Layout 
+    { name: "HTML Layout", link: "/html/layout/Layout.html"},
+    // Responsive 
+    { name: "HTML Responsive", link: "/html/responsive/Responsive.html"},
+
+    {
+      name: "HTML Forms",
+      link: "/html/forms/Forms.html",
+      submenu: [
+        { name: "HTML Forms", link: "/html/forms/Forms.html" },
+        { name: "HTML Form Attributes ", link: "/html/forms/Attributes.html" },
+        { name: "HTML Form Elements", link: "/html/forms/Elements.html" },
+        { name: "HTML Input Types", link: "/html/forms/InputTypes.html" },
+        { name:"HTML Input Attributes", link:"/html/forms/Input-Attributes.html"}
+      ]
+    }
+   
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
   ];
 
   // Get exact current page file name
@@ -591,7 +703,11 @@ function createSidebar(activeIndex = 0) {
       // Check if current file matches main link OR any sub-link
       const mainFileName = menu.link.split('/').pop().toLowerCase();
       const isParentActive = mainFileName === currentFileName;
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
       const isSubmenuActive = menu.submenu.some(item => {
         const itemFileName = item.link.split('/').pop().toLowerCase();
         return itemFileName === currentFileName;
@@ -602,22 +718,40 @@ function createSidebar(activeIndex = 0) {
 
       menuHTML += `
         <div>
+<<<<<<< HEAD
           <div class="group flex items-center rounded-[18px] overflow-hidden ${isOpen ? "bg-white/10" : "hover:bg-[#3d5dff]"
         } transition duration-200">
+=======
+          <div class="group flex items-center rounded-[18px] overflow-hidden ${
+            isOpen ? "bg-white/10" : "hover:bg-[#3d5dff]"
+          } transition duration-200">
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
 
             <a href="${menu.link}" class="sidebar-link flex-1 py-[18px] px-[35px] text-white text-[18px] font-bold">
               ${menu.name}
             </a>
 
             <button type="button" class="submenu-btn px-5 py-[18px] text-white focus:outline-none">
+<<<<<<< HEAD
               <i class="fa-solid ${isOpen ? "fa-caret-down" : "fa-caret-right"
         }"></i>
+=======
+              <i class="fa-solid ${
+                isOpen ? "fa-caret-down" : "fa-caret-right"
+              }"></i>
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
             </button>
 
           </div>
 
+<<<<<<< HEAD
           <div class="submenu-wrapper ${isOpen ? "open mt-2" : ""
         } ml-8 flex flex-col gap-2">
+=======
+          <div class="submenu-wrapper ${
+            isOpen ? "open mt-2" : ""
+          } ml-8 flex flex-col gap-2">
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
       `;
 
       menu.submenu.forEach(item => {
@@ -625,9 +759,16 @@ function createSidebar(activeIndex = 0) {
         const active = currentFileName === itemFileName;
 
         menuHTML += `
+<<<<<<< HEAD
           <a href="${item.link}" class="sidebar-link block px-4 py-2 rounded-lg font-bold transition ${active
             ? "bg-[#3d5dff] text-white"
             : "text-gray-300 hover:bg-[#3158ff] hover:text-white"
+=======
+          <a href="${item.link}" class="sidebar-link block px-4 py-2 rounded-lg font-bold transition ${
+            active
+              ? "bg-[#3d5dff] text-white"
+              : "text-gray-300 hover:bg-[#3158ff] hover:text-white"
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
           }">
             ${item.name}
           </a>
@@ -643,7 +784,12 @@ function createSidebar(activeIndex = 0) {
       const isMainActive = mainFileName === currentFileName || index === activeIndex;
 
       menuHTML += `
+<<<<<<< HEAD
         <a href="${menu.link}" class="sidebar-link block py-[18px] px-[35px] text-white text-[18px] font-bold rounded-[18px] ${isMainActive ? "bg-[#3d5dff]" : "hover:bg-[#3d5dff]"
+=======
+        <a href="${menu.link}" class="sidebar-link block py-[18px] px-[35px] text-white text-[18px] font-bold rounded-[18px] ${
+          isMainActive ? "bg-[#3d5dff]" : "hover:bg-[#3d5dff]"
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
         } transition">
           ${menu.name}
         </a>

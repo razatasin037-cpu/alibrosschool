@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SQL BETWEEN</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/insert.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </head>
+  <body
+    class="bg-[#020617] text-white font-sans antialiased overflow-x-hidden pt-[110px]"
+  >
+    <nav id="navbar"></nav>
+    <main class="w-full flex flex-col md:flex-row min-h-screen">
+      <div id="sidebar"></div>
+      <section
+        class="w-full md:w-[calc(100%-320px)] px-5 md:px-[60px] py-8 md:py-10"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            SQL BETWEEN
+          </h1>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-10"
+          >
+            BETWEEN kisi value ko given range ke andar check karta hai. Age,
+            price aur date filtering mein common hai.
+          </p>
+
+          <div class="flex justify-between items-center gap-4 mb-12">
+            <a href="../and-or-not/and-or-not.html"
+              ><button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button></a
+            >
+            <a href="../case/case.html"
+              ><button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+            ></a>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>SQL BETWEEN
+            Kya Hai?
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            BETWEEN kisi value ko given range ke andar check karta hai. Age,
+            price aur date filtering mein common hai. Is concept ko samajhne ke
+            liye pehle syntax dekho, phir example ko sample data par run karke
+            output observe karo.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-code text-blue-400 mr-2"></i>Basic Example
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">SELECT</span> * <span class="text-blue-400">FROM</span> students <span class="text-blue-400">WHERE</span> age <span class="text-blue-400">BETWEEN</span> 18 <span class="text-blue-400">AND</span> 25;</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-list-check text-blue-400 mr-2"></i
+            >Step-by-Step Samjho
+          </h2>
+          <div class="grid sm:grid-cols-2 gap-6 mb-12">
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-1 text-blue-400 text-2xl mb-4"></i>
+              <h3 class="text-2xl font-bold mb-3">Statement</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                SQL keyword batata hai ki database par kaunsa main operation
+                perform karna hai.
+              </p>
+            </div>
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-2 text-blue-400 text-2xl mb-4"></i>
+              <h3 class="text-2xl font-bold mb-3">Table / Column</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Table aur columns batate hain ki data kahan se lena hai ya kis
+                data par operation karna hai.
+              </p>
+            </div>
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-3 text-blue-400 text-2xl mb-4"></i>
+              <h3 class="text-2xl font-bold mb-3">Condition</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Condition hone par database matching records ko filter karta
+                hai.
+              </p>
+            </div>
+            <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-7">
+              <i class="fa-solid fa-4 text-blue-400 text-2xl mb-4"></i>
+              <h3 class="text-2xl font-bold mb-3">Result</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                Query execute hone ke baad required rows, columns ya operation
+                status milta hai.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-code text-blue-400 mr-2"></i>Another Example
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-6"
+          >
+            Ab isi concept ko ek aur example se practice karo. Values change
+            karke result mein difference dekho.
+          </p>
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-2xl overflow-hidden shadow-xl mb-12"
+          >
+            <div class="bg-[#1e293b] p-5">
+              <h3 class="text-2xl font-bold">
+                <i class="fa-solid fa-terminal text-blue-400 mr-2"></i>Practice
+                Query
+              </h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <pre
+                class="text-lg leading-relaxed"
+              ><code><span class="text-blue-400">SELECT</span> * <span class="text-blue-400">FROM</span> products <span class="text-blue-400">WHERE</span> price <span class="text-blue-400">BETWEEN</span> 500 <span class="text-blue-400">AND</span> 1000;</code></pre>
+            </div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+            <i class="fa-solid fa-laptop-code text-blue-400 mr-2"></i>Practical
+            Use
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8"
+          >
+            Real projects mein ye concept students, users, products, orders aur
+            reports jaise data ke saath use ho sakta hai. Pehle small sample
+            table par practice karo aur phir apne project mein apply karo.
+          </p>
+
+          <div
+            class="bg-[#0f172a] border border-[#3158ff] rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-7">
+              <i class="fa-solid fa-circle-info text-blue-400 mr-2"></i
+              >Important Points
+            </h2>
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>SQL
+                keywords ko correct order mein use karo.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Table aur
+                column names actual schema ke according rakho.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>UPDATE aur
+                DELETE mein WHERE condition ko carefully check karo.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>NULL ke
+                liye IS NULL ya IS NOT NULL use karo.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Query ko
+                sample data par run karke output verify karo.
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            <i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>Best
+            Practices
+          </h2>
+          <div
+            class="bg-[#4d6fff]/10 border border-[#4d6fff]/20 rounded-2xl p-6 sm:p-8 mb-12"
+          >
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-300">
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Readable
+                SQL ke liye proper indentation rakho.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Destructive
+                queries ko carefully execute karo.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>User input
+                ke liye parameterized/prepared queries prefer karo.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-green-400 mr-2"></i>Large
+                tables par indexes aur filters ko thoughtfully use karo.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-[#0f172a] border border-gray-800 rounded-[30px] p-7 sm:p-10 shadow-xl mb-12"
+          >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>Summary
+            </h2>
+            <p
+              class="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed"
+            >
+              <strong>SQL BETWEEN</strong> ka main concept samajhne ke baad aap
+              SQL queries ko better tarike se read aur write kar sakte ho.
+              Syntax ke saath practical examples aur repeated practice se
+              concept strong hota hai.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center gap-4 mt-10">
+            <a href="../and-or-not/and-or-not.html"
+              ><button
+                class="rounded-xl px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-semibold text-black bg-white hover:bg-gray-200 transition"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>Previous
+              </button></a
+            >
+            <a href="../case/case.html"
+              ><button
+                class="bg-[#254ccb] hover:bg-[#304cd6] text-white rounded-xl px-7 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold transition"
+              >
+                Next <i class="fa-solid fa-chevron-right ml-2"></i></button
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("sidebar").innerHTML = createSidebar(4);
+      });
+    </script>
+  </body>
+</html>

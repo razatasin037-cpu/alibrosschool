@@ -46,10 +46,20 @@ function createSidebar(activeIndex = 0) {
     { name: "CSS Introduction", link: "/CSS/intro/intro.html" },
     { name: "CSS Syntax", link: "/CSS/syntax/syntax.html" },
     { name: "CSS Selectors", link: "/CSS/selectors/selectors.html" },
+<<<<<<< HEAD
     {name: "CSS Grouping Selectors", link: "/CSS/grouping-selectors/grouping-selectors.html"},
     { name: "CSS How To", link: "/CSS/how-to/how-to.html" },
     { name: "CSS Comments", link: "/CSS/comments/comments.html" },
     {name : "CSS Errors", link: "/CSS/errors/errors.html"},
+=======
+    {
+      name: "CSS Grouping Selectors",
+      link: "/CSS/grouping-selectors/grouping-selectors.html",
+    },
+    { name: "CSS How To", link: "/CSS/how-to/how-to.html" },
+    { name: "CSS Comments", link: "/CSS/comments/comments.html" },
+    { name: "CSS Errors", link: "/CSS/errors/errors.html" },
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
     { name: "CSS Colors", link: "/CSS/colors/colors.html" },
     { name: "CSS Backgrounds", link: "/CSS/backgrounds/backgrounds.html" },
     { name: "CSS Borders", link: "/CSS/borders/borders.html" },
@@ -224,6 +234,7 @@ function createSidebar(activeIndex = 0) {
       link: "/CSS/responsive/responsive.html",
     },
     { name: "CSS Viewport", link: "/CSS/responsive/viewport.html" },
+<<<<<<< HEAD
     { name: "CSS Responsive Grid", link: "/CSS/responsive/grid-view.html" },
     { name: "CSS Responsive Images", link: "/CSS/responsive/images.html" },
     { name: "CSS Responsive Videos", link: "/CSS/responsive/videos.html" },
@@ -237,6 +248,9 @@ function createSidebar(activeIndex = 0) {
     { name: "CSS Functions Reference", link: "/CSS/reference/functions.html" },
     { name: "CSS Units Reference", link: "/CSS/reference/units.html" },
     { name: "CSS Colors Reference", link: "/CSS/reference/colors.html" },
+=======
+ 
+>>>>>>> 5b7bd7a05dc07a19c5bdd5b170607f0a73110449
   ];
 
   const pathParts = window.location.pathname.split("/");
